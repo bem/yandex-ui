@@ -1,0 +1,5 @@
+.Button2.Button2.Button2_pin_clear-clear::before {
+    border-right-width: 0;
+    border-left-width: 0;
+    border-radius: 0;
+}

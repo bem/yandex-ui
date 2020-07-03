@@ -1,0 +1,17 @@
+textarea-border-width: textarea-borderWidth
+textarea-border-radius: textarea-borderRadius
+
+textarea-size-s-min-width: textarea-size-s-minWidth
+textarea-size-m-min-width: textarea-size-m-minWidth
+
+textarea-size-s-min-height: textarea-size-s-minHeight
+textarea-size-m-min-height: textarea-size-m-minHeight
+
+textarea-size-s-space-all: textarea-size-s-spaceAll
+textarea-size-m-space-all: textarea-size-m-spaceAll
+
+textarea-size-s-font-size: textarea-size-s-fontSize
+textarea-size-m-font-size: textarea-size-m-fontSize
+
+textarea-size-s-hint-font-size: textarea-hint-size-s-fontSize
+textarea-size-m-hint-font-size: textarea-hint-size-m-fontSize

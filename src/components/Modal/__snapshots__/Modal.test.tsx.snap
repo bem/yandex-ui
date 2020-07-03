@@ -1,0 +1,232 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal@desktop client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<RegistryResolver(Modal)
+  className="mix"
+  visible={true}
+>
+  <Modal
+    className="mix"
+    visible={true}
+  >
+    <RegistryResolver(Popup2)
+      className="Modal Modal_visible Modal_hasAnimation mix"
+      visible={true}
+    >
+      <Popup2
+        className="Modal Modal_visible Modal_hasAnimation mix"
+        visible={true}
+      >
+        <Portal
+          containerInfo={
+            <body>
+              <div
+                class="Popup2 Popup2_visible Modal Modal_visible Modal_hasAnimation mix"
+              >
+                <div
+                  class="Modal-Table"
+                >
+                  <div
+                    class="Modal-Cell Modal-Cell_align_middle"
+                  >
+                    <div
+                      class="Modal-Content"
+                    >
+                      content
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="Modal-Overlay"
+                />
+              </div>
+            </body>
+          }
+        >
+          <div
+            className="Popup2 Popup2_visible Modal Modal_visible Modal_hasAnimation mix"
+            style={
+              Object {
+                "zIndex": undefined,
+              }
+            }
+          >
+            <div
+              className="Modal-Table"
+            >
+              <div
+                className="Modal-Cell Modal-Cell_align_middle"
+              >
+                <div
+                  className="Modal-Content"
+                >
+                  content
+                </div>
+              </div>
+            </div>
+            <div
+              className="Modal-Overlay"
+            />
+          </div>
+        </Portal>
+      </Popup2>
+    </RegistryResolver(Popup2)>
+  </Modal>
+</RegistryResolver(Modal)>
+`;
+
+exports[`Modal@desktop server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `null`;
+
+exports[`Modal@touch-pad client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<RegistryResolver(Modal)
+  className="mix"
+  visible={true}
+>
+  <Modal
+    className="mix"
+    visible={true}
+  >
+    <RegistryResolver(Popup2)
+      className="Modal Modal_visible Modal_hasAnimation mix"
+      visible={true}
+    >
+      <Popup2
+        className="Modal Modal_visible Modal_hasAnimation mix"
+        visible={true}
+      >
+        <Portal
+          containerInfo={
+            <body>
+              <div
+                class="Popup2 Popup2_visible Modal Modal_visible Modal_hasAnimation mix"
+              >
+                <div
+                  class="Modal-Table"
+                >
+                  <div
+                    class="Modal-Cell Modal-Cell_align_middle"
+                  >
+                    <div
+                      class="Modal-Content"
+                    >
+                      content
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="Modal-Overlay"
+                />
+              </div>
+            </body>
+          }
+        >
+          <div
+            className="Popup2 Popup2_visible Modal Modal_visible Modal_hasAnimation mix"
+            style={
+              Object {
+                "zIndex": undefined,
+              }
+            }
+          >
+            <div
+              className="Modal-Table"
+            >
+              <div
+                className="Modal-Cell Modal-Cell_align_middle"
+              >
+                <div
+                  className="Modal-Content"
+                >
+                  content
+                </div>
+              </div>
+            </div>
+            <div
+              className="Modal-Overlay"
+            />
+          </div>
+        </Portal>
+      </Popup2>
+    </RegistryResolver(Popup2)>
+  </Modal>
+</RegistryResolver(Modal)>
+`;
+
+exports[`Modal@touch-pad server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `null`;
+
+exports[`Modal@touch-phone client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<RegistryResolver(Modal)
+  className="mix"
+  visible={true}
+>
+  <Modal
+    className="mix"
+    visible={true}
+  >
+    <RegistryResolver(Popup2)
+      className="Modal Modal_visible Modal_hasAnimation mix"
+      visible={true}
+    >
+      <Popup2
+        className="Modal Modal_visible Modal_hasAnimation mix"
+        visible={true}
+      >
+        <Portal
+          containerInfo={
+            <body>
+              <div
+                class="Popup2 Popup2_visible Modal Modal_visible Modal_hasAnimation mix"
+              >
+                <div
+                  class="Modal-Table"
+                >
+                  <div
+                    class="Modal-Cell Modal-Cell_align_middle"
+                  >
+                    <div
+                      class="Modal-Content"
+                    >
+                      content
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="Modal-Overlay"
+                />
+              </div>
+            </body>
+          }
+        >
+          <div
+            className="Popup2 Popup2_visible Modal Modal_visible Modal_hasAnimation mix"
+            style={
+              Object {
+                "zIndex": undefined,
+              }
+            }
+          >
+            <div
+              className="Modal-Table"
+            >
+              <div
+                className="Modal-Cell Modal-Cell_align_middle"
+              >
+                <div
+                  className="Modal-Content"
+                >
+                  content
+                </div>
+              </div>
+            </div>
+            <div
+              className="Modal-Overlay"
+            />
+          </div>
+        </Portal>
+      </Popup2>
+    </RegistryResolver(Popup2)>
+  </Modal>
+</RegistryResolver(Modal)>
+`;
+
+exports[`Modal@touch-phone server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `null`;

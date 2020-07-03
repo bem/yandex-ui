@@ -1,0 +1,11 @@
+.Attach-Reset {
+    width: var(--attach-reset-width);
+    height: var(--attach-reset-height);
+    margin-left: var(--attach-reset-indentLeft);
+
+    cursor: pointer;
+
+    opacity: .2;
+    background: url('Reset.assets/reset.svg') no-repeat;
+    background-size: 100% 100%;
+}

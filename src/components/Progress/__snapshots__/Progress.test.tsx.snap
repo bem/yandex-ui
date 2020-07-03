@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Progress@desktop client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  class="Progress mix"
+>
+  <div
+    class="Progress-Inner"
+    style="width:0"
+  />
+</div>
+`;
+
+exports[`Progress@desktop server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  class="Progress mix"
+>
+  <div
+    class="Progress-Inner"
+    style="width:0"
+  />
+</div>
+`;
+
+exports[`Progress@touch-pad client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  class="Progress mix"
+>
+  <div
+    class="Progress-Inner"
+    style="width:0"
+  />
+</div>
+`;
+
+exports[`Progress@touch-pad server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  class="Progress mix"
+>
+  <div
+    class="Progress-Inner"
+    style="width:0"
+  />
+</div>
+`;
+
+exports[`Progress@touch-phone client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  class="Progress mix"
+>
+  <div
+    class="Progress-Inner"
+    style="width:0"
+  />
+</div>
+`;
+
+exports[`Progress@touch-phone server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  class="Progress mix"
+>
+  <div
+    class="Progress-Inner"
+    style="width:0"
+  />
+</div>
+`;

@@ -1,0 +1,14 @@
+/**
+ * 1. display: inline-block совместно с overflow: hidden сдвигает элемент вверх,
+ * https://stackoverflow.com/questions/20566710/overflowhidden-displayinline-block-moves-text-upwards
+ */
+.Checkbox_lines_one .Checkbox-Label {
+    display: inline-block;
+    overflow: hidden;
+
+    max-width: 100%;
+
+    vertical-align: text-bottom; /* 1 */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

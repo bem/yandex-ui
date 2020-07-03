@@ -1,0 +1,229 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Attach@desktop client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Attach mix"
+>
+  <span
+    aria-label="Выбрать файл"
+    class="Button2 Attach-Button"
+    role="button"
+    tabindex="0"
+  >
+    <span
+      class="Button2-Text"
+    >
+      Выбрать файл
+    </span>
+    <input
+      autocomplete="off"
+      class="Attach-Control"
+      id="100500"
+      name="attachment"
+      tabindex="-1"
+      type="file"
+    />
+  </span>
+  <span
+    aria-hidden="true"
+    class="Attach-Holder"
+  >
+    <label
+      class="Attach-Text"
+      for="100500"
+    >
+      файл не выбран
+    </label>
+  </span>
+</span>
+`;
+
+exports[`Attach@desktop server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Attach mix"
+>
+  <span
+    aria-label="Выбрать файл"
+    class="Button2 Attach-Button"
+    role="button"
+    tabindex="0"
+  >
+    <span
+      class="Button2-Text"
+    >
+      Выбрать файл
+    </span>
+    <input
+      autocomplete="off"
+      class="Attach-Control"
+      id="100500"
+      name="attachment"
+      tabindex="-1"
+      type="file"
+    />
+  </span>
+  <span
+    aria-hidden="true"
+    class="Attach-Holder"
+  >
+    <label
+      class="Attach-Text"
+      for="100500"
+    >
+      файл не выбран
+    </label>
+  </span>
+</span>
+`;
+
+exports[`Attach@touch-pad client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Attach mix"
+>
+  <span
+    aria-label="Выбрать файл"
+    class="Button2 Attach-Button"
+    role="button"
+    tabindex="0"
+  >
+    <span
+      class="Button2-Text"
+    >
+      Выбрать файл
+    </span>
+    <input
+      autocomplete="off"
+      class="Attach-Control"
+      id="100500"
+      name="attachment"
+      tabindex="-1"
+      type="file"
+    />
+  </span>
+  <span
+    aria-hidden="true"
+    class="Attach-Holder"
+  >
+    <label
+      class="Attach-Text"
+      for="100500"
+    >
+      файл не выбран
+    </label>
+  </span>
+</span>
+`;
+
+exports[`Attach@touch-pad server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Attach mix"
+>
+  <span
+    aria-label="Выбрать файл"
+    class="Button2 Attach-Button"
+    role="button"
+    tabindex="0"
+  >
+    <span
+      class="Button2-Text"
+    >
+      Выбрать файл
+    </span>
+    <input
+      autocomplete="off"
+      class="Attach-Control"
+      id="100500"
+      name="attachment"
+      tabindex="-1"
+      type="file"
+    />
+  </span>
+  <span
+    aria-hidden="true"
+    class="Attach-Holder"
+  >
+    <label
+      class="Attach-Text"
+      for="100500"
+    >
+      файл не выбран
+    </label>
+  </span>
+</span>
+`;
+
+exports[`Attach@touch-phone client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Attach mix"
+>
+  <span
+    aria-label="Выбрать файл"
+    class="Button2 Attach-Button"
+    role="button"
+    tabindex="0"
+  >
+    <span
+      class="Button2-Text"
+    >
+      Выбрать файл
+    </span>
+    <input
+      autocomplete="off"
+      class="Attach-Control"
+      id="100500"
+      name="attachment"
+      tabindex="-1"
+      type="file"
+    />
+  </span>
+  <span
+    aria-hidden="true"
+    class="Attach-Holder"
+  >
+    <label
+      class="Attach-Text"
+      for="100500"
+    >
+      файл не выбран
+    </label>
+  </span>
+</span>
+`;
+
+exports[`Attach@touch-phone server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Attach mix"
+>
+  <span
+    aria-label="Выбрать файл"
+    class="Button2 Attach-Button"
+    role="button"
+    tabindex="0"
+  >
+    <span
+      class="Button2-Text"
+    >
+      Выбрать файл
+    </span>
+    <input
+      autocomplete="off"
+      class="Attach-Control"
+      id="100500"
+      name="attachment"
+      tabindex="-1"
+      type="file"
+    />
+  </span>
+  <span
+    aria-hidden="true"
+    class="Attach-Holder"
+  >
+    <label
+      class="Attach-Text"
+      for="100500"
+    >
+      файл не выбран
+    </label>
+  </span>
+</span>
+`;

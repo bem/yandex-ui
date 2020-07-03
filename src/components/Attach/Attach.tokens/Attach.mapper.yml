@@ -1,0 +1,14 @@
+attach-reset-indent-left: attach-reset-indentLeft
+attach-icon-file-indent-right: attach-iconFile-indentRight
+
+attach-size-s-font-size: attach-size-s-fontSize
+attach-size-m-font-size: attach-size-m-fontSize
+attach-size-l-font-size: attach-size-l-fontSize
+
+attach-size-s-line-height: attach-size-s-lineHeight
+attach-size-m-line-height: attach-size-m-lineHeight
+attach-size-l-line-height: attach-size-l-lineHeight
+
+attach-size-s-holder-indent-left: attach-size-s-holder-indentLeft
+attach-size-m-holder-indent-left: attach-size-m-holder-indentLeft
+attach-size-l-holder-indent-left: attach-size-l-holder-indentLeft

@@ -1,0 +1,49 @@
+.Textarea-Hint {
+    display: inline-block;
+
+    margin-top: 4px;
+
+    font-family: var(--control-font-family);
+
+    animation: Hint_show 100ms ease-in forwards;
+}
+
+.Textarea_size_s .Textarea-Hint {
+    font-size: var(--textarea-hint-size-s-fontSize);
+}
+
+.Textarea_size_m .Textarea-Hint {
+    font-size: var(--textarea-hint-size-m-fontSize);
+}
+
+.Textarea-Hint_leave {
+    animation: Hint_leave 100ms ease-out forwards;
+}
+
+@keyframes Hint_leave {
+    to {
+        opacity: 0;
+
+        transform: translateY(-6px);
+    }
+
+    from {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+@keyframes Hint_show {
+    from {
+        opacity: 0;
+
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}

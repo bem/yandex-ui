@@ -1,0 +1,10 @@
+.Link_theme_strong {
+    /* stylelint-disable-next-line font-weight-notation */
+    font-weight: 700;
+
+    color: #04b;
+}
+
+.Link_theme_strong[aria-disabled='true'] {
+    color: #ddd;
+}

@@ -1,0 +1,41 @@
+/*
+/ TODO https://st.yandex-team.ru/ISL-5465
+/ Временный модификатор для выравнивания по базовой линии, будет внедрено в следующей мажорной версии
+*/
+.Select2_baseline.Select2 {
+    display: inline-flex;
+
+    vertical-align: baseline;
+}
+
+.Select2_baseline .Button2_width_auto .Button2-Text {
+    /* https://st.yandex-team.ru/ISL-5076
+    Фикс для firefox - при добавлении свойства overflow: hidden, у элемента перестает работать baseline */
+    overflow: -moz-hidden-unscrollable;
+}
+
+.Select2_baseline .Button2_width_max .Button2-Text {
+    /* https://st.yandex-team.ru/ISL-5076
+    Фикс для firefox - при добавлении свойства overflow: hidden, у элемента перестает работать baseline */
+    overflow: -moz-hidden-unscrollable;
+}
+
+.Select2_baseline.Select2_width_fixed .Select2-Popup {
+    margin: -3px 0 0;
+}
+
+.Select2_baseline.Select2_width_fixed .Select2-Popup .Menu::before {
+    height: 0;
+}
+
+.Select2_baseline.Select2_width_fixed .Select2-Popup .Menu-Item {
+    height: 0;
+}
+
+.Select2_baseline.Select2_width_fixed .Select2-Popup .Menu::after {
+    height: 0;
+}
+
+.Select2_baseline.Select2_width_max {
+    display: block;
+}

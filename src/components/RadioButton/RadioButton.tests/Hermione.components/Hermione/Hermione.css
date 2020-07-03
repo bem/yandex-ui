@@ -1,0 +1,11 @@
+.Hermione {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin: 20px;
+}
+
+.Hermione-Item {
+    padding: 10px;
+}

@@ -1,0 +1,8 @@
+.RadioButton_size_l {
+    font-size: var(--radioButton-size-l-fontSize);
+    line-height: var(--radioButton-size-l-lineHeight);
+}
+
+.RadioButton_size_l .RadioButton-Radio {
+    padding: var(--radioButton-size-l-space);
+}

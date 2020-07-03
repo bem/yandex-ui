@@ -1,0 +1,30 @@
+.Icon_type_by {
+    width: 16px;
+
+    background-image: url('assets/by.png');
+}
+
+.Icon_type_kz {
+    width: 16px;
+
+    background-image: url('assets/kz.png');
+}
+
+.Icon_type_ru {
+    width: 16px;
+
+    background-image: url('assets/ru.png');
+}
+
+.Menu_size_n .Icon,
+.Menu_size_m .Icon {
+    margin-right: 6px;
+}
+
+.Menu_size_s .Icon {
+    margin-right: 4px;
+}
+
+.Menu_size_xs .Icon {
+    margin-right: 3px;
+}

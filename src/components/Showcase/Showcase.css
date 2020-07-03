@@ -1,0 +1,20 @@
+.Showcase {
+    padding: 16px;
+
+    font-family: var(--control-font-family);
+
+    color: var(--color-control-typo-primary);
+    background-color: var(--color-bg-default);
+}
+
+/* stylelint-disable selector-max-universal */
+.Showcase-Group > *,
+.SbRootScope-Common.SbRootScope-Lego .Showcase-Group > * {
+    margin-bottom: 8px;
+}
+
+.Showcase-Row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

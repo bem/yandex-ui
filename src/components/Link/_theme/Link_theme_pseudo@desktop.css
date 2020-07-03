@@ -1,0 +1,11 @@
+.Link_theme_pseudo:not([aria-disabled='true']):hover {
+    color: #c00;
+}
+
+/*
+* Раньше при focus оставалась обводка внутри Inner, но её закрывал outline,
+* сейчас это необходимо поправить
+*/
+.utilityfocus .Link_theme_pseudo:focus {
+    border-bottom: 0;
+}

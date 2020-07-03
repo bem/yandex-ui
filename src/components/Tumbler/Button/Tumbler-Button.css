@@ -1,0 +1,24 @@
+.Tumbler-Button {
+    position: relative;
+
+    margin: 0;
+    padding: 0;
+
+    cursor: pointer;
+    -moz-user-focus: ignore;
+
+    border: none;
+    outline: 0;
+}
+
+.Tumbler-Button::-moz-focus-inner {
+    padding: 0;
+
+    border: 0;
+}
+
+.Tumbler-Button::after {
+    position: absolute;
+
+    content: '';
+}

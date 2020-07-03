@@ -1,0 +1,21 @@
+.Textarea-Clear {
+    position: absolute;
+    z-index: 3; /* рисуем поверх Box и Control */
+    right: 0;
+
+    display: none;
+    visibility: hidden;
+
+    cursor: pointer;
+}
+
+.Textarea-Clear.Textarea-Clear_visible {
+    display: block;
+    visibility: visible;
+}
+
+.Textarea_disabled .Textarea-Clear_visible {
+    z-index: 0; /* Понижаем под Control и Box */
+
+    cursor: default;
+}

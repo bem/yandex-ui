@@ -1,0 +1,44 @@
+/* common */
+.Radiobox_view_default .Radiobox-Text {
+    display: inline-block;
+
+    color: var(--color-control-typo-primary);
+}
+
+.Radiobox_view_default .Radiobox-Box {
+    border-radius: var(--radiobox-borderRadius);
+    background-color: var(--color-control-bg-default);
+
+    transition: background .1s linear;
+}
+
+.Radiobox_view_default .Radiobox-Box::after {
+    position: absolute;
+
+    content: '';
+
+    opacity: 0;
+    border-radius: var(--radiobox-after-borderRadius);
+    background-color: var(--color-control-bg-faint);
+
+    transition: opacity .1s, transform .2s;
+    transform: scale(.1);
+}
+
+/* disable */
+.Radiobox_view_default .Radiobox-Radio_disabled .Radiobox-Box,
+.Radiobox_view_default .Radiobox-Radio_disabled .Radiobox-Text {
+    opacity: .6;
+}
+
+/* check */
+/* TODO: Усиливаем селектор для ie11 (оторвать после https://st.yandex-team.ru/ISL-7989) */
+.Radiobox_view_default .Radiobox-Radio_checked .Radiobox-Box[class] {
+    background-color: var(--color-control-bg-check);
+}
+
+.Radiobox_view_default .Radiobox-Radio_checked .Radiobox-Box[class]::after {
+    opacity: 1;
+
+    transform: scale(1);
+}

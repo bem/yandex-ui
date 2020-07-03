@@ -1,0 +1,45 @@
+.Textarea_theme_normal .Textarea-Control {
+    color: #000;
+}
+
+/* stylelint-disable no-descending-specificity */
+.Textarea_disabled .Textarea-Clear_visible {
+    cursor: default;
+}
+
+.Textarea_disabled.Textarea_theme_normal .Textarea-Control {
+    color: #aaa;
+    -webkit-text-fill-color: #aaa; /* https://st.yandex-team.ru/ISL-2132 Safari needs it to blend color properly */
+}
+
+.Textarea_theme_normal .Textarea-Control::placeholder {
+    color: #999;
+}
+
+.Textarea_theme_normal .Textarea-Box {
+    border: 1px solid rgba(0, 0, 0, .2);
+    background-color: #fff;
+}
+
+.Textarea_theme_normal.Textarea_state_error .Textarea-Hint {
+    color: var(--color-control-typo-error);
+}
+
+.Textarea_theme_normal.Textarea_state_error .Textarea-Box {
+    border-color: var(--color-control-bg-border-default-error);
+}
+
+.Textarea_theme_normal.Textarea_disabled .Textarea-Box {
+    border-color: transparent;
+    background-color: rgba(0, 0, 0, .08);
+}
+
+.Textarea_theme_normal .Textarea-Clear_visible {
+    opacity: .3;
+}
+
+.Textarea_theme_normal.Textarea_disabled .Textarea-Clear_visible {
+    z-index: 0; /* Понижаем под Control и Box */
+
+    opacity: .1;
+}

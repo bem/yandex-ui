@@ -1,0 +1,21 @@
+button-border-radius: button-borderRadius
+
+button-size-s-font-size: button-size-s-font
+button-size-m-font-size: button-size-m-font
+button-size-l-font-size: button-size-l-font
+
+button-size-s-line-height: button-size-s-lineHeight
+button-size-m-line-height: button-size-m-lineHeight
+button-size-l-line-height: button-size-l-lineHeight
+
+button-size-s-text-indent-all: button-size-s-text-indentAll
+button-size-m-text-indent-all: button-size-m-text-indentAll
+button-size-l-text-indent-all: button-size-l-text-indentAll
+
+button-size-s-icon-indent-left: button-size-s-icon-indentLeft
+button-size-m-icon-indent-left: button-size-m-icon-indentLeft
+button-size-l-icon-indent-left: button-size-l-icon-indentLeft
+
+button-size-s-icon-indent-right: button-size-s-icon-indentRight
+button-size-m-icon-indent-right: button-size-m-icon-indentRight
+button-size-l-icon-indent-right: button-size-l-icon-indentRight

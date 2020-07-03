@@ -1,0 +1,4 @@
+.Button2.Button2.Button2_pin_round-brick::before {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}

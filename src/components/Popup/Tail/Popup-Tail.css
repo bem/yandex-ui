@@ -1,0 +1,31 @@
+.Popup2-Tail {
+    position: absolute;
+    z-index: 1;
+
+    width: 10px;
+    height: 10px;
+}
+
+.Popup2_direction_top-left .Popup2-Tail,
+.Popup2_direction_top-center .Popup2-Tail,
+.Popup2_direction_top-right .Popup2-Tail {
+    transform: rotate(-45deg);
+}
+
+.Popup2_direction_bottom-left .Popup2-Tail,
+.Popup2_direction_bottom-center .Popup2-Tail,
+.Popup2_direction_bottom-right .Popup2-Tail {
+    transform: rotate(135deg);
+}
+
+.Popup2_direction_left-top .Popup2-Tail,
+.Popup2_direction_left-center .Popup2-Tail,
+.Popup2_direction_left-bottom .Popup2-Tail {
+    transform: rotate(-135deg);
+}
+
+.Popup2_direction_right-top .Popup2-Tail,
+.Popup2_direction_right-center .Popup2-Tail,
+.Popup2_direction_right-bottom .Popup2-Tail {
+    transform: rotate(45deg);
+}

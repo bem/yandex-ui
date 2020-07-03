@@ -1,0 +1,11 @@
+.Icon_size_s.Icon_type_lock {
+    background-size: 14px;
+}
+
+.Icon_size_m.Icon_type_lock {
+    background-size: 16px;
+}
+
+.Icon_type_lock {
+    background-image: url('icon_type.assets/icon_type_lock.svg');
+}

@@ -1,0 +1,63 @@
+.Textinput_theme_websearch {
+    height: 36px;
+}
+
+.Textinput_theme_websearch .Textinput-Control {
+    height: 36px;
+
+    font-family: arial, sans-serif;
+    font-size: 18px;
+    line-height: normal;
+
+    color: #000;
+    border-right-width: 30px;
+    border-left-width: 13px;
+}
+
+.Textinput_theme_websearch .Textinput-Box {
+    border-width: 2px 0 2px 2px;
+    border-style: solid;
+    border-color: #ffdb4d;
+    background-color: #fff;
+}
+
+.Textinput_theme_websearch .Textinput-Icon {
+    width: 32px;
+    height: 36px;
+
+    background-size: 20px 20px;
+}
+
+.Textinput-Clear_theme_websearch {
+    display: none;
+    visibility: hidden;
+}
+
+.Textinput_theme_websearch .Textinput-Clear {
+    opacity: 0;
+    background-size: 16px 16px;
+}
+
+.Textinput_theme_websearch .Textinput-Icon_side_left ~ .Textinput-Control {
+    border-left-width: 32px;
+}
+
+.Textinput_theme_websearch .Textinput-Icon_side_right ~ .Textinput-Control {
+    border-right-width: 32px;
+}
+
+.Textinput_theme_websearch.Textinput_hasClear .Textinput-Icon_side_right ~ .Textinput-Control {
+    border-right-width: 48px;
+}
+
+.Textinput_theme_websearch .Textinput-Icon_side_right ~ .Textinput-Clear {
+    right: 24px;
+}
+
+.Textinput_theme_websearch .Textinput-Clear.Textinput-Clear_visible {
+    opacity: .3;
+}
+
+.Textinput_theme_websearch.Textinput_disabled .Textinput-Clear_visible {
+    opacity: .1;
+}

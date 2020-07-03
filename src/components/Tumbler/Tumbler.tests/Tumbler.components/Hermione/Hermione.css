@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+}
+
+.Hermione {
+    display: inline-flex;
+
+    margin-bottom: 24px;
+}
+
+.Hermione-Grid {
+    display: flex;
+
+    padding: 16px;
+}
+
+.Hermione-ColRow {
+    margin-bottom: 16px;
+}
+
+.Hermione-ColRow:last-child {
+    margin-bottom: 0;
+}
+
+.Hermione-Col {
+    margin-right: 16px;
+}
+
+.Hermione-Col:last-child {
+    margin-right: 0;
+}

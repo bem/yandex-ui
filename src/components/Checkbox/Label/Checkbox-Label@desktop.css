@@ -1,0 +1,7 @@
+.Checkbox-Label {
+    cursor: pointer;
+}
+
+.Checkbox_disabled .Checkbox-Label {
+    cursor: default;
+}

@@ -1,0 +1,9 @@
+{
+  "extends": "./src/Theme/themes/inverse.theme.json",
+  "whitepaper": {
+    "root": "legacy"
+  },
+  "sources": [
+    "./src/Theme/tokens/legacy.tokens.yml"
+  ]
+}

@@ -1,0 +1,15 @@
+/* hover */
+.Button2_view_clear:not([aria-disabled='true']):hover .Button2-Text,
+.Button2_view_clear:not([aria-disabled='true']):hover .Button2-Icon {
+    opacity: 1;
+}
+
+/* check */
+.Button2_view_clear.Button2_checked:not([aria-disabled='true']):hover::before {
+    background-color: var(--color-control-bg-check-hover);
+}
+
+/* focus */
+.utilityfocus .Button2_view_clear:focus::before {
+    border: 2px solid var(--color-control-bg-border-prism);
+}

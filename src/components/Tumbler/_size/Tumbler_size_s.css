@@ -1,0 +1,12 @@
+.Tumbler_size_s {
+    font-size: var(--tumbler-size-s-fontSize);
+    line-height: var(--tumbler-size-s-lineHeight);
+}
+
+.Tumbler_size_s .Tumbler-Label:first-child {
+    margin-right: var(--tumblerLabel-size-s-indentRight);
+}
+
+.Tumbler_size_s .Tumbler-Label:last-child {
+    margin-left: var(--tumblerLabel-size-s-indentLeft);
+}

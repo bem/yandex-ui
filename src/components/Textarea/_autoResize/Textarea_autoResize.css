@@ -1,0 +1,4 @@
+/* Для правильрного рассчета scrollHeight контрола когда он не помещается внутри контейнера нужно скрыть скролл */
+.Textarea_autoResize .Textarea-Control {
+    overflow: hidden;
+}

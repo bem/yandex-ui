@@ -1,0 +1,21 @@
+.Icon_type_load {
+    background-image: url('load.svg');
+}
+
+.Icon_type_home {
+    background-image: url('./_type/assets/home.svg');
+}
+
+.Icon_type_route {
+    background-image: url('./_type/assets/route.svg');
+    background-size: 20px;
+}
+
+.Icon_type_location {
+    background-image: url('./_type/assets/location.svg');
+    background-size: 20px;
+}
+
+.Icon_type_play {
+    background-image: url('./_type/assets/play.svg');
+}

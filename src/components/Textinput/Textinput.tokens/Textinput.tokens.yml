@@ -1,0 +1,55 @@
+textinput:
+  border:
+    width:
+      value: 2px
+    radius:
+      value: 4px
+
+  size:
+    s:
+      fontSize:
+        value: "{typography.controls.size.s.fontSize.value}"
+      height:
+        value: 32px
+      spaceAll:
+        value: 0 8px
+
+      withIcon:
+        spaceRight:
+          value: 32px
+        spaceLeft:
+          value: 32px
+
+      icon:
+        width:
+          value: 32px
+        height:
+          value: 32px
+
+      hint:
+        fontSize:
+          value: 12px
+
+    m:
+      fontSize:
+        value: "{typography.controls.size.m.fontSize.value}"
+      height:
+        value: 36px
+      spaceAll:
+        value: 0 10px
+
+      withIcon:
+        spaceRight:
+          value: 36px
+        spaceLeft:
+          value: 36px
+
+      icon:
+        width:
+          value: 36px
+        height:
+          value: 36px
+
+      hint:
+        fontSize:
+          value: 13px

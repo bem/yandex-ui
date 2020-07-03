@@ -1,0 +1,22 @@
+/* common */
+.TabsMenu_view_default .TabsMenu-Tab {
+    position: relative;
+
+    color: var(--color-typo-primary);
+    outline: none;
+}
+
+.TabsMenu_view_default.TabsMenu_layout_horiz .TabsMenu-Tab_active::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    height: 2px;
+
+    content: '';
+
+    background-color: var(--color-typo-primary);
+
+    transition: background-color .15s ease-out;
+}

@@ -1,0 +1,14 @@
+radiobox-border-radius: radiobox-borderRadius
+radiobox-after-border-radius: radiobox-after-borderRadius
+
+radiobox-size-s-font-size: radiobox-size-s-fontSize
+radiobox-size-m-font-size: radiobox-size-m-fontSize
+
+radiobox-size-s-line-height: radiobox-size-s-lineHeight
+radiobox-size-m-line-height: radiobox-size-m-lineHeight
+
+radiobox-size-s-position-top: radiobox-size-s-positionTop
+radiobox-size-m-position-top: radiobox-size-m-positionTop
+
+radiobox-size-s-indent-right: radiobox-size-s-indentRight
+radiobox-size-m-indent-right: radiobox-size-m-indentRight

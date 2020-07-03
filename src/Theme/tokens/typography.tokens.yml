@@ -1,0 +1,34 @@
+typography:
+  font:
+    family:
+      value: "'YS Text', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+      group: cosmetic
+    weight:
+      light:
+        value: 300
+        group: size
+      regular:
+        value: 400
+        group: size
+      medium:
+        value: 500
+        group: size
+      bold:
+        value: 700
+        group: size
+  controls:
+    fontFamily:
+      value: "'Helvetica Neue', Helvetica, Arial, sans-serif"
+
+    size:
+      s:
+        fontSize:
+          value: 13px
+
+      m:
+        fontSize:
+          value: 15px
+
+      l:
+        fontSize:
+          value: 18px

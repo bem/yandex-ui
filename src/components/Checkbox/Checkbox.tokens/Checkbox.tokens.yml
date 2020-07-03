@@ -1,0 +1,25 @@
+checkbox:
+  border:
+    radius:
+      value: 4px
+
+  size:
+    s:
+      fontSize:
+        value: "{typography.controls.size.s.fontSize.value}"
+      indentLeft:
+        value: 5px
+      width:
+        value: 14px
+      height:
+        value: 14px
+
+    m:
+      fontSize:
+        value: "{typography.controls.size.m.fontSize.value}"
+      indentLeft:
+        value: 5px
+      width:
+        value: 17px
+      height:
+        value: 17px

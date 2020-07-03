@@ -1,0 +1,65 @@
+.Hermione {
+    margin-bottom: 20px;
+}
+
+.Hermione-Item {
+    display: inline-block;
+    overflow: hidden;
+}
+
+/* stylelint-disable-next-line selector-max-id */
+.Hermione.NewDesign {
+    max-width: 1207px;
+}
+
+/* stylelint-disable-next-line selector-max-id */
+.Hermione.NewDesign .Hermione-Item {
+    width: 120px;
+    padding: 8px;
+}
+
+/* stylelint-disable-next-line selector-max-id */
+.Hermione#static {
+    width: 960px;
+}
+
+/* stylelint-disable-next-line selector-max-id */
+.Hermione#static .Hermione-Item {
+    width: 120px;
+    height: 20px;
+    padding-top: 5px; /* Отступ под галочку. */
+
+    text-align: center;
+}
+
+/* stylelint-disable-next-line selector-max-id */
+.Hermione#dynamic .Hermione-Item {
+    padding: 5px;
+}
+
+/* stylelint-disable-next-line selector-max-id */
+.Hermione#baseline .Hermione-Item {
+    padding: 5px;
+}
+
+/* stylelint-disable-next-line selector-max-id */
+.Hermione#lines {
+    width: 200px;
+}
+
+/* stylelint-disable selector-max-id */
+.Hermione#lines .Hermione-Item,
+.Hermione#lines-one .Hermione-Item,
+.Hermione#lines-false .Hermione-Item,
+.Hermione#indeterminate .Hermione-Item {
+    padding: 5px;
+}
+
+.Hermione#lines-one .Hermione-Item {
+    width: 200px;
+    padding-right: 20px;
+}
+
+.Hermione#lines-false {
+    max-width: 500px;
+}

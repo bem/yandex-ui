@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popup@desktop client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<RegistryResolver(Popup2)
+  className="mix"
+  hasTail={true}
+  visible={true}
+>
+  <Popup2
+    className="mix"
+    hasTail={true}
+    visible={true}
+  >
+    <Portal
+      containerInfo={
+        <body>
+          <div
+            class="Popup2 Popup2_visible mix"
+          >
+            content
+            <div
+              class="Popup2-Tail"
+            />
+          </div>
+        </body>
+      }
+    >
+      <div
+        className="Popup2 Popup2_visible mix"
+        style={
+          Object {
+            "zIndex": undefined,
+          }
+        }
+      >
+        content
+        <Component
+          style={
+            Object {
+              "height": undefined,
+              "width": undefined,
+            }
+          }
+        >
+          <div
+            className="Popup2-Tail"
+            style={
+              Object {
+                "height": undefined,
+                "width": undefined,
+              }
+            }
+          />
+        </Component>
+      </div>
+    </Portal>
+  </Popup2>
+</RegistryResolver(Popup2)>
+`;
+
+exports[`Popup@desktop server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `null`;
+
+exports[`Popup@touch-pad client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<RegistryResolver(Popup2)
+  className="mix"
+  hasTail={true}
+  visible={true}
+>
+  <Popup2
+    className="mix"
+    hasTail={true}
+    visible={true}
+  >
+    <Portal
+      containerInfo={
+        <body>
+          <div
+            class="Popup2 Popup2_visible mix"
+          >
+            content
+            <div
+              class="Popup2-Tail"
+            />
+          </div>
+        </body>
+      }
+    >
+      <div
+        className="Popup2 Popup2_visible mix"
+        style={
+          Object {
+            "zIndex": undefined,
+          }
+        }
+      >
+        content
+        <Component
+          style={
+            Object {
+              "height": undefined,
+              "width": undefined,
+            }
+          }
+        >
+          <div
+            className="Popup2-Tail"
+            style={
+              Object {
+                "height": undefined,
+                "width": undefined,
+              }
+            }
+          />
+        </Component>
+      </div>
+    </Portal>
+  </Popup2>
+</RegistryResolver(Popup2)>
+`;
+
+exports[`Popup@touch-pad server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `null`;
+
+exports[`Popup@touch-phone client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<RegistryResolver(Popup2)
+  className="mix"
+  hasTail={true}
+  visible={true}
+>
+  <Popup2
+    className="mix"
+    hasTail={true}
+    visible={true}
+  >
+    <Portal
+      containerInfo={
+        <body>
+          <div
+            class="Popup2 Popup2_visible mix"
+          >
+            content
+            <div
+              class="Popup2-Tail"
+            />
+          </div>
+        </body>
+      }
+    >
+      <div
+        className="Popup2 Popup2_visible mix"
+        style={
+          Object {
+            "zIndex": undefined,
+          }
+        }
+      >
+        content
+        <Component
+          style={
+            Object {
+              "height": undefined,
+              "width": undefined,
+            }
+          }
+        >
+          <div
+            className="Popup2-Tail"
+            style={
+              Object {
+                "height": undefined,
+                "width": undefined,
+              }
+            }
+          />
+        </Component>
+      </div>
+    </Portal>
+  </Popup2>
+</RegistryResolver(Popup2)>
+`;
+
+exports[`Popup@touch-phone server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `null`;

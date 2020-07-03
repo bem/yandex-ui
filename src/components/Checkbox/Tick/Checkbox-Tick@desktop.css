@@ -1,0 +1,21 @@
+/**
+ * 1. Хак с отложенным переходом visibility:hidden/visible.
+ *    Подробнее: http://www.greywyvern.com/?post=337
+ */
+
+/* classic design */
+.Checkbox_theme_normal .Checkbox-Tick,
+.Checkbox_theme_pseudo .Checkbox-Tick {
+    opacity: 0;
+
+    /* stylelint-disable-next-line time-min-milliseconds */
+    transition: bottom .05s, opacity .05s, visibility 0s .05s; /* 1 */
+    transition-timing-function: ease-out;
+}
+
+.Checkbox_theme_normal.Checkbox_checked .Checkbox-Tick,
+.Checkbox_theme_pseudo.Checkbox_checked .Checkbox-Tick {
+    opacity: 1;
+
+    transition-delay: 0s; /* 1 */
+}

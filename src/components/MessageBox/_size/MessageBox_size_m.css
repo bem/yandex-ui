@@ -1,0 +1,24 @@
+.MessageBox.MessageBox_size_m .MessageBox-Content {
+    min-width: var(--message-box-size-m-content-minWidth);
+    max-width: var(--message-box-size-m-content-maxWidth);
+}
+
+.MessageBox_size_m.MessageBox_layout_plain .MessageBox-Content {
+    width: var(--message-box-size-m-content-maxWidth);
+}
+
+.MessageBox_size_m.MessageBox_layout_functional .MessageBox-Content {
+    width: var(--message-box-size-m-content-functional-width);
+}
+
+.MessageBox_size_m.MessageBox_layout_plain .MessageBox-Content,
+.MessageBox_size_m.MessageBox_layout_functional .MessageBox-Content {
+    font-size: var(--message-box-size-m-fontSize);
+}
+
+.MessageBox_size_m.MessageBox_layout_tooltip .MessageBox-Content {
+    max-width: var(--message-box-size-m-content-tooltip-maxWidth);
+    padding: var(--message-box-size-m-content-spaceAll);
+
+    font-size: var(--message-box-size-m-tooltip-fontSize);
+}

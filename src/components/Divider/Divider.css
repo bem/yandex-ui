@@ -1,0 +1,21 @@
+.Divider {
+    display: flex;
+    align-items: center;
+
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.Divider-Line {
+    flex: 1 1 0;
+
+    background-color: var(--divider-fill-color);
+}
+
+.Divider-Line:first-child:not(:only-child) {
+    margin-right: var(--divider-indent-all);
+}
+
+.Divider-Line:last-child:not(:only-child) {
+    margin-left: var(--divider-indent-all);
+}

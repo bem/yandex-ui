@@ -1,0 +1,16 @@
+/*
+/ TODO https://st.yandex-team.ru/ISL-5465
+/ Временный модификатор для выравнивания по базовой линии, будет внедрено в следующем мажоре
+*/
+
+.Button2_baseline.Button2_width_auto .Button2-Text {
+    /* https://st.yandex-team.ru/ISL-5076
+    Фикс для firefox - при добавлении свойства overflow: hidden, у элемента перестает работать baseline */
+    overflow: -moz-hidden-unscrollable;
+}
+
+.Button2_baseline.Button2_width_max .Button2-Text {
+    /* https://st.yandex-team.ru/ISL-5076
+    Фикс для firefox - при добавлении свойства overflow: hidden, у элемента перестает работать baseline */
+    overflow: -moz-hidden-unscrollable;
+}

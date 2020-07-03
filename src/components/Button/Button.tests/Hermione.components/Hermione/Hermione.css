@@ -1,0 +1,44 @@
+/* Замораживаем анимацию для hermione */
+.Hermione .Button2::before {
+    animation-play-state: paused !important;
+}
+
+.Hermione-Item {
+    display: inline-block;
+
+    padding: 10px;
+
+    outline: 0;
+}
+
+/* stylelint-disable-next-line selector-max-id */
+.Hermione#static {
+    width: 720px;
+}
+
+/* stylelint-disable-next-line selector-max-id */
+.Hermione#static .Hermione-Item {
+    overflow: hidden;
+
+    width: 70px;
+    height: 28px;
+
+    text-align: center;
+}
+
+.Hermione-Gap {
+    display: inline-block;
+
+    width: 5px;
+}
+
+.Hermione-Gap:last-child {
+    display: none;
+}
+
+@media screen and (max-width: 400px) {
+    /* stylelint-disable-next-line selector-max-id */
+    .Hermione#static {
+        width: 320px;
+    }
+}

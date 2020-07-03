@@ -1,0 +1,6 @@
+.Text_typography_caption-m {
+    font-family: var(--text-caption-size-m-font-family);
+    font-size: var(--text-caption-size-m-font-size);
+    line-height: var(--text-caption-size-m-line-height);
+    letter-spacing: var(--text-caption-size-m-letter-spacing);
+}

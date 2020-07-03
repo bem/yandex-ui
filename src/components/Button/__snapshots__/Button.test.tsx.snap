@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button@desktop client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<button
+  autocomplete="off"
+  class="Button2 mix"
+  id="clientTemplateId"
+  type="button"
+>
+  <span
+    aria-hidden="true"
+    class="Icon Button2-Icon iconLeft"
+  />
+  <span
+    aria-hidden="true"
+    class="Icon Button2-Icon iconRight"
+  />
+</button>
+`;
+
+exports[`Button@desktop server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<button
+  autocomplete="off"
+  class="Button2 mix"
+  id="serverTemplateId"
+  type="button"
+/>
+`;
+
+exports[`Button@touch-pad client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<button
+  autocomplete="off"
+  class="Button2 mix"
+  id="clientTemplateId"
+  type="button"
+>
+  <span
+    aria-hidden="true"
+    class="Icon Button2-Icon iconLeft"
+  />
+  <span
+    aria-hidden="true"
+    class="Icon Button2-Icon iconRight"
+  />
+</button>
+`;
+
+exports[`Button@touch-pad server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<button
+  autocomplete="off"
+  class="Button2 mix"
+  id="serverTemplateId"
+  type="button"
+/>
+`;
+
+exports[`Button@touch-phone client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<button
+  autocomplete="off"
+  class="Button2 mix"
+  id="clientTemplateId"
+  type="button"
+>
+  <span
+    aria-hidden="true"
+    class="Icon Button2-Icon iconLeft"
+  />
+  <span
+    aria-hidden="true"
+    class="Icon Button2-Icon iconRight"
+  />
+</button>
+`;
+
+exports[`Button@touch-phone server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<button
+  autocomplete="off"
+  class="Button2 mix"
+  id="serverTemplateId"
+  type="button"
+/>
+`;

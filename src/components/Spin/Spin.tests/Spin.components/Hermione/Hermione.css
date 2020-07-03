@@ -1,0 +1,33 @@
+.Hermione {
+    position: relative;
+
+    display: block;
+
+    margin: 20px;
+}
+
+.Hermione_position_center,
+.Hermione_view_default {
+    display: inline-block;
+}
+
+.Hermione_view_default {
+    padding: 3px;
+}
+
+.Box {
+    position: relative;
+
+    display: inline-block;
+
+    width: 50px;
+    height: 50px;
+    margin: 0 5px;
+
+    border: 1px solid #ccc;
+}
+
+/* Замораживаем вращение для hermione */
+.Hermione .Spin2_progress {
+    animation-play-state: paused !important;
+}

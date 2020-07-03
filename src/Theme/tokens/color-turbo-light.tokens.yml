@@ -1,0 +1,11 @@
+color:
+  control:
+    type:
+      default:
+        fillColor:
+          base:
+            value: "#e5e5e5"
+      progress:
+        fillColor:
+          base:
+            value: "#067AFF"

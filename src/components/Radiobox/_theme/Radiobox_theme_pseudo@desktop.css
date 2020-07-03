@@ -1,0 +1,31 @@
+/**
+ * 1. Селектор удваивается, чтобы заменить html.utilityfocus
+ */
+
+@media all and (min-width: 0) {
+    .Radiobox_theme_pseudo .Radiobox-Label,
+    .Radiobox_theme_pseudo .Radiobox-Box::after {
+        transition: opacity .1s ease-out;
+    }
+
+    .Radiobox_theme_pseudo .Radiobox-Box::before {
+        transition: .1s ease-out;
+        transition-property: border-color, border-width, background-color;
+    }
+
+    /* _hovered */
+    .Radiobox_theme_pseudo .Radiobox-Radio_hovered .Radiobox-Box::before {
+        border-color: rgba(0, 0, 0, .3);
+    }
+
+    .Radiobox_theme_pseudo .Radiobox-Radio_hovered.Radiobox-Radio_checked .Radiobox-Box::before {
+        border-color: rgba(118, 94, 0, .65);
+    }
+
+    /* focused */
+    .utilityfocus.utilityfocus .Radiobox_theme_pseudo .Radiobox-Radio_focused .Radiobox-Box::before {
+        /* 1 */
+        border-width: 2px;
+        border-color: #ffdb4d;
+    }
+}

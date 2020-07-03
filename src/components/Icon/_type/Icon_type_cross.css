@@ -1,0 +1,8 @@
+.Icon_type_cross {
+    background-image: url('icon_type_cross.assets/cross-m.svg');
+}
+
+.Icon_size_s.Icon_type_cross,
+.Icon_size_xs.Icon_type_cross {
+    background-image: url('icon_type_cross.assets/cross-s.svg');
+}

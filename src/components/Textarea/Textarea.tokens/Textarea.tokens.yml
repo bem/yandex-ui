@@ -1,0 +1,47 @@
+textarea:
+  border:
+    width:
+      value: 2px
+    radius:
+      value: 4px
+
+  size:
+    s:
+      fontSize:
+        value: "{typography.controls.size.s.fontSize.value}"
+      spaceAll:
+        value: 6px
+      minWidth:
+        value: 180px
+      minHeight:
+        value: 32px
+
+      clear:
+        width:
+          value: 32px
+        height:
+          value: 32px
+
+      hint:
+        fontSize:
+          value: 12px
+
+    m:
+      fontSize:
+        value: "{typography.controls.size.m.fontSize.value}"
+      spaceAll:
+        value: 8px
+      minWidth:
+        value: 200px
+      minHeight:
+        value: 36px
+
+      clear:
+        width:
+          value: 36px
+        height:
+          value: 36px
+
+      hint:
+        fontSize:
+          value: 13px

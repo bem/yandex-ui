@@ -1,0 +1,19 @@
+# Progress
+progress:
+  height:
+    value: 3px
+  border:
+    radius:
+      value: 1.5px
+  fillColor:
+    value: "{color.control.type.default.fillColor.base.value}"
+divider:
+  fillColor:
+    value: "#e3e3e3"
+userPic:
+  size:
+    m:
+      size:
+        value: 48px
+      sizePlus:
+        value: 58px

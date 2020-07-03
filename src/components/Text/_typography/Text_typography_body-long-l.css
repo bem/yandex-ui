@@ -1,0 +1,6 @@
+.Text_typography_body-long-l {
+    font-family: var(--text-body-long-size-l-font-family);
+    font-size: var(--text-body-long-size-l-font-size);
+    line-height: var(--text-body-long-size-l-line-height);
+    letter-spacing: var(--text-body-long-size-l-letter-spacing);
+}

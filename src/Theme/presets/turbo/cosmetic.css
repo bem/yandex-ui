@@ -1,0 +1,26 @@
+.Theme_cosmetic_turbo {
+    --control-font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --button-border-width: 1px;
+    --button-borderRadius: 4px;
+    --checkbox-borderRadius: 4px;
+    --menu-group-borderWidth: 1px;
+    --popup-borderRadius: 4px;
+    --progress-border-radius: 1.5px;
+    --radioButton-borderRadius: 4px;
+    --radioButton-after-borderRadius: 2px;
+    --radiobox-borderRadius: 50%;
+    --radiobox-after-borderRadius: 50%;
+    --textarea-borderWidth: 2px;
+    --textarea-borderRadius: 4px;
+    --textinput-borderWidth: 2px;
+    --textinput-borderRadius: 4px;
+    --tooltip-borderRadius: 4px;
+    --tumbler-size-s-borderRadius: 8px;
+    --tumbler-size-s-button-borderRadius: 6px;
+    --tumbler-size-m-borderRadius: 10px;
+    --tumbler-size-m-button-borderRadius: 8px;
+    --tumbler-size-l-borderRadius: 14px;
+    --tumbler-size-l-button-borderRadius: 12px;
+    --message-box-borderRadius: 7px;
+    --message-box-hint-borderRadius: 4px;
+}

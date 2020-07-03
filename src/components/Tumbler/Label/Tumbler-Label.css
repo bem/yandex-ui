@@ -1,0 +1,6 @@
+.Tumbler-Label {
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+}

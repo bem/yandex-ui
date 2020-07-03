@@ -1,0 +1,7 @@
+.Link_theme_ghost {
+    color: #999;
+}
+
+.Link_theme_ghost[aria-disabled='true'] {
+    color: #ddd;
+}

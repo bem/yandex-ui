@@ -1,0 +1,62 @@
+/* common */
+.Textinput_view_default .Textinput-Box {
+    border: var(--textinput-borderWidth) solid var(--color-control-bg-border-blank);
+    border-radius: var(--textinput-borderRadius);
+    background-color: var(--color-control-bg-blank);
+
+    transition: background-color .15s linear;
+}
+
+.Textinput_view_default.Textinput_state_error .Textinput-Box {
+    border-color: var(--color-control-bg-border-default-error);
+}
+
+.Textinput_view_default .Textinput-Control {
+    color: var(--color-control-typo-primary);
+}
+
+.Textinput_view_default .Textinput-Control::placeholder {
+    color: var(--color-control-typo-ghost);
+}
+
+.Textinput_view_default .Textinput-Icon {
+    color: var(--color-control-typo-ghost);
+}
+
+.Textinput_view_default .Textinput-Clear {
+    transition: color .15s linear;
+}
+
+.Textinput_view_default.Textinput_size_s .Textinput-Clear svg {
+    width: 12px;
+    height: 12px;
+}
+
+.Textinput_view_default.Textinput_size_m .Textinput-Clear svg {
+    width: 14px;
+    height: 14px;
+}
+
+.Textinput_view_default.Textinput_state_error .Textinput-Hint {
+    color: var(--color-control-typo-error);
+}
+
+/* disable */
+.Textinput_view_default.Textinput_disabled .Textinput-Control {
+    color: var(--color-control-typo-disable);
+}
+
+.Textinput_view_default.Textinput_disabled .Textinput-Control::placeholder {
+    color: var(--color-control-typo-disable);
+}
+
+/* TODO: Усиливаем селектор для ie11 (оторвать после https://st.yandex-team.ru/ISL-7989) */
+.Textinput_view_default.Textinput_disabled .Textinput-Box {
+    border-color: var(--color-control-bg-border-blank-disable);
+    background-color: var(--color-control-bg-blank-disable);
+}
+
+/* focus */
+.Textinput.Textinput_view_default.Textinput_focused .Textinput-Box[class] {
+    border-color: var(--color-control-bg-border-focus);
+}

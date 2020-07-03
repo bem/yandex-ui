@@ -1,0 +1,12 @@
+/*
+/ TODO https://st.yandex-team.ru/ISL-5465
+/ Временный модификатор для выравнивания по базовой линии, будет внедрено в следующей мажорной версии
+*/
+
+.Textinput_baseline {
+    vertical-align: baseline;
+}
+
+.Textinput_baseline .Textinput-Control {
+    vertical-align: baseline;
+}

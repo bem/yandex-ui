@@ -1,0 +1,42 @@
+radiobox:
+  border:
+    radius:
+      value: 50%
+
+  after:
+    border:
+      radius:
+        value: 50%
+
+  size:
+    s:
+      fontSize:
+        value: "{typography.controls.size.s.fontSize.value}"
+      lineHeight:
+        value: 28px
+      size:
+        value: 13px
+      positionTop:
+        value: 2px
+      indentRight:
+        value: 5px
+
+      after:
+        size:
+          value: 5px
+
+    m:
+      fontSize:
+        value: "{typography.controls.size.m.fontSize.value}"
+      lineHeight:
+        value: 32px
+      size:
+        value: 17px
+      positionTop:
+        value: 3px
+      indentRight:
+        value: 6px
+
+      after:
+        size:
+          value: 7px

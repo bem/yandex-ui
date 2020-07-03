@@ -1,0 +1,15 @@
+radio-button-indent: radioButton-indent
+radio-button-border-radius: radioButton-borderRadius
+radio-button-after-border-radius: radioButton-after-borderRadius
+
+radio-button-size-s-font-size: radioButton-size-s-fontSize
+radio-button-size-m-font-size: radioButton-size-m-fontSize
+radio-button-size-l-font-size: radioButton-size-l-fontSize
+
+radio-button-size-s-line-height: radioButton-size-s-lineHeight
+radio-button-size-m-line-height: radioButton-size-m-lineHeight
+radio-button-size-l-line-height: radioButton-size-l-lineHeight
+
+radio-button-size-s-space: radioButton-size-s-space
+radio-button-size-m-space: radioButton-size-m-space
+radio-button-size-l-space: radioButton-size-l-space

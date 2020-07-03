@@ -1,0 +1,14 @@
+/* hover */
+.Button2_view_link:not([aria-disabled='true']):hover::before {
+    background-color: var(--color-control-bg-link-default-hover);
+}
+
+/* check */
+.Button2_view_link.Button2_checked:not([aria-disabled='true']):hover::before {
+    background-color: var(--color-control-bg-check-hover);
+}
+
+/* focus */
+.utilityfocus .Button2_view_link:focus::before {
+    border: 2px solid var(--color-control-bg-border-prism);
+}

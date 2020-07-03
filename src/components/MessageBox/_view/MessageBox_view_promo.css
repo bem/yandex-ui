@@ -1,0 +1,19 @@
+.MessageBox_view_promo,
+.MessageBox_view_promo .MessageBox-Close,
+.MessageBox_view_promo .Button2_view_clear {
+    color: var(--color-typo-inverse);
+}
+
+.MessageBox_view_promo .MessageBox-Tail {
+    color: var(--color-bg-promo);
+}
+
+.MessageBox_view_promo .MessageBox-Close::after,
+.MessageBox_view_promo .MessageBox-Backdrop::before {
+    background-color: var(--color-bg-promo);
+}
+
+.MessageBox_view_promo:not(.MessageBox_opaque) .MessageBox-Backdrop,
+.MessageBox_view_promo:not(.MessageBox_opaque) .MessageBox-Close:hover::after {
+    opacity: .85;
+}

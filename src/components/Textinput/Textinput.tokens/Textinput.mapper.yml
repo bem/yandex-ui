@@ -1,0 +1,17 @@
+textinput-border-width: textinput-borderWidth
+textinput-border-radius: textinput-borderRadius
+
+textinput-size-s-space-all: textinput-size-s-control-spaceAll
+textinput-size-m-space-all: textinput-size-m-control-spaceAll
+
+textinput-size-s-font-size: textinput-size-s-fontSize
+textinput-size-m-font-size: textinput-size-m-fontSize
+
+textinput-size-s-hint-font-size: textinput-hint-size-s-fontSize
+textinput-size-m-hint-font-size: textinput-hint-size-m-fontSize
+
+textinput-size-s-with-icon-space-right: textinput-size-s-has-icon-spaceRight
+textinput-size-m-with-icon-space-right: textinput-size-m-has-icon-spaceRight
+
+textinput-size-s-with-icon-space-left: textinput-size-s-has-icon-spaceLeft
+textinput-size-m-with-icon-space-left: textinput-size-m-has-icon-spaceLeft

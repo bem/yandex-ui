@@ -1,0 +1,25 @@
+/**
+ * 1. В эту и другие svg картинки зашит отступ в 1px, чтобы иконки не
+ *    обрезались при растеризации. Лечебный эффект особенно хорошо заметен в IE9,
+ *    но проявляется также и в других браузерах при масштабировании.
+ *    Было/Стало: https://jing.yandex-team.ru/files/karamadjong/2015-05-09_0222.png
+ */
+.Icon_type_arrow {
+    background-image: url('icon_type_arrow.assets/arrow-b.svg'); /* 1 */
+}
+
+.Icon_size_xs.Icon_type_arrow {
+    background-image: url('icon_type_arrow.assets/arrow-b-xs.svg');
+}
+
+.Icon_type_arrow.Icon_direction_left {
+    transform: rotate(90deg);
+}
+
+.Icon_type_arrow.Icon_direction_top {
+    transform: rotate(180deg);
+}
+
+.Icon_type_arrow.Icon_direction_right {
+    transform: rotate(-90deg);
+}

@@ -1,0 +1,71 @@
+# Button
+button-size-s-height:
+  value: 28px
+button-size-s-icon-width:
+  value: 28px
+button-size-m-height:
+  value: 32px
+button-size-m-icon-width:
+  value: 32px
+button-size-l-height:
+  value: 38px
+button-size-l-icon-width:
+  value: 38px
+button-size-s-lineHeight:
+  value: 28px
+button-size-m-lineHeight:
+  value: 32px
+button-size-l-lineHeight:
+  value: 38px
+
+# Textinput
+textinput-size-s-height:
+  value: 28px
+textinput-size-s-control-height:
+  value: 28px
+textinput-size-s-icon-width:
+  value: 28px
+textinput-size-s-icon-height:
+  value: 28px
+textinput-size-m-height:
+  value: 32px
+textinput-size-m-control-height:
+  value: 32px
+textinput-size-m-icon-width:
+  value: 32px
+textinput-size-m-icon-height:
+  value: 32px
+textinput-size-s-has-icon-spaceRight:
+  value: 22px
+textinput-size-s-has-icon-spaceLeft:
+  value: 22px
+textinput-size-m-has-icon-spaceRight:
+  value: 24px
+textinput-size-m-has-icon-spaceLeft:
+  value: 24px
+
+# Textarea
+textarea-size-s-minHeight:
+  value: 28px
+textarea-size-s-clear-width:
+  value: 28px
+textarea-size-s-clear-height:
+  value: 28px
+textarea-size-m-minHeight:
+  value: 32px
+textarea-size-m-clear-width:
+  value: 32px
+textarea-size-m-clear-height:
+  value: 32px
+
+# Menu
+menu-size-s-item-spaceHor:
+  value: 13px
+menu-size-s-itemIcon-indentRight:
+  value: 5px
+menu-size-m-itemIcon-indentRight:
+  value: 5px
+menu-size-s-lineHeight:
+  value: 24px
+menu-size-m-lineHeight:
+  value: 28px

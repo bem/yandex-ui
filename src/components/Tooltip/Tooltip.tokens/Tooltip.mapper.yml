@@ -1,0 +1,13 @@
+tooltip-border-radius: tooltip-borderRadius
+
+tooltip-size-s-font-size: tooltip-size-s-fontSize
+tooltip-size-m-font-size: tooltip-size-m-fontSize
+tooltip-size-l-font-size: tooltip-size-l-fontSize
+
+tooltip-size-s-line-height: tooltip-size-s-lineHeight
+tooltip-size-m-line-height: tooltip-size-m-lineHeight
+tooltip-size-l-line-height: tooltip-size-l-lineHeight
+
+tooltip-size-s-content-space-all: tooltip-size-s-content-spaceAll
+tooltip-size-m-content-space-all: tooltip-size-m-content-spaceAll
+tooltip-size-l-content-space-all: tooltip-size-l-content-spaceAll

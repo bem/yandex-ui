@@ -1,0 +1,5 @@
+divider:
+  indentAll:
+    value: 16px
+  fillColor:
+    value: "#fc0"

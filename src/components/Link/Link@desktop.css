@@ -1,0 +1,7 @@
+.Link {
+    cursor: pointer;
+}
+
+.Link[aria-disabled='true'] {
+    cursor: default;
+}

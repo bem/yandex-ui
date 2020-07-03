@@ -1,0 +1,33 @@
+/* Прячем скроллбар */
+::-webkit-scrollbar {
+    width: 0 !important;
+
+    background-color: transparent !important;
+}
+
+.BPage.IUa_platform_android,
+.IUa_platform_android .BPage {
+    overflow-y: hidden;
+}
+
+/**
+ * Для тестов анимацию сводим к минимуму для избежания мигания тестов.
+ * Оставляем 0.1s, для того чтобы срабатывали события animationend и transitionend.
+ */
+/* stylelint-disable-next-line selector-max-universal */
+*,
+::before,
+::after {
+    /* stylelint-disable-next-line time-min-milliseconds */
+    transition-delay: .1ms !important;
+    /* stylelint-disable-next-line time-min-milliseconds */
+    transition-duration: .1ms !important;
+    /* stylelint-disable-next-line time-min-milliseconds */
+    animation-duration: .1ms !important;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}

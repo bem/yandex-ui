@@ -1,0 +1,295 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Menu@desktop client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  aria-multiselectable="false"
+  class="Menu mix"
+>
+  <div
+    class="Menu-Group"
+    role="group"
+  >
+    <div
+      aria-hidden="true"
+      class="Menu-Title"
+    >
+      test1
+    </div>
+    <div
+      aria-selected="false"
+      class="Menu-Item"
+    >
+      <span
+        class="Menu-Text"
+      >
+        Тест1
+      </span>
+    </div>
+    <div
+      aria-selected="false"
+      class="Menu-Item"
+    >
+      <span
+        class="Menu-Text"
+      >
+        Тест2
+      </span>
+    </div>
+  </div>
+  <div
+    aria-selected="false"
+    class="Menu-Item"
+  >
+    <span
+      class="Menu-Text"
+    >
+      test2
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Menu@desktop server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  aria-multiselectable="false"
+  class="Menu mix"
+>
+  <div
+    class="Menu-Group"
+    role="group"
+  >
+    <div
+      aria-hidden="true"
+      class="Menu-Title"
+    >
+      test1
+    </div>
+    <div
+      aria-selected="false"
+      class="Menu-Item"
+    >
+      <span
+        class="Menu-Text"
+      >
+        Тест1
+      </span>
+    </div>
+    <div
+      aria-selected="false"
+      class="Menu-Item"
+    >
+      <span
+        class="Menu-Text"
+      >
+        Тест2
+      </span>
+    </div>
+  </div>
+  <div
+    aria-selected="false"
+    class="Menu-Item"
+  >
+    <span
+      class="Menu-Text"
+    >
+      test2
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Menu@touch-pad client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  aria-multiselectable="false"
+  class="Menu mix"
+>
+  <div
+    class="Menu-Group"
+    role="group"
+  >
+    <div
+      aria-hidden="true"
+      class="Menu-Title"
+    >
+      test1
+    </div>
+    <div
+      aria-selected="false"
+      class="Menu-Item"
+    >
+      <span
+        class="Menu-Text"
+      >
+        Тест1
+      </span>
+    </div>
+    <div
+      aria-selected="false"
+      class="Menu-Item"
+    >
+      <span
+        class="Menu-Text"
+      >
+        Тест2
+      </span>
+    </div>
+  </div>
+  <div
+    aria-selected="false"
+    class="Menu-Item"
+  >
+    <span
+      class="Menu-Text"
+    >
+      test2
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Menu@touch-pad server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  aria-multiselectable="false"
+  class="Menu mix"
+>
+  <div
+    class="Menu-Group"
+    role="group"
+  >
+    <div
+      aria-hidden="true"
+      class="Menu-Title"
+    >
+      test1
+    </div>
+    <div
+      aria-selected="false"
+      class="Menu-Item"
+    >
+      <span
+        class="Menu-Text"
+      >
+        Тест1
+      </span>
+    </div>
+    <div
+      aria-selected="false"
+      class="Menu-Item"
+    >
+      <span
+        class="Menu-Text"
+      >
+        Тест2
+      </span>
+    </div>
+  </div>
+  <div
+    aria-selected="false"
+    class="Menu-Item"
+  >
+    <span
+      class="Menu-Text"
+    >
+      test2
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Menu@touch-phone client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  aria-multiselectable="false"
+  class="Menu mix"
+>
+  <div
+    class="Menu-Group"
+    role="group"
+  >
+    <div
+      aria-hidden="true"
+      class="Menu-Title"
+    >
+      test1
+    </div>
+    <div
+      aria-selected="false"
+      class="Menu-Item"
+    >
+      <span
+        class="Menu-Text"
+      >
+        Тест1
+      </span>
+    </div>
+    <div
+      aria-selected="false"
+      class="Menu-Item"
+    >
+      <span
+        class="Menu-Text"
+      >
+        Тест2
+      </span>
+    </div>
+  </div>
+  <div
+    aria-selected="false"
+    class="Menu-Item"
+  >
+    <span
+      class="Menu-Text"
+    >
+      test2
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Menu@touch-phone server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  aria-multiselectable="false"
+  class="Menu mix"
+>
+  <div
+    class="Menu-Group"
+    role="group"
+  >
+    <div
+      aria-hidden="true"
+      class="Menu-Title"
+    >
+      test1
+    </div>
+    <div
+      aria-selected="false"
+      class="Menu-Item"
+    >
+      <span
+        class="Menu-Text"
+      >
+        Тест1
+      </span>
+    </div>
+    <div
+      aria-selected="false"
+      class="Menu-Item"
+    >
+      <span
+        class="Menu-Text"
+      >
+        Тест2
+      </span>
+    </div>
+  </div>
+  <div
+    aria-selected="false"
+    class="Menu-Item"
+  >
+    <span
+      class="Menu-Text"
+    >
+      test2
+    </span>
+  </div>
+</div>
+`;

@@ -1,0 +1,6 @@
+.Text_typography_control-l {
+    font-family: var(--text-control-size-l-font-family);
+    font-size: var(--text-control-size-l-font-size);
+    line-height: var(--text-control-size-l-line-height);
+    letter-spacing: var(--text-control-size-l-letter-spacing);
+}

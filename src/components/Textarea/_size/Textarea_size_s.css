@@ -1,0 +1,21 @@
+.Textarea_size_s {
+    min-width: var(--textarea-size-s-minWidth);
+    min-height: var(--textarea-size-s-minHeight);
+}
+
+.Textarea_size_s .Textarea-Control {
+    padding: var(--textarea-size-s-spaceAll);
+
+    font-size: var(--textarea-size-s-fontSize);
+}
+
+/* Усиливаем селектор, для того, чтобы при раскрытии переменных иметь большую специфичность. */
+.Textarea.Textarea_size_s.Textarea_hasClear .Textarea-Control {
+    /* Подобрано на глаз, необходимо для того, чтобы скрыть скролл. */
+    padding-right: 25%;
+}
+
+.Textarea_size_s .Textarea-Clear {
+    width: var(--textarea-size-s-clear-width);
+    height: var(--textarea-size-s-clear-height);
+}

@@ -1,0 +1,27 @@
+.Checkbox_size_s {
+    font-size: var(--checkbox-size-s-fontSize);
+}
+
+.Checkbox.Checkbox_size_s .Checkbox-Box {
+    width: var(--checkbox-size-s-width);
+    height: var(--checkbox-size-s-height);
+}
+
+.Checkbox_size_s .Checkbox-Label {
+    padding-left: var(--checkbox-size-s-indentLeft);
+}
+
+/* classic design */
+.Checkbox_theme_normal.Checkbox_size_s .Checkbox-Tick,
+.Checkbox_theme_pseudo.Checkbox_size_s .Checkbox-Tick {
+    bottom: 8px;
+    left: 2px;
+
+    width: 16px;
+    height: 16px;
+}
+
+.Checkbox_theme_normal.Checkbox_size_s.Checkbox_checked .Checkbox-Tick,
+.Checkbox_theme_pseudo.Checkbox_size_s.Checkbox_checked .Checkbox-Tick {
+    bottom: 3px;
+}

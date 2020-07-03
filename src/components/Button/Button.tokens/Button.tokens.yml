@@ -1,0 +1,67 @@
+button:
+  border:
+    width:
+      value: 1px
+    radius:
+      value: 4px
+
+  size:
+    s:
+      fontSize:
+        value: "{typography.controls.size.s.fontSize.value}"
+      lineHeight:
+        value: 32px
+      height:
+        value: 32px
+
+      icon:
+        width:
+          value: 32px
+        indentLeft:
+          value: 25px
+        indentRight:
+          value: 25px
+
+      text:
+        indentAll:
+          value: 0 13px
+
+    m:
+      fontSize:
+        value: "{typography.controls.size.m.fontSize.value}"
+      lineHeight:
+        value: 36px
+      height:
+        value: 36px
+
+      icon:
+        width:
+          value: 36px
+        indentLeft:
+          value: 29px
+        indentRight:
+          value: 29px
+
+      text:
+        indentAll:
+          value: 0 15px
+
+    l:
+      fontSize:
+        value: "{typography.controls.size.l.fontSize.value}"
+      lineHeight:
+        value: 42px
+      height:
+        value: 42px
+
+      icon:
+        width:
+          value: 42px
+        indentLeft:
+          value: 35px
+        indentRight:
+          value: 35px
+
+      text:
+        indentAll:
+          value: 0 18px

@@ -1,0 +1,12 @@
+.Checkbox-Box {
+    cursor: pointer;
+}
+
+.Checkbox_disabled .Checkbox-Box {
+    cursor: default;
+}
+
+.Checkbox-Box::before {
+    transition: .1s ease-out;
+    transition-property: border-color, border-width, background-color;
+}

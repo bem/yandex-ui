@@ -1,0 +1,517 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Popup_target_anchor@desktop client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<WithBemMod(Popup2)[target:anchor]
+  anchor={
+    Object {
+      "current": null,
+    }
+  }
+  getPossibleDrawingParams={[Function]}
+  hasTail={true}
+  target="anchor"
+  visible={true}
+>
+  <WithBemModEnhance(RegistryResolver(Popup2))
+    anchor={
+      Object {
+        "current": null,
+      }
+    }
+    className="Popup2_target_anchor"
+    directions={
+      Array [
+        "bottom-left",
+        "bottom-center",
+        "bottom-right",
+        "top-left",
+        "top-center",
+        "top-right",
+        "right-top",
+        "right-center",
+        "right-bottom",
+        "left-top",
+        "left-center",
+        "left-bottom",
+      ]
+    }
+    getPossibleDrawingParams={[Function]}
+    hasTail={true}
+    mainOffset={0}
+    scope={
+      Object {
+        "current": <body>
+          <div
+            class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor"
+            style="top: -9999px; left: -9999px;"
+          >
+            content
+            <div
+              class="Popup2-Tail"
+            />
+          </div>
+        </body>,
+      }
+    }
+    secondaryOffset={0}
+    tailOffset={0}
+    target="anchor"
+    viewportOffset={0}
+    visible={true}
+  >
+    <RegistryResolver(Popup2)
+      className="Popup2_target_anchor"
+      direction="bottom-left"
+      hasTail={true}
+      innerRef={[Function]}
+      position={
+        Object {
+          "left": -9999,
+          "top": -9999,
+        }
+      }
+      scope={
+        Object {
+          "current": <body>
+            <div
+              class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor"
+              style="top: -9999px; left: -9999px;"
+            >
+              content
+              <div
+                class="Popup2-Tail"
+              />
+            </div>
+          </body>,
+        }
+      }
+      tailRef={[Function]}
+      visible={true}
+    >
+      <Popup2
+        className="Popup2_target_anchor"
+        direction="bottom-left"
+        hasTail={true}
+        innerRef={[Function]}
+        position={
+          Object {
+            "left": -9999,
+            "top": -9999,
+          }
+        }
+        scope={
+          Object {
+            "current": <body>
+              <div
+                class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor"
+                style="top: -9999px; left: -9999px;"
+              >
+                content
+                <div
+                  class="Popup2-Tail"
+                />
+              </div>
+            </body>,
+          }
+        }
+        tailRef={[Function]}
+        visible={true}
+      >
+        <Portal
+          containerInfo={
+            <body>
+              <div
+                class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor"
+                style="top: -9999px; left: -9999px;"
+              >
+                content
+                <div
+                  class="Popup2-Tail"
+                />
+              </div>
+            </body>
+          }
+        >
+          <div
+            className="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor"
+            style={
+              Object {
+                "left": -9999,
+                "top": -9999,
+                "zIndex": undefined,
+              }
+            }
+          >
+            content
+            <Component
+              innerRef={[Function]}
+              style={
+                Object {
+                  "height": undefined,
+                  "width": undefined,
+                }
+              }
+            >
+              <div
+                className="Popup2-Tail"
+                style={
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  }
+                }
+              />
+            </Component>
+          </div>
+        </Portal>
+      </Popup2>
+    </RegistryResolver(Popup2)>
+  </WithBemModEnhance(RegistryResolver(Popup2))>
+</WithBemMod(Popup2)[target:anchor]>
+`;
+
+exports[`Popup_target_anchor@desktop server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `null`;
+
+exports[`Popup_target_anchor@touch-pad client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<WithBemMod(Popup2)[target:anchor]
+  anchor={
+    Object {
+      "current": null,
+    }
+  }
+  getPossibleDrawingParams={[Function]}
+  hasTail={true}
+  target="anchor"
+  visible={true}
+>
+  <WithBemModEnhance(RegistryResolver(Popup2))
+    anchor={
+      Object {
+        "current": null,
+      }
+    }
+    className="Popup2_target_anchor"
+    directions={
+      Array [
+        "bottom-left",
+        "bottom-center",
+        "bottom-right",
+        "top-left",
+        "top-center",
+        "top-right",
+        "right-top",
+        "right-center",
+        "right-bottom",
+        "left-top",
+        "left-center",
+        "left-bottom",
+      ]
+    }
+    getPossibleDrawingParams={[Function]}
+    hasTail={true}
+    mainOffset={0}
+    scope={
+      Object {
+        "current": <body>
+          <div
+            class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor"
+            style="top: -9999px; left: -9999px;"
+          >
+            content
+            <div
+              class="Popup2-Tail"
+            />
+          </div>
+        </body>,
+      }
+    }
+    secondaryOffset={0}
+    tailOffset={0}
+    target="anchor"
+    viewportOffset={0}
+    visible={true}
+  >
+    <RegistryResolver(Popup2)
+      className="Popup2_target_anchor"
+      direction="bottom-left"
+      hasTail={true}
+      innerRef={[Function]}
+      position={
+        Object {
+          "left": -9999,
+          "top": -9999,
+        }
+      }
+      scope={
+        Object {
+          "current": <body>
+            <div
+              class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor"
+              style="top: -9999px; left: -9999px;"
+            >
+              content
+              <div
+                class="Popup2-Tail"
+              />
+            </div>
+          </body>,
+        }
+      }
+      tailRef={[Function]}
+      visible={true}
+    >
+      <Popup2
+        className="Popup2_target_anchor"
+        direction="bottom-left"
+        hasTail={true}
+        innerRef={[Function]}
+        position={
+          Object {
+            "left": -9999,
+            "top": -9999,
+          }
+        }
+        scope={
+          Object {
+            "current": <body>
+              <div
+                class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor"
+                style="top: -9999px; left: -9999px;"
+              >
+                content
+                <div
+                  class="Popup2-Tail"
+                />
+              </div>
+            </body>,
+          }
+        }
+        tailRef={[Function]}
+        visible={true}
+      >
+        <Portal
+          containerInfo={
+            <body>
+              <div
+                class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor"
+                style="top: -9999px; left: -9999px;"
+              >
+                content
+                <div
+                  class="Popup2-Tail"
+                />
+              </div>
+            </body>
+          }
+        >
+          <div
+            className="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor"
+            style={
+              Object {
+                "left": -9999,
+                "top": -9999,
+                "zIndex": undefined,
+              }
+            }
+          >
+            content
+            <Component
+              innerRef={[Function]}
+              style={
+                Object {
+                  "height": undefined,
+                  "width": undefined,
+                }
+              }
+            >
+              <div
+                className="Popup2-Tail"
+                style={
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  }
+                }
+              />
+            </Component>
+          </div>
+        </Portal>
+      </Popup2>
+    </RegistryResolver(Popup2)>
+  </WithBemModEnhance(RegistryResolver(Popup2))>
+</WithBemMod(Popup2)[target:anchor]>
+`;
+
+exports[`Popup_target_anchor@touch-pad server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `null`;
+
+exports[`Popup_target_anchor@touch-phone client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<WithBemMod(Popup2)[target:anchor]
+  anchor={
+    Object {
+      "current": null,
+    }
+  }
+  getPossibleDrawingParams={[Function]}
+  hasTail={true}
+  target="anchor"
+  visible={true}
+>
+  <WithBemModEnhance(RegistryResolver(Popup2))
+    anchor={
+      Object {
+        "current": null,
+      }
+    }
+    className="Popup2_target_anchor"
+    directions={
+      Array [
+        "bottom-left",
+        "bottom-center",
+        "bottom-right",
+        "top-left",
+        "top-center",
+        "top-right",
+        "right-top",
+        "right-center",
+        "right-bottom",
+        "left-top",
+        "left-center",
+        "left-bottom",
+      ]
+    }
+    getPossibleDrawingParams={[Function]}
+    hasTail={true}
+    mainOffset={0}
+    scope={
+      Object {
+        "current": <body>
+          <div
+            class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor"
+            style="top: -9999px; left: -9999px;"
+          >
+            content
+            <div
+              class="Popup2-Tail"
+            />
+          </div>
+        </body>,
+      }
+    }
+    secondaryOffset={0}
+    tailOffset={0}
+    target="anchor"
+    viewportOffset={0}
+    visible={true}
+  >
+    <RegistryResolver(Popup2)
+      className="Popup2_target_anchor"
+      direction="bottom-left"
+      hasTail={true}
+      innerRef={[Function]}
+      position={
+        Object {
+          "left": -9999,
+          "top": -9999,
+        }
+      }
+      scope={
+        Object {
+          "current": <body>
+            <div
+              class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor"
+              style="top: -9999px; left: -9999px;"
+            >
+              content
+              <div
+                class="Popup2-Tail"
+              />
+            </div>
+          </body>,
+        }
+      }
+      tailRef={[Function]}
+      visible={true}
+    >
+      <Popup2
+        className="Popup2_target_anchor"
+        direction="bottom-left"
+        hasTail={true}
+        innerRef={[Function]}
+        position={
+          Object {
+            "left": -9999,
+            "top": -9999,
+          }
+        }
+        scope={
+          Object {
+            "current": <body>
+              <div
+                class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor"
+                style="top: -9999px; left: -9999px;"
+              >
+                content
+                <div
+                  class="Popup2-Tail"
+                />
+              </div>
+            </body>,
+          }
+        }
+        tailRef={[Function]}
+        visible={true}
+      >
+        <Portal
+          containerInfo={
+            <body>
+              <div
+                class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor"
+                style="top: -9999px; left: -9999px;"
+              >
+                content
+                <div
+                  class="Popup2-Tail"
+                />
+              </div>
+            </body>
+          }
+        >
+          <div
+            className="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor"
+            style={
+              Object {
+                "left": -9999,
+                "top": -9999,
+                "zIndex": undefined,
+              }
+            }
+          >
+            content
+            <Component
+              innerRef={[Function]}
+              style={
+                Object {
+                  "height": undefined,
+                  "width": undefined,
+                }
+              }
+            >
+              <div
+                className="Popup2-Tail"
+                style={
+                  Object {
+                    "height": undefined,
+                    "width": undefined,
+                  }
+                }
+              />
+            </Component>
+          </div>
+        </Portal>
+      </Popup2>
+    </RegistryResolver(Popup2)>
+  </WithBemModEnhance(RegistryResolver(Popup2))>
+</WithBemMod(Popup2)[target:anchor]>
+`;
+
+exports[`Popup_target_anchor@touch-phone server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `null`;

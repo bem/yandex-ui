@@ -1,0 +1,7 @@
+.Link_theme_normal {
+    color: #04b;
+}
+
+.Link_theme_normal[aria-disabled='true'] {
+    color: #ddd;
+}

@@ -1,0 +1,14 @@
+/**
+ * 1. В FF необходимо обнулить font-size либо line-height,
+ *    иначе высота блока будет больше чем его содержимое
+ */
+.Select2 {
+    position: relative;
+
+    display: inline-block;
+
+    max-width: 100%;
+
+    font-size: 0; /* 1 */
+    vertical-align: bottom;
+}

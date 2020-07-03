@@ -1,0 +1,12 @@
+.Radiobox {
+    display: inline-block;
+
+    font-family: var(--control-font-family);
+    user-select: none;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.Radiobox-Radio_disabled {
+    pointer-events: none;
+}

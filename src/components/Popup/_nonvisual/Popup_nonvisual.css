@@ -1,0 +1,13 @@
+/* TODO: Усиливаем селектор для ie11 (оторвать после https://st.yandex-team.ru/ISL-7989) */
+.Popup2.Popup2_nonvisual[class] {
+    border: 0;
+    background: none;
+    box-shadow: none;
+}
+
+/* TODO: Усиливаем селектор для ie11 (оторвать после https://st.yandex-team.ru/ISL-7989) */
+.Popup2.Popup2_nonvisual[class]::before {
+    content: none;
+
+    box-shadow: none;
+}

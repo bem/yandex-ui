@@ -1,0 +1,249 @@
+color:
+  base:
+    value: "#fff"
+  essential:
+    value: "#211f1f"
+  project:
+    value: "#fc0"
+  phantom:
+    value: "#fff"
+  path:
+    value: "#207adb"
+  success:
+    value: "#00985f"
+  alert:
+    value: "#ff5454"
+  warning:
+    value: "#f90"
+  normal:
+    value: "#dde3e5"
+  system:
+    value: "#778a9b"
+  promo:
+    value: "#fc0"
+
+  fillColor:
+    brand:
+      value: "{color.project.value}"
+    inverse:
+      value: "{color.base.value}"
+    action:
+      value: "color({color.project.value} l(+15%))"
+    selection:
+      value: "color({color.project.value} l(+31%) h(-1))"
+    hover:
+      value: "color({color.base.value} a(15%) })"
+    border:
+      value: "color({color.phantom.value} a(5%) })"
+    stripe:
+      value: "color({color.phantom.value} a(4%) })"
+    ghost:
+      value: "color({color.phantom.value} a(8%) })"
+    default:
+      value: "{color.essential.value}"
+    tone:
+      value: "color({color.phantom.value} a(90%) })"
+    soft:
+      value: "color({color.essential.value} a(97%) })"
+    success:
+      value: "{color.success.value}"
+    alert:
+      value: "{color.alert.value}"
+    warning:
+      value: "{color.warning.value}"
+    normal:
+      value: "{color.normal.value}"
+    system:
+      value: "{color.system.value}"
+    link:
+      value: "color({color.path.value} h(-7%) s(-13) l(+14) a(40%))"
+    promo:
+      value: "{color.promo.value}"
+
+  typo:
+    brand:
+      value: "{color.project.value}"
+    primary:
+      value: "{color.base.value}"
+    inverse:
+      value: "{color.essential.value}"
+    promo:
+      value: "color({color.base.value} a(80%))"
+    secondary:
+      value: "color({color.base.value} a(60%))"
+    ghost:
+      value: "color({color.base.value} a(30%))"
+    disable:
+      value: "color({color.base.value} a(30%))"
+    success:
+      value: "{color.success.value}"
+    warning:
+      value: "{color.warning.value}"
+    alert:
+      value: "color({color.alert.value} l(70%))"
+
+  link:
+    base:
+      value: "{color.path.value}"
+    external:
+      value: "{color.path.value}"
+    minor:
+      value: "color({color.path.value} h(+22) s(-80%) l(+13%))"
+    hover:
+      value: "color({color.path.value} l(-7%))"
+
+  control:
+    borderColor:
+      focus:
+        value: "color({color.essential.value} l(45%))"
+      prism:
+        value: "{color.project.value}"
+
+    typo:
+      primary:
+        value: "{color.base.value}"
+      secondary:
+        value: "color({color.base.value} a(60%))"
+      ghost:
+        value: "color({color.base.value} a(30%))"
+      passive:
+        value: "{color.essential.value}"
+      faint:
+        value: "{color.essential.value}"
+      disable:
+        value: "color({color.phantom.value} a(60%))"
+      link:
+        value: "{color.path.value}"
+      error:
+        value: "color({color.alert.value} l(70%))"
+
+    type:
+      default:
+        fillColor:
+          base:
+            value: "color({color.essential.value} l(26%))"
+          hover:
+            value: "color({color.essential.value} l(39%))"
+          press:
+            value: "color({color.essential.value} l(39%))"
+          disable:
+            value: "color({color.essential.value} l(18%))"
+
+        borderColor:
+          base:
+            value: "color({color.phantom.value} l(50%))"
+          hover:
+            value: "color({color.phantom.value} l(65%))"
+          press:
+            value: "color({color.phantom.value} l(70%))"
+          disable:
+            value: "color({color.phantom.value} l(10%))"
+          error:
+            base:
+              value: "{color.alert.value}"
+            hover:
+              value: "color({color.alert.value} s(-10%) l(+8%))"
+
+      pseudo:
+        fillColor:
+          base:
+            value: "{color.essential.value}"
+          hover:
+            value: "color({color.essential.value} l(39%))"
+        borderColor:
+          base:
+            value: "color({color.essential.value} l(35%))"
+
+      action:
+        fillColor:
+          base:
+            value: "{color.project.value}"
+          hover:
+            value: "color({color.project.value} h(-2%) l(-1%))"
+          press:
+            value: "color({color.project.value} h(-2%) l(-1%))"
+
+      passive:
+        fillColor:
+          base:
+            value: "{color.essential.value}"
+
+      progress:
+        fillColor:
+          base:
+            value: "{color.project.value}"
+          process:
+            value: "color({color.project.value} h(+2%))"
+
+      blank:
+        fillColor:
+          base:
+            value: "color({color.essential.value} l(26%))"
+          hover:
+            value: "color({color.essential.value} l(27%))"
+          disable:
+            value: "color({color.essential.value} l(41%))"
+
+        borderColor:
+          base:
+            value: "color({color.phantom.value} a(10%))"
+          hover:
+            value: "color({color.phantom.value} a(15%))"
+          disable:
+            value: "color({color.essential.value} a(0%))"
+
+      faint:
+        fillColor:
+          base:
+            value: "{color.essential.value}"
+          disable:
+            value: "color({color.essential.value} l(78%))"
+
+      check:
+        fillColor:
+          base:
+            value: "{color.project.value}"
+          hover:
+            value: "{color.project.value}"
+          press:
+            value: "{color.project.value}"
+          disable:
+            value: "{color.project.value}"
+
+        borderColor:
+          base:
+            value: "color({color.project.value} l(33%))"
+          hover:
+            value: "color({color.project.value} l(33%))"
+          press:
+            value: "color({color.project.value} l(33%))"
+
+      link:
+        fillColor:
+          base:
+            value: "{color.path.value}"
+          hover:
+            value: "color({color.path.value} a(20%))"
+
+        borderColor:
+          base:
+            value: "{color.path.value}"
+          hover:
+            value: "{color.path.value}"
+
+      raised:
+        typo:
+          base:
+            value: "#fff"
+          disable:
+            value: "#899094"
+
+        fillColor:
+          base:
+            value: "#29363c"
+          hover:
+            value: "#364248"
+          disable:
+            value: "#303f46"
+          check:
+            value: "#29363c"

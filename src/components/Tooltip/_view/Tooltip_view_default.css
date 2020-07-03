@@ -1,0 +1,45 @@
+.Tooltip_view_default.Popup2_view_default {
+    background: none;
+    box-shadow: none;
+}
+
+.Tooltip_view_default .Tooltip-Backdrop::before {
+    border-radius: var(--tooltip-borderRadius);
+    background-color: var(--color-control-bg-default);
+    /* TODO: Устанавливать тень из темы. */
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .4);
+}
+
+/* Убираем ненужную часть хвостика из Popup, т.к. в новом дизайне нет обводки. */
+.Tooltip.Tooltip_view_default .Popup2-Tail::after {
+    content: none;
+}
+
+.Tooltip.Tooltip_view_default .Popup2-Tail::before {
+    top: 0;
+    right: 0;
+
+    border: none;
+    background-color: var(--color-control-bg-default);
+}
+
+.Tooltip_view_default.Tooltip_state_success,
+.Tooltip_view_default.Tooltip_state_warning,
+.Tooltip_view_default.Tooltip_state_alert {
+    color: var(--color-control-typo-faint);
+}
+
+.Tooltip_view_default.Tooltip_state_success .Tooltip-Backdrop::before,
+.Tooltip_view_default.Tooltip_state_success .Popup2-Tail::before {
+    background-color: var(--color-bg-success);
+}
+
+.Tooltip_view_default.Tooltip_state_warning .Tooltip-Backdrop::before,
+.Tooltip_view_default.Tooltip_state_warning .Popup2-Tail::before {
+    background-color: var(--color-bg-warning);
+}
+
+.Tooltip_view_default.Tooltip_state_alert .Tooltip-Backdrop::before,
+.Tooltip_view_default.Tooltip_state_alert .Popup2-Tail::before {
+    background-color: var(--color-bg-alert);
+}

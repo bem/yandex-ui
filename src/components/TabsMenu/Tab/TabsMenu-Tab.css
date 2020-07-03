@@ -1,0 +1,15 @@
+.TabsMenu-Tab {
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.TabsMenu-Tab_disabled {
+    cursor: default;
+}
+
+.TabsMenu-Tab .Link {
+    position: relative;
+
+    display: inline-block;
+}

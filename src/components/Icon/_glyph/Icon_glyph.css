@@ -1,0 +1,17 @@
+.Icon_hasGlyph {
+    position: relative;
+}
+
+.Icon_hasGlyph svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+/* stylelint-disable selector-max-universal */
+.Icon_hasGlyph svg,
+.Icon_hasGlyph svg * {
+    fill: currentColor;
+}

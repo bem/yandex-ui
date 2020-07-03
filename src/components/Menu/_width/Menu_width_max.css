@@ -1,0 +1,9 @@
+.Menu_width_max {
+    width: 100%;
+}
+
+.Menu_width_max .Menu-Item {
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}

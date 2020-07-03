@@ -1,0 +1,12 @@
+tabsMenu:
+  size:
+    s:
+      fontSize:
+        value: "{typography.controls.size.s.fontSize.value}"
+      lineHeight:
+        value: 28px
+    m:
+      fontSize:
+        value: "{typography.controls.size.m.fontSize.value}"
+      lineHeight:
+        value: 36px

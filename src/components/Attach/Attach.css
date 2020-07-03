@@ -1,0 +1,22 @@
+.Attach {
+    display: inline-flex;
+
+    white-space: nowrap;
+}
+
+/* Оптимизация css для элементов holder && reset */
+.Attach-IconFile,
+.Attach-Reset {
+    width: 1px;
+    height: 1px;
+}
+
+.Attach_disabled .Attach-Holder {
+    pointer-events: none;
+
+    opacity: .6;
+}
+
+.Attach_disabled .Attach-Control {
+    cursor: default;
+}

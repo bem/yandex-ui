@@ -1,0 +1,4 @@
+.Button2.Button2_theme_websearch:not([aria-disabled='true']):hover .Button2-Text {
+    border-color: #ffd633;
+    background-color: #ffd633;
+}

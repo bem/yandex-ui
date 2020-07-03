@@ -1,0 +1,7 @@
+.Link_theme_ghost:not([aria-disabled='true']):hover {
+    color: #000;
+}
+
+.utilityfocus .Link_theme_ghost:focus {
+    outline: 2px solid #fc0;
+}

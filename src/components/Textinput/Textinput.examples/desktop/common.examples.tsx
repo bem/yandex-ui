@@ -1,0 +1,143 @@
+import React, { useState } from 'react';
+
+import { Textinput } from '../../Textinput.bundle/desktop';
+import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
+
+export default {
+    title: EXAMPLE_DESKTOP_TOKEN,
+    decorators: createDecorators({ scope: 'desktop' }),
+    parameters,
+};
+
+export const Baseline = () => (
+    <div style={{ display: 'inline-block', width: 330 }}>
+        <Textinput baseline size="m" view="default" defaultValue="Hello" style={{ margin: 4, width: 150 }} />
+        <Textinput baseline size="s" view="default" defaultValue="World" style={{ margin: 4, width: 150 }} />
+    </div>
+);
+
+Baseline.story = {
+    name: 'baseline',
+};
+
+export const HasClear = () => {
+    const [value1, setValue1] = useState('');
+    const [value2, setValue2] = useState('');
+
+    return (
+        <>
+            <div style={{ padding: 4 }}>
+                <Textinput
+                    hasClear
+                    size="m"
+                    view="default"
+                    value={value1}
+                    onChange={(event) => setValue1(event.target.value)}
+                    onClearClick={() => setValue1('')}
+                />
+            </div>
+            <div style={{ padding: 4 }}>
+                <Textinput
+                    hasClear
+                    size="m"
+                    theme="normal"
+                    value={value2}
+                    onChange={(event) => setValue2(event.target.value)}
+                    onClearClick={() => setValue2('')}
+                />
+            </div>
+        </>
+    );
+};
+
+HasClear.story = {
+    name: 'hasClear',
+};
+
+export const Pin = () => {
+    const rPins = ['round-round', 'round-clear', 'clear-round', 'round-brick', 'brick-round'];
+    const qPins = ['brick-brick', 'brick-clear', 'clear-brick'];
+    return (
+        <>
+            <p>Поля со скругленными уголками</p>
+            {rPins.map((pin: any) => (
+                <Textinput key={pin} size="m" view="default" pin={pin} value={`pin=${pin}`} />
+            ))}
+            <p>Поля с прямоугольными уголками</p>
+            {qPins.map((pin: any) => (
+                <Textinput key={pin} size="m" view="default" pin={pin} value={`pin=${pin}`} />
+            ))}
+            <p>Поле без боковых границ</p>
+            <Textinput size="m" view="default" pin="clear-clear" value="pin=clear-clear" />
+        </>
+    );
+};
+
+Pin.story = {
+    name: 'pin',
+};
+
+export const Size = () => (
+    <>
+        <div style={{ padding: 4 }}>
+            <Textinput size="m" view="default" defaultValue="size m" />
+        </div>
+        <div style={{ padding: 4 }}>
+            <Textinput size="s" view="default" defaultValue="size s" />
+        </div>
+    </>
+);
+
+Size.story = {
+    name: 'size',
+};
+
+export const Theme = () => (
+    <>
+        <div style={{ padding: 4 }}>
+            <Textinput theme="normal" size="m" defaultValue="theme normal" />
+        </div>
+        <div style={{ padding: 4 }}>
+            <Textinput theme="websearch" defaultValue="theme websearch" />
+        </div>
+    </>
+);
+
+Theme.story = {
+    name: 'theme',
+};
+
+export const Type = () => (
+    <>
+        <div style={{ padding: 4 }}>
+            <Textinput size="m" view="default" type="number" defaultValue="200" />
+        </div>
+        <div style={{ padding: 4 }}>
+            <Textinput size="m" view="default" type="password" defaultValue="secret" />
+        </div>
+    </>
+);
+
+Type.story = {
+    name: 'type',
+};
+
+export const View = () => (
+    <>
+        <Textinput size="m" view="default" defaultValue="view default" />
+    </>
+);
+
+View.story = {
+    name: 'view',
+};
+
+export const State = () => (
+    <>
+        <Textinput state="error" hint="Error message" size="m" view="default" defaultValue="view default" />
+    </>
+);
+
+State.story = {
+    name: 'state',
+};

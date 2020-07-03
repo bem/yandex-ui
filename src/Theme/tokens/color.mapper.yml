@@ -1,0 +1,90 @@
+# global
+color-fill-color-brand: color-bg-brand
+color-fill-color-inverse: color-bg-inverse
+color-fill-color-action: color-bg-action
+color-fill-color-selection: color-bg-selection
+color-fill-color-hover: color-bg-hover
+color-fill-color-border: color-bg-border
+color-fill-color-stripe: color-bg-stripe
+color-fill-color-ghost: color-bg-ghost
+color-fill-color-default: color-bg-default
+color-fill-color-tone: color-bg-tone
+color-fill-color-soft: color-bg-soft
+color-fill-color-success: color-bg-success
+color-fill-color-alert: color-bg-alert
+color-fill-color-warning: color-bg-warning
+color-fill-color-normal: color-bg-normal
+color-fill-color-system: color-bg-system
+color-fill-color-link: color-bg-link
+color-fill-color-promo: color-bg-promo
+
+# link
+color-link-base: color-link
+
+# focus
+color-control-border-color-focus: color-control-bg-border-focus
+color-control-border-color-prism: color-control-bg-border-prism
+
+# default
+color-control-type-default-fill-color-base: color-control-bg-default
+color-control-type-default-fill-color-hover: color-control-bg-default-hover
+color-control-type-default-fill-color-press: color-control-bg-default-press
+color-control-type-default-fill-color-disable: color-control-bg-default-disable
+color-control-type-default-border-color-base: color-control-bg-border-default
+color-control-type-default-border-color-hover: color-control-bg-border-default-hover
+color-control-type-default-border-color-press: color-control-bg-border-default-press
+color-control-type-default-border-color-disable: color-control-bg-border-default-disable
+color-control-type-default-border-color-error-base: color-control-bg-border-default-error
+color-control-type-default-border-color-error-hover: color-control-bg-border-default-error-hover
+
+# blank
+color-control-type-blank-fill-color-base: color-control-bg-blank
+color-control-type-blank-fill-color-hover: color-control-bg-blank-hover
+color-control-type-blank-fill-color-disable: color-control-bg-blank-disable
+color-control-type-blank-border-color-base: color-control-bg-border-blank
+color-control-type-blank-border-color-hover: color-control-bg-border-blank-hover
+color-control-type-blank-border-color-disable: color-control-bg-border-blank-disable
+
+# faint
+color-control-type-faint-fill-color-base: color-control-bg-faint
+color-control-type-faint-fill-color-disable: color-control-bg-faint-disable
+
+# check
+color-control-type-check-fill-color-base: color-control-bg-check
+color-control-type-check-fill-color-hover: color-control-bg-check-hover
+color-control-type-check-fill-color-press: color-control-bg-check-press
+color-control-type-check-fill-color-disable: color-control-bg-check-disable
+color-control-type-check-border-color-base: color-control-bg-border-check
+color-control-type-check-border-color-hover: color-control-bg-border-check-hover
+color-control-type-check-border-color-press: color-control-bg-border-check-press
+
+# passive
+color-control-type-passive-fill-color-base: color-control-bg-passive
+
+# progress
+color-control-type-progress-fill-color-base: color-control-bg-progress
+color-control-type-progress-fill-color-process: color-control-bg-progress-process
+
+# action
+color-control-type-action-fill-color-base: color-control-bg-action
+color-control-type-action-fill-color-hover: color-control-bg-action-hover
+color-control-type-action-fill-color-press: color-control-bg-action-press
+
+# pseudo
+color-control-type-pseudo-fill-color-base: color-control-bg-pseudo
+color-control-type-pseudo-fill-color-hover: color-control-bg-pseudo-hover
+color-control-type-pseudo-border-color-base: color-control-bg-border-pseudo
+
+# link
+color-control-type-link-fill-color-base: color-control-bg-link-default
+color-control-type-link-fill-color-hover: color-control-bg-link-default-hover
+color-control-type-link-border-color-base: color-control-bg-border-link-default
+color-control-type-link-border-color-hover: color-control-bg-border-link-default-hover
+
+# raised
+color-control-type-raised-typo-base: color-control-typo-raised
+color-control-type-raised-typo-disable: color-control-typo-raised-disable
+color-control-type-raised-fill-color-base: color-control-bg-raised
+color-control-type-raised-fill-color-hover: color-control-bg-raised-hover
+color-control-type-raised-fill-color-disable: color-control-bg-raised-disable
+color-control-type-raised-fill-color-check: color-control-bg-raised-check

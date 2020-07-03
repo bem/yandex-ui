@@ -1,0 +1,17 @@
+.MessageBox-Buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.MessageBox-Buttons .Button2:last-child::before {
+    border-radius: calc(var(--message-box-borderRadius) - 1px) 0;
+}
+
+.MessageBox-Buttons .Button2:active {
+    /* Cause buttons should no scale inside. */
+    transform: scale(1);
+}
+
+.MessageBox-Buttons .Button2_width_max:only-child::before {
+    border-radius: 0 0 var(--message-box-borderRadius) var(--message-box-borderRadius);
+}

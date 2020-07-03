@@ -1,0 +1,12 @@
+.Link {
+    text-decoration: none;
+
+    outline: 0;
+
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.Link[aria-disabled='true'] {
+    pointer-events: none;
+}

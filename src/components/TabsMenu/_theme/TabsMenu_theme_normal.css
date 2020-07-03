@@ -1,0 +1,34 @@
+.TabsMenu_theme_normal .TabsMenu-Tab {
+    position: relative;
+}
+
+.TabsMenu_theme_normal .TabsMenu-Tab_active .Link {
+    color: #000;
+}
+
+.TabsMenu_theme_normal .TabsMenu-Tab_disabled .Link {
+    color: #ddd;
+}
+
+.TabsMenu_theme_normal.TabsMenu_layout_horiz .TabsMenu-Tab_active::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    height: 2px;
+
+    content: '';
+
+    background-color: #000;
+
+    transition: background-color .15s ease-out;
+}
+
+.TabsMenu_theme_normal.TabsMenu_layout_horiz .TabsMenu-Tab_active.TabsMenu-Tab_disabled::before {
+    background-color: #ddd;
+}
+
+.pointerfocus .TabsMenu_theme_normal .TabsMenu-Tab:focus {
+    outline: none;
+}

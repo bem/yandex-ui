@@ -1,0 +1,21 @@
+.Icon_glyph_type-arrow.Icon_direction_left {
+    transform: rotate(90deg);
+}
+
+.Icon_glyph_type-arrow.Icon_direction_top {
+    transform: rotate(180deg);
+}
+
+.Icon_glyph_type-arrow.Icon_direction_right {
+    transform: rotate(-90deg);
+}
+
+.Icon_glyph_type-arrow svg {
+    width: 13px;
+    height: 8px;
+}
+
+.Icon_glyph_type-arrow.Icon_size_xs svg {
+    width: 11px;
+    height: 7px;
+}

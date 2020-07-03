@@ -1,0 +1,47 @@
+.Menu_size_m {
+    font-size: var(--menu-size-m-fontSize);
+    line-height: var(--menu-size-m-lineHeight);
+}
+
+.Menu_size_m::before,
+.Menu_size_m::after {
+    height: var(--menu-size-m-spaceVert);
+}
+
+.Menu_size_m .Menu-Item,
+.Menu_size_m .Menu-Title {
+    padding: 0 var(--menu-size-m-item-spaceHor);
+}
+
+.Menu_size_m .Menu-Item {
+    background-position: var(--menu-size-m-item-spaceHor) center;
+}
+
+.Menu_size_m .Icon.Icon_glyph_type-check {
+    margin-right: var(--menu-size-m-item-icon-indentRight);
+}
+
+.Menu_size_m .Menu-Group {
+    padding: var(--menu-size-m-group-spaceVert) var(--menu-size-m-group-spaceHor);
+}
+
+.Menu_size_m .Menu-Item + .Menu-Group {
+    margin-top: var(--menu-size-m-item-indentBottom);
+}
+
+.Menu_size_m .Menu-Group + .Menu-Item {
+    margin-top: var(--menu-size-m-group-indentBottom);
+}
+
+.Menu_size_m .Menu-Item_type_option > :first-child,
+.Menu_size_m .Menu-Title ~ .Menu-Item > :first-child {
+    margin-left: var(--menu-size-m-titleSibling-indentLeft);
+}
+
+.Menu_size_m .Menu-Title ~ .Menu-Item .Icon {
+    margin-left: 0;
+}
+
+.Menu_size_m .Menu-Icon + .Menu-Text {
+    margin-left: var(--menu-size-m-item-icon-indentRight);
+}

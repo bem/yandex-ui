@@ -1,0 +1,19 @@
+.MessageBox_view_default,
+.MessageBox_view_default .MessageBox-Close,
+.MessageBox_view_default .Button2_view_clear {
+    color: var(--color-typo-inverse);
+}
+
+.MessageBox_view_default .MessageBox-Tail {
+    color: var(--color-bg-inverse);
+}
+
+.MessageBox_view_default .MessageBox-Close::after,
+.MessageBox_view_default .MessageBox-Backdrop::before {
+    background-color: var(--color-bg-inverse);
+}
+
+.MessageBox_view_default:not(.MessageBox_opaque) .MessageBox-Backdrop,
+.MessageBox_view_default:not(.MessageBox_opaque) .MessageBox-Close:hover::after {
+    opacity: .85;
+}

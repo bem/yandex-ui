@@ -1,0 +1,10 @@
+.Hermione-Wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Hermione-Item {
+    padding: 4px;
+    /* Обнуляем значение, чтобы убрать отступ снизу от inline-block. */
+    font-size: 0;
+}

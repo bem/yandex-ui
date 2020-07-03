@@ -1,0 +1,35 @@
+tumbler-size-s-font-size: tumbler-size-s-fontSize
+tumbler-size-m-font-size: tumbler-size-m-fontSize
+tumbler-size-l-font-size: tumbler-size-l-fontSize
+
+tumbler-size-s-line-height: tumbler-size-s-lineHeight
+tumbler-size-m-line-height: tumbler-size-m-lineHeight
+tumbler-size-l-line-height: tumbler-size-l-lineHeight
+
+tumbler-size-s-button-width: tumbler-size-s-button-width
+tumbler-size-m-button-width: tumbler-size-m-button-width
+tumbler-size-l-button-width: tumbler-size-l-button-width
+
+tumbler-size-s-button-height: tumbler-size-s-button-height
+tumbler-size-m-button-height: tumbler-size-m-button-height
+tumbler-size-l-button-height: tumbler-size-l-button-height
+
+tumbler-size-s-button-pressed-width: tumbler-size-s-button-press-width
+tumbler-size-m-button-pressed-width: tumbler-size-m-button-press-width
+tumbler-size-l-button-pressed-width: tumbler-size-l-button-press-width
+
+tumbler-size-s-border-radius: tumbler-size-s-borderRadius
+tumbler-size-m-border-radius: tumbler-size-m-borderRadius
+tumbler-size-l-border-radius: tumbler-size-l-borderRadius
+
+tumbler-size-s-button-border-radius: tumbler-size-s-button-borderRadius
+tumbler-size-m-button-border-radius: tumbler-size-m-button-borderRadius
+tumbler-size-l-button-border-radius: tumbler-size-l-button-borderRadius
+
+tumbler-size-s-label-indent-right: tumblerLabel-size-s-indentRight
+tumbler-size-m-label-indent-right: tumblerLabel-size-m-indentRight
+tumbler-size-l-label-indent-right: tumblerLabel-size-l-indentRight
+
+tumbler-size-s-label-indent-left: tumblerLabel-size-s-indentLeft
+tumbler-size-m-label-indent-left: tumblerLabel-size-m-indentLeft
+tumbler-size-l-label-indent-left: tumblerLabel-size-l-indentLeft

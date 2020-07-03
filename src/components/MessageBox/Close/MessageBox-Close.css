@@ -1,0 +1,63 @@
+.MessageBox-Close {
+    position: absolute;
+    top: 9px;
+    right: 9px;
+
+    width: var(--message-box-close-width);
+    height: var(--message-box-close-height);
+    margin: 0;
+    padding: 0;
+
+    cursor: pointer;
+
+    border: 0;
+    outline: 0;
+    background: none;
+
+    transform: translateZ(0);
+
+    touch-action: manipulation;
+}
+
+.MessageBox-Close svg {
+    opacity: .25;
+
+    transition: opacity 100ms;
+}
+
+.MessageBox-Close:hover svg {
+    opacity: .7;
+}
+
+.MessageBox-Close::after {
+    position: absolute;
+    bottom: 100%;
+    left: 9px;
+
+    display: none;
+
+    margin-bottom: 13px;
+    padding: 5px 10px;
+
+    font-family: var(--control-font-family);
+    font-size: var(--message-box-close-fontSize);
+    line-height: var(--message-box-close-lineHeight);
+    content: attr(aria-label);
+
+    border-radius: var(--message-box-hint-borderRadius);
+
+    transition: opacity 100ms;
+    transform: translateX(-50%);
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.MessageBox-Close:hover::after {
+    display: block;
+}
+
+.MessageBox.MessageBox_hasClose .MessageBox-Content :not(.MessageBox-TextWrap) .MessageBox-Text,
+.MessageBox.MessageBox_hasClose .MessageBox-Content .MessageBox-TextWrap {
+    margin-right: var(--message-box-close-indentRight);
+}

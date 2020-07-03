@@ -1,0 +1,6 @@
+.Text_typography_overline-l {
+    font-family: var(--text-overline-size-l-font-family);
+    font-size: var(--text-overline-size-l-font-size);
+    line-height: var(--text-overline-size-l-line-height);
+    letter-spacing: var(--text-overline-size-l-letter-spacing);
+}

@@ -1,0 +1,3 @@
+.Button2_theme_raised:not([aria-disabled='true']):hover::before {
+    background-color: #eee;
+}

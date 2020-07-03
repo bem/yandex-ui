@@ -1,0 +1,26 @@
+.Button2_size_m {
+    height: var(--button-size-m-height);
+
+    font-size: var(--button-size-m-font);
+    line-height: var(--button-size-m-lineHeight);
+}
+
+.Button2_size_m .Button2-Text {
+    margin: var(--button-size-m-text-indentAll);
+}
+
+.Button2_size_m .Button2-Icon {
+    width: var(--button-size-m-icon-width);
+}
+
+.Button2_size_m .Button2-Icon.Icon_type_arrow {
+    width: var(--button-size-m-icon-width);
+}
+
+.Button2_size_m .Button2-Icon_side_left ~ .Button2-Text {
+    margin-left: var(--button-size-m-icon-indentLeft);
+}
+
+.Button2_size_m .Button2-Icon_side_right ~ .Button2-Text {
+    margin-right: var(--button-size-m-icon-indentRight);
+}

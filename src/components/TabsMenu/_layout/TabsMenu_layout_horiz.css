@@ -1,0 +1,9 @@
+.TabsMenu_layout_horiz .TabsMenu-Tab {
+    display: inline-block;
+
+    margin-left: 16px;
+}
+
+.TabsMenu_layout_horiz .TabsMenu-Tab_first {
+    margin-left: 0;
+}

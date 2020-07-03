@@ -1,0 +1,17 @@
+{
+  "extends": "../../.stylelintrc",
+  "rules": {
+    "max-line-length": null,
+    "max-empty-lines": 2,
+    "font-weight-notation": "numeric",
+    "number-max-precision": [
+        3,
+        {
+            "ignoreUnits": ["rem", "em"]
+        }
+    ]
+  },
+  "ignoreFiles": [
+    "**/*.tsx"
+  ]
+}

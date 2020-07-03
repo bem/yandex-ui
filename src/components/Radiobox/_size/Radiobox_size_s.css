@@ -1,0 +1,23 @@
+.Radiobox_size_s {
+    font-size: var(--radiobox-size-s-fontSize);
+    line-height: var(--radiobox-size-s-lineHeight);
+}
+
+.Radiobox_size_s .Radiobox-Text {
+    padding-left: var(--radiobox-size-s-indentRight);
+}
+
+.Radiobox_size_s .Radiobox-Box {
+    top: var(--radiobox-size-s-positionTop);
+
+    width: var(--radiobox-size-s-size);
+    height: var(--radiobox-size-s-size);
+}
+
+.Radiobox_size_s .Radiobox-Box::after {
+    top: calc(50% - (var(--radiobox-size-s-after-size) / 2));
+    left: calc(50% - (var(--radiobox-size-s-after-size) / 2));
+
+    width: var(--radiobox-size-s-after-size);
+    height: var(--radiobox-size-s-after-size);
+}

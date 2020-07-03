@@ -1,0 +1,8 @@
+.Attach_size_l {
+    font-size: var(--attach-size-l-fontSize);
+    line-height: var(--attach-size-l-lineHeight);
+}
+
+.Attach_size_l .Attach-Holder {
+    margin-left: var(--attach-size-l-holder-indentLeft);
+}

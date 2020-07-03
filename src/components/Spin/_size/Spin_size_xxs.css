@@ -1,0 +1,13 @@
+.Spin2_size_xxs {
+    width: var(--spin-size-xxs);
+    height: var(--spin-size-xxs);
+
+    font-size: 13px;
+    line-height: 12px;
+}
+
+.Spin2_size_xxs.Spin2_position_center {
+    /* Отступ равен половине ширины */
+    margin-top: calc(var(--spin-size-xxs) / -2);
+    margin-left: calc(var(--spin-size-xxs) / -2);
+}

@@ -1,0 +1,19 @@
+.Textinput-Clear {
+    right: 0;
+
+    display: none;
+    visibility: hidden;
+
+    cursor: pointer;
+}
+
+.Textinput-Clear.Textinput-Clear_visible {
+    display: block;
+    visibility: visible;
+}
+
+.Textinput_disabled .Textinput-Clear_visible {
+    z-index: 0; /* Понижаем под Control и Box */
+
+    cursor: default;
+}

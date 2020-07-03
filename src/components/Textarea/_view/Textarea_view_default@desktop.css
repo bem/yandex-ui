@@ -1,0 +1,14 @@
+/* hover */
+/* TODO: Усиливаем селектор для ie11 (оторвать после https://st.yandex-team.ru/ISL-7989) */
+.Textarea_view_default.Textarea_hovered .Textarea-Box[class] {
+    border-color: var(--color-control-bg-border-blank-hover);
+    background-color: var(--color-control-bg-blank-hover);
+}
+
+.Textarea_view_default .Textarea-Clear.Textarea-Clear:hover {
+    color: var(--color-control-typo-primary);
+}
+
+.Textarea_view_default.Textarea_hovered.Textarea_state_error .Textarea-Box {
+    border-color: var(--color-control-bg-border-default-error-hover);
+}

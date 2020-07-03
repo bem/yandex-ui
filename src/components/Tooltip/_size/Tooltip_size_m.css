@@ -1,0 +1,11 @@
+.Tooltip_size_m .Tooltip-Content {
+    padding: var(--tooltip-size-m-content-spaceAll);
+
+    font-size: var(--tooltip-size-m-fontSize);
+    line-height: var(--tooltip-size-m-lineHeight);
+}
+
+.Tooltip_size_m .Popup2-Tail {
+    width: var(--tooltip-size-m-tail-size);
+    height: var(--tooltip-size-m-tail-size);
+}

@@ -1,0 +1,14 @@
+{
+  "whitepaper": {
+    "color": "yandex-brand",
+    "root": "default"
+  },
+  "mappers": [
+    "./src/**/*.mapper.yml"
+  ],
+  "sources": [
+    "./src/Theme/tokens/typography.tokens.yml",
+    "./src/Theme/tokens/color-brand.tokens.yml",
+    "./src/components/**/*.tokens.yml"
+  ]
+}

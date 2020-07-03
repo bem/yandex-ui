@@ -1,0 +1,43 @@
+.Menu_theme_normal {
+    outline: 0;
+    background: #fff;
+}
+
+.Menu_theme_normal .Menu-Group {
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.Menu_theme_normal .Menu-Group:first-child {
+    border-top: none;
+}
+
+.Menu_theme_normal .Menu-Title {
+    cursor: default;
+
+    color: #999;
+}
+
+/**
+ * 1. Для ссылок.
+ */
+.Menu_theme_normal .Menu-Item {
+    display: block;
+
+    cursor: pointer;
+    text-decoration: none; /* 1 */
+
+    color: #000;
+    outline: none;
+    background-repeat: no-repeat;
+}
+
+.Menu_theme_normal.Menu_disabled .Menu-Item,
+.Menu_theme_normal .Menu-Item.Menu-Item_disabled {
+    cursor: default;
+
+    opacity: .3;
+}
+
+.Menu_theme_normal .Menu-Item.Menu-Item_checked {
+    background-image: url('menu_theme_normal.assets/tip.svg');
+}

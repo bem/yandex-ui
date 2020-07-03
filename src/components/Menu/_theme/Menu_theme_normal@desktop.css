@@ -1,0 +1,4 @@
+.Menu_theme_normal .Menu-Item:hover,
+.Menu_theme_normal .Menu-Item.Menu-Item_hovered {
+    background-color: #ffeba0;
+}

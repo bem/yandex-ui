@@ -1,0 +1,9 @@
+/* icon_has-glyph выставляет по умолчанию position: relative, но нет гарантий, что он приедет раньше */
+.Textinput-Icon.Textinput-Icon {
+    position: absolute;
+}
+
+.Textinput-Icon {
+    z-index: 3; /* рисуем поверх __box и __control */
+    top: 0;
+}

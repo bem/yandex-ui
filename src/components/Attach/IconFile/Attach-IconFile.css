@@ -1,0 +1,92 @@
+.Attach-IconFile {
+    margin-right: var(--attach-iconFile-indentRight);
+    padding: 15px 15px 0 0;
+
+    background: url('IconFile.assets/icon-file.png') no-repeat;
+}
+
+/* files */
+.Attach-Holder_file_none .Attach-IconFile,
+.Attach-Holder_file_unknown .Attach-IconFile {
+    background-position: 0 0;
+}
+
+.Attach-Holder_file_archive .Attach-IconFile {
+    background-position: -16px 0;
+}
+
+.Attach-Holder_file_gif .Attach-IconFile {
+    background-position: -32px 0;
+}
+
+.Attach-Holder_file_jpg .Attach-IconFile {
+    background-position: -48px 0;
+}
+
+.Attach-Holder_file_png .Attach-IconFile {
+    background-position: -64px 0;
+}
+
+.Attach-Holder_file_eml .Attach-IconFile {
+    background-position: -79px 0;
+}
+
+.Attach-Holder_file_exe .Attach-IconFile {
+    background-position: -96px 0;
+}
+
+.Attach-Holder_file_video .Attach-IconFile {
+    background-position: -112px 0;
+}
+
+.Attach-Holder_file_mov .Attach-IconFile {
+    background-position: -127px 0;
+}
+
+.Attach-Holder_file_wmv .Attach-IconFile {
+    background-position: -144px 0;
+}
+
+.Attach-Holder_file_mp4 .Attach-IconFile {
+    background-position: -159px 0;
+}
+
+.Attach-Holder_file_avi .Attach-IconFile {
+    background-position: -175px 0;
+}
+
+.Attach-Holder_file_xls .Attach-IconFile {
+    background-position: -192px 0;
+}
+
+.Attach-Holder_file_doc .Attach-IconFile {
+    background-position: -207px 0;
+}
+
+.Attach-Holder_file_txt .Attach-IconFile {
+    background-position: -224px 0;
+}
+
+.Attach-Holder_file_pdf .Attach-IconFile {
+    background-position: -239px 0;
+}
+
+.Attach-Holder_file_ppt .Attach-IconFile {
+    background-position: -256px 0;
+}
+
+.Attach-Holder_file_audio .Attach-IconFile {
+    background-position: -272px 0;
+}
+
+.Attach-Holder_file_mp3 .Attach-IconFile {
+    background-position: -288px 0;
+}
+
+.Attach-Holder_file_wav .Attach-IconFile {
+    background-position: -304px 0;
+}
+
+.Attach-Holder_file_wma .Attach-IconFile {
+    background-position: -320px 0;
+}

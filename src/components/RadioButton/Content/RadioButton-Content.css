@@ -1,0 +1,9 @@
+.RadioButton-Content {
+    position: relative;
+
+    overflow: hidden;
+
+    text-align: center;
+    white-space: nowrap;
+    pointer-events: none;
+}

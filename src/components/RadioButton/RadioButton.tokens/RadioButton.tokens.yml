@@ -1,0 +1,37 @@
+radioButton:
+  indent:
+    value: 3px
+
+  border:
+    radius:
+      value: 4px
+
+  after:
+    border:
+      radius:
+        value: 2px
+
+  size:
+    s:
+      fontSize:
+        value: "{typography.controls.size.s.fontSize.value}"
+      lineHeight:
+        value: 28px
+      space:
+        value: 0 13px
+
+    m:
+      fontSize:
+        value: "{typography.controls.size.m.fontSize.value}"
+      lineHeight:
+        value: 32px
+      space:
+        value: 0 15px
+
+    l:
+      fontSize:
+        value: "{typography.controls.size.l.fontSize.value}"
+      lineHeight:
+        value: 38px
+      space:
+        value: 0 18px

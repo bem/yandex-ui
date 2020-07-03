@@ -1,0 +1,43 @@
+attach:
+  reset:
+    width:
+      value: 12px
+    height:
+      value: 12px
+    indentLeft:
+      value: 5px
+
+  iconFile:
+    indentRight:
+      value: 5px
+
+  size:
+    s:
+      fontSize:
+        value: "{typography.controls.size.s.fontSize.value}"
+      lineHeight:
+        value: 32px
+
+      holder:
+        indentLeft:
+          value: 6px
+
+    m:
+      fontSize:
+        value: "{typography.controls.size.m.fontSize.value}"
+      lineHeight:
+        value: 36px
+
+      holder:
+        indentLeft:
+          value: 8px
+
+    l:
+      fontSize:
+        value: "{typography.controls.size.l.fontSize.value}"
+      lineHeight:
+        value: 42px
+
+      holder:
+        indentLeft:
+          value: 10px

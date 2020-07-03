@@ -1,0 +1,6 @@
+.Text_typography_headline-xs {
+    font-family: var(--text-headline-size-xs-font-family);
+    font-size: var(--text-headline-size-xs-font-size);
+    line-height: var(--text-headline-size-xs-line-height);
+    letter-spacing: var(--text-headline-size-xs-letter-spacing);
+}

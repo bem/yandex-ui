@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabsPanes client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  class="TabsPanes mix"
+  role="tabpanel"
+>
+  <div
+    class="TabsPanes-Pane"
+    role="tabpanel"
+  >
+    Pane 1 Поиск
+  </div>
+</div>
+`;
+
+exports[`TabsPanes client environment должен показывать новый jsx контент при изменении activePane (snapshot) 1`] = `
+<TabsPanes
+  activePane="tab3"
+  panes={
+    Array [
+      Object {
+        "content": "Pane 1 Поиск",
+        "id": "tab1",
+      },
+      Object {
+        "content": "Pane 2 Картинки",
+        "id": "tab2",
+      },
+      Object {
+        "content": <div>
+          Pane 3 Маркет
+        </div>,
+        "id": "tab3",
+      },
+    ]
+  }
+>
+  <div
+    className="TabsPanes"
+    role="tabpanel"
+  >
+    <Component
+      content={
+        <div>
+          Pane 3 Маркет
+        </div>
+      }
+    >
+      <div
+        className="TabsPanes-Pane"
+        role="tabpanel"
+      >
+        <div>
+          Pane 3 Маркет
+        </div>
+      </div>
+    </Component>
+  </div>
+</TabsPanes>
+`;
+
+exports[`TabsPanes client environment должно быть видно содержимое только активной панельки (snapshot) 1`] = `
+<TabsPanes
+  activePane="tab1"
+  panes={
+    Array [
+      Object {
+        "content": "Pane 1 Поиск",
+        "id": "tab1",
+      },
+      Object {
+        "content": "Pane 2 Картинки",
+        "id": "tab2",
+      },
+      Object {
+        "content": <div>
+          Pane 3 Маркет
+        </div>,
+        "id": "tab3",
+      },
+    ]
+  }
+>
+  <div
+    className="TabsPanes"
+    role="tabpanel"
+  >
+    <Component
+      content="Pane 1 Поиск"
+    >
+      <div
+        className="TabsPanes-Pane"
+        role="tabpanel"
+      >
+        Pane 1 Поиск
+      </div>
+    </Component>
+  </div>
+</TabsPanes>
+`;
+
+exports[`TabsPanes server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  class="TabsPanes mix"
+  role="tabpanel"
+>
+  <div
+    class="TabsPanes-Pane"
+    role="tabpanel"
+  >
+    Pane 1 Поиск
+  </div>
+</div>
+`;

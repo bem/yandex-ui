@@ -1,0 +1,16 @@
+.Icon {
+    display: inline-block;
+
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+/**
+ * Для правильного позиционирования относительно baseline.
+ * Плюс высота блока начинает определяться по унаследованному line-height.
+ */
+.Icon::after {
+    visibility: hidden;
+
+    content: '\00A0';
+}

@@ -1,0 +1,16 @@
+.Checkbox_theme_pseudo.Checkbox_hovered .Checkbox-Box::before {
+    border-color: rgba(0, 0, 0, .3);
+}
+
+.Checkbox_theme_pseudo.Checkbox_checked.Checkbox_hovered .Checkbox-Box::before {
+    border-color: rgba(129, 103, 0, .6);
+}
+
+.utilityfocus .Checkbox_theme_pseudo.Checkbox_focused .Checkbox-Box::before {
+    border-width: 2px;
+    border-color: #ffdb4d;
+}
+
+.utilityfocus .Checkbox_theme_pseudo.Checkbox_checked.Checkbox_focused .Checkbox-Box::before {
+    border-color: #fc0;
+}

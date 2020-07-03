@@ -1,0 +1,105 @@
+/* common */
+.Tumbler_view_default {
+    font-family: var(--control-font-family);
+}
+
+.Tumbler_view_default .Tumbler-Label {
+    color: var(--color-control-typo-primary);
+}
+
+.Tumbler_view_default .Tumbler-Button {
+    background-color: var(--color-control-bg-default);
+
+    transition: background-color 100ms linear;
+}
+
+.Tumbler_view_default .Tumbler-Button::after {
+    top: var(--tumbler-button-space);
+    left: var(--tumbler-button-space);
+
+    background-color: var(--color-control-bg-faint);
+
+    transition: 100ms ease-out;
+    transition-property: left, transform, margin, width;
+}
+
+.Tumbler_view_default.Tumbler_size_s .Tumbler-Button {
+    width: var(--tumbler-size-s-width);
+    height: var(--tumbler-size-s-height);
+
+    border-radius: var(--tumbler-size-s-borderRadius);
+}
+
+.Tumbler_view_default.Tumbler_size_m .Tumbler-Button {
+    width: var(--tumbler-size-m-width);
+    height: var(--tumbler-size-m-height);
+
+    border-radius: var(--tumbler-size-m-borderRadius);
+}
+
+.Tumbler_view_default.Tumbler_size_l .Tumbler-Button {
+    width: var(--tumbler-size-l-width);
+    height: var(--tumbler-size-l-height);
+
+    border-radius: var(--tumbler-size-l-borderRadius);
+}
+
+.Tumbler_view_default.Tumbler_size_s .Tumbler-Button::after {
+    width: var(--tumbler-size-s-button-width);
+    height: var(--tumbler-size-s-button-height);
+
+    border-radius: var(--tumbler-size-s-button-borderRadius);
+}
+
+.Tumbler_view_default.Tumbler_size_m .Tumbler-Button::after {
+    width: var(--tumbler-size-m-button-width);
+    height: var(--tumbler-size-m-button-height);
+
+    border-radius: var(--tumbler-size-m-button-borderRadius);
+}
+
+.Tumbler_view_default.Tumbler_size_l .Tumbler-Button::after {
+    width: var(--tumbler-size-l-button-width);
+    height: var(--tumbler-size-l-button-height);
+
+    border-radius: var(--tumbler-size-l-button-borderRadius);
+}
+
+/* check */
+.Tumbler_view_default[class] .Tumbler-Button[aria-pressed='true'] {
+    background-color: var(--color-control-bg-action);
+}
+
+.Tumbler_view_default[class] .Tumbler-Button[aria-pressed='true']::after {
+    left: 100%;
+
+    margin-left: -2px;
+
+    transform: translateX(-100%);
+}
+
+/* disable */
+.Tumbler_view_default[aria-disabled='true'][class] {
+    pointer-events: none;
+}
+
+.Tumbler_view_default[aria-disabled='true'][class] .Tumbler-Label {
+    color: var(--color-control-typo-disable);
+}
+
+.Tumbler_view_default[aria-disabled='true'][class] .Tumbler-Button {
+    background-color: var(--color-control-bg-default-disable);
+}
+
+/* press */
+.Tumbler_view_default.Tumbler_size_s .Tumbler-Button:active::after {
+    width: var(--tumbler-size-s-button-press-width);
+}
+
+.Tumbler_view_default.Tumbler_size_m .Tumbler-Button:active::after {
+    width: var(--tumbler-size-m-button-press-width);
+}
+
+.Tumbler_view_default.Tumbler_size_l .Tumbler-Button:active::after {
+    width: var(--tumbler-size-l-button-press-width);
+}

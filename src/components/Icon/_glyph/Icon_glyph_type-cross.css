@@ -1,0 +1,9 @@
+.Icon_glyph_type-cross svg {
+    width: 14px;
+    height: 14px;
+}
+
+.Icon_glyph_type-cross.Icon_size_xs svg {
+    width: 10px;
+    height: 10px;
+}

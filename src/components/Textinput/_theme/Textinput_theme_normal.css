@@ -1,0 +1,43 @@
+.Textinput_theme_normal .Textinput-Control {
+    color: #000;
+}
+
+.Textinput_disabled.Textinput_theme_normal .Textinput-Control {
+    color: #aaa;
+    -webkit-text-fill-color: #aaa; /* https://st.yandex-team.ru/ISL-2132 Safari needs it to blend color properly */
+}
+
+.Textinput_theme_normal .Textinput-Control::placeholder {
+    color: #999;
+}
+
+.Textinput_theme_normal .Textinput-Box {
+    border: 1px solid rgba(0, 0, 0, .2);
+    background-color: #fff;
+}
+
+.Textinput_theme_normal.Textinput_state_error .Textinput-Box {
+    border-color: var(--color-control-bg-border-default-error);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.Textinput_theme_normal.Textinput_disabled .Textinput-Box {
+    border-color: transparent;
+    background-color: rgba(0, 0, 0, .08);
+}
+
+.Textinput_theme_normal .Textinput-Clear {
+    opacity: 0;
+}
+
+.Textinput_theme_normal .Textinput-Clear.Textinput-Clear_visible {
+    opacity: .3;
+}
+
+.Textinput_theme_normal.Textinput_disabled .Textinput-Clear_visible {
+    opacity: .1;
+}
+
+.Textinput_theme_normal.Textinput_state_error .Textinput-Hint {
+    color: var(--color-control-typo-error);
+}

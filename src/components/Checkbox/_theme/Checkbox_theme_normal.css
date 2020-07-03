@@ -1,0 +1,36 @@
+.Checkbox_theme_normal {
+    color: #000;
+}
+
+.Checkbox_theme_normal .Checkbox-Box::before {
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, .2);
+    border-radius: 3px;
+    background-color: #fff;
+    background-clip: padding-box;
+}
+
+.Checkbox_theme_normal.Checkbox_pressed .Checkbox-Box::before {
+    background-color: #f3f1ed;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.Checkbox_theme_normal.Checkbox_checked .Checkbox-Box::before {
+    border-color: rgba(153, 122, 0, .5);
+    background-color: #ffeba0;
+}
+
+.Checkbox_theme_normal.Checkbox_checked.Checkbox_pressed .Checkbox-Box::before {
+    background-color: #fee481;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.Checkbox_theme_normal.Checkbox_disabled .Checkbox-Box::before {
+    border-color: rgba(0, 0, 0, .08);
+    background-color: rgba(0, 0, 0, .08);
+}
+
+.Checkbox_theme_normal.Checkbox_disabled .Checkbox-Tick,
+.Checkbox_theme_normal.Checkbox_disabled .Checkbox-Label {
+    opacity: .5;
+}

@@ -1,0 +1,39 @@
+.Button2_theme_clear {
+    position: relative;
+    z-index: 0;
+
+    color: #000;
+    border: none;
+    outline: none;
+}
+
+.Button2_theme_clear::before {
+    border-radius: 3px;
+}
+
+.Button2_theme_clear .Button2-Text,
+.Button2_theme_clear .Button2-Icon {
+    opacity: .3;
+}
+
+.Button2.Button2_theme_clear.Button2_checked:not([aria-disabled='true']) .Button2-Text,
+.Button2.Button2_theme_clear.Button2_checked:not([aria-disabled='true']) .Button2-Icon,
+.Button2.Button2_theme_clear.Button2_checked:not(.Button2_disabled) .Button2-Text,
+.Button2.Button2_theme_clear.Button2_checked:not(.Button2_disabled) .Button2-Icon {
+    opacity: .8;
+}
+
+.Button2_theme_clear.Button2_checked:not([aria-disabled='true']):active::before,
+.Button2_theme_clear.Button2_checked.Button2_pressed::before {
+    background-color: transparent;
+}
+
+.Button2_theme_clear[aria-disabled='true']::before,
+.Button2_theme_clear.Button2_disabled::before {
+    background-color: rgba(0, 0, 0, .08);
+}
+
+.Button2_theme_clear[aria-disabled='true'].Button2_checked::before,
+.Button2_theme_clear.Button2_disabled.Button2_checked::before {
+    background-color: rgba(0, 0, 0, .15);
+}

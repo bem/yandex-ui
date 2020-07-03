@@ -1,0 +1,47 @@
+tooltip:
+  border:
+    radius:
+      value: 4px
+
+  size:
+    s:
+      fontSize:
+        value: "{typography.controls.size.s.fontSize.value}"
+      lineHeight:
+        value: 12px
+
+      content:
+        spaceAll:
+          value: 8px
+
+      tail:
+        size:
+          value: 12px
+
+    m:
+      fontSize:
+        value: "{typography.controls.size.m.fontSize.value}"
+      lineHeight:
+        value: 14px
+
+      content:
+        spaceAll:
+          value: 9px 10px
+
+      tail:
+        size:
+          value: 12px
+
+    l:
+      fontSize:
+        value: 16px
+      lineHeight:
+        value: 16px
+
+      content:
+        spaceAll:
+          value: 18px
+
+      tail:
+        size:
+          value: 18px

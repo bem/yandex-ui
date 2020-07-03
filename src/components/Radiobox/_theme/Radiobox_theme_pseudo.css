@@ -1,0 +1,83 @@
+/**
+ * 1. Абсолютная величина, т.к. Android 2.3 не понимает border-radius в процентах.
+ *  100 - просто число из головы.
+ * 2. Нельзя использовать border:none, т.к. в сочетании с анимированным border-color
+ *    Chrome показывает черную рамку при переключении.
+ *    Подробнее: http://jing.yandex-team.ru/files/karamadjong/2015-04-28_1218.swf?w=111&h=178
+ */
+
+.Radiobox_theme_pseudo {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+    color: #000;
+}
+
+@media all and (min-width: 0) {
+    /* :before — border & background */
+    .Radiobox_theme_pseudo .Radiobox-Box::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        padding: 0;
+
+        content: '';
+
+        border: 1px solid rgba(0, 0, 0, .2);
+        border-radius: 100px; /* 1 */
+        background-color: transparent;
+        background-clip: padding-box;
+    }
+
+    /* pressed */
+    /* stylelint-disable-next-line no-descending-specificity */
+    .Radiobox_theme_pseudo .Radiobox-Radio_pressed .Radiobox-Box::before {
+        background-color: rgba(0, 0, 0, .05);
+    }
+
+    /* checked */
+    /* stylelint-disable-next-line no-descending-specificity */
+    .Radiobox_theme_pseudo .Radiobox-Radio_checked .Radiobox-Box::before {
+        border-color: rgba(153, 122, 0, .5);
+        background-color: #ffeba0;
+    }
+
+    .Radiobox_theme_pseudo .Radiobox-Radio_checked .Radiobox-Box::after {
+        position: absolute;
+
+        content: '';
+
+        border-radius: 100px;
+        background-color: #000;
+    }
+
+    /* checked + pressed */
+    /* stylelint-disable-next-line no-descending-specificity */
+    .Radiobox_theme_pseudo .Radiobox-Radio_checked.Radiobox-Radio_pressed .Radiobox-Box::before {
+        border-color: rgba(129, 103, 0, .6);
+        background-color: #fee481;
+    }
+
+    /* disabled */
+    .Radiobox_theme_pseudo .Radiobox-Radio_disabled .Radiobox-Text {
+        opacity: .5;
+    }
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    .Radiobox_theme_pseudo .Radiobox-Radio_disabled .Radiobox-Box::before {
+        border-color: rgba(0, 0, 0, .08); /* 2 */
+        background-color: rgba(0, 0, 0, .08);
+    }
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    .Radiobox_theme_pseudo .Radiobox-Radio_disabled.Radiobox-Radio_checked .Radiobox-Box::before {
+        border-color: rgba(0, 0, 0, .15); /* 2 */
+        background-color: rgba(0, 0, 0, .15);
+    }
+
+    .Radiobox_theme_pseudo .Radiobox-Radio_disabled .Radiobox-Box::after {
+        opacity: .4;
+    }
+}

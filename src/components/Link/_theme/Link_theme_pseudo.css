@@ -1,0 +1,13 @@
+/*
+* Убрали из Link inner и поэтому тут вместо символической ссылки свои стили.
+* Т.к. теперь нельзя использовать стили из islands.
+*/
+
+.Link_theme_pseudo {
+    color: #04b;
+    border-bottom: 1px dotted;
+}
+
+.Link_theme_pseudo[aria-disabled='true'] {
+    color: #ddd;
+}

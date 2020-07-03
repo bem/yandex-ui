@@ -1,0 +1,49 @@
+node_modules
+
+# build
+/Attach
+/Badge
+/Button
+/Checkbox
+/Divider
+/Icon
+/Image
+/Link
+/Menu
+/MessageBox
+/Modal
+/Popup
+/Progress
+/RadioButton
+/Radiobox
+/Select
+/Showcase
+/Spin
+/TabsMenu
+/TabsPanes
+/Text
+/Textarea
+/Textinput
+/Theme
+/Tooltip
+/Tumbler
+/UserPic
+/__internal__
+/withAutoFocus
+/withControl
+/withOutsideClick
+/withTogglable
+/withZIndex
+
+# reports
+.coverage
+
+# legacy artifacts
+/desktop.react-tests
+
+# storybook
+storybook
+
+# exclude
+!/.config/storybook
+!/src/lib

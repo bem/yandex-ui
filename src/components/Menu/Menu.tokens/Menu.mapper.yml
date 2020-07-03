@@ -1,0 +1,34 @@
+menu-group-border-width: menu-group-borderWidth
+
+menu-size-s-font-size: menu-size-s-fontSize
+menu-size-m-font-size: menu-size-m-fontSize
+
+menu-size-s-line-height: menu-size-s-lineHeight
+menu-size-m-line-height: menu-size-m-lineHeight
+
+menu-size-s-space-vertical: menu-size-s-spaceVert
+menu-size-m-space-vertical: menu-size-m-spaceVert
+
+menu-size-s-group-space-vertical: menu-size-s-group-spaceVert
+menu-size-m-group-space-vertical: menu-size-m-group-spaceVert
+
+menu-size-s-group-space-horizontal: menu-size-s-group-spaceHor
+menu-size-m-group-space-horizontal: menu-size-m-group-spaceHor
+
+menu-size-s-group-indent-bottom: menu-size-s-group-indentBottom
+menu-size-m-group-indent-bottom: menu-size-m-group-indentBottom
+
+menu-size-s-item-space-vertical: menu-size-s-item-spaceVert
+menu-size-m-item-space-vertical: menu-size-m-item-spaceVert
+
+menu-size-s-item-space-horizontal: menu-size-s-item-spaceHor
+menu-size-m-item-space-horizontal: menu-size-m-item-spaceHor
+
+menu-size-s-item-indent-bottom: menu-size-s-item-indentBottom
+menu-size-m-item-indent-bottom: menu-size-m-item-indentBottom
+
+menu-size-s-item-icon-indent-right: menu-size-s-item-icon-indentRight
+menu-size-m-item-icon-indent-right: menu-size-m-item-icon-indentRight
+
+menu-size-s-title-sibling-indent-left: menu-size-s-titleSibling-indentLeft
+menu-size-m-title-sibling-indent-left: menu-size-m-titleSibling-indentLeft

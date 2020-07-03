@@ -1,0 +1,10 @@
+.Button2_width_auto {
+    max-width: 100%;
+}
+
+.Button2_width_auto .Button2-Text {
+    display: block;
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}

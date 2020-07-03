@@ -1,0 +1,7 @@
+.Checkbox {
+    cursor: pointer;
+}
+
+.Checkbox_disabled {
+    cursor: default;
+}

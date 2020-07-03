@@ -1,0 +1,12 @@
+/**
+ * По умолчанию input имеет cursor: auto, поэтому для него тоже задаем pointer.
+ */
+.Radiobox-Radio,
+.Radiobox-Control {
+    cursor: pointer;
+}
+
+.Radiobox-Radio_disabled,
+.Radiobox-Radio_disabled .Radiobox-Control {
+    cursor: default;
+}

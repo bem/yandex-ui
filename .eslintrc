@@ -1,0 +1,28 @@
+{
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    "valid-jsdoc": 0,
+
+    // Codestyle
+    "arrow-parens": [2, "always"],
+    "operator-linebreak": [2, "after", {
+      "overrides": {
+        "?": "before",
+        ":": "before"
+      }
+    }],
+    "space-before-function-paren": [2, {
+      "asyncArrow": "always",
+      "anonymous": "never",
+      "named": "never"
+    }],
+
+    // React
+    "react/jsx-no-bind": 0,
+
+    // TypeScript
+    "@typescript-eslint/no-explicit-any": 0
+  }
+}

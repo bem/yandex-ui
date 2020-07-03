@@ -1,0 +1,4 @@
+.TabsMenu_size_m {
+    font-size: var(--tabsMenu-size-m-font);
+    line-height: var(--tabsMenu-size-m-lineHeight);
+}

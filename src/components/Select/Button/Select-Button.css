@@ -1,0 +1,7 @@
+/**
+ * Селектор усиливается, чтобы перебить text-align: center; в button2.
+ * https://st.yandex-team.ru/ISL-4691
+ **/
+.Select2-Button.Select2-Button {
+    text-align: left;
+}

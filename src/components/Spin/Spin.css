@@ -1,0 +1,40 @@
+.Spin2 {
+    display: none;
+
+    box-sizing: border-box;
+
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+}
+
+/* Для правильного позиционирования блока относительно baseline */
+.Spin2::after {
+    visibility: hidden;
+
+    content: '\00A0'; /* &nbsp; */
+}
+
+/*
+  (1) https://st.yandex-team.ru/ISL-6342
+      Добавлена задержка начала анимации, что заставляет её нормально работать в iOS 12-
+      Решение взято отсюда:
+      https://stackoverflow.com/questions/29219534/css-animation-not-always-starting-in-ios-8-safari
+*/
+.Spin2_progress {
+    display: inline-block;
+
+    animation: islands-spin2 1s .21s infinite linear; /* (1) */
+
+    backface-visibility: hidden;  /* Для ускорения анимации */
+}
+
+@keyframes islands-spin2 {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

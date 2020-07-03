@@ -1,0 +1,38 @@
+.Textinput_size_s .Textinput-Box {
+    height: var(--textinput-size-s-height);
+}
+
+.Textinput_size_s .Textinput-Control {
+    height: var(--textinput-size-s-height);
+
+    font-size: var(--textinput-size-s-fontSize);
+
+    border-width: var(--textinput-size-s-control-spaceAll);
+}
+
+/* Усиливаем селектор Textinput, чтобы перебить значения при раскрытии css-переменных. */
+.Textinput.Textinput_size_s .Textinput-Icon_side_left ~ .Textinput-Control {
+    border-left-width: var(--textinput-size-s-has-icon-spaceLeft);
+}
+
+/* Усиливаем селектор Textinput, чтобы перебить значения при раскрытии css-переменных. */
+.Textinput.Textinput_size_s .Textinput-Icon_side_right ~ .Textinput-Control {
+    border-right-width: var(--textinput-size-s-has-icon-spaceRight);
+}
+
+.Textinput_size_s.Textinput_hasClear .Textinput-Clear_visible ~ .Textinput-Control {
+    border-right-width: var(--textinput-size-s-has-icon-spaceRight);
+}
+
+.Textinput_size_s.Textinput_hasClear .Textinput-Icon_side_right ~ .Textinput-Control {
+    border-right-width: calc(var(--textinput-size-s-has-icon-spaceRight) * 2);
+}
+
+.Textinput_size_s.Textinput_iconRight .Textinput-Clear {
+    right: var(--textinput-size-s-has-icon-spaceRight);
+}
+
+.Textinput_size_s .Textinput-Icon.Icon {
+    width: var(--textinput-size-s-icon-width);
+    height: var(--textinput-size-s-icon-height);
+}

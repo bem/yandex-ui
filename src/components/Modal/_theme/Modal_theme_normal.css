@@ -1,0 +1,11 @@
+/* Анимация открытия/закрытия реализована только на desktop из соображений производительности. */
+
+.Modal_theme_normal .Modal-Content {
+    margin: 5px;
+
+    background-color: #fff;
+}
+
+.Modal_theme_normal .Modal-Overlay {
+    background-color: rgba(50, 50, 50, .2);
+}

@@ -1,0 +1,25 @@
+.Textarea_theme_normal .Textarea-Clear_visible:hover {
+    opacity: 1;
+}
+
+.Textarea_theme_normal.Textarea_hovered .Textarea-Box {
+    border-color: rgba(0, 0, 0, .3);
+}
+
+.Textarea_theme_normal.Textarea_hovered.Textarea_state_error .Textarea-Box {
+    border-color: var(--color-control-bg-border-default-error-hover);
+}
+
+.Textarea_theme_normal.Textarea_focused {
+    border: 0;
+}
+
+/* stylelint-disable no-descending-specificity */
+.Textarea_theme_normal.Textarea_focused .Textarea-Box,
+.Textarea_theme_normal.Textarea_focused.Textarea_hovered .Textarea-Box {
+    border: 2px solid #ffdb4d;
+}
+
+.Textarea_theme_normal .Textarea-Clear {
+    transition: opacity .1s ease-out, visibility 0s linear .1s;
+}

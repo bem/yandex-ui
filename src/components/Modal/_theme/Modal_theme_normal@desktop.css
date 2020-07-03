@@ -1,0 +1,88 @@
+/* Усиливаем селектор, чтобы переопределить display из основного кода. */
+.Modal.Modal_theme_normal {
+    /* Устанавливаем display: block, для того, чтобы правильно отработала анимация на закрытие. */
+    display: block;
+    visibility: hidden;
+
+    margin: -9999px 0 0 -9999px; /* 1 */
+}
+
+.Modal_theme_normal.Modal_visible {
+    visibility: visible;
+
+    margin: 0;
+}
+
+.Modal_theme_normal,
+.Modal_theme_normal .Modal-Content {
+    animation-duration: .2s;
+    animation-timing-function: ease-in-out;
+}
+
+.Modal_theme_normal.Modal_hasAnimation {
+    animation-name: Modal_theme_normal;
+}
+
+.Modal_theme_normal.Modal_hasAnimation .Modal-Content {
+    animation-name: Modal-Content_theme_normal;
+}
+
+.Modal_theme_normal.Modal_visible.Modal_hasAnimation {
+    animation-name: Modal_theme_normal_visible;
+}
+
+.Modal_theme_normal.Modal_visible.Modal_hasAnimation .Modal-Content {
+    animation-name: Modal-Content_theme_normal_visible;
+}
+
+@keyframes Modal_theme_normal {
+    0% {
+        visibility: visible;
+
+        margin: 0;
+
+        opacity: 1;
+    }
+
+    99% {
+        margin: 0;
+    }
+
+    100% {
+        visibility: hidden;
+
+        margin: -9999px 0 0 -9999px; /* 3 */
+
+        opacity: 0;
+    }
+}
+
+@keyframes Modal_theme_normal_visible {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes Modal-Content_theme_normal {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.5);
+    }
+}
+
+@keyframes Modal-Content_theme_normal_visible {
+    0% {
+        transform: scale(.75);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

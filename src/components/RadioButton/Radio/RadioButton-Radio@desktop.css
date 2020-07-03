@@ -1,0 +1,11 @@
+.RadioButton-Radio,
+.RadioButton-Radio .RadioButton-Control {
+    cursor: pointer;
+}
+
+.RadioButton-Radio_disabled,
+.RadioButton-Radio_disabled .RadioButton-Control,
+.RadioButton-Radio_checked,
+.RadioButton-Radio_checked .RadioButton-Control {
+    cursor: default;
+}

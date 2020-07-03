@@ -1,0 +1,9 @@
+.Checkbox_lines_multi {
+    display: inline-table;
+
+    white-space: normal;
+}
+
+.Checkbox_lines_multi .Checkbox-Label {
+    display: table-cell;
+}

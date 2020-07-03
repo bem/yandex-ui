@@ -1,0 +1,9 @@
+.Hermione.NewDesign {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.Hermione.NewDesign .Hermione-Item {
+    padding: 8px;
+}

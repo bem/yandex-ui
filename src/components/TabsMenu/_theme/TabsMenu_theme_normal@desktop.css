@@ -1,0 +1,9 @@
+.TabsMenu_theme_normal .TabsMenu-Tab_active:hover::before {
+    /* hover для вкладок без js-поведения. _hovered_yes все еще нужен, т.к. решает проблемы
+     * кроссбраузерности во вкладках с js-поведением */
+    background-color: #d00;
+}
+
+.TabsMenu_theme_normal .TabsMenu-Tab_active.TabsMenu-Tab_hovered::before {
+    background-color: #d00;
+}

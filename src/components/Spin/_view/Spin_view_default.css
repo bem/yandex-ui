@@ -1,0 +1,4 @@
+.Spin2_view_default.Spin2_progress {
+    border-top-color: var(--color-control-bg-progress);
+    border-left-color: var(--color-control-bg-progress);
+}

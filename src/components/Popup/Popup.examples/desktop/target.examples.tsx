@@ -1,0 +1,54 @@
+import React, { createRef, useState } from 'react';
+
+import { withOutsideClick } from '../../../../hocs/withOutsideClick/withOutsideClick';
+import { Button } from '../../../Button/Button.bundle/desktop';
+import { Popup as PopupDesktop } from '../../Popup.bundle/desktop';
+import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
+
+export default {
+    title: EXAMPLE_DESKTOP_TOKEN,
+    decorators: createDecorators({ scope: 'desktop' }),
+    parameters,
+};
+
+const Popup = withOutsideClick(PopupDesktop);
+
+const scopeRef = createRef<HTMLDivElement>();
+const anchorRef = createRef<HTMLDivElement>();
+
+export const Target = () => {
+    const [visible, setVisible] = useState(false);
+
+    return (
+        <div style={{ position: 'relative' }} ref={scopeRef}>
+            <Button
+                onClick={() => setVisible(!visible)}
+                innerRef={anchorRef}
+                size="m"
+                view="default"
+                children="_target_anchor"
+            />
+            <Popup
+                hasTail
+                target="anchor"
+                anchor={anchorRef}
+                directions={['bottom-left']}
+                scope={scopeRef}
+                view="default"
+                visible={visible}
+                style={{ maxWidth: 280 }}
+                onOutsideClick={() => setVisible(false)}
+                ignoreRefs={[anchorRef]}
+                onEscapeKeyDown={() => setVisible(false)}
+            >
+                <div style={{ padding: 16, fontFamily: 'var(--control-font-family)' }}>
+                    Общедоступная многоязычная универсальная интернет-энциклопедия со свободным контентом.
+                </div>
+            </Popup>
+        </div>
+    );
+};
+
+Target.story = {
+    name: 'target',
+};
