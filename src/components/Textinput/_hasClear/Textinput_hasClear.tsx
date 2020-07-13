@@ -7,6 +7,12 @@ import { ITextinputProps, cnTextinput } from '../Textinput';
 
 export interface ITextinputHasClearProps {
     /**
+     * Видимость крестика. Если указан, 
+     * состояние более не зависит от value.
+     */
+    isClearVisible?: boolean;
+
+    /**
      * Наличие крестика для очистки текстового поля.
      */
     hasClear?: boolean;
@@ -75,7 +81,9 @@ export const withHasClear = withBemMod<ITextinputHasClearProps, ITextinputProps>
                                                 size={this.props.size}
                                                 theme={this.props.theme}
                                                 view={this.props.view}
-                                                visible={Boolean(this.props.value)}
+                                                visible={
+                                                    this.props.isClearVisible ?? Boolean(this.props.value)
+                                                }
                                             />
                                             {addonBefore}
                                         </>
