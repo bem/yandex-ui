@@ -81,7 +81,7 @@ export const withHasClear = withBemMod<ITextinputHasClearProps, ITextinputProps>
                                                 size={this.props.size}
                                                 theme={this.props.theme}
                                                 view={this.props.view}
-                                                visible={this.props.isVisible ?? this.props.isVisible : Boolean(this.props.value)}
+                                                visible={this.props.isVisible ?? Boolean(this.props.value)}
                                             />
                                             {addonBefore}
                                         </>
