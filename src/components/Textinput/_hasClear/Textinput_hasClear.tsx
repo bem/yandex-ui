@@ -8,7 +8,7 @@ import { ITextinputProps, cnTextinput } from '../Textinput';
 export interface ITextinputHasClearProps {
     /**
      * Видимость крестика. Если указан, 
-     * работает как stateless комопнент.
+     * состояние более не зависит от value.
      */
     isVisible?: boolean;
 
