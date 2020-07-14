@@ -55,6 +55,11 @@ export interface ITextinputControlProps {
     disabled?: boolean;
 
     /**
+     * HTML-атрибут `required`
+     */
+    required?: boolean;
+
+    /**
      * Уникальный id компонента
      */
     id?: string;
