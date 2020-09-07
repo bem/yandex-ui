@@ -1,0 +1,11 @@
+/* common */
+.Link_view_default {
+    color: var(--link-view-default-typo-color-base);
+
+    transition: color .15s linear;
+}
+
+/* disable */
+.Link_view_default[aria-disabled='true'] {
+    color: var(--link-view-default-typo-color-disabled);
+}

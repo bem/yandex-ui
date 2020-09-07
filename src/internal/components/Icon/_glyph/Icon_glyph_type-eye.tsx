@@ -1,8 +1,8 @@
 import React from 'react';
 import { withBemMod } from '@bem-react/core';
 
-import { IIconProps, cnIcon } from '../../../../components/Icon/Icon';
-import '../../../../components/Icon/_glyph/Icon_glyph.css';
+import { IIconProps, cnIcon } from '../../../../Icon/Icon';
+import '../../../../Icon/_glyph/Icon_glyph.css';
 
 export interface IWithGlyphTypeEyeProps {
     glyph?: 'type-eye';

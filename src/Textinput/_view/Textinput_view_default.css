@@ -1,0 +1,62 @@
+/* common */
+.Textinput_view_default .Textinput-Box {
+    border: var(--textinput-borderWidth) solid var(--textinput-view-default-border-color-base);
+    border-radius: var(--textinput-borderRadius);
+    background-color: var(--textinput-view-default-fill-color-base);
+
+    transition: background-color .15s linear;
+}
+
+.Textinput_view_default.Textinput_state_error .Textinput-Box {
+    border-color: var(--textinput-view-default-border-color-state-error-base);
+}
+
+.Textinput_view_default .Textinput-Control {
+    color: var(--textinput-view-default-typo-color-base);
+}
+
+.Textinput_view_default .Textinput-Control::placeholder {
+    color: var(--textinput-view-default-placeholder-typo-color-base);
+}
+
+.Textinput_view_default .Textinput-Icon {
+    color: var(--textinput-view-default-icon-fill-color-base);
+}
+
+.Textinput_view_default .Textinput-Clear {
+    transition: color .15s linear;
+}
+
+.Textinput_view_default.Textinput_size_s .Textinput-Clear svg {
+    width: 12px;
+    height: 12px;
+}
+
+.Textinput_view_default.Textinput_size_m .Textinput-Clear svg {
+    width: 14px;
+    height: 14px;
+}
+
+.Textinput_view_default.Textinput_state_error .Textinput-Hint {
+    color: var(--textinput-view-default-hint-typo-color-error-base);
+}
+
+/* disable */
+.Textinput_view_default.Textinput_disabled .Textinput-Control {
+    color: var(--textinput-view-default-typo-color-disabled);
+}
+
+.Textinput_view_default.Textinput_disabled .Textinput-Control::placeholder {
+    color: var(--textinput-view-default-placeholder-typo-color-disabled);
+}
+
+/* TODO: Усиливаем селектор для ie11 (оторвать после https://st.yandex-team.ru/ISL-7989) */
+.Textinput_view_default.Textinput_disabled .Textinput-Box {
+    border-color: var(--textinput-view-default-border-color-disabled);
+    background-color: var(--textinput-view-default-fill-color-disabled);
+}
+
+/* focus */
+.Textinput.Textinput_view_default.Textinput_focused .Textinput-Box[class] {
+    border-color: var(--textinput-view-default-border-color-focused);
+}

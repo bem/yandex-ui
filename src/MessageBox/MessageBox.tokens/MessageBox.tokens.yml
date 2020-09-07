@@ -1,0 +1,135 @@
+messageBox:
+  fontSize:
+    value: "{typography.controls.size.s.fontSize.value}"
+  fontFamily:
+      value: "{typography.controls.fontFamily.value}"
+  lineHeight:
+    value: 16px
+  hint:
+    borderRadius:
+      value: 4px
+  close:
+    lineHeight:
+      value: 16px
+    fontSize:
+      value: 11px
+    indentRight:
+      value: 7px
+    width:
+      value: 16px
+    height:
+      value: 16px
+  text:
+    indentLeft:
+      value: 20px
+    indentRight:
+      value: 20px
+  content:
+    spaceAll:
+      value: 20px
+    maxWidth:
+      value: 180px
+  size:
+    s:
+      tail:
+        size:
+          value: 22px
+      tooltip:
+        fontSize:
+          value: 11px
+      fontSize:
+        value: "{typography.controls.size.s.fontSize.value}"
+      border:
+        radius:
+          value: 7px
+      content:
+        maxWidth:
+          value: 260px
+        spaceAll:
+          value: 5px 10px
+        functional:
+          width:
+            value: 180px
+    m:
+      tail:
+        size:
+          value: 22px
+      tooltip:
+        fontSize:
+          value: 11px
+      fontSize:
+        value: "{typography.controls.size.s.fontSize.value}"
+      border:
+        radius:
+          value: 7px
+      content:
+        spaceAll:
+          value: 10px 14px
+        minWidth:
+          value: 200px
+        maxWidth:
+          value: 280px
+        tooltip:
+          maxWidth:
+            value: 320px
+        functional:
+          width:
+            value: 280px
+    l:
+      tail:
+        size:
+          value: 22px
+      functional:
+        fontSize:
+          value: 14px
+        lineHeight:
+          value: 18px
+      fontSize:
+        value: "{typography.controls.size.s.fontSize.value}"
+      border:
+        radius:
+          value: 7px
+      content:
+        spaceAll:
+          value: 15px 20px
+        minWidth:
+          value: 300px
+        maxWidth:
+          value: 380px
+        width:
+          value: 380px
+        functional:
+          width:
+            value: 380px
+  button:
+    indentRight:
+      value: 0
+  buttons-indentAll:
+    value: 0
+  viewDefault:
+    typoColor:
+      value: "{color.typo.inverse.value}"
+
+    fillColor:
+      value: "{color.fillColor.inverse.value}"
+
+    shadow:
+      value: "0 6px 20px -4px rgba(0, 0, 0, .7)"
+  viewPromo:
+    typoColor:
+      value: "{color.typo.inverse.value}"
+
+    fillColor:
+      value: "{color.fillColor.promo.value}"
+
+    shadow:
+      value: "0 6px 20px -4px rgba(0, 0, 0, .7)"
+  viewInverse:
+    typoColor:
+      value: "{color.typo.primary.value}"
+
+    fillColor:
+      value: "{color.fillColor.default.value}"
+
+    shadow:
+      value: "0 6px 20px -4px rgba(0, 0, 0, .7)"

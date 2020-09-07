@@ -1,0 +1,72 @@
+tooltip:
+  fontFamily:
+    value: "{typography.controls.fontFamily.value}"
+
+  border:
+    radius:
+      value: 4px
+
+  size:
+    s:
+      fontSize:
+        value: "{typography.controls.size.s.fontSize.value}"
+      lineHeight:
+        value: 12px
+
+      content:
+        spaceAll:
+          value: 8px
+
+      tail:
+        size:
+          value: 12px
+
+    m:
+      fontSize:
+        value: "{typography.controls.size.m.fontSize.value}"
+      lineHeight:
+        value: 14px
+
+      content:
+        spaceAll:
+          value: 9px 10px
+
+      tail:
+        size:
+          value: 12px
+
+    l:
+      fontSize:
+        value: 16px
+      lineHeight:
+        value: 16px
+
+      content:
+        spaceAll:
+          value: 18px
+
+      tail:
+        size:
+          value: 18px
+
+  viewDefault:
+    shadow:
+      value: 0 10px 20px -5px rgba(0, 0, 0, .4)
+
+    fillColor:
+      base:
+        value: "{color.control.type.default.fillColor.base.value}"
+      stateSuccess:
+        value: "{color.fillColor.success.value}"
+      stateWarning:
+        value: "{color.fillColor.warning.value}"
+      stateAlert:
+        value: "{color.fillColor.alert.value}"
+
+    typoColor:
+      stateSuccess:
+        value: "{color.control.typo.faint.value}"
+      stateWarning:
+        value: "{color.control.typo.faint.value}"
+      stateAlert:
+        value: "{color.control.typo.faint.value}"

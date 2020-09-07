@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Drawer client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<SimpleComposeWrapper [view:default]
+  animation={
+    Object {
+      "friction": 24,
+      "tension": 230,
+    }
+  }
+>
+  <RegistryResolver(Drawer)
+    animation={
+      Object {
+        "friction": 24,
+        "tension": 230,
+      }
+    }
+    className="Drawer"
+  >
+    <Drawer
+      animation={
+        Object {
+          "friction": 24,
+          "tension": 230,
+        }
+      }
+      className="Drawer"
+    >
+      <RegistryResolver(Popup2)
+        className="Drawer Drawer_direction_bottom"
+        style={
+          Object {
+            "height": "768px",
+          }
+        }
+        visible={false}
+      >
+        <Popup2
+          className="Drawer Drawer_direction_bottom"
+          style={
+            Object {
+              "height": "768px",
+            }
+          }
+          visible={false}
+        />
+      </RegistryResolver(Popup2)>
+    </Drawer>
+  </RegistryResolver(Drawer)>
+</SimpleComposeWrapper [view:default]>
+`;
+
+exports[`Drawer server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `null`;

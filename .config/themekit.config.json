@@ -18,12 +18,18 @@
         {
           "destination": "[entry]/[platform]/color.css",
           "format": "css/whitepaper",
-          "filter": "whitepaper/color"
+          "filter": "whitepaper/color",
+          "options": {
+            "useAliasVariables": true
+          }
         },
         {
           "destination": "[entry]/[platform]/root.css",
           "format": "css/whitepaper",
-          "filter": "whitepaper/root"
+          "filter": "whitepaper/root",
+          "options": {
+            "useAliasVariables": true
+          }
         }
       ]
     }

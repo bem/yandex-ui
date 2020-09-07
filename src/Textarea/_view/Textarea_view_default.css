@@ -1,0 +1,64 @@
+/* common */
+.Textarea_view_default .Textarea-Box {
+    border: var(--textarea-borderWidth) solid var(--textarea-view-default-border-color-base);
+    border-radius: var(--textarea-borderRadius);
+    background-color: var(--textarea-view-default-fill-color-base);
+
+    transition: background-color .15s linear;
+}
+
+.Textarea_view_default.Textarea_state_error .Textarea-Box {
+    border-color: var(--textarea-view-default-border-color-state-error-base);
+}
+
+.Textarea_view_default .Textarea-Control {
+    color: var(--textarea-view-default-typo-color-base);
+}
+
+.Textarea_view_default .Textarea-Control::placeholder {
+    color: var(--textarea-view-default-placeholder-typo-color-base);
+}
+
+.Textarea_view_default .Textarea-Icon {
+    color: var(--textarea-view-default-icon-fill-color-base);
+}
+
+.Textarea_view_default .Textarea-Clear {
+    color: var(--textarea-view-default-clear-fill-color-base);
+
+    transition: color .15s linear;
+}
+
+.Textarea_view_default.Textarea_size_s .Textarea-Clear svg {
+    width: 12px;
+    height: 12px;
+}
+
+.Textarea_view_default.Textarea_size_m .Textarea-Clear svg {
+    width: 14px;
+    height: 14px;
+}
+
+.Textarea_view_default.Textarea_state_error .Textarea-Hint {
+    color: var(--textarea-view-default-hint-typo-color-state-error-base);
+}
+
+/* disable */
+.Textarea_view_default.Textarea_disabled .Textarea-Control {
+    color: var(--textarea-view-default-typo-color-disabled);
+}
+
+.Textarea_view_default.Textarea_disabled .Textarea-Control::placeholder {
+    color: var(--textarea-view-default-placeholder-typo-color-disabled);
+}
+
+/* TODO: Усиливаем селектор для ie11 (оторвать после https://st.yandex-team.ru/ISL-7989) */
+.Textarea_view_default.Textarea_disabled .Textarea-Box {
+    border-color: var(--textarea-view-default-border-color-disabled);
+    background-color: var(--textarea-view-default-fill-color-disabled);
+}
+
+/* focus */
+.Textarea.Textarea_view_default.Textarea_focused .Textarea-Box[class] {
+    border-color: var(--textarea-view-default-border-color-focused);
+}

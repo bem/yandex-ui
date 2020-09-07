@@ -1,0 +1,14 @@
+/**
+ * Без important стили класса перебиваются inline-стилями
+ */
+.Popup2 {
+    position: absolute;
+    z-index: 1400;
+}
+
+.Popup2_outside {
+    top: -10000px !important;
+    left: -10000px !important;
+
+    display: block !important;
+}

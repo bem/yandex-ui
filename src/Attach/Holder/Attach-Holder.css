@@ -1,0 +1,16 @@
+.Attach-Holder {
+    display: flex;
+    align-items: center;
+
+    user-select: none;
+}
+
+.Attach-Holder .Attach-Text {
+    overflow: hidden;
+
+    font-family: var(--attach-font-family);
+    cursor: pointer;
+    text-overflow: ellipsis;
+
+    color: var(--attach-typo-color);
+}

@@ -1,0 +1,105 @@
+textarea:
+  fontFamily:
+    value: "{typography.controls.fontFamily.value}"
+
+  border:
+    width:
+      value: 2px
+    radius:
+      value: 4px
+
+  size:
+    s:
+      fontSize:
+        value: "{typography.controls.size.s.fontSize.value}"
+      spaceAll:
+        value: 6px
+      minWidth:
+        value: 180px
+      minHeight:
+        value: 32px
+
+      clear:
+        width:
+          value: 32px
+        height:
+          value: 32px
+
+      hint:
+        fontSize:
+          value: 12px
+
+    m:
+      fontSize:
+        value: "{typography.controls.size.m.fontSize.value}"
+      spaceAll:
+        value: 8px
+      minWidth:
+        value: 200px
+      minHeight:
+        value: 36px
+
+      clear:
+        width:
+          value: 36px
+        height:
+          value: 36px
+
+      hint:
+        fontSize:
+          value: 13px
+
+  viewDefault:
+    fillColor:
+      base:
+        value: "{color.control.type.blank.fillColor.base.value}"
+      disabled:
+        value: "{color.control.type.blank.fillColor.disable.value}"
+      hovered:
+        value: "{color.control.type.blank.fillColor.hover.value}"
+
+    typoColor:
+      base:
+        value: "{color.control.typo.primary.value}"
+      disabled:
+        value: "{color.control.typo.disable.value}"
+
+    placeholder:
+      typoColor:
+        base:
+          value: "{color.control.typo.ghost.value}"
+        disabled:
+          value: "{color.control.typo.disable.value}"
+
+    icon:
+      fillColor:
+        base:
+          value: "{color.control.typo.ghost.value}"
+
+    clear:
+      fillColor:
+        base:
+          value: "{color.control.typo.ghost.value}"
+        hovered:
+          value: "{color.control.typo.primary.value}"
+
+    hint:
+      typoColor:
+        stateError:
+          base:
+            value: "{color.control.typo.error.value}"
+
+    borderColor:
+      base:
+        value: "{color.control.type.blank.borderColor.base.value}"
+      disabled:
+        value: "{color.control.type.blank.borderColor.disable.value}"
+      focused:
+        value: "{color.control.borderColor.focus.value}"
+      hovered:
+        value: "{color.control.type.blank.borderColor.hover.value}"
+      stateError:
+        base:
+          value: "{color.control.type.default.borderColor.error.base.value}"
+        hovered:
+          value: "{color.control.type.default.borderColor.error.hover.value}"

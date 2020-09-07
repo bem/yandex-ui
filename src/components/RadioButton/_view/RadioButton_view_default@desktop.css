@@ -1,7 +1,0 @@
-.RadioButton_view_default .RadioButton-Radio:hover {
-    color: var(--color-control-typo-primary);
-}
-
-.utilityfocus .RadioButton_view_default[data-focused] {
-    box-shadow: 0 0 0 2px var(--color-control-bg-border-prism);
-}

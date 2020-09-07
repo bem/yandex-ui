@@ -7,14 +7,14 @@ export const serverEnvironmentSetup = () => {
     const prevRAF = (global as any).requestAnimationFrame;
 
     // eslint-disable-next-line no-undef
-    beforeAll(() => {
+    beforeEach(() => {
         delete (global as any).window;
         delete (global as any).document;
         delete (global as any).requestAnimationFrame;
     });
 
     // eslint-disable-next-line no-undef
-    afterAll(() => {
+    afterEach(() => {
         (global as any).window = prevWindow;
         (global as any).document = prevDocument;
         (global as any).requestAnimationFrame = prevRAF;

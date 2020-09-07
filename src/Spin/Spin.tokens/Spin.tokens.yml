@@ -1,0 +1,21 @@
+spin:
+  size:
+    xxs:
+      size:
+        value: 16px
+    xs:
+      size:
+        value: 24px
+    s:
+      size:
+        value: 28px
+    m:
+      size:
+        value: 32px
+    l:
+      size:
+        value: 38px
+
+  viewDefault:
+    borderColor:
+      value: "{color.control.type.progress.fillColor.base.value}"

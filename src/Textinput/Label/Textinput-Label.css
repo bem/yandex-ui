@@ -1,0 +1,27 @@
+.Textinput-Label {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: initial;
+    left: 0;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+    pointer-events: none;
+
+    color: var(--textinput-view-material-label-color-base);
+
+    transition: color .15s cubic-bezier(.4, 0, .2, 1) 0s, transform .15s cubic-bezier(.4, 0, .2, 1) 0s, top .15s cubic-bezier(.4, 0, .2, 1) 0s;
+    transform: translate(0, -50%) scale(1);
+    transform-origin: top left;
+    will-change: transform;
+}
+
+.Textinput-Label_floated {
+    top: 0;
+
+    color: var(--textinput-view-material-label-color-floated-base);
+
+    transform: translate(0, 9.5px) scale(0.75);
+}

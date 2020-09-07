@@ -28,13 +28,24 @@
       "es6",
       "dom"
     ],
-    "rootDir": ".",
-    "jsx": "react",
-    "allowJs": true,
-    "resolveJsonModule": true
+    "rootDir": "src",
+    "baseUrl": ".",
+    "paths": {
+      "@bem-react/*": ["node_modules/@bem-react/*"],
+      "react": ["node_modules/@types/react"]
+    },
+    "allowJs": true
   },
-  // Обрабатываем только ts & tsx файлы в src, чтобы typescript
-  // не зависал пытаясь обработать js файлы из артефактов сборки.
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": ["src"],
+  "exclude": [
+    "src/internal/**",
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx",
+    "src/**/*tests/**/*",
+    "src/**/*.examples.ts",
+    "src/**/*.examples.tsx",
+    "src/**/*.examples/**/*.ts",
+    "src/**/*.examples/**/*.tsx",
+    "node_modules"
+  ]
 }

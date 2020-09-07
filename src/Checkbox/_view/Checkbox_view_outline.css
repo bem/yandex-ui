@@ -1,0 +1,81 @@
+/* common */
+.Checkbox_view_outline {
+    color: var(--color-control-typo-primary);
+}
+
+.Checkbox_view_outline .Checkbox-Box {
+    text-align: left;
+}
+
+.Checkbox_view_outline .Checkbox-Box::before {
+    border: 2px solid var(--checkbox-view-outline-border-color);
+    border-radius: var(--checkbox-borderRadius);
+    background-color: var(--checkbox-view-outline-fill-color-base);
+
+    transition: background-color .1s linear;
+}
+
+.Checkbox_view_outline .Checkbox-Tick {
+    color: transparent;
+
+    transition: color .1s, transform .2s;
+    transform: translateY(-5px);
+}
+
+.Checkbox_view_outline .Checkbox-Tick,
+.Checkbox_view_outline .Checkbox-Tick .Icon {
+    width: 100%;
+    height: 100%;
+}
+
+.Checkbox_view_outline .Checkbox-Tick .Icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Checkbox_view_outline .Checkbox-Tick .Icon::after {
+    content: none;
+}
+
+.Checkbox_view_outline .Checkbox-Tick svg {
+    position: static;
+    top: initial;
+    left: initial;
+
+    transform: none;
+}
+
+
+.Checkbox_view_outline.Checkbox_size_m .Checkbox-Tick svg {
+    width: var(--checkbox-size-m-tick-width);
+    height: var(--checkbox-size-m-tick-height);
+}
+
+.Checkbox_view_outline.Checkbox_size_s .Checkbox-Tick svg {
+    width: var(--checkbox-size-s-tick-width);
+    height: var(--checkbox-size-s-tick-height);
+}
+
+.Checkbox_view_outline.Checkbox_indeterminate .Checkbox-Tick svg {
+    width: 17px;
+    height: 17px;
+}
+
+/* check */
+/* TODO: Усиливаем селектор для ie11 (оторвать после https://st.yandex-team.ru/ISL-7989) */
+.Checkbox_view_outline.Checkbox_checked .Checkbox-Box[class]::before {
+    border: 2px solid var(--color-control-bg-check);
+    background-color: var(--color-control-bg-check);
+}
+
+.Checkbox_view_outline.Checkbox_checked .Checkbox-Tick {
+    color: var(--color-control-bg-faint);
+
+    transform: translateY(0);
+}
+
+/* disable */
+.Checkbox_view_outline.Checkbox_disabled {
+    opacity: var(--checkbox-view-outline-disabled-opacity);
+}

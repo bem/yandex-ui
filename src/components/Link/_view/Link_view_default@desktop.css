@@ -1,9 +1,0 @@
-/* hover */
-.Link_view_default:not([aria-disabled='true']):hover {
-    color: var(--color-link-hover);
-}
-
-/* focus */
-.utilityfocus .Link:focus {
-    outline: 2px solid var(--color-control-bg-border-prism);
-}

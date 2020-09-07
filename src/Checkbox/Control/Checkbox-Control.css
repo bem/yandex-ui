@@ -1,0 +1,16 @@
+.Checkbox-Control {
+    position: absolute;
+    z-index: 4;
+    top: -2px;
+    left: -2px;
+
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    margin: 0;
+    padding: 0;
+
+    opacity: 0;
+    border: none;
+    outline: none;
+    background: none;
+}

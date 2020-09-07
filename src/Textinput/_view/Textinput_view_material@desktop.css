@@ -1,0 +1,9 @@
+/* hover */
+.Textinput_variant_outlined:not(.Textinput_disabled):hover .Textinput-Box {
+    border-color: var(--textinput-view-material-variant-outlined-border-color-focused);
+}
+
+.Textinput_view_material.Textinput_state_error:hover .Textinput-Box,
+.Textinput_view_material.Textinput_state_error:hover .Textinput-Box::before {
+    border-color: var(--textinput-view-material-border-color-state-error);
+}

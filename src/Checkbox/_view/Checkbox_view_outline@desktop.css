@@ -1,0 +1,18 @@
+/* hover */
+/* TODO: Усиливаем селектор для ie11 (оторвать после https://st.yandex-team.ru/ISL-7989) */
+.Checkbox_view_outline.Checkbox_hovered .Checkbox-Box[class]::before {
+    border: 2px solid var(--checkbox-view-default-fill-color-hovered);
+    background-color: var(--checkbox-view-outline-fill-color-hovered);
+}
+
+/* check */
+/* TODO: Усиливаем селектор для ie11 (оторвать после https://st.yandex-team.ru/ISL-7989) */
+.Checkbox_view_outline.Checkbox_hovered.Checkbox_checked .Checkbox-Box[class]::before {
+    border: 2px solid var(--checkbox-view-default-fill-color-checked-hovered);
+    background-color: var(--checkbox-view-default-fill-color-checked-hovered);
+}
+
+/* focus */
+.utilityfocus .Checkbox_view_outline.Checkbox_focused .Checkbox-Box::before {
+    box-shadow: 0 0 0 2px var(--checkbox-view-default-outline-color);
+}

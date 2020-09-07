@@ -7,8 +7,9 @@
     "./src/**/*.mapper.yml"
   ],
   "sources": [
+    "./src/Theme/tokens/space.tokens.yml",
     "./src/Theme/tokens/typography.tokens.yml",
     "./src/Theme/tokens/color-dark.tokens.yml",
-    "./src/components/**/*.tokens.yml"
+    "./src/**/*.tokens/*.tokens.yml"
   ]
 }

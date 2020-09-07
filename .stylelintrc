@@ -12,6 +12,7 @@
     ]
   },
   "ignoreFiles": [
-    "**/*.tsx"
+    "**/*.tsx",
+    "./src/Theme/presets/**/*.css"
   ]
 }

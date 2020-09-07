@@ -1,0 +1,244 @@
+button:
+  fontFamily:
+    value: "{typography.controls.fontFamily.value}"
+
+  border:
+    width:
+      value: 1px
+    radius:
+      value: 4px
+
+  size:
+    s:
+      fontSize:
+        value: "{typography.controls.size.s.fontSize.value}"
+      lineHeight:
+        value: 32px
+      height:
+        value: 32px
+
+      icon:
+        width:
+          value: 32px
+        indentLeft:
+          value: 25px
+        indentRight:
+          value: 25px
+
+      text:
+        indentAll:
+          value: 0 13px
+
+    m:
+      fontSize:
+        value: "{typography.controls.size.m.fontSize.value}"
+      lineHeight:
+        value: 36px
+      height:
+        value: 36px
+
+      icon:
+        width:
+          value: 36px
+        indentLeft:
+          value: 29px
+        indentRight:
+          value: 29px
+
+      text:
+        indentAll:
+          value: 0 15px
+
+    l:
+      fontSize:
+        value: "{typography.controls.size.l.fontSize.value}"
+      lineHeight:
+        value: 42px
+      height:
+        value: 42px
+
+      icon:
+        width:
+          value: 42px
+        indentLeft:
+          value: 35px
+        indentRight:
+          value: 35px
+
+      text:
+        indentAll:
+          value: 0 18px
+
+  viewAction:
+    borderColor:
+      focused:
+        value: "{color.control.borderColor.prism.value}"
+
+    fillColor:
+      base:
+        value: "{color.control.type.action.fillColor.base.value}"
+      disabled:
+        value: "{color.control.type.default.fillColor.disable.value}"
+      hovered:
+        value: "{color.control.type.action.fillColor.hover.value}"
+      progress:
+        base:
+          value: "{color.control.type.progress.fillColor.base.value}"
+        process:
+          value: "{color.control.type.progress.fillColor.process.value}"
+      checked:
+        base:
+          value: "{color.control.type.check.fillColor.base.value}"
+        hovered:
+          value: "{color.control.type.check.fillColor.hover.value}"
+
+    typoColor:
+      base:
+        value: "{color.control.typo.passive.value}"
+      disabled:
+        value: "{color.control.typo.disable.value}"
+      hovered:
+        value: "{color.control.typo.passive.value}"
+      progress:
+        base:
+          value: "{color.control.typo.passive.value}"
+      checked:
+        base:
+          value: "{color.control.typo.faint.value}"
+        hovered:
+          value: "{color.control.typo.faint.value}"
+
+  viewClear:
+    borderColor:
+      focused:
+        value: "{color.control.borderColor.prism.value}"
+
+    fillColor:
+      disabled:
+        value: "{color.control.type.default.fillColor.disable.value}"
+      checked:
+        base:
+          value: "{color.control.type.check.fillColor.base.value}"
+        hovered:
+          value: "{color.control.type.check.fillColor.hover.value}"
+
+    typoColor:
+      base:
+        value: "{color.control.typo.primary.value}"
+      disabled:
+        value: "{color.control.typo.disable.value}"
+      checked:
+        base:
+          value: "{color.control.typo.faint.value}"
+
+  viewDefault:
+    borderColor:
+      focused:
+        value: "{color.control.borderColor.prism.value}"
+
+    fillColor:
+      base:
+        value: "{color.control.type.default.fillColor.base.value}"
+      disabled:
+        value: "{color.control.type.default.fillColor.disable.value}"
+      hovered:
+        value: "{color.control.type.default.fillColor.hover.value}"
+      checked:
+        base:
+          value: "{color.control.type.check.fillColor.base.value}"
+        hovered:
+          value: "{color.control.type.check.fillColor.hover.value}"
+
+    typoColor:
+      base:
+        value: "{color.control.typo.primary.value}"
+      disabled:
+        value: "{color.control.typo.disable.value}"
+      checked:
+        base:
+          value: "{color.control.typo.faint.value}"
+        hovered:
+          value: "{color.control.typo.faint.value}"
+
+  viewLink:
+    borderColor:
+      base:
+        value: "{color.control.type.link.borderColor.base.value}"
+      focused:
+        value: "{color.control.borderColor.prism.value}"
+
+    fillColor:
+      base:
+        value: "{color.control.type.faint.fillColor.base.value}"
+      disabled:
+        value: "{color.control.type.default.fillColor.disable.value}"
+      hovered:
+        value: "{color.control.type.link.fillColor.hover.value}"
+      checked:
+        base:
+          value: "{color.control.type.check.fillColor.base.value}"
+        hovered:
+          value: "{color.control.type.check.fillColor.hover.value}"
+
+    typoColor:
+      base:
+        value: "{color.control.typo.link.value}"
+      disabled:
+        value: "{color.control.typo.disable.value}"
+      checked:
+        base:
+          value: "{color.control.typo.faint.value}"
+
+  viewPseudo:
+    borderColor:
+      base:
+        value: "{color.control.type.pseudo.borderColor.base.value}"
+      focused:
+        value: "{color.control.borderColor.prism.value}"
+
+    fillColor:
+      disabled:
+        value: "{color.control.type.default.fillColor.disable.value}"
+      hovered:
+        value: "{color.control.type.pseudo.fillColor.hover.value}"
+      checked:
+        base:
+          value: "{color.control.type.check.fillColor.base.value}"
+        hovered:
+          value: "{color.control.type.check.fillColor.hover.value}"
+
+    typoColor:
+      base:
+        value: "{color.control.typo.primary.value}"
+      disabled:
+        value: "{color.control.typo.disable.value}"
+      checked:
+        base:
+          value: "{color.control.typo.faint.value}"
+
+  viewRaised:
+    borderColor:
+      focused:
+        value: "{color.control.borderColor.prism.value}"
+
+    fillColor:
+      base:
+        value: "{color.control.type.raised.fillColor.base.value}"
+      disabled:
+        value: "{color.control.type.raised.fillColor.disable.value}"
+      hovered:
+        value: "{color.control.type.raised.fillColor.hover.value}"
+      checked:
+        base:
+          value: "{color.control.type.check.fillColor.base.value}"
+        hovered:
+          value: "{color.control.type.check.fillColor.hover.value}"
+
+    typoColor:
+      base:
+        value: "{color.control.type.raised.typo.base.value}"
+      disabled:
+        value: "{color.control.type.raised.typo.disable.value}"
+      checked:
+        base:
+          value: "{color.control.typo.faint.value}"

@@ -1,3 +1,3 @@
-export * from './delay'
-export * from './generateCombinations'
-export * from './serverEnvironmentSetup'
+export * from './delay';
+export * from './generateCombinations';
+export * from './serverEnvironmentSetup';

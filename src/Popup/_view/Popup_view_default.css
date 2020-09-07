@@ -1,0 +1,289 @@
+/* common */
+.Popup2_view_default {
+    visibility: hidden;
+
+    box-sizing: border-box;
+    margin: -9999px 0 0 -9999px;
+
+    color: var(--popup-view-default-typo-color);
+    border-radius: var(--popup-borderRadius);
+    background-color: var(--popup-view-default-fill-color);
+    box-shadow: 0 1.5ex 2ex -1ex rgba(0, 0, 0, .3);
+
+    animation-duration: .1s;
+    animation-timing-function: ease-out;
+
+    animation-fill-mode: forwards;
+}
+
+.Popup2_view_default::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    content: '';
+
+    border-radius: inherit;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .05);
+}
+
+.Popup2_view_default.Popup2_visible::before {
+    /* NOTE: ISL-5672 */
+    z-index: -1;
+}
+
+.Popup2_view_default.Popup2_visible {
+    visibility: visible;
+
+    margin: 0;
+}
+
+.Popup2.Popup2_view_default .Popup2-Tail::before {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 0;
+    left: 0;
+
+    content: '';
+
+    border: 1px solid transparent;
+    border-bottom-color: rgba(0, 0, 0, .06);
+    border-left-color: rgba(0, 0, 0, .06);
+}
+
+.Popup2_view_default .Popup2-Tail::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 1px;
+    left: 1px;
+
+    content: '';
+
+    background-image: linear-gradient(to top right, var(--popup-view-default-fill-color) 50%, transparent 50%);
+}
+
+/**
+ * Необходимо, чтобы сохранить скругленные края попапа,
+ * даже если у вложенного элемента скругления не будет.
+ */
+.Popup2.Popup2_view_default > :first-child {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.Popup2.Popup2_view_default > :last-child {
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
+}
+
+.Popup2_view_default.Popup2_direction_bottom-left,
+.Popup2_view_default.Popup2_direction_bottom-center,
+.Popup2_view_default.Popup2_direction_bottom-right {
+    animation-name: popup2_view_default_bottom;
+}
+
+.Popup2_view_default.Popup2_direction_bottom-left.Popup2_visible,
+.Popup2_view_default.Popup2_direction_bottom-center.Popup2_visible,
+.Popup2_view_default.Popup2_direction_bottom-right.Popup2_visible {
+    animation-name: popup2_view_default_bottom_visible;
+}
+
+.Popup2_view_default.Popup2_direction_top-left,
+.Popup2_view_default.Popup2_direction_top-center,
+.Popup2_view_default.Popup2_direction_top-right {
+    animation-name: popup2_view_default_top;
+}
+
+.Popup2_view_default.Popup2_direction_top-left.Popup2_visible,
+.Popup2_view_default.Popup2_direction_top-center.Popup2_visible,
+.Popup2_view_default.Popup2_direction_top-right.Popup2_visible {
+    animation-name: popup2_view_default_top_visible;
+}
+
+.Popup2_view_default.Popup2_direction_right-top,
+.Popup2_view_default.Popup2_direction_right-center,
+.Popup2_view_default.Popup2_direction_right-bottom {
+    animation-name: popup2_view_default_right;
+}
+
+.Popup2_view_default.Popup2_direction_right-top.Popup2_visible,
+.Popup2_view_default.Popup2_direction_right-center.Popup2_visible,
+.Popup2_view_default.Popup2_direction_right-bottom.Popup2_visible {
+    animation-name: popup2_view_default_right_visible;
+}
+
+.Popup2_view_default.Popup2_direction_left-top,
+.Popup2_view_default.Popup2_direction_left-center,
+.Popup2_view_default.Popup2_direction_left-bottom {
+    animation-name: popup2_view_default_left;
+}
+
+.Popup2_view_default.Popup2_direction_left-top.Popup2_visible,
+.Popup2_view_default.Popup2_direction_left-center.Popup2_visible,
+.Popup2_view_default.Popup2_direction_left-bottom.Popup2_visible {
+    animation-name: popup2_view_default_left_visible;
+}
+
+@keyframes popup2_view_default_bottom {
+    0% {
+        visibility: visible;
+
+        margin: 0;
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+    99% {
+        margin: 0;
+
+        transform: translateY(10px);
+    }
+
+    100% {
+        visibility: hidden;
+
+        margin: -9999px 0 0 -9999px;
+
+        opacity: 0;
+    }
+}
+
+@keyframes popup2_view_default_bottom_visible {
+    0% {
+        opacity: 0;
+
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+@keyframes popup2_view_default_top {
+    0% {
+        visibility: visible;
+
+        margin: 0;
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+    99% {
+        margin: 0;
+
+        transform: translateY(-10px);
+    }
+
+    100% {
+        visibility: hidden;
+
+        margin: -9999px 0 0 -9999px;
+
+        opacity: 0;
+    }
+}
+
+@keyframes popup2_view_default_top_visible {
+    0% {
+        opacity: 0;
+
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+@keyframes popup2_view_default_right {
+    0% {
+        visibility: visible;
+
+        margin: 0;
+
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+
+    99% {
+        margin: 0;
+
+        transform: translateX(10px);
+    }
+
+    100% {
+        visibility: hidden;
+
+        margin: -9999px 0 0 -9999px;
+
+        opacity: 0;
+    }
+}
+
+@keyframes popup2_view_default_right_visible {
+    0% {
+        opacity: 0;
+
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+}
+
+@keyframes popup2_view_default_left {
+    0% {
+        visibility: visible;
+
+        margin: 0;
+
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+
+    99% {
+        margin: 0;
+
+        transform: translateX(-10px);
+    }
+
+    100% {
+        visibility: hidden;
+
+        margin: -9999px 0 0 -9999px;
+
+        opacity: 0;
+    }
+}
+
+@keyframes popup2_view_default_left_visible {
+    0% {
+        opacity: 0;
+
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: translateX(0);
+    }
+}

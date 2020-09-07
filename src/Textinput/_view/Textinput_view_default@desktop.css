@@ -1,0 +1,14 @@
+/* hover */
+.Textinput_view_default .Textinput-Clear:hover {
+    color: var(--textinput-view-default-clear-fill-color-hovered);
+}
+
+/* TODO: Усиливаем селектор для ie11 (оторвать после https://st.yandex-team.ru/ISL-7989) */
+.Textinput_view_default.Textinput_hovered .Textinput-Box[class] {
+    border-color: var(--textinput-view-default-border-color-hovered);
+    background-color: var(--textinput-view-default-fill-color-hovered);
+}
+
+.Textinput_view_default.Textinput_hovered.Textinput_state_error .Textinput-Box {
+    border-color: var(--textinput-view-default-border-color-state-error-hovered);
+}

@@ -1,6 +1,6 @@
 import { withBemMod } from '@bem-react/core';
 
-import { cnIcon } from '../../../../components/Icon/Icon';
+import { cnIcon } from '../../../../Icon/Icon';
 import './Icon_type.css';
 
 export interface IWithTypeArrowProps {

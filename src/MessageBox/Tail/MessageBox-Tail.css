@@ -1,0 +1,21 @@
+.MessageBox-Tail {
+    position: absolute;
+}
+
+.Popup2_direction_top-left .MessageBox-Tail,
+.Popup2_direction_top-center .MessageBox-Tail,
+.Popup2_direction_top-right .MessageBox-Tail {
+    transform: rotate(180deg);
+}
+
+.Popup2_direction_left-top .MessageBox-Tail,
+.Popup2_direction_left-center .MessageBox-Tail,
+.Popup2_direction_left-bottom .MessageBox-Tail {
+    transform: rotate(90deg);
+}
+
+.Popup2_direction_right-top .MessageBox-Tail,
+.Popup2_direction_right-center .MessageBox-Tail,
+.Popup2_direction_right-bottom .MessageBox-Tail {
+    transform: rotate(-90deg);
+}

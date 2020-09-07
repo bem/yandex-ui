@@ -1,0 +1,12 @@
+progress:
+  height:
+    value: 2px
+  border:
+    radius:
+      value: 0
+  outer:
+    fillColor:
+      value: transparent
+  inner:
+    fillColor:
+      value: "{color.control.type.progress.fillColor.base.value}"

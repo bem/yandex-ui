@@ -1,0 +1,36 @@
+message-box-border-radius: message-box-borderRadius
+message-box-hint-border-radius: message-box-hint-borderRadius
+
+message-box-content-space-all: message-box-content-spaceAll
+message-box-close-indent-right: message-box-close-indentRight
+message-box-text-indent-left: message-box-text-indentLeft
+message-box-text-indent-right: message-box-text-indentRight
+message-box-button-indent-right: message-box-button-indentRight
+message-box-buttons-indent-all: message-box-buttons-indentAll
+message-box-size-s-content-space-all: message-box-size-s-content-spaceAll
+message-box-size-m-content-space-all: message-box-size-m-content-spaceAll
+message-box-size-l-content-space-all: message-box-size-l-content-spaceAll
+
+message-box-font-size: message-box-fontSize
+message-box-line-height: message-box-lineHeight
+message-box-close-font-size: message-box-close-fontSize
+message-box-close-line-height: message-box-close-lineHeight
+message-box-size-s-font-size: message-box-size-s-fontSize
+message-box-size-s-tooltip-font-size: message-box-size-s-tooltip-fontSize
+message-box-size-m-font-size: message-box-size-m-fontSize
+message-box-size-m-tooltip-font-size: message-box-size-m-tooltip-fontSize
+message-box-size-l-font-size: message-box-size-l-fontSize
+message-box-size-l-functional-font-size: message-box-size-l-functional-fontSize
+message-box-size-l-functional-line-height: message-box-size-l-functional-lineHeight
+
+message-box-size-s-content-max-width: message-box-size-s-content-maxWidth
+message-box-size-s-type-text-content-max-width: message-box-size-s-type-text-content-maxWidth
+message-box-size-s-content-functional-width: message-box-size-s-content-functional-width
+message-box-size-m-content-min-width: message-box-size-m-content-minWidth
+message-box-size-m-content-max-width: message-box-size-m-content-maxWidth
+message-box-size-m-content-tooltip-max-width: message-box-size-m-content-tooltip-maxWidth
+message-box-size-m-content-functional-width: message-box-size-m-content-functional-width
+message-box-size-l-content-min-width: message-box-size-l-content-minWidth
+message-box-size-l-content-max-width: message-box-size-l-content-maxWidth
+message-box-size-l-content-width: message-box-size-l-content-width
+message-box-size-l-content-functional-width: message-box-size-l-content-functional-width

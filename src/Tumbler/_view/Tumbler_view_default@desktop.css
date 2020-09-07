@@ -1,0 +1,14 @@
+/* hover */
+.Tumbler_view_default .Tumbler-Button:hover {
+    background-color: var(--tumbler-view-default-button-fill-color-hovered);
+}
+
+/* TODO: Усиливаем селектор для ie11 (оторвать после https://st.yandex-team.ru/ISL-7989) */
+.Tumbler_view_default[class] .Tumbler-Button[aria-pressed='true']:hover {
+    background-color: var(--tumbler-view-default-button-fill-color-checked-hovered);
+}
+
+/* focus */
+.utilityfocus .Tumbler_view_default .Tumbler-Button:focus {
+    box-shadow: 0 0 0 2px var(--tumbler-view-default-outline-color);
+}

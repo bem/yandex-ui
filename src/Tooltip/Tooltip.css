@@ -1,0 +1,9 @@
+.Tooltip {
+    z-index: 1500;
+
+    font-family: var(--tooltip-font-family);
+}
+
+.Tooltip.Popup2::before {
+    content: none;
+}

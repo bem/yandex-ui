@@ -1,0 +1,68 @@
+/* common */
+.Button2_view_action {
+    color: var(--button-view-action-typo-color-base);
+
+    transition: transform .1s ease-out, color .15s linear;
+    transform: scale(1);
+}
+
+.Button2_view_action::before {
+    background-color: var(--button-view-action-fill-color-base);
+
+    transition: background-color .15s linear;
+}
+
+/* press */
+.Button2_view_action.Button2_pressed {
+    transition: none;
+    transform: scale(.96);
+}
+
+/* 1.042 ≈ 1/0.96 */
+.Button2_view_action.Button2_pressed::after {
+    transform: scale(1.042);
+}
+
+/* disable */
+.Button2_view_action[aria-disabled='true'] {
+    color: var(--button-view-action-typo-color-disabled);
+}
+
+.Button2_view_action[aria-disabled='true']::before {
+    border-color: transparent;
+    background-color: var(--button-view-action-fill-color-disabled);
+}
+
+/* check */
+.Button2_view_action.Button2_checked {
+    color: var(--button-view-action-typo-color-checked-base);
+}
+
+.Button2_view_action.Button2_checked::before {
+    background-color: var(--button-view-action-fill-color-checked-base);
+}
+
+/* progress */
+.Button2_view_action.Button2_progress::before {
+    background-image: repeating-linear-gradient(-45deg, var(--button-view-action-fill-color-progress-base), var(--button-view-action-fill-color-progress-base) 4px, var(--button-view-action-fill-color-progress-process) 4px, var(--button-view-action-fill-color-progress-process) 8px);
+    background-size: 34px 34px;
+
+    animation-name: button-view-action-progress;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.Button2_view_action.Button2_progress {
+    color: var(--button-view-action-typo-color-progress-base);
+}
+
+@keyframes button-view-action-progress {
+    0% {
+        background-position: -12px 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}

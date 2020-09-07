@@ -1,0 +1,25 @@
+space:
+  3xs:
+    value: 2px
+  2xs:
+    value: 4px
+  xs:
+    value: 8px
+  s:
+    value: 12px
+  m:
+    value: 16px
+  l:
+    value: 20px
+  xl:
+    value: 24px
+  2xl:
+    value: 32px
+  3xl:
+    value: 40px
+  4xl:
+    value: 48px
+  5xl:
+    value: 72px
+  6xl:
+    value: 96px

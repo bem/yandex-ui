@@ -1,0 +1,17 @@
+/* hover */
+/* TODO: Усиливаем селектор для ie11 (оторвать после https://st.yandex-team.ru/ISL-7989) */
+.Radiobox_view_outline .Radiobox-Radio_hovered .Radiobox-Box[class] {
+    border: 2px solid var(--radiobox-view-default-fill-color-hovered);
+    background-color: var(--radiobox-type-outline-fill-color-hovered);
+}
+
+/* TODO: Усиливаем селектор для ie11 (оторвать после https://st.yandex-team.ru/ISL-7989) */
+.Radiobox_view_outline .Radiobox-Radio_hovered.Radiobox-Radio_checked .Radiobox-Box[class] {
+    border: 2px solid var(--radiobox-view-default-fill-color-checked-hovered);
+    background-color: var(--radiobox-view-default-fill-color-checked-hovered);
+}
+
+/* focus */
+.utilityfocus .Radiobox_view_outline .Radiobox-Radio_focused .Radiobox-Box {
+    box-shadow: 0 0 0 2px var(--radiobox-view-default-shadow-color);
+}

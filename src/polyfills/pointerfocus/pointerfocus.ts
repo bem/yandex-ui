@@ -1,4 +1,5 @@
 import { canUseDOM } from '../../lib/canUseDOM';
+import { Nullable } from '../../typings/utility-types';
 
 class PointerFocus {
     private timeoutId: number;
@@ -24,6 +25,18 @@ class PointerFocus {
         ) {
             window.document.body.classList.add('utilityfocus');
         }
+    }
+
+    /**
+     * Удаляет все обработчики и классы с документа.
+     */
+    dispose(): void {
+        window.removeEventListener('blur', this.onBlur);
+        window.document.removeEventListener('keydown', this.onKeyDown);
+        window.document.removeEventListener('mousedown', this.onMouseDown);
+        window.document.removeEventListener('mouseup', this.onMouseDown);
+        window.document.removeEventListener('focusin', this.onFocus);
+        window.document.body.classList.remove('pointerfocus', 'utilityfocus');
     }
 
     private onKeyDown = () => {
@@ -61,9 +74,21 @@ class PointerFocus {
     };
 }
 
+let pointerFocus: Nullable<PointerFocus> = null;
+
 if (canUseDOM()) {
-    let pointerFocus = null;
     if (pointerFocus === null) {
         pointerFocus = PointerFocus.create();
+    }
+}
+
+/**
+ * Отключает PointerFocus на странице.
+ *
+ * @internal
+ */
+export function dispose() {
+    if (pointerFocus) {
+        pointerFocus.dispose();
     }
 }

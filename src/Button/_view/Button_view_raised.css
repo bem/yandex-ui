@@ -1,0 +1,46 @@
+/* common */
+.Button2_view_raised {
+    color: var(--button-view-raised-typo-color-base);
+
+    transition: transform .1s ease-out, color .15s linear;
+    transform: scale(1);
+}
+
+.Button2_view_raised::before {
+    background-color: var(--button-view-raised-fill-color-base);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .05), 0 1px 0 1px rgba(0, 0, 0, .05), 0 4px 6px 0 rgba(0, 0, 0, .05);
+
+    transition: background-color .15s linear;
+}
+
+/* press */
+.Button2_view_raised.Button2_pressed {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1), 0 1px 1px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .1);
+
+    transition: none;
+    transform: scale(.96);
+}
+
+/* 1.042 ≈ 1/0.96 */
+.Button2_view_raised.Button2_pressed::after {
+    transform: scale(1.042);
+}
+
+/* disable */
+.Button2.Button2_view_raised[aria-disabled='true'] {
+    color: var(--button-view-raised-typo-color-disabled);
+}
+
+.Button2.Button2_view_raised[aria-disabled='true']::before {
+    color: var(--button-view-raised-typo-color-disabled);
+    background-color: var(--button-view-raised-fill-color-disabled);
+}
+
+/* check */
+.Button2_view_raised.Button2_checked {
+    color: var(--button-view-raised-typo-color-checked-base);
+}
+
+.Button2_view_raised.Button2_checked::before {
+    background-color: var(--button-view-raised-fill-color-checked-base);
+}

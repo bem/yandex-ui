@@ -1,0 +1,43 @@
+/* common */
+.Button2_view_default {
+    color: var(--button-view-default-typo-color-base);
+
+    transition: transform .1s ease-out, color .15s linear;
+    transform: scale(1);
+}
+
+.Button2_view_default::before {
+    background-color: var(--button-view-default-fill-color-base);
+
+    transition: background-color .15s linear;
+}
+
+/* press */
+.Button2_view_default.Button2_pressed {
+    transition: none;
+    transform: scale(.96);
+}
+
+/* 1.042 ≈ 1/0.96 */
+.Button2_view_default.Button2_pressed::after {
+    transform: scale(1.042);
+}
+
+/* disable */
+.Button2_view_default[aria-disabled='true'] {
+    color: var(--button-view-default-typo-color-disabled);
+}
+
+.Button2_view_default[aria-disabled='true']::before {
+    border-color: transparent;
+    background-color: var(--button-view-default-fill-color-disabled);
+}
+
+/* check */
+.Button2_view_default.Button2_checked {
+    color: var(--button-view-default-typo-color-checked-base);
+}
+
+.Button2_view_default.Button2_checked::before {
+    background-color: var(--button-view-default-fill-color-checked-base);
+}

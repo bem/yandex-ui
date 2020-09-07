@@ -1,0 +1,74 @@
+checkbox:
+  # unstable tokens
+  viewOutline:
+    borderColor:
+      value: "color(#000 a(10%))"
+    fillColor:
+      base:
+        value: "transparent"
+      hovered:
+        value: "#d2d2d2"
+    disabled:
+      opacity:
+        value: 0.4
+  fontFamily:
+    value: "{typography.controls.fontFamily.value}"
+
+  border:
+    radius:
+      value: 4px
+
+  size:
+    s:
+      fontSize:
+        value: "{typography.controls.size.s.fontSize.value}"
+      indentLeft:
+        value: 5px
+      width:
+        value: 14px
+      height:
+        value: 14px
+      tick:
+        width:
+          value: 12px
+        height:
+          value: 8px
+
+    m:
+      fontSize:
+        value: "{typography.controls.size.m.fontSize.value}"
+      indentLeft:
+        value: 5px
+      width:
+        value: 17px
+      height:
+        value: 17px
+      tick:
+        width:
+          value: 13px
+        height:
+          value: 10px
+
+  disabled:
+    opacity:
+      value: 0.6
+
+  viewDefault:
+    outlineColor:
+      value: "{color.control.borderColor.prism.value}"
+    fillColor:
+      base:
+        value: "{color.control.type.default.fillColor.base.value}"
+      hovered:
+        value: "{color.control.type.default.fillColor.hover.value}"
+      checked:
+        base:
+          value: "{color.control.type.check.fillColor.base.value}"
+        hovered:
+          value: "{color.control.type.check.fillColor.hover.value}"
+    typoColor:
+      base:
+        value: "{color.control.typo.primary.value}"
+      checked:
+        base:
+          value: "{color.control.type.faint.fillColor.base.value}"

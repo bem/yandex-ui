@@ -6,6 +6,7 @@
   },
   "sources": [
     "./src/Theme/tokens/turbo.tokens.yml",
-    "./src/Theme/tokens/color-turbo-light.tokens.yml"
+    "./src/Theme/tokens/color-turbo-dark.tokens.yml",
+    "./src/Theme/tokens/space.tokens.yml"
   ]
 }

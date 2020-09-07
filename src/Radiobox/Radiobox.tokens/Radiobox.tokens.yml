@@ -1,0 +1,77 @@
+radiobox:
+  fontFamily:
+    value: "{typography.controls.fontFamily.value}"
+
+  viewDefault:
+    dot:
+      fillColor:
+        value: "{color.control.type.faint.fillColor.base.value}"
+
+    outlineColor:
+      value: "{color.control.borderColor.prism.value}"
+
+    fillColor:
+      base:
+        value: "{color.control.type.default.fillColor.base.value}"
+      hovered:
+        value: "{color.control.type.default.fillColor.hover.value}"
+      checked:
+        base:
+          value: "{color.control.type.check.fillColor.base.value}"
+        hovered:
+          value: "{color.control.type.check.fillColor.hover.value}"
+
+    typoColor:
+      base:
+        value: "{color.control.typo.primary.value}"
+  # unstable tokens
+  viewOutline:
+    borderColor:
+      value: "color(#000 a(10%))"
+    fillColor:
+      base:
+        value: "transparent"
+      hovered:
+        value: "#d9d9d9"
+    disabled:
+      opacity:
+        value: 0.4
+  border:
+    radius:
+      value: 50%
+  after:
+    border:
+      radius:
+        value: 50%
+  size:
+    s:
+      fontSize:
+        value: "{typography.controls.size.s.fontSize.value}"
+      lineHeight:
+        value: 28px
+      size:
+        value: 13px
+      positionTop:
+        value: 2px
+      indentRight:
+        value: 5px
+      after:
+        size:
+          value: 5px
+    m:
+      fontSize:
+        value: "{typography.controls.size.m.fontSize.value}"
+      lineHeight:
+        value: 32px
+      size:
+        value: 17px
+      positionTop:
+        value: 3px
+      indentRight:
+        value: 6px
+      after:
+        size:
+          value: 7px
+  disabled:
+    opacity:
+      value: 0.6

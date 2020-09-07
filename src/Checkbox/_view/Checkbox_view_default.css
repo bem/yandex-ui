@@ -1,0 +1,78 @@
+/* common */
+.Checkbox_view_default {
+    color: var(--checkbox-view-default-typo-color-base);
+}
+
+.Checkbox_view_default .Checkbox-Box {
+    text-align: left;
+}
+
+.Checkbox_view_default .Checkbox-Box::before {
+    border-radius: var(--checkbox-borderRadius);
+    background-color: var(--checkbox-view-default-fill-color-base);
+
+    transition: background-color .1s linear;
+}
+
+.Checkbox_view_default .Checkbox-Tick {
+    color: transparent;
+
+    transition: color .1s, transform .2s;
+    transform: translateY(-5px);
+}
+
+.Checkbox_view_default .Checkbox-Tick,
+.Checkbox_view_default .Checkbox-Tick .Icon {
+    width: 100%;
+    height: 100%;
+}
+
+.Checkbox_view_default .Checkbox-Tick .Icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Checkbox_view_default .Checkbox-Tick .Icon::after {
+    content: none;
+}
+
+.Checkbox_view_default .Checkbox-Tick svg {
+    position: static;
+    top: initial;
+    left: initial;
+
+    transform: none;
+}
+
+.Checkbox_view_default.Checkbox_size_m .Checkbox-Tick svg {
+    width: var(--checkbox-size-m-tick-width);
+    height: var(--checkbox-size-m-tick-height);
+}
+
+.Checkbox_view_default.Checkbox_size_s .Checkbox-Tick svg {
+    width: var(--checkbox-size-s-tick-width);
+    height: var(--checkbox-size-s-tick-height);
+}
+
+.Checkbox.Checkbox_view_default.Checkbox_indeterminate .Checkbox-Tick svg {
+    width: 17px;
+    height: 17px;
+}
+
+/* check */
+/* TODO: Усиливаем селектор для ie11 (оторвать после https://st.yandex-team.ru/ISL-7989) */
+.Checkbox_view_default.Checkbox_checked .Checkbox-Box[class]::before {
+    background-color: var(--checkbox-view-default-fill-color-checked-base);
+}
+
+.Checkbox_view_default.Checkbox_checked .Checkbox-Tick {
+    color: var(--checkbox-view-default-typo-color-checked-base);
+
+    transform: translateY(0);
+}
+
+/* disable */
+.Checkbox_view_default.Checkbox_disabled {
+    opacity: var(--checkbox-disabled-opacity);
+}

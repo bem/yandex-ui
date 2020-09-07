@@ -1,0 +1,784 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tooltip@desktop client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<RegistryResolver(Tooltip)
+  anchor={
+    Object {
+      "current": null,
+    }
+  }
+  visible={true}
+>
+  <Tooltip
+    anchor={
+      Object {
+        "current": null,
+      }
+    }
+    visible={true}
+  >
+    <SimpleComposeWrapper [view:default]
+      anchor={
+        Object {
+          "current": null,
+        }
+      }
+      className="Tooltip Tooltip_visible"
+      mainOffset={4}
+      target="anchor"
+      unstable_onRenderTail={[Function]}
+      view="default"
+      visible={true}
+    >
+      <WithBemMod(Popup2)[target:anchor]
+        anchor={
+          Object {
+            "current": null,
+          }
+        }
+        className="Popup2 Popup2_view_default Tooltip Tooltip_visible"
+        mainOffset={4}
+        target="anchor"
+        unstable_onRenderTail={[Function]}
+        view="default"
+        visible={true}
+      >
+        <WithBemModEnhance(RegistryResolver(Popup2))
+          anchor={
+            Object {
+              "current": null,
+            }
+          }
+          className="Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+          directions={
+            Array [
+              "bottom-left",
+              "bottom-center",
+              "bottom-right",
+              "top-left",
+              "top-center",
+              "top-right",
+              "right-top",
+              "right-center",
+              "right-bottom",
+              "left-top",
+              "left-center",
+              "left-bottom",
+            ]
+          }
+          mainOffset={4}
+          scope={
+            Object {
+              "current": <body>
+                <div
+                  class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                  style="top: -9999px; left: -9999px;"
+                >
+                  <div
+                    class="Tooltip-Content"
+                    role="tooltip"
+                  >
+                    Добавить в избранное
+                  </div>
+                  <div
+                    class="Tooltip-Backdrop"
+                  />
+                </div>
+              </body>,
+            }
+          }
+          secondaryOffset={0}
+          tailOffset={0}
+          target="anchor"
+          unstable_onRenderTail={[Function]}
+          view="default"
+          viewportOffset={0}
+          visible={true}
+        >
+          <RegistryResolver(Popup2)
+            className="Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+            direction="bottom-left"
+            innerRef={[Function]}
+            position={
+              Object {
+                "left": -9999,
+                "top": -9999,
+              }
+            }
+            scope={
+              Object {
+                "current": <body>
+                  <div
+                    class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                    style="top: -9999px; left: -9999px;"
+                  >
+                    <div
+                      class="Tooltip-Content"
+                      role="tooltip"
+                    >
+                      Добавить в избранное
+                    </div>
+                    <div
+                      class="Tooltip-Backdrop"
+                    />
+                  </div>
+                </body>,
+              }
+            }
+            tailRef={[Function]}
+            unstable_essentialRefs={
+              Array [
+                Object {
+                  "current": null,
+                },
+              ]
+            }
+            unstable_onRenderTail={[Function]}
+            view="default"
+            visible={true}
+          >
+            <Popup2
+              className="Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+              direction="bottom-left"
+              innerRef={[Function]}
+              position={
+                Object {
+                  "left": -9999,
+                  "top": -9999,
+                }
+              }
+              scope={
+                Object {
+                  "current": <body>
+                    <div
+                      class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                      style="top: -9999px; left: -9999px;"
+                    >
+                      <div
+                        class="Tooltip-Content"
+                        role="tooltip"
+                      >
+                        Добавить в избранное
+                      </div>
+                      <div
+                        class="Tooltip-Backdrop"
+                      />
+                    </div>
+                  </body>,
+                }
+              }
+              tailRef={[Function]}
+              unstable_essentialRefs={
+                Array [
+                  Object {
+                    "current": null,
+                  },
+                ]
+              }
+              unstable_onRenderTail={[Function]}
+              view="default"
+              visible={true}
+            >
+              <Portal
+                containerInfo={
+                  <body>
+                    <div
+                      class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                      style="top: -9999px; left: -9999px;"
+                    >
+                      <div
+                        class="Tooltip-Content"
+                        role="tooltip"
+                      >
+                        Добавить в избранное
+                      </div>
+                      <div
+                        class="Tooltip-Backdrop"
+                      />
+                    </div>
+                  </body>
+                }
+              >
+                <LayerManager
+                  essentialRefs={
+                    Array [
+                      Object {
+                        "current": <div
+                          class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                          style="top: -9999px; left: -9999px;"
+                        >
+                          <div
+                            class="Tooltip-Content"
+                            role="tooltip"
+                          >
+                            Добавить в избранное
+                          </div>
+                          <div
+                            class="Tooltip-Backdrop"
+                          />
+                        </div>,
+                      },
+                      Object {
+                        "current": null,
+                      },
+                    ]
+                  }
+                  onClose={[Function]}
+                  visible={true}
+                >
+                  <div
+                    className="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                    style={
+                      Object {
+                        "left": -9999,
+                        "top": -9999,
+                        "zIndex": undefined,
+                      }
+                    }
+                  >
+                    <div
+                      className="Tooltip-Content"
+                      role="tooltip"
+                    >
+                      Добавить в избранное
+                    </div>
+                    <Component>
+                      <div
+                        className="Tooltip-Backdrop"
+                      />
+                    </Component>
+                  </div>
+                </LayerManager>
+              </Portal>
+            </Popup2>
+          </RegistryResolver(Popup2)>
+        </WithBemModEnhance(RegistryResolver(Popup2))>
+      </WithBemMod(Popup2)[target:anchor]>
+    </SimpleComposeWrapper [view:default]>
+  </Tooltip>
+</RegistryResolver(Tooltip)>
+`;
+
+exports[`Tooltip@desktop server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `null`;
+
+exports[`Tooltip@touch-pad client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<RegistryResolver(Tooltip)
+  anchor={
+    Object {
+      "current": null,
+    }
+  }
+  visible={true}
+>
+  <Tooltip
+    anchor={
+      Object {
+        "current": null,
+      }
+    }
+    visible={true}
+  >
+    <SimpleComposeWrapper [view:default]
+      anchor={
+        Object {
+          "current": null,
+        }
+      }
+      className="Tooltip Tooltip_visible"
+      mainOffset={4}
+      target="anchor"
+      unstable_onRenderTail={[Function]}
+      view="default"
+      visible={true}
+    >
+      <WithBemMod(Popup2)[target:anchor]
+        anchor={
+          Object {
+            "current": null,
+          }
+        }
+        className="Popup2 Popup2_view_default Tooltip Tooltip_visible"
+        mainOffset={4}
+        target="anchor"
+        unstable_onRenderTail={[Function]}
+        view="default"
+        visible={true}
+      >
+        <WithBemModEnhance(RegistryResolver(Popup2))
+          anchor={
+            Object {
+              "current": null,
+            }
+          }
+          className="Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+          directions={
+            Array [
+              "bottom-left",
+              "bottom-center",
+              "bottom-right",
+              "top-left",
+              "top-center",
+              "top-right",
+              "right-top",
+              "right-center",
+              "right-bottom",
+              "left-top",
+              "left-center",
+              "left-bottom",
+            ]
+          }
+          mainOffset={4}
+          scope={
+            Object {
+              "current": <body>
+                <div
+                  class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                  style="top: -9999px; left: -9999px;"
+                >
+                  <div
+                    class="Tooltip-Content"
+                    role="tooltip"
+                  >
+                    Добавить в избранное
+                  </div>
+                  <div
+                    class="Tooltip-Backdrop"
+                  />
+                </div>
+              </body>,
+            }
+          }
+          secondaryOffset={0}
+          tailOffset={0}
+          target="anchor"
+          unstable_onRenderTail={[Function]}
+          view="default"
+          viewportOffset={0}
+          visible={true}
+        >
+          <RegistryResolver(Popup2)
+            className="Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+            direction="bottom-left"
+            innerRef={[Function]}
+            position={
+              Object {
+                "left": -9999,
+                "top": -9999,
+              }
+            }
+            scope={
+              Object {
+                "current": <body>
+                  <div
+                    class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                    style="top: -9999px; left: -9999px;"
+                  >
+                    <div
+                      class="Tooltip-Content"
+                      role="tooltip"
+                    >
+                      Добавить в избранное
+                    </div>
+                    <div
+                      class="Tooltip-Backdrop"
+                    />
+                  </div>
+                </body>,
+              }
+            }
+            tailRef={[Function]}
+            unstable_essentialRefs={
+              Array [
+                Object {
+                  "current": null,
+                },
+              ]
+            }
+            unstable_onRenderTail={[Function]}
+            view="default"
+            visible={true}
+          >
+            <Popup2
+              className="Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+              direction="bottom-left"
+              innerRef={[Function]}
+              position={
+                Object {
+                  "left": -9999,
+                  "top": -9999,
+                }
+              }
+              scope={
+                Object {
+                  "current": <body>
+                    <div
+                      class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                      style="top: -9999px; left: -9999px;"
+                    >
+                      <div
+                        class="Tooltip-Content"
+                        role="tooltip"
+                      >
+                        Добавить в избранное
+                      </div>
+                      <div
+                        class="Tooltip-Backdrop"
+                      />
+                    </div>
+                  </body>,
+                }
+              }
+              tailRef={[Function]}
+              unstable_essentialRefs={
+                Array [
+                  Object {
+                    "current": null,
+                  },
+                ]
+              }
+              unstable_onRenderTail={[Function]}
+              view="default"
+              visible={true}
+            >
+              <Portal
+                containerInfo={
+                  <body>
+                    <div
+                      class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                      style="top: -9999px; left: -9999px;"
+                    >
+                      <div
+                        class="Tooltip-Content"
+                        role="tooltip"
+                      >
+                        Добавить в избранное
+                      </div>
+                      <div
+                        class="Tooltip-Backdrop"
+                      />
+                    </div>
+                  </body>
+                }
+              >
+                <LayerManager
+                  essentialRefs={
+                    Array [
+                      Object {
+                        "current": <div
+                          class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                          style="top: -9999px; left: -9999px;"
+                        >
+                          <div
+                            class="Tooltip-Content"
+                            role="tooltip"
+                          >
+                            Добавить в избранное
+                          </div>
+                          <div
+                            class="Tooltip-Backdrop"
+                          />
+                        </div>,
+                      },
+                      Object {
+                        "current": null,
+                      },
+                    ]
+                  }
+                  onClose={[Function]}
+                  visible={true}
+                >
+                  <div
+                    className="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                    style={
+                      Object {
+                        "left": -9999,
+                        "top": -9999,
+                        "zIndex": undefined,
+                      }
+                    }
+                  >
+                    <div
+                      className="Tooltip-Content"
+                      role="tooltip"
+                    >
+                      Добавить в избранное
+                    </div>
+                    <Component>
+                      <div
+                        className="Tooltip-Backdrop"
+                      />
+                    </Component>
+                  </div>
+                </LayerManager>
+              </Portal>
+            </Popup2>
+          </RegistryResolver(Popup2)>
+        </WithBemModEnhance(RegistryResolver(Popup2))>
+      </WithBemMod(Popup2)[target:anchor]>
+    </SimpleComposeWrapper [view:default]>
+  </Tooltip>
+</RegistryResolver(Tooltip)>
+`;
+
+exports[`Tooltip@touch-pad server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `null`;
+
+exports[`Tooltip@touch-phone client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<RegistryResolver(Tooltip)
+  anchor={
+    Object {
+      "current": null,
+    }
+  }
+  visible={true}
+>
+  <Tooltip
+    anchor={
+      Object {
+        "current": null,
+      }
+    }
+    visible={true}
+  >
+    <SimpleComposeWrapper [view:default]
+      anchor={
+        Object {
+          "current": null,
+        }
+      }
+      className="Tooltip Tooltip_visible"
+      mainOffset={4}
+      target="anchor"
+      unstable_onRenderTail={[Function]}
+      view="default"
+      visible={true}
+    >
+      <WithBemMod(Popup2)[target:anchor]
+        anchor={
+          Object {
+            "current": null,
+          }
+        }
+        className="Popup2 Popup2_view_default Tooltip Tooltip_visible"
+        mainOffset={4}
+        target="anchor"
+        unstable_onRenderTail={[Function]}
+        view="default"
+        visible={true}
+      >
+        <WithBemModEnhance(RegistryResolver(Popup2))
+          anchor={
+            Object {
+              "current": null,
+            }
+          }
+          className="Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+          directions={
+            Array [
+              "bottom-left",
+              "bottom-center",
+              "bottom-right",
+              "top-left",
+              "top-center",
+              "top-right",
+              "right-top",
+              "right-center",
+              "right-bottom",
+              "left-top",
+              "left-center",
+              "left-bottom",
+            ]
+          }
+          mainOffset={4}
+          scope={
+            Object {
+              "current": <body>
+                <div
+                  class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                  style="top: -9999px; left: -9999px;"
+                >
+                  <div
+                    class="Tooltip-Content"
+                    role="tooltip"
+                  >
+                    Добавить в избранное
+                  </div>
+                  <div
+                    class="Tooltip-Backdrop"
+                  />
+                </div>
+              </body>,
+            }
+          }
+          secondaryOffset={0}
+          tailOffset={0}
+          target="anchor"
+          unstable_onRenderTail={[Function]}
+          view="default"
+          viewportOffset={0}
+          visible={true}
+        >
+          <RegistryResolver(Popup2)
+            className="Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+            direction="bottom-left"
+            innerRef={[Function]}
+            position={
+              Object {
+                "left": -9999,
+                "top": -9999,
+              }
+            }
+            scope={
+              Object {
+                "current": <body>
+                  <div
+                    class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                    style="top: -9999px; left: -9999px;"
+                  >
+                    <div
+                      class="Tooltip-Content"
+                      role="tooltip"
+                    >
+                      Добавить в избранное
+                    </div>
+                    <div
+                      class="Tooltip-Backdrop"
+                    />
+                  </div>
+                </body>,
+              }
+            }
+            tailRef={[Function]}
+            unstable_essentialRefs={
+              Array [
+                Object {
+                  "current": null,
+                },
+              ]
+            }
+            unstable_onRenderTail={[Function]}
+            view="default"
+            visible={true}
+          >
+            <Popup2
+              className="Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+              direction="bottom-left"
+              innerRef={[Function]}
+              position={
+                Object {
+                  "left": -9999,
+                  "top": -9999,
+                }
+              }
+              scope={
+                Object {
+                  "current": <body>
+                    <div
+                      class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                      style="top: -9999px; left: -9999px;"
+                    >
+                      <div
+                        class="Tooltip-Content"
+                        role="tooltip"
+                      >
+                        Добавить в избранное
+                      </div>
+                      <div
+                        class="Tooltip-Backdrop"
+                      />
+                    </div>
+                  </body>,
+                }
+              }
+              tailRef={[Function]}
+              unstable_essentialRefs={
+                Array [
+                  Object {
+                    "current": null,
+                  },
+                ]
+              }
+              unstable_onRenderTail={[Function]}
+              view="default"
+              visible={true}
+            >
+              <Portal
+                containerInfo={
+                  <body>
+                    <div
+                      class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                      style="top: -9999px; left: -9999px;"
+                    >
+                      <div
+                        class="Tooltip-Content"
+                        role="tooltip"
+                      >
+                        Добавить в избранное
+                      </div>
+                      <div
+                        class="Tooltip-Backdrop"
+                      />
+                    </div>
+                  </body>
+                }
+              >
+                <LayerManager
+                  essentialRefs={
+                    Array [
+                      Object {
+                        "current": <div
+                          class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                          style="top: -9999px; left: -9999px;"
+                        >
+                          <div
+                            class="Tooltip-Content"
+                            role="tooltip"
+                          >
+                            Добавить в избранное
+                          </div>
+                          <div
+                            class="Tooltip-Backdrop"
+                          />
+                        </div>,
+                      },
+                      Object {
+                        "current": null,
+                      },
+                    ]
+                  }
+                  onClose={[Function]}
+                  visible={true}
+                >
+                  <div
+                    className="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                    style={
+                      Object {
+                        "left": -9999,
+                        "top": -9999,
+                        "zIndex": undefined,
+                      }
+                    }
+                  >
+                    <div
+                      className="Tooltip-Content"
+                      role="tooltip"
+                    >
+                      Добавить в избранное
+                    </div>
+                    <Component>
+                      <div
+                        className="Tooltip-Backdrop"
+                      />
+                    </Component>
+                  </div>
+                </LayerManager>
+              </Portal>
+            </Popup2>
+          </RegistryResolver(Popup2)>
+        </WithBemModEnhance(RegistryResolver(Popup2))>
+      </WithBemMod(Popup2)[target:anchor]>
+    </SimpleComposeWrapper [view:default]>
+  </Tooltip>
+</RegistryResolver(Tooltip)>
+`;
+
+exports[`Tooltip@touch-phone server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `null`;

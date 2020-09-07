@@ -1,5 +1,0 @@
-/* hover */
-.Menu_view_default .Menu-Item.Menu-Item_hovered {
-    color: var(--color-control-typo-primary);
-    background-color: var(--color-control-bg-default-hover);
-}

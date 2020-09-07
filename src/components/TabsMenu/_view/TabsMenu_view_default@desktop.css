@@ -1,4 +1,0 @@
-/* focus */
-.utilityfocus .TabsMenu_view_default .TabsMenu-Tab:focus {
-    outline: 2px solid var(--color-control-bg-border-prism);
-}

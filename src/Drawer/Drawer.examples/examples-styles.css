@@ -1,0 +1,20 @@
+.DrawerTitleComponent {
+    display: flex;
+    justify-content: space-between;
+
+    padding: 1rem 1.5rem;
+
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.DrawerInnerContent {
+    padding: 50px;
+}
+
+.DrawerInnerContent p:first-child {
+    margin-top: 0;
+}
+
+.DrawerInnerContent p:last-child {
+    margin-bottom: 0;
+}

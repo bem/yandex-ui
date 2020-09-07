@@ -4,5 +4,5 @@ import './root.css';
 
 export const theme: Theme = {
     color: 'turbo-inverse',
-    root: 'turbo-inverse',
+    root: 'turbo',
 };

@@ -1,0 +1,94 @@
+menu:
+  fontFamily:
+    value: "{typography.controls.fontFamily.value}"
+
+  group:
+    border:
+      width:
+        value: 1px
+
+  size:
+    s:
+      fontSize:
+        value: "{typography.controls.size.s.fontSize.value}"
+      lineHeight:
+        value: 32px
+      spaceVertical:
+        value: 4px
+
+      group:
+        spaceVertical:
+          value: 4px
+        spaceHorizontal:
+          value: 0
+        indentBottom:
+          value: 4px
+
+      item:
+        spaceVertical:
+          value: 3px
+        spaceHorizontal:
+          value: 9px
+        indentBottom:
+          value: 4px
+
+      itemIcon:
+        indentRight:
+          value: 4px
+
+      titleSibling:
+        indentLeft:
+          value: 20px
+
+    m:
+      fontSize:
+        value: "{typography.controls.size.m.fontSize.value}"
+      lineHeight:
+        value: 36px
+      spaceVertical:
+        value: 5px
+
+      group:
+        spaceVertical:
+          value: 5px
+        spaceHorizontal:
+          value: 0
+        indentBottom:
+          value: 5px
+
+      item:
+        spaceVertical:
+          value: 4px
+        spaceHorizontal:
+          value: 15px
+        indentBottom:
+          value: 5px
+
+      itemIcon:
+        indentRight:
+          value: 6px
+
+      titleSibling:
+        indentLeft:
+          value: 20px
+
+  viewDefault:
+    borderColor:
+      base:
+        value: "{color.control.type.default.borderColor.base.value}"
+
+    fillColor:
+      base:
+        value: "{color.control.type.default.fillColor.base.value}"
+      hovered:
+        value: "{color.control.type.default.fillColor.hover.value}"
+
+    typoColor:
+      base:
+        value: "{color.control.typo.primary.value}"
+      secondary:
+        value: "{color.control.typo.secondary.value}"
+      disabled:
+        value: "{color.control.typo.disable.value}"
+      hovered:
+        value: "{color.control.typo.primary.value}"

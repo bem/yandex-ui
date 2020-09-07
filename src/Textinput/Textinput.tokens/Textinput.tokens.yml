@@ -1,0 +1,192 @@
+textinput:
+  fontFamily:
+    value: "{typography.controls.fontFamily.value}"
+
+  border:
+    width:
+      value: 2px
+    radius:
+      value: 4px
+
+  size:
+    s:
+      fontSize:
+        value: "{typography.controls.size.s.fontSize.value}"
+      height:
+        value: 32px
+      spaceAll:
+        value: 0 8px
+
+      withIcon:
+        spaceRight:
+          value: 32px
+        spaceLeft:
+          value: 32px
+
+      icon:
+        width:
+          value: 32px
+        height:
+          value: 32px
+
+      hint:
+        fontSize:
+          value: 12px
+
+    m:
+      fontSize:
+        value: "{typography.controls.size.m.fontSize.value}"
+      height:
+        value: 36px
+      spaceAll:
+        value: 0 10px
+
+      withIcon:
+        spaceRight:
+          value: 36px
+        spaceLeft:
+          value: 36px
+
+      icon:
+        width:
+          value: 36px
+        height:
+          value: 36px
+
+      hint:
+        fontSize:
+          value: 13px
+
+  viewMaterial:
+    typoColor:
+      base:
+        value: "#000"
+      disabled:
+        value: rgba(0, 0, 0, 0.4)
+    borderColor:
+      base:
+        value: rgba(0, 0, 0, 0.1)
+      stateError:
+        value: "#FF3737"
+    fontSize:
+      value: 1rem
+    space:
+      all:
+        value: 12px 0 10px
+      left:
+        value: 16px
+      right:
+        value: 16px
+      top:
+        value: 16px
+    icon:
+      fillColor:
+        base:
+          value: rgba(0, 0, 0, 0.8)
+        disabled:
+          value: rgba(0, 0, 0, 0.5)
+      width:
+        value: 24px
+      height:
+        value: 24px
+    hint:
+      fontSize:
+        value: 0.75rem
+      typoColor:
+        base:
+          value: rgba(0, 0, 0, 0.4)
+        stateError:
+          value: "#FF3737"
+    caretColor:
+      base:
+        value: "#067AFF"
+      stateError:
+        value: "#FF3737"
+    placeholder:
+      typoColor:
+        base:
+          value: "{color.control.typo.ghost.value}"
+    labelColor:
+      base:
+        value: rgba(0, 0, 0, 0.25)
+      stateError:
+        value: "#FF3737"
+      floated:
+        base:
+          value: rgba(0, 0, 0, 0.4)
+
+    variant:
+      filled:
+        borderColor:
+          focused:
+            value: "#067AFF"
+        fillColor:
+          value: rgba(0, 0, 0, 0.05)
+        labelColor:
+          floated:
+            value: "#067AFF"
+
+      outlined:
+        borderColor:
+          base:
+            value: rgba(0, 0, 0, 0.1)
+          focused:
+            value: "#067AFF"
+        labelColor:
+            floated:
+              value: "#067AFF"
+
+  viewDefault:
+    fillColor:
+      base:
+        value: "{color.control.type.blank.fillColor.base.value}"
+      disabled:
+        value: "{color.control.type.blank.fillColor.disable.value}"
+      hovered:
+        value: "{color.control.type.blank.fillColor.hover.value}"
+
+    typoColor:
+      base:
+        value: "{color.control.typo.primary.value}"
+      disabled:
+        value: "{color.control.typo.disable.value}"
+
+    placeholder:
+      typoColor:
+        base:
+          value: "{color.control.typo.ghost.value}"
+        disabled:
+          value: "{color.control.typo.disable.value}"
+
+    icon:
+      fillColor:
+        base:
+          value: "{color.control.typo.ghost.value}"
+
+    clear:
+      fillColor:
+        base:
+          value: "{color.control.typo.ghost.value}"
+        hovered:
+          value: "{color.control.typo.primary.value}"
+
+    hint:
+      typoColor:
+        stateError:
+          base:
+            value: "{color.control.typo.error.value}"
+
+    borderColor:
+      base:
+        value: "{color.control.type.blank.borderColor.base.value}"
+      disabled:
+        value: "{color.control.type.blank.borderColor.disable.value}"
+      focused:
+        value: "{color.control.borderColor.focus.value}"
+      hovered:
+        value: "{color.control.type.blank.borderColor.hover.value}"
+      stateError:
+        base:
+          value: "{color.control.type.default.borderColor.error.base.value}"
+        hovered:
+          value: "{color.control.type.default.borderColor.error.hover.value}"

@@ -1,0 +1,49 @@
+.Textinput-Hint {
+    display: inline-block;
+
+    margin-top: 4px;
+
+    font-family: var(--textinput-font-family);
+
+    animation: Hint_show 100ms ease-in forwards;
+}
+
+.Textinput_size_s .Textinput-Hint {
+    font-size: var(--textinput-hint-size-s-fontSize);
+}
+
+.Textinput_size_m .Textinput-Hint {
+    font-size: var(--textinput-hint-size-m-fontSize);
+}
+
+.Textinput-Hint_leave {
+    animation: Hint_leave 100ms ease-out forwards;
+}
+
+@keyframes Hint_leave {
+    to {
+        opacity: 0;
+
+        transform: translateY(-6px);
+    }
+
+    from {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+@keyframes Hint_show {
+    from {
+        opacity: 0;
+
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}

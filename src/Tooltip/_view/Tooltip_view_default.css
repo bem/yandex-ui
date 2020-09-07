@@ -1,0 +1,50 @@
+.Tooltip_view_default.Popup2_view_default {
+    background: none;
+    box-shadow: none;
+}
+
+.Tooltip_view_default .Tooltip-Backdrop::before {
+    border-radius: var(--tooltip-borderRadius);
+    background-color: var(--tooltip-view-default-fill-color-base);
+    box-shadow: var(--tooltip-view-default-shadow);
+}
+
+/* Убираем ненужную часть хвостика из Popup, т.к. в новом дизайне нет обводки. */
+.Tooltip.Tooltip_view_default .Popup2-Tail::after {
+    content: none;
+}
+
+.Tooltip.Tooltip_view_default .Popup2-Tail::before {
+    top: 0;
+    right: 0;
+
+    border: none;
+    background-color: var(--tooltip-view-default-fill-color-base);
+}
+
+.Tooltip_view_default.Tooltip_state_success {
+    color: var(--tooltip-view-default-typo-color-state-success);
+}
+
+.Tooltip_view_default.Tooltip_state_warning {
+    color: var(--tooltip-view-default-typo-color-state-warning);
+}
+
+.Tooltip_view_default.Tooltip_state_alert {
+    color: var(--tooltip-view-default-typo-color-state-alert);
+}
+
+.Tooltip_view_default.Tooltip_state_success .Tooltip-Backdrop::before,
+.Tooltip_view_default.Tooltip_state_success .Popup2-Tail::before {
+    background-color: var(--tooltip-view-default-fill-color-state-success);
+}
+
+.Tooltip_view_default.Tooltip_state_warning .Tooltip-Backdrop::before,
+.Tooltip_view_default.Tooltip_state_warning .Popup2-Tail::before {
+    background-color: var(--tooltip-view-default-fill-color-state-warning);
+}
+
+.Tooltip_view_default.Tooltip_state_alert .Tooltip-Backdrop::before,
+.Tooltip_view_default.Tooltip_state_alert .Popup2-Tail::before {
+    background-color: var(--tooltip-view-default-fill-color-state-alert);
+}

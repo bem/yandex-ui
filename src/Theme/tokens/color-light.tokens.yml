@@ -32,7 +32,7 @@ color:
     action:
       value: "color({color.project.value} l(+15%))"
     selection:
-      value: "color({color.project.value} l(+31%) h(-1'))"
+      value: "color({color.project.value} l(+31%) h(-1))"
     hover:
       value: "color({color.base.value} a(15%) })"
     border:

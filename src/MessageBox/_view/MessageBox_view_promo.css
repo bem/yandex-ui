@@ -1,0 +1,23 @@
+.MessageBox_view_promo,
+.MessageBox_view_promo .MessageBox-Close,
+.MessageBox_view_promo .Button2_view_clear {
+    color: var(--message-box-view-promo-typo-color);
+}
+
+.MessageBox_view_promo .MessageBox-Tail {
+    color: var(--message-box-view-promo-fill-color);
+}
+
+.MessageBox_view_promo .MessageBox-Backdrop::before {
+    box-shadow: var(--message-box-view-promo-shadow);
+}
+
+.MessageBox_view_promo .MessageBox-Close::after,
+.MessageBox_view_promo .MessageBox-Backdrop::before {
+    background-color: var(--message-box-view-promo-fill-color);
+}
+
+.MessageBox_view_promo:not(.MessageBox_opaque) .MessageBox-Backdrop,
+.MessageBox_view_promo:not(.MessageBox_opaque) .MessageBox-Close:hover::after {
+    opacity: .85;
+}

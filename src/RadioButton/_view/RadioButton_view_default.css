@@ -1,0 +1,33 @@
+.RadioButton_view_default {
+    color: var(--radio-button-view-default-typo-color-base);
+    border-radius: var(--radioButton-borderRadius);
+    background-color: var(--radio-button-view-default-fill-color-base);
+}
+
+.RadioButton_view_default .RadioButton-Radio_checked {
+    color: var(--radio-button-view-default-typo-color-checked-base);
+}
+
+.RadioButton_view_default .RadioButton-Plate {
+    transition: left .2s, width .2s;
+}
+
+.RadioButton_view_default .RadioButton-Plate::before,
+.RadioButton_view_default .RadioButton-Radio::before {
+    position: absolute;
+    top: var(--radioButton-indent);
+    right: var(--radioButton-indent);
+    bottom: var(--radioButton-indent);
+    left: var(--radioButton-indent);
+
+    pointer-events: none;
+
+    border-radius: var(--radioButton-after-borderRadius);
+}
+
+.RadioButton_view_default .RadioButton-Plate::before,
+.RadioButton_view_default .RadioButton-Plate[hidden] ~ .RadioButton-Radio_checked::before {
+    content: '';
+
+    background-color: var(--radio-button-view-default-fill-color-checked-base);
+}

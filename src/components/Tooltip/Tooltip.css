@@ -1,7 +1,0 @@
-.Tooltip {
-    font-family: var(--control-font-family);
-}
-
-.Tooltip.Popup2::before {
-    content: none;
-}

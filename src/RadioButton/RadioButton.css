@@ -1,0 +1,8 @@
+.RadioButton {
+    position: relative;
+
+    display: inline-flex;
+
+    font-family: var(--radioButton-fontFamily);
+    user-select: none;
+}

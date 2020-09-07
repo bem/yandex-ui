@@ -1,0 +1,65 @@
+/**
+ * Базовые визуальные стили
+ */
+.Drawer_view_default .Drawer-Content,
+.Drawer_view_default .Drawer-Title {
+    background: #fff;
+}
+
+.Drawer_view_default .Drawer-Overlay {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+/**
+ * Стили для direction_bottom
+ */
+.Drawer_direction_bottom .Drawer-DragObserver {
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.Drawer_direction_bottom.Drawer_view_default .Drawer-Curtain {
+    max-height: calc(100% - 32px);
+}
+
+.Drawer_direction_bottom.Drawer_view_default .Drawer-Content,
+.Drawer_direction_bottom.Drawer_view_default .Drawer-Title {
+    border-radius: 16px 16px 0 0;
+}
+
+/* когда в шторке есть заголовок, то скругляем углы только у него */
+.Drawer_direction_bottom.Drawer_view_default .Drawer-Title + .Drawer-Content {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.Drawer_direction_bottom.Drawer_view_default .Drawer-Handle {
+    position: absolute;
+    top: -19px;
+    left: 50%;
+
+    width: 40px;
+    margin-left: -36px;
+    padding: 8px 16px;
+    will-change: opacity;
+}
+
+.Drawer_direction_bottom.Drawer_view_default .Drawer-Handle::before {
+    display: block;
+
+    height: 3px;
+
+    content: '';
+
+    border-radius: 100px;
+    background: #fff;
+}
+
+.Drawer_direction_bottom.Drawer_view_default.Drawer_nested .Drawer-Handle {
+    z-index: 1;
+    top: 0;
+}
+
+.Drawer_direction_bottom.Drawer_view_default.Drawer_nested .Drawer-Handle::before {
+    background: rgba(0, 0, 0, 0.1);
+}

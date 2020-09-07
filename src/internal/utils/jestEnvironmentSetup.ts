@@ -11,14 +11,14 @@ export const getRoot = (): HTMLElement | null => {
  */
 export const jestEnvironmentSetup = (): void => {
     // eslint-disable-next-line no-undef
-    beforeAll(() => {
+    beforeEach(() => {
         const node = document.createElement('div');
         node.setAttribute('id', 'root');
         document.body.appendChild(node);
     });
 
     // eslint-disable-next-line no-undef
-    afterAll(() => {
+    afterEach(() => {
         const node = getRoot();
         if (node !== null) {
             document.body.removeChild(node);

@@ -1,6 +1,6 @@
 import { withBemMod } from '@bem-react/core';
 
-import { IIconProps, cnIcon } from '../../../../components/Icon/Icon';
+import { IIconProps, cnIcon } from '../../../../Icon/Icon';
 import './Icon_type_lock.css';
 
 export interface IWithTypeLockProps {

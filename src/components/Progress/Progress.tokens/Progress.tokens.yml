@@ -1,8 +1,0 @@
-progress:
-  height:
-    value: 2px
-  border:
-    radius:
-      value: 0
-  fillColor:
-    value: transparent

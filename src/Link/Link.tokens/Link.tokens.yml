@@ -1,0 +1,11 @@
+link:
+  viewDefault:
+    outlineColor:
+      value: "{color.control.borderColor.prism.value}"
+    typoColor:
+      base:
+        value: "{color.link.base.value}"
+      disabled:
+        value: "{color.typo.disable.value}"
+      hovered:
+        value: "{color.link.hover.value}"

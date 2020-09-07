@@ -1,0 +1,228 @@
+.Textinput_view_material {
+    position: relative;
+
+    display: inline-flex;
+    overflow: hidden;
+    flex-direction: column;
+
+    font-family: var(--textinput-font-family);
+}
+
+.Textinput_view_material .Textinput-Box {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    height: auto;
+}
+
+.Textinput_view_material .Textinput-Control {
+    padding: var(--textinput-view-material-space-all);
+
+    /* Чтобы на размер шрифта не влиял модификатор size, в целом нужно только для демо */
+    font-size: var(--textinput-view-material-font-size) !important;
+    caret-color: var(--textinput-view-material-caret-color-base);
+
+    color: var(--textinput-view-material-typo-color-base);
+    border: none;
+}
+
+.Textinput_view_material.Textinput_state_error .Textinput-Control {
+    caret-color: var(--textinput-view-material-caret-color-state-error);
+}
+
+/* icons */
+.Textinput_view_material .Textinput-Icon {
+    top: 50%;
+
+    width: var(--textinput-view-material-icon-width) !important;
+    height: var(--textinput-view-material-icon-width) !important;
+
+    color: var(--textinput-view-material-icon-fill-color-base);
+
+    transform: translateY(-50%);
+}
+
+.Textinput_view_material.Textinput_disabled .Textinput-Icon {
+    color: var(--textinput-view-material-icon-fill-color-disabled);
+}
+
+.Textinput_view_material .Textinput-Icon_side_left {
+    left: var(--textinput-view-material-space-left);
+}
+
+.Textinput_view_material .Textinput-Icon_side_right {
+    right: var(--textinput-view-material-space-right);
+}
+
+.Textinput_view_material.Textinput_hasClear .Textinput-Clear {
+    right: calc(var(--textinput-view-material-space-right) * 2 + var(--textinput-view-material-icon-width));
+}
+
+.Textinput_view_material.Textinput_iconLeft .Textinput-Label {
+    left: calc(var(--textinput-view-material-space-left) * 2 + var(--textinput-view-material-icon-width));
+}
+
+/* placeholder */
+.Textinput_view_material .Textinput-Control::placeholder {
+    color: transparent;
+}
+
+.Textinput_view_material.Textinput_focused .Textinput-Control::placeholder {
+    color: var(--textinput-view-material-placeholder-typo-color-base);
+}
+
+/* stylelint-disable no-descending-specificity */
+.Textinput_variant_filled .Textinput-Control,
+.Textinput_variant_outlined .Textinput-Control {
+    padding-right: var(--textinput-view-material-space-right);
+    padding-left: var(--textinput-view-material-space-left);
+}
+/* stylelint-enable no-descending-specificity */
+
+.Textinput_view_material .Textinput-Label ~ .Textinput-Control {
+    margin-top: var(--textinput-view-material-space-top);
+}
+
+.Textinput_view_material.Textinput_iconLeft .Textinput-Control {
+    padding-left: calc(var(--textinput-view-material-space-left) * 2 + var(--textinput-view-material-icon-width));
+}
+
+.Textinput_view_material.Textinput_iconRight .Textinput-Control {
+    padding-right: calc(var(--textinput-view-material-space-right) * 2 + var(--textinput-view-material-icon-width));
+}
+
+.Textinput_view_material.Textinput_hasClear.Textinput_iconRight .Textinput-Control {
+    padding-right: calc((var(--textinput-view-material-space-right) * 2 + var(--textinput-view-material-icon-width)) * 2);
+}
+
+/* Box */
+.Textinput_view_material .Textinput-Box::before {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    content: '\00a0';
+    pointer-events: none;
+
+    border-bottom: 1px solid var(--textinput-view-material-border-color-base);
+
+    transition: border-bottom-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+/* filled */
+.Textinput_variant_filled .Textinput-Box {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    background-color: var(--textinput-view-material-variant-filled-fill-color);
+}
+/* stylelint-disable-next-line no-descending-specificity */
+.Textinput_variant_filled .Textinput-Label {
+    left: var(--textinput-view-material-space-left);
+}
+
+.Textinput_variant_filled.Textinput_focused .Textinput-Label_floated {
+    color: var(--textinput-view-material-variant-filled-label-color-floated);
+}
+
+.Textinput_view_material.Textinput_variant_filled .Textinput-Box::after {
+    border-bottom-color: var(--textinput-view-material-variant-filled-border-color-focused);
+}
+
+.Textinput-Hint_view_material.Textinput-Hint_variant_filled {
+    margin-right: var(--textinput-view-material-space-right);
+    margin-left: var(--textinput-view-material-space-left);
+}
+
+/* outlined */
+.Textinput_variant_outlined .Textinput-Box {
+    border: 1px solid var(--textinput-view-material-variant-outlined-border-color-base);
+    border-radius: 8px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.Textinput_view_material.Textinput_variant_outlined .Textinput-Box::after,
+.Textinput_view_material.Textinput_variant_outlined .Textinput-Box::before {
+    content: none;
+}
+
+.Textinput_variant_outlined.Textinput_focused .Textinput-Box {
+    border-color: var(--textinput-view-material-variant-outlined-border-color-focused);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.Textinput_variant_outlined .Textinput-Label {
+    left: var(--textinput-view-material-space-left);
+}
+
+.Textinput_variant_outlined.Textinput_focused .Textinput-Label_floated {
+    color: var(--textinput-view-material-variant-outlined-label-color-floated);
+}
+
+.Textinput-Hint_view_material.Textinput-Hint_variant_outlined {
+    margin-right: var(--textinput-view-material-space-left);
+    margin-left: var(--textinput-view-material-space-right);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.Textinput_view_material .Textinput-Box::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    content: '';
+    pointer-events: none;
+
+    border-bottom: 1px solid var(--color-control-bg-action);
+
+    transition: transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+    transform: scaleX(0);
+}
+
+.Textinput_view_material.Textinput_focused:not(.Textinput_disabled) .Textinput-Box::after {
+    transform: scaleX(1);
+}
+
+/* Hint */
+.Textinput-Hint_view_material {
+    font-size: var(--textinput-view-material-hint-font-size);
+
+    color: var(--textinput-view-material-hint-typo-color-base);
+}
+
+/* error */
+.Textinput-Hint_view_material.Textinput-Hint_state_error {
+    color: var(--textinput-view-material-hint-typo-color-state-error);
+}
+
+.Textinput_view_material.Textinput_state_error .Textinput-Icon_side_left,
+.Textinput_view_material.Textinput_state_error .Textinput-Label {
+    color: var(--textinput-view-material-label-color-state-error);
+}
+
+/* stylelint-disable no-descending-specificity */
+.Textinput_view_material.Textinput_state_error .Textinput-Box,
+.Textinput_view_material.Textinput_state_error .Textinput-Box::before,
+.Textinput_view_material.Textinput_state_error .Textinput-Box::after,
+.Textinput_view_material.Textinput_state_error.Textinput_focused .Textinput-Box::after {
+    border-color: var(--textinput-view-material-border-color-state-error);
+}
+/* stylelint-enable no-descending-specificity */
+
+/* Disabled  */
+/* stylelint-disable no-descending-specificity */
+.Textinput_view_material.Textinput_disabled .Textinput-Control {
+    color: var(--textinput-view-material-typo-color-disabled);
+}
+/* stylelint-enable no-descending-specificity */

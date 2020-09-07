@@ -6,10 +6,10 @@ export function generateCombinations(obj: any): any {
         }, []);
     }
 
-    var keys = Object.keys(obj),
-        vals = keys.map(function(key) {
-            return Array.isArray(obj[key]) ? obj[key] : [obj[key]];
-        });
+    const keys = Object.keys(obj);
+    const vals = keys.map(function(key) {
+        return Array.isArray(obj[key]) ? obj[key] : [obj[key]];
+    });
 
     return (function self(arr) {
         return arr.length === 1 ? arr[0] : arr[0].reduce(function(result: any, base: any) {

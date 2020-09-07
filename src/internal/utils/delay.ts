@@ -4,4 +4,4 @@ export const delay = (ms: number) => {
             resolve();
         }, ms);
     });
-}
+};

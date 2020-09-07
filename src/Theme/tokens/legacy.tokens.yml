@@ -21,27 +21,23 @@ button-size-l-lineHeight:
 # Textinput
 textinput-size-s-height:
   value: 28px
-textinput-size-s-control-height:
-  value: 28px
 textinput-size-s-icon-width:
   value: 28px
 textinput-size-s-icon-height:
   value: 28px
 textinput-size-m-height:
   value: 32px
-textinput-size-m-control-height:
-  value: 32px
 textinput-size-m-icon-width:
   value: 32px
 textinput-size-m-icon-height:
   value: 32px
-textinput-size-s-has-icon-spaceRight:
+textinput-size-s-withIcon-spaceRight:
   value: 22px
-textinput-size-s-has-icon-spaceLeft:
+textinput-size-s-withIcon-spaceLeft:
   value: 22px
-textinput-size-m-has-icon-spaceRight:
+textinput-size-m-withIcon-spaceRight:
   value: 24px
-textinput-size-m-has-icon-spaceLeft:
+textinput-size-m-withIcon-spaceLeft:
   value: 24px
 
 # Textarea

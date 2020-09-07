@@ -1,0 +1,42 @@
+.MessageBox.MessageBox_size_m .MessageBox-Content {
+    min-width: var(--message-box-size-m-content-minWidth);
+    max-width: var(--message-box-size-m-content-maxWidth);
+}
+
+.MessageBox_size_m .MessageBox-Tail {
+    width: var(--message-box-size-m-tail-size);
+    height: var(--message-box-size-m-tail-size);
+}
+
+.MessageBox_size_m.MessageBox_layout_plain .MessageBox-Content {
+    width: var(--message-box-size-m-content-maxWidth);
+}
+
+.MessageBox_size_m.MessageBox_layout_functional .MessageBox-Content {
+    width: var(--message-box-size-m-content-functional-width);
+}
+
+.MessageBox_size_m.MessageBox_layout_plain .MessageBox-Content,
+.MessageBox_size_m.MessageBox_layout_functional .MessageBox-Content {
+    font-size: var(--message-box-size-m-fontSize);
+}
+
+.MessageBox_size_m.MessageBox_layout_tooltip .MessageBox-Content {
+    max-width: var(--message-box-size-m-content-tooltip-maxWidth);
+    padding: var(--message-box-size-m-content-spaceAll);
+
+    font-size: var(--message-box-size-m-tooltip-fontSize);
+}
+
+.MessageBox.MessageBox_size_m .MessageBox-Backdrop::before,
+.MessageBox.MessageBox_size_m .MessageBox-Background {
+    border-radius: var(--message-box-size-m-border-radius);
+}
+
+.MessageBox.MessageBox_size_m .MessageBox-Buttons .Button2:last-child::before {
+    border-radius: calc(var(--message-box-size-m-border-radius) - 1px) 0;
+}
+
+.MessageBox.MessageBox_size_m .MessageBox-Buttons .Button2_width_max:only-child::before {
+    border-radius: 0 0 var(--message-box-size-m-border-radius) var(--message-box-size-m-border-radius);
+}

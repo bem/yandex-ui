@@ -1,0 +1,48 @@
+/* common */
+.Radiobox_view_outline .Radiobox-Text {
+    display: inline-block;
+
+    color: var(--radiobox-view-default-typo-color-base);
+}
+
+.Radiobox_view_outline .Radiobox-Box {
+    box-sizing: border-box;
+
+    border: 2px solid var(--radiobox-view-outline-border-color);
+    border-radius: var(--radiobox-borderRadius);
+    background-color: var(--radiobox-view-outline-fill-color-base);
+
+    transition: background .1s linear;
+}
+
+.Radiobox_view_outline .Radiobox-Box::after {
+    position: absolute;
+
+    content: '';
+
+    opacity: 0;
+    border-radius: var(--radiobox-after-borderRadius);
+    background-color: var(--radiobox-view-default-dot-fill-color);
+
+    transition: opacity .1s, transform .2s;
+    transform: scale(.1);
+}
+
+/* disable */
+.Radiobox_view_outline .Radiobox-Radio_disabled .Radiobox-Box,
+.Radiobox_view_outline .Radiobox-Radio_disabled .Radiobox-Text {
+    opacity: var(--radiobox-view-outline-disabled-opacity);
+}
+
+/* check */
+/* TODO: Усиливаем селектор для ie11 (оторвать после https://st.yandex-team.ru/ISL-7989) */
+.Radiobox_view_outline .Radiobox-Radio_checked .Radiobox-Box[class] {
+    border: 2px solid var(--radiobox-view-default-fill-color-checked-base);
+    background-color: var(--radiobox-view-default-fill-color-checked-base);
+}
+
+.Radiobox_view_outline .Radiobox-Radio_checked .Radiobox-Box[class]::after {
+    opacity: 1;
+
+    transform: scale(1);
+}

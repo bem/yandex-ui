@@ -4,8 +4,43 @@ color:
       default:
         fillColor:
           base:
-            value: "#e5e5e5"
+            value: "color(#000 a(10%))"
+          hover:
+            value: "#c3c3c3"
+          press:
+            value: "#c3c3c3"
+          disable:
+            value: "color(#000 a(10%))"
       progress:
         fillColor:
           base:
-            value: "#067AFF"
+            value: "#067aff"
+      action:
+        fillColor:
+          base:
+            value: "#0679ff"
+          hover:
+            value: "#0868d9"
+          press:
+            value: "#0868d9"
+          disable:
+            value: "#0679ff"
+      check:
+        fillColor:
+          base:
+            value: "#0679ff"
+          hover:
+            value: "#0868d9"
+          press:
+            value: "#0868d9"
+          disable:
+            value: "#0679ff"
+tumbler:
+  button:
+    space:
+      value: 2px
+    color:
+      disabled:
+        value: "{color.control.type.default.fillColor.base.value}"
+      disabledActive:
+        value: "{color.control.type.action.fillColor.base.value}"

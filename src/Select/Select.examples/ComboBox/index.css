@@ -1,0 +1,35 @@
+.ComboBox-Avatar {
+    display: block;
+
+    width: 48px;
+    height: 48px;
+}
+
+.ComboBox-Trigger {
+    height: 64px;
+
+    line-height: 64px;
+}
+
+.ComboBox-Trigger .Icon_glyph_type-check,
+.ComboBox .Menu-Item > .Icon_glyph_type-check {
+    display: none;
+}
+
+.ComboBox .Menu-Text {
+    display: block;
+
+    height: 64px;
+
+    line-height: 64px;
+}
+
+.ComboBox-MenuWithSearch {
+    background: var(--color-control-bg-default-hover);
+}
+
+.ComboBox-Search {
+    padding: var(--space-xs);
+
+    border-bottom: 1px solid var(--color-control-bg-border-default);
+}

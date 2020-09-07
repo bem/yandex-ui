@@ -33,10 +33,7 @@ type ConfigureRootThemeOptions = {
 
 let prevClassName = '';
 
-export const configureRootTheme = ({
-    theme,
-    root = canUseDOM() ? document.body : null,
-}: ConfigureRootThemeOptions) => {
+export const configureRootTheme = ({ theme, root = canUseDOM() ? document.body : null }: ConfigureRootThemeOptions) => {
     if (!canUseDOM()) {
         return;
     }

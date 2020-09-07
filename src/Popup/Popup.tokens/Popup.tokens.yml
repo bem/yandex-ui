@@ -1,0 +1,10 @@
+popup:
+  border:
+    radius:
+      value: 4px
+
+  viewDefault:
+    typoColor:
+      value: "{color.typo.primary.value}"
+    fillColor:
+      value: "{color.fillColor.default.value}"
