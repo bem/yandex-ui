@@ -41,6 +41,7 @@ type EFC<T> = FC<T> & { stack: LayerTuple[] };
 export const LayerManager: EFC<LayerManagerProps> = ({ visible, onClose, children, essentialRefs }) => {
     const id = useUniqId('layer-');
     const prevVisible = usePreviousValue(visible);
+    const prevOnClose = usePreviousValue(onClose);
 
     const onDocumentKeyUp = useCallback((event: KeyboardEvent) => {
         if (event.key === 'Escape') {
@@ -68,9 +69,18 @@ export const LayerManager: EFC<LayerManagerProps> = ({ visible, onClose, childre
     }, []);
 
     useEffect(() => {
+        if (onClose !== prevOnClose && onClose !== undefined) {
+            LayerManager.stack.forEach(([, layerOnClose], i) => {
+                if (layerOnClose === prevOnClose) {
+                    LayerManager.stack[i][1] = onClose;
+                }
+            });
+        }
+
         if (visible === prevVisible || onClose === undefined) {
             return;
         }
+
         if (visible) {
             LayerManager.stack.push([id, onClose, essentialRefs]);
 
@@ -92,7 +102,7 @@ export const LayerManager: EFC<LayerManagerProps> = ({ visible, onClose, childre
         // Не добавляем onClose и essentialRefs в зависимости,
         // т.к. они нужны единожды при добавлении в стек.
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [prevVisible, visible]);
+    }, [prevVisible, visible, onClose, prevOnClose]);
 
     useEffect(() => {
         return () => {

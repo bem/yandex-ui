@@ -1,7 +1,6 @@
 # Badge
 
-<a href='https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/Badge' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href='https://search.yandex-team.ru/stsearch?text=Badge.ts&facet.queue=ISL&facet.type=bug&facet.status=128' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
+
 
 <!-- description:start -->
 Индикатор-счётчик новой информации
@@ -14,7 +13,7 @@
 ```ts
 // src/App.ts
 import React from 'react'
-import { Badge } from '@yandex-lego/components/Badge'
+import { Badge } from '@yandex/ui/Badge'
 
 const App = () => (
   <Badge content={5}>

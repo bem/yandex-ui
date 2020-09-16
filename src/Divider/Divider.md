@@ -1,7 +1,6 @@
 # Divider
 
-<a href='https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/Divider' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href='https://search.yandex-team.ru/stsearch?text=Divider.ts&facet.queue=ISL&facet.type=bug&facet.status=128' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
+
 
 <!-- description:start -->
 Компонент для отделения одной информации от другой.
@@ -13,8 +12,8 @@
 
 ```ts
 // src/lib/theme.ts
-import { configureRootTheme } from '@yandex-lego/components/Theme'
-import { theme } from '@yandex-lego/components/Theme/presets/default'
+import { configureRootTheme } from '@yandex/ui/Theme'
+import { theme } from '@yandex/ui/Theme/presets/default'
 
 configureRootTheme({ theme })
 ```
@@ -24,7 +23,7 @@ configureRootTheme({ theme })
 ```ts
 // src/App.ts
 import React from 'react'
-import { Divider } from '@yandex-lego/components/Divider'
+import { Divider } from '@yandex/ui/Divider'
 
 const App = () => {
   return (

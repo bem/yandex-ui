@@ -1,6 +1,6 @@
 {
   "name": "@yandex/ui",
-  "version": "2.49.0",
+  "version": "2.50.3",
   "description": "Yandex UI components",
   "keywords": [
     "ui",
@@ -11,15 +11,21 @@
     "React",
     "Whitepapper"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "author": "Lego Team <lego@yandex-team.ru>",
-  "homepage": "https://yastatic.net/s3/frontend/lego/storybook/index.html?path=/docsx/lego-components-docs-readme--document",
+  "homepage": "https://github.com/bem/yandex-ui",
   "license": "MPL-2.0",
   "scripts": {
     "build": "pack build -c .config/build.config.js",
     "format:css": "csscomb src/**/*.css",
     "format:js": "prettier --write src/**/*.{ts,tsx}",
     "prepare": "npm run build",
-    "tokens:build": "themekit build -c .config/themekit.config.json"
+    "tokens:build": "themekit build -c .config/themekit.config.json",
+    "unit:coverage": "npm run unit -- --coverage",
+    "unit": "jest --config ./.config/jest/jest.config.js"
   },
   "peerDependencies": {
     "@bem-react/classname": "^1.5.6",
@@ -71,10 +77,5 @@
     "storybook-addon-figma-new": "0.1.0",
     "ts-jest": "^24.0.2",
     "typescript": "3.7.2"
-  },
-  "publishConfig": {
-    "directory": "dist",
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
   }
 }

@@ -1,9 +1,8 @@
 # MessageBox
 
-<a href='https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/MessageBox' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href='https://search.yandex-team.ru/stsearch?text=MessageBox.ts&facet.queue=ISL&facet.type=bug&facet.status=128' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
 
-> **Важно!** Компонент может измениться после [дизайн-ревью](https://st.yandex-team.ru/ISL-8128), следите за обновлениями.
+
+> **Важно!** Компонент может измениться после [дизайн-ревью](https://nda.ya.ru/t/avWGaTY33W4RHa), следите за обновлениями.
 
 <!-- description:start -->
 Визуальный компонент для уведомлений, плашек и других паттернов.
@@ -15,8 +14,8 @@
 
 ```ts
 // src/lib/theme.ts
-import { configureRootTheme } from '@yandex-lego/components/Theme'
-import { theme } from '@yandex-lego/components/Theme/presets/default'
+import { configureRootTheme } from '@yandex/ui/Theme'
+import { theme } from '@yandex/ui/Theme/presets/default'
 
 configureRootTheme({ theme })
 ```
@@ -31,7 +30,7 @@ import {
   MessageBox as MessageBoxDesktop,
   withSizeM,
   withViewDefault,
-} from '@yandex-lego/components/MessageBox/desktop'
+} from '@yandex/ui/MessageBox/desktop'
 
 const MessageBox = compose(
   withSizeM,
@@ -50,7 +49,7 @@ const App = () => (
 ```ts
 // src/App.ts
 import React from 'react'
-import { MessageBox } from '@yandex-lego/components/MessageBox/desktop/bundle'
+import { MessageBox } from '@yandex/ui/MessageBox/desktop/bundle'
 
 const App = () => (
   <MessageBox view="default" size="m">
@@ -81,7 +80,7 @@ const App = () => (
 import {
   MessageBox,
   Corner,
-} from '@yandex-lego/components/MessageBox/desktop/bundle'
+} from '@yandex/ui/MessageBox/desktop/bundle'
 
 <MessageBox
   view="default"
@@ -140,7 +139,7 @@ import {
 import {
   MessageBox,
   Wrapper,
-} from '@yandex-lego/components/MessageBox/desktop/bundle'
+} from '@yandex/ui/MessageBox/desktop/bundle'
 
 <MessageBox
   view="default"
@@ -175,7 +174,7 @@ import {
 Компонент можно показать относительно любого элемента на странице, для этого необходимо воспользоваться импортом `MessageBoxPopup`, данный компонент использует внутри себя `Popup`, а снаружи частично реализует его интерфейс.
 
 ```tsx
-import { MessageBoxPopup } from '@yandex-lego/components/MessageBox/desktop/bundle'
+import { MessageBoxPopup } from '@yandex/ui/MessageBox/desktop/bundle'
 
 <MessageBoxPopup
   visible

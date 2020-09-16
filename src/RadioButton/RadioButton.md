@@ -1,7 +1,6 @@
 # RadioButton
 
-<a href='https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/Radiobutton' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href='https://search.yandex-team.ru/stsearch?text=Radiobutton.ts&facet.queue=ISL&facet.type=bug&facet.status=128' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
+
 
 <!-- description:start -->
 Компонент для создания радиогруппы.
@@ -13,8 +12,8 @@
 
 ```ts
 // src/lib/theme.ts
-import { configureRootTheme } from '@yandex-lego/components/Theme'
-import { theme } from '@yandex-lego/components/Theme/presets/default'
+import { configureRootTheme } from '@yandex/ui/Theme'
+import { theme } from '@yandex/ui/Theme/presets/default'
 
 configureRootTheme({ theme })
 ```
@@ -29,7 +28,7 @@ import {
   RadioButton as RadioButtonDesktop,
   withSizeM,
   withViewDefault,
-} from '@yandex-lego/components/RadioButton/desktop'
+} from '@yandex/ui/RadioButton/desktop'
 
 const RadioButton = compose(withSizeM, withViewDefault)(RadioButtonDesktop)
 
@@ -57,7 +56,7 @@ const App = () => {
 ```ts
 // src/App.ts
 import React from 'react'
-import { RadioButton } from '@yandex-lego/components/RadioButton/desktop/bundle'
+import { RadioButton } from '@yandex/ui/RadioButton/desktop/bundle'
 
 const App = () => {
   const [value, setValue] = useState('value1')

@@ -1,7 +1,6 @@
 # ListTile
 
-<a href='https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/ListTile' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href='https://search.yandex-team.ru/stsearch?text=ListTile.ts&facet.queue=ISL&facet.type=bug&facet.status=128' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
+
 <!-- description:start -->
 Блок примитив для удобного позиционирования контента, обрамлённый иконками или другими блоками например checkbox
 <!-- description:end -->
@@ -12,8 +11,8 @@
 
 ```ts
 // src/lib/theme.ts
-import { configureRootTheme } from '@yandex-lego/components/Theme'
-import { theme } from '@yandex-lego/components/Theme/presets/default'
+import { configureRootTheme } from '@yandex/ui/Theme'
+import { theme } from '@yandex/ui/Theme/presets/default'
 
 configureRootTheme({ theme })
 ```
@@ -41,4 +40,3 @@ configureRootTheme({ theme })
 | rightSpace? | `"3xs" \| "2xs" \| "xs" \| "s" \| "m" \| "l" \| "xl" \| "2xl" \| "3xl" \| "4xl" \| "5xl" \| "6xl"`                                                                                                                                                                | Отступ справа от основного контента       |
 | onClick?    | `(event: MouseEvent<HTMLDivElement, MouseEvent>) => void`                                                                                                                                                                                                         | Обработчик клика по ListTile              |
 <!-- props:end -->
-

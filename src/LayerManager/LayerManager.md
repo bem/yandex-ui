@@ -1,7 +1,6 @@
 # LayerManager (Internal)
 
-<a href='https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/LayerManager' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href='https://search.yandex-team.ru/stsearch?text=LayerManager.ts&facet.queue=ISL&facet.type=bug&facet.status=128' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
+
 
 
 <!-- description:start -->
@@ -14,7 +13,7 @@
 
 ```tsx
 import React, { useRef, useState } from 'react'
-import { LayerManager } from '@yandex-lego/components/LayerManager'
+import { LayerManager } from '@yandex/ui/LayerManager'
 
 const App = () => {
   const hostRef = useRef(null)

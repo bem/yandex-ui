@@ -14,6 +14,6 @@ Safari Mobile 7.0+ (и, вероятно, более ранние версии �
 Подключить полифил в компоненте:
 
 ```tsx
-// src/components/Component/Component@touch-phone.tsx
+// src/Component/Component@touch-phone.tsx
 import '../../polyfills/click-event'
 ```

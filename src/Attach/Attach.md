@@ -1,7 +1,6 @@
 # Attach
 
-<a href='https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/Attach' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href='https://search.yandex-team.ru/stsearch?text=Attach.ts&facet.queue=ISL&facet.type=bug&facet.status=128' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
+
 
 <!-- description:start -->
 Компонент для создания кнопки выбора файла, предназначенного для отправки на сервер.
@@ -13,8 +12,8 @@
 
 ```ts
 // src/lib/theme.ts
-import { configureRootTheme } from '@yandex-lego/components/Theme'
-import { theme } from '@yandex-lego/components/Theme/presets/default'
+import { configureRootTheme } from '@yandex/ui/Theme'
+import { theme } from '@yandex/ui/Theme/presets/default'
 
 configureRootTheme({ theme })
 ```
@@ -31,13 +30,13 @@ import {
   Button as ButtonDesktop,
   withSizeM as withButtonSizeM,
   withViewDefault as withButtonViewDefault,
-} from '@yandex-lego/components/Button/desktop'
+} from '@yandex/ui/Button/desktop'
 
 import {
   cnAttach,
   Attach as AttachDesktop,
   withSizeM as withAttachSizeM,
-} from '@yandex-lego/components/Attach/desktop'
+} from '@yandex/ui/Attach/desktop'
 
 const Button = compose(withButtonSizeM, withButtonViewDefault)(ButtonDesktop)
 
@@ -62,7 +61,7 @@ const App = () => (
 ```ts
 // src/App.ts
 import React from 'react'
-import { Attach } from '@yandex-lego/components/Attach/desktop/bundle'
+import { Attach } from '@yandex/ui/Attach/desktop/bundle'
 
 const App = () => (
   <Attach hasHolder holderText="no file chosen" view="default" size="m">

@@ -1,7 +1,6 @@
 # Image
 
-<a href='https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/Image' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href='https://search.yandex-team.ru/stsearch?text=Image.ts&facet.queue=ISL&facet.type=bug&facet.status=128' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
+
 
 <!-- description:start -->
 Компонент для красивой загрузки картинок
@@ -18,7 +17,7 @@
 ```ts
 // src/App.ts
 import React from 'react'
-import { Image } from '@yandex-lego/components/Image/desktop'
+import { Image } from '@yandex/ui/Image/desktop'
 
 // Использование компонента в вашем приложении
 const App = () => (
@@ -56,7 +55,7 @@ const App = () => (
 
 ```typescript jsx
 import React from 'react';
-import { Image } from '@yandex-lego/components/Image/desktop';
+import { Image } from '@yandex/ui/Image/desktop';
 
 const App: React.FC = () => {
     return (
@@ -70,7 +69,7 @@ const App: React.FC = () => {
 
 ```typescript jsx
 import React from 'react';
-import { Image } from '@yandex-lego/components/Image/desktop';
+import { Image } from '@yandex/ui/Image/desktop';
 
 const App: React.FC = () => {
     return (

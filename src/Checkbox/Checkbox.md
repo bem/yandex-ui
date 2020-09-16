@@ -1,7 +1,6 @@
 # Checkbox
 
-<a href='https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/Checkbox' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href='https://search.yandex-team.ru/stsearch?text=Checkbox.ts&facet.queue=ISL&facet.type=bug&facet.status=128' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
+
 
 <!-- description:start -->
 Компонент для создания чекбоксов различных типов.
@@ -13,8 +12,8 @@
 
 ```ts
 // src/lib/theme.ts
-import { configureRootTheme } from '@yandex-lego/components/Theme'
-import { theme } from '@yandex-lego/components/Theme/presets/default'
+import { configureRootTheme } from '@yandex/ui/Theme'
+import { theme } from '@yandex/ui/Theme/presets/default'
 
 configureRootTheme({ theme })
 ```
@@ -29,7 +28,7 @@ import {
   Checkbox as CheckboxDesktop,
   withSizeM,
   withViewDefault,
-} from '@yandex-lego/components/Checkbox/desktop'
+} from '@yandex/ui/Checkbox/desktop'
 
 // Композиция из различных модификаторов
 const Checkbox = compose(withSizeM, withViewDefault)(CheckboxDesktop)
@@ -54,7 +53,7 @@ const App = () => {
 ```ts
 // src/App.ts
 import React, { useState } from 'react'
-import { Checkbox } from '@yandex-lego/components/Checkbox/desktop/bundle'
+import { Checkbox } from '@yandex/ui/Checkbox/desktop/bundle'
 
 const App = () => {
   const [checked, setChecked] = useState(false)

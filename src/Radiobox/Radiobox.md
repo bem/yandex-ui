@@ -1,7 +1,6 @@
 # Radiobox
 
-<a href='https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/Radiobox' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href='https://search.yandex-team.ru/stsearch?text=Radiobox.ts&facet.queue=ISL&facet.type=bug&facet.status=128' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
+
 
 <!-- description:start -->
 Компонент для создания радиопереключателя.
@@ -13,8 +12,8 @@
 
 ```ts
 // src/lib/theme.ts
-import { configureRootTheme } from '@yandex-lego/components/Theme'
-import { theme } from '@yandex-lego/components/Theme/presets/default'
+import { configureRootTheme } from '@yandex/ui/Theme'
+import { theme } from '@yandex/ui/Theme/presets/default'
 
 configureRootTheme({ theme })
 ```
@@ -29,7 +28,7 @@ import {
   Radiobox as RadioboxDesktop,
   withSizeM,
   withViewDefault,
-} from '@yandex-lego/components/Radiobox/desktop'
+} from '@yandex/ui/Radiobox/desktop'
 
 const Radiobox = compose(
   withSizeM,
@@ -63,7 +62,7 @@ import React, { useState } from 'react'
 import {
   Radiobox,
   Radio,
-} from '@yandex-lego/components/Radiobox/desktop/bundle'
+} from '@yandex/ui/Radiobox/desktop/bundle'
 
 const App = () => {
   const [value, setValue] = useState('value1')

@@ -1,7 +1,6 @@
 # Textinput
 
-<a href="https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/Textinput" target="_blank"><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href="https://search.yandex-team.ru/stsearch?text=Textinput.ts&amp;facet.queue=ISL&amp;facet.type=bug&amp;facet.status=128" target="_blank"><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
+
 
 <!-- description:start -->
 Однострочное текстовое поле.
@@ -13,8 +12,8 @@
 
 ```ts
 // src/lib/theme.ts
-import { configureRootTheme } from '@yandex-lego/components/Theme'
-import { theme } from '@yandex-lego/components/Theme/presets/default'
+import { configureRootTheme } from '@yandex/ui/Theme'
+import { theme } from '@yandex/ui/Theme/presets/default'
 
 configureRootTheme({ theme })
 ```
@@ -29,7 +28,7 @@ import {
   Textinput as TextinputDesktop,
   withViewDefault,
   withSizeM,
-} from '@yandex-lego/components/Textinput/desktop'
+} from '@yandex/ui/Textinput/desktop'
 
 // Композиция из различных модификаторов
 const Textinput = compose(withViewDefault, withSizeM)(TextinputDesktop)
@@ -53,7 +52,7 @@ const App = () => {
 ```ts
 // src/App.ts
 import React, { useState } from 'react'
-import { Textinput } from '@yandex-lego/components/Textinput/desktop/bundle'
+import { Textinput } from '@yandex/ui/Textinput/desktop/bundle'
 
 const App = () => {
   const [value, setValue] = useState('')

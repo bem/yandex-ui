@@ -1,7 +1,6 @@
 # Spacer
 
-<a href='https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/Spacer' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href='https://search.yandex-team.ru/stsearch?text=Spacer.ts&facet.queue=ISL&facet.type=bug&facet.status=128' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
+
 
 <!-- description:start -->
 Компонент который вставляет своих детей с заданным смещением.
@@ -16,7 +15,7 @@
   ```ts
   // src/App.ts
   import React from 'react'
-  import { Spacer } from '@yandex-lego/components/Spacer'
+  import { Spacer } from '@yandex/ui/Spacer'
 
   const App = () => (
     <Spacer all={10}>
@@ -30,7 +29,7 @@
   ```ts
   // src/App.ts
   import React from 'react'
-  import { Spacer } from '@yandex-lego/components/Spacer'
+  import { Spacer } from '@yandex/ui/Spacer'
 
   const App = () => (
     <Spacer vertical={10} horizontal={20}>
@@ -44,7 +43,7 @@
   ```ts
   // src/App.ts
   import React from 'react'
-  import { Spacer } from '@yandex-lego/components/Spacer'
+  import { Spacer } from '@yandex/ui/Spacer'
 
   const App = () => (
     <Spacer top={10}>

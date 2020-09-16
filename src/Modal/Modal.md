@@ -1,7 +1,6 @@
 # Modal
 
-<a href='https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/Modal' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href='https://search.yandex-team.ru/stsearch?text=Modal.ts&facet.queue=ISL&facet.type=bug&facet.status=128' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
+
 
 <!-- description:start -->
 Используется для создания всплывающих модальных окон.
@@ -17,8 +16,8 @@ import { compose } from '@bem-react/core'
 import {
   Modal as ModalDesktop,
   withThemeNormal,
-} from '@yandex-lego/components/Modal/desktop'
-import { withZIndex } from '@yandex-lego/components/withZIndex'
+} from '@yandex/ui/Modal/desktop'
+import { withZIndex } from '@yandex/ui/withZIndex'
 
 // Композиция из различных модификаторов
 const Modal = compose(
@@ -43,7 +42,7 @@ const App = () => (
 ```ts
 // src/App.ts
 import React from 'react'
-import { Modal } from '@yandex-lego/components/Modal/desktop/bundle'
+import { Modal } from '@yandex/ui/Modal/desktop/bundle'
 
 const App = () => (
   <Modal

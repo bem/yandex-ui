@@ -1,7 +1,6 @@
 # Popup
 
-<a href='https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/Popup' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href='https://search.yandex-team.ru/stsearch?text=Popup.ts&facet.queue=ISL&facet.type=bug&facet.status=128' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
+
 
 <!-- description:start -->
 Компонент для создания всплывающего окна (попапа).
@@ -13,8 +12,8 @@
 
 ```ts
 // src/lib/theme.ts
-import { configureRootTheme } from '@yandex-lego/components/Theme'
-import { theme } from '@yandex-lego/components/Theme/presets/default'
+import { configureRootTheme } from '@yandex/ui/Theme'
+import { theme } from '@yandex/ui/Theme/presets/default'
 
 configureRootTheme({ theme })
 ```
@@ -28,7 +27,7 @@ import { compose } from '@bem-react/core'
 import {
   Popup as PopupDesktop,
   withViewDefault,
-} from '@yandex-lego/components/Popup/desktop'
+} from '@yandex/ui/Popup/desktop'
 
 // Композиция из различных модификаторов
 const Popup = compose(withViewDefault)(PopupDesktop)
@@ -45,7 +44,7 @@ const App = () => (
 ```ts
 // src/App.ts
 import React from 'react'
-import { Popup } from '@yandex-lego/components/Popup/desktop/bundle'
+import { Popup } from '@yandex/ui/Popup/desktop/bundle'
 
 const App = () => (
   <Popup visible position={{ top: 10, left: 10 }} view="default">

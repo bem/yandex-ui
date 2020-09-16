@@ -78,7 +78,7 @@ export const ComboBoxExample = () => {
                 options={options}
             />
             <Text as="p" typography="body-long-m">
-                <Link view="default" href="https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/Select/Select.examples/ComboBox">
+                <Link view="default" href="https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/Select/Select.examples/ComboBox">
                     Ссылка на исходники
                 </Link>
             </Text>

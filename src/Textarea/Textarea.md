@@ -1,7 +1,6 @@
 # Textarea
 
-<a href="https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/Textarea" target='_blank'><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href="https://search.yandex-team.ru/stsearch?text=Textarea.ts&amp;facet.queue=ISL&amp;facet.type=bug&amp;facet.status=128" target='_blank'><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
+
 
 <!-- description:start -->
 Многострочное текстовое поле.
@@ -13,8 +12,8 @@
 
 ```ts
 // src/lib/theme.ts
-import { configureRootTheme } from '@yandex-lego/components/Theme'
-import { theme } from '@yandex-lego/components/Theme/presets/default'
+import { configureRootTheme } from '@yandex/ui/Theme'
+import { theme } from '@yandex/ui/Theme/presets/default'
 
 configureRootTheme({ theme })
 ```
@@ -29,7 +28,7 @@ import {
   Textarea as TextareaDesktop,
   withViewDefault,
   withSizeM,
-} from '@yandex-lego/components/Textarea/desktop'
+} from '@yandex/ui/Textarea/desktop'
 
 // Композиция из различных модификаторов
 const Textarea = compose(withViewDefault, withSizeM)(TextareaDesktop)
@@ -53,7 +52,7 @@ const App = () => {
 ```ts
 // src/App.ts
 import React, { useState } from 'react'
-import { Textarea } from '@yandex-lego/components/Textarea/desktop/bundle'
+import { Textarea } from '@yandex/ui/Textarea/desktop/bundle'
 
 const App = () => {
   const [value, setValue] = useState('')

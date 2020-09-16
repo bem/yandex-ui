@@ -4,7 +4,7 @@
 
 Каждая тема состоит из нескольких частей. Ниже проиллюстрировано воздействие каждой из частей на компонент:
 
-![image](https://media.github.yandex-team.ru/user/5546/files/5f3ab900-57e6-11ea-8f61-1447c4c8cfa9)
+![image](https://nda.ya.ru/t/2WDsVxZZ3Vv9UU)
 
 <details markdown="1">
 
@@ -38,8 +38,8 @@
 
   ```ts
   // src/App.js
-  import { configureRootTheme } from '@yandex-lego/components/Theme'
-  import { theme } from '@yandex-lego/components/Theme/presets/default'
+  import { configureRootTheme } from '@yandex/ui/Theme'
+  import { theme } from '@yandex/ui/Theme/presets/default'
 
   // Без указания root, по умолчанию body
   configureRootTheme({ theme })
@@ -52,8 +52,8 @@
 
   ```ts
   // src/App.js
-  import { cnTheme } from '@yandex-lego/components/Theme'
-  import { theme } from '@yandex-lego/components/Theme/presets/default'
+  import { cnTheme } from '@yandex/ui/Theme'
+  import { theme } from '@yandex/ui/Theme/presets/default'
 
   export const App = () => (
     <div className={cnTheme(theme)}>
@@ -66,8 +66,8 @@
 
   ```ts
   // src/features/Feature/Feature.js
-  import { cnTheme } from '@yandex-lego/components/Theme'
-  import { theme } from '@yandex-lego/components/Theme/presets/inverse'
+  import { cnTheme } from '@yandex/ui/Theme'
+  import { theme } from '@yandex/ui/Theme/presets/inverse'
 
   // Переопределение всех параметров
   const Feature = () => (
@@ -111,7 +111,7 @@
 Пресет — это файл с подключенными нужными для проекта CSS-файлами и экспортом объекта для установки модификаторов:
 
 ```ts
-import { Theme } from '@yandex-lego/components/Theme'
+import { Theme } from '@yandex/ui/Theme'
 
 import './_color/theme_color_yandex-default.css'
 import './_size/theme_size_default.css'

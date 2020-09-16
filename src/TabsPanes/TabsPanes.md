@@ -1,7 +1,6 @@
 # TabsPanes
 
-<a href='https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/TabsPanes' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href='https://search.yandex-team.ru/stsearch?text=TabsPanes.ts&facet.queue=ISL&facet.type=bug&facet.status=128' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
+
 
 <!-- description:start -->
 Компонент для создания вкладок с разным содержимым.
@@ -13,7 +12,7 @@
 ```js
 // src/App.ts
 import React, { useState } from 'react'
-import { TabsPanes } from '@yandex-lego/components/TabsPanes/desktop/bundle'
+import { TabsPanes } from '@yandex/ui/TabsPanes/desktop/bundle'
 
 const App = () => (
   <TabsPanes

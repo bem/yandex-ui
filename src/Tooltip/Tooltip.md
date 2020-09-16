@@ -1,7 +1,6 @@
 # Tooltip
 
-<a href='https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/Tooltip' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href='https://search.yandex-team.ru/stsearch?text=Tooltip.ts&facet.queue=ISL&facet.type=bug&facet.status=128' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
+
 
 <!-- description:start -->
 Компонент используется для создания всплывающих подсказок.
@@ -13,8 +12,8 @@
 
 ```ts
 // src/lib/theme.ts
-import { configureRootTheme } from '@yandex-lego/components/Theme'
-import { theme } from '@yandex-lego/components/Theme/presets/default'
+import { configureRootTheme } from '@yandex/ui/Theme'
+import { theme } from '@yandex/ui/Theme/presets/default'
 
 configureRootTheme({ theme })
 ```
@@ -29,7 +28,7 @@ import {
   Tooltip as TooltipDesktop,
   withSizeM,
   withViewDefault,
-} from '@yandex-lego/components/Tooltip/desktop'
+} from '@yandex/ui/Tooltip/desktop'
 
 const Tooltip = compose(
   withSizeM,
@@ -64,7 +63,7 @@ const App = () => {
 ```ts
 // src/App.ts
 import React from 'react'
-import { Tooltip } from '@yandex-lego/components/Tooltip/desktop/bundle'
+import { Tooltip } from '@yandex/ui/Tooltip/desktop/bundle'
 
 const App = () => {
   const [visible, setVisible] = React.useState(false)
@@ -91,7 +90,7 @@ const App = () => {
 
 ```ts
 import React from 'react'
-import { TooltipStateful } from '@yandex-lego/components/Tooltip/desktop/bundle'
+import { TooltipStateful } from '@yandex/ui/Tooltip/desktop/bundle'
 
 const App = () => (
   <TooltipStateful view="default" size="m" content="Description">
@@ -120,7 +119,7 @@ const App = () => (
 
 Чтобы изменить направление раскрытия подсказки, установите свойство `direction` с одним или несколькими допустимыми значениями — `"top-left"`, `"top-center"`, `"top-right"`, `"right-top"`, `"right-center"`, `"right-bottom"`, `"bottom-right"`, `"bottom-center"`, `"bottom-left"`, `"left-bottom"`, `"left-center"`, `"left-top`".
 
-Если свойство `direction` не было установлено, то будут использованы <a href="https://github.yandex-team.ru/search-interfaces/frontend/blob/master/packages/lego-components/src/components/Popup/_target/Popup_target_anchor.tsx#L19-L32" target="_blank">значения по умолчанию</a> в порядке приоритета раскрытия.
+Если свойство `direction` не было установлено, то будут использованы <a href="https://github.com/bem/yandex-ui/blob/master/src/Popup/_target/Popup_target_anchor.tsx#L19-L32" target="_blank">значения по умолчанию</a> в порядке приоритета раскрытия.
 
 {{%story::desktop:surface-tooltip-desktop--direction%}}
 

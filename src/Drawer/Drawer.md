@@ -1,7 +1,6 @@
 # Drawer
 
-<a href='https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/Drawer' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href='https://search.yandex-team.ru/stsearch?text=Drawer.ts&facet.queue=ISL&facet.type=bug&facet.status=128' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
+
 
 
 <!-- description:start -->
@@ -11,7 +10,7 @@
 Использование с полным набором модификаторов:
 
 ```js
-import { Drawer } from '@yandex-lego/components/Drawer/touch-phone/bundle';
+import { Drawer } from '@yandex/ui/Drawer/touch-phone/bundle';
 ```
 
 ## Базовый вариант

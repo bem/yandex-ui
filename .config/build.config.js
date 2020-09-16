@@ -19,7 +19,7 @@ module.exports = {
         // Плагин также создает esm версию сборки
         // и добавляет package.json для каждого компонента.
         useTypeScriptPlugin({
-            configPath: './tsconfig.json',
+            configPath: './tsconfig.prod.json',
         }),
 
         useCssPlugin({

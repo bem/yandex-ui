@@ -1,51 +1,10 @@
 {
+  "extends": "@yandex-lego/configs/configs/tsconfig.dev.json",
   "compilerOptions": {
-    "module": "esnext",
-    "moduleResolution": "node",
-    "target": "es5",
-    "esModuleInterop": true,
-    "strict": true,
-    "alwaysStrict": true,
-    "strictFunctionTypes": true,
-    "strictNullChecks": true,
-    "strictPropertyInitialization": true,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "declaration": false,
-    "downlevelIteration": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "pretty": true,
-    "preserveConstEnums": true,
-    "removeComments": false,
-    "sourceMap": true,
-    "lib": [
-      "es6",
-      "dom"
-    ],
-    "rootDir": "src",
-    "baseUrl": ".",
-    "paths": {
-      "@bem-react/*": ["node_modules/@bem-react/*"],
-      "react": ["node_modules/@types/react"]
-    },
-    "allowJs": true
+    "resolveJsonModule": true
   },
-  "include": ["src"],
-  "exclude": [
-    "src/internal/**",
-    "src/**/*.test.ts",
-    "src/**/*.test.tsx",
-    "src/**/*tests/**/*",
-    "src/**/*.examples.ts",
-    "src/**/*.examples.tsx",
-    "src/**/*.examples/**/*.ts",
-    "src/**/*.examples/**/*.tsx",
-    "node_modules"
-  ]
+  // Обрабатываем только ts & tsx файлы в src, чтобы typescript
+  // не зависал пытаясь обработать js файлы из артефактов сборки.
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules"]
 }

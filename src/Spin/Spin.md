@@ -1,7 +1,6 @@
 # Spin
 
-<a href='https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/Spin' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href='https://search.yandex-team.ru/stsearch?text=Spin.ts&facet.queue=ISL&facet.type=bug&facet.status=128' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
+
 
 <!-- description:start -->
 Индикатор загрузки. Отображает выполнение какого-то процесса, например загрузки сайта или медиа-файла.
@@ -13,8 +12,8 @@
 
 ```ts
 // src/lib/theme.ts
-import { configureRootTheme } from '@yandex-lego/components/Theme'
-import { theme } from '@yandex-lego/components/Theme/presets/default'
+import { configureRootTheme } from '@yandex/ui/Theme'
+import { theme } from '@yandex/ui/Theme/presets/default'
 
 configureRootTheme({ theme })
 ```
@@ -29,7 +28,7 @@ import {
   Spin as SpinDesktop,
   withSizeM,
   withViewDefault,
-} from '@yandex-lego/components/Spin/desktop'
+} from '@yandex/ui/Spin/desktop'
 
 // Композиция из различных модификаторов
 const Spin = compose(withSizeM, withViewDefault)(SpinDesktop)
@@ -44,7 +43,7 @@ const App = () => {
 ```ts
 // src/App.ts
 import React from 'react'
-import { Spin } from '@yandex-lego/components/Spin/desktop/bundle'
+import { Spin } from '@yandex/ui/Spin/desktop/bundle'
 
 const App = () => {
   return <Spin progress view="default" size="m" />

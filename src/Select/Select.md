@@ -1,7 +1,6 @@
 # Select
 
-<a href='https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/Select' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href='https://search.yandex-team.ru/stsearch?text=Select.ts&facet.queue=ISL&facet.type=bug&facet.status=128' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
+
 
 <!-- description:start -->
 Компонент для создания раскрывающегося списка с меню.
@@ -13,8 +12,8 @@
 
 ```ts
 // src/lib/theme.ts
-import { configureRootTheme } from '@yandex-lego/components/Theme'
-import { theme } from '@yandex-lego/components/Theme/presets/default'
+import { configureRootTheme } from '@yandex/ui/Theme'
+import { theme } from '@yandex/ui/Theme/presets/default'
 
 configureRootTheme({ theme })
 ```
@@ -30,32 +29,32 @@ import { withRegistry, Registry } from '@bem-react/di'
 import {
   Select as SelectDesktop,
   cnSelect,
-} from '@yandex-lego/components/Select/desktop'
+} from '@yandex/ui/Select/desktop'
 
-import { withTogglable } from '@yandex-lego/components/withTogglable'
+import { withTogglable } from '@yandex/ui/withTogglable'
 
 import {
   Button as ButtonDesktop,
   withSizeM as withButtonSizeM,
   withViewDefault as withButtonViewDefault,
-} from '@yandex-lego/components/Button/desktop'
+} from '@yandex/ui/Button/desktop'
 
 import {
   Menu as MenuDesktop,
   withSizeM as withMenuSizeM,
   withViewDefault as withMenuViewDefault,
-} from '@yandex-lego/components/Menu/desktop'
+} from '@yandex/ui/Menu/desktop'
 
 import {
   Popup as PopupDesktop,
   withViewDefault as withPopupViewDefault,
   withTargetAnchor,
-} from '@yandex-lego/components/Popup/desktop'
+} from '@yandex/ui/Popup/desktop'
 
 import {
   Icon as IconDesktop,
   withGlyphCaretsV,
-} from '@yandex-lego/components/Icon/desktop'
+} from '@yandex/ui/Icon/desktop'
 
 const selectRegistry = new Registry({ id: cnSelect() })
 
@@ -102,7 +101,7 @@ const App = () => {
 ```ts
 // src/App.ts
 import React, { useState } from 'react'
-import { Select } from '@yandex-lego/components/Select/desktop/bundle'
+import { Select } from '@yandex/ui/Select/desktop/bundle'
 
 const App = () => {
   const [value, setValue] = useState('a')

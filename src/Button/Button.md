@@ -1,7 +1,6 @@
 # Button
 
-<a href='https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/Button' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href='https://search.yandex-team.ru/stsearch?text=Button.ts&facet.queue=ISL&facet.type=bug&facet.status=128' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
+
 
 
 <!-- description:start -->
@@ -14,8 +13,8 @@
 
 ```ts
 // src/lib/theme.ts
-import { configureRootTheme } from '@yandex-lego/components/Theme'
-import { theme } from '@yandex-lego/components/Theme/presets/default'
+import { configureRootTheme } from '@yandex/ui/Theme'
+import { theme } from '@yandex/ui/Theme/presets/default'
 
 configureRootTheme({ theme })
 ```
@@ -30,7 +29,7 @@ import {
   Button as ButtonDesktop,
   withSizeM,
   withViewDefault,
-} from '@yandex-lego/components/Button/desktop'
+} from '@yandex/ui/Button/desktop'
 
 const Button = compose(withSizeM, withViewDefault)(ButtonDesktop)
 
@@ -46,7 +45,7 @@ const App = () => (
 ```ts
 // src/App.ts
 import React from 'react'
-import { Button } from '@yandex-lego/components/Button/desktop/bundle'
+import { Button } from '@yandex/ui/Button/desktop/bundle'
 
 const App = () => (
   <Button view="default" size="m">

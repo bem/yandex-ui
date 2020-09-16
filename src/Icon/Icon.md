@@ -1,7 +1,6 @@
 # Icon
 
-<a href='https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/Icon' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href='https://search.yandex-team.ru/stsearch?text=Icon.ts&facet.queue=ISL&facet.type=bug&facet.status=128' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
+
 
 <!-- description:start -->
 Компонент для вставки иконки.
@@ -18,7 +17,7 @@ import { compose } from '@bem-react/core'
 import {
   Icon as IconDesktop,
   withGlyphTypeArrow,
-} from '@yandex-lego/components/Icon/desktop'
+} from '@yandex/ui/Icon/desktop'
 
 const Icon = compose(withGlyphTypeArrow)(IconDesktop)
 
@@ -32,7 +31,7 @@ const App = () => {
 ```ts
 // src/App.ts
 import React from 'react'
-import { Icon } from '@yandex-lego/components/Icon/desktop/bundle'
+import { Icon } from '@yandex/ui/Icon/desktop/bundle'
 
 const App = () => {
   return <Icon glyph="type-arrow" />

@@ -1,7 +1,6 @@
 # Tumbler
 
-<a href='https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/components/Tumbler' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Исходники]/[Github
-][green]/badge.svg' /></a> <a href='https://search.yandex-team.ru/stsearch?text=Tumbler.ts&facet.queue=ISL&facet.type=bug&facet.status=128' target='_blank'><img src='https://badger.yandex-team.ru/custom/[Известные проблемы]/[Startrek][blue]/badge.svg' /></a>
+
 
 <!-- description:start -->
 Компонент, предназначенный для создания переключателя.
@@ -13,8 +12,8 @@
 
 ```ts
 // src/lib/theme.ts
-import { configureRootTheme } from '@yandex-lego/components/Theme'
-import { theme } from '@yandex-lego/components/Theme/presets/default'
+import { configureRootTheme } from '@yandex/ui/Theme'
+import { theme } from '@yandex/ui/Theme/presets/default'
 
 configureRootTheme({ theme })
 ```
@@ -29,7 +28,7 @@ import {
   Tumbler as TumblerDesktop,
   withSizeM,
   withViewDefault,
-} from '@yandex-lego/components/Tumbler/desktop'
+} from '@yandex/ui/Tumbler/desktop'
 
 const Tumbler = compose(withSizeM, withViewDefault)(TumblerDesktop)
 
@@ -52,7 +51,7 @@ const App = () => {
 ```ts
 // src/App.ts
 import React, { useState } from 'react'
-import { Tumbler } from '@yandex-lego/components/Tumbler/desktop/bundle'
+import { Tumbler } from '@yandex/ui/Tumbler/desktop/bundle'
 
 const App = () => {
   const [checked, setChecked] = useState('')

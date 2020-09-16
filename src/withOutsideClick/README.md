@@ -19,4 +19,4 @@
 ## Примеры
 
 Пример использования с попапом можно посмотреть тут:
-https://github.yandex-team.ru/search-interfaces/frontend/blob/master/packages/lego-components/src/components/Popup/Popup.examples/desktop/target.examples.tsx
+https://github.com/bem/yandex-ui/blob/master/src/Popup/Popup.examples/desktop/target.examples.tsx

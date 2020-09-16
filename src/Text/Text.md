@@ -14,8 +14,8 @@
 
 ```tsx
 // src/lib/theme.ts
-import { configureRootTheme } from '@yandex-lego/components/Theme';
-import { theme } from '@yandex-lego/components/Theme/presets/default';
+import { configureRootTheme } from '@yandex/ui/Theme';
+import { theme } from '@yandex/ui/Theme/presets/default';
 
 configureRootTheme({ theme })
 ```
