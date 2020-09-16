@@ -4,3 +4,4 @@ export * from '../_size/TabsMenu_size_m';
 export * from '../_size/TabsMenu_size_s';
 export * from '../_theme/TabsMenu_theme_normal@desktop';
 export * from '../_view/TabsMenu_view_default@desktop';
+export * from '../_adaptive/TabsMenu_adaptive@desktop';

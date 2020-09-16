@@ -108,6 +108,14 @@ const App = () => {
 
 {{%story::desktop:navigation-tabsmenu-desktop--size%}}
 
+### Адаптивность
+
+Чтобы включить адаптивность, установите свойство `adaptive` и обработчик `onChange`.
+
+> ⚠️ Данная функциональность находится в стадии доработок и может быть изменена в будущем.
+
+{{%story::desktop:navigation-tabsmenu-desktop--adaptive%}}
+
 ## Свойства
 
 <!-- props:start -->

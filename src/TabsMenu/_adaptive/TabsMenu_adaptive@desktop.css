@@ -1,0 +1,12 @@
+.TabsMenu.TabsMenu_adaptive .TabsMenu-Tab_more .Button2::before {
+    display: none;
+}
+
+.TabsMenu.TabsMenu_adaptive .TabsMenu-Tab_more .Select2,
+.TabsMenu.TabsMenu_adaptive .TabsMenu-Tab_more .Select2 .Button2 .Button2-Text {
+    margin-left: 0;
+}
+
+.TabsMenu.TabsMenu_adaptive .TabsMenu-Tab_more.TabsMenu-Tab_hiddenIcon .Select2 .Button2 .Button2-Text {
+    margin: 0;
+}

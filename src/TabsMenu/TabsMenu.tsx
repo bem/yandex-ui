@@ -1,4 +1,4 @@
-import React, { KeyboardEvent, RefObject, useCallback, useMemo, createRef, FC } from 'react';
+import React, { KeyboardEvent, RefObject, useCallback, FC, ReactNode, createRef, useMemo } from 'react';
 import { cn } from '@bem-react/classname';
 
 import { isKeyCode, Keys } from '../lib/keyboard';
@@ -12,9 +12,26 @@ export interface ITabsMenuProps {
     activeTab?: string;
 
     /**
+     * Функция, меняющая активный пункт меню
+     */
+    onChange?: (tabId: string) => void;
+
+    /**
      * Массив пунктов меню.
      */
     tabs: ITabsMenuTabProps[];
+
+    /**
+     * Массив с Ref пунктов меню
+     *
+     * @internal
+     */
+    tabsRefs?: RefObject<HTMLLIElement>[];
+
+    /**
+     * Дополнительные табы (используется в модификаторе withAdaptive)
+     */
+    addonAfter?: ReactNode;
 
     /**
      * Ссылка на корневой DOM элемент компонента.
@@ -43,17 +60,21 @@ export const cnTabsMenu = cn('TabsMenu');
  */
 export const TabsMenu: FC<ITabsMenuProps> = ({
     activeTab,
+    onChange,
     className,
     innerRef,
     tabs,
+    addonAfter,
     orientation = 'vertical',
+    tabsRefs: externalTabsRefs,
     // @ts-ignore
     theme: _theme,
     // @ts-ignore
     layout: _layout,
     ...props
 }) => {
-    const tabsRef = useMemo(() => tabs.map(() => createRef<HTMLLIElement>()), [tabs]);
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const tabsRefs = externalTabsRefs || useMemo(() => tabs.map(() => createRef<HTMLLIElement>()), [tabs]);
 
     const onKeyDown = useCallback(
         (event: KeyboardEvent) => {
@@ -83,22 +104,27 @@ export const TabsMenu: FC<ITabsMenuProps> = ({
                 }
 
                 const nextTabMenu = tabs[nextTabMenuIndex];
-                const nextTabMenuRef = tabsRef[nextTabMenuIndex];
+                const nextTabMenuRef = tabsRefs[nextTabMenuIndex];
 
                 if (
                     nextTabMenu !== undefined &&
                     nextTabMenuRef !== undefined &&
                     nextTabMenuRef.current !== null &&
-                    nextTabMenu.onClick !== undefined
+                    (nextTabMenu.onClick !== undefined || onChange !== undefined)
                 ) {
                     nextTabMenuRef.current.focus();
                     // Не совем удачное решение, переключать табики через onClick,
                     // тут могут возникнуть проблемы с event, т.к. в этом кейсе это KeyboardEvent.
-                    nextTabMenu.onClick(event as any);
+                    if (nextTabMenu.onClick !== undefined) {
+                        nextTabMenu.onClick(event as any);
+                    }
+                    if (onChange !== undefined) {
+                        onChange(nextTabMenuIndex.toString());
+                    }
                 }
             }
         },
-        [activeTab, tabsRef, tabs],
+        [activeTab, tabsRefs, tabs, onChange],
     );
 
     return (
@@ -112,15 +138,23 @@ export const TabsMenu: FC<ITabsMenuProps> = ({
             {tabs.map(({ id, disabled, ...tabProps }, index) => (
                 <TabsMenuTab
                     {...tabProps}
-                    innerRef={tabsRef[index]}
+                    innerRef={tabsRefs[index]}
                     first={index === 0}
                     disabled={disabled}
-                    onClick={disabled ? undefined : tabProps.onClick}
+                    onClick={disabled ? undefined : (event) => {
+                        if (tabProps.onClick !== undefined) {
+                            tabProps.onClick(event);
+                        }
+                        if (onChange !== undefined) {
+                            onChange(id as string);
+                        }
+                    }}
                     active={id === activeTab}
                     key={id}
                     onKeyDown={onKeyDown}
                 />
             ))}
+            {addonAfter}
         </ul>
     );
 };
