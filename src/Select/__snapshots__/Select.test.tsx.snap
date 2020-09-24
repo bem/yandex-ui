@@ -56,314 +56,13 @@ exports[`Select@desktop client environment должен вернуть полн�
         <ComponentRegistryConsumer
           id="Select2"
         >
-          <Select2
-            addonAfter={
-              <React.Fragment>
-                <RegistryResolver(Popup2)
-                  anchor={
-                    Object {
-                      "current": <button
-                        aria-expanded="false"
-                        aria-multiselectable="false"
-                        aria-pressed="false"
-                        autocomplete="off"
-                        class="Button2 Select2-Button"
-                        role="listbox"
-                        type="button"
-                      >
-                        <span
-                          aria-hidden="true"
-                          class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
-                        />
-                        <span
-                          class="Button2-Text"
-                        >
-                          —
-                        </span>
-                      </button>,
-                    }
-                  }
-                  className="Select2-Popup"
-                  directions={
-                    Array [
-                      "bottom-left",
-                      "bottom-right",
-                      "top-left",
-                      "top-right",
-                    ]
-                  }
-                  getPossibleDrawingParams={[Function]}
-                  innerRef={[Function]}
-                  mainOffset={5}
-                  onClose={[Function]}
-                  scope={
-                    Object {
-                      "current": <span
-                        class="Select2 mix"
-                      >
-                        <button
-                          aria-expanded="false"
-                          aria-multiselectable="false"
-                          aria-pressed="false"
-                          autocomplete="off"
-                          class="Button2 Select2-Button"
-                          role="listbox"
-                          type="button"
-                        >
-                          <span
-                            aria-hidden="true"
-                            class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
-                          />
-                          <span
-                            class="Button2-Text"
-                          >
-                            —
-                          </span>
-                        </button>
-                      </span>,
-                    }
-                  }
-                  style={
-                    Object {
-                      "minWidth": 0,
-                    }
-                  }
-                  target="anchor"
-                  visible={false}
-                >
-                  <RegistryResolver(Menu)
-                    className="Select2-Menu"
-                    focused={false}
-                    innerRef={
-                      Object {
-                        "current": null,
-                      }
-                    }
-                    items={
-                      Array [
-                        Object {
-                          "content": "Тест",
-                          "value": "1",
-                        },
-                      ]
-                    }
-                    onChange={[Function]}
-                    style={
-                      Object {
-                        "maxHeight": undefined,
-                      }
-                    }
-                    width="max"
-                  />
-                </RegistryResolver(Popup2)>
-              </React.Fragment>
-            }
-            className="mix"
-            id="clientTemplateId"
-            innerRef={[Function]}
-            onBlur={[Function]}
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            opened={false}
-            options={
-              Array [
-                Object {
-                  "content": "Тест",
-                  "value": "1",
-                },
-              ]
-            }
-            placeholder="—"
-            setOpened={[Function]}
-            triggerRef={
-              Object {
-                "current": <button
-                  aria-expanded="false"
-                  aria-multiselectable="false"
-                  aria-pressed="false"
-                  autocomplete="off"
-                  class="Button2 Select2-Button"
-                  role="listbox"
-                  type="button"
-                >
-                  <span
-                    aria-hidden="true"
-                    class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
-                  />
-                  <span
-                    class="Button2-Text"
-                  >
-                    —
-                  </span>
-                </button>,
-              }
-            }
-            value=""
+          <RenderOverrideProvider
+            component={[Function]}
           >
-            <ComponentRegistryConsumer
-              id="Select2"
-            >
-              <span
-                className="Select2 mix"
-              >
-                <Button2
-                  aria-expanded={false}
-                  aria-multiselectable={false}
-                  as="button"
-                  autoComplete="off"
-                  checked={false}
-                  className="Select2-Button"
-                  iconRight={[Function]}
-                  innerRef={
-                    Object {
-                      "current": <button
-                        aria-expanded="false"
-                        aria-multiselectable="false"
-                        aria-pressed="false"
-                        autocomplete="off"
-                        class="Button2 Select2-Button"
-                        role="listbox"
-                        type="button"
-                      >
-                        <span
-                          aria-hidden="true"
-                          class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
-                        />
-                        <span
-                          class="Button2-Text"
-                        >
-                          —
-                        </span>
-                      </button>,
-                    }
-                  }
-                  onBlur={[Function]}
-                  onClick={[Function]}
-                  onKeyDown={[Function]}
-                  pressKeys={
-                    Array [
-                      32,
-                    ]
-                  }
-                  prvntKeys={Array []}
-                  role="listbox"
-                  type="button"
-                  width="max"
-                >
-                  <button
-                    aria-expanded={false}
-                    aria-multiselectable={false}
-                    aria-pressed={false}
-                    autoComplete="off"
-                    className="Button2 Select2-Button"
-                    onBlur={[Function]}
-                    onClick={[Function]}
-                    onKeyDown={[Function]}
-                    onKeyUp={[Function]}
-                    onMouseDown={[Function]}
-                    onMouseLeave={[Function]}
-                    onMouseUp={[Function]}
-                    role="listbox"
-                    type="button"
-                  >
-                    <Component
-                      provider={[Function]}
-                      side="right"
-                    >
-                      <Icon
-                        className="Button2-Icon Button2-Icon_side_right"
-                        direction="bottom"
-                        type="arrow"
-                      >
-                        <span
-                          aria-hidden={true}
-                          className="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
-                          style={Object {}}
-                        />
-                      </Icon>
-                    </Component>
-                    <Component>
-                      <span
-                        className="Button2-Text"
-                      >
-                        —
-                      </span>
-                    </Component>
-                  </button>
-                </Button2>
-                <RegistryResolver(Popup2)
-                  anchor={
-                    Object {
-                      "current": <button
-                        aria-expanded="false"
-                        aria-multiselectable="false"
-                        aria-pressed="false"
-                        autocomplete="off"
-                        class="Button2 Select2-Button"
-                        role="listbox"
-                        type="button"
-                      >
-                        <span
-                          aria-hidden="true"
-                          class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
-                        />
-                        <span
-                          class="Button2-Text"
-                        >
-                          —
-                        </span>
-                      </button>,
-                    }
-                  }
-                  className="Select2-Popup"
-                  directions={
-                    Array [
-                      "bottom-left",
-                      "bottom-right",
-                      "top-left",
-                      "top-right",
-                    ]
-                  }
-                  getPossibleDrawingParams={[Function]}
-                  innerRef={[Function]}
-                  mainOffset={5}
-                  onClose={[Function]}
-                  scope={
-                    Object {
-                      "current": <span
-                        class="Select2 mix"
-                      >
-                        <button
-                          aria-expanded="false"
-                          aria-multiselectable="false"
-                          aria-pressed="false"
-                          autocomplete="off"
-                          class="Button2 Select2-Button"
-                          role="listbox"
-                          type="button"
-                        >
-                          <span
-                            aria-hidden="true"
-                            class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
-                          />
-                          <span
-                            class="Button2-Text"
-                          >
-                            —
-                          </span>
-                        </button>
-                      </span>,
-                    }
-                  }
-                  style={
-                    Object {
-                      "minWidth": 0,
-                    }
-                  }
-                  target="anchor"
-                  visible={false}
-                >
-                  <Popup2
+            <Select2
+              addonAfter={
+                <React.Fragment>
+                  <RegistryResolver(Popup2)
                     anchor={
                       Object {
                         "current": <button
@@ -434,11 +133,378 @@ exports[`Select@desktop client environment должен вернуть полн�
                     }
                     target="anchor"
                     visible={false}
-                  />
-                </RegistryResolver(Popup2)>
-              </span>
-            </ComponentRegistryConsumer>
-          </Select2>
+                  >
+                    <RenderOverride
+                      className="Select2-Menu"
+                      focused={false}
+                      innerRef={
+                        Object {
+                          "current": null,
+                        }
+                      }
+                      items={
+                        Array [
+                          Object {
+                            "content": "Тест",
+                            "value": "1",
+                          },
+                        ]
+                      }
+                      onChange={[Function]}
+                      style={
+                        Object {
+                          "maxHeight": undefined,
+                        }
+                      }
+                      width="max"
+                    />
+                  </RegistryResolver(Popup2)>
+                </React.Fragment>
+              }
+              className="mix"
+              id="clientTemplateId"
+              innerRef={[Function]}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              opened={false}
+              options={
+                Array [
+                  Object {
+                    "content": "Тест",
+                    "value": "1",
+                  },
+                ]
+              }
+              placeholder="—"
+              setOpened={[Function]}
+              triggerRef={
+                Object {
+                  "current": <button
+                    aria-expanded="false"
+                    aria-multiselectable="false"
+                    aria-pressed="false"
+                    autocomplete="off"
+                    class="Button2 Select2-Button"
+                    role="listbox"
+                    type="button"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
+                    />
+                    <span
+                      class="Button2-Text"
+                    >
+                      —
+                    </span>
+                  </button>,
+                }
+              }
+              value=""
+            >
+              <ComponentRegistryConsumer
+                id="Select2"
+              >
+                <MultiRenderOverrideProvider
+                  components={
+                    Array [
+                      Array [
+                        [Function],
+                        undefined,
+                      ],
+                      Array [
+                        [Function],
+                        undefined,
+                      ],
+                    ]
+                  }
+                >
+                  <span
+                    className="Select2 mix"
+                  >
+                    <RenderOverride
+                      aria-expanded={false}
+                      aria-multiselectable={false}
+                      checked={false}
+                      className="Select2-Button"
+                      iconRight={[Function]}
+                      innerRef={
+                        Object {
+                          "current": <button
+                            aria-expanded="false"
+                            aria-multiselectable="false"
+                            aria-pressed="false"
+                            autocomplete="off"
+                            class="Button2 Select2-Button"
+                            role="listbox"
+                            type="button"
+                          >
+                            <span
+                              aria-hidden="true"
+                              class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
+                            />
+                            <span
+                              class="Button2-Text"
+                            >
+                              —
+                            </span>
+                          </button>,
+                        }
+                      }
+                      onBlur={[Function]}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      pressKeys={
+                        Array [
+                          32,
+                        ]
+                      }
+                      role="listbox"
+                      width="max"
+                    >
+                      <Button2
+                        aria-expanded={false}
+                        aria-multiselectable={false}
+                        as="button"
+                        autoComplete="off"
+                        checked={false}
+                        className="Select2-Button"
+                        iconRight={[Function]}
+                        innerRef={
+                          Object {
+                            "current": <button
+                              aria-expanded="false"
+                              aria-multiselectable="false"
+                              aria-pressed="false"
+                              autocomplete="off"
+                              class="Button2 Select2-Button"
+                              role="listbox"
+                              type="button"
+                            >
+                              <span
+                                aria-hidden="true"
+                                class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
+                              />
+                              <span
+                                class="Button2-Text"
+                              >
+                                —
+                              </span>
+                            </button>,
+                          }
+                        }
+                        onBlur={[Function]}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        pressKeys={
+                          Array [
+                            32,
+                          ]
+                        }
+                        prvntKeys={Array []}
+                        role="listbox"
+                        type="button"
+                        width="max"
+                      >
+                        <button
+                          aria-expanded={false}
+                          aria-multiselectable={false}
+                          aria-pressed={false}
+                          autoComplete="off"
+                          className="Button2 Select2-Button"
+                          onBlur={[Function]}
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          onKeyUp={[Function]}
+                          onMouseDown={[Function]}
+                          onMouseLeave={[Function]}
+                          onMouseUp={[Function]}
+                          role="listbox"
+                          type="button"
+                        >
+                          <Component
+                            provider={[Function]}
+                            side="right"
+                          >
+                            <RenderOverride
+                              className="Button2-Icon Button2-Icon_side_right"
+                              direction="bottom"
+                              type="arrow"
+                            >
+                              <Icon
+                                className="Button2-Icon Button2-Icon_side_right"
+                                direction="bottom"
+                                type="arrow"
+                              >
+                                <span
+                                  aria-hidden={true}
+                                  className="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
+                                  style={Object {}}
+                                />
+                              </Icon>
+                            </RenderOverride>
+                          </Component>
+                          <Component>
+                            <span
+                              className="Button2-Text"
+                            >
+                              —
+                            </span>
+                          </Component>
+                        </button>
+                      </Button2>
+                    </RenderOverride>
+                    <RegistryResolver(Popup2)
+                      anchor={
+                        Object {
+                          "current": <button
+                            aria-expanded="false"
+                            aria-multiselectable="false"
+                            aria-pressed="false"
+                            autocomplete="off"
+                            class="Button2 Select2-Button"
+                            role="listbox"
+                            type="button"
+                          >
+                            <span
+                              aria-hidden="true"
+                              class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
+                            />
+                            <span
+                              class="Button2-Text"
+                            >
+                              —
+                            </span>
+                          </button>,
+                        }
+                      }
+                      className="Select2-Popup"
+                      directions={
+                        Array [
+                          "bottom-left",
+                          "bottom-right",
+                          "top-left",
+                          "top-right",
+                        ]
+                      }
+                      getPossibleDrawingParams={[Function]}
+                      innerRef={[Function]}
+                      mainOffset={5}
+                      onClose={[Function]}
+                      scope={
+                        Object {
+                          "current": <span
+                            class="Select2 mix"
+                          >
+                            <button
+                              aria-expanded="false"
+                              aria-multiselectable="false"
+                              aria-pressed="false"
+                              autocomplete="off"
+                              class="Button2 Select2-Button"
+                              role="listbox"
+                              type="button"
+                            >
+                              <span
+                                aria-hidden="true"
+                                class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
+                              />
+                              <span
+                                class="Button2-Text"
+                              >
+                                —
+                              </span>
+                            </button>
+                          </span>,
+                        }
+                      }
+                      style={
+                        Object {
+                          "minWidth": 0,
+                        }
+                      }
+                      target="anchor"
+                      visible={false}
+                    >
+                      <Popup2
+                        anchor={
+                          Object {
+                            "current": <button
+                              aria-expanded="false"
+                              aria-multiselectable="false"
+                              aria-pressed="false"
+                              autocomplete="off"
+                              class="Button2 Select2-Button"
+                              role="listbox"
+                              type="button"
+                            >
+                              <span
+                                aria-hidden="true"
+                                class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
+                              />
+                              <span
+                                class="Button2-Text"
+                              >
+                                —
+                              </span>
+                            </button>,
+                          }
+                        }
+                        className="Select2-Popup"
+                        directions={
+                          Array [
+                            "bottom-left",
+                            "bottom-right",
+                            "top-left",
+                            "top-right",
+                          ]
+                        }
+                        getPossibleDrawingParams={[Function]}
+                        innerRef={[Function]}
+                        mainOffset={5}
+                        onClose={[Function]}
+                        scope={
+                          Object {
+                            "current": <span
+                              class="Select2 mix"
+                            >
+                              <button
+                                aria-expanded="false"
+                                aria-multiselectable="false"
+                                aria-pressed="false"
+                                autocomplete="off"
+                                class="Button2 Select2-Button"
+                                role="listbox"
+                                type="button"
+                              >
+                                <span
+                                  aria-hidden="true"
+                                  class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
+                                />
+                                <span
+                                  class="Button2-Text"
+                                >
+                                  —
+                                </span>
+                              </button>
+                            </span>,
+                          }
+                        }
+                        style={
+                          Object {
+                            "minWidth": 0,
+                          }
+                        }
+                        target="anchor"
+                        visible={false}
+                      />
+                    </RegistryResolver(Popup2)>
+                  </span>
+                </MultiRenderOverrideProvider>
+              </ComponentRegistryConsumer>
+            </Select2>
+          </RenderOverrideProvider>
         </ComponentRegistryConsumer>
       </Select2@desktop>
     </RegistryResolver(Select2)>
@@ -541,100 +607,157 @@ exports[`Select@touch-pad client environment должен вернуть пол�
         <ComponentRegistryConsumer
           id="Select2"
         >
-          <span
-            className="Select2 mix"
+          <MultiRenderOverrideProvider
+            components={
+              Array [
+                Array [
+                  [Function],
+                  undefined,
+                ],
+                Array [
+                  [Function],
+                  undefined,
+                ],
+              ]
+            }
           >
-            <Button2
-              aria-multiselectable={false}
-              as="button"
-              autoComplete="off"
-              checked={false}
-              className="Select2-Button"
-              iconRight={[Function]}
-              innerRef={
-                Object {
-                  "current": <button
-                    aria-multiselectable="false"
-                    aria-pressed="false"
-                    autocomplete="off"
-                    class="Button2 Select2-Button"
+            <span
+              className="Select2 mix"
+            >
+              <RenderOverride
+                aria-multiselectable={false}
+                checked={false}
+                className="Select2-Button"
+                iconRight={[Function]}
+                innerRef={
+                  Object {
+                    "current": <button
+                      aria-multiselectable="false"
+                      aria-pressed="false"
+                      autocomplete="off"
+                      class="Button2 Select2-Button"
+                      role="listbox"
+                      type="button"
+                    >
+                      <span
+                        aria-hidden="true"
+                        class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
+                      />
+                      <span
+                        class="Button2-Text"
+                      >
+                        —
+                      </span>
+                    </button>,
+                  }
+                }
+                pressKeys={
+                  Array [
+                    32,
+                  ]
+                }
+                role="listbox"
+                width="max"
+              >
+                <Button2
+                  aria-multiselectable={false}
+                  as="button"
+                  autoComplete="off"
+                  checked={false}
+                  className="Select2-Button"
+                  iconRight={[Function]}
+                  innerRef={
+                    Object {
+                      "current": <button
+                        aria-multiselectable="false"
+                        aria-pressed="false"
+                        autocomplete="off"
+                        class="Button2 Select2-Button"
+                        role="listbox"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                          class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
+                        />
+                        <span
+                          class="Button2-Text"
+                        >
+                          —
+                        </span>
+                      </button>,
+                    }
+                  }
+                  pressKeys={
+                    Array [
+                      32,
+                    ]
+                  }
+                  prvntKeys={Array []}
+                  role="listbox"
+                  type="button"
+                  width="max"
+                >
+                  <button
+                    aria-multiselectable={false}
+                    aria-pressed={false}
+                    autoComplete="off"
+                    className="Button2 Select2-Button"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
                     role="listbox"
                     type="button"
                   >
-                    <span
-                      aria-hidden="true"
-                      class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
-                    />
-                    <span
-                      class="Button2-Text"
+                    <Component
+                      provider={[Function]}
+                      side="right"
                     >
-                      —
-                    </span>
-                  </button>,
-                }
-              }
-              pressKeys={
-                Array [
-                  32,
-                ]
-              }
-              prvntKeys={Array []}
-              role="listbox"
-              type="button"
-              width="max"
-            >
-              <button
-                aria-multiselectable={false}
-                aria-pressed={false}
-                autoComplete="off"
-                className="Button2 Select2-Button"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                role="listbox"
-                type="button"
+                      <RenderOverride
+                        className="Button2-Icon Button2-Icon_side_right"
+                        direction="bottom"
+                        type="arrow"
+                      >
+                        <Icon
+                          className="Button2-Icon Button2-Icon_side_right"
+                          direction="bottom"
+                          type="arrow"
+                        >
+                          <span
+                            aria-hidden={true}
+                            className="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
+                            style={Object {}}
+                          />
+                        </Icon>
+                      </RenderOverride>
+                    </Component>
+                    <Component>
+                      <span
+                        className="Button2-Text"
+                      >
+                        —
+                      </span>
+                    </Component>
+                  </button>
+                </Button2>
+              </RenderOverride>
+              <select
+                className="Select2-Control"
+                multiple={false}
+                tabIndex={-1}
               >
-                <Component
-                  provider={[Function]}
-                  side="right"
+                <option
+                  key="1"
+                  value="1"
                 >
-                  <Icon
-                    className="Button2-Icon Button2-Icon_side_right"
-                    direction="bottom"
-                    type="arrow"
-                  >
-                    <span
-                      aria-hidden={true}
-                      className="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
-                      style={Object {}}
-                    />
-                  </Icon>
-                </Component>
-                <Component>
-                  <span
-                    className="Button2-Text"
-                  >
-                    —
-                  </span>
-                </Component>
-              </button>
-            </Button2>
-            <select
-              className="Select2-Control"
-              multiple={false}
-              tabIndex={-1}
-            >
-              <option
-                key="1"
-                value="1"
-              >
-                Тест
-              </option>
-            </select>
-          </span>
+                  Тест
+                </option>
+              </select>
+            </span>
+          </MultiRenderOverrideProvider>
         </ComponentRegistryConsumer>
       </Select2>
     </Component>
@@ -746,100 +869,157 @@ exports[`Select@touch-phone client environment должен вернуть по�
         <ComponentRegistryConsumer
           id="Select2"
         >
-          <span
-            className="Select2 mix"
+          <MultiRenderOverrideProvider
+            components={
+              Array [
+                Array [
+                  [Function],
+                  undefined,
+                ],
+                Array [
+                  [Function],
+                  undefined,
+                ],
+              ]
+            }
           >
-            <Button2
-              aria-multiselectable={false}
-              as="button"
-              autoComplete="off"
-              checked={false}
-              className="Select2-Button"
-              iconRight={[Function]}
-              innerRef={
-                Object {
-                  "current": <button
-                    aria-multiselectable="false"
-                    aria-pressed="false"
-                    autocomplete="off"
-                    class="Button2 Select2-Button"
+            <span
+              className="Select2 mix"
+            >
+              <RenderOverride
+                aria-multiselectable={false}
+                checked={false}
+                className="Select2-Button"
+                iconRight={[Function]}
+                innerRef={
+                  Object {
+                    "current": <button
+                      aria-multiselectable="false"
+                      aria-pressed="false"
+                      autocomplete="off"
+                      class="Button2 Select2-Button"
+                      role="listbox"
+                      type="button"
+                    >
+                      <span
+                        aria-hidden="true"
+                        class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
+                      />
+                      <span
+                        class="Button2-Text"
+                      >
+                        —
+                      </span>
+                    </button>,
+                  }
+                }
+                pressKeys={
+                  Array [
+                    32,
+                  ]
+                }
+                role="listbox"
+                width="max"
+              >
+                <Button2
+                  aria-multiselectable={false}
+                  as="button"
+                  autoComplete="off"
+                  checked={false}
+                  className="Select2-Button"
+                  iconRight={[Function]}
+                  innerRef={
+                    Object {
+                      "current": <button
+                        aria-multiselectable="false"
+                        aria-pressed="false"
+                        autocomplete="off"
+                        class="Button2 Select2-Button"
+                        role="listbox"
+                        type="button"
+                      >
+                        <span
+                          aria-hidden="true"
+                          class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
+                        />
+                        <span
+                          class="Button2-Text"
+                        >
+                          —
+                        </span>
+                      </button>,
+                    }
+                  }
+                  pressKeys={
+                    Array [
+                      32,
+                    ]
+                  }
+                  prvntKeys={Array []}
+                  role="listbox"
+                  type="button"
+                  width="max"
+                >
+                  <button
+                    aria-multiselectable={false}
+                    aria-pressed={false}
+                    autoComplete="off"
+                    className="Button2 Select2-Button"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
                     role="listbox"
                     type="button"
                   >
-                    <span
-                      aria-hidden="true"
-                      class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
-                    />
-                    <span
-                      class="Button2-Text"
+                    <Component
+                      provider={[Function]}
+                      side="right"
                     >
-                      —
-                    </span>
-                  </button>,
-                }
-              }
-              pressKeys={
-                Array [
-                  32,
-                ]
-              }
-              prvntKeys={Array []}
-              role="listbox"
-              type="button"
-              width="max"
-            >
-              <button
-                aria-multiselectable={false}
-                aria-pressed={false}
-                autoComplete="off"
-                className="Button2 Select2-Button"
-                onClick={[Function]}
-                onKeyDown={[Function]}
-                onKeyUp={[Function]}
-                onMouseDown={[Function]}
-                onMouseLeave={[Function]}
-                onMouseUp={[Function]}
-                role="listbox"
-                type="button"
+                      <RenderOverride
+                        className="Button2-Icon Button2-Icon_side_right"
+                        direction="bottom"
+                        type="arrow"
+                      >
+                        <Icon
+                          className="Button2-Icon Button2-Icon_side_right"
+                          direction="bottom"
+                          type="arrow"
+                        >
+                          <span
+                            aria-hidden={true}
+                            className="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
+                            style={Object {}}
+                          />
+                        </Icon>
+                      </RenderOverride>
+                    </Component>
+                    <Component>
+                      <span
+                        className="Button2-Text"
+                      >
+                        —
+                      </span>
+                    </Component>
+                  </button>
+                </Button2>
+              </RenderOverride>
+              <select
+                className="Select2-Control"
+                multiple={false}
+                tabIndex={-1}
               >
-                <Component
-                  provider={[Function]}
-                  side="right"
+                <option
+                  key="1"
+                  value="1"
                 >
-                  <Icon
-                    className="Button2-Icon Button2-Icon_side_right"
-                    direction="bottom"
-                    type="arrow"
-                  >
-                    <span
-                      aria-hidden={true}
-                      className="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
-                      style={Object {}}
-                    />
-                  </Icon>
-                </Component>
-                <Component>
-                  <span
-                    className="Button2-Text"
-                  >
-                    —
-                  </span>
-                </Component>
-              </button>
-            </Button2>
-            <select
-              className="Select2-Control"
-              multiple={false}
-              tabIndex={-1}
-            >
-              <option
-                key="1"
-                value="1"
-              >
-                Тест
-              </option>
-            </select>
-          </span>
+                  Тест
+                </option>
+              </select>
+            </span>
+          </MultiRenderOverrideProvider>
         </ComponentRegistryConsumer>
       </Select2>
     </Component>

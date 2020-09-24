@@ -1,0 +1,9 @@
+.MenuWrapper {
+    overflow: hidden;
+
+    width: 160px;
+}
+
+.MenuWrapper .Menu {
+    background-color: var(--color-bg-default);
+}

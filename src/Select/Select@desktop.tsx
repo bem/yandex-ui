@@ -13,6 +13,7 @@ import { withRegistry, ComponentRegistryConsumer } from '@bem-react/di';
 import { Defaultize } from '../typings/utility-types';
 import { Keys, isKeyCode } from '../lib/keyboard';
 import { mergeAllRefs } from '../lib/mergeRefs';
+import { RenderOverride, RenderOverrideProvider } from '../lib/render-override';
 import { Direction, DrawingParams } from '../Popup/Popup';
 import { ChangeEvent } from '../Menu/Menu';
 import { ISelectRegistry, selectRegistry } from './Select.registry/desktop';
@@ -45,6 +46,11 @@ export interface ISelectProps extends ISelectCommonProps {
      * Рисовать ли компонент select рядом с меню
      */
     renderControl?: boolean;
+
+    /**
+     * Переопределяет компонент `Menu`
+     */
+    renderMenu?: RenderOverride;
 }
 
 const defaultProps = {
@@ -110,7 +116,8 @@ const SelectPresenter = class extends PureComponent<SelectProps> {
         }
 
         const isChangeOpened = !prevProps.opened && this.props.opened;
-        const inChangeValue = Array.isArray(this.props.value) &&
+        const inChangeValue =
+            Array.isArray(this.props.value) &&
             Array.isArray(prevProps.value) &&
             prevProps.value.length !== this.props.value.length;
 
@@ -138,6 +145,7 @@ const SelectPresenter = class extends PureComponent<SelectProps> {
             value,
             view,
             renderControl = false,
+            renderMenu,
             ...props
         } = this.props;
         const { popupMinWidth, maxMenuHeight } = this.state;
@@ -145,67 +153,71 @@ const SelectPresenter = class extends PureComponent<SelectProps> {
 
         return (
             <ComponentRegistryConsumer id={cnSelect()}>
-                {({ Popup, Menu }: ISelectRegistry) => (
-                    <SelectCommon
-                        {...props}
-                        triggerRef={this.triggerRef}
-                        innerRef={mergeAllRefs(this.innerRef, this.props.innerRef)}
-                        onBlur={this.onBlur}
-                        onClick={this.onClick}
-                        onKeyDown={this.onKeyDown}
-                        options={options}
-                        size={size}
-                        theme={theme}
-                        value={value}
-                        view={view}
-                        opened={opened}
-                        addonAfter={
-                            <>
-                                {renderControl && (
-                                    <select
-                                        {...props}
-                                        multiple={Array.isArray(value)}
-                                        tabIndex={-1}
-                                        value={value}
-                                        ref={this.controlRef}
-                                        style={{ display: 'none' }}
-                                    >
-                                        {options.map(toGroupOptions)}
-                                    </select>
-                                )}
-                                <Popup
-                                    target="anchor"
-                                    anchor={this.triggerRef}
-                                    className={cnSelect('Popup')}
-                                    directions={POPUP_DIRECTIONS}
-                                    mainOffset={popupMainOffset}
-                                    view={view}
-                                    style={{ minWidth: popupMinWidth }}
-                                    theme={theme}
-                                    visible={opened}
-                                    innerRef={mergeAllRefs(this.popupRef, this.props.popupRef)}
-                                    onClose={this.onClosePopup}
-                                    getPossibleDrawingParams={this.onGetPossibleDrawingParams}
-                                    scope={unsafe_scope}
-                                >
-                                    <Menu
-                                        width="max"
-                                        className={cnSelect('Menu')}
-                                        style={{ maxHeight: maxMenuHeight }}
-                                        focused={opened}
-                                        items={options}
-                                        onChange={this.onMenuChange}
-                                        size={size}
-                                        theme={theme}
-                                        value={value}
-                                        view={view}
-                                        innerRef={this.menuRef}
-                                    />
-                                </Popup>
-                                {addonAfter}
-                            </>
-                        }
-                    />
+                {({ Popup, Menu: MenuOriginal }: ISelectRegistry) => (
+                    <RenderOverrideProvider component={MenuOriginal} render={renderMenu}>
+                        {(Menu: typeof MenuOriginal) => (
+                            <SelectCommon
+                                {...props}
+                                triggerRef={this.triggerRef}
+                                innerRef={mergeAllRefs(this.innerRef, this.props.innerRef)}
+                                onBlur={this.onBlur}
+                                onClick={this.onClick}
+                                onKeyDown={this.onKeyDown}
+                                options={options}
+                                size={size}
+                                theme={theme}
+                                value={value}
+                                view={view}
+                                opened={opened}
+                                addonAfter={
+                                    <>
+                                        {renderControl && (
+                                            <select
+                                                {...props}
+                                                multiple={Array.isArray(value)}
+                                                tabIndex={-1}
+                                                value={value}
+                                                ref={this.controlRef}
+                                                style={{ display: 'none' }}
+                                            >
+                                                {options.map(toGroupOptions)}
+                                            </select>
+                                        )}
+                                        <Popup
+                                            target="anchor"
+                                            anchor={this.triggerRef}
+                                            className={cnSelect('Popup')}
+                                            directions={POPUP_DIRECTIONS}
+                                            mainOffset={popupMainOffset}
+                                            view={view}
+                                            style={{ minWidth: popupMinWidth }}
+                                            theme={theme}
+                                            visible={opened}
+                                            innerRef={mergeAllRefs(this.popupRef, this.props.popupRef)}
+                                            onClose={this.onClosePopup}
+                                            getPossibleDrawingParams={this.onGetPossibleDrawingParams}
+                                            scope={unsafe_scope}
+                                        >
+                                            <Menu
+                                                width="max"
+                                                className={cnSelect('Menu')}
+                                                style={{ maxHeight: maxMenuHeight }}
+                                                focused={opened}
+                                                items={options}
+                                                onChange={this.onMenuChange}
+                                                size={size}
+                                                theme={theme}
+                                                value={value}
+                                                view={view}
+                                                innerRef={this.menuRef}
+                                            />
+                                        </Popup>
+                                        {addonAfter}
+                                    </>
+                                }
+                            />
+                        )}
+                    </RenderOverrideProvider>
                 )}
             </ComponentRegistryConsumer>
         );

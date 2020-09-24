@@ -17,6 +17,7 @@ import { Omit, Defaultize } from '../typings/utility-types';
 import { flatMap } from '../lib/flatMap';
 import { mergeAllRefs } from '../lib/mergeRefs';
 import { Keys } from '../lib/keyboard';
+import { RenderOverride, MultiRenderOverrideProvider } from '../lib/render-override';
 import { ItemSimple, ChangeEventHandler } from '../Menu/Menu';
 import { IWithTogglableProps } from '../withTogglable/withTogglable';
 import { ISelectRegistry, IIconEnhancedProps } from './Select.registry';
@@ -148,6 +149,16 @@ export interface ISelectProps extends IWithTogglableProps, SelectAllHTMLAttribut
      * Обработчик изменения значения
      */
     onChange?: ChangeEventHandler<HTMLSelectElement>;
+
+    /**
+     * Переопределяет компонент `Trigger`
+     */
+    renderTrigger?: RenderOverride;
+
+    /**
+     * Переопределяет компонент `TriggerIcon`
+     */
+    renderTriggerIcon?: RenderOverride;
 }
 
 export const cnSelect = cn('Select2');
@@ -209,6 +220,8 @@ export const Select = class extends PureComponent<SelectProps> {
             style,
             checkable = true,
             iconProps,
+            renderTrigger,
+            renderTriggerIcon,
         } = this.props;
         const { buttonText } = this.state;
         // Проставляем состояние `checked` только для типа `check`.
@@ -218,44 +231,54 @@ export const Select = class extends PureComponent<SelectProps> {
 
         return (
             <ComponentRegistryConsumer id={cnSelect()}>
-                {({ Trigger, Icon }: ISelectRegistry) => (
-                    <span
-                        ref={mergeAllRefs(this.innerRef, this.props.innerRef)}
-                        className={cnSelect({ disabled }, [className])}
+                {({ Trigger: TriggerOriginal, Icon: TriggerIconOriginal }: ISelectRegistry) => (
+                    <MultiRenderOverrideProvider
+                        // prettier-ignore
+                        components={[
+                            [TriggerOriginal, renderTrigger],
+                            [TriggerIconOriginal, renderTriggerIcon],
+                        ]}
                     >
-                        {addonBefore}
-                        <Trigger
-                            width="max"
-                            role="listbox"
-                            disabled={disabled}
-                            className={cnSelect('Button')}
-                            innerRef={this.triggerRef}
-                            style={style}
-                            size={size}
-                            theme={theme}
-                            checked={checked}
-                            view={view}
-                            onClick={onClick}
-                            onKeyDown={onKeyDown}
-                            onBlur={onBlur}
-                            pressKeys={[Keys.SPACE]}
-                            iconRight={(iconClassName: string) => (
-                                <Icon
-                                    size={size as any}
-                                    className={iconClassName}
-                                    direction={opened ? 'top' : 'bottom'}
-                                    type={iconType}
-                                    glyph={iconGlyph}
-                                    {...iconProps}
-                                />
-                            )}
-                            aria-expanded={opened}
-                            aria-multiselectable={Array.isArray(value)}
-                        >
-                            {buttonText}
-                        </Trigger>
-                        {addonAfter}
-                    </span>
+                        {(Trigger: typeof TriggerOriginal, TriggerIcon: typeof TriggerIconOriginal) => (
+                            <span
+                                ref={mergeAllRefs(this.innerRef, this.props.innerRef)}
+                                className={cnSelect({ disabled }, [className])}
+                            >
+                                {addonBefore}
+                                <Trigger
+                                    width="max"
+                                    role="listbox"
+                                    disabled={disabled}
+                                    className={cnSelect('Button')}
+                                    innerRef={this.triggerRef}
+                                    style={style}
+                                    size={size}
+                                    theme={theme}
+                                    checked={checked}
+                                    view={view}
+                                    onClick={onClick}
+                                    onKeyDown={onKeyDown}
+                                    onBlur={onBlur}
+                                    pressKeys={[Keys.SPACE]}
+                                    iconRight={(iconClassName: string) => (
+                                        <TriggerIcon
+                                            size={size as any}
+                                            className={iconClassName}
+                                            direction={opened ? 'top' : 'bottom'}
+                                            type={iconType}
+                                            glyph={iconGlyph}
+                                            {...iconProps}
+                                        />
+                                    )}
+                                    aria-expanded={opened}
+                                    aria-multiselectable={Array.isArray(value)}
+                                >
+                                    {buttonText}
+                                </Trigger>
+                                {addonAfter}
+                            </span>
+                        )}
+                    </MultiRenderOverrideProvider>
                 )}
             </ComponentRegistryConsumer>
         );
@@ -270,8 +293,7 @@ export const Select = class extends PureComponent<SelectProps> {
 
     private getButtonText() {
         const { value, options, showAlwaysPlaceholder, placeholder } = this.props;
-        const values: any[] = [].concat(value as [])
-            .filter((value:any) => value !== undefined);
+        const values: any[] = [].concat(value as []).filter((value: any) => value !== undefined);
 
         if (!showAlwaysPlaceholder && values.length > 0) {
             const text = this.getOptionsText(options, values);
