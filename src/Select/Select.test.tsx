@@ -176,14 +176,14 @@ describe.each<any>(platforms)('Select@%s', (platform, Select: ComponentType<Sele
                 expect(wrapper.find(Menu).prop('items')).toBe(options);
             });
 
-            test('triggerRef прокидывается в Popup', async () => {
-                const triggerRef = createRef<HTMLElement>();
+            test('innerRef прокидывается в Popup', async () => {
+                const innerRef = createRef<HTMLElement>();
                 const wrapper = mount(
-                    <Select options={[{ value: '1', content: 'test' }]} theme="m" triggerRef={triggerRef} />,
+                    <Select options={[{ value: '1', content: 'test' }]} theme="m" innerRef={innerRef} />,
                 );
                 await delay(100);
-                expect(triggerRef.current).not.toBe(null);
-                expect(wrapper.find(Popup).prop('anchor')).toStrictEqual(triggerRef);
+                expect(innerRef.current).not.toBe(null);
+                expect(wrapper.find(Popup).prop('anchor')).toStrictEqual(innerRef);
             });
 
             test('в Menu пробрасывается value', () => {

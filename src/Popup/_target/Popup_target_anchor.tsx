@@ -5,6 +5,7 @@ import { Defaultize } from '../../typings/utility-types';
 import { canUseDOM } from '../../lib/canUseDOM';
 import { mergeAllRefs } from '../../lib/mergeRefs';
 import { Direction, IPopupProps, Position, cnPopup, DrawingParams as CalcDrawingParams } from '../Popup';
+import { listScrollParents } from '../Popup.utils/getScrollParents';
 
 const VIEWPORT_ACCURACY_FACTOR = 0.99;
 
@@ -128,7 +129,7 @@ export interface IPopupTargetAnchorProps {
 
 type DefaultPropKeys = keyof typeof defaultProps;
 type WithTargetAnchorProps = Defaultize<IPopupTargetAnchorProps & IPopupProps, DefaultPropKeys>;
-type WithTargetAnchorState = { direction: Direction; forwarded: {} };
+type WithTargetAnchorState = { direction: Direction; forwarded: {}, isAnchorVisible: boolean };
 
 /**
  * Позиционирует попап относительно элемента, который указан в свойстве `anchor`.
@@ -144,6 +145,7 @@ export const withTargetAnchor = withBemMod<IPopupTargetAnchorProps, IPopupProps>
             readonly state: WithTargetAnchorState = {
                 direction: 'bottom-left',
                 forwarded: {},
+                isAnchorVisible: true,
             };
 
             /**
@@ -155,6 +157,10 @@ export const withTargetAnchor = withBemMod<IPopupTargetAnchorProps, IPopupProps>
              * Контейнер с ссылкой на DOM элемент хвостика попапа.
              */
             private readonly tailRef = createRef<HTMLDivElement>();
+            /**
+             * DOM-элемент скроллящегося родителя anchor'a
+             */
+            private anchorScrollParents: Array<HTMLElement> = [];
 
             constructor(props: WithTargetAnchorProps) {
                 super(props);
@@ -245,13 +251,20 @@ export const withTargetAnchor = withBemMod<IPopupTargetAnchorProps, IPopupProps>
             }
 
             private subscribeToEvents = () => {
-                window.addEventListener('scroll', this.updateRefsPosition);
+                this.anchorScrollParents = listScrollParents(this.props.anchor && this.props.anchor.current || null);
+                this.anchorScrollParents
+                    .forEach((parent: HTMLElement | Window) => {
+                        parent.addEventListener('scroll', this.updateRefsPosition);
+                    });
                 window.addEventListener('resize', this.updateRefsPosition);
                 document.addEventListener('documentchange', this.updateRefsPosition);
             };
 
             private unsubscribeFromEvents = () => {
-                window.removeEventListener('scroll', this.updateRefsPosition);
+                this.anchorScrollParents
+                    .forEach((parent: HTMLElement | Window) => {
+                        parent.removeEventListener('scroll', this.updateRefsPosition);
+                    });
                 window.removeEventListener('resize', this.updateRefsPosition);
                 document.removeEventListener('documentchange', this.updateRefsPosition);
             };
@@ -277,6 +290,15 @@ export const withTargetAnchor = withBemMod<IPopupTargetAnchorProps, IPopupProps>
                     if (this.tailRef.current !== null) {
                         this.tailRef.current.style.top = `${tailPosition.top}px`;
                         this.tailRef.current.style.left = `${tailPosition.left}px`;
+                    }
+
+                    const isAnchorVisible = this.calcIsAnchorVisible();
+
+                    if (this.state.isAnchorVisible !== isAnchorVisible) {
+                        this.setState({ isAnchorVisible });
+                        if (this.popupRef.current !== null) {
+                            this.popupRef.current.style.display = this.state.isAnchorVisible ? '' : 'none';
+                        }
                     }
                 });
             };
@@ -383,10 +405,13 @@ export const withTargetAnchor = withBemMod<IPopupTargetAnchorProps, IPopupProps>
                 const parentNode = anchorNode && anchorNode.offsetParent;
 
                 if (anchorNode && parentNode) {
-                    const { left: parentLeft, top: parentTop } = parentNode.getBoundingClientRect();
+                    // Для скроллящихся контейнеров не получится использовать cв-ва offsetLeft и offsetTop,
+                    // поскольку они возвращают расстояние текущего элемента по отношению к верхней части offsetParent,
+                    // а getBoundingClientRect() возвращает позицию относительно viewport.
+                    const { left: anchorLeft, top: anchorTop } = anchorNode.getBoundingClientRect();
 
-                    dimensions.left = parentLeft + anchorNode.offsetLeft + window.pageXOffset;
-                    dimensions.top = parentTop + anchorNode.offsetTop + window.pageYOffset;
+                    dimensions.left = anchorLeft + window.pageXOffset;
+                    dimensions.top = anchorTop + window.pageYOffset;
                     dimensions.height = anchorNode.offsetHeight;
                     dimensions.width = anchorNode.offsetWidth;
                 }
@@ -653,5 +678,44 @@ export const withTargetAnchor = withBemMod<IPopupTargetAnchorProps, IPopupProps>
 
                 return viewportFactor;
             }
+
+            private calcIsAnchorVisible() {
+                if (!this.anchorScrollParents.length) {
+                    return true;
+                }
+
+                for (let i = 0; i < this.anchorScrollParents.length; i++) {
+                    const parent = this.anchorScrollParents[i];
+                    const parentOffsets = parent.getBoundingClientRect();
+                    const parentTopOffset = Math.floor(parentOffsets.top);
+
+                    const anchorDOMNode = this.props.anchor && this.props.anchor.current;
+
+                    if (!anchorDOMNode) {
+                        return false;
+                    }
+
+                    const { left: anchorLeft, top: anchorTop } = anchorDOMNode.getBoundingClientRect();
+                    const vertBorder = Math.floor(checkMainDirection(this.state.direction, 'top')
+                        ? anchorTop
+                        : anchorTop + anchorDOMNode.offsetHeight);
+
+                    if (vertBorder < parentTopOffset || parentTopOffset + parent.offsetHeight < vertBorder) {
+                        return false;
+                    }
+
+                    const parentLeftOffset = Math.floor(parentOffsets.left);
+                    const horizBorder = Math.floor(checkMainDirection(this.state.direction, 'left')
+                        ? anchorLeft
+                        : anchorLeft + anchorDOMNode.offsetWidth);
+
+                    if (!(horizBorder >= parentLeftOffset && parentLeftOffset + parent.offsetWidth >= horizBorder)) {
+                        return false;
+                    }
+                }
+
+                return true;
+            }
         } as ComponentClass<IPopupTargetAnchorProps & IPopupProps>,
+
 );

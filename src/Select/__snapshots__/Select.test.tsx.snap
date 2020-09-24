@@ -65,26 +65,30 @@ exports[`Select@desktop client environment должен вернуть полн�
                   <RegistryResolver(Popup2)
                     anchor={
                       Object {
-                        "current": <button
-                          aria-expanded="false"
-                          aria-haspopup="true"
-                          aria-multiselectable="false"
-                          aria-pressed="false"
-                          autocomplete="off"
-                          class="Button2 Select2-Button"
-                          role="listbox"
-                          type="button"
+                        "current": <span
+                          class="Select2 mix"
                         >
-                          <span
-                            aria-hidden="true"
-                            class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
-                          />
-                          <span
-                            class="Button2-Text"
+                          <button
+                            aria-expanded="false"
+                            aria-haspopup="true"
+                            aria-multiselectable="false"
+                            aria-pressed="false"
+                            autocomplete="off"
+                            class="Button2 Select2-Button"
+                            role="listbox"
+                            type="button"
                           >
-                            —
-                          </span>
-                        </button>,
+                            <span
+                              aria-hidden="true"
+                              class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
+                            />
+                            <span
+                              class="Button2-Text"
+                            >
+                              —
+                            </span>
+                          </button>
+                        </span>,
                       }
                     }
                     className="Select2-Popup"
@@ -368,26 +372,30 @@ exports[`Select@desktop client environment должен вернуть полн�
                     <RegistryResolver(Popup2)
                       anchor={
                         Object {
-                          "current": <button
-                            aria-expanded="false"
-                            aria-haspopup="true"
-                            aria-multiselectable="false"
-                            aria-pressed="false"
-                            autocomplete="off"
-                            class="Button2 Select2-Button"
-                            role="listbox"
-                            type="button"
+                          "current": <span
+                            class="Select2 mix"
                           >
-                            <span
-                              aria-hidden="true"
-                              class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
-                            />
-                            <span
-                              class="Button2-Text"
+                            <button
+                              aria-expanded="false"
+                              aria-haspopup="true"
+                              aria-multiselectable="false"
+                              aria-pressed="false"
+                              autocomplete="off"
+                              class="Button2 Select2-Button"
+                              role="listbox"
+                              type="button"
                             >
-                              —
-                            </span>
-                          </button>,
+                              <span
+                                aria-hidden="true"
+                                class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
+                              />
+                              <span
+                                class="Button2-Text"
+                              >
+                                —
+                              </span>
+                            </button>
+                          </span>,
                         }
                       }
                       className="Select2-Popup"
@@ -442,26 +450,30 @@ exports[`Select@desktop client environment должен вернуть полн�
                       <Popup2
                         anchor={
                           Object {
-                            "current": <button
-                              aria-expanded="false"
-                              aria-haspopup="true"
-                              aria-multiselectable="false"
-                              aria-pressed="false"
-                              autocomplete="off"
-                              class="Button2 Select2-Button"
-                              role="listbox"
-                              type="button"
+                            "current": <span
+                              class="Select2 mix"
                             >
-                              <span
-                                aria-hidden="true"
-                                class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
-                              />
-                              <span
-                                class="Button2-Text"
+                              <button
+                                aria-expanded="false"
+                                aria-haspopup="true"
+                                aria-multiselectable="false"
+                                aria-pressed="false"
+                                autocomplete="off"
+                                class="Button2 Select2-Button"
+                                role="listbox"
+                                type="button"
                               >
-                                —
-                              </span>
-                            </button>,
+                                <span
+                                  aria-hidden="true"
+                                  class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
+                                />
+                                <span
+                                  class="Button2-Text"
+                                >
+                                  —
+                                </span>
+                              </button>
+                            </span>,
                           }
                         }
                         className="Select2-Popup"

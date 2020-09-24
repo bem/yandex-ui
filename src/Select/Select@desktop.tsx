@@ -186,7 +186,7 @@ const SelectPresenter = class extends PureComponent<SelectProps> {
                                         )}
                                         <Popup
                                             target="anchor"
-                                            anchor={this.triggerRef}
+                                            anchor={this.innerRef}
                                             className={cnSelect('Popup')}
                                             directions={POPUP_DIRECTIONS}
                                             mainOffset={popupMainOffset}
