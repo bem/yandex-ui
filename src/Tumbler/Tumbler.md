@@ -127,3 +127,8 @@ const App = () => {
 
 **Допустимые значения:** `"default"`.
 <!-- modifiers:end -->
+
+# a11y
+1) Каждый переключатель должен иметь четкую и лаконичную метку
+2) В SreenReader значения зачитываются из props labelBefore и labelAfter
+3) Поместите значение выключенного состояния в labelBefore, а включенного в labelAfter

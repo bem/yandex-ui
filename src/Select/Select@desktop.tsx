@@ -63,7 +63,7 @@ type SelectProps = Defaultize<ISelectProps, DefaultProps>;
 const SelectPresenter = class extends PureComponent<SelectProps> {
     static displayName = `${cnSelect()}@desktop`;
 
-    readonly state = { popupMinWidth: 0, maxMenuHeight: this.props.maxHeight };
+    readonly state = { popupMinWidth: 0, maxMenuHeight: this.props.maxHeight, activeDescendant: undefined };
     private drawingParams: DrawingParams[] = [];
 
     /**
@@ -159,6 +159,7 @@ const SelectPresenter = class extends PureComponent<SelectProps> {
                             <SelectCommon
                                 {...props}
                                 triggerRef={this.triggerRef}
+                                activeDescendant={this.state.activeDescendant}
                                 innerRef={mergeAllRefs(this.innerRef, this.props.innerRef)}
                                 onBlur={this.onBlur}
                                 onClick={this.onClick}
@@ -205,6 +206,7 @@ const SelectPresenter = class extends PureComponent<SelectProps> {
                                                 focused={opened}
                                                 items={options}
                                                 onChange={this.onMenuChange}
+                                                onActiveItemChange={this.onActiveItemChange}
                                                 size={size}
                                                 theme={theme}
                                                 value={value}
@@ -324,6 +326,10 @@ const SelectPresenter = class extends PureComponent<SelectProps> {
         }
     };
 
+    private onActiveItemChange = (id: string) => {
+        this.setState({ activeDescendant: id });
+    }
+
     private onMenuChange = (event: ChangeEvent<HTMLElement>) => {
         // Сюда приходит событие из Menu
         // Дополняем его знаниями о селекте
@@ -341,6 +347,7 @@ const SelectPresenter = class extends PureComponent<SelectProps> {
                 this.props.setOpened(false);
             }
         }
+
         if (this.preventClosable) {
             this.preventClosable = false;
         }

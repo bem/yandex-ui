@@ -181,3 +181,12 @@ const App = () => {
 | opened?                | `false \| true`                                                                                                                                                                                                                                                   | —            | Состояние открытия.                                                                                                                                                                                                                                                                  |
 | setOpened?             | `(nextOpened: boolean) => void`                                                                                                                                                                                                                                   | —            | Обработчик устанавливающий состояние открытия.                                                                                                                                                                                                                                       |
 <!-- props:end -->
+
+## a11y
+
+1. Избегайте очень длинных названий параметров, чтобы облегчить понимание и читаемость.
+2. Не используйте одно и то же слово или фразу в начале набора параметров.
+3. Реализовано управление Select с помощью Arrow buttons [UP, DOWN]
+4. Выбор пункта меню происходит по Space и Enter
+5. У Trigger установлен атрибут `aria-haspopup="true"` и  `role="listbox"`
+6. Больше про доступность Select читайте <a href='https://www.w3.org/TR/wai-aria-practices-1.1/#combobox' target='_blank'>тут</a>

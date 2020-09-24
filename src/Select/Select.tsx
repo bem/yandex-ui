@@ -146,7 +146,7 @@ export interface ISelectProps extends IWithTogglableProps, SelectAllHTMLAttribut
     iconProps?: IIconEnhancedProps;
 
     /**
-     * Обработчик изменения значения
+     * Обработчик изменения значения.
      */
     onChange?: ChangeEventHandler<HTMLSelectElement>;
 
@@ -159,6 +159,11 @@ export interface ISelectProps extends IWithTogglableProps, SelectAllHTMLAttribut
      * Переопределяет компонент `TriggerIcon`
      */
     renderTriggerIcon?: RenderOverride;
+
+    /**
+     * id активного элемента меню.
+     */
+    activeDescendant?: string;
 }
 
 export const cnSelect = cn('Select2');
@@ -222,6 +227,7 @@ export const Select = class extends PureComponent<SelectProps> {
             iconProps,
             renderTrigger,
             renderTriggerIcon,
+            activeDescendant,
         } = this.props;
         const { buttonText } = this.state;
         // Проставляем состояние `checked` только для типа `check`.
@@ -248,6 +254,7 @@ export const Select = class extends PureComponent<SelectProps> {
                                 <Trigger
                                     width="max"
                                     role="listbox"
+                                    aria-haspopup="true"
                                     disabled={disabled}
                                     className={cnSelect('Button')}
                                     innerRef={this.triggerRef}
@@ -270,6 +277,7 @@ export const Select = class extends PureComponent<SelectProps> {
                                             {...iconProps}
                                         />
                                     )}
+                                    aria-activedescendant={activeDescendant}
                                     aria-expanded={opened}
                                     aria-multiselectable={Array.isArray(value)}
                                 >

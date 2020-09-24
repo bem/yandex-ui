@@ -15,11 +15,11 @@ export default {
 const rawOptions = [
     { value: 1, content: 1 },
     { value: 2, content: 2 },
-    { value: 'c', content: 'Желает' },
-    { value: 'd', content: 'Знать' },
-    { value: 'e', content: 'Где', disabled: true },
-    { value: 'f', content: 'Сидит' },
-    { value: 'g', content: 'Фазан' },
+    { value: 'c', content: 'hello' },
+    { value: 'd', content: 'darkness' },
+    { value: 'e', content: 'my', disabled: true },
+    { value: 'f', content: 'old' },
+    { value: 'g', content: 'friend' },
 ];
 
 export const Playground = () => {

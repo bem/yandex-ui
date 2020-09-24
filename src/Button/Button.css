@@ -41,7 +41,8 @@
  * Перестаем реагировать на события мыши, если компонент был отрендерен не как тэг кнопка,
  * а на пример как ссылка, в остальных случаях достаточно атрибута disabled.
  */
-.Button2[aria-disabled='true'] {
+.Button2[aria-disabled='true'],
+.Button2[aria-busy='true'] {
     pointer-events: none;
 }
 

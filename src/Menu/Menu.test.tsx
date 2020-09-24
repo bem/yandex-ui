@@ -24,9 +24,9 @@ type MenuProps = ExtractProps<typeof MenuDesktop>;
 const testItems = [
     {
         title: 'test1',
-        items: [{ value: '1', content: 'Тест1' }, { value: '2', content: 'Тест2' }],
+        items: [{ id: 'item-id-1', value: '1', content: 'Тест1' }, { id: 'item-id-2', value: '2', content: 'Тест2' }],
     },
-    { value: '3', content: 'test2' },
+    { id: 'item-id-3', value: '3', content: 'test2' },
 ];
 
 describe.each<any>(platforms)('Menu@%s', (platform, Menu: ComponentType<MenuProps>) => {

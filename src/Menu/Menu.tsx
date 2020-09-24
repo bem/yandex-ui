@@ -29,6 +29,11 @@ export type ItemSimple = {
      * Неактивное состояние элемента
      */
     disabled?: boolean;
+
+    /**
+     * Идентификатор компонента
+     */
+    id?: string
 };
 
 export type ItemGroup = {
@@ -69,6 +74,11 @@ export interface IMenuProps {
      * Обработчик изменения значения
      */
     onChange?: ChangeEventHandler<HTMLElement>;
+
+    /**
+     * Обработчик изменения активного значения в меню
+     */
+    onActiveItemChange?: (id: string) => void;
 
     /**
      * Пункт меню или список пунктов, которые выбраны по умолчанию.
@@ -112,6 +122,8 @@ type MapChildrenProps = {
     getNextGroupCount: () => number;
     disabled?: boolean;
 };
+
+const uniqId = String(Date.now()) + Math.floor(Math.random() * 10000);
 
 /**
  * Компонент для создания меню.
@@ -160,7 +172,17 @@ export class Menu extends PureComponent<IMenuProps> {
     }
 
     render() {
-        const { className, disabled, focused, items, onChange, value, innerRef, ...props } = this.props;
+        const {
+            className,
+            disabled,
+            focused,
+            items,
+            onChange,
+            onActiveItemChange,
+            value,
+            innerRef,
+            ...props
+        } = this.props;
 
         return (
             <ComponentRegistryConsumer id={cnMenu()}>
@@ -215,7 +237,9 @@ export class Menu extends PureComponent<IMenuProps> {
 
         return (
             <Item
+                id={item.id || `item-${uniqId}-${itemIndex}`}
                 key={`item-${itemIndex}`}
+                data-key={`item-${itemIndex}`}
                 needIconGlyph={needIconGlyph}
                 checked={values.indexOf(item.value) !== -1}
                 disabled={item.disabled || disabled}
@@ -237,6 +261,7 @@ export class Menu extends PureComponent<IMenuProps> {
 
             const direction = event.keyCode - 39;
             const nextActiveIndex = this.getNextNotDisabledIndex(direction);
+            this.triggerOnMenuItemChange(nextActiveIndex);
 
             this.scrollToItem(this.innerRef, this.itemsRef[nextActiveIndex]);
             this.setState({ hoveredIndex: nextActiveIndex });
@@ -330,6 +355,23 @@ export class Menu extends PureComponent<IMenuProps> {
         }
 
         return hoveredIndex;
+    }
+
+    /**
+     * Вызывает событие onActiveItemChange.
+     */
+    private triggerOnMenuItemChange(id: number) {
+        const { onActiveItemChange } = this.props;
+
+        if (onActiveItemChange === undefined || this.innerRef.current === null) {
+            return;
+        }
+
+        const activeNode = this.innerRef.current.querySelector(`[data-key="item-${id}"]`);
+
+        if (activeNode) {
+            onActiveItemChange(activeNode.id as string);
+        }
     }
 
     /**

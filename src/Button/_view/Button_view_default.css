@@ -24,11 +24,13 @@
 }
 
 /* disable */
-.Button2_view_default[aria-disabled='true'] {
+.Button2_view_default[aria-disabled='true'],
+.Button2_view_default[aria-busy='true'] {
     color: var(--button-view-default-typo-color-disabled);
 }
 
-.Button2_view_default[aria-disabled='true']::before {
+.Button2_view_default[aria-disabled='true']::before,
+.Button2_view_default[aria-busy='true']::before {
     border-color: transparent;
     background-color: var(--button-view-default-fill-color-disabled);
 }

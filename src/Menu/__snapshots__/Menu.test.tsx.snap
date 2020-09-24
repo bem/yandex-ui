@@ -17,7 +17,10 @@ exports[`Menu@desktop client environment должен вернуть полны�
     </div>
     <div
       aria-selected="false"
-      class="Menu-Item"
+      class="Menu-Item Menu-Item_type_menuitem"
+      data-key="item-0"
+      id="item-id-1"
+      role="menuitem"
     >
       <span
         class="Menu-Text"
@@ -27,7 +30,10 @@ exports[`Menu@desktop client environment должен вернуть полны�
     </div>
     <div
       aria-selected="false"
-      class="Menu-Item"
+      class="Menu-Item Menu-Item_type_menuitem"
+      data-key="item-1"
+      id="item-id-2"
+      role="menuitem"
     >
       <span
         class="Menu-Text"
@@ -38,7 +44,10 @@ exports[`Menu@desktop client environment должен вернуть полны�
   </div>
   <div
     aria-selected="false"
-    class="Menu-Item"
+    class="Menu-Item Menu-Item_type_menuitem"
+    data-key="item-2"
+    id="item-id-3"
+    role="menuitem"
   >
     <span
       class="Menu-Text"
@@ -66,7 +75,10 @@ exports[`Menu@desktop server environment должен вернуть полны�
     </div>
     <div
       aria-selected="false"
-      class="Menu-Item"
+      class="Menu-Item Menu-Item_type_menuitem"
+      data-key="item-0"
+      id="item-id-1"
+      role="menuitem"
     >
       <span
         class="Menu-Text"
@@ -76,7 +88,10 @@ exports[`Menu@desktop server environment должен вернуть полны�
     </div>
     <div
       aria-selected="false"
-      class="Menu-Item"
+      class="Menu-Item Menu-Item_type_menuitem"
+      data-key="item-1"
+      id="item-id-2"
+      role="menuitem"
     >
       <span
         class="Menu-Text"
@@ -87,7 +102,10 @@ exports[`Menu@desktop server environment должен вернуть полны�
   </div>
   <div
     aria-selected="false"
-    class="Menu-Item"
+    class="Menu-Item Menu-Item_type_menuitem"
+    data-key="item-2"
+    id="item-id-3"
+    role="menuitem"
   >
     <span
       class="Menu-Text"
@@ -115,7 +133,10 @@ exports[`Menu@touch-pad client environment должен вернуть полн�
     </div>
     <div
       aria-selected="false"
-      class="Menu-Item"
+      class="Menu-Item Menu-Item_type_menuitem"
+      data-key="item-0"
+      id="item-id-1"
+      role="menuitem"
     >
       <span
         class="Menu-Text"
@@ -125,7 +146,10 @@ exports[`Menu@touch-pad client environment должен вернуть полн�
     </div>
     <div
       aria-selected="false"
-      class="Menu-Item"
+      class="Menu-Item Menu-Item_type_menuitem"
+      data-key="item-1"
+      id="item-id-2"
+      role="menuitem"
     >
       <span
         class="Menu-Text"
@@ -136,7 +160,10 @@ exports[`Menu@touch-pad client environment должен вернуть полн�
   </div>
   <div
     aria-selected="false"
-    class="Menu-Item"
+    class="Menu-Item Menu-Item_type_menuitem"
+    data-key="item-2"
+    id="item-id-3"
+    role="menuitem"
   >
     <span
       class="Menu-Text"
@@ -164,7 +191,10 @@ exports[`Menu@touch-pad server environment должен вернуть полн�
     </div>
     <div
       aria-selected="false"
-      class="Menu-Item"
+      class="Menu-Item Menu-Item_type_menuitem"
+      data-key="item-0"
+      id="item-id-1"
+      role="menuitem"
     >
       <span
         class="Menu-Text"
@@ -174,7 +204,10 @@ exports[`Menu@touch-pad server environment должен вернуть полн�
     </div>
     <div
       aria-selected="false"
-      class="Menu-Item"
+      class="Menu-Item Menu-Item_type_menuitem"
+      data-key="item-1"
+      id="item-id-2"
+      role="menuitem"
     >
       <span
         class="Menu-Text"
@@ -185,7 +218,10 @@ exports[`Menu@touch-pad server environment должен вернуть полн�
   </div>
   <div
     aria-selected="false"
-    class="Menu-Item"
+    class="Menu-Item Menu-Item_type_menuitem"
+    data-key="item-2"
+    id="item-id-3"
+    role="menuitem"
   >
     <span
       class="Menu-Text"
@@ -213,7 +249,10 @@ exports[`Menu@touch-phone client environment должен вернуть пол�
     </div>
     <div
       aria-selected="false"
-      class="Menu-Item"
+      class="Menu-Item Menu-Item_type_menuitem"
+      data-key="item-0"
+      id="item-id-1"
+      role="menuitem"
     >
       <span
         class="Menu-Text"
@@ -223,7 +262,10 @@ exports[`Menu@touch-phone client environment должен вернуть пол�
     </div>
     <div
       aria-selected="false"
-      class="Menu-Item"
+      class="Menu-Item Menu-Item_type_menuitem"
+      data-key="item-1"
+      id="item-id-2"
+      role="menuitem"
     >
       <span
         class="Menu-Text"
@@ -234,7 +276,10 @@ exports[`Menu@touch-phone client environment должен вернуть пол�
   </div>
   <div
     aria-selected="false"
-    class="Menu-Item"
+    class="Menu-Item Menu-Item_type_menuitem"
+    data-key="item-2"
+    id="item-id-3"
+    role="menuitem"
   >
     <span
       class="Menu-Text"
@@ -262,7 +307,10 @@ exports[`Menu@touch-phone server environment должен вернуть пол�
     </div>
     <div
       aria-selected="false"
-      class="Menu-Item"
+      class="Menu-Item Menu-Item_type_menuitem"
+      data-key="item-0"
+      id="item-id-1"
+      role="menuitem"
     >
       <span
         class="Menu-Text"
@@ -272,7 +320,10 @@ exports[`Menu@touch-phone server environment должен вернуть пол�
     </div>
     <div
       aria-selected="false"
-      class="Menu-Item"
+      class="Menu-Item Menu-Item_type_menuitem"
+      data-key="item-1"
+      id="item-id-2"
+      role="menuitem"
     >
       <span
         class="Menu-Text"
@@ -283,7 +334,10 @@ exports[`Menu@touch-phone server environment должен вернуть пол�
   </div>
   <div
     aria-selected="false"
-    class="Menu-Item"
+    class="Menu-Item Menu-Item_type_menuitem"
+    data-key="item-2"
+    id="item-id-3"
+    role="menuitem"
   >
     <span
       class="Menu-Text"

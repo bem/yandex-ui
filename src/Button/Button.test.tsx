@@ -105,10 +105,10 @@ describe.each<any>(platforms)('Button@%s', (_platform, Button: ComponentType<But
             expect(wrapper.find('span').hasClass('testIconLeft'));
         });
 
-        test('при установке progress=true создается класс Button2_progress и значение aria-disabled устанавливается в true', () => {
+        test('при установке progress=true создается класс Button2_progress и значение aria-busy устанавливается в true', () => {
             const wrapper = mount(<Button progress />);
             expect(wrapper.find('button').hasClass('Button_progress'));
-            expect(wrapper.find('button').prop('aria-disabled')).toBe(true);
+            expect(wrapper.find('button').prop('aria-busy')).toBe(true);
             expect(wrapper.find('button').prop('disabled')).toBe(true);
         });
 

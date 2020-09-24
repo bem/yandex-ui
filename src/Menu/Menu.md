@@ -120,3 +120,10 @@ const App = () => {
 | className? | `string`               | Дополнительный класс                                                                                                                    |
 | style?     | `CSSProperties`        | Html атрибут `style`                                                                                                                    |
 <!-- props:end -->
+
+## a11y
+
+1. Навигация по меню осуществляется с помощью Arrow Button [UP, LEFT] [DOWN, RIGHT]
+2. Для ScreenReader устанавливается id без этого аттрибута нельзя будет установить `aria-activedescendant={id}` у Select, ссылка <a href='https://www.w3.org/TR/wai-aria-practices/examples/menu-button/menu-button-actions.html' target='_blank'>тут</a>
+
+Больше про доступность меню читайте <a href='https://www.w3.org/TR/wai-aria-practices-1.1/#menu' target='_blank'>тут</a>

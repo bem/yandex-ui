@@ -15,6 +15,7 @@ export interface IMenuItemProps {
     onMouseEnter?: MouseEventHandler<HTMLDivElement>;
     onMouseLeave?: MouseEventHandler<HTMLDivElement>;
     onClick?: MouseEventHandler<HTMLDivElement>;
+    id: string
 }
 
 export const MenuItem: FC<IMenuItemProps> = ({
@@ -24,8 +25,9 @@ export const MenuItem: FC<IMenuItemProps> = ({
     disabled,
     hovered,
     needIconGlyph,
-    type,
+    type = 'menuitem',
     innerRef,
+    id,
     ...props
 }) => {
     const { Text, Icon } = useComponentRegistry<IMenuRegistry>(cnMenu());
@@ -34,6 +36,8 @@ export const MenuItem: FC<IMenuItemProps> = ({
             {...props}
             aria-selected={checked}
             aria-disabled={disabled}
+            // uniq id for a11y
+            id={id}
             role={type}
             ref={innerRef}
             className={cnMenu(

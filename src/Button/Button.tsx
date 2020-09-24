@@ -243,7 +243,6 @@ export const Button = class extends PureComponent<ButtonProps, IButtonState> {
             ...props
         } = this.props as ButtonProps & ButtonInternalProps;
         const { pressed } = this.state;
-        const computedDisabled = progress || disabled;
         const Component = AsComponent as ReactButtonElement;
         const refKey = typeof AsComponent === 'string' ? 'ref' : 'innerRef';
         (props as any)[refKey] = mergeAllRefs(this.internalInnerRef, innerRef, controlRef);
@@ -253,7 +252,7 @@ export const Button = class extends PureComponent<ButtonProps, IButtonState> {
             <Component
                 {...props}
                 type={type as any}
-                disabled={computedDisabled}
+                disabled={Boolean(progress || disabled)}
                 className={cnButton({ checked, progress, pressed }, [className])}
                 onKeyDown={this.onKeyDown}
                 onKeyUp={this.onKeyUp}
@@ -262,11 +261,12 @@ export const Button = class extends PureComponent<ButtonProps, IButtonState> {
                 onMouseUp={this.onMouseUp}
                 onMouseLeave={this.onMouseLeave}
                 aria-pressed={checked}
-                aria-disabled={computedDisabled}
+                aria-disabled={disabled}
                 // https://st.yandex-team.ru/ISL-1667
                 autoComplete={autoComplete}
                 title={title}
                 role={role}
+                aria-busy={progress}
             >
                 {addonBefore}
                 {iconLeftOrIcon && <Icon provider={iconLeftOrIcon} side={children && iconLeft ? 'left' : undefined} />}

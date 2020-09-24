@@ -38,7 +38,7 @@
 }
 
 .Textinput_view_default.Textinput_state_error .Textinput-Hint {
-    color: var(--textinput-view-default-hint-typo-color-error-base);
+    color: var(--textinput-view-default-hint-typo-color-state-error-base);
 }
 
 /* disable */

@@ -12,6 +12,7 @@ import React, {
 import { useComponentRegistry } from '@bem-react/di';
 import { cn } from '@bem-react/classname';
 
+import { useUniqId } from '../useUniqId';
 import { useUpdateEffect } from '../useUpdateEffect';
 import { IWithControlProps, withControl } from '../withControl/withControl';
 import { IIconProps } from '../Icon/Icon';
@@ -133,6 +134,7 @@ const TextinputPresenter: FC<ITextinputProps> = ({
     const [hint, setHint] = useState(htmlHint);
     const [hintLeave, setHintLeave] = useState(false);
     const prevHint = useRef(htmlHint);
+    const hintId = useUniqId('hint');
 
     useUpdateEffect(() => {
         if (htmlHint) {
@@ -171,11 +173,16 @@ const TextinputPresenter: FC<ITextinputProps> = ({
             {addonBefore}
             {iconLeft && <Icon side="left" component={iconLeft} />}
             {iconRight && <Icon side="right" component={iconRight} />}
-            <Control {...props} aria-invalid={state === 'error'} disabled={disabled} />
+            <Control
+                {...props}
+                aria-invalid={state === 'error'}
+                disabled={disabled}
+                aria-describedby={hint ? hintId : undefined}
+            />
             <Box />
             {addonAfter}
             {hint && (
-                <Hint leave={hintLeave} onAnimationEnd={onAnimationEnd}>
+                <Hint leave={hintLeave} onAnimationEnd={onAnimationEnd} id={hintId}>
                     {hint}
                 </Hint>
             )}

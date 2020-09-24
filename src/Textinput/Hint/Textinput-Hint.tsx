@@ -6,10 +6,11 @@ import './Textinput-Hint.css';
 export interface TextinputHintProps {
     leave: boolean;
     onAnimationEnd: AnimationEventHandler<HTMLSpanElement>;
+    id?: string;
 }
 
-export const TextinputHint: FC<TextinputHintProps> = ({ leave, onAnimationEnd, children }) => (
-    <span className={cnTextinput('Hint', { leave })} onAnimationEnd={onAnimationEnd}>
+export const TextinputHint: FC<TextinputHintProps> = ({ leave, onAnimationEnd, children, id }) => (
+    <span className={cnTextinput('Hint', { leave })} onAnimationEnd={onAnimationEnd} id={id}>
         {children}
     </span>
 );

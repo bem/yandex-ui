@@ -67,6 +67,7 @@ exports[`Select@desktop client environment должен вернуть полн�
                       Object {
                         "current": <button
                           aria-expanded="false"
+                          aria-haspopup="true"
                           aria-multiselectable="false"
                           aria-pressed="false"
                           autocomplete="off"
@@ -106,6 +107,7 @@ exports[`Select@desktop client environment должен вернуть полн�
                         >
                           <button
                             aria-expanded="false"
+                            aria-haspopup="true"
                             aria-multiselectable="false"
                             aria-pressed="false"
                             autocomplete="off"
@@ -150,6 +152,7 @@ exports[`Select@desktop client environment должен вернуть полн�
                           },
                         ]
                       }
+                      onActiveItemChange={[Function]}
                       onChange={[Function]}
                       style={
                         Object {
@@ -182,6 +185,7 @@ exports[`Select@desktop client environment должен вернуть полн�
                 Object {
                   "current": <button
                     aria-expanded="false"
+                    aria-haspopup="true"
                     aria-multiselectable="false"
                     aria-pressed="false"
                     autocomplete="off"
@@ -225,6 +229,7 @@ exports[`Select@desktop client environment должен вернуть полн�
                   >
                     <RenderOverride
                       aria-expanded={false}
+                      aria-haspopup="true"
                       aria-multiselectable={false}
                       checked={false}
                       className="Select2-Button"
@@ -233,6 +238,7 @@ exports[`Select@desktop client environment должен вернуть полн�
                         Object {
                           "current": <button
                             aria-expanded="false"
+                            aria-haspopup="true"
                             aria-multiselectable="false"
                             aria-pressed="false"
                             autocomplete="off"
@@ -265,6 +271,7 @@ exports[`Select@desktop client environment должен вернуть полн�
                     >
                       <Button2
                         aria-expanded={false}
+                        aria-haspopup="true"
                         aria-multiselectable={false}
                         as="button"
                         autoComplete="off"
@@ -275,6 +282,7 @@ exports[`Select@desktop client environment должен вернуть полн�
                           Object {
                             "current": <button
                               aria-expanded="false"
+                              aria-haspopup="true"
                               aria-multiselectable="false"
                               aria-pressed="false"
                               autocomplete="off"
@@ -309,10 +317,12 @@ exports[`Select@desktop client environment должен вернуть полн�
                       >
                         <button
                           aria-expanded={false}
+                          aria-haspopup="true"
                           aria-multiselectable={false}
                           aria-pressed={false}
                           autoComplete="off"
                           className="Button2 Select2-Button"
+                          disabled={false}
                           onBlur={[Function]}
                           onClick={[Function]}
                           onKeyDown={[Function]}
@@ -360,6 +370,7 @@ exports[`Select@desktop client environment должен вернуть полн�
                         Object {
                           "current": <button
                             aria-expanded="false"
+                            aria-haspopup="true"
                             aria-multiselectable="false"
                             aria-pressed="false"
                             autocomplete="off"
@@ -399,6 +410,7 @@ exports[`Select@desktop client environment должен вернуть полн�
                           >
                             <button
                               aria-expanded="false"
+                              aria-haspopup="true"
                               aria-multiselectable="false"
                               aria-pressed="false"
                               autocomplete="off"
@@ -432,6 +444,7 @@ exports[`Select@desktop client environment должен вернуть полн�
                           Object {
                             "current": <button
                               aria-expanded="false"
+                              aria-haspopup="true"
                               aria-multiselectable="false"
                               aria-pressed="false"
                               autocomplete="off"
@@ -471,6 +484,7 @@ exports[`Select@desktop client environment должен вернуть полн�
                             >
                               <button
                                 aria-expanded="false"
+                                aria-haspopup="true"
                                 aria-multiselectable="false"
                                 aria-pressed="false"
                                 autocomplete="off"
@@ -518,6 +532,7 @@ exports[`Select@desktop server environment должен вернуть полн�
 >
   <button
     aria-expanded="false"
+    aria-haspopup="true"
     aria-multiselectable="false"
     aria-pressed="false"
     autocomplete="off"
@@ -625,6 +640,7 @@ exports[`Select@touch-pad client environment должен вернуть пол�
               className="Select2 mix"
             >
               <RenderOverride
+                aria-haspopup="true"
                 aria-multiselectable={false}
                 checked={false}
                 className="Select2-Button"
@@ -632,6 +648,7 @@ exports[`Select@touch-pad client environment должен вернуть пол�
                 innerRef={
                   Object {
                     "current": <button
+                      aria-haspopup="true"
                       aria-multiselectable="false"
                       aria-pressed="false"
                       autocomplete="off"
@@ -660,6 +677,7 @@ exports[`Select@touch-pad client environment должен вернуть пол�
                 width="max"
               >
                 <Button2
+                  aria-haspopup="true"
                   aria-multiselectable={false}
                   as="button"
                   autoComplete="off"
@@ -669,6 +687,7 @@ exports[`Select@touch-pad client environment должен вернуть пол�
                   innerRef={
                     Object {
                       "current": <button
+                        aria-haspopup="true"
                         aria-multiselectable="false"
                         aria-pressed="false"
                         autocomplete="off"
@@ -699,10 +718,12 @@ exports[`Select@touch-pad client environment должен вернуть пол�
                   width="max"
                 >
                   <button
+                    aria-haspopup="true"
                     aria-multiselectable={false}
                     aria-pressed={false}
                     autoComplete="off"
                     className="Button2 Select2-Button"
+                    disabled={false}
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     onKeyUp={[Function]}
@@ -770,6 +791,7 @@ exports[`Select@touch-pad server environment должен вернуть пол�
   class="Select2 mix"
 >
   <button
+    aria-haspopup="true"
     aria-multiselectable="false"
     aria-pressed="false"
     autocomplete="off"
@@ -887,6 +909,7 @@ exports[`Select@touch-phone client environment должен вернуть по�
               className="Select2 mix"
             >
               <RenderOverride
+                aria-haspopup="true"
                 aria-multiselectable={false}
                 checked={false}
                 className="Select2-Button"
@@ -894,6 +917,7 @@ exports[`Select@touch-phone client environment должен вернуть по�
                 innerRef={
                   Object {
                     "current": <button
+                      aria-haspopup="true"
                       aria-multiselectable="false"
                       aria-pressed="false"
                       autocomplete="off"
@@ -922,6 +946,7 @@ exports[`Select@touch-phone client environment должен вернуть по�
                 width="max"
               >
                 <Button2
+                  aria-haspopup="true"
                   aria-multiselectable={false}
                   as="button"
                   autoComplete="off"
@@ -931,6 +956,7 @@ exports[`Select@touch-phone client environment должен вернуть по�
                   innerRef={
                     Object {
                       "current": <button
+                        aria-haspopup="true"
                         aria-multiselectable="false"
                         aria-pressed="false"
                         autocomplete="off"
@@ -961,10 +987,12 @@ exports[`Select@touch-phone client environment должен вернуть по�
                   width="max"
                 >
                   <button
+                    aria-haspopup="true"
                     aria-multiselectable={false}
                     aria-pressed={false}
                     autoComplete="off"
                     className="Button2 Select2-Button"
+                    disabled={false}
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     onKeyUp={[Function]}
@@ -1032,6 +1060,7 @@ exports[`Select@touch-phone server environment должен вернуть по�
   class="Select2 mix"
 >
   <button
+    aria-haspopup="true"
     aria-multiselectable="false"
     aria-pressed="false"
     autocomplete="off"
