@@ -7,23 +7,30 @@ textarea:
       value: 2px
     radius:
       value: 4px
+      comment: "Ширина бордера у textarea"
 
   size:
     s:
       fontSize:
         value: "{typography.controls.size.s.fontSize.value}"
+        comment: "Размер текста у s-textarea"
       spaceAll:
         value: 6px
+        comment: "Внутренние отступы у s-textarea "
       minWidth:
         value: 180px
+        comment: "Размер минимальной ширины у s-textarea"
       minHeight:
         value: 32px
+        comment: "Размер минимальной высоты у s-textarea"
 
       clear:
         width:
           value: 32px
+          comment: "Ширина очищающего контрола у s-textarea"
         height:
           value: 32px
+          comment: "Высота очищающего контрола у s-textarea"
 
       hint:
         fontSize:
@@ -32,18 +39,24 @@ textarea:
     m:
       fontSize:
         value: "{typography.controls.size.m.fontSize.value}"
+        comment: "Размер текста у m textarea"
       spaceAll:
         value: 8px
+        comment: "Внутренние отступы m-textarea"
       minWidth:
         value: 200px
+        comment: "Размер минимальной ширины у m-textarea"
       minHeight:
         value: 36px
+        comment: "Размер минимальной высоты у m-textarea"
 
       clear:
         width:
           value: 36px
+          comment: "Ширина очищающего контрола у m-textarea"
         height:
           value: 36px
+          comment: "Высота очищающего контрола у m-textarea"
 
       hint:
         fontSize:

@@ -10,44 +10,56 @@ tooltip:
     s:
       fontSize:
         value: "{typography.controls.size.s.fontSize.value}"
+        comment: "Размер текста у s-tooltip"
       lineHeight:
         value: 12px
+        comment: "Межстрочный интервал текста у s-tooltip"
 
       content:
         spaceAll:
           value: 8px
+          comment: "Размер внутренних оступов у контента s-tooltip"
 
       tail:
         size:
           value: 12px
+          comment: "Размер хвоста s-tooltip"
 
     m:
       fontSize:
         value: "{typography.controls.size.m.fontSize.value}"
+        comment: "Размер текста у m-tooltip"
       lineHeight:
         value: 14px
+        comment: "Межстрочный интервал текста у m-tooltip"
 
       content:
         spaceAll:
           value: 9px 10px
+          comment: "Размер внутренних оступов у контента m-tooltip"
 
       tail:
         size:
           value: 12px
+          comment: "Размер хвоста m-tooltip"
 
     l:
       fontSize:
         value: 16px
+        comment: "Размер текста у l-tooltip"
       lineHeight:
         value: 16px
+        comment: "Межстрочный интервал текста у l-tooltip"
 
       content:
         spaceAll:
           value: 18px
+          comment: "Размер внутренних оступов у контента l-tooltip"
 
       tail:
         size:
           value: 18px
+          comment: "Размер хвоста l-tooltip"
 
   viewDefault:
     shadow:

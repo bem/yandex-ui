@@ -2,7 +2,7 @@ messageBox:
   fontSize:
     value: "{typography.controls.size.s.fontSize.value}"
   fontFamily:
-      value: "{typography.controls.fontFamily.value}"
+    value: "{typography.controls.fontFamily.value}"
   lineHeight:
     value: 16px
   hint:
@@ -34,6 +34,7 @@ messageBox:
       tail:
         size:
           value: 22px
+          comment: "Размер хвоста у message-box"
       tooltip:
         fontSize:
           value: 11px
@@ -54,6 +55,7 @@ messageBox:
       tail:
         size:
           value: 22px
+          comment: "Размер хвоста у message-box"
       tooltip:
         fontSize:
           value: 11px
@@ -79,6 +81,7 @@ messageBox:
       tail:
         size:
           value: 22px
+          comment: "Размер хвоста у message-box"
       functional:
         fontSize:
           value: 14px

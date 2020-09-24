@@ -12,16 +12,21 @@ textinput:
     s:
       fontSize:
         value: "{typography.controls.size.s.fontSize.value}"
+        comment: "Размер текста у s-textinput"
       height:
         value: 32px
+        comment: "Высота самого s-textinput"
       spaceAll:
         value: 0 8px
+        comment: "Размер внутреннего отступа самого s-textinput "
 
       withIcon:
         spaceRight:
           value: 32px
+          comment: "Размер внутреннего правого отступа под размер иконки или крестика у s-textinput"
         spaceLeft:
           value: 32px
+          comment: "Размер внутреннего левого отступа под размер иконки или крестика у s-textinput"
 
       icon:
         width:
@@ -36,16 +41,21 @@ textinput:
     m:
       fontSize:
         value: "{typography.controls.size.m.fontSize.value}"
+        comment: "Размер текста у m-textinput"
       height:
         value: 36px
+        comment: "Высота самого m-textinput"
       spaceAll:
         value: 0 10px
+        comment: "`--textinput-size-m-control-spaceAll` *— Размер внутреннего отступа самого m-textinput*"
 
       withIcon:
         spaceRight:
           value: 36px
+          comment: "Размер внутреннего правого отступа под размер иконки или крестика у m-textinput"
         spaceLeft:
           value: 36px
+          comment: "Размер внутреннего правого отступа правого остступа под размер иконки или крестика у m-textinput"
 
       icon:
         width:

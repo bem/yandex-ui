@@ -6,31 +6,41 @@ menu:
     border:
       width:
         value: 1px
+        comment: "Бордер у menu-group меню"
 
   size:
     s:
       fontSize:
         value: "{typography.controls.size.s.fontSize.value}"
+        comment: "Размер текста у s-menu"
       lineHeight:
         value: 32px
+        comment: "Межстрочный интервал s-menu у s-menu"
       spaceVertical:
         value: 4px
+        comment: "Размер вертикального внутреннего отступа у s-menu"
 
       group:
         spaceVertical:
           value: 4px
+          comment: "Размер вертикального внутреннего отступа от группе у s-menu"
         spaceHorizontal:
           value: 0
+          comment: "Размер горизонтального внутреннего отступа от группе у s-menu"
         indentBottom:
           value: 4px
+          comment: "Размер нижего внешнего отступа от группы до пунктов у s-menu"
 
       item:
         spaceVertical:
           value: 3px
+          comment: "Размер вертикального внутреннего отступа в пункте у s-menu"
         spaceHorizontal:
           value: 9px
+          comment: "азмер горизонтального внутреннего отступа в пункте у s-menu"
         indentBottom:
           value: 4px
+          comment: "Размер правого внешненго отступа от иконки до текста у s-menu"
 
       itemIcon:
         indentRight:
@@ -39,30 +49,40 @@ menu:
       titleSibling:
         indentLeft:
           value: 20px
+          comment: "Размер внешнего левого отступа у сущностей после тайтла у s-menu"
 
     m:
       fontSize:
         value: "{typography.controls.size.m.fontSize.value}"
+        comment: "Размер текста у m-menu"
       lineHeight:
         value: 36px
+        comment: "Межстрочный интервал у m-menu"
       spaceVertical:
         value: 5px
+        comment: "Размер вертикального внутреннего отступа у m-menu"
 
       group:
         spaceVertical:
           value: 5px
+          comment: " Размер вертикального внутреннего отступа в группе у m-menu"
         spaceHorizontal:
           value: 0
+          comment: "Размер горизонтального внутреннего отступа в группе у m-menu"
         indentBottom:
           value: 5px
+          comment: "Размер нижего внешнего отступа от группы до пунктов у m-menu"
 
       item:
         spaceVertical:
           value: 4px
+          comment: "Размер вертикального внутреннего отступа в пункте у m-menu"
         spaceHorizontal:
           value: 15px
+          comment: "Размер горизонтального внутреннего отступа в пункте у m-menu"
         indentBottom:
           value: 5px
+          comment: "Размер нижего внешнего отступа от пунктов до группы у m-menu"
 
       itemIcon:
         indentRight:
@@ -71,6 +91,7 @@ menu:
       titleSibling:
         indentLeft:
           value: 20px
+          comment: "Размер внешнего левого отступа у сущностей после тайтла у m-menu"
 
   viewDefault:
     borderColor:

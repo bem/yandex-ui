@@ -1,6 +1,7 @@
 progress:
   height:
     value: 2px
+    comment: "Высота у progressbar"
   border:
     radius:
       value: 0

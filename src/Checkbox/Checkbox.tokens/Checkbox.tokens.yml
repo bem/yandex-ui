@@ -22,12 +22,16 @@ checkbox:
     s:
       fontSize:
         value: "{typography.controls.size.s.fontSize.value}"
+        comment: "Размер текста у s-checkbox"
       indentLeft:
         value: 5px
+        comment: "Размер внешнего левого отступа у s-checkbox (от текста)"
       width:
         value: 14px
+        comment: "Ширина у s-checkbox"
       height:
         value: 14px
+        comment: "Высота у s-checkbox"
       tick:
         width:
           value: 12px
@@ -37,12 +41,16 @@ checkbox:
     m:
       fontSize:
         value: "{typography.controls.size.m.fontSize.value}"
+        comment: "Размер текста у m-checkbox"
       indentLeft:
         value: 5px
+        comment: "Размер внешнего левого отступа у m-checkbox (от текста)"
       width:
         value: 17px
+        comment: "Ширина у m-checkbox"
       height:
         value: 17px
+        comment: "Высота у m-checkbox"
       tick:
         width:
           value: 13px

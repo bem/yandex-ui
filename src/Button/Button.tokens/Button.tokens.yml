@@ -7,67 +7,89 @@ button:
       value: 1px
     radius:
       value: 4px
+      comment: "Радиус внутреннего блока"
 
   size:
     s:
       fontSize:
         value: "{typography.controls.size.s.fontSize.value}"
+        comment: "Размер текста у s-button"
       lineHeight:
         value: 32px
+        comment: "Межстрочный интервал текста у s-button"
       height:
         value: 32px
+        comment: "Высота у s-button"
 
       icon:
         width:
           value: 32px
+          comment: "Ширина иконки у s-button"
         indentLeft:
           value: 25px
+          comment: "Размер внешнего левого отступа текста от иконки у s-button"
         indentRight:
           value: 25px
+          comment: "Размер внешнего правого отступа текста от иконки у s-button"
 
       text:
         indentAll:
           value: 0 13px
+          comment: "Размер внешнего отступа у s-button"
 
     m:
       fontSize:
         value: "{typography.controls.size.m.fontSize.value}"
+        comment: "Размер текста у m-button"
       lineHeight:
         value: 36px
+        comment: "Межстрочный интервал текста у m-button"
       height:
         value: 36px
+        comment: "Высота у m-button"
 
       icon:
         width:
           value: 36px
+          comment: "Ширина иконки у m-button"
         indentLeft:
           value: 29px
+          comment: "Размер внешнего левого отступа текста от иконки у m-button"
         indentRight:
           value: 29px
+          comment: "Размер внешнего правого отступа текста от иконки у m-button"
 
       text:
         indentAll:
           value: 0 15px
+          comment: "Размер внешнего отступа у m-button"
 
     l:
       fontSize:
         value: "{typography.controls.size.l.fontSize.value}"
+        comment: "Размер текста у l-button"
       lineHeight:
         value: 42px
+        comment: "Межстрочный интервал текста у l-button"
       height:
         value: 42px
+        comment: "Высота у l-button"
 
       icon:
         width:
           value: 42px
+          comment: "Ширина иконки у l-button"
         indentLeft:
           value: 35px
+          comment: "Размер внешнего левого отступа текста от иконки у l-button"
         indentRight:
           value: 35px
+          comment: "Размер внешнего правого отступа текста от иконки у l-button"
 
       text:
         indentAll:
           value: 0 18px
+          comment: "Размер внешнего отступа у l-button"
 
   viewAction:
     borderColor:

@@ -39,36 +39,48 @@ radiobox:
   border:
     radius:
       value: 50%
+      comment: "Скругление внешних краев у radioBox"
   after:
     border:
       radius:
         value: 50%
+        comment: "Скругление внутреннийх краев у radioBox"
   size:
     s:
       fontSize:
         value: "{typography.controls.size.s.fontSize.value}"
+        comment: "Размер текста у s-radio"
       lineHeight:
         value: 28px
+        comment: "Межстрочный интервал текста у s-radio"
       size:
         value: 13px
+        comment: "Размер бокса у s-radio"
       positionTop:
         value: 2px
+        comment: "Верхний отступ у s-radio"
       indentRight:
         value: 5px
+        comment: "Размер внешнего правого отступа у s-radio (от текста) "
       after:
         size:
           value: 5px
     m:
       fontSize:
         value: "{typography.controls.size.m.fontSize.value}"
+        comment: "Размер текста у m-radio"
       lineHeight:
         value: 32px
+        comment: "Межстрочный интервал текста у m-radio"
       size:
         value: 17px
+        comment: "Размер бокса у m-radio"
       positionTop:
         value: 3px
+        comment: "Верхний отступ у m-radio"
       indentRight:
         value: 6px
+        comment: "Размер внешнего правого отступа у m-radio (от текста) "
       after:
         size:
           value: 7px

@@ -13,22 +13,28 @@ tumbler:
     s:
       fontSize:
         value: "{typography.controls.size.s.fontSize.value}"
+        comment: "Размер текста s-tumbler"
       lineHeight:
         value: 16px
+        comment: "Межстрочный интервал текста у s-tumbler"
       borderRadius:
         value: 8px
       width:
         value: 32px
+        comment: "Ширина s-tumbler"
       height:
         value: 16px
+        comment: "Высота s-tumbler"
 
       button:
         borderRadius:
           value: 6px
         width:
           value: 12px
+          comment: "Ширина button m-tumbler"
         height:
           value: 12px
+          comment: "Высота button m-tumbler"
 
         pressed:
           width:
@@ -43,22 +49,28 @@ tumbler:
     m:
       fontSize:
         value: "{typography.controls.size.m.fontSize.value}"
+        comment: "Размер текста m-tumbler"
       lineHeight:
         value: 20px
+        comment: "Межстрочный интервал текста у m-tumbler"
       borderRadius:
         value: 10px
       width:
         value: 40px
+        comment: "Ширина m-tumbler"
       height:
         value: 20px
+        comment: "Высота m-tumbler"
 
       button:
         borderRadius:
           value: 8px
         width:
           value: 16px
+          comment: "Ширина button m-tumbler"
         height:
           value: 16px
+          comment: "Высота button m-tumbler"
 
         pressed:
           width:

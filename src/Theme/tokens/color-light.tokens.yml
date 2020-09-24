@@ -1,24 +1,34 @@
 color:
   base:
     value: "#000"
+    comment: "базовый цвет содержимого, от которого выстраиваются цвета текста, иконок, ..."
   essential:
     value: "#fff"
+    comment: "базовый цвет поверхностей"
   project:
     value: "#fc0"
+    comment: "проектный цвет, от которого выстраивают акцентные состояния"
   phantom:
     value: "#000"
+    comment: "тонирующий цвет, от которого выстраиваются бордеры, паранджа, ..."
   path:
     value: "#04b"
+    comment: "ссылочный цвет, от которого выстраиваются все их вариации"
   success:
     value: "#00985f"
+    comment: "цвет успеха, от которого выстраивается как сататусный фон так и типографика"
   alert:
     value: "#f33"
+    comment: "цвет ошибки, от которого выстраивается как статусный фон так и типографика"
   warning:
     value: "#f90"
+    comment: "цвет предупреждения, от которого выстраивается как статусный фон так и типографика"
   normal:
     value: "#dde3e5"
+    comment: "нейтральный цвет, от которого выстраивается как статусный фон так и типографика"
   system:
     value: "#778a9b"
+    comment: "системный цвет, от которого выстраивается как статусный фон так и типографика"
   promo:
     value: "#0057d3"
   hover:
@@ -67,16 +77,20 @@ color:
       value: "{color.project.value}"
     primary:
       value: "{color.base.value}"
+      comment: "цвет основного текста дефолтных контролов"
     inverse:
       value: "{color.essential.value}"
     promo:
       value: "color({color.base.value} a(80%))"
     secondary:
       value: "color({color.base.value} a(60%))"
+      comment: "цвет второстепеного текста контрола"
     ghost:
       value: "color({color.base.value} a(30%))"
+      comment: "цвет дополнительного текста контрола"
     disable:
       value: "color({color.base.value} a(30%))"
+      comment: "цвет основного текста неактивного контрола"
     success:
       value: "{color.success.value}"
     warning:
@@ -87,19 +101,23 @@ color:
   link:
     base:
       value: "{color.path.value}"
+      comment: "цвет фона ссылки"
     external:
       value: "{color.path.value}"
     minor:
       value: "color({color.path.value} h(+22) s(-80%) l(+13%))"
     hover:
       value: "{color.hover.value}"
+      comment: "цвет фона ссылки по ховеру"
 
   control:
     borderColor:
       focus:
         value: "color({color.phantom.value} l(70%))"
+        comment: "цвет фона бордеров контрола при фокусе"
       prism:
         value: "{color.project.value}"
+        comment: "цвет фона бордера офсетных выделений контрола"
 
     typo:
       primary:
@@ -124,22 +142,30 @@ color:
         fillColor:
           base:
             value: "color({color.essential.value} l(90%))"
+            comment: "цвет фона контрола"
           hover:
             value: "color({color.essential.value} l(86%))"
+            comment: "цвет фона контрола по ховеру"
           press:
             value: "color({color.essential.value} l(86%))"
+            comment: "цвет фона контрола по нажатию"
           disable:
             value: "color({color.essential.value} l(95%))"
+            comment: "цвет фона неактивного контрола"
 
         borderColor:
           base:
             value: "color({color.phantom.value} l(70%))"
+            comment: "цвет фона бордеров контрола"
           hover:
             value: "color({color.phantom.value} l(86%))"
+            comment: "цвет фона бордеров контрола по ховеру"
           press:
             value: "color({color.phantom.value} l(70%))"
+            comment: "цвет фона бордеров контрола по нажатию"
           disable:
             value: "color({color.phantom.value} l(91%))"
+            comment: "цвет фона бордеров неактивного контрола"
           error:
             base:
               value: "{color.alert.value}"
@@ -150,75 +176,99 @@ color:
         fillColor:
           base:
             value: "color({color.phantom.value} l(100%))"
+            comment: "цвет фона псевдо контрола"
           hover:
             value: "color({color.phantom.value} l(97%))"
+            comment: "цвет фона псевдо контрола по ховеру"
         borderColor:
           base:
             value: "color({color.phantom.value} l(80%))"
+            comment: "цвет бордеров псевдо контрола"
 
       action:
         fillColor:
           base:
             value: "{color.project.value}"
+            comment: "цвет фона активного контрола"
           hover:
             value: "color({color.project.value} h(-2%) l(-1%))"
+            comment: "цвет фона активного контрола по ховеру"
           press:
             value: "color({color.project.value} h(-2%) l(-1%))"
+            comment: "цвет фон активного контролы по нажатию"
 
       passive:
         fillColor:
           base:
             value: "{color.essential.value}"
+            comment: "цвет фона пассивной части контрола"
 
       progress:
         fillColor:
           base:
             value: "{color.project.value}"
+            comment: "цвет фон активного контрола в прогрессе"
           process:
             value: "color({color.project.value} h(+2%))"
+            comment: "цвет фон активного контрола в прогрессе выполнения"
 
       blank:
         fillColor:
           base:
             value: "{color.essential.value}"
+            comment: "цвет фона пустого контрола"
           hover:
             value: "{color.essential.value}"
+            comment: "цвет фона пустого контрола по ховеру"
           disable:
             value: "color({color.essential.value} l(95%))"
+            comment: "цвет фона пустого неактивного контрола"
 
         borderColor:
           base:
             value: "color({color.phantom.value} l(85%))"
+            comment: "цвет фона бордеров пустого контрола"
           hover:
             value: "color({color.phantom.value} l(80%))"
+            comment: "цвет фона бордеров пустого контрола по ховеру"
           disable:
             value: "color({color.essential.value} l(95%))"
+            comment: "цвет фона бордеров пустого неактивного контрола"
 
       faint:
         fillColor:
           base:
             value: "{color.essential.value}"
+            comment: "цвет фона ослабленной части контрола"
           disable:
             value: "color({color.essential.value} l(78%))"
+            comment: "цвет фона ослабленной части неактивного контрола"
 
       check:
         fillColor:
           base:
             value: "color({color.phantom.value} l(33%))"
+            comment: "цвет фона чекнутого контрола"
           hover:
             value: "color({color.phantom.value} l(33%))"
+            comment: "цвет фона чекнутого контрола по ховеру"
           press:
             value: "color({color.phantom.value} l(32%))"
+            comment: "цвет фона чекнутого контрола по нажатию"
           disable:
             value: "color({color.phantom.value} l(95%))"
+            comment: "цвет фона чекнутого неактивного контрола"
 
         borderColor:
           base:
             value: "color({color.project.value} l(33%))"
+            comment: "цвет фона бордеров чекнутого контрола"
           hover:
             value: "color({color.project.value} l(33%))"
+            comment: "цвет фона бордеров чекнутого контрола по ховеру"
           press:
             value: "color({color.project.value} l(33%))"
+            comment: "цвет фона бордеров чекнутого контрола при фокусе по нажатию"
 
       link:
         fillColor:
