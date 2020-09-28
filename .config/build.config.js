@@ -60,6 +60,15 @@ module.exports = {
                     const content = fs.readFileSync(themePath, 'utf-8').replace(/.\/src/g, '.');
                     fs.writeFileSync(themePath, content);
                 });
+                // названия компонентов достаем из директории
+                // если папка начинается с большой буквы, значит компонент
+                const componentsNames = fs.readdirSync(context.output, { withFileTypes: true })
+                    .filter((dir) => dir.isDirectory() && /^[A-Z]/.test(dir.name))
+                    .map((dir) => ({ block: dir.name }));
+
+                const componentsJSONPath = path.join(context.output, 'components.json');
+                fs.writeFileSync(componentsJSONPath, JSON.stringify(componentsNames, null, 2));
+
                 done();
             },
         },
