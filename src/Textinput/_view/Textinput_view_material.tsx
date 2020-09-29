@@ -16,7 +16,7 @@ export interface TextinputViewMaterial {
     /**
      * Внешний вид текстового поля.
      */
-    view?: 'default';
+    view?: 'material';
 
     /**
      * Вариант внешнего вида компонента
