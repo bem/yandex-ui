@@ -81,7 +81,7 @@ const App = () => {
 
 ### Оформление радиогруппы
 
-Для различного оформления радиогруппы, установите свойство `view` в значение `"default"`.
+Для различного оформления радиогруппы установите свойство `view` в значение `"default"`.
 
 {{%story::desktop:controls-radiobutton-desktop--view%}}
 
@@ -94,16 +94,16 @@ const App = () => {
 ## Свойства
 
 <!-- props:start -->
-| Свойство    | Тип                                                         | Описание                                         |
-| ----------- | ----------------------------------------------------------- | ------------------------------------------------ |
-| options     | `IRadioButtonOption[]`                                      | Набор опций.                                     |
-| innerRef?   | `RefObject<HTMLSpanElement>`                                | Ссылка на корневой DOM-элемент компонента.       |
-| style?      | `CSSProperties`                                             | Пользовательские стили на корневом DOM-элементе. |
-| aria-label? | `string`                                                    | Метка для радиогруппы.                           |
-| value       | `string`                                                    | HTML атрибут `value`, значение контрола.         |
-| name?       | `string`                                                    | HTML атрибут `name`, имя компонента.             |
-| disabled?   | `false \| true`                                             | HTML атрибут `disabled`.                         |
-| className?  | `string`                                                    | Дополнительный класс.                            |
-| onClick?    | `(event: MouseEvent<HTMLInputElement, MouseEvent>) => void` | Обработчик клика.                                |
-| onChange?   | `(event: ChangeEvent<HTMLInputElement>) => void`            | Обработчик изменения значения.                   |
+| Свойство    | Тип                                                         | Описание                                        |
+| ----------- | ----------------------------------------------------------- | ----------------------------------------------- |
+| options     | `IRadioButtonOption[]`                                      | Набор опций                                     |
+| innerRef?   | `RefObject<HTMLSpanElement>`                                | Ссылка на корневой DOM-элемент компонента       |
+| style?      | `CSSProperties`                                             | Пользовательские стили на корневом DOM-элементе |
+| aria-label? | `string`                                                    | Метка для радиогруппы                           |
+| value       | `string`                                                    | HTML-атрибут `value`, значение контрола         |
+| name?       | `string`                                                    | HTML-атрибут `name`, имя компонента             |
+| disabled?   | `false \| true`                                             | HTML-атрибут `disabled`                         |
+| className?  | `string`                                                    | Дополнительный класс                            |
+| onClick?    | `(event: MouseEvent<HTMLInputElement, MouseEvent>) => void` | Обработчик клика                                |
+| onChange?   | `(event: ChangeEvent<HTMLInputElement>) => void`            | Обработчик изменения значения                   |
 <!-- props:end -->

@@ -3,7 +3,7 @@
 
 Yandex UI Kit build on React and [bem-react][bem-react].
 
-## Installtion
+## Installation
 
 ```bash
 #⠀package with components
