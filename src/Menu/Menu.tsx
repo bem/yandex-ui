@@ -8,6 +8,7 @@ import React, {
 import { cn } from '@bem-react/classname';
 import { ComponentRegistryConsumer } from '@bem-react/di';
 
+import { IS_TESTING } from '../lib/env';
 import { Keys, isKeyCode } from '../lib/keyboard';
 import { mergeRefs } from '../lib/mergeRefs';
 import { flatMap } from '../lib/flatMap';
@@ -123,8 +124,6 @@ type MapChildrenProps = {
     disabled?: boolean;
 };
 
-const uniqId = String(Date.now()) + Math.floor(Math.random() * 10000);
-
 /**
  * Компонент для создания меню.
  * @param {IMenuProps} props
@@ -143,6 +142,8 @@ export class Menu extends PureComponent<IMenuProps> {
      * Массив ссылок на пункты меню для правильного подскролла.
      */
     private itemsRef: Array<RefObject<HTMLDivElement>> = [];
+
+    private uniqId = IS_TESTING ? '0' : String(Date.now()) + Math.floor(Math.random() * 10000);
 
     componentDidMount() {
         this.forwardRefs();
@@ -237,7 +238,7 @@ export class Menu extends PureComponent<IMenuProps> {
 
         return (
             <Item
-                id={item.id || `item-${uniqId}-${itemIndex}`}
+                id={item.id || `item-${this.uniqId}-${itemIndex}`}
                 key={`item-${itemIndex}`}
                 data-key={`item-${itemIndex}`}
                 needIconGlyph={needIconGlyph}
