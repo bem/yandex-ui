@@ -1,34 +1,6 @@
 # Темизация
 
-Настройте Lego Components с помощью вашей или дефолтной темы. Вы можете изменить цвета, типографику и многое другое. Для поддержки тем в IE11 необходимо использовать [postcss-theme-fold](https://github.com/yarastqt/postcss-theme-fold) плагин.
-
-Каждая тема состоит из нескольких частей. Ниже проиллюстрировано воздействие каждой из частей на компонент:
-
-![image](https://nda.ya.ru/t/2WDsVxZZ3Vv9UU)
-
-<details markdown="1">
-
-  <summary>Подробнее про каждую часть</summary>
-
-- **color**
-
-  Содержит переменные цветов, которые используются в модификациях компонентов и типографики, подчеркивая их смысл (например, экшен-компонент) или состояние (например, недоступный). Переменные именуются по смыслу, месту использования и не должны обозначать значение цвета.
-- **size**
-
-  Содержит переменные размера текста и межстрочных интервалов, которые настраиваются для каждого отдельного компонента.
-- **space**
-
-  Содержит переменные отступов, которые используются как для отступов внутри компонента, так и для обозначения уровней вложенности и/или разделения смысловых сущностей внутри паттернов.
-- **capacity**
-
-  Содержит переменные размеров поверхностей компонентов, которые имеют как минимальные/максимальные, так и фиксированные значения.
-
-- **cosmetic**
-
-  Содержит переменные, которые используются для декоративной стилизации компонентов (например, скругление углов, шрифт, размер границ).
-
-</details>
-
+Настройте Lego Components с помощью вашей или дефолтной темы из Лего. Вы можете изменить цвета, типографику и многое другое.
 
 ## Использование
 
@@ -90,65 +62,122 @@
   ```
 
 
-## Как создать тему
+## Как создать свою тему
 
-Чтобы создать тему:
+Для переопределения значений (токенов) в теме нужно использовать инструмент [themekit](https://github.com/yarastqt/themekit). Themekit — это инструмент, который позволяет описывать дизайн-токены в формате понятном для разработчиков и дизайнеров (yaml или json), с возможностью собирать их в любой таргет (css, json, js, ios, android), а так же с возможностью наследования и переопределения тем.
 
-1. Добавьте в проект следующие PostCSS-плагины:
-     - [postcss-color-function](https://github.com/postcss/postcss-color-function) — для работы с цветами.
-     - [postcss-simple-vars](https://github.com/postcss/postcss-simple-vars) — для написания Sass-like переменных.
-2. Определите, [какими частями](#темизация) ваша тема будет отличаться от уже существующих в Лего.
-3. Скопируйте нужные части и модифицируйте под ваш проект.
+### Настройка
 
-  Пример (тема отличается цветом):
+1. Ставим инструмент в проект:
 
-  Создаем модификатор для цвета → копируем содержимое из Лего → модифицируем под проект.
+```bash
+ npm i -DE @yandex/themekit
+```
+2. Создаем структуру папок для тем и токенов:
 
-4. Создайте [пресет](#пресет) → скопируйте туда ваши модификаторы темы или часть из Лего → используйте этот пресет в проекте.
+```bash
+theme
+├── default
+│   └── default.theme.json # Конфигурация темы
+└── tokens
+    └── lego.tokens.yml    # Переопределения лего-токенов
+```
 
-## Пресет
+3. Создаем themekit.config.json:
 
-Пресет — это файл с подключенными нужными для проекта CSS-файлами и экспортом объекта для установки модификаторов:
-
-```ts
-import { Theme } from '@yandex/ui/Theme'
-
-import './_color/theme_color_yandex-default.css'
-import './_size/theme_size_default.css'
-import './_capacity/theme_capacity_default.css'
-import './_space/theme_space_default.css'
-import './_cosmetic/theme_cosmetic_default.css'
-
-export const theme: Theme = {
-  color: 'yandex-default',
-  size: 'default',
-  capacity: 'default',
-  space: 'default',
-  cosmetic: 'default',
+```json5
+{
+  "entry": {
+    "default": "./themes/default.theme.json" // название вашей темы
+  },
+  "output": {
+    "css": {
+      "transforms": ["name/cti/kebab"],
+      "buildPath": "./themes", //папка где с конфигурацией
+      "files": [
+        {
+          "destination": "[entry]/[platform]/root.css", // путь к собранному файлу с темой
+          "format": "css/variables", // формат итоговой темы (1)
+          "options": {
+            "useAliasVariables": true
+          }
+        }
+      ]
+    }
+  }
 }
 ```
 
-Для удобного использования <a href='https://github.com/yarastqt/postcss-theme-fold' target='_blank'>postcss-theme-fold</a> плагина, пресеты можно собрать в виде CSS-файлов с необходимыми импортами:
+(1) Подробнее про формат смотрите [тут](https://amzn.github.io/style-dictionary/#/formats)
 
-```css
-@import '../_color/Theme_color_yandex-default.css';
-@import '../_size/Theme_size_default.css';
-@import '../_capacity/Theme_capacity_default.css';
-@import '../_space/Theme_space_default.css';
-@import '../_cosmetic/Theme_cosmetic_default.css';
+Подробнее, какие поля есть в конфиге инструмента, можно посмотреть тут — https://github.com/yarastqt/themekit#themekit-config-interface.
+
+4. Конфигурируем тему:
+
+В папку с конфигурацией вашей темы следует положить файлик `название_вашей_темы.theme.json`. Базовая конфигурация может выглядеть вот так:
+
+```json5
+{
+  "extends": "@yandex/ui/Theme/themes/default.theme.json", // наследуемся от default лего темы
+  "sources": ["./tokens/*.tokens.yml"]
+}
 ```
 
-**Набор стандартных пресетов**
+Подробнее, какие поля есть в конфиге темы, можно посмотреть тут — https://github.com/yarastqt/themekit#theme-config-interface.
 
-| Пресет             | color            | size             | capacity         | space            | cosmetic  |
-| ------------------ | ---------------- | ---------------- | ---------------- | ---------------- | --------- |
-| **default**        | `yandex-default` | `default`        | `default`        | `default`        | `default` |
-| **inverse**        | `yandex-inverse` | `default`        | `default`        | `default`        | `default` |
-| **brand**          | `yandex-brand`   | `default`        | `default`        | `default`        | `default` |
-| **legacy-default** | `yandex-default` | `legacy-default` | `legacy-default` | `legacy-default` | `default` |
-| **legacy-inverse** | `yandex-inverse` | `legacy-default` | `legacy-default` | `legacy-default` | `default` |
-| **legacy-brand**   | `yandex-brand`   | `legacy-default` | `legacy-default` | `legacy-default` | `default` |
+5. Пишем свои токены или токены переопределения:
+
+Поддерживается json и yml формат.
+
+```yml
+button:
+  size:
+    s:
+      fontSize:
+        value: 15px
+      lineHeight:
+        value: 40px
+      height:
+        value: 40px
+```
+
+6. Собираем темы:
+
+```bash
+themekit build
+```
+
+7. Подключаем собранные css-файлы
+Если вы используете whitepaper подход (у вас на странице несколько тем), тогда нужно собрать пресет:
+
+```ts
+import { Theme } from '@yandex/ui/Theme';
+import './color.css';
+import './root.css';
+
+export const theme: Theme = {
+    color: 'default',
+    root: 'default',
+};
+
+```
+
+Если на проекте одна тема, то достаточно в корне приложения подключить собранный css-файл
+
+```ts
+import './themes/default/root.css'
+```
+
+Документация для themekit — https://github.com/yarastqt/themekit
+
+Примеры с ипользованием themekit — https://github.com/yarastqt/themekit/tree/master/examples
+
+## Подддержка IE11
+
+Для поддержки тем в IE11 необходимо использовать [postcss-theme-fold](https://github.com/yarastqt/postcss-theme-fold) плагин.
 
 ## Смотрите также
 
-- [Как написать тему для компонентов Лего](https://www.notion.so/82b9ae967cb748a7977d87b34dc8b5c1)
+- [Дока themekit](https://github.com/yarastqt/themekit)
+- [Миграция на themekit](https://nda.ya.ru/t/C2_-83Nw3YasmY)
+- [Посмотреть видео](https://nda.ya.ru/t/vxP9SjNZ3Yasmc)
