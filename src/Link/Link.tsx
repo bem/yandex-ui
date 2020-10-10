@@ -107,13 +107,12 @@ export const Link: FC<ILinkProps> = ({
     view: _view,
     ...props
 }) => {
-    const className = cnLink(null, [props.className]);
     const Component = AsComponent || ((props.href ? 'a' : ('span' as any)) as ReactLinkElement);
-    let relationship = props.rel;
+    let rel = props.rel;
 
-    if (props.target === '_blank' && relationship !== undefined && relationship.indexOf('noopener') === -1) {
+    if (props.target === '_blank' && rel !== undefined && rel.indexOf('noopener') === -1) {
         // Пользовательский атрибут имеет больший приоритет.
-        relationship = `${relationship} noopener`;
+        rel = `${rel} noopener`;
     }
 
     // PERF: Не используем TSX, чтобы избежать лишнего клонирования props.
@@ -121,9 +120,9 @@ export const Link: FC<ILinkProps> = ({
         Component,
         Object.assign(props, {
             'aria-disabled': disabled,
-            className,
+            className: cnLink(null, [props.className]),
             ref: innerRef || controlRef,
-            rel: relationship,
+            rel,
             role,
             tabIndex: disabled ? -1 : props.tabIndex,
         }),
