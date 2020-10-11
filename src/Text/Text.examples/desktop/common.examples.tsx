@@ -14,7 +14,7 @@ export default {
     parameters,
 };
 
-const Unit: FC<Partial<TextProps> & { groupId?: string }> = ({
+export const Unit: FC<Partial<TextProps> & { groupId?: string }> = ({
     weight = 'regular',
     groupId,
     typography,
@@ -48,7 +48,7 @@ const Unit: FC<Partial<TextProps> & { groupId?: string }> = ({
     );
 };
 
-const Headline1 = (props: Partial<TextProps>) => (
+export const Headline1 = (props: Partial<TextProps>) => (
     <Unit
         as="h1"
         typography="display-xl"
@@ -58,7 +58,7 @@ const Headline1 = (props: Partial<TextProps>) => (
     />
 );
 
-const Headline2 = (props: Partial<TextProps>) => (
+export const Headline2 = (props: Partial<TextProps>) => (
     <Unit
         as="h2"
         typography="headline-xl"
@@ -68,7 +68,7 @@ const Headline2 = (props: Partial<TextProps>) => (
     />
 );
 
-const Headline3 = (props: Partial<TextProps>) => (
+export const Headline3 = (props: Partial<TextProps>) => (
     <Unit
         as="h3"
         typography="subheader-xl"
@@ -78,7 +78,7 @@ const Headline3 = (props: Partial<TextProps>) => (
     />
 );
 
-const Paragraph = ({ typography = 'body-long-xl', ...props }: Partial<TextProps>) => (
+export const Paragraph = ({ typography = 'body-long-xl', ...props }: Partial<TextProps>) => (
     <Unit
         as="p"
         typography={typography}
@@ -88,7 +88,7 @@ const Paragraph = ({ typography = 'body-long-xl', ...props }: Partial<TextProps>
     />
 );
 
-const Caption = (props: Partial<TextProps>) => (
+export const Caption = (props: Partial<TextProps>) => (
     <Unit
         as="p"
         typography="caption-l"
@@ -98,7 +98,7 @@ const Caption = (props: Partial<TextProps>) => (
     />
 );
 
-const Overline = (props: Partial<TextProps>) => (
+export const Overline = (props: Partial<TextProps>) => (
     <Unit
         as="p"
         typography="overline-s"

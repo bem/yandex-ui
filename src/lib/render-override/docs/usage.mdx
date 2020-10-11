@@ -1,0 +1,97 @@
+---
+id: renderoverride
+---
+## Использование
+
+В зависимости от типа компонента используйте подходящий вариант:
+
+**functional component**
+
+```tsx
+import React from 'react'
+import { useRenderOverride } from '@yandex-lego/components/lib/render-override'
+
+const ElementOriginal = ({ children }) => <div>{children}</div>
+
+const MyComponent = ({ renderElement }) => {
+  const Element = useRenderOverride(ElementOriginal, renderElement)
+
+  return (
+    <>
+      <Element />
+    </>
+  )
+}
+```
+
+**classes component (single component)**
+
+```tsx
+import React from 'react'
+import { RenderOverrideProvider } from '@yandex-lego/components/lib/render-override'
+
+const ElementOriginal = ({ children }) => <div>{children}</div>
+
+const MyComponent = ({ renderElement }) => (
+  <>
+    <RenderOverrideProvider component={ElementOriginal} render={renderElement}>
+      {(Element) => <Element />}
+    </RenderOverrideProvider>
+  </>
+)
+```
+
+**classes component (multi components)**
+
+```tsx
+import React from 'react'
+import { MultiRenderOverrideProvider } from '@yandex-lego/components/lib/render-override'
+
+const ElementOriginal1 = ({ children }) => <div>{children}</div>
+const ElementOriginal2 = ({ children }) => <div>{children}</div>
+
+const MyComponent = ({ renderElement1, renderElement2 }) => (
+  <>
+    <MultiRenderOverrideProvider
+      components={[
+        [ElementOriginal2, renderElement1],
+        [ElementOriginal2, renderElement2],
+      ]}
+    >
+      {(Element1, Element2) => (
+        <>
+          <Element1 />
+          <Element2 />
+        </>
+      )}
+    </MultiRenderOverrideProvider>
+  </>
+)
+```
+
+**Использование**
+
+```tsx
+import React, { useCallback } from 'react'
+
+const App = () => {
+  // Для лучшей производительности рекомендуется использовать мемоизацию.
+  // prettier-ignore
+  const onRenderElement = useCallback((props) => (
+    <OverridenElement {...props} />
+  ), [])
+
+  return (
+    <>
+      {/* Полное переопределение элемента. */}
+      <MyComponent renderElement={onRenderElement} />
+      {/* Частичное переопределение элемента. */}
+      <MyComponent
+        renderElement={(props, Element) => (
+          <Element {...props} children="overriden children" />
+        )}
+      />
+    </>
+  )
+}
+```

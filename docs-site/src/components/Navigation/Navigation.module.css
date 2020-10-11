@@ -1,0 +1,60 @@
+.Navigation {
+    position: sticky;
+    top: 80px;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 144px;
+    margin: 32px 0;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 12px;
+
+    border-left: 1px solid #ebecf0;
+}
+
+.Link {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    box-sizing: border-box;
+    margin-top: 16px;
+
+    font-family: -apple-system, system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.2;
+    text-decoration: none;
+    text-transform: capitalize;
+
+    color: #6b778c;
+    outline: none;
+}
+
+.ActiveLink {
+    color: #067aff;
+}
+
+.ActiveLink::before {
+    position: absolute;
+    left: -13px;
+
+    width: 1px;
+    height: calc(100% + 8px);
+
+    content: '';
+
+    background-color: #067aff;
+}
+
+.Headline {
+    font-family: -apple-system, system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: uppercase;
+
+    color: #172b4d;
+}

@@ -35,6 +35,7 @@
     "react-dom": "^16.8.4"
   },
   "dependencies": {
+    "@yandex-int/static-uploader": "0.11.1",
     "react-debounce-input": "^3.2.2",
     "rebound": "0.1.0",
     "tslib": "^1.9.3"

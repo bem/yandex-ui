@@ -1,18 +1,11 @@
 import React from 'react';
-import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
+import { select, boolean, text } from '@storybook/addon-knobs';
 
 import { Button } from '../../Button.bundle/desktop';
 import { Icon } from '../../../Icon/Icon.bundle/desktop';
 
 import { cnTheme } from '../../../Theme';
 import { presets, presetsKeys } from '../../../Theme/presets';
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
-
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: [withKnobs, ...createDecorators({ scope: 'desktop' })],
-    parameters,
-};
 
 export const Playground = () => {
     const preset = select('theme-preset', presetsKeys, 'default');

@@ -1,0 +1,25 @@
+.RollUpButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    height: 42px;
+    padding: 0 16px;
+
+    cursor: pointer;
+
+    border: none;
+    outline: none;
+    background: none;
+
+    transition: opacity 100ms ease-in-out;
+    transform: translateZ(0);
+}
+
+.RollUpButton:hover {
+    opacity: 0.5;
+}
+
+.Svg {
+    vertical-align: middle;
+}

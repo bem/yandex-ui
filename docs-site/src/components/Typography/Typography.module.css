@@ -1,0 +1,166 @@
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+    font-family: -apple-system, system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
+
+.h1 {
+    margin-bottom: 18px;
+
+    font-size: 28px;
+    line-height: 1.4;
+}
+
+.h2 {
+    margin: 36px 0 18px;
+
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.h3 {
+    margin: 52px 0 6px;
+
+    font-size: 18px;
+}
+
+.h4,
+.h5 {
+    margin-top: 36px;
+
+    font-size: 15px;
+    line-height: 1;
+}
+
+.anchor {
+    float: left;
+
+    margin-left: -36px;
+    padding: 0 10px;
+
+    font-family: -apple-system, system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+    opacity: 0;
+
+    transition: opacity 100ms ease-in-out;
+}
+
+.anchor::before {
+    display: inline-block;
+
+    width: 16px;
+    height: 16px;
+
+    content: '';
+    vertical-align: middle;
+
+    opacity: 0.5;
+    /* stylelint-disable-next-line */
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.075 8.449a1 1 0 0 1-1.63 1.158 4 4 0 0 1 .434-5.142L8.886 1.46a4 4 0 0 1 5.657 5.657l-.707.707A1 1 0 0 1 12.42 6.41l.707-.707A2 2 0 1 0 10.3 2.874L7.294 5.88a2 2 0 0 0-.22 2.57zm1.848-.901a1 1 0 1 1 1.627-1.164 4 4 0 0 1-.428 5.152l-3.005 3.005A4 4 0 1 1 1.46 8.886l.707-.707a1 1 0 1 1 1.414 1.414l-.707.707a2 2 0 1 0 2.829 2.828l3.005-3.005a2 2 0 0 0 .215-2.574z' fill='%23000000'%3E%3C/path%3E%3C/svg%3E");
+
+    transition: opacity 100ms ease-in-out;
+}
+
+.anchor:focus,
+.anchor:focus::before,
+.anchor:hover::before {
+    opacity: 1;
+}
+
+.p,
+.blockquote,
+.ul,
+.ol {
+    margin: 9px 0;
+
+    font-family: -apple-system, system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.ul,
+.ol {
+    padding-left: 32px;
+}
+
+.blockquote {
+    box-sizing: border-box;
+    margin-right: 0;
+    margin-left: 0;
+    padding: 16px;
+
+    border-radius: 3px;
+    background: #fffae7;
+}
+
+.blockquote > :last-child {
+    margin-bottom: 0;
+}
+
+.blockquote > :first-of-type {
+    margin-top: 0;
+}
+
+code {
+    display: inline;
+
+    padding: 2px 4px;
+
+    font-family: -apple-system, system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: Menlo, monospace;
+    font-size: 90%;
+
+    border-radius: 3px;
+    background-color: #f1f1f1;
+}
+
+.a {
+    font-family: -apple-system, system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-decoration: underline;
+
+    color: #767676;
+
+    transition: color 100ms ease-in-out;
+}
+
+.a:hover {
+    color: var(--color-link-external-hover);
+}
+
+.a:focus {
+    outline: 2px solid var(--color-typo-primary);
+}
+
+.table {
+    margin: 18px 0;
+
+    border-spacing: 0;
+    border-collapse: collapse;
+
+    font-family: -apple-system, system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+    border: 1px solid #f5f5f5;
+}
+
+.table td,
+.table th {
+    padding: 6px;
+
+    font-family: -apple-system, system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-align: left;
+    vertical-align: top;
+
+    border: 1px solid #f5f5f5;
+}
+
+.table th {
+    border-bottom-width: 2px;
+}
+
+.img {
+    max-width: 100%;
+    margin: 9px 0;
+}

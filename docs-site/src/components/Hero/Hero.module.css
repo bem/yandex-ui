@@ -1,0 +1,46 @@
+.Hero {
+    grid-area: hero;
+
+    min-height: 224px;
+    padding-left: 80px;
+
+    border-bottom: 1px solid #f7f8f9;
+}
+
+.Inner {
+    max-width: 640px;
+    padding-top: 48px;
+}
+
+.Title {
+    margin: 0;
+
+    font-family: -apple-system, system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 36px;
+    line-height: 1.2;
+
+    color: #172b4d;
+}
+
+.Description {
+    margin: 12px 0 0;
+
+    font-family: -apple-system, system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+
+    color: #5e6c84;
+}
+
+.Link {
+    display: inline-flex;
+
+    margin-top: 12px;
+    margin-right: 8px;
+
+    font-family: -apple-system, system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+
+    color: #067aff;
+}

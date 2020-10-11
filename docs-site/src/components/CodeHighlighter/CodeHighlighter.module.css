@@ -1,0 +1,23 @@
+.CodeHighlighter {
+    position: relative;
+}
+
+.Pre {
+    overflow: scroll;
+
+    max-height: 360px;
+    margin: 0;
+    padding: 12px 20px;
+
+    font-family: Menlo, monospace;
+    font-size: 14px;
+    white-space: pre;
+    word-spacing: normal;
+    word-wrap: normal;
+    word-break: normal;
+    tab-size: 4;
+
+    color: #111;
+    border-radius: 3px;
+    overflow-wrap: normal;
+}

@@ -1,0 +1,18 @@
+---
+id: button
+---
+
+import { Button } from '../Button.bundle/desktop'
+
+<Sandbox
+    displayName="Button"
+    component={Button}
+    knobs={{
+        view: [['default', 'action', 'link'], 'default'],
+        size: [['s', 'm', 'l'], 'm'],
+        children: 'Click me',
+        checked: false,
+        disabled: false,
+        progress: false,
+    }}
+/>

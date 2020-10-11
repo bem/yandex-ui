@@ -1,0 +1,11 @@
+.Footer {
+    grid-area: footer;
+
+    padding: 24px 80px;
+
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    line-height: 1.2;
+
+    border-top: 1px solid #f7f8f9;
+}

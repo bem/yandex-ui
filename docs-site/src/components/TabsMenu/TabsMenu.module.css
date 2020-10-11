@@ -1,0 +1,35 @@
+.TabsMenu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    box-sizing: border-box;
+    height: 34px;
+
+    transform: translateY(-100%);
+}
+
+.Link {
+    display: inline-flex;
+    align-items: center;
+
+    box-sizing: border-box;
+    height: 34px;
+    margin-right: 28px;
+
+    font-family: -apple-system, system-ui, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    text-decoration: none;
+    text-transform: capitalize;
+
+    color: #464b52;
+    border-bottom: 2px solid transparent;
+    outline: none;
+}
+
+.ActiveLink {
+    color: #067aff;
+    border-color: currentColor;
+}
