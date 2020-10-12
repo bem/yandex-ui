@@ -33,7 +33,7 @@ import {
 const Tumbler = compose(withSizeM, withViewDefault)(TumblerDesktop)
 
 const App = () => {
-  const [checked, setChecked] = useState('')
+  const [checked, setChecked] = useState(false)
 
   return (
     <Tumbler
@@ -54,7 +54,7 @@ import React, { useState } from 'react'
 import { Tumbler } from '@yandex/ui/Tumbler/desktop/bundle'
 
 const App = () => {
-  const [checked, setChecked] = useState('')
+  const [checked, setChecked] = useState(false)
 
   return (
     <Tumbler
