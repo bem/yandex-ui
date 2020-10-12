@@ -1,4 +1,4 @@
-.Textarea-Clear {
+.Textarea .Textarea-Clear {
     position: absolute;
     z-index: 3; /* рисуем поверх Box и Control */
     right: 0;
