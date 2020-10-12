@@ -8,7 +8,7 @@
 }
 
 .Tumbler_view_default .Tumbler-Button {
-    background-color: var(--tumbler-view-default-button-fill-color-base);
+    background-color: var(--tumbler-view-default-fill-color-base);
 
     transition: background-color 100ms linear;
 }
@@ -17,7 +17,7 @@
     top: var(--tumbler-button-space);
     left: var(--tumbler-button-space);
 
-    background-color: var(--tumbler-view-default-fill-color-base);
+    background-color: var(--tumbler-view-default-button-fill-color-base);
 
     transition: 100ms ease-out;
     transition-property: left, transform, margin, width;
@@ -89,12 +89,12 @@
 
 .Tumbler_view_default[aria-disabled='true'][class] .Tumbler-Button {
     opacity: var(--tumbler-button-opacity-disabled);
-    background-color: var(--tumbler-view-default-button-fill-color-disabled);
+    background-color: var(--tumbler-view-default-fill-color-disabled);
 }
 
 .Tumbler_view_default[aria-disabled='true'][class] .Tumbler-Button[aria-pressed='true'] {
     opacity: var(--tumbler-button-opacity-disabled);
-    background-color: var(--tumbler-view-default-button-fill-color-checked-disabled);
+    background-color: var(--tumbler-view-default-fill-color-checked-disabled);
 }
 
 /* press */

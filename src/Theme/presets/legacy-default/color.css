@@ -274,13 +274,13 @@
     --tooltip-view-default-typo-color-state-warning: var(--color-control-typo-faint);
     --tooltip-view-default-typo-color-state-alert: var(--color-control-typo-faint);
     --tumbler-view-default-outline-color: var(--color-control-bg-border-prism);
-    --tumbler-view-default-button-fill-color-base: var(--color-control-bg-default);
-    --tumbler-view-default-button-fill-color-disabled: var(--color-control-bg-default-disable);
-    --tumbler-view-default-button-fill-color-hovered: var(--color-control-bg-default-hover);
-    --tumbler-view-default-button-fill-color-checked-disabled: var(--color-control-bg-default-disable);
-    --tumbler-view-default-button-fill-color-checked-hovered: var(--color-control-bg-action-hover);
-    --tumbler-view-default-fill-color-base: var(--color-control-bg-faint);
+    --tumbler-view-default-fill-color-base: var(--color-control-bg-default);
+    --tumbler-view-default-fill-color-disabled: var(--color-control-bg-default-disable);
+    --tumbler-view-default-fill-color-hovered: var(--color-control-bg-default-hover);
     --tumbler-view-default-fill-color-checked-base: var(--color-control-bg-action);
+    --tumbler-view-default-fill-color-checked-disabled: var(--color-control-bg-default-disable);
+    --tumbler-view-default-fill-color-checked-hovered: var(--color-control-bg-action-hover);
+    --tumbler-view-default-button-fill-color-base: var(--color-control-bg-faint);
     --tumbler-view-default-typo-color-base: var(--color-control-typo-primary);
     --tumbler-view-default-typo-color-disabled: var(--color-control-typo-disable);
 }

@@ -116,26 +116,26 @@ tumbler:
     outlineColor:
       value: "{color.control.borderColor.prism.value}"
 
-    button:
-      fillColor:
-        base:
-          value: "{color.control.type.default.fillColor.base.value}"
-        disabled:
-          value: "{color.control.type.default.fillColor.disable.value}"
-        hovered:
-          value: "{color.control.type.default.fillColor.hover.value}"
-        checked:
-          disabled:
-            value: "{color.control.type.default.fillColor.disable.value}"
-          hovered:
-            value: "{color.control.type.action.fillColor.hover.value}"
-
     fillColor:
       base:
-        value: "{color.control.type.faint.fillColor.base.value}"
+        value: "{color.control.type.default.fillColor.base.value}"
+      disabled:
+        value: "{color.control.type.default.fillColor.disable.value}"
+      hovered:
+        value: "{color.control.type.default.fillColor.hover.value}"
       checked:
         base:
           value: "{color.control.type.action.fillColor.base.value}"
+        disabled:
+          value: "{color.control.type.default.fillColor.disable.value}"
+        hovered:
+          value: "{color.control.type.action.fillColor.hover.value}"
+
+    button:
+      fillColor:
+        base:
+          value: "{color.control.type.faint.fillColor.base.value}"
+
     typoColor:
       base:
         value: "{color.control.typo.primary.value}"

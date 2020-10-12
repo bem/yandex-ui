@@ -3,6 +3,6 @@
 
     display: inline-flex;
 
-    font-family: var(--radioButton-fontFamily);
+    font-family: var(--radio-button-font-family);
     user-select: none;
 }
