@@ -1,0 +1,90 @@
+slider:
+  # Slider
+  fontFamily:
+    value: "{typography.controls.fontFamily.value}"
+    comment: "Шрифт слайдера"
+
+  viewDefault:
+    # Slider
+    typoColor:
+      base:
+        value: "{color.control.typo.primary.value}"
+        comment: "Цвет типографики внутри слайдера"
+
+    height:
+      value: 32px
+      comment: "Высота слайдера, без учета подписей"
+
+    # Slider-Track
+    track:
+      borderRadius:
+        value: 2px
+        comment: "Внешний радиус скругления трека"
+
+      height:
+        value: 2px
+        comment: "Высота трека"
+
+      fillColor:
+        base:
+          value: rgba(0, 0, 0, 0.15)
+          comment: "Цвет заливки трека в обычном состоянии"
+        hovered:
+          value: rgba(0, 0, 0, 0.25)
+          comment: "Цвет заливки трека в состоянии наведения"
+
+    # Slider-Range
+    range:
+      fillColor:
+        base:
+          value: "{color.control.type.action.fillColor.base.value}"
+          comment: "Цвет заливки диапазона в обычном состоянии"
+        hovered:
+          value: "{color.control.type.action.fillColor.hover.value}"
+          comment: "Цвет заливки диапазона в состоянии наведения"
+        disabled:
+          value: rgba(0, 0, 0, 0.15)
+          comment: "Цвет заливки диапазона в неактивном состоянии"
+
+    # Slider-Thumb
+    thumb:
+      width:
+        value: 16px
+        comment: "Ширина бегунка"
+      height:
+        value: 16px
+        comment: "Высота бегунка"
+
+      borderRadius:
+        value: 50%
+        comment: "Внешний радиус скругления бегунка"
+
+      fillColor:
+        base:
+          value: "{color.control.type.raised.fillColor.base.value}"
+          comment: "Цвет заливки бегунка в обычном состоянии"
+        disabled:
+          value: "#000"
+          comment: "Цвет заливки бегунка в неактивном состоянии"
+
+    # Slider-Tick
+    tick:
+      fillColor:
+        base:
+          value: "#fff"
+          comment: "Цвет заливки метки в обычном состоянии"
+
+      width:
+        value: 2px
+        comment: "Ширина метки"
+      height:
+        value: 2px
+        comment: "Высота метки"
+
+    tickLabel:
+      fontSize:
+        value: 13px
+        comment: "Размер шрифта подписи метки"
+      lineHeight:
+        value: 16px
+        comment: "Высота шрифта подписи метки"

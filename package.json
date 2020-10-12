@@ -37,6 +37,7 @@
   "dependencies": {
     "@yandex-int/static-uploader": "0.11.1",
     "react-debounce-input": "^3.2.2",
+    "react-range": "1.8.0",
     "rebound": "0.1.0",
     "tslib": "^1.9.3"
   },

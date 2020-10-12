@@ -1,0 +1,13 @@
+.Slider-Container {
+    position: relative;
+
+    display: flex;
+    flex: 1;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.Slider_disabled .Slider-Container {
+    cursor: default;
+}

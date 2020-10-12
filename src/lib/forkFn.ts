@@ -9,8 +9,8 @@ type Fn = (...args: any[]) => any;
 export const forkFn = (originFn: Fn | undefined, forkedFn: Fn): Fn => {
     return (...args: any[]) => {
         if (originFn !== undefined) {
-            originFn(args);
+            originFn(...args);
         }
-        forkedFn(args);
+        forkedFn(...args);
     };
 };

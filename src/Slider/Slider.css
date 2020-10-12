@@ -1,0 +1,14 @@
+@import './Container/Slider-Container.css';
+@import './Range/Slider-Range.css';
+@import './Track/Slider-Track.css';
+@import './Ticks/Slider-Ticks.css';
+@import './Tick/Slider-Tick.css';
+
+.Slider {
+    display: inline-flex;
+    align-items: center;
+
+    width: 100%;
+
+    font-family: var(--slider-font-family);
+}

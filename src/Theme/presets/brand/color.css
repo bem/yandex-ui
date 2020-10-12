@@ -207,6 +207,15 @@
     --radiobox-view-outline-border-color: rgba(0, 0, 0, 0.1);
     --radiobox-view-outline-fill-color-base: transparent;
     --radiobox-view-outline-fill-color-hovered: #d9d9d9;
+    --slider-view-default-typo-color-base: var(--color-control-typo-primary); /* Цвет типографики внутри слайдера */
+    --slider-view-default-track-fill-color-base: rgba(0, 0, 0, 0.15); /* Цвет заливки трека в обычном состоянии */
+    --slider-view-default-track-fill-color-hovered: rgba(0, 0, 0, 0.25); /* Цвет заливки трека в состоянии наведения */
+    --slider-view-default-range-fill-color-base: var(--color-control-bg-action); /* Цвет заливки диапазона в обычном состоянии */
+    --slider-view-default-range-fill-color-hovered: var(--color-control-bg-action-hover); /* Цвет заливки диапазона в состоянии наведения */
+    --slider-view-default-range-fill-color-disabled: rgba(0, 0, 0, 0.15); /* Цвет заливки диапазона в неактивном состоянии */
+    --slider-view-default-thumb-fill-color-base: var(--color-control-bg-raised); /* Цвет заливки бегунка в обычном состоянии */
+    --slider-view-default-thumb-fill-color-disabled: #000; /* Цвет заливки бегунка в неактивном состоянии */
+    --slider-view-default-tick-fill-color-base: #fff; /* Цвет заливки метки в обычном состоянии */
     --spin-view-default-border-color: var(--color-control-bg-progress);
     --tabs-menu-view-default-outline-color: var(--color-control-bg-border-prism);
     --tabs-menu-view-default-active-line-fill-color-active: var(--color-typo-primary);

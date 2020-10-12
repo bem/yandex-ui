@@ -1,0 +1,14 @@
+.Slider-Ticks {
+    position: absolute;
+    top: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 100%;
+}
+
+.Slider_reverse .Slider-Ticks {
+    flex-direction: row-reverse;
+}

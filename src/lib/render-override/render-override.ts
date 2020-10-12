@@ -2,7 +2,7 @@ import React, { FC, ComponentType, ReactElement, useRef, createElement, useEffec
 
 import { createGlobalState } from '../createGlobalState';
 
-export type RenderOverride<T = any, U = any> = (props: T, component: React.ComponentType<U>) => ReactElement;
+export type RenderOverride<T = any, U = any> = (props: T, component: React.ComponentType<U>) => ReactElement | null;
 
 /**
  * Реакт-хук для создания компонента с возможностью переопределения.

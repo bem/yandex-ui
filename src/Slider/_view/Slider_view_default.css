@@ -1,0 +1,120 @@
+/* Slider */
+.Slider_view_default {
+    color: var(--slider-view-default-typo-color-base);
+}
+
+.Slider_view_default.Slider_disabled {
+    opacity: 0.5;
+}
+
+.Slider_view_default.Slider_withTickValues {
+    /* Добавляем отступ снизу равный высоте TickLabel. */
+    padding-bottom: var(--slider-view-default-tick-label-line-height);
+}
+
+/* Slider-Container */
+.Slider_view_default .Slider-Container {
+    /* Добавляем отступы по краям равные ширине Thumb. */
+    height: var(--slider-view-default-height);
+    padding: 0 var(--slider-view-default-thumb-width);
+}
+
+/* Slider-Track */
+.Slider_view_default .Slider-Track {
+    height: var(--slider-view-default-track-height);
+
+    border-radius: var(--slider-view-default-track-border-radius);
+    background-color: var(--slider-view-default-track-fill-color-base);
+
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.Slider_view_default:not(.Slider_disabled) .Slider-Container:hover .Slider-Track {
+    background-color: var(--slider-view-default-track-fill-color-hovered);
+}
+
+/* Slider-Range */
+.Slider_view_default .Slider-Range {
+    border-radius: inherit;
+    background-color: var(--slider-view-default-range-fill-color-base);
+
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.Slider_view_default.Slider_disabled .Slider-Range {
+    background-color: var(--slider-view-default-range-fill-color-disabled);
+}
+
+.Slider_view_default:not(.Slider_disabled) .Slider-Container:hover .Slider-Range {
+    background-color: var(--slider-view-default-range-fill-color-hovered);
+}
+
+/* Slider-Thumb */
+.Slider_view_default .Slider-Thumb {
+    width: var(--slider-view-default-thumb-width);
+    height: var(--slider-view-default-thumb-height);
+
+    border-radius: var(--slider-view-default-thumb-border-radius);
+    background-color: var(--slider-view-default-thumb-fill-color-base);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 0 1px rgba(0, 0, 0, 0.05), 0 4px 6px rgba(0, 0, 0, 0.05);
+
+    transition: box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms ease-out;
+}
+
+.Slider_view_default .Slider-Thumb::before {
+    /* Задаем область нажатия равной высоте слайдера */
+    width: var(--slider-view-default-height);
+    height: var(--slider-view-default-height);
+}
+
+.Slider_view_default.Slider_disabled .Slider-Thumb {
+    background-color: var(--slider-view-default-thumb-fill-color-disabled);
+    box-shadow: none;
+}
+
+.Slider_view_default:not(.Slider_disabled) .Slider-Thumb:hover {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 0 1px rgba(0, 0, 0, 0.05), 0 4px 6px rgba(0, 0, 0, 0.05), 0 0 0 4px rgba(255, 204, 0, 0.65);
+}
+
+/* TODO: Возможно стоит перенести на desktop. */
+.utilityfocus .Slider_view_default .Slider-Thumb:focus {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 0 1px rgba(0, 0, 0, 0.05), 0 4px 6px rgba(0, 0, 0, 0.05), 0 0 0 4px rgba(255, 204, 0, 0.3);
+}
+
+.Slider_view_default .Slider-Thumb_pressed {
+    transform: scale(1.25);
+}
+
+.Slider_view_default .Slider-Thumb.Slider-Thumb_pressed[class] {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 0 1px rgba(0, 0, 0, 0.05), 0 4px 6px rgba(0, 0, 0, 0.05), 0 0 0 6px rgba(255, 204, 0, 0.3);
+}
+
+/* Slider-Ticks */
+.Slider_view_default .Slider-Ticks {
+    /* Добавляем отступы по краям равные ширине Thumb. */
+    right: var(--slider-view-default-thumb-width);
+    left: var(--slider-view-default-thumb-width);
+}
+
+/* Slider-Tick */
+.Slider_view_default .Slider-Tick {
+    width: var(--slider-view-default-tick-width);
+    height: var(--slider-view-default-tick-height);
+}
+
+.Slider_view_default .Slider-Tick:first-child,
+.Slider_view_default .Slider-Tick:last-child {
+    background: none;
+}
+
+.Slider_view_default .Slider-Tick_visible {
+    background-color: var(--slider-view-default-tick-fill-color-base);
+}
+
+/* Slider-TickLabel */
+.Slider_view_default .Slider-TickLabel {
+    bottom: calc(var(--slider-view-default-tick-label-line-height) * -1);
+
+    font-size: var(--slider-view-default-tick-label-font-size);
+    line-height: var(--slider-view-default-tick-label-line-height);
+}

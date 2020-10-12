@@ -187,6 +187,17 @@
     --radiobox-size-m-after-size: 10px;
     --radiobox-disabled-opacity: 0.6;
     --radiobox-disable-opacity: 0.4;
+    --slider-font-family: var(--control-font-family); /* Шрифт слайдера */
+    --slider-view-default-height: 32px; /* Высота слайдера, без учета подписей */
+    --slider-view-default-track-border-radius: 2px; /* Внешний радиус скругления трека */
+    --slider-view-default-track-height: 2px; /* Высота трека */
+    --slider-view-default-thumb-width: 16px; /* Ширина бегунка */
+    --slider-view-default-thumb-height: 16px; /* Высота бегунка */
+    --slider-view-default-thumb-border-radius: 50%; /* Внешний радиус скругления бегунка */
+    --slider-view-default-tick-width: 2px; /* Ширина метки */
+    --slider-view-default-tick-height: 2px; /* Высота метки */
+    --slider-view-default-tick-label-font-size: 13px; /* Размер шрифта подписи метки */
+    --slider-view-default-tick-label-line-height: 16px; /* Высота шрифта подписи метки */
     --spin-size-xxs: 16px;
     --spin-size-xs: 24px;
     --spin-size-s: 28px;

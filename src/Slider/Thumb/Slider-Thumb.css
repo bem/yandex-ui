@@ -1,0 +1,39 @@
+.Slider-Handle {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+}
+
+.Slider-Thumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0;
+
+    font-family: inherit;
+    cursor: grab;
+    user-select: none;
+
+    color: inherit;
+    border: none;
+    outline: 0;
+    background: none;
+    -moz-user-focus: ignore;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    touch-action: none;
+}
+
+.Slider-Thumb::before {
+    position: absolute;
+
+    content: '';
+}
+
+.Slider-Thumb_pressed {
+    cursor: grabbing;
+}
+
+.Slider_disabled .Slider-Thumb {
+    cursor: default;
+}

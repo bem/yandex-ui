@@ -1,0 +1,26 @@
+.Grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.Grid-Cell {
+    height: 160px;
+    margin: 0 0 -1px -1px;
+    padding: 16px;
+
+    border: 1px solid var(--color-bg-border);
+}
+
+.Grid-CellHeader {
+    display: flex;
+
+    height: 40px;
+}
+
+.Grid-CellHeader .Grid-CellAction {
+    margin-left: auto;
+}
+
+.Grid-CellContent {
+    width: 100%;
+}
