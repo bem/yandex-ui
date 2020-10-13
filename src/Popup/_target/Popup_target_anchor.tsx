@@ -84,6 +84,11 @@ export interface IPopupTargetAnchorProps {
     directions?: Direction[];
 
     /**
+     * Скрывать попап, когда его anchor находится за пределами родителя с overflow.
+     */
+    hideWithAnchor?: boolean;
+
+    /**
      * Отступ попапа относительно основного направления
      *
      * @default 0
@@ -292,13 +297,10 @@ export const withTargetAnchor = withBemMod<IPopupTargetAnchorProps, IPopupProps>
                         this.tailRef.current.style.left = `${tailPosition.left}px`;
                     }
 
-                    const isAnchorVisible = this.calcIsAnchorVisible();
+                    const isAnchorVisible = this.props.hideWithAnchor ? this.calcIsAnchorVisible() : true;
 
-                    if (this.state.isAnchorVisible !== isAnchorVisible) {
-                        this.setState({ isAnchorVisible });
-                        if (this.popupRef.current !== null) {
-                            this.popupRef.current.style.display = this.state.isAnchorVisible ? '' : 'none';
-                        }
+                    if (this.popupRef.current !== null) {
+                        this.popupRef.current.style.display = isAnchorVisible ? '' : 'none';
                     }
                 });
             };
@@ -688,6 +690,7 @@ export const withTargetAnchor = withBemMod<IPopupTargetAnchorProps, IPopupProps>
                     const parent = this.anchorScrollParents[i];
                     const parentOffsets = parent.getBoundingClientRect();
                     const parentTopOffset = Math.floor(parentOffsets.top);
+                    const parentHeight = Math.floor(parentOffsets.height);
 
                     const anchorDOMNode = this.props.anchor && this.props.anchor.current;
 
@@ -695,21 +698,28 @@ export const withTargetAnchor = withBemMod<IPopupTargetAnchorProps, IPopupProps>
                         return false;
                     }
 
-                    const { left: anchorLeft, top: anchorTop } = anchorDOMNode.getBoundingClientRect();
-                    const vertBorder = Math.floor(checkMainDirection(this.state.direction, 'top')
-                        ? anchorTop
-                        : anchorTop + anchorDOMNode.offsetHeight);
+                    const anchorOffsets = anchorDOMNode.getBoundingClientRect();
+                    const anchorTopOffset = Math.floor(anchorOffsets.top);
+                    const anchorHeight = Math.floor(anchorOffsets.height);
 
-                    if (vertBorder < parentTopOffset || parentTopOffset + parent.offsetHeight < vertBorder) {
+                    const vertBorder = Math.floor(checkMainDirection(this.state.direction, 'top')
+                        ? anchorTopOffset
+                        : anchorTopOffset + anchorHeight);
+
+                    if (vertBorder < parentTopOffset || parentTopOffset + parentHeight < vertBorder) {
                         return false;
                     }
 
                     const parentLeftOffset = Math.floor(parentOffsets.left);
-                    const horizBorder = Math.floor(checkMainDirection(this.state.direction, 'left')
-                        ? anchorLeft
-                        : anchorLeft + anchorDOMNode.offsetWidth);
+                    const parentWidth = Math.floor(parentOffsets.width);
+                    const anchorLeftOffset = Math.floor(anchorOffsets.left);
+                    const anchorWidth = Math.floor(anchorOffsets.width);
 
-                    if (!(horizBorder >= parentLeftOffset && parentLeftOffset + parent.offsetWidth >= horizBorder)) {
+                    const horizBorder = Math.floor(checkMainDirection(this.state.direction, 'left')
+                        ? anchorLeftOffset
+                        : anchorLeftOffset + anchorWidth);
+
+                    if (!(horizBorder >= parentLeftOffset && parentLeftOffset + parentWidth >= horizBorder)) {
                         return false;
                     }
                 }

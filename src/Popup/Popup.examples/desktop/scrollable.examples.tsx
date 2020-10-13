@@ -38,6 +38,7 @@ export const Scrollable = () => {
                     </div>
                     <Popup
                         hasTail
+                        hideWithAnchor
                         target="anchor"
                         anchor={anchorRef}
                         scope={scopeRef}
