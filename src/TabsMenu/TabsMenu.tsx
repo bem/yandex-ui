@@ -141,7 +141,7 @@ export const TabsMenu: FC<ITabsMenuProps> = ({
                     innerRef={tabsRefs[index]}
                     first={index === 0}
                     disabled={disabled}
-                    onClick={disabled ? undefined : (event) => {
+                    onClick={disabled || (!onChange && !tabProps.onClick) ? undefined : (event) => {
                         if (tabProps.onClick !== undefined) {
                             tabProps.onClick(event);
                         }
