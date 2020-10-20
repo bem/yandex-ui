@@ -44,7 +44,7 @@ export const withViewMaterial = withBemMod<TextinputViewMaterial, ITextinputProp
                 state,
             } = props;
             const [value, setValue] = useState(defaultValue);
-            const floated = Boolean(value) || focused;
+            const floated = Boolean(props.value) || Boolean(value) || focused;
             const labeled = Boolean(label);
 
             return (
