@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect, useCallback, createRef, useMemo } f
 import { withBemMod } from '@bem-react/core';
 
 import { Select } from '../../Select/Select.bundle/desktop';
-import { useLayoutEffect } from '../../useLayoutEffect';
+import { useIsomorphicLayoutEffect } from '../../useIsomorphicLayoutEffect';
 import { cnTabsMenu, ITabsMenuProps } from '../TabsMenu';
 import { TabsMenuTab } from '../Tab/TabsMenu-Tab';
 import { ITabsMenuSizeSProps } from '../_size/TabsMenu_size_s';
@@ -92,7 +92,7 @@ export const withAdaptive =
                 });
             }, [tabsMenuParams, staticMoreText, innerRef]);
 
-            useLayoutEffect(() => {
+            useIsomorphicLayoutEffect(() => {
                 const moreTabWidth =
                     calculateItemWidth(moreRef, true) || (tabsMenuParams && tabsMenuParams.moreTabWidth) || 0;
                 setTabsMenuParams({
