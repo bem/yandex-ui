@@ -2,7 +2,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 
 import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
 
-export * from './view.examples';
+export * from './view.example';
 export * from './pin.examples';
 export * from './size.examples';
 export * from './theme.examples';

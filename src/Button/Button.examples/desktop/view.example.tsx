@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { Button } from '../../Button.bundle/desktop';
+import { Button } from '@yandex-lego/components/Button/desktop/bundle';
 
 export const View = () => (
     <>
@@ -24,7 +23,3 @@ export const View = () => (
         </Button>
     </>
 );
-
-View.story = {
-    name: 'view',
-};
