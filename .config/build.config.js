@@ -20,6 +20,11 @@ module.exports = {
         // и добавляет package.json для каждого компонента.
         useTypeScriptPlugin({
             configPath: './tsconfig.prod.json',
+            onCreateSideEffects(path) {
+                if (path.includes('pointerfocus/index.js')) {
+                    return ['*.js'];
+                }
+            },
         }),
 
         useCssPlugin({
