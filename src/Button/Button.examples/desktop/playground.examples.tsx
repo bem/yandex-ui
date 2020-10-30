@@ -39,21 +39,21 @@ export const Playground = () => {
                 disabled={disabled}
                 checked={checked}
                 children={icon ? null : children}
-                // @ts-ignore TODO: Испраить тип
+                // @ts-ignore TODO: Исправить тип
                 icon={
                     icon &&
                     ((className: string) => (
                         <Icon size={size} type={iconType} direction={direction} className={className} />
                     ))
                 }
-                // @ts-ignore TODO: Испраить тип
+                // @ts-ignore TODO: Исправить тип
                 iconLeft={
                     iconLeft &&
                     ((className: string) => (
                         <Icon size={size} type={iconType} direction={direction} className={className} />
                     ))
                 }
-                // @ts-ignore TODO: Испраить тип
+                // @ts-ignore TODO: Исправить тип
                 iconRight={
                     iconRight &&
                     ((className: string) => (

@@ -44,7 +44,7 @@ radiobox:
     border:
       radius:
         value: 50%
-        comment: "Скругление внутреннийх краев у radioBox"
+        comment: "Скругление внутренних краев у radioBox"
   size:
     s:
       fontSize:

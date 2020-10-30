@@ -77,7 +77,7 @@ describe.each<any>(platforms)('Textarea@%s', (_platform, Textarea: ComponentType
             expect(wrapper.find('textarea').prop('disabled')).toBe(false);
         });
 
-        test('должен рендерить/удалять элеменет Hint при наличии свойства', () => {
+        test('должен рендерить/удалять элемент Hint при наличии свойства', () => {
             const wrapper = mount(<Textarea hint="error" />);
             expect(wrapper.find('.Textarea-Hint')).toHaveLength(1);
             wrapper.setProps({ hint: '' });

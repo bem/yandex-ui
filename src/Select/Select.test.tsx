@@ -256,7 +256,7 @@ describe.each<any>(platforms)('Select@%s', (platform, Select: ComponentType<Sele
             expect(wrapper.find('span.Button2-Text').text()).toBe('testplaceholder');
         });
 
-        test('placeholder рендерится для отсутсвующих options', () => {
+        test('placeholder рендерится для отсутствующих options', () => {
             const wrapper = mount(
                 <Select
                     placeholder="testplaceholder"

@@ -36,7 +36,7 @@ export type RadioboxProps = {
     innerRef?: Ref<HTMLSpanElement>;
 
     /**
-     * Неактивное состояние всей группы переключетелей
+     * Неактивное состояние всей группы переключателей
      */
     disabled?: boolean;
 
@@ -53,7 +53,7 @@ export type RadioboxProps = {
     className?: string;
 
     /**
-     * Текущее выбранное значениее в группе
+     * Текущее выбранное значение в группе
      */
     value?: string;
 

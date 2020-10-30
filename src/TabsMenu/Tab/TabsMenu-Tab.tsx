@@ -48,12 +48,12 @@ export interface ITabsMenuTabProps {
     className?: string;
 
     /**
-     * HTML аттрибут `role`
+     * HTML атрибут `role`
      */
     role?: string;
 
     /**
-     * HTML аттрибут `tabIndex`
+     * HTML атрибут `tabIndex`
      */
     tabIndex?: number;
 

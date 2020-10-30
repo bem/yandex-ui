@@ -18,7 +18,7 @@ tooltip:
       content:
         spaceAll:
           value: 8px
-          comment: "Размер внутренних оступов у контента s-tooltip"
+          comment: "Размер внутренних отступов у контента s-tooltip"
 
       tail:
         size:
@@ -36,7 +36,7 @@ tooltip:
       content:
         spaceAll:
           value: 9px 10px
-          comment: "Размер внутренних оступов у контента m-tooltip"
+          comment: "Размер внутренних отступов у контента m-tooltip"
 
       tail:
         size:
@@ -54,7 +54,7 @@ tooltip:
       content:
         spaceAll:
           value: 18px
-          comment: "Размер внутренних оступов у контента l-tooltip"
+          comment: "Размер внутренних отступов у контента l-tooltip"
 
       tail:
         size:

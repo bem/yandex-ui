@@ -31,7 +31,7 @@ export interface ISelectProps extends ISelectCommonProps {
     /**
      * Ссылка на DOM-элемент, в котором размещается попап.
      *
-     * Важно, чтобы контейнер имел `position: relative` для корректного позициоинирования.
+     * Важно, чтобы контейнер имел `position: relative` для корректного позиционирования.
      *
      * @default innerRef
      */

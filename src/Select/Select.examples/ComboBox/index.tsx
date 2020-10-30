@@ -73,7 +73,7 @@ const MenuWithSearch: ISelectRegistry['Menu'] = (props) => {
     const inputRef = React.useRef<HTMLInputElement>(null);
     const initialActiveElement = React.useRef<HTMLElement | null>(null);
 
-    // Фокусируемся на текстовом поле при открытии попапа, возращаем фокус при закрытии
+    // Фокусируемся на текстовом поле при открытии попапа, возвращаем фокус при закрытии
     React.useLayoutEffect(() => {
         const input = inputRef.current!;
         if (props.focused) {

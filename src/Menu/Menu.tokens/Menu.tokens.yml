@@ -29,7 +29,7 @@ menu:
           comment: "Размер горизонтального внутреннего отступа от группе у s-menu"
         indentBottom:
           value: 4px
-          comment: "Размер нижего внешнего отступа от группы до пунктов у s-menu"
+          comment: "Размер нижнего внешнего отступа от группы до пунктов у s-menu"
 
       item:
         spaceVertical:
@@ -40,7 +40,7 @@ menu:
           comment: "азмер горизонтального внутреннего отступа в пункте у s-menu"
         indentBottom:
           value: 4px
-          comment: "Размер правого внешненго отступа от иконки до текста у s-menu"
+          comment: "Размер правого внешнего отступа от иконки до текста у s-menu"
 
       itemIcon:
         indentRight:
@@ -71,7 +71,7 @@ menu:
           comment: "Размер горизонтального внутреннего отступа в группе у m-menu"
         indentBottom:
           value: 5px
-          comment: "Размер нижего внешнего отступа от группы до пунктов у m-menu"
+          comment: "Размер нижнего внешнего отступа от группы до пунктов у m-menu"
 
       item:
         spaceVertical:
@@ -82,7 +82,7 @@ menu:
           comment: "Размер горизонтального внутреннего отступа в пункте у m-menu"
         indentBottom:
           value: 5px
-          comment: "Размер нижего внешнего отступа от пунктов до группы у m-menu"
+          comment: "Размер нижнего внешнего отступа от пунктов до группы у m-menu"
 
       itemIcon:
         indentRight:

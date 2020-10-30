@@ -149,7 +149,7 @@ export const MiniApps = () => {
                             iconRight={
                                 <IconCross />
                             }
-                            hint="Подсказака"
+                            hint="Подсказка"
                         />
                     </div>
                     <div>
@@ -168,7 +168,7 @@ export const MiniApps = () => {
                             iconRight={
                                 <IconCross />
                             }
-                            hint="Подсказака"
+                            hint="Подсказка"
                         />
                     </div>
                     <div>

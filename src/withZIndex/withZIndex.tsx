@@ -93,7 +93,7 @@ export const withZIndex = <TProps extends IWrappedComponentProps>(WrappedCompone
                 } else if (!visible) {
                     this.currentZIndex = this.releaseZIndex(zIndexGroupLevel, this.currentZIndex);
                 }
-                // иммет смысл обновлять zIndex только у видимого элемента
+                // имеет смысл обновлять zIndex только у видимого элемента
                 if (visible) {
                     // Обновляем стили сразу у DOM узла, а не через setState,
                     // т.к. это не вызывает лишний раз re-render и повышает производительность.

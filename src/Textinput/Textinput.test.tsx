@@ -87,7 +87,7 @@ describe.each<any>(platforms)('Textinput@%s', (_platform, Textinput: ComponentTy
             expect(wrapper.find('input').prop('disabled')).toBe(false);
         });
 
-        test('должен рендерить/удалять элеменет Hint при наличии свойства', () => {
+        test('должен рендерить/удалять элемент Hint при наличии свойства', () => {
             const wrapper = mount(<Textinput hint="error" />);
             expect(wrapper.find('.Textinput-Hint')).toHaveLength(1);
             wrapper.setProps({ hint: '' });

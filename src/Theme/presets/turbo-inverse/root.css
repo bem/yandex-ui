@@ -89,10 +89,10 @@
     --menu-size-s-spaceVert: 4px; /* Размер вертикального внутреннего отступа у s-menu */
     --menu-size-s-group-spaceVert: 4px; /* Размер вертикального внутреннего отступа от группе у s-menu */
     --menu-size-s-group-spaceHor: 0; /* Размер горизонтального внутреннего отступа от группе у s-menu */
-    --menu-size-s-group-indentBottom: 4px; /* Размер нижего внешнего отступа от группы до пунктов у s-menu */
+    --menu-size-s-group-indentBottom: 4px; /* Размер нижнего внешнего отступа от группы до пунктов у s-menu */
     --menu-size-s-item-spaceVert: 3px; /* Размер вертикального внутреннего отступа в пункте у s-menu */
-    --menu-size-s-item-spaceHor: 9px; /* азмер горизонтального внутреннего отступа в пункте у s-menu */
-    --menu-size-s-item-indentBottom: 4px; /* Размер правого внешненго отступа от иконки до текста у s-menu */
+    --menu-size-s-item-spaceHor: 9px; /* размер горизонтального внутреннего отступа в пункте у s-menu */
+    --menu-size-s-item-indentBottom: 4px; /* Размер правого внешнего отступа от иконки до текста у s-menu */
     --menu-size-s-item-icon-indentRight: 4px;
     --menu-size-s-titleSibling-indentLeft: 20px; /* Размер внешнего левого отступа у сущностей после тайтла у s-menu */
     --menu-size-m-fontSize: var(--typography-controls-size-m-font-size); /* Размер текста у m-menu */
@@ -100,10 +100,10 @@
     --menu-size-m-spaceVert: 5px; /* Размер вертикального внутреннего отступа у m-menu */
     --menu-size-m-group-spaceVert: 5px; /*  Размер вертикального внутреннего отступа в группе у m-menu */
     --menu-size-m-group-spaceHor: 0; /* Размер горизонтального внутреннего отступа в группе у m-menu */
-    --menu-size-m-group-indentBottom: 5px; /* Размер нижего внешнего отступа от группы до пунктов у m-menu */
+    --menu-size-m-group-indentBottom: 5px; /* Размер нижнего внешнего отступа от группы до пунктов у m-menu */
     --menu-size-m-item-spaceVert: 4px; /* Размер вертикального внутреннего отступа в пункте у m-menu */
     --menu-size-m-item-spaceHor: 15px; /* Размер горизонтального внутреннего отступа в пункте у m-menu */
-    --menu-size-m-item-indentBottom: 5px; /* Размер нижего внешнего отступа от пунктов до группы у m-menu */
+    --menu-size-m-item-indentBottom: 5px; /* Размер нижнего внешнего отступа от пунктов до группы у m-menu */
     --menu-size-m-item-icon-indentRight: 6px;
     --menu-size-m-titleSibling-indentLeft: 20px; /* Размер внешнего левого отступа у сущностей после тайтла у m-menu */
     --message-box-fontSize: var(--typography-controls-size-s-font-size);
@@ -172,7 +172,7 @@
     --radiobox-font-family: var(--control-font-family);
     --radiobox-view-outline-disabled-opacity: 0.4;
     --radiobox-borderRadius: 50%; /* Скругление внешних краев у radioBox */
-    --radiobox-after-borderRadius: 50%; /* Скругление внутреннийх краев у radioBox */
+    --radiobox-after-borderRadius: 50%; /* Скругление внутренних краев у radioBox */
     --radiobox-size-s-fontSize: var(--typography-controls-size-s-font-size); /* Размер текста у s-radio */
     --radiobox-size-s-lineHeight: 28px; /* Межстрочный интервал текста у s-radio */
     --radiobox-size-s-size: 13px; /* Размер бокса у s-radio */
@@ -376,7 +376,7 @@
     --textinput-size-m-height: 36px; /* Высота самого m-textinput */
     --textinput-size-m-control-spaceAll: 0 10px; /* `--textinput-size-m-control-spaceAll` *— Размер внутреннего отступа самого m-textinput* */
     --textinput-size-m-has-icon-spaceRight: 36px; /* Размер внутреннего правого отступа под размер иконки или крестика у m-textinput */
-    --textinput-size-m-has-icon-spaceLeft: 36px; /* Размер внутреннего правого отступа правого остступа под размер иконки или крестика у m-textinput */
+    --textinput-size-m-has-icon-spaceLeft: 36px; /* Размер внутреннего правого отступа правого отступа под размер иконки или крестика у m-textinput */
     --textinput-size-m-icon-width: 36px;
     --textinput-size-m-icon-height: 36px;
     --textinput-hint-size-m-fontSize: 13px;
@@ -392,15 +392,15 @@
     --tooltip-borderRadius: 4px;
     --tooltip-size-s-fontSize: var(--typography-controls-size-s-font-size); /* Размер текста у s-tooltip */
     --tooltip-size-s-lineHeight: 12px; /* Межстрочный интервал текста у s-tooltip */
-    --tooltip-size-s-content-spaceAll: 8px; /* Размер внутренних оступов у контента s-tooltip */
+    --tooltip-size-s-content-spaceAll: 8px; /* Размер внутренних отступов у контента s-tooltip */
     --tooltip-size-s-tail-size: 12px; /* Размер хвоста s-tooltip */
     --tooltip-size-m-fontSize: var(--typography-controls-size-m-font-size); /* Размер текста у m-tooltip */
     --tooltip-size-m-lineHeight: 14px; /* Межстрочный интервал текста у m-tooltip */
-    --tooltip-size-m-content-spaceAll: 9px 10px; /* Размер внутренних оступов у контента m-tooltip */
+    --tooltip-size-m-content-spaceAll: 9px 10px; /* Размер внутренних отступов у контента m-tooltip */
     --tooltip-size-m-tail-size: 12px; /* Размер хвоста m-tooltip */
     --tooltip-size-l-fontSize: 16px; /* Размер текста у l-tooltip */
     --tooltip-size-l-lineHeight: 16px; /* Межстрочный интервал текста у l-tooltip */
-    --tooltip-size-l-content-spaceAll: 18px; /* Размер внутренних оступов у контента l-tooltip */
+    --tooltip-size-l-content-spaceAll: 18px; /* Размер внутренних отступов у контента l-tooltip */
     --tooltip-size-l-tail-size: 18px; /* Размер хвоста l-tooltip */
     --tooltip-view-default-shadow: 0 10px 20px -5px rgba(0, 0, 0, .4);
     --tumbler-font-family: var(--control-font-family);
