@@ -1,0 +1,32 @@
+---
+id: badge
+---
+
+import { BadgeInButton } from '../Badge.examples/desktop/badgeInButton.examples.tsx'
+import { IconWithBadgeContent } from '../Badge.examples/desktop/iconWithBadgeContent.examples.tsx'
+import { WithBadgeContent } from '../Badge.examples/desktop/withBadgeContent.examples.tsx'
+import badgeInButtonSource from '!!raw-loader!../Badge.examples/desktop/badgeInButton.examples.tsx'
+import iconWithBadgeContentSource from '!!raw-loader!../Badge.examples/desktop/iconWithBadgeContent.examples.tsx'
+import withBadgeContentSource from '!!raw-loader!../Badge.examples/desktop/withBadgeContent.examples.tsx'
+
+Использование без дополнительных блоков
+
+<Example
+    component={WithBadgeContent}
+    source={withBadgeContentSource}
+/>
+
+
+Использование с иконкой
+
+<Example
+    component={IconWithBadgeContent}
+    source={iconWithBadgeContentSource}
+/>
+
+Использование с кнопкой
+
+<Example
+    component={BadgeInButton}
+    source={withBadgeContentSource}
+/>

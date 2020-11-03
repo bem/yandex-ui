@@ -1,0 +1,71 @@
+---
+id: checkbox
+---
+
+import { View as CheckboxView } from '../Checkbox.examples/desktop/view.examples.tsx'
+import viewCheckboxSource from '!!raw-loader!../Checkbox.examples/desktop/view.examples.tsx'
+
+import { Theme as CheckboxTheme } from '../Checkbox.examples/desktop/theme.examples.tsx'
+import themeCheckboxSource from '!!raw-loader!../Checkbox.examples/desktop/theme.examples.tsx'
+
+import { Size as CheckboxSize } from '../Checkbox.examples/desktop/size.examples.tsx'
+import sizeCheckboxSource from '!!raw-loader!../Checkbox.examples/desktop/size.examples.tsx'
+
+import { Indeterminate } from '../Checkbox.examples/desktop/indeterminate.examples.tsx'
+import indeterminateSource from '!!raw-loader!../Checkbox.examples/desktop/indeterminate.examples.tsx'
+
+import { Lines } from '../Checkbox.examples/desktop/lines.examples.tsx'
+import linesSource from '!!raw-loader!../Checkbox.examples/desktop/lines.examples.tsx'
+
+### Вид чекбокса
+
+Чтобы изменить вид чекбокса, установите свойство `view` в значение `dafault`.
+
+<Example
+    component={CheckboxView}
+    source={viewCheckboxSource}
+/>
+
+### Классический дизайн
+
+Чтобы изменить стилевое оформление чекбокса, установите свойство `theme` в одно из указанных ниже значений.
+
+- `normal` — стандартная тема, используется в большинстве случаев.
+- `pseudo` — прозрачная тема, используется, чтобы сделать переключатель менее заметным на странице.
+
+<Example
+    component={CheckboxTheme}
+    source={themeCheckboxSource}
+/>
+
+### Размер
+
+Чтобы изменить размер чекбокса, установите свойство `size` в одно из следующих значений: `"m"`, `"s"`.
+
+<Example
+    component={CheckboxSize}
+    source={sizeCheckboxSource}
+/>
+
+### Однострочные и многострочные подписи
+
+Чтобы задать тип подписи чекбоксу, установите свойство `lines` в одно из указанных ниже значений.
+
+- `one` — однострочная подпись. Обрезается многоточием, если ее длина превышает длину родительского элемента.
+- `multi` — многострочная подпись.
+
+
+<Example
+    component={Lines}
+    source={linesSource}
+/>
+
+### Переходное состояние
+
+Чтобы задать переходное состояние чекбоксу, установите свойство `indeterminate` в значение `true`.
+
+
+<Example
+    component={Indeterminate}
+    source={indeterminateSource}
+/>

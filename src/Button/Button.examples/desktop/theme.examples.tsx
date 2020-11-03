@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { Button } from '../../Button.bundle/desktop';
+import { Button } from '@yandex-lego/components/Button/desktop/bundle';
 
 export const Theme = () => (
     <>

@@ -1,6 +1,5 @@
 import React from 'react';
-
-import { Button } from '../../Button.bundle/desktop';
+import { Button } from '@yandex-lego/components/Button/desktop/bundle';
 
 export const Pin = () => {
     const rPins = ['round-round', 'round-clear', 'clear-round', 'round-brick', 'brick-round'];

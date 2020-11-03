@@ -1,0 +1,18 @@
+---
+id: attach
+---
+
+import { Attach } from '../Attach.bundle/desktop'
+
+<Sandbox
+    displayName='Attach'
+    component={Attach}
+    knobs={{
+        view: [['default', ], 'default'],
+        size: [['s', 'm', 'l'], 'm'],
+        children: 'Select file',
+        hasHolder: true,
+        disabled: false,
+        holderText: 'no file chosen',
+    }}
+/>

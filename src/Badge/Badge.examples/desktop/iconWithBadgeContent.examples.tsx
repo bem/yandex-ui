@@ -1,28 +1,5 @@
 import React from 'react';
-
-import { Badge } from '../../Badge';
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
-
-import { Button } from '../../../Button/Button.bundle/desktop';
-
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: createDecorators({ scope: 'desktop' }),
-    parameters,
-};
-
-export const WithBadgeContent = () => (
-    <>
-        <Badge />
-        <br />
-        <br />
-        <Badge content={5} />
-    </>
-);
-
-WithBadgeContent.story = {
-    name: 'simple',
-};
+import { Badge } from '@yandex-lego/components/Badge/desktop';
 
 export const IconWithBadgeContent = () => (
     <>
@@ -36,30 +13,3 @@ export const IconWithBadgeContent = () => (
         </Badge>
     </>
 );
-
-IconWithBadgeContent.story = {
-    name: 'with-icon',
-};
-
-export const BadgeInButton = () => (
-    <>
-        <Badge>
-            <Button view="default" size="m">очень важная</Button>
-        </Badge>
-        <br />
-        <br />
-        <Badge outlineColor="transparent" content={5}>
-            <Button view="default" size="m">очень важная с цифрой</Button>
-        </Badge>
-        <br />
-        <br />
-        <Button view="default" size="m">
-            Закладка
-            <Badge color="#0679ff" outlineColor="#0679ff" content={5} style={{ marginLeft: 5 }} />
-        </Button>
-    </>
-);
-
-BadgeInButton.story = {
-    name: 'with-button',
-};

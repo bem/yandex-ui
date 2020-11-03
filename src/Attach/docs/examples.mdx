@@ -1,0 +1,37 @@
+---
+id: attach
+---
+
+import { View as AttachView } from '../Attach.examples/desktop/view.examples.tsx'
+import { Size as AttachSize } from '../Attach.examples/desktop/size.examples.tsx'
+import { HasHolder } from '../Attach.examples/desktop/hasHolder.examples.tsx'
+import viewAttachSource from '!!raw-loader!../Attach.examples/desktop/view.examples.tsx'
+import sizeAttachSource from '!!raw-loader!../Attach.examples/desktop/size.examples.tsx'
+import hasHolderSource from '!!raw-loader!../Attach.examples/desktop/hasHolder.examples.tsx'
+
+### Вид компонента
+
+Чтобы изменить вид компонента, используйте свойство `_view` со значением как у компонента `Button`.
+
+<Example
+    component={AttachView}
+    source={viewAttachSource}
+/>
+
+### Размер компонента
+
+Чтобы изменить размер компонента, установите свойство `size` в одно из допустимых значений: `"s"`, `"m"`, `"l"`.
+
+<Example
+    component={AttachSize}
+    source={sizeAttachSource}
+/>
+
+### Текст сообщения
+
+Чтобы отобразить текст сообщения, установите свойство `hasHolder` в значение `true`.
+
+<Example
+    component={HasHolder}
+    source={hasHolderSource}
+/>
