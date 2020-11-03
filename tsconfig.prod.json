@@ -7,7 +7,8 @@
       "@bem-react/*": ["node_modules/@bem-react/*"],
       "react": ["node_modules/@types/react"]
     },
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "skipLibCheck": true
   },
   "include": ["src"],
   "exclude": [
