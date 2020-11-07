@@ -100,14 +100,14 @@ export interface ITextinputControlProps {
     required?: boolean;
 
     /**
-     * Минимальное значение при использовании `type=number`
+     * Минимальное значение при использовании `type=number` или `type=datetime-local`
      */
-    min?: number;
+    min?: number | string;
 
     /**
-     * Максимальное значение при использовании `type=number`
+     * Максимальное значение при использовании `type=number` или `type=datetime-local`
      */
-    max?: number;
+    max?: number | string;
 
     /**
      * Шаблон, используемый для проверки значения при отправке формы
