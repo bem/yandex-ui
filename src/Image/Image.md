@@ -44,7 +44,7 @@ const App = () => (
 
 {{%story::desktop:content-image-desktop--sizes-and-srcset%}}
 
-### Заглушки для избражений
+### Заглушки для изображений
 
 Компонент состоит из трех частей:
 ```html

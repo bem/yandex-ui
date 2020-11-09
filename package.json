@@ -78,6 +78,7 @@
     "react-test-renderer": "16.8.4",
     "storybook-addon-figma-new": "0.1.0",
     "ts-jest": "^24.0.2",
-    "typescript": "3.9.3"
+    "typescript": "3.9.3",
+    "yaspeller": "7.0.0"
   }
 }

@@ -89,7 +89,7 @@ export const Drawer: FC<IDrawerProps> = (props) => {
     const springVisible = springValue > 0;
 
     // решает баг в iOS: в альбомной ориентации fixed элементы с
-    // height: 100% отрисовываются некорректно если виден navigation bar
+    // height: 100% показываются некорректно если виден navigation bar
     const clientHeight = useClientHeight();
     const popupStyle = useMemo(() => ({ height: clientHeight && clientHeight + 'px' }), [clientHeight]);
 

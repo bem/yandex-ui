@@ -127,7 +127,7 @@ export const Image: React.FC<IImageProps> = (props) => {
     // важный момент: в innerRef должна быть актуальная ссылка на ref
     const imageRef = useRef<HTMLImageElement>(null);
 
-    // обьединяем рефы
+    // объединяем рефы
     const mergedRefs = useMemo(() => mergeAllRefs<HTMLImageElement>(imageRef, innerRef), [imageRef, innerRef]);
 
     const imageSrc = src || emptyImage;

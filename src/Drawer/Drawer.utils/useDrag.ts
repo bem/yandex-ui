@@ -15,7 +15,7 @@ const listenerOptions = {
 type Vector = { x: number; y: number };
 
 /**
- * Объект состояния жеста, передается единственным аргументом в колбек
+ * Объект состояния жеста, передается единственным аргументом в колбэк
  */
 interface GestureState<T> {
     /**
@@ -80,7 +80,7 @@ interface GestureState<T> {
 }
 
 /**
- * Тип колбека
+ * Тип колбэка
  */
 type StateChangeCallback<T> = (arg: Readonly<GestureState<T>>) => void;
 
@@ -157,7 +157,7 @@ export const useDrag = <T>(elementRef: RefObject<HTMLElement>, onStateChange: St
         [onStateChangeRef],
     );
 
-    // обновляем колбек при каждом рендере, так нам не нужно будет использовать useCallback
+    // обновляем колбэк при каждом рендере, так нам не нужно будет использовать useCallback
     onStateChangeRef.current = onStateChange;
 
     /**

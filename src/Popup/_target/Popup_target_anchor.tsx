@@ -407,7 +407,7 @@ export const withTargetAnchor = withBemMod<IPopupTargetAnchorProps, IPopupProps>
                 const parentNode = anchorNode && anchorNode.offsetParent;
 
                 if (anchorNode && parentNode) {
-                    // Для скроллящихся контейнеров не получится использовать cв-ва offsetLeft и offsetTop,
+                    // Для скроллящихся контейнеров не получится использовать св-ва offsetLeft и offsetTop,
                     // поскольку они возвращают расстояние текущего элемента по отношению к верхней части offsetParent,
                     // а getBoundingClientRect() возвращает позицию относительно viewport.
                     const { left: anchorLeft, top: anchorTop } = anchorNode.getBoundingClientRect();

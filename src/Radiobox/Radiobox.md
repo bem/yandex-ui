@@ -116,7 +116,7 @@ const App = () => {
 | className? | `string`                                                                                                                                                                                                                                                          | —            | Дополнительный класс у корневого DOM-элемента                                               |
 | value?     | `string`                                                                                                                                                                                                                                                          | —            | Текущее выбранное значение в группе                                                         |
 | name?      | `string`                                                                                                                                                                                                                                                          | —            | Имя для всех элементов `Radio`                                                              |
-| onChange?  | `(event: ChangeEvent<HTMLInputElement>) => void`                                                                                                                                                                                                                  | —            | Коллбек, который срабатывает при изменении значения                                         |
+| onChange?  | `(event: ChangeEvent<HTMLInputElement>) => void`                                                                                                                                                                                                                  | —            | Колбэк, который срабатывает при изменении значения                                         |
 <!-- props:end -->
 
 ### Radio
@@ -131,6 +131,6 @@ const App = () => {
 | innerRef?   | `(instance: HTMLLabelElement) => void \| RefObject<HTMLLabelElement>` | —            | Ссылка на корневой DOM-элемент компонента           |
 | controlRef? | `(instance: HTMLInputElement) => void \| RefObject<HTMLInputElement>` | —            | Ссылка на нативный DOM-элемент нативного инпута     |
 | checked?    | `false \| true`                                                       | —            | Состояние переключателя                             |
-| onChange?   | `(event: ChangeEvent<HTMLInputElement>) => void`                      | —            | Коллбек, который срабатывает при изменении значения |
-| onClick?    | `(event: MouseEventHandler<HTMLLabelElement>) => void`                | —            | Коллбек, который срабатывает при клике на контейнер |
-| autoFocus?  | `false \| true`                                                       | —            | Устанавливает фокус в переключатель при монтировани |
+| onChange?   | `(event: ChangeEvent<HTMLInputElement>) => void`                      | —            | Колбэк, который срабатывает при изменении значения |
+| onClick?    | `(event: MouseEventHandler<HTMLLabelElement>) => void`                | —            | Колбэк, который срабатывает при клике на контейнер |
+| autoFocus?  | `false \| true`                                                       | —            | Устанавливает фокус в переключатель при монтировании |

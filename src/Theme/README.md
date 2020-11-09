@@ -114,7 +114,7 @@ theme
 
 4. Конфигурируем тему:
 
-В папку с конфигурацией вашей темы следует положить файлик `название_вашей_темы.theme.json`. Базовая конфигурация может выглядеть вот так:
+В папку с конфигурацией вашей темы следует положить файл `название_вашей_темы.theme.json`. Базовая конфигурация может выглядеть вот так:
 
 ```json5
 {
@@ -170,9 +170,9 @@ import './themes/default/root.css'
 
 Документация для themekit — https://github.com/yarastqt/themekit
 
-Примеры с ипользованием themekit — https://github.com/yarastqt/themekit/tree/master/examples
+Примеры с использованием themekit — https://github.com/yarastqt/themekit/tree/master/examples
 
-## Подддержка IE11
+## Поддержка IE11
 
 Для поддержки тем в IE11 необходимо использовать [postcss-theme-fold](https://github.com/yarastqt/postcss-theme-fold) плагин.
 

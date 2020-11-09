@@ -113,7 +113,7 @@ export const MiniApps = () => {
                     size="m"
                     layout="plain"
                 >
-                    <Wrapper align="left">Нажатое состояние кнопки в бабле — 0.5 alpha</Wrapper>
+                    <Wrapper align="left">Всплывающее уведомление</Wrapper>
                 </MessageBoxPopup>
 
                 <MessageBoxPopup
@@ -141,7 +141,7 @@ export const MiniApps = () => {
                         </>
                     }
                 >
-                    <Wrapper align="left">Нажатое состояние кнопки в бабле — 0.5 alpha</Wrapper>
+                    <Wrapper align="left">Всплывающее уведомление</Wrapper>
                 </MessageBoxPopup>
 
                 <MessageBoxPopup
@@ -157,7 +157,7 @@ export const MiniApps = () => {
                     size="m"
                     layout="plain"
                 >
-                    <Wrapper align="left">Нажатое состояние кнопки в бабле — 0.5 alpha</Wrapper>
+                    <Wrapper align="left">Всплывающее уведомление</Wrapper>
                 </MessageBoxPopup>
 
                 <MessageBoxPopup
@@ -186,7 +186,7 @@ export const MiniApps = () => {
                         </>
                     }
                 >
-                    <Wrapper align="left">Нажатое состояние кнопки в бабле — 0.5 alpha</Wrapper>
+                    <Wrapper align="left">Всплывающее уведомление</Wrapper>
                 </MessageBoxPopup>
             </div>
         </div>

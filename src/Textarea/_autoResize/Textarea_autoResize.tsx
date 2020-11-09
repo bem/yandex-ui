@@ -86,7 +86,7 @@ export function withAutoResize<T extends ITextareaProps>(WrappedComponent: Compo
                 if (this.controlRef && this.controlRef.current) {
                     // Цикл, чтобы перепроверить получившийся элемент, т.к. после его увеличения может появиться скролл
                     // который выдавит текст внутри него и тогда часть текста может быть не видна
-                    let i = 2; // Подстраховочка
+                    let i = 2; // Подстраховка
                     while (this.controlRef.current.scrollHeight > this.controlRef.current.offsetHeight && i--) {
                         let padding = this.controlRef.current.offsetHeight - this.controlRef.current.clientHeight;
                         this.newHeight = this.controlRef.current.scrollHeight;

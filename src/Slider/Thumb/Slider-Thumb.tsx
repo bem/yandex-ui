@@ -101,7 +101,7 @@ export const SliderThumb: FC<SliderThumbProps> = ({
     }, []);
 
     return (
-        // HACK: Добавляем aria-valuenowдля Handle элемента, для того,
+        // HACK: Добавляем aria-valuenow для Handle элемента, для того,
         // чтобы react-range мог найти элементы по этому свойству.
         <div className={cnSliderHandle} aria-valuenow={props['aria-valuenow']}>
             <button

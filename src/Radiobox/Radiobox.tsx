@@ -63,7 +63,7 @@ export type RadioboxProps = {
     name?: string;
 
     /**
-     * Коллбек, который срабатывает при изменении значения
+     * Колбэк, который срабатывает при изменении значения
      */
     onChange?: ChangeEventHandler<HTMLInputElement>;
 };

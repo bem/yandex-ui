@@ -82,7 +82,7 @@ const App = () => (
 | visible?              | `false \| true`                                                          | —               | Делает попап видимым                                                                                                                      |
 | scope?                | `RefObject<HTMLElement>`                                                 | `document.body` | Ссылка на DOM-элемент, в котором размещается попап<br>Важно, чтобы контейнер имел `position: relative` для корректного позиционирования   |
 | forceRender?          | `false \| true`                                                          | —               | Вызывает дополнительный рендер после создания                                                                                             |
-| onClose?              | `(event: KeyboardEvent \| MouseEvent, source: "esc" \| "click") => void` | —               | Обработчик, вызываемый после нажатия на клавишу Еsc либо мышкой на область вне контейнера                                                 |
+| onClose?              | `(event: KeyboardEvent \| MouseEvent, source: "esc" \| "click") => void` | —               | Обработчик, вызываемый после нажатия на клавишу Esc либо мышкой на область вне контейнера                                                 |
 | onClick?              | `(event: MouseEvent<HTMLDivElement, MouseEvent>) => void`                | —               | Обработчик, вызываемый при срабатывании события click                                                                                     |
 <!-- props:end -->
 
