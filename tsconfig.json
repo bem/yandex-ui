@@ -1,10 +1,19 @@
 {
   "extends": "@yandex-lego/configs/configs/tsconfig.dev.json",
   "compilerOptions": {
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@yandex-lego/components/*": [
+        "./src/*"
+      ]
+    }
   },
-  // Обрабатываем только ts & tsx файлы в src, чтобы typescript
-  // не зависал пытаясь обработать js файлы из артефактов сборки.
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
