@@ -6,15 +6,15 @@
 Компонент для создания выпадающего списка
 <!-- description:end -->
 
-{{%story::desktop:controls-dropdown-desktop--common%}}
+{{%story::desktop:surface-dropdown-desktop--common%}}
 
-{{%story::desktop:controls-dropdown-desktop--directions%}}
+{{%story::desktop:surface-dropdown-desktop--directions%}}
 
-{{%story::desktop:controls-dropdown-desktop--split%}}
+{{%story::desktop:surface-dropdown-desktop--split%}}
 
-{{%story::desktop:controls-dropdown-desktop--tail%}}
+{{%story::desktop:surface-dropdown-desktop--tail%}}
 
-{{%story::desktop:controls-dropdown-desktop--arrow%}}
+{{%story::desktop:surface-dropdown-desktop--arrow%}}
 
 <!-- props:start -->
 | Свойство        | Тип                                                                                                                                                                                                                                                                                                                           | По умолчанию | Описание                                            |
