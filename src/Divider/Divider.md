@@ -29,7 +29,7 @@ const App = () => {
   return (
     <>
       Content
-      <Divier style={{ margin: '8px 0' }} />
+      <Divider style={{ margin: '8px 0' }} />
       Content
     </>
   )
