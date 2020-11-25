@@ -2,6 +2,7 @@ import React, { PureComponent, createRef, MouseEventHandler, MouseEvent } from '
 import { withBemMod } from '@bem-react/core';
 import { ComponentRegistryConsumer } from '@bem-react/di';
 
+import { mergeAllRefs } from '../../lib/mergeRefs';
 import { ITextinputRegistry } from './Textinput_hasClear.registry';
 import { ITextinputProps, cnTextinput } from '../Textinput';
 
@@ -43,13 +44,6 @@ export const withHasClear = withBemMod<ITextinputHasClearProps, ITextinputProps>
         class WithHasClear extends PureComponent<ITextinputHasClearProps & ITextinputProps> {
             private readonly controlRef = createRef<HTMLInputElement>();
 
-            componentDidMount() {
-                if (this.props.controlRef !== undefined) {
-                    // @ts-ignore (Объект readonly только в рамках интерфейса)
-                    this.props.controlRef.current = this.controlRef.current;
-                }
-            }
-
             render() {
                 const {
                     addonBefore,
@@ -57,6 +51,7 @@ export const withHasClear = withBemMod<ITextinputHasClearProps, ITextinputProps>
                     // FIXME: https://github.com/bem/bem-react/issues/381
                     onClearClick: _onClearClick,
                     hasClear: _hasClear,
+                    controlRef,
                     ...props
                 } = this.props;
 
@@ -66,7 +61,7 @@ export const withHasClear = withBemMod<ITextinputHasClearProps, ITextinputProps>
                             return (
                                 <Textinput
                                     {...props}
-                                    controlRef={this.controlRef}
+                                    controlRef={mergeAllRefs(this.controlRef, controlRef)}
                                     addonBefore={
                                         <>
                                             <Clear
