@@ -8,7 +8,7 @@ const { promisify } = require('util');
 
 const execa = promisify(exec);
 const websiteDir = resolve(__dirname, '../docs-site');
-const YENV = process.env.YENV;
+const YENV = process.env.YENV || 'testing';
 
 async function build() {
     // TODO: Залогировать все этапы выполнения.
@@ -25,7 +25,7 @@ async function build() {
 // а использоать aws node api, чтобы очищать бакет
 // от артефакторв прошлых сборок.
 async function deploy() {
-    const { stderr, stdout } = await execa(`YENV={${YENV}} npm run deploy`, { cwd: websiteDir });
+    const { stderr, stdout } = await execa(`YENV=${YENV} npm run deploy`, { cwd: websiteDir });
     console.log(stderr || stdout);
 }
 

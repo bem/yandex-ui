@@ -7,6 +7,7 @@ import { Theme as ButtonTheme } from '../Button.examples/desktop/theme.examples.
 import { Size as ButtonSize} from '../Button.examples/desktop/size.examples.tsx'
 import { Pin } from '../Button.examples/desktop/pin.examples.tsx'
 import { Width as ButtonWidth } from '../Button.examples/desktop/width.examples.tsx'
+import { All as ButtonAll } from '../Button.examples/desktop/all.example.tsx'
 import viewButtonSource from '!!raw-loader!../Button.examples/desktop/view.example.tsx'
 import themeButtonSource from '!!raw-loader!../Button.examples/desktop/theme.examples.tsx'
 import sizeButtonSource from '!!raw-loader!../Button.examples/desktop/size.examples.tsx'
@@ -26,6 +27,13 @@ import widthButtonSource from '!!raw-loader!../Button.examples/desktop/width.exa
 
 Чтобы изменить стилевое оформление кнопки для классического дизайна, установите свойство `theme` в одно из следующих значений: `"normal"`, `"action"`, `"clear"`, `"link"`, `"pseudo"`, `"raised"`, `"websearch"`.
 
+<Disclaimer>
+    <p>
+    Важно! Модификаторы <b>view</b> и <b>theme</b> являются взаимоисключающими. Не используйте их вместе. <br />
+    Модификатор <b>theme</b>  не кастомизируется с помощью дизайн-токенов.
+    </p>
+</Disclaimer>
+
 <Example
     component={ButtonTheme}
     source={themeButtonSource}
@@ -42,7 +50,22 @@ import widthButtonSource from '!!raw-loader!../Button.examples/desktop/width.exa
 
 ### Границы кнопки
 
-Чтобы изменить границы кнопки, установите свойство `pin` в одно из допустимых значений.
+Свойство `pin` задает форму кнопке. Используется для группировки с другими блоками, например, с textinput.
+
+Допустимые значения: `brick-clear`, `clear-brick`, `round-clear`, `clear-round`, `circle-clear`, `clear-circle`, `round-brick`, `brick-round`, `circle-brick`, `brick-circle`, `clear-clear`, `brick-brick`, `round-round`, `circle-circle`.
+
+Допустимыми значениями модификатора являются комбинации двух ключевых слов через дефис (-), которые определяют (слева направо):
+
+- форму уголков;
+- видимость границ;
+- скругление границ.
+
+Ключевое слово:
+
+`clear` — нет боковой границы;
+`brick` — прямоугольная граница;
+`round` — граница со скругленными уголками;
+`circle` — граница круглой формы.
 
 <Example
     component={Pin}
@@ -76,6 +99,11 @@ import widthButtonSource from '!!raw-loader!../Button.examples/desktop/width.exa
 | rel?      | `string`             | Отношения между ссылками                                                                                |
 | tabIndex? | `number`             | HTML-атрибут tabIndex; определяет последовательность перехода между ссылками при нажатии на клавишу Tab |
 
+### Showcase
+
+<Example
+    component={ButtonAll}
+/>
 
 ### ButtonGroup
 
@@ -83,7 +111,7 @@ import widthButtonSource from '!!raw-loader!../Button.examples/desktop/width.exa
 
 <iframe
     src="https://codesandbox.io/embed/button-radio-group-6b3s8?fontsize=14&hidenavigation=1&theme=dark"
-    style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+    style="width:100%; height:200px; border:0; border-radius: 4px; overflow:hidden;"
     title="button radio group"
     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
