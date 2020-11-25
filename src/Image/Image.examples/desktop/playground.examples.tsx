@@ -1,14 +1,7 @@
 import React from 'react';
-import { withKnobs, text, number } from '@storybook/addon-knobs';
+import { text, number } from '@storybook/addon-knobs';
 
-import { Image } from '../../Image.bundle/desktop';
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
-
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: [withKnobs, ...createDecorators({ scope: 'desktop' })],
-    parameters,
-};
+import { Image } from '@yandex-lego/components/Image/desktop/bundle';
 
 export const Playground = () => {
     const url = text('url', 'static/media/img-700w.1b0180bb.png');

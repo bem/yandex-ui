@@ -1,71 +1,13 @@
 import React, { useState, useRef } from 'react';
-import { createScopeDecorator } from '@yandex-int/storybook-with-platforms';
 
-import { cnTheme } from '../Theme';
-import { presets } from '../Theme/presets';
-import { Button } from '../Button/Button.bundle/desktop';
-import { Popup } from '../Popup/Popup.bundle/desktop';
-import { Modal } from '../Modal/Modal.bundle/desktop';
-import { MessageBoxPopup } from '../MessageBox/MessageBox.bundle/desktop';
-import { TooltipStateful } from '../Tooltip/Tooltip.bundle/desktop';
-import { Select } from '../Select/Select.bundle/desktop';
-
-export default {
-    title: 'Utility|LayerManager (I)',
-    decorators: [createScopeDecorator('desktop', 'lego')],
-    parameters: {
-        docs: {
-            readme: require('./LayerManager.md'),
-        },
-    },
-};
-
-export const ComplexPopup = () => {
-    const [visible1, setVisible1] = useState(false);
-    const [visible2, setVisible2] = useState(false);
-    const buttonRef1 = useRef<HTMLDivElement>(null);
-    const buttonRef2 = useRef<HTMLDivElement>(null);
-    const rootRef = useRef<HTMLDivElement>(null);
-
-    return (
-        <div ref={rootRef} className={cnTheme(presets.default)} style={{ position: 'relative' }}>
-            <Button innerRef={buttonRef1} view="default" size="m" onClick={() => setVisible1(!visible1)}>
-                Открыть
-            </Button>
-            <Popup
-                visible={visible1}
-                scope={rootRef}
-                anchor={buttonRef1}
-                onClose={() => setVisible1(false)}
-                target="anchor"
-                view="default"
-                hasTail
-            >
-                <div style={{ padding: 16, fontFamily: 'var(--control-font-family)' }}>
-                    content-1
-                    <Button innerRef={buttonRef2} view="default" size="m" onClick={() => setVisible2(!visible2)}>
-                        Открыть
-                    </Button>
-                </div>
-                <Popup
-                    visible={visible2}
-                    scope={rootRef}
-                    anchor={buttonRef2}
-                    onClose={() => setVisible2(false)}
-                    target="anchor"
-                    view="default"
-                    hasTail
-                >
-                    <div style={{ padding: 16, fontFamily: 'var(--control-font-family)' }}>content-2</div>
-                </Popup>
-            </Popup>
-        </div>
-    );
-};
-
-ComplexPopup.story = {
-    name: 'complex-popup',
-};
+import { cnTheme } from '@yandex-lego/components/Theme';
+import { presets } from '@yandex-lego/components/Theme/presets';
+import { Button } from '@yandex-lego/components/Button/desktop/bundle';
+import { Popup } from '@yandex-lego/components/Popup/desktop/bundle';
+import { Modal } from '@yandex-lego/components/Modal/desktop/bundle';
+import { MessageBoxPopup } from '@yandex-lego/components/MessageBox/desktop/bundle';
+import { TooltipStateful } from '@yandex-lego/components/Tooltip/desktop/bundle';
+import { Select } from '@yandex-lego/components/Select/desktop/bundle';
 
 export const ComplexModal = () => {
     const [visible1, setVisible1] = useState(false);
@@ -80,11 +22,11 @@ export const ComplexModal = () => {
     const rootRef = useRef<HTMLDivElement>(null);
 
     return (
-        <div ref={rootRef} className={cnTheme(presets.default)} style={{ position: 'relative' }}>
+        <div ref={rootRef} className={cnTheme(presets.default)} style={{ position: 'relative', height: '500px' }}>
             <Button innerRef={buttonRef1} view="default" size="m" onClick={() => setVisible1(!visible1)}>
                 Открыть
             </Button>
-            <Modal theme="normal" scope={rootRef} visible={visible1} onClose={() => setVisible1(false)}>
+            <Modal theme="normal" visible={visible1} onClose={() => setVisible1(false)} scope={rootRef}>
                 <div style={{ padding: 16, fontFamily: 'var(--control-font-family)', width: 400 }}>
                     <div style={{ marginBottom: 16 }}>
                         Общедоступная многоязычная универсальная интернет-энциклопедия со свободным контентом.
@@ -111,9 +53,9 @@ export const ComplexModal = () => {
                             Открыть MessageBox
                         </Button>
                         <MessageBoxPopup
+                            scope={rootRef}
                             onClose={() => setVisible3(false)}
                             visible={visible3}
-                            scope={rootRef}
                             hasTail
                             anchor={buttonRef3}
                             direction="bottom-center"
@@ -127,9 +69,9 @@ export const ComplexModal = () => {
                             Открыть Popup
                         </Button>
                         <Popup
+                            scope={rootRef}
                             hasTail
                             visible={visible2}
-                            scope={rootRef}
                             anchor={buttonRef2}
                             onClose={() => setVisible2(false)}
                             target="anchor"
@@ -138,11 +80,11 @@ export const ComplexModal = () => {
                             <div style={{ padding: 16, fontFamily: 'var(--control-font-family)' }}>
                                 <TooltipStateful
                                     hasTail
-                                    scope={rootRef}
                                     view="default"
                                     size="m"
                                     content="Общедоступная многоязычная универсальная интернет-энциклопедия со свободным контентом."
                                     trigger="click"
+                                    scope={rootRef}
                                 >
                                     <Button view="default" size="m">
                                         Открыть Tooltip
@@ -155,8 +97,4 @@ export const ComplexModal = () => {
             </Modal>
         </div>
     );
-};
-
-ComplexModal.story = {
-    name: 'complex-modal',
 };

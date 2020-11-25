@@ -1,16 +1,6 @@
 import React, { useMemo, useState } from 'react';
-import { withKnobs, select, boolean, number, text } from '@storybook/addon-knobs';
 
-import { EXAMPLE_TOKEN, createDecorators, parameters } from '../examples-config';
-import { Drawer } from '../../touch-phone/bundle';
-
-import '../examples-styles.css';
-
-export default {
-    title: EXAMPLE_TOKEN,
-    decorators: [withKnobs, ...createDecorators({ scope: 'touch-phone' })],
-    parameters,
-};
+import { Drawer } from '@yandex-lego/components/Drawer/touch-phone/bundle';
 
 export const CustomTitle = () => {
     const scopeRef = React.useRef<HTMLDivElement>(null);
@@ -34,15 +24,14 @@ export const CustomTitle = () => {
         [setVisible],
     );
 
-    const maxSize = text('maxSize', '');
-    const nested = boolean('nested', false);
-    const dragDisabled = boolean('dragDisabled', false);
-    const direction = select('direction', ['left', 'right', 'bottom'], 'bottom');
+    const nested = false;
+    const dragDisabled = false;
+    const direction = 'bottom';
     const animation = {
-        tension: number('tension', 230),
-        friction: number('friction', 24),
-        disabled: boolean('disable animation', false),
-        dragImmediate: boolean('drag immediate', false),
+        tension: 230,
+        friction: 24,
+        disabled: false,
+        dragImmediate: false,
     };
 
     return (
@@ -54,31 +43,7 @@ export const CustomTitle = () => {
                 Inceptos metus vel ac hendrerit lacinia arcu taciti potenti, vulputate class mollis maecenas orci nibh.
             </p>
             <p>
-                Phasellus sollicitudin in pellentesque cras sagittis platea mattis himenaeos, dui ligula congue ad nisi
-                tempor laoreet lacus, etiam gravida taciti mauris adipiscing id erat. Mollis scelerisque vivamus sit
-                dictum ultrices eros, suscipit varius cursus litora lectus montes, et posuere diam mauris conubia.
-                Inceptos metus vel ac hendrerit lacinia arcu taciti potenti, vulputate class mollis maecenas orci nibh.
-            </p>
-            <p>
                 <button onClick={() => setVisible(true)}>Открыть большую шторку</button>
-            </p>
-            <p>
-                Phasellus sollicitudin in pellentesque cras sagittis platea mattis himenaeos, dui ligula congue ad nisi
-                tempor laoreet lacus, etiam gravida taciti mauris adipiscing id erat. Mollis scelerisque vivamus sit
-                dictum ultrices eros, suscipit varius cursus litora lectus montes, et posuere diam mauris conubia.
-                Inceptos metus vel ac hendrerit lacinia arcu taciti potenti, vulputate class mollis maecenas orci nibh.
-            </p>
-            <p>
-                Phasellus sollicitudin in pellentesque cras sagittis platea mattis himenaeos, dui ligula congue ad nisi
-                tempor laoreet lacus, etiam gravida taciti mauris adipiscing id erat. Mollis scelerisque vivamus sit
-                dictum ultrices eros, suscipit varius cursus litora lectus montes, et posuere diam mauris conubia.
-                Inceptos metus vel ac hendrerit lacinia arcu taciti potenti, vulputate class mollis maecenas orci nibh.
-            </p>
-            <p>
-                Phasellus sollicitudin in pellentesque cras sagittis platea mattis himenaeos, dui ligula congue ad nisi
-                tempor laoreet lacus, etiam gravida taciti mauris adipiscing id erat. Mollis scelerisque vivamus sit
-                dictum ultrices eros, suscipit varius cursus litora lectus montes, et posuere diam mauris conubia.
-                Inceptos metus vel ac hendrerit lacinia arcu taciti potenti, vulputate class mollis maecenas orci nibh.
             </p>
             <Drawer
                 visible={visible}
@@ -89,7 +54,6 @@ export const CustomTitle = () => {
                 dragDisabled={dragDisabled}
                 direction={direction}
                 animation={animation}
-                maxSize={maxSize}
                 view="default"
             >
                 <div className="DrawerInnerContent">
@@ -119,8 +83,4 @@ export const CustomTitle = () => {
             </Drawer>
         </div>
     );
-};
-
-CustomTitle.story = {
-    name: 'custom-title',
 };

@@ -1,0 +1,57 @@
+---
+id: link
+---
+
+import { Pseudo } from '../Link.examples/desktop/pseudo.examples.tsx'
+import { View } from '../Link.examples/desktop/view.examples.tsx'
+import { Theme } from '../Link.examples/desktop/theme.examples.tsx'
+import { Disabled } from '../Link.examples/desktop/disabled.examples.tsx'
+
+
+import PseudoSource from '!!raw-loader!../Link.examples/desktop/pseudo.examples.tsx'
+import ViewSource from '!!raw-loader!../Link.examples/desktop/view.examples.tsx'
+import ThemeSource from '!!raw-loader!../Link.examples/desktop/theme.examples.tsx'
+import DisabledSource from '!!raw-loader!../Link.examples/desktop/disabled.examples.tsx'
+
+
+### Ссылка view="default"
+
+Чтобы изменить вид ссылки, установите свойство `view` в значение `dеfault`.
+
+<Example
+    component={View}
+    source={ViewSource}
+/>
+
+### Псевдоссылка
+
+Чтобы сделать псевдоссылку, установите свойство `pseudo`.
+
+Клик по такой ссылке не вызывает перехода на страницу, указанную в свойстве `href`, а вызывает событие, которое указано в свойстве `onClick`.
+
+Псевдоссылки используются для того, чтобы открыть/скрыть какую-то информацию на странице, например показать всплывающую подсказку.
+
+Для оформления псевдоссылок можно использовать тему `pseudo`.
+
+<Example
+    component={Pseudo}
+    source={PseudoSource}
+/>
+
+### Стилевое оформление
+
+Чтобы изменить стилевое оформление ссылки, установите свойство `theme` в одно из следующих значений: `"black"`, `"ghost"`, `"normal"`, `"outer"`, `"pseudo"`, `"strong"`.
+
+<Example
+    component={Theme}
+    source={PseudoSource}
+/>
+
+### Недоступная ссылка
+
+Чтобы сделать ссылку недоступной, установите свойство `disabled`.
+
+<Example
+    component={Theme}
+    source={PseudoSource}
+/>

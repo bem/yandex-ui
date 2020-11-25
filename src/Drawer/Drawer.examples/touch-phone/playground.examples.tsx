@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
+import { select, boolean, number, text } from '@storybook/addon-knobs';
 
 import { Drawer } from '@yandex-lego/components/Drawer/touch-phone/bundle';
 
-export const Big = () => {
+export const Playground = () => {
     const scopeRef = React.useRef<HTMLDivElement>(null);
     const [visible, setVisible] = useState(false);
 
-    const nested = false;
-    const dragDisabled = false;
-    const direction = 'bottom';
+    const maxSize = text('maxSize', '');
+    const nested = boolean('nested', false);
+    const dragDisabled = boolean('dragDisabled', false);
+    const direction = select('direction', ['left', 'right', 'bottom'], 'bottom');
     const animation = {
-        tension: 230,
-        friction: 24,
-        disabled: false,
-        dragImmediate: false,
+        tension: number('tension', 230),
+        friction: number('friction', 24),
+        disabled: boolean('disable animation', false),
+        dragImmediate: boolean('drag immediate', false),
     };
 
     return (
@@ -43,9 +45,10 @@ export const Big = () => {
                 dragDisabled={dragDisabled}
                 direction={direction}
                 animation={animation}
+                maxSize={maxSize}
                 view="default"
             >
-                <div className="DrawerInnerContent">
+                <div className="DrawerInnerContent" style={{ padding: '20px' }}>
                     <p>
                         Phasellus sollicitudin in pellentesque cras sagittis platea mattis himenaeos, dui ligula congue
                         ad nisi tempor laoreet lacus, etiam gravida taciti mauris adipiscing id erat. Mollis scelerisque
@@ -79,4 +82,8 @@ export const Big = () => {
             </Drawer>
         </div>
     );
+};
+
+Playground.story = {
+    name: 'playground',
 };

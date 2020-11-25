@@ -1,0 +1,34 @@
+---
+id: image
+---
+
+import { LoadErrorStub } from '../Image.examples/desktop/load-error-stub.examples.tsx'
+import { SizesAndSrcset } from '../Image.examples/desktop/sizes-srcset.examples.tsx'
+import { WidthAndHeight } from '../Image.examples/desktop/width-height.examples.tsx'
+
+import LoadErrorStubSource from '!!raw-loader!../Image.examples/desktop/load-error-stub.examples.tsx'
+import SizesAndSrcsetSource from '!!raw-loader!../Image.examples/desktop/sizes-srcset.examples.tsx'
+import WidthAndHeightSource from '!!raw-loader!../Image.examples/desktop/width-height.examples.tsx'
+
+#### Задание ширины и высоты
+
+<Example
+    component={WidthAndHeight}
+    source={WidthAndHeightSource}
+/>
+
+#### Заглушки при загрузке изображений
+
+<Example
+    component={LoadErrorStub}
+    source={LoadErrorStubSource}
+/>
+
+#### Размер изображения в зависимости от ширины экрана
+
+Чтобы увидеть разницу, измените ширину окна браузера
+
+<Example
+    component={SizesAndSrcset}
+    source={SizesAndSrcsetSource}
+/>

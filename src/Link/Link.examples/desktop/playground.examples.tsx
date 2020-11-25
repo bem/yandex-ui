@@ -1,9 +1,9 @@
 import React from 'react';
 import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
 
-import { cnTheme } from '../../../Theme';
-import { presets, presetsKeys } from '../../../Theme/presets';
-import { Link } from '../../Link.bundle/desktop';
+import { cnTheme } from '@yandex-lego/components/Theme';
+import { presets, presetsKeys } from '@yandex-lego/components/Theme/presets';
+import { Link } from '@yandex-lego/components/Link/desktop/bundle';
 import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
 
 export default {

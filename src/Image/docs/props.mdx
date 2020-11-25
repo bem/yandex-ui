@@ -1,72 +1,6 @@
-# Image
-
-
-
-<!-- description:start -->
-Компонент для красивой загрузки картинок
-
-- Пока загружается картинка, пользователь будет видеть `<stub/>`
-- После загрузки картинки она будет плавно отображена поверх `<stub/>`
-- После плавного показана картинки `<stub/>` будет удалён из `DOM`
-- Если картинка загружается из кэша, то пользователь увидит сразу картинку без показа `<stub/>`
-- Если картинку не удалось загрузить, то покажется стандартная картинка из свойства `fallback`
-<!-- description:end -->
-
-## Пример использования
-
-```ts
-// src/App.ts
-import React from 'react'
-import { Image } from '@yandex/ui/Image/desktop'
-
-// Использование компонента в вашем приложении
-const App = () => (
-  <Image
-    src="https://yastatic.net/lego/_/Kx6F6RQnQFitm0qRxX7vpvfP0K0.png"
-    src2x="https://yastatic.net/lego/_/Kx6F6RQnQFitm0qRxX7vpvfP0K0.png"
-    alt="Alternative text"
-  />
-)
-```
-
-## Примеры
-
-### Ширина, высота и скругления изображения
-
-Чтобы задать ширину, высоту и скругления изображения, используйте свойства `width`, `height` и `borderRadius`.
-
-{{%story::desktop:content-image-desktop--width-and-height%}}
-
-### Адаптивное изображение
-
-Изображение для ретины — `src2x`.
-Чтобы более гибко настроить адаптивные изображения, используйте свойства `sizes` и `srcSet`.
-
-{{%story::desktop:content-image-desktop--sizes-and-srcset%}}
-
-### Заглушки для изображений
-
-Компонент состоит из трех частей:
-```html
-<container>
-    <img/>
-    <stub/>
-</container>
-```
-
-```typescript jsx
-import React from 'react';
-import { Image } from '@yandex/ui/Image/desktop';
-
-const App: React.FC = () => {
-    return (
-        <Image className="my-image" stub={<MyImageStub/>} />
-    );
-};
-```
-{{%story::desktop:content-image-desktop--load-error-stub%}}
-
-## Свойства
+---
+id: image
+---
 
 <!-- props:start -->
 | Свойство        | Тип                                                                                                                                                                                                                                                               | Описание                                                                                                                                                                                                                                                                                     |
@@ -88,7 +22,3 @@ const App: React.FC = () => {
 | height?         | `string \| number`                                                                                                                                                                                                                                                | Высота изображения                                                                                                                                                                                                                                                                           |
 | borderRadius?   | `string \| number`                                                                                                                                                                                                                                                | Скругления изображения                                                                                                                                                                                                                                                                       |
 <!-- props:end -->
-
-## Смотрите также
-
-- <a href='https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images' target="_blank">Adaptive Images</a>

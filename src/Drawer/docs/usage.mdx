@@ -1,0 +1,27 @@
+---
+id: drawer
+---
+
+```js
+import { Drawer } from '@yandex-lego/components/Drawer/touch-phone/bundle';
+```
+
+## Базовый вариант
+```js
+const App = () => {
+  const scopeRef = React.useRef<HTMLDivElement>(null)
+  const [visible, setVisible] = React.useState(false)
+  const openDrawer = React.useCallback(() => setVisible(true), [setVisible])
+  const closeDrawer = React.useCallback(() => setVisible(false), [setVisible])
+
+  return (
+    <div ref={scopeRef}>
+      <button onClick={openDrawer}>Открыть шторку</button>
+      <Drawer visible={visible} onClose={closeDrawer} scope={scopeRef} view="default">
+        <p>Содержимое шторки</p>
+        <button onClick={closeDrawer}>Закрыть шторку</button>
+      </Drawer>
+    </div>
+  )
+}
+```

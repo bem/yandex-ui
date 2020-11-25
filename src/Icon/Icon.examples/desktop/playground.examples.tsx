@@ -1,14 +1,7 @@
 import React from 'react';
-import { withKnobs, select, text, object } from '@storybook/addon-knobs';
+import { select, text, object } from '@storybook/addon-knobs';
 
-import { Icon } from '../../Icon.bundle/desktop';
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
-
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: [withKnobs, ...createDecorators({ scope: 'desktop' })],
-    parameters,
-};
+import { Icon } from '@yandex-lego/components/Icon/desktop/bundle';
 
 const types = ['arrow', 'close', 'cross', 'cross-websearch', 'filter'];
 const glyphs = [
