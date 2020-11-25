@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 
 import { Select } from '../../Select.bundle/desktop';
 import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
@@ -22,12 +22,10 @@ const options = [
 export const Width = () => {
     const [value1, setValue1] = useState('a');
     const [value2, setValue2] = useState('a');
-    const scopeRef = useRef(null);
 
     return (
-        <div ref={scopeRef} style={{ position: 'relative' }}>
+        <div style={{ height: 200 }}>
             <Select
-                unsafe_scope={scopeRef}
                 size="m"
                 view="default"
                 width="max"
@@ -36,7 +34,6 @@ export const Width = () => {
                 options={options}
             />
             <Select
-                unsafe_scope={scopeRef}
                 size="m"
                 view="default"
                 value={value2}
@@ -54,12 +51,10 @@ Width.story = {
 export const Size = () => {
     const [value1, setValue1] = useState('a');
     const [value2, setValue2] = useState('a');
-    const scopeRef = useRef(null);
 
     return (
-        <div ref={scopeRef} style={{ position: 'relative' }}>
+        <div style={{ height: 200 }}>
             <Select
-                unsafe_scope={scopeRef}
                 size="m"
                 view="default"
                 value={value1}
@@ -67,7 +62,6 @@ export const Size = () => {
                 options={options}
             />{' '}
             <Select
-                unsafe_scope={scopeRef}
                 size="s"
                 view="default"
                 value={value2}
@@ -84,12 +78,10 @@ Size.story = {
 
 export const Theme = () => {
     const [value, setValue] = useState('a');
-    const scopeRef = useRef(null);
 
     return (
-        <div ref={scopeRef} style={{ position: 'relative' }}>
+        <div style={{ height: 200 }}>
             <Select
-                unsafe_scope={scopeRef}
                 theme="normal"
                 size="m"
                 value={value}
@@ -106,12 +98,10 @@ Theme.story = {
 
 export const View = () => {
     const [value, setValue] = useState('a');
-    const scopeRef = useRef(null);
 
     return (
-        <div ref={scopeRef} style={{ position: 'relative' }}>
+        <div style={{ height: 200 }}>
             <Select
-                unsafe_scope={scopeRef}
                 view="default"
                 size="m"
                 value={value}
@@ -128,12 +118,10 @@ View.story = {
 
 export const Icon = () => {
     const [value, setValue] = useState('a');
-    const scopeRef = useRef(null);
 
     return (
-        <div ref={scopeRef} style={{ position: 'relative' }}>
+        <div style={{ height: 200 }}>
             <Select
-                unsafe_scope={scopeRef}
                 view="default"
                 size="m"
                 value={value}
@@ -149,4 +137,32 @@ export const Icon = () => {
 
 Icon.story = {
     name: 'icon',
+};
+
+export const Type = () => {
+    const [value1, setValue1] = useState('a');
+    const [value2, setValue2] = useState(['a']);
+
+    return (
+        <div style={{ height: 200 }}>
+            <Select
+                view="default"
+                size="m"
+                value={value1}
+                onChange={(event) => setValue1(event.target.value)}
+                options={options}
+            />
+            <Select
+                view="default"
+                size="m"
+                value={value2}
+                onChange={(event) => setValue2(event.target.value)}
+                options={options}
+            />
+        </div>
+    );
+};
+
+Type.story = {
+    name: 'type',
 };
