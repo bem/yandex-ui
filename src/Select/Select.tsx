@@ -185,8 +185,6 @@ export const Select = class extends PureComponent<SelectProps> {
 
     static defaultProps = defaultProps;
 
-    readonly state = { buttonText: this.getButtonText() };
-
     /**
      * Контейнер с ссылкой на корневой DOM элемент селекта.
      */
@@ -200,12 +198,8 @@ export const Select = class extends PureComponent<SelectProps> {
         this.forwardRefs();
     }
 
-    componentDidUpdate(prevProps: SelectProps) {
+    componentDidUpdate() {
         this.forwardRefs();
-
-        if (prevProps.value !== this.props.value || prevProps.options !== this.props.options) {
-            this.setState({ buttonText: this.getButtonText() });
-        }
     }
 
     render() {
@@ -229,7 +223,6 @@ export const Select = class extends PureComponent<SelectProps> {
             renderTriggerIcon,
             activeDescendant,
         } = this.props;
-        const { buttonText } = this.state;
         // Проставляем состояние `checked` только для типа `check`.
         const checked = checkable && Array.isArray(value) ? value.length > 0 : false;
         const iconType = view || (iconProps && iconProps.glyph) ? undefined : 'arrow';
@@ -281,7 +274,7 @@ export const Select = class extends PureComponent<SelectProps> {
                                     aria-expanded={opened}
                                     aria-multiselectable={Array.isArray(value)}
                                 >
-                                    {buttonText}
+                                    {this.getButtonText()}
                                 </Trigger>
                                 {addonAfter}
                             </span>

@@ -2,7 +2,7 @@ import { RefObject } from 'react';
 
 export const calculateItemWidth = (
     element: RefObject<HTMLLIElement | HTMLUListElement>,
-    withMargins?: boolean
+    withMargins?: boolean,
 ): number => {
     if (!(element && element.current)) return 0;
 

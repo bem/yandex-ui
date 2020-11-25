@@ -1,41 +1,76 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
-import { TabsMenuParams } from '../_adaptive/TabsMenu_adaptive@desktop';
 import { ITabsMenuTabProps } from '../Tab/TabsMenu-Tab';
+import { calculateItemWidth } from './calculateItemWidth';
+import { useIsomorphicLayoutEffect } from '../../useIsomorphicLayoutEffect';
 
-export const useAdaptiveTabs = (
-    tabs?: ITabsMenuTabProps[],
-    tabsMenuParams?: TabsMenuParams,
-    activeTab?: string,
-) => {
+interface IUseAdaptiveTabsProps {
+    tabs: ITabsMenuTabProps[];
+    tabsRefs: Array<React.RefObject<HTMLLIElement>>;
+    wrapperRef: React.RefObject<HTMLUListElement>;
+    moreRef: React.RefObject<HTMLLIElement>;
+}
+
+export const useAdaptiveTabs = ({ tabs, tabsRefs, wrapperRef, moreRef }: IUseAdaptiveTabsProps) => {
     const [visibleTabs, setVisibleTabs] = useState<ITabsMenuTabProps[]>(tabs || []);
     const [hiddenTabs, setHiddenTabs] = useState<ITabsMenuTabProps[]>([]);
+    const [tabWidths, setTabWidths] = useState<Array<number>>([]);
+    const [wrapperWidth, setWrapperWidth] = useState<number>(0);
+    const [tabMoreWidth, setTabMoreWidth] = useState<number>(0);
 
-    useEffect(() => {
-        if (!(tabs && tabsMenuParams)) return;
+    useIsomorphicLayoutEffect(() => {
+        setVisibleTabs(tabs);
+        setHiddenTabs([]);
+    }, [tabs]);
 
-        const {
-            tabsMenuWidth,
-            tabsWidths,
-            moreTabWidth,
-        } = tabsMenuParams;
+    useIsomorphicLayoutEffect(() => {
+        if (wrapperWidth >= tabs.reduce((acc, _tab, index) => acc + tabWidths[index], 0)) {
+            setVisibleTabs(tabs);
+            setHiddenTabs([]);
+            return;
+        }
 
         let index = 0;
+        let sum = tabMoreWidth;
 
-        if (tabsMenuWidth >= tabsWidths.reduce((acc, tabWidth) => acc + tabWidth, 0)) {
-            index = tabs.length;
-        } else {
-            let sum = moreTabWidth;
-
-            while (sum + tabsWidths[index] <= tabsMenuWidth) {
-                sum += tabsWidths[index];
-                index++;
-            }
+        while (sum + tabWidths[index] <= wrapperWidth) {
+            sum += tabWidths[index];
+            index++;
         }
 
         setVisibleTabs(tabs.slice(0, index));
         setHiddenTabs(tabs.slice(index));
-    }, [tabsMenuParams, activeTab]);
+    }, [wrapperWidth, tabMoreWidth, tabWidths]);
+
+    useIsomorphicLayoutEffect(() => {
+        setTabMoreWidth(calculateItemWidth(moreRef, true) || tabMoreWidth || 0);
+        const newWidths = tabsRefs.map((tab, index) => {
+            return calculateItemWidth(tab, true) || tabWidths[index] || 0;
+        });
+
+        if (
+            newWidths.reduce((acc, tabWidth) => acc + tabWidth, 0) !==
+            tabWidths.reduce((acc, tabWidth) => acc + tabWidth, 0)
+        ) {
+            setTabWidths(newWidths);
+        }
+    });
+
+    const onWindowResize = useCallback(() => {
+        setWrapperWidth(calculateItemWidth(wrapperRef));
+    }, [wrapperRef]);
+
+    useIsomorphicLayoutEffect(() => {
+        onWindowResize();
+    }, [onWindowResize]);
+
+    useEffect(() => {
+        window.addEventListener('resize', onWindowResize);
+
+        return () => {
+            window.removeEventListener('resize', onWindowResize);
+        };
+    }, [onWindowResize]);
 
     return [visibleTabs, hiddenTabs];
 };
