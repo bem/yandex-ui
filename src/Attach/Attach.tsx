@@ -57,7 +57,7 @@ export interface IAttachProps {
     /**
      * Уникальный id компонента
      *
-     * @default useUniqId('xuniq')
+     * @default useUniqId()
      */
     id?: string;
 
@@ -138,7 +138,7 @@ export const Attach: FC<IAttachProps> = ({
     holderText,
     holderTextWidth,
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    id = useUniqId('xuniq'),
+    id = useUniqId(),
     innerRef,
     name,
     onChange,

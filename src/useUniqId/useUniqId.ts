@@ -1,23 +1,31 @@
-import { createContext, useState, useContext } from 'react';
+import { useContext, useMemo } from 'react';
 
-type Source = {
-    value: number;
-};
+import { canUseDOM } from '../lib/canUseDOM';
+import { SSRContext, initialContextValue } from '../ssr';
 
-const createSource = (): Source => ({
-    value: 1,
-});
+/**
+ * Реакт-хук для генерации уникального id.
+ *
+ * При использовании в проекте ssr необходимо использовать
+ * `SSRProvider` для синхронизации id между сервером и клиентом.
+ *
+ * @param prefix - Префикс для генерации уникального id (по умолчанию `xuniq`)
+ *
+ * @example
+ * const id = useUniqId()
+ */
+export function useUniqId(prefix: string = 'xuniq'): string {
+    const context = useContext(SSRContext);
+    // NOTE: Не используем кэширование через useRef или useState,
+    // т.к. в таком случае происходит постоянный инкремент значения.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const id = useMemo(() => `${prefix}-${context.id}-${++context.value}`, []);
 
-const counter = createSource();
-const source = createContext(createSource());
-const getId = (source: Source) => source.value++;
+    console.assert(
+        canUseDOM() || context !== initialContextValue,
+        'При серверном рендеринге необходимо обернуть приложение в <SSRProvider>' +
+        ' для синхронизации id между сервером и клиентом.',
+    );
 
-const generateUniqId = (context: Source, prefix = '') => {
-    const id = getId(context || counter);
-    return `${prefix}${id}`;
-};
-
-export const useUniqId = (prefix: string) => {
-    const [id] = useState(generateUniqId(useContext(source), prefix));
     return id;
-};
+}

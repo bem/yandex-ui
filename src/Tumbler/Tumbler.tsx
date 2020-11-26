@@ -136,7 +136,7 @@ export const Tumbler: FC<TumblerProps> = ({
     controlRef: htmlControlRef,
     disabled,
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    id = useUniqId('xuniq'),
+    id = useUniqId(),
     innerRef,
     labelAfter,
     labelBefore,

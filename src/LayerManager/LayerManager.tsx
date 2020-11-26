@@ -39,7 +39,7 @@ type EFC<T> = FC<T> & { stack: LayerTuple[] };
  * @param {LayerManagerProps}
  */
 export const LayerManager: EFC<LayerManagerProps> = ({ visible, onClose, children, essentialRefs }) => {
-    const id = useUniqId('layer-');
+    const id = useUniqId('layer');
     const prevVisible = usePreviousValue(visible);
     const prevOnClose = usePreviousValue(onClose);
 

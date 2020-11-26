@@ -52,7 +52,7 @@ export const RadioButton: FC<IRadioButtonProps> = ({
     value: rootValue,
     disabled: rootDisabled,
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    name = useUniqId('xcrb'),
+    name = useUniqId(),
     // @ts-ignore
     size: _size,
     // @ts-ignore

@@ -44,10 +44,10 @@ exports[`Checkbox@desktop client environment должен проставить �
     class="Checkbox-Box"
   >
     <input
-      aria-labelledby="label-xuniq1"
+      aria-labelledby="label-xuniq-0-1"
       autocomplete="off"
       class="Checkbox-Control"
-      id="xuniq1"
+      id="xuniq-0-1"
       type="checkbox"
     />
     <span
@@ -72,8 +72,8 @@ exports[`Checkbox@desktop client environment должен проставить �
   <label
     aria-hidden="true"
     class="Checkbox-Label"
-    for="xuniq1"
-    id="label-xuniq1"
+    for="xuniq-0-1"
+    id="label-xuniq-0-1"
   >
     <div
       class="custom"
@@ -164,10 +164,10 @@ exports[`Checkbox@touch-pad client environment должен проставить
     class="Checkbox-Box"
   >
     <input
-      aria-labelledby="label-xuniq18"
+      aria-labelledby="label-xuniq-0-9"
       autocomplete="off"
       class="Checkbox-Control"
-      id="xuniq18"
+      id="xuniq-0-9"
       type="checkbox"
     />
     <span
@@ -192,8 +192,8 @@ exports[`Checkbox@touch-pad client environment должен проставить
   <label
     aria-hidden="true"
     class="Checkbox-Label"
-    for="xuniq18"
-    id="label-xuniq18"
+    for="xuniq-0-9"
+    id="label-xuniq-0-9"
   >
     <div
       class="custom"
@@ -284,10 +284,10 @@ exports[`Checkbox@touch-phone client environment должен проставит
     class="Checkbox-Box"
   >
     <input
-      aria-labelledby="label-xuniq35"
+      aria-labelledby="label-xuniq-0-17"
       autocomplete="off"
       class="Checkbox-Control"
-      id="xuniq35"
+      id="xuniq-0-17"
       type="checkbox"
     />
     <span
@@ -312,8 +312,8 @@ exports[`Checkbox@touch-phone client environment должен проставит
   <label
     aria-hidden="true"
     class="Checkbox-Label"
-    for="xuniq35"
-    id="label-xuniq35"
+    for="xuniq-0-17"
+    id="label-xuniq-0-17"
   >
     <div
       class="custom"

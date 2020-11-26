@@ -146,7 +146,7 @@ const CheckboxPresenter: FC<ICheckboxProps> = ({
     focused,
     hovered,
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    id = useUniqId('xuniq'),
+    id = useUniqId(),
     indeterminate,
     innerRef,
     label,

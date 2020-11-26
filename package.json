@@ -51,6 +51,7 @@
     "@storybook/react": "5.1.9",
     "@testing-library/jest-dom": "5.11.4",
     "@testing-library/react": "10.4.4",
+    "@testing-library/react-hooks": "3.4.2",
     "@types/enzyme": "3.1.16",
     "@types/jest": "26.0.14",
     "@types/js-combinatorics": "0.5.32",
