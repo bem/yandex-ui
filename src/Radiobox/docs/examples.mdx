@@ -1,0 +1,39 @@
+---
+id: radiobox
+---
+
+import { View as RadioboxView } from '../Radiobox.examples/desktop/view.examples.tsx'
+import viewRadioboxSource from '!!raw-loader!../Radiobox.examples/desktop/view.examples.tsx'
+
+import { Theme as RadioboxTheme } from '../Radiobox.examples/desktop/theme.examples.tsx'
+import themeRadioboxSource from '!!raw-loader!../Radiobox.examples/desktop/theme.examples.tsx'
+
+import { Size as RadioboxSize } from '../Radiobox.examples/desktop/size.examples.tsx'
+import sizeRadioboxSource from '!!raw-loader!../Radiobox.examples/desktop/size.examples.tsx'
+
+### Вид радиопереключателя
+
+Для различного оформления радиопереключателей установите свойство `view` в значение `"default"` или `"outline"`.
+
+<Example
+    component={RadioboxView}
+    source={viewRadioboxSource}
+/>
+
+### Классический дизайн
+
+Чтобы использовать классический дизайн для радиопереключателей, установите свойство `theme` в одно из следующих значений: `"normal"`, `"pseudo"`.
+
+<Example
+    component={RadioboxTheme}
+    source={themeRadioboxSource}
+/>
+
+### Размер радиопереключателя
+
+Чтобы изменить размер радиопереключателя, установите свойство `size` в одно из следующих значений: `"m"`, `"s"`.
+
+<Example
+    component={RadioboxSize}
+    source={sizeRadioboxSource}
+/>

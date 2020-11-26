@@ -1,14 +1,7 @@
 import React from 'react';
-import { withKnobs, boolean, number } from '@storybook/addon-knobs';
+import { boolean, number } from '@storybook/addon-knobs';
 
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
 import { SliderProps, Slider, useSliderState } from '../../desktop/bundle';
-
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: [withKnobs, ...createDecorators({ scope: 'desktop' })],
-    parameters,
-};
 
 const getKnobProps = (): Partial<SliderProps> => ({
     disabled: boolean('disabled', false),

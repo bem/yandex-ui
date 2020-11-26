@@ -1,0 +1,25 @@
+---
+id: select
+---
+
+import React, { useState } from 'react';
+import { Select } from '../desktop/bundle'
+
+export const SelectStateful = (props) => {
+    const [value, setValue] = useState('a');
+    return <Select {...props} value={value} options={[
+        { value: 'a', content: 'Каждый' },
+        { value: 'b', content: 'Охотник' },
+        { value: 'c', content: 'Желает', disabled: true },
+      ]} onChange={(event) => setValue(event.target.value)} />;
+};
+
+<Sandbox
+    displayName='Select'
+    component={SelectStateful}
+    knobs={{
+        disabled: false,
+        size: [['s', 'm'], 'm'],
+        view: [['default', ''], 'default']
+    }}
+/>

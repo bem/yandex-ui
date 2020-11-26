@@ -1,0 +1,25 @@
+---
+id: slider
+---
+
+import React from 'react';
+import { Slider, useSliderState } from '../desktop/bundle'
+
+export const SliderStateful = (props) => {
+    const state = useSliderState({ value: [10, 50] });
+    return <Slider {...props} {...state} />
+};
+
+<Sandbox
+    displayName='Slider'
+    component={SliderStateful}
+    knobs={{
+        view: [['default', ''], 'default'],
+        disabled: false,
+        filled: true,
+        reverse: false,
+        vertical: false,
+        showTicks: true,
+        showTickValues: true
+    }}
+/>

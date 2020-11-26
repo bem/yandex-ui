@@ -6,15 +6,13 @@ import { ListTile } from '../../../ListTile';
 import { Text } from '../../../Text/bundle';
 import { Button } from '../../../Button/desktop/bundle';
 import { Tumbler } from '../../../Tumbler/desktop/bundle';
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
 import { Slider, SliderProps, useSliderState } from '../../desktop/bundle';
 import './example.css';
 
-export default {
-    parameters,
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: createDecorators({ scope: 'desktop' }),
-};
+import { configureRootTheme } from '../../../Theme';
+import { presets } from '../../../Theme/presets';
+
+configureRootTheme({ theme: presets.default });
 
 // TODO: Перенести в общее место.
 const Grid: FC<{ id?: string }> = ({ children, id }) => (
@@ -206,8 +204,4 @@ export const Showcase = () => {
             </Grid>
         </>
     );
-};
-
-Showcase.story = {
-    name: 'showcase',
 };

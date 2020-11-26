@@ -1,0 +1,32 @@
+---
+id: radiobox
+---
+
+<!-- props:start -->
+| Свойство   | Тип                                                                                                                                                                                                                                                               | По умолчанию | Описание                                                                                    |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ------------------------------------------------------------------------------------------- |
+| options?   | `RadioOptionProps[]`                                                                                                                                                                                                                                              | `[]`         | Набор переключателей; можно использовать вместо `children`                                  |
+| innerRef?  | `(instance: HTMLSpanElement) => void \| RefObject<HTMLSpanElement>`                                                                                                                                                                                               | —            | Ссылка на корневой DOM-элемент компонента                                                   |
+| disabled?  | `false \| true`                                                                                                                                                                                                                                                   | —            | Неактивное состояние всей группы переключателей                                             |
+| children?  | `string \| number \| false \| true \| {} \| ReactElement<any, string \| ((props: any) => ReactElement<any, string \| ... \| (new (props: any) => Component<any, any, any>)>) \| (new (props: any) => Component<any, any, any>)> \| ReactNodeArray \| ReactPortal` | —            | Набор переключателей c использованием элемента `Radio`; можно использовать вместо `options` |
+| className? | `string`                                                                                                                                                                                                                                                          | —            | Дополнительный класс у корневого DOM-элемента                                               |
+| value?     | `string`                                                                                                                                                                                                                                                          | —            | Текущее выбранное значение в группе                                                         |
+| name?      | `string`                                                                                                                                                                                                                                                          | —            | Имя для всех элементов `Radio`                                                              |
+| onChange?  | `(event: ChangeEvent<HTMLInputElement>) => void`                                                                                                                                                                                                                  | —            | Колбэк, который срабатывает при изменении значения                                         |
+<!-- props:end -->
+
+### Radio
+
+| Свойство    | Тип                                                                   | По умолчанию | Описание                                            |
+| ----------- | --------------------------------------------------------------------- | ------------ | --------------------------------------------------- |
+| className?  | `string`                                                              | —            | Дополнительный класс у корневого DOM-элемента       |
+| children    | `ReactNode`                                                           | —            | Текст подписи к переключателю                       |
+| name?       | `string`                                                              | —            | Имя переключателя                                   |
+| disabled?   | `false \| true`                                                       | —            | Неактивное состояние переключателя                  |
+| value       | `string`                                                              | —            | Значение переключателя                              |
+| innerRef?   | `(instance: HTMLLabelElement) => void \| RefObject<HTMLLabelElement>` | —            | Ссылка на корневой DOM-элемент компонента           |
+| controlRef? | `(instance: HTMLInputElement) => void \| RefObject<HTMLInputElement>` | —            | Ссылка на нативный DOM-элемент нативного инпута     |
+| checked?    | `false \| true`                                                       | —            | Состояние переключателя                             |
+| onChange?   | `(event: ChangeEvent<HTMLInputElement>) => void`                      | —            | Колбэк, который срабатывает при изменении значения |
+| onClick?    | `(event: MouseEventHandler<HTMLLabelElement>) => void`                | —            | Колбэк, который срабатывает при клике на контейнер |
+| autoFocus?  | `false \| true`                                                       | —            | Устанавливает фокус в переключатель при монтировании |

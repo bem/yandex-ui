@@ -1,16 +1,8 @@
 import React, { useState, useRef, useLayoutEffect, createContext, useCallback, useContext, useMemo } from 'react';
 
-import { Textinput } from '../../../Textinput/Textinput.bundle/desktop';
-import { Spacer } from '../../../Spacer';
-import { Select } from '../../Select.bundle/desktop';
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
-import './overriden.examples.css';
-
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: createDecorators({ scope: 'desktop' }),
-    parameters,
-};
+import { Textinput } from '@yandex-lego/components/Textinput/Textinput.bundle/desktop';
+import { Spacer } from '@yandex-lego/components/Spacer/desktop/';
+import { Select } from '@yandex-lego/components/Select/Select.bundle/desktop';
 
 const INITIAL_OPTIONS = [
     { value: 'a', content: 'Каждый' },
@@ -39,11 +31,11 @@ const RenderMenu = (props: any, Menu: any) => {
     }, [props.focused]);
 
     return (
-        <div className="MenuWrapper">
+        <div className="MenuWrapper" style={{ overflow: 'hidden', width: 160 }}>
             <Spacer all="8px">
                 <Textinput onChange={onChange} value={value} controlRef={controlRef} view="default" size="s" />
             </Spacer>
-            <Menu {...props} />
+            <Menu style={{ backgroundColor: 'var(--color-bg-default)' }} {...props} />
         </div>
     );
 };
@@ -78,8 +70,4 @@ export const Overriden = () => {
             </SearchContext.Provider>
         </div>
     );
-};
-
-Overriden.story = {
-    name: 'overriden',
 };

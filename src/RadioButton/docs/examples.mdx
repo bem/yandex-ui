@@ -1,0 +1,27 @@
+---
+id: radiobutton
+---
+
+import { View as RadioButtonView } from '../RadioButton.examples/desktop/view.examples.tsx'
+import viewRadioButtonSource from '!!raw-loader!../RadioButton.examples/desktop/view.examples.tsx'
+
+import { Size as RadioButtonSize } from '../RadioButton.examples/desktop/size.examples.tsx'
+import sizeRadioButtonSource from '!!raw-loader!../RadioButton.examples/desktop/size.examples.tsx'
+
+### Оформление радиогруппы
+
+Для различного оформления радиогруппы установите свойство `view` в значение `"default"`.
+
+<Example
+    component={RadioButtonView}
+    source={viewRadioButtonSource}
+/>
+
+### Размер радиогруппы
+
+Чтобы изменить размер радиогруппы, установите свойство `size` в одно из следующих значений: `"s"`, `"m"`, `"l"`.
+
+<Example
+    component={RadioButtonSize}
+    source={sizeRadioButtonSource}
+/>
