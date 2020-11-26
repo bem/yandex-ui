@@ -1,8 +1,8 @@
 import React, { FC, useRef } from 'react';
 import { render, fireEvent } from '@testing-library/react';
 
-import { LayerManager } from './LayerManager';
-import { delay } from '../internal/utils/delay';
+import { LayerManager } from '../LayerManager';
+import { delay } from '../../internal/utils/delay';
 
 const LayerUnitCase: FC<any> = ({ onClose1, onClose2, visible1, visible2 }) => {
     const contentRef1 = useRef<HTMLDivElement>(null);
