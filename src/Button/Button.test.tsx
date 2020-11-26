@@ -207,5 +207,20 @@ describe.each<any>(platforms)('Button@%s', (_platform, Button: ComponentType<But
             wrapper.simulate('click');
             expect(document.activeElement).toBe(buttonRef.current);
         });
+
+        test('при потере фокуса кнопка должна терять класс Button2_pressed', () => {
+            const wrapper = mount(<Button />);
+            wrapper.simulate('keydown', { keycode: Keys.SPACE });
+            expect(wrapper.find('button').hasClass('Button2_pressed')).toBe(true);
+            wrapper.simulate('blur');
+            expect(wrapper.find('button').hasClass('Button2_pressed')).toBe(false);
+        });
+
+        test('при при потере фокуса вызывается функция, переданная в prop onBlur', () => {
+            const onBlurFn = jest.fn();
+            const wrapper = mount(<Button onBlur={onBlurFn} />);
+            wrapper.simulate('blur');
+            expect(onBlurFn.mock.calls.length).toBe(1);
+        });
     });
 });

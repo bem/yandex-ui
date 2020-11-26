@@ -11,7 +11,9 @@ import React, {
     ReactType,
     KeyboardEventHandler,
     MouseEventHandler,
+    FocusEvent,
     Ref,
+    FocusEventHandler,
 } from 'react';
 import { cn } from '@bem-react/classname';
 
@@ -159,6 +161,11 @@ export interface IButtonProps {
     onMouseLeave?: MouseEventHandler<ContainerElement>;
 
     /**
+     * Обработчик события `onBlur`
+     */
+    onBlur?: FocusEventHandler<ContainerElement>;
+
+    /**
      * Всплывающая подсказка
      */
     title?: string;
@@ -260,6 +267,7 @@ export const Button = class extends PureComponent<ButtonProps, IButtonState> {
                 onMouseDown={this.onMouseDown}
                 onMouseUp={this.onMouseUp}
                 onMouseLeave={this.onMouseLeave}
+                onBlur={this.onBlur}
                 aria-pressed={checked}
                 aria-disabled={disabled}
                 // https://st.yandex-team.ru/ISL-1667
@@ -343,4 +351,12 @@ export const Button = class extends PureComponent<ButtonProps, IButtonState> {
             this.props.onMouseLeave(event);
         }
     };
+
+    protected onBlur = (event: FocusEvent<ContainerElement>) => {
+        this.setState({ pressed: false });
+
+        if (this.props.onBlur !== undefined) {
+            this.props.onBlur(event);
+        }
+    }
 } as ComponentClass<IButtonProps>;

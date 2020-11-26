@@ -736,6 +736,7 @@ exports[`Select@touch-pad client environment должен вернуть пол�
                     autoComplete="off"
                     className="Button2 Select2-Button"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     onKeyUp={[Function]}
@@ -1005,6 +1006,7 @@ exports[`Select@touch-phone client environment должен вернуть по�
                     autoComplete="off"
                     className="Button2 Select2-Button"
                     disabled={false}
+                    onBlur={[Function]}
                     onClick={[Function]}
                     onKeyDown={[Function]}
                     onKeyUp={[Function]}
