@@ -163,7 +163,7 @@ export class Menu extends PureComponent<IMenuProps> {
         } else if (prevProps.focused && !this.props.focused) {
             this.setState({ hoveredIndex: -1 });
             this.unsubscribeFromEvents();
-        } else if (this.props.focused && prevProps.items !== this.props.items) {
+        } else if (this.props.focused && prevProps.items.length !== this.props.items.length) {
             this.hoverAndScrollToFirstSelectedElement();
         }
     }
