@@ -1,4 +1,4 @@
-import React, { FC, useState, cloneElement, ReactElement, useRef, ReactNode, useCallback } from 'react';
+import React, { FC, useState, cloneElement, ReactElement, useRef, ReactNode, useCallback, Children } from 'react';
 
 import { mergeRefs } from '../lib/mergeRefs';
 import { forkFn } from '../lib/forkFn';
@@ -12,7 +12,7 @@ export type TooltipStatefulProps = TooltipProps & {
     /**
      * Компонент или элемент для которого нужно показать подсказку
      */
-    children: ReactNode;
+    children: ReactElement;
 
     /**
      * Содержимое, которое будет показано в подсказке
@@ -50,8 +50,8 @@ export const TooltipStateful: FC<TooltipStatefulProps> = ({
 }) => {
     const [visible, setVisible] = useState(defaultVisible);
     const anchorRef = useRef<HTMLElement>(null);
-    // Перезаписываем children с нужным типом для удобного использования.
-    const child = children as ReactElement;
+
+    const child = Children.only(children);
 
     // В дальнейшем данный код можно вынести куда-то выше и использовать по аналогии с Popup и Modal.
     const triggers = Array.isArray(trigger) ? trigger : [trigger];
