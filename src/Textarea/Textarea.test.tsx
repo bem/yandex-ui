@@ -84,5 +84,14 @@ describe.each<any>(platforms)('Textarea@%s', (_platform, Textarea: ComponentType
             wrapper.find('.Textarea-Hint').simulate('animationend');
             expect(wrapper.find('.Textarea-Hint')).toHaveLength(0);
         });
+
+        test('renderControl рисует div и туда прорастают свойства', () => {
+            const wrapper = mount(
+                <Textarea renderControl={(props:any) => <div className="Textarea-Control" {...props} />} name="textareaName" />,
+            );
+
+            expect(wrapper.find('.Textarea-Control').getDOMNode().tagName).toBe('DIV');
+            expect(wrapper.find('.Textarea-Control').prop('name')).toBe('textareaName');
+        });
     });
 });

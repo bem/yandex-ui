@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { action } from '@storybook/addon-actions';
 
 import { Textinput } from '../../Textinput.bundle/desktop';
@@ -10,6 +10,57 @@ export default {
     title: EXAMPLE_DESKTOP_TOKEN,
     decorators: createDecorators({ scope: 'desktop' }),
     parameters,
+};
+
+function updateCaret(node: HTMLElement): void {
+    if (typeof window.getSelection !== 'undefined' && typeof document.createRange !== 'undefined') {
+        const range = document.createRange();
+        range.selectNodeContents(node);
+        range.collapse(false);
+        const selection = window.getSelection();
+        if (selection !== null) {
+            selection.removeAllRanges();
+            selection.addRange(range);
+        }
+    }
+}
+
+export const CustomControl = () => {
+    const [value1, setValue1] = useState('тут внутри div contenteditable, и всё работает');
+
+    const renderControl = useCallback(({ type, value, onChange, controlRef, ...props }: any) => {
+        return (
+            <div
+                style={{ display: 'flex', alignItems: 'center', padding: 'var(--textarea-size-m-spaceAll)' }}
+                ref={controlRef}
+                contentEditable
+                className="Textinput-Control"
+                onInput={(event) => {
+                    if (onChange) {
+                        const value = (event.target as HTMLDivElement).textContent || '';
+                        (event.target as HTMLInputElement).value = value;
+                        (event.currentTarget as HTMLInputElement).value = value;
+                        updateCaret(event.target as HTMLDivElement);
+                        onChange(event);
+                    }
+                }}
+                {...props}
+            >
+                {value}
+            </div>
+        );
+    }, []);
+
+    return (
+        <Textinput
+            hasClear
+            size="m"
+            view="default"
+            value={value1}
+            onChange={(event) => setValue1(event.target.value)}
+            renderControl={renderControl}
+        />
+    );
 };
 
 export const Baseline = () => (

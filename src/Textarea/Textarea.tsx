@@ -2,6 +2,7 @@ import React, { FC, Ref, ReactNode, useState, useCallback, useRef, MouseEventHan
 import { useComponentRegistry } from '@bem-react/di';
 import { cn } from '@bem-react/classname';
 
+import { RenderOverride, useRenderOverride } from '../lib/render-override';
 import { useUpdateEffect } from '../useUpdateEffect';
 import { IWithControlProps, withControl } from '../withControl/withControl';
 import { IWithControlProps as IWithControlPropsDesktop } from '../withControl/withControl@desktop';
@@ -98,6 +99,11 @@ export interface ITextareaProps
      * Всплывающая подсказка
      */
     title?: string;
+
+    /**
+     * Переопределяет компонент `Control`
+     */
+    renderControl?: RenderOverride<ITextareaControlProps>;
 }
 
 export const cnTextarea = cn('Textarea');
@@ -129,6 +135,7 @@ const TextareaBase: FC<ITextareaProps> = ({
     hint: htmlHint,
     state,
     title,
+    renderControl,
     ...props
 }) => {
     const className = cnTextarea(
@@ -141,7 +148,9 @@ const TextareaBase: FC<ITextareaProps> = ({
         [textareaClassName],
     );
 
-    const { Wrap, Control, Box, Hint } = useComponentRegistry<ITextareaRegistry>(cnTextarea());
+    const { Wrap, Control: ControlOriginal, Box, Hint } = useComponentRegistry<ITextareaRegistry>(cnTextarea());
+    const Control = useRenderOverride(ControlOriginal, renderControl);
+
     const [hint, setHint] = useState(htmlHint);
     const [hintLeave, setHintLeave] = useState(false);
     const prevHint = useRef(htmlHint);

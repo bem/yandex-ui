@@ -94,5 +94,14 @@ describe.each<any>(platforms)('Textinput@%s', (_platform, Textinput: ComponentTy
             wrapper.find('.Textinput-Hint').simulate('animationend');
             expect(wrapper.find('.Textinput-Hint')).toHaveLength(0);
         });
+
+        test('renderControl рисует div и туда прорастают свойства', () => {
+            const wrapper = mount(
+                <Textinput renderControl={(props:any) => <div className="Textinput-Control" {...props} />} name="textinputName" />,
+            );
+
+            expect(wrapper.find('.Textinput-Control').getDOMNode().tagName).toBe('DIV');
+            expect(wrapper.find('.Textinput-Control').prop('name')).toBe('textinputName');
+        });
     });
 });

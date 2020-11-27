@@ -12,6 +12,7 @@ import React, {
 import { useComponentRegistry } from '@bem-react/di';
 import { cn } from '@bem-react/classname';
 
+import { RenderOverride, useRenderOverride } from '../lib/render-override';
 import { useUniqId } from '../useUniqId';
 import { useUpdateEffect } from '../useUpdateEffect';
 import { IWithControlProps, withControl } from '../withControl/withControl';
@@ -96,6 +97,11 @@ export interface ITextinputProps extends ITextinputControlProps, IWithControlPro
      * Всплывающая подсказка
      */
     title?: string;
+
+    /**
+     * Переопределяет компонент `Control`
+     */
+    renderControl?: RenderOverride<ITextinputControlProps>;
 }
 
 /**
@@ -128,9 +134,12 @@ const TextinputPresenter: FC<ITextinputProps> = ({
     hint: htmlHint,
     state,
     title,
+    renderControl,
     ...props
 }) => {
-    const { Control, Box, Icon, Hint } = useComponentRegistry<ITextinputRegistry>(cnTextinput());
+    const { Control: ControlOriginal, Box, Icon, Hint } = useComponentRegistry<ITextinputRegistry>(cnTextinput());
+    const Control = useRenderOverride(ControlOriginal, renderControl);
+
     const [hint, setHint] = useState(htmlHint);
     const [hintLeave, setHintLeave] = useState(false);
     const prevHint = useRef(htmlHint);
