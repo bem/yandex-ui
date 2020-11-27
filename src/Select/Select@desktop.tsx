@@ -249,7 +249,6 @@ const SelectPresenter = class extends PureComponent<SelectProps> {
 
         if (popupNode !== null && popupNode.contains(event.target as HTMLElement)) {
             this.preventClosable = true;
-            event.preventDefault();
         }
     };
 
