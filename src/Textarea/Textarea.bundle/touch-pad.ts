@@ -1,8 +1,7 @@
-import { FC, MouseEventHandler } from 'react';
-import { compose, composeU } from '@bem-react/core';
+import { compose, composeU, ExtractProps } from '@bem-react/core';
 
-import { ITextareaProps as ITextareaTouchPhoneProps, Textarea as TextareaTouchPad } from '../Textarea@touch-pad';
-import { withDebounceInput, Debounced } from '../../withDebounceInput';
+import { Textarea as TextareaTouchPad } from '../Textarea@touch-pad';
+import { withDebounceInput } from '../../withDebounceInput';
 // _hasClear
 import { withHasClear } from '../_hasClear/Textarea_hasClear@touch-pad';
 // _size
@@ -15,18 +14,12 @@ import { withViewDefault } from '../_view/Textarea_view_default';
 
 export * from '../Textarea@touch-pad';
 
-export interface ITextareaProps extends ITextareaTouchPhoneProps, Debounced {
-    size?: 'm' | 's';
-    theme?: 'normal';
-    view?: 'default';
-    hasClear?: boolean;
-    onClearClick?: MouseEventHandler<HTMLSpanElement>;
-}
-
-export const Textarea: FC<ITextareaProps> = compose(
+export const Textarea = compose(
     withDebounceInput,
     withHasClear,
     withViewDefault,
     withThemeNormal,
     composeU(withSizeM, withSizeS),
 )(TextareaTouchPad);
+
+export type ITextareaProps = ExtractProps<typeof Textarea>;

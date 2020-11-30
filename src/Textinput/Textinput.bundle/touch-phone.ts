@@ -1,11 +1,9 @@
-import { FC, MouseEventHandler } from 'react';
-import { compose, composeU } from '@bem-react/core';
+import { compose, composeU, ExtractProps } from '@bem-react/core';
 
 import {
-    ITextinputProps as ITextinputTouchPhoneProps,
     Textinput as TextinputTouchPhone,
 } from '../Textinput@touch-phone';
-import { withDebounceInput, Debounced } from '../../withDebounceInput';
+import { withDebounceInput } from '../../withDebounceInput';
 // _size
 import { withSizeM } from '../_size/Textinput_size_m';
 import { withSizeS } from '../_size/Textinput_size_s';
@@ -32,38 +30,19 @@ import { withBaseline } from '../_baseline/Textinput_baseline';
 
 export * from '../Textinput@touch-phone';
 
-export interface ITextinputProps extends ITextinputTouchPhoneProps, Debounced {
-    size?: 'm' | 's';
-    theme?: 'normal' | 'websearch';
-    view?: 'default';
-    variant?: 'filled' | 'outlined';
-    label?: string;
-    hasClear?: boolean;
-    onClearClick?: MouseEventHandler<HTMLSpanElement>;
-    pin?:
-        | 'brick-brick'
-        | 'brick-clear'
-        | 'brick-round'
-        | 'clear-brick'
-        | 'clear-clear'
-        | 'clear-round'
-        | 'round-brick'
-        | 'round-clear'
-        | 'round-round';
-    baseline?: boolean;
-}
-
-export const Textinput: FC<ITextinputProps> = compose(
+export const Textinput = compose(
     withDebounceInput,
     composeU(withSizeM, withSizeS),
     composeU(withThemeNormal, withThemeWebsearch),
     composeU(
-        withPinBrickBrick,
-        withPinBrickClear,
-        withPinBrickRound,
-        withPinClearBrick,
-        withPinClearClear,
-        withPinClearRound,
+        composeU(
+            withPinBrickBrick,
+            withPinBrickClear,
+            withPinBrickRound,
+            withPinClearBrick,
+            withPinClearClear,
+            withPinClearRound,
+        ),
         withPinRoundBrick,
         withPinRoundClear,
         withPinRoundRound,
@@ -75,3 +54,5 @@ export const Textinput: FC<ITextinputProps> = compose(
     withBaseline,
     withHasClear,
 )(TextinputTouchPhone);
+
+export type ITextinputProps = ExtractProps<typeof Textinput>;

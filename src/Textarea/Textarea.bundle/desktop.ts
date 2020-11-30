@@ -1,8 +1,7 @@
-import { FC, MouseEventHandler } from 'react';
-import { compose, composeU } from '@bem-react/core';
+import { compose, composeU, ExtractProps } from '@bem-react/core';
 
-import { ITextareaProps as ITextareaDesktopProps, Textarea as TextareaDesktop } from '../Textarea@desktop';
-import { withDebounceInput, Debounced } from '../../withDebounceInput';
+import { Textarea as TextareaDesktop } from '../Textarea@desktop';
+import { withDebounceInput } from '../../withDebounceInput';
 // _hasClear
 import { withHasClear } from '../_hasClear/Textarea_hasClear@desktop';
 // _size
@@ -17,15 +16,7 @@ import { withAutoResize } from '../_autoResize/Textarea_autoResize';
 
 export * from '../Textarea@desktop';
 
-export interface ITextareaProps extends ITextareaDesktopProps, Debounced {
-    size?: 'm' | 's';
-    theme?: 'normal';
-    view?: 'default';
-    hasClear?: boolean;
-    onClearClick?: MouseEventHandler<HTMLSpanElement>;
-}
-
-export const Textarea: FC<ITextareaProps> = compose(
+export const Textarea = compose(
     withDebounceInput,
     withHasClear,
     withViewDefault,
@@ -34,3 +25,5 @@ export const Textarea: FC<ITextareaProps> = compose(
 )(TextareaDesktop);
 
 export const TextareaWithAutoResize = withAutoResize(Textarea);
+
+export type ITextareaProps = ExtractProps<typeof Textarea>;

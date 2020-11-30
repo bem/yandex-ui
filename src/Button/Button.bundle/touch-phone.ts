@@ -1,7 +1,6 @@
-import { FC } from 'react';
-import { compose, composeU } from '@bem-react/core';
+import { compose, composeU, ExtractProps } from '@bem-react/core';
 
-import { IButtonProps as IButtonDesktopProps, Button as ButtonTouchPhone } from '../Button@touch-phone';
+import { Button as ButtonTouchPhone } from '../Button@touch-phone';
 // _baseline
 import { withBaseline } from '../_baseline/Button_baseline';
 // _pin
@@ -46,39 +45,18 @@ import { withWidthMax } from '../_width/Button_width_max';
 
 export * from '../Button@touch-phone';
 
-export interface IButtonProps extends IButtonDesktopProps {
-    baseline?: boolean;
-    pin?:
-        | 'brick-brick'
-        | 'brick-circle'
-        | 'brick-clear'
-        | 'brick-round'
-        | 'circle-brick'
-        | 'circle-circle'
-        | 'circle-clear'
-        | 'clear-brick'
-        | 'clear-circle'
-        | 'clear-clear'
-        | 'clear-round'
-        | 'round-brick'
-        | 'round-clear';
-    size?: 'l' | 'm' | 's';
-    theme?: 'action' | 'clear' | 'link' | 'normal' | 'pseudo' | 'raised' | 'websearch';
-    type?: 'link' | 'submit';
-    view?: 'default' | 'action' | 'clear' | 'link' | 'pseudo' | 'raised';
-    width?: 'max' | 'auto';
-}
-
 export const Button = compose(
     composeU(
-        withPinBrickBrick,
-        withPinBrickCircle,
-        withPinBrickClear,
-        withPinBrickRound,
-        withPinCircleBrick,
-        withPinCircleCircle,
-        withPinCircleClear,
-        withPinClearBrick,
+        composeU(
+            withPinBrickBrick,
+            withPinBrickCircle,
+            withPinBrickClear,
+            withPinBrickRound,
+            withPinCircleBrick,
+            withPinCircleCircle,
+            withPinCircleClear,
+            withPinClearBrick,
+        ),
         withPinClearCircle,
         withPinClearClear,
         withPinClearRound,
@@ -99,4 +77,6 @@ export const Button = compose(
     composeU(withWidthAuto, withWidthMax),
     composeU(withViewDefault, withViewAction, withViewClear, withViewLink, withViewPseudo, withViewRaised),
     withBaseline,
-)(ButtonTouchPhone) as FC<IButtonProps>;
+)(ButtonTouchPhone);
+
+export type IButtonProps = ExtractProps<typeof Button>;

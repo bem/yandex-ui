@@ -1,8 +1,7 @@
-import { FC } from 'react';
-import { compose, composeU } from '@bem-react/core';
+import { compose, composeU, ExtractProps } from '@bem-react/core';
 
 // base
-import { IMenuProps as IMenuTouchPhoneProps, Menu as MenuTouchPhone } from '../Menu@touch-phone';
+import { Menu as MenuTouchPhone } from '../Menu@touch-phone';
 // _size
 import { withSizeM } from '../_size/Menu_size_m';
 import { withSizeS } from '../_size/Menu_size_s';
@@ -16,16 +15,11 @@ import { withWidthMax } from '../_width/Menu_width_max';
 
 export * from '../Menu@touch-phone';
 
-export interface IMenuProps extends IMenuTouchPhoneProps {
-    size?: 'm' | 's';
-    view?: 'default';
-    width?: 'auto' | 'max';
-    theme?: 'normal';
-}
-
 export const Menu = compose(
     composeU(withSizeM, withSizeS),
     composeU(withWidthAuto, withWidthMax),
     withViewDefault,
     withThemeNormal,
-)(MenuTouchPhone) as FC<IMenuProps>;
+)(MenuTouchPhone);
+
+export type IMenuProps = ExtractProps<typeof Menu>;

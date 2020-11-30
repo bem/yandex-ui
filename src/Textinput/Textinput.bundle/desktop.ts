@@ -1,8 +1,7 @@
-import { FC, MouseEventHandler } from 'react';
-import { compose, composeU } from '@bem-react/core';
+import { compose, composeU, ExtractProps } from '@bem-react/core';
 
-import { ITextinputProps as ITextinputDesktopProps, Textinput as TextinputDesktop } from '../Textinput@desktop';
-import { withDebounceInput, Debounced } from '../../withDebounceInput';
+import { Textinput as TextinputDesktop } from '../Textinput@desktop';
+import { withDebounceInput } from '../../withDebounceInput';
 // _size
 import { withSizeM } from '../_size/Textinput_size_m';
 import { withSizeS } from '../_size/Textinput_size_s';
@@ -29,38 +28,19 @@ import { withBaseline } from '../_baseline/Textinput_baseline';
 
 export * from '../Textinput@desktop';
 
-export interface ITextinputProps extends ITextinputDesktopProps, Debounced {
-    size?: 'm' | 's';
-    theme?: 'normal' | 'websearch';
-    view?: 'default' | 'material';
-    variant?: 'filled' | 'outlined';
-    label?: string;
-    hasClear?: boolean;
-    onClearClick?: MouseEventHandler<HTMLSpanElement>;
-    pin?:
-        | 'brick-brick'
-        | 'brick-clear'
-        | 'brick-round'
-        | 'clear-brick'
-        | 'clear-clear'
-        | 'clear-round'
-        | 'round-brick'
-        | 'round-clear'
-        | 'round-round';
-    baseline?: boolean;
-}
-
-export const Textinput: FC<ITextinputProps> = compose(
+export const Textinput = compose(
     withDebounceInput,
     composeU(withSizeM, withSizeS),
     composeU(withThemeNormal, withThemeWebsearch),
     composeU(
-        withPinBrickBrick,
-        withPinBrickClear,
-        withPinBrickRound,
-        withPinClearBrick,
-        withPinClearClear,
-        withPinClearRound,
+        composeU(
+            withPinBrickBrick,
+            withPinBrickClear,
+            withPinBrickRound,
+            withPinClearBrick,
+            withPinClearClear,
+            withPinClearRound,
+        ),
         withPinRoundBrick,
         withPinRoundClear,
         withPinRoundRound,
@@ -72,3 +52,5 @@ export const Textinput: FC<ITextinputProps> = compose(
     withBaseline,
     withHasClear,
 )(TextinputDesktop);
+
+export type ITextinputProps = ExtractProps<typeof Textinput>;

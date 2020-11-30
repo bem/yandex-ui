@@ -1,8 +1,7 @@
-import { FC } from 'react';
-import { compose, composeU } from '@bem-react/core';
+import { compose, composeU, ExtractProps } from '@bem-react/core';
 
 // base
-import { ICheckboxProps as ICheckboxDesktopProps, Checkbox as CheckboxDesktop } from '../Checkbox@desktop';
+import { Checkbox as CheckboxDesktop } from '../Checkbox@desktop';
 // _lines
 import { withLinesMulti } from '../_lines/Checkbox_lines_multi';
 import { withLinesOne } from '../_lines/Checkbox_lines_one';
@@ -20,18 +19,12 @@ import { withIndeterminate } from '../_indeterminate/Checkbox_indeterminate';
 
 export * from '../Checkbox@desktop';
 
-export interface ICheckboxProps extends ICheckboxDesktopProps {
-    lines?: 'multi' | 'one';
-    size?: 'm' | 's';
-    theme?: 'normal' | 'pseudo';
-    view?: 'default' | 'outline';
-    indeterminate?: boolean;
-}
-
 export const Checkbox = compose(
     composeU(withViewDefault, withViewOutline),
     withIndeterminate,
     composeU(withLinesMulti, withLinesOne),
     composeU(withSizeM, withSizeS),
     composeU(withThemeNormal, withThemePseudo),
-)(CheckboxDesktop) as FC<ICheckboxProps>;
+)(CheckboxDesktop);
+
+export type ICheckboxProps = ExtractProps<typeof Checkbox>;

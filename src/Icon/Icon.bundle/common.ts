@@ -1,7 +1,6 @@
-import { FC } from 'react';
-import { compose, composeU } from '@bem-react/core';
+import { compose, composeU, ExtractProps } from '@bem-react/core';
 
-import { Icon as IconCommon, IIconProps as IIconCommonProps } from '../Icon';
+import { Icon as IconCommon } from '../Icon';
 // _glyph
 import { withGlyphCaretsV } from '../_glyph/Icon_glyph_carets-v';
 import { withGlyphTypeArrow } from '../_glyph/Icon_glyph_type-arrow';
@@ -22,33 +21,22 @@ import { withTypeFilter } from '../_type/Icon_type_filter';
 
 export * from '../Icon';
 
-export interface IIconProps extends IIconCommonProps {
-    glyph?:
-        | 'carets-v'
-        | 'type-arrow'
-        | 'type-check'
-        | 'type-close'
-        | 'type-cross-websearch'
-        | 'type-cross'
-        | 'type-filter'
-        | 'type-indeterminate'
-        | 'type-tick'
-        | 'x-sign';
-    type?: 'arrow' | 'close' | 'cross' | 'cross-websearch' | 'filter';
-}
-
 export const Icon = compose(
     composeU(
-        withGlyphCaretsV,
-        withGlyphTypeArrow,
-        withGlyphTypeCheck,
-        withGlyphTypeClose,
-        withGlyphTypeCross,
-        withGlyphTypeCrossWebsearch,
-        withGlyphTypeFilter,
+        composeU(
+            withGlyphCaretsV,
+            withGlyphTypeArrow,
+            withGlyphTypeCheck,
+            withGlyphTypeClose,
+            withGlyphTypeCross,
+            withGlyphTypeCrossWebsearch,
+            withGlyphTypeFilter,
+        ),
         withGlyphTypeIndeterminate,
         withGlyphTypeTick,
         withGlyphXSign,
     ),
     composeU(withTypeArrow, withTypeClose, withTypeCross, withTypeCrossWebsearch, withTypeFilter),
-)(IconCommon) as FC<IIconProps>;
+)(IconCommon);
+
+export type IIconProps = ExtractProps<typeof Icon>;

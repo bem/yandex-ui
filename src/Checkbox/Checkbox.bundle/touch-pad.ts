@@ -1,8 +1,7 @@
-import { FC } from 'react';
-import { compose, composeU } from '@bem-react/core';
+import { compose, composeU, ExtractProps } from '@bem-react/core';
 
 // base
-import { ICheckboxProps as ICheckboxTouchPadProps, Checkbox as CheckboxTouchPad } from '../Checkbox@touch-pad';
+import { Checkbox as CheckboxTouchPad } from '../Checkbox@touch-pad';
 // _lines
 import { withLinesMulti } from '../_lines/Checkbox_lines_multi';
 import { withLinesOne } from '../_lines/Checkbox_lines_one';
@@ -19,18 +18,12 @@ import { withIndeterminate } from '../_indeterminate/Checkbox_indeterminate';
 
 export * from '../Checkbox@touch-pad';
 
-export interface ICheckboxProps extends ICheckboxTouchPadProps {
-    lines?: 'multi' | 'one';
-    size?: 'm' | 's';
-    theme?: 'normal' | 'pseudo';
-    view?: 'default';
-    indeterminate?: boolean;
-}
-
 export const Checkbox = compose(
     withViewDefault,
     withIndeterminate,
     composeU(withLinesMulti, withLinesOne),
     composeU(withSizeM, withSizeS),
     composeU(withThemeNormal, withThemePseudo),
-)(CheckboxTouchPad) as FC<ICheckboxProps>;
+)(CheckboxTouchPad);
+
+export type ICheckboxProps = ExtractProps<typeof Checkbox>;

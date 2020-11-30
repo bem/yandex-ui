@@ -1,8 +1,7 @@
-import { FC } from 'react';
-import { compose, composeU } from '@bem-react/core';
+import { compose, composeU, ExtractProps } from '@bem-react/core';
 
 // base
-import { IMenuProps as IMenuDesktopProps, Menu as MenuDesktop } from '../Menu@desktop';
+import { Menu as MenuDesktop } from '../Menu@desktop';
 // _size
 import { withSizeM } from '../_size/Menu_size_m';
 import { withSizeS } from '../_size/Menu_size_s';
@@ -16,16 +15,11 @@ import { withWidthMax } from '../_width/Menu_width_max';
 
 export * from '../Menu@desktop';
 
-export interface IMenuProps extends IMenuDesktopProps {
-    size?: 'm' | 's';
-    view?: 'default';
-    width?: 'auto' | 'max';
-    theme?: 'normal';
-}
-
 export const Menu = compose(
     composeU(withSizeM, withSizeS),
     composeU(withWidthAuto, withWidthMax),
     withViewDefault,
     withThemeNormal,
-)(MenuDesktop) as FC<IMenuProps>;
+)(MenuDesktop);
+
+export type IMenuProps = ExtractProps<typeof Menu>;

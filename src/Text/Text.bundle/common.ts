@@ -1,5 +1,4 @@
-import { FC } from 'react';
-import { compose, composeU } from '@bem-react/core';
+import { compose, composeU, ExtractProps } from '@bem-react/core';
 
 // _weight
 import { withWeightLight } from '../_weight/Text_weight_light';
@@ -8,7 +7,7 @@ import { withWeightMedium } from '../_weight/Text_weight_medium';
 import { withWeightBold } from '../_weight/Text_weight_bold';
 
 // _typography
-import { Text as TextCommon, TextProps as TextCommonProps, TextTypographyValue } from '../Text';
+import { Text as TextCommon } from '../Text';
 import { withTypographyDisplayXL } from '../_typography/Text_typography_display-xl';
 import { withTypographyDisplayL } from '../_typography/Text_typography_display-l';
 import { withTypographyDisplayM } from '../_typography/Text_typography_display-m';
@@ -48,11 +47,6 @@ export * from '../Text';
 
 export type TextWeightValue = 'light' | 'regular' | 'medium' | 'bold';
 
-export interface TextProps extends TextCommonProps {
-    typography?: TextTypographyValue;
-    weight?: TextWeightValue;
-}
-
 export const Text = compose(
     composeU(
         composeU(
@@ -79,4 +73,6 @@ export const Text = compose(
         ),
     ),
     composeU(withWeightLight, withWeightRegular, withWeightMedium, withWeightBold),
-)(TextCommon) as FC<TextProps>;
+)(TextCommon);
+
+export type TextProps = ExtractProps<typeof Text>;
