@@ -1,15 +1,9 @@
 import React from 'react';
 
-import { MessageBox } from '../../MessageBox.bundle/desktop';
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
-import { cnTheme } from '../../../Theme';
-import { theme } from '../../../Theme/presets/default';
+import { MessageBox } from '@yandex-lego/components/MessageBox/desktop/bundle';
 
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: createDecorators({ scope: 'desktop' }),
-    parameters,
-};
+import { cnTheme } from '@yandex-lego/components/Theme';
+import { theme } from '@yandex-lego/components/Theme/presets/default';
 
 export const Text = () => {
     return (
@@ -52,8 +46,4 @@ export const Text = () => {
             </MessageBox>
         </div>
     );
-};
-
-Text.story = {
-    name: 'text',
 };

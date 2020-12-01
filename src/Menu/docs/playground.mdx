@@ -1,0 +1,40 @@
+---
+id: Menu
+---
+
+import React, { useState } from 'react';
+import { Menu } from '../Menu.bundle/desktop';
+
+export const MenuWithItems = (props) => {
+    const [value, setValue] = useState('a');
+    const items = [
+        { value: 'a', content: 'Каждый' },
+        { value: 'b', content: 'Охотник' },
+        {
+            items: [
+                { value: 'c', content: 'Желает', disabled: true },
+                { value: 'd', content: 'Знать' },
+                { value: 'e', content: 'Где' },
+            ],
+        },
+    ];
+    return (
+        <Menu
+            {...props}
+            items={items}
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+        />
+    );
+}
+
+<Sandbox
+    displayName='Menu'
+    component={MenuWithItems}
+    knobs={{
+        view: [['default'], 'default'],
+        size: [['s', 'm'], 'm'],
+        width: [['max', 'auto'], 'auto'],
+        disabled: false,
+    }}
+/>

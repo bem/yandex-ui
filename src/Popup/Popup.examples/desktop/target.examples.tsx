@@ -1,14 +1,7 @@
 import React, { createRef, useState } from 'react';
 
-import { Button } from '../../../Button/Button.bundle/desktop';
-import { Popup } from '../../Popup.bundle/desktop';
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
-
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: createDecorators({ scope: 'desktop' }),
-    parameters,
-};
+import { Popup } from '@yandex-lego/components/Popup/desktop/bundle';
+import { Button } from '@yandex-lego/components/Button/desktop/bundle';
 
 const scopeRef = createRef<HTMLDivElement>();
 const anchorRef = createRef<HTMLDivElement>();
@@ -42,8 +35,4 @@ export const Target = () => {
             </Popup>
         </div>
     );
-};
-
-Target.story = {
-    name: 'target',
 };

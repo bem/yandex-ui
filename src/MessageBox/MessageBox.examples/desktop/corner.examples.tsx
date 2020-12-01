@@ -1,15 +1,9 @@
 import React from 'react';
 
-import { MessageBox, Corner } from '../../MessageBox.bundle/desktop';
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
-import { cnTheme } from '../../../Theme';
-import { theme } from '../../../Theme/presets/default';
+import { MessageBox, Corner } from '@yandex-lego/components/MessageBox/desktop/bundle';
 
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: createDecorators({ scope: 'desktop' }),
-    parameters,
-};
+import { cnTheme } from '@yandex-lego/components/Theme';
+import { theme } from '@yandex-lego/components/Theme/presets/default';
 
 export const Corners = () => (
     <div style={{ padding: '16px' }} className={cnTheme(theme)}>
@@ -36,7 +30,3 @@ export const Corners = () => (
         </MessageBox>
     </div>
 );
-
-Corners.story = {
-    name: 'corners',
-};

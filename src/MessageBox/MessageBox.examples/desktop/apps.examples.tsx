@@ -1,18 +1,11 @@
 import React, { FC, useRef } from 'react';
-import { withKnobs, select } from '@storybook/addon-knobs';
+import { select } from '@storybook/addon-knobs';
 
-import { Wrapper, MessageBoxPopup } from '../../../MessageBox/MessageBox.bundle/desktop';
-import { Button } from '../../../Button/Button.bundle/desktop';
+import { Button } from '@yandex-lego/components/Button/desktop/bundle';
+import { Wrapper, MessageBoxPopup } from '@yandex-lego/components/MessageBox/desktop/bundle';
 
-import { cnTheme } from '../../../Theme';
-import { presets, presetsKeys } from '../../../Theme/presets';
-
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators } from '../examples-config';
-
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: [withKnobs, ...createDecorators({ scope: 'desktop' })],
-};
+import { cnTheme } from '@yandex-lego/components/Theme';
+import { presets, presetsKeys } from '@yandex-lego/components/Theme/presets';
 
 const AnchorBox: FC<any> = ({ innerRef, children }) => (
     <div
@@ -191,8 +184,4 @@ export const MiniApps = () => {
             </div>
         </div>
     );
-};
-
-MiniApps.story = {
-    name: 'apps',
 };

@@ -1,15 +1,7 @@
 import React, { createRef, useState } from 'react';
-import { withKnobs } from '@storybook/addon-knobs';
 
-import { Button } from '../../../Button/Button.bundle/desktop';
-import { Modal } from '../../Modal.bundle/desktop';
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
-
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: [withKnobs, ...createDecorators({ scope: 'desktop' })],
-    parameters,
-};
+import { Button } from '@yandex-lego/components/Button/desktop/bundle';
+import { Modal } from '@yandex-lego/components/Modal/desktop/bundle';
 
 const scopeRef = createRef<HTMLDivElement>();
 
@@ -37,8 +29,4 @@ export const Playground = () => {
             </Modal>
         </div>
     );
-};
-
-Playground.story = {
-    name: 'playground',
 };

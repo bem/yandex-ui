@@ -1,16 +1,9 @@
 import React from 'react';
 
-import { Button } from '../../../Button/Button.bundle/desktop';
-import { MessageBox } from '../../MessageBox.bundle/desktop';
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
-import { cnTheme } from '../../../Theme';
-import { theme } from '../../../Theme/presets/default';
-
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: createDecorators({ scope: 'desktop' }),
-    parameters,
-};
+import { Button } from '@yandex-lego/components/Button/desktop/bundle';
+import { MessageBox } from '@yandex-lego/components/MessageBox/desktop/bundle';
+import { cnTheme } from '@yandex-lego/components/Theme';
+import { theme } from '@yandex-lego/components/Theme/presets/default';
 
 export const Buttons = () => (
     <div style={{ padding: '16px' }} className={cnTheme(theme)}>
@@ -33,7 +26,3 @@ export const Buttons = () => (
         </MessageBox>
     </div>
 );
-
-Buttons.story = {
-    name: 'buttons',
-};

@@ -1,0 +1,51 @@
+---
+id: Modal
+---
+
+### Использование с нужным набором модификаторов:
+
+```ts
+import React from 'react'
+import { compose } from '@bem-react/core'
+import {
+  Modal as ModalDesktop,
+  withThemeNormal,
+} from '@yandex-lego/components/Modal/desktop'
+import { withZIndex } from '@yandex-lego/components/withZIndex'
+
+// Композиция из различных модификаторов
+const Modal = compose(
+  withThemeNormal,
+  withZIndex,
+)(ModalDesktop)
+
+const App = () => (
+  <Modal
+    theme="normal"
+    onClose={() => this.setState({ visible: false })}
+    visible={this.state.visible}
+    zIndexGroupLevel={20}
+  >
+    Привет!
+  </Modal>
+)
+```
+
+### Использование с полным набором модификаторов:
+
+```ts
+// src/App.ts
+import React from 'react'
+import { Modal } from '@yandex-lego/components/Modal/desktop/bundle'
+
+const App = () => (
+  <Modal
+    theme="normal"
+    onClose={() => this.setState({ visible: false })}
+    visible={this.state.visible}
+    zIndexGroupLevel={20}
+  >
+    Привет!
+  </Modal>
+)
+```

@@ -1,19 +1,13 @@
 import React from 'react';
 
-import { Button } from '../../../Button/Button.bundle/desktop';
-import { Spin } from '../../../Spin/Spin.bundle/desktop';
-import { Progress } from '../../../Progress/Progress.bundle/desktop';
-import { MessageBox, Wrapper } from '../../MessageBox.bundle/desktop';
-import { theme as brandTheme } from '../../../Theme/presets/brand';
-import { theme } from '../../../Theme/presets/default';
-import { cnTheme } from '../../../Theme';
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
+import { Button } from '@yandex-lego/components/Button/desktop/bundle';
+import { MessageBox, Wrapper } from '@yandex-lego/components/MessageBox/desktop/bundle';
+import { Spin } from '@yandex-lego/components/Spin/desktop/bundle';
+import { Progress } from '@yandex-lego/components/Progress/desktop/bundle';
 
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: createDecorators({ scope: 'desktop' }),
-    parameters,
-};
+import { cnTheme } from '@yandex-lego/components/Theme';
+import { theme } from '@yandex-lego/components/Theme/presets/default';
+import { theme as brandTheme } from '@yandex-lego/components/Theme/presets/brand';
 
 export const Complex = () => (
     <div className={cnTheme(theme)}>
@@ -61,7 +55,3 @@ export const Complex = () => (
         </div>
     </div>
 );
-
-Complex.story = {
-    name: 'complex',
-};

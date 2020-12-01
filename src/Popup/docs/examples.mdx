@@ -1,0 +1,91 @@
+---
+id: Popup
+---
+
+import { Target as PopupTarget } from '../Popup.examples/desktop/target.examples.tsx'
+import { View as PopupView } from '../Popup.examples/desktop/view.examples.tsx'
+import { Theme as PopupTheme } from '../Popup.examples/desktop/theme.examples.tsx'
+import { Nonvisual as PopupNonvisual } from '../Popup.examples/desktop/nonvisual.examples.tsx'
+import { Direction as PopupDirection } from '../Popup.examples/desktop/direction.examples.tsx'
+import { Position as PopupPosition } from '../Popup.examples/desktop/position.examples.tsx'
+
+
+import popupTargetSources from '!!raw-loader!../Popup.examples/desktop/target.examples.tsx'
+import popupViewSources from '!!raw-loader!../Popup.examples/desktop/view.examples.tsx'
+import popupThemeSources from '!!raw-loader!../Popup.examples/desktop/theme.examples.tsx'
+import popupNonvisualSources from '!!raw-loader!../Popup.examples/desktop/nonvisual.examples.tsx'
+import popupDirectionSources from '!!raw-loader!../Popup.examples/desktop/direction.examples.tsx'
+import popupPositionSources from '!!raw-loader!../Popup.examples/desktop/position.examples.tsx'
+
+### Привязывание к блоку
+
+Чтобы попап прикреплялся к нужному элементу, установите свойство `target` в значение `anchor`, а в свойстве `anchor` нужный элемент.
+
+<Example
+    component={PopupTarget}
+    source={popupTargetSources}
+/>
+
+| Свойство                  | Тип                                        | По умолчанию                                                                                                                                                                     | Описание                                                  |
+| ------------------------- | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
+| anchor?                   | `RefObject<HTMLElement>`                   | —                                                                                                                                                                                | Элемент, относительно которого позиционируется попап      |
+| directions?               | `Direction[]`                              | `['bottom-left', 'bottom-center', 'bottom-right', 'top-left', 'top-center', 'top-right', 'right-top', 'right-center', 'right-bottom', 'left-top', 'left-center', 'left-bottom']` | Направления раскрытия блока                               |
+| mainOffset?               | `number`                                   | `0`                                                                                                                                                                              | Отступ попапа относительно основного направления          |
+| motionless?               | `false \| true`                            | —                                                                                                                                                                                | Закрепляет положение попапа после открытия                |
+| secondaryOffset?          | `number`                                   | `0`                                                                                                                                                                              | Отступ попапа относительно второстепенного направления    |
+| tailOffset?               | `number`                                   | `0`                                                                                                                                                                              | Отступ хвостика от края попапа                            |
+| target?                   | `"anchor"`                                 | —                                                                                                                                                                                | Позиционирование попапа относительно переданного элемента |
+| viewportOffset?           | `number`                                   | `0`                                                                                                                                                                              | Отступ от края окна браузера                              |
+| getPossibleDrawingParams? | `(drawingParams: DrawingParams[]) => void` | —                                                                                                                                                                                | Расчет параметров для отрисовки                           |
+
+### Вид попапа
+
+Чтобы изменить вид попапа, установите свойство `view` в значение `default`.
+
+<Example
+    component={PopupView}
+    source={popupViewSources}
+/>
+
+### Классический дизайн
+
+Чтобы задать тему попапа, установите свойство `theme` в одно из следующих значений: `"clear"`, `"normal"`.
+
+<Disclaimer>
+    <p>
+    Важно! Модификаторы <b>view</b> и <b>theme</b> являются взаимоисключающими. Не используйте их вместе. <br />
+    Модификатор <b>theme</b>  не кастомизируется с помощью дизайн-токенов.
+    </p>
+</Disclaimer>
+
+<Example
+    component={PopupTheme}
+    source={popupThemeSources}
+/>
+
+Чтобы совсем убрать стилевое оформление, установите свойство `nonvisual` в значение `true`.
+
+<Example
+    component={PopupNonvisual}
+    source={popupNonvisualSources}
+/>
+
+### Направление раскрытия попапа
+
+Чтобы задать направление раскрытия попапа, используйте свойство `directions`.
+
+<Example
+    component={PopupDirection}
+    source={popupDirectionSources}
+/>
+
+### Позиционирование
+
+Чтобы указать абсолютную позицию попапа в области открытия `scope`, используйте свойство `position`.
+
+> **Внимание!** Свойство `position` необходимо использовать без модификатора `target_anchor`.
+
+<Example
+    component={PopupPosition}
+    source={popupPositionSources}
+/>

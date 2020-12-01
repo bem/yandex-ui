@@ -1,0 +1,26 @@
+---
+id: Modal
+---
+
+import { Playground as ModalPlayground } from '../Modal.examples/desktop/playground.examples.tsx'
+import modalPlaygroundSource from '!!raw-loader!../Modal.examples/desktop/playground.examples.tsx'
+
+### Базовое использование
+
+Чтобы закрыть модальное окно, установите обработчик `onClose`, в котором измените состояние видимости. Данный обработчик вызывается при нажатии на клавишу `esc`, либо при клике за пределами содержимого модального окна.
+
+<Example
+    component={ModalPlayground}
+    source={modalPlaygroundSource}
+/>
+
+### Классический дизайн
+
+Чтобы изменить стилевое оформление модального окна, установите свойство `theme` в значение `"normal"`. На уровне `desktop` отвечает за анимацию его открытия/закрытия.
+
+<Disclaimer>
+    <p>
+    Важно! Модификаторы <b>view</b> и <b>theme</b> являются взаимоисключающими. Не используйте их вместе. <br />
+    Модификатор <b>theme</b>  не кастомизируется с помощью дизайн-токенов.
+    </p>
+</Disclaimer>

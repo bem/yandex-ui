@@ -1,15 +1,7 @@
 import React, { createRef, useState } from 'react';
 
-import { MessageBoxPopup } from '../../../MessageBox/MessageBox.bundle/desktop';
-
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
-import { Direction } from '../../../Popup/Popup';
-
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: createDecorators({ scope: 'desktop' }),
-    parameters,
-};
+import { MessageBoxPopup } from '@yandex-lego/components/MessageBox/desktop/bundle';
+import { Direction } from '@yandex-lego/components/Popup/desktop/bundle';
 
 const DIRECTIONS: Direction[] = ['top-center', 'right-center', 'bottom-center', 'left-center'];
 
@@ -82,8 +74,4 @@ export const WithPopup = () => {
             ))}
         </div>
     );
-};
-
-WithPopup.story = {
-    name: 'with-popup',
 };

@@ -1,0 +1,17 @@
+---
+id: MessageBox
+---
+
+import { MessageBox } from '../MessageBox.bundle/desktop'
+
+<Sandbox
+    displayName='MessageBox'
+    component={MessageBox}
+    knobs={{
+        view: [['default', 'inverse', 'promo'], 'default'],
+        size: [['s', 'm', 'l'], 'm'],
+        children: 'MessageBox-content',
+        opaque: false,
+        layout: [['tooltip', 'plain', 'functional'], 'tooltip'],
+    }}
+/>
