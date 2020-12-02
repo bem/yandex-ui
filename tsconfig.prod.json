@@ -18,8 +18,8 @@
     "src/**/*tests/**/*",
     "src/**/*.examples.ts",
     "src/**/*.examples.tsx",
-    "src/**/*.examples/**/*.ts",
-    "src/**/*.examples/**/*.tsx",
+    "src/**/*examples/**/*.ts",
+    "src/**/*examples/**/*.tsx",
     "node_modules"
   ]
 }
