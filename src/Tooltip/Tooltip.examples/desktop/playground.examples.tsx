@@ -1,17 +1,10 @@
 import React, { useState, useRef } from 'react';
-import { withKnobs, select, boolean, number } from '@storybook/addon-knobs';
+import { select, boolean, number } from '@storybook/addon-knobs';
 
 import { cnTheme } from '../../../Theme';
 import { presets, presetsKeys } from '../../../Theme/presets';
 import { Tooltip, Direction } from '../../Tooltip.bundle/desktop';
 import { Button } from '../../../Button/Button.bundle/desktop';
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
-
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: [withKnobs, ...createDecorators({ scope: 'desktop' })],
-    parameters,
-};
 
 const DIRECTIONS: Direction[] = [
     'top-left',
@@ -70,8 +63,4 @@ export const Playground = () => {
             </Tooltip>
         </div>
     );
-};
-
-Playground.story = {
-    name: 'playground',
 };

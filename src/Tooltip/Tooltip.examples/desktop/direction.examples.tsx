@@ -2,13 +2,6 @@ import React, { useRef, useState } from 'react';
 
 import { Button } from '../../../Button/Button.bundle/desktop';
 import { Direction as DirectionT, Tooltip } from '../../Tooltip.bundle/desktop';
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
-
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: createDecorators({ scope: 'desktop' }),
-    parameters,
-};
 
 const DIRECTIONS: DirectionT[] = [
     'top-left',
@@ -58,8 +51,4 @@ export const Direction = () => {
             </Tooltip>
         </div>
     );
-};
-
-Direction.story = {
-    name: 'direction',
 };

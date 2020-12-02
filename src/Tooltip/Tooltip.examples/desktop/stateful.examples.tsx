@@ -1,14 +1,7 @@
 import React, { useRef } from 'react';
 
-import { Button } from '../../../Button/Button.bundle/desktop';
-import { TooltipStateful } from '../../Tooltip.bundle/desktop';
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
-
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: createDecorators({ scope: 'desktop' }),
-    parameters,
-};
+import { Button } from '@yandex-lego/components/Button/Button.bundle/desktop';
+import { TooltipStateful } from '@yandex-lego/components/Tooltip/Tooltip.bundle/desktop';
 
 export const Stateful = () => {
     const scopeRef = useRef<HTMLDivElement>(null);
@@ -59,8 +52,4 @@ export const Stateful = () => {
             </div>
         </div>
     );
-};
-
-Stateful.story = {
-    name: 'stateful',
 };

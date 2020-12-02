@@ -1,14 +1,7 @@
 import React, { useRef, useState } from 'react';
 
-import { Button } from '../../../Button/Button.bundle/desktop';
-import { Tooltip } from '../../Tooltip.bundle/desktop';
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
-
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: createDecorators({ scope: 'desktop' }),
-    parameters,
-};
+import { Button } from '@yandex-lego/components/Button/Button.bundle/desktop';
+import { Tooltip } from '@yandex-lego/components/Tooltip/Tooltip.bundle/desktop';
 
 export const State = () => {
     const [visible1, setVisible1] = useState(true);
@@ -74,8 +67,4 @@ export const State = () => {
             </Tooltip>
         </div>
     );
-};
-
-State.story = {
-    name: 'state',
 };

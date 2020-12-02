@@ -1,0 +1,45 @@
+---
+id: Spin
+---
+
+### Конфигурация темы на уровне проекта:
+
+```ts
+// src/lib/theme.ts
+import { configureRootTheme } from '@yandex-lego/components/Theme'
+import { theme } from '@yandex-lego/components/Theme/presets/default'
+
+configureRootTheme({ theme })
+```
+
+### Использование с нужным набором модификаторов:
+
+```ts
+// src/App.ts
+import React from 'react'
+import { compose } from '@bem-react/core'
+import {
+  Spin as SpinDesktop,
+  withSizeM,
+  withViewDefault,
+} from '@yandex-lego/components/Spin/desktop'
+
+// Композиция из различных модификаторов
+const Spin = compose(withSizeM, withViewDefault)(SpinDesktop)
+
+const App = () => {
+  return <Spin progress view="default" size="m" />
+}
+```
+
+### Использование с полным набором модификаторов:
+
+```ts
+// src/App.ts
+import React from 'react'
+import { Spin } from '@yandex-lego/components/Spin/desktop/bundle'
+
+const App = () => {
+  return <Spin progress view="default" size="m" />
+}
+```

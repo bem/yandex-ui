@@ -1,0 +1,25 @@
+---
+id: TabsPanes
+---
+
+import { WithRadiobox as TabsPanesWithRadiobox } from '../TabsPanes.examples/desktop/withRadiobox.examples.tsx'
+import withRadioboxTabsPanesSource from '!!raw-loader!../TabsPanes.examples/desktop/withRadiobox.examples.tsx'
+
+import { WithTabsMenu as TabsPanesWithTabsMenu } from '../TabsPanes.examples/desktop/withTabsMenu.examples.tsx'
+import withTabsMenuTabsPanesSource from '!!raw-loader!../TabsPanes.examples/desktop/withTabsMenu.examples.tsx'
+
+Переключение между вкладками можно реализовать, например, с помощью `TabsMenu`, `Radiobox`, `Select`.
+
+### Переключение с помощью TabsMenu
+
+<Example
+    component={TabsPanesWithTabsMenu}
+    source={withTabsMenuTabsPanesSource}
+/>
+
+### Переключение с помощью Radiobox
+
+<Example
+    component={TabsPanesWithRadiobox}
+    source={withRadioboxTabsPanesSource}
+/>

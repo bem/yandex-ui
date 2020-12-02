@@ -1,0 +1,41 @@
+---
+id: Tooltip
+---
+
+import { Direction as TooltipDirection } from '../Tooltip.examples/desktop/direction.examples.tsx'
+import directionTooltipSource from '!!raw-loader!../Tooltip.examples/desktop/direction.examples.tsx'
+
+import { Size as TooltipSize } from '../Tooltip.examples/desktop/size.examples.tsx'
+import sizeTooltipSource from '!!raw-loader!../Tooltip.examples/desktop/size.examples.tsx'
+
+import { State as TooltipState } from '../Tooltip.examples/desktop/state.examples.tsx'
+import stateTooltipSource from '!!raw-loader!../Tooltip.examples/desktop/state.examples.tsx'
+
+### Размер подсказки
+
+Чтобы изменить размер подсказки, установите свойство `size` в одно из следующих значений: `"s"`, `"m"`, `"l"`.
+
+<Example
+    component={TooltipSize}
+    source={sizeTooltipSource}
+/>
+
+### Состояние подсказки
+
+Чтобы изменить состояние подсказки, установите свойство `state` в одно из следующих значений: `"warning"`, `"alert"`, `"success"`.
+
+<Example
+    component={TooltipState}
+    source={stateTooltipSource}
+/>
+
+### Направление раскрытия подсказки
+
+Чтобы изменить направление раскрытия подсказки, установите свойство `direction` с одним или несколькими допустимыми значениями — `"top-left"`, `"top-center"`, `"top-right"`, `"right-top"`, `"right-center"`, `"right-bottom"`, `"bottom-right"`, `"bottom-center"`, `"bottom-left"`, `"left-bottom"`, `"left-center"`, `"left-top`".
+
+Если свойство `direction` не было установлено, то будут использованы <a href="https://github.yandex-team.ru/search-interfaces/frontend/blob/master/packages/lego-components/src/Popup/_target/Popup_target_anchor.tsx#L19-L32" target="_blank">значения по умолчанию</a> в порядке приоритета раскрытия.
+
+<Example
+    component={TooltipDirection}
+    source={directionTooltipSource}
+/>

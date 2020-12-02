@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
 
-import { Radiobox } from '../../../Radiobox/Radiobox.bundle/desktop';
-import { TabsPanes } from '../../TabsPanes.bundle/desktop';
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
-
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: createDecorators({ scope: 'desktop' }),
-    parameters,
-};
+import { Radiobox } from '@yandex-lego/components/Radiobox/Radiobox.bundle/desktop';
+import { TabsPanes } from '@yandex-lego/components/TabsPanes/TabsPanes.bundle/desktop';
 
 export const WithRadiobox = () => {
     const [activeTab, setActiveTab] = useState('search');
@@ -35,8 +28,4 @@ export const WithRadiobox = () => {
             />
         </>
     );
-};
-
-WithRadiobox.story = {
-    name: 'with Radiobox',
 };

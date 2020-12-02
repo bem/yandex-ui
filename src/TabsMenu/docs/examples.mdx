@@ -1,0 +1,53 @@
+---
+id: TabsMenu
+---
+
+import { Size as TabsMenuSize } from '../TabsMenu.examples/desktop/size.examples.tsx'
+import sizeTabsMenuSource from '!!raw-loader!../TabsMenu.examples/desktop/size.examples.tsx'
+
+import { View as TabsMenuView } from '../TabsMenu.examples/desktop/view.examples.tsx'
+import viewTabsMenuSource from '!!raw-loader!../TabsMenu.examples/desktop/view.examples.tsx'
+
+import { Theme as TabsMenuTheme } from '../TabsMenu.examples/desktop/theme.examples.tsx'
+import themeTabsMenuSource from '!!raw-loader!../TabsMenu.examples/desktop/theme.examples.tsx'
+
+import { Adaptive as TabsMenuAdaptive } from '../TabsMenu.examples/desktop/adaptive.examples.tsx'
+import adaptiveTabsMenuSource from '!!raw-loader!../TabsMenu.examples/desktop/adaptive.examples.tsx'
+
+### Вид меню
+
+Чтобы изменить вид меню, установите свойство `view` в значение `"default"`.
+
+<Example
+    component={TabsMenuView}
+    source={viewTabsMenuSource}
+/>
+
+### Стилевое оформление
+
+Чтобы изменить стилевое оформление меню, установите свойство `theme` в значение `"normal"`.
+
+<Example
+    component={TabsMenuTheme}
+    source={themeTabsMenuSource}
+/>
+
+### Размер меню
+
+Чтобы задать размер горизонтального меню, установите свойство `size` в одно из следующих значений: `"m"`, `"s"`.
+
+<Example
+    component={TabsMenuSize}
+    source={sizeTabsMenuSource}
+/>
+
+### Адаптивность
+
+Чтобы включить адаптивность, установите свойство `adaptive` и обработчик `onChange`.
+
+> ⚠️ Данная функциональность находится в стадии доработок и может быть изменена в будущем.
+
+<Example
+    component={TabsMenuAdaptive}
+    source={adaptiveTabsMenuSource}
+/>

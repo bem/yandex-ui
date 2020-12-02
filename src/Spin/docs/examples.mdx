@@ -2,6 +2,27 @@
 id: Spin
 ---
 
-## Размер индикатора
+import { Size as SpinSize } from '../Spin.examples/desktop/size.examples.tsx'
+import sizeSpinSource from '!!raw-loader!../Spin.examples/desktop/size.examples.tsx'
+
+import { Position as SpinPosition } from '../Spin.examples/desktop/position.examples.tsx'
+import positionSpinSource from '!!raw-loader!../Spin.examples/desktop/position.examples.tsx'
+
+
+### Размер индикатора
 
 Чтобы изменить размер индикатора, установите свойство `size` в одно из следующих значений: `"l"`, `"m"`, `"s"`, `"xs"`, `"xxs"`.
+
+<Example
+    component={SpinSize}
+    source={sizeSpinSource}
+/>
+
+### Расположение индикатора
+
+Чтобы отобразить индикатор по центру, установите свойство `position` в значение `center`.
+
+<Example
+    component={SpinPosition}
+    source={positionSpinSource}
+/>

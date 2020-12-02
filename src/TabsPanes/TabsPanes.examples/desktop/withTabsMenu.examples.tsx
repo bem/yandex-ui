@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
 
-import { TabsMenu } from '../../../TabsMenu/TabsMenu.bundle/desktop';
-import { TabsPanes } from '../../TabsPanes.bundle/desktop';
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
-
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: createDecorators({ scope: 'desktop' }),
-    parameters,
-};
+import { TabsMenu } from '@yandex-lego/components/TabsMenu/TabsMenu.bundle/desktop';
+import { TabsPanes } from '@yandex-lego/components/TabsPanes/TabsPanes.bundle/desktop';
 
 export const WithTabsMenu = () => {
     const [activeTab, setActiveTab] = useState('search');
@@ -36,8 +29,4 @@ export const WithTabsMenu = () => {
             />
         </>
     );
-};
-
-WithTabsMenu.story = {
-    name: 'with TabsMenu',
 };
