@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 
-import { Tumbler } from '../../Tumbler.bundle/desktop';
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
-
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: createDecorators({ scope: 'desktop' }),
-    parameters,
-};
+import { Tumbler } from '@yandex-lego/components/Tumbler/desktop/bundle';
 
 export const Size = () => {
     const [checked1, setChecked1] = useState(false);
@@ -48,8 +41,4 @@ export const Size = () => {
             </div>
         </>
     );
-};
-
-Size.story = {
-    name: 'size',
 };

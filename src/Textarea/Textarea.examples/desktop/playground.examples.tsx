@@ -1,16 +1,9 @@
 import React, { useState } from 'react';
-import { withKnobs, select, boolean, text } from '@storybook/addon-knobs';
+import { select, boolean, text } from '@storybook/addon-knobs';
 
 import { cnTheme } from '../../../Theme';
 import { presets, presetsKeys } from '../../../Theme/presets';
 import { Textarea } from '../../Textarea.bundle/desktop';
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
-
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: [withKnobs, ...createDecorators({ scope: 'desktop' })],
-    parameters,
-};
 
 export const Playground = () => {
     const [value, setValue] = useState('');

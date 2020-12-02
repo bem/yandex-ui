@@ -1,0 +1,32 @@
+---
+id: Textinput
+---
+
+import { Textinput } from '../Textinput.bundle/desktop'
+
+<Sandbox
+    displayName='Textinput'
+    component={Textinput}
+    knobs={{
+        view: [['default', 'material'], 'default'],
+        theme: [['normal', 'websearch'], 'normal'],
+        size: [['s', 'm'], 'm'],
+        pin: [[
+            '',
+            'brick-brick',
+            'brick-clear',
+            'brick-round',
+            'clear-brick',
+            'clear-clear',
+            'clear-round',
+            'round-brick',
+            'round-clear',
+            'round-round',
+        ], ''],
+        type: [['text', 'password', 'number'], 'text'],
+        hasClear: false,
+        disabled: false,
+        state: [['error', ''], ''],
+        hint: '',
+    }}
+/>

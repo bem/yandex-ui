@@ -1,0 +1,56 @@
+---
+id: Textarea
+---
+
+import { View as TextareaView } from '../Textarea.examples/desktop/view.examples.tsx'
+import { Theme as TextareaTheme } from '../Textarea.examples/desktop/theme.examples.tsx'
+import { Size as TextareaSize } from '../Textarea.examples/desktop/size.examples.tsx'
+import { HasClear as TextareaHasClear } from '../Textarea.examples/desktop/has-clear.examples.tsx'
+import viewTextareaSource from '!!raw-loader!../Textarea.examples/desktop/view.examples.tsx'
+import themeTextareaSource from '!!raw-loader!../Textarea.examples/desktop/theme.examples.tsx'
+import sizeTextareaSource from '!!raw-loader!../Textarea.examples/desktop/size.examples.tsx'
+import hasClearTextareaSource from '!!raw-loader!../Textarea.examples/desktop/has-clear.examples.tsx'
+
+### Вид поля
+
+Чтобы изменить вид текстового поля, установите свойство `view` в значение `"default"`.
+
+<Example 
+    component={TextareaView}
+    source={viewTextareaSource}
+/>
+
+### Классический дизайн
+
+Чтобы изменить стилевое оформление текстового поля, установите свойство `theme` в значение `"normal"`.
+
+<Disclaimer>
+    <p>
+    Важно! Модификаторы <b>view</b> и <b>theme</b> являются взаимоисключающими. Не используйте их вместе. <br />
+    Модификатор <b>theme</b>  не кастомизируется с помощью дизайн-токенов.
+    </p>
+</Disclaimer>
+
+<Example 
+    component={TextareaTheme}
+    source={themeTextareaSource}
+/>
+
+### Размер поля
+
+Чтобы изменить размер текстового поля, установите свойство `size` в одно из следующих значений: `"m"`, `"s"`.
+
+<Example 
+    component={TextareaSize}
+    source={sizeTextareaSource}
+/>
+
+### Крестик для очистки
+
+Чтобы добавить крестик для очистки текстового поля, установите свойство `hasClear`.
+Для появления крестика установите не пустое `value` в компоненте (не работает с `defaultValue`).
+
+<Example 
+    component={TextareaHasClear}
+    source={hasClearTextareaSource}
+/>

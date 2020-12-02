@@ -1,0 +1,60 @@
+---
+id: Theme
+---
+
+### Чтобы подключить тему, выберите необходимый способ:
+
+- На клиенте
+
+  ```ts
+  // src/App.js
+  import { configureRootTheme } from '@yandex-lego/components/Theme'
+  import { theme } from '@yandex-lego/components/Theme/presets/default'
+
+  // Без указания root, по умолчанию body
+  configureRootTheme({ theme })
+
+  // С указанием root
+  configureRootTheme({ theme, root: document.querySelector('#root-app') })
+  ```
+
+- На сервере
+
+  ```ts
+  // src/App.js
+  import { cnTheme } from '@yandex-lego/components/Theme'
+  import { theme } from '@yandex-lego/components/Theme/presets/default'
+
+  export const App = () => (
+    <div className={cnTheme(theme)}>
+      ...
+    </div>
+  )
+  ```
+
+- В рамках фичи, конкретного DOM-узла
+
+  ```ts
+  // src/features/Feature/Feature.js
+  import { cnTheme } from '@yandex-lego/components/Theme'
+  import { theme } from '@yandex-lego/components/Theme/presets/inverse'
+
+  // Переопределение всех параметров
+  const Feature = () => (
+    <div className={cnTheme(theme)}>
+      <Button view="default" size="m">
+        Handle
+      </Button>
+    </div>
+  )
+
+  // Переопределение конкретного значения,
+  // остальные будут взяты через CSS-контекст из корневой темы (не работает в IE11)
+  const Feature = () => (
+    <div className={cnTheme({ color: theme.color })}>
+      <Button view="default" size="m">
+        Handle
+      </Button>
+    </div>
+  )
+  ```

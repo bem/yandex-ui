@@ -1,0 +1,29 @@
+---
+id: Tumbler
+---
+
+import { Tumbler as TumblerBase } from '../Tumbler.bundle/desktop'
+import React, { useState } from 'react'
+
+export const Tumbler = (props) => {
+    const [checked, setChecked] = useState(false);
+    return (
+        <TumblerBase 
+            {...props} 
+            checked={checked} 
+            onChange={() => setChecked(!checked)}
+        />
+    )
+}
+
+<Sandbox
+    displayName='Tumbler'
+    component={Tumbler}
+    knobs={{
+        view: [['default'], 'default'],
+        size: [['s', 'm', 'l'], 'm'],
+        labelBefore: '',
+        labelAfter: '',
+        disabled: false,
+    }}
+/>

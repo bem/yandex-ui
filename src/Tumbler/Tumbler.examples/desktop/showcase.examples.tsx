@@ -1,16 +1,9 @@
 import React, { useState } from 'react';
-import { withKnobs, select } from '@storybook/addon-knobs';
+import { select } from '@storybook/addon-knobs';
 
+import { Tumbler } from '@yandex-lego/components/Tumbler/desktop/bundle';
 import { cnTheme } from '../../../Theme';
 import { presets, presetsKeys } from '../../../Theme/presets';
-import { Tumbler } from '../../Tumbler.bundle/desktop';
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
-
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: [withKnobs, ...createDecorators({ scope: 'desktop' })],
-    parameters,
-};
 
 export const Showcase = () => {
     const preset = select('theme-preset', presetsKeys, 'default');
@@ -154,8 +147,4 @@ export const Showcase = () => {
             </div>
         </div>
     );
-};
-
-Showcase.story = {
-    name: 'showcase',
 };
