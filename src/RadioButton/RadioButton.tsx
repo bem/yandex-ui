@@ -98,6 +98,7 @@ export const RadioButton: FC<IRadioButtonProps> = ({
             aria-label={ariaLabel}
             onFocus={(event) => event.currentTarget.setAttribute('data-focused', '')}
             onBlur={(event) => event.currentTarget.removeAttribute('data-focused')}
+            onKeyDown={(event) => event.repeat && event.preventDefault()}
         >
             <Plate innerRef={plateRef} onTransitionEnd={(event) => (event.currentTarget.hidden = true)} />
             {options.map(({ children, ...controlProps }) => {

@@ -7,6 +7,7 @@ import { RadioButton as RadioButtonCommon } from './RadioButton';
 import { RadioButton as RadioButtonDesktop } from './RadioButton@desktop';
 import { RadioButton as RadioButtonTouchPad } from './RadioButton@touch-pad';
 import { RadioButton as RadioButtonTouchPhone } from './RadioButton@touch-phone';
+import { Keys } from '../lib/keyboard';
 
 const platforms = [
     ['desktop', RadioButtonDesktop],
@@ -59,6 +60,19 @@ describe.each<any>(platforms)('RadioButton@%s', (_platform, RadioButton: Compone
 
             expect(onChange).toHaveBeenCalledTimes(1);
             expect(onChange.mock.calls[0][0].target.checked).toBe(true);
+        });
+
+        test('при длительном зажатии клавиши отменяется стандартное поведение', async () => {
+            const preventDefault = jest.fn();
+            const wrapper = mount(<RadioButton value="b" options={options} onChange={() => null} />);
+
+            wrapper.simulate('keydown', { keyCode: Keys.UP, preventDefault });
+
+            expect(preventDefault).toHaveBeenCalledTimes(0);
+
+            wrapper.simulate('keydown', { keyCode: Keys.UP, repeat: true, preventDefault });
+
+            expect(preventDefault).toHaveBeenCalledTimes(1);
         });
 
         test('должен добавлять и удалять атрибут disabled при обновлении через props', () => {
