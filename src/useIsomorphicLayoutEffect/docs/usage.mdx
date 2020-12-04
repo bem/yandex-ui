@@ -1,0 +1,23 @@
+---
+id: UseIsomorphicLayoutEffect
+---
+
+### Базовое использование
+
+```ts
+// src/App.ts
+import React, { useState } from 'react'
+import { useIsomorphicLayoutEffect } from '@yandex-lego/components/useIsomorphicLayoutEffect'
+
+const App = () => {
+  const [value, setValue] = useState('a')
+
+  useIsomorphicLayoutEffect(() => {
+      alert(value)
+  }, [value])
+
+  return (
+      <> {value} </>
+  )
+}
+```
