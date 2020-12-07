@@ -1,0 +1,16 @@
+---
+id: WithTogglable
+---
+
+### Базовое применение
+
+```tsx
+import React from 'react';
+import { withTogglable } from '@yandex-lego/components/withTogglable';
+
+const ComponentWithToggable = withTogglable(({ opened, setOpened, ...props }) => (
+    <Component opened={opened} setOpened={setOpened} />
+));
+
+export const Default = () => <ComponentWithToggable />; 
+```

@@ -1,0 +1,40 @@
+---
+id: WithDebounceInput
+---
+
+import { Default as WithDebounceInputDefault } from '../examples/default.examples.tsx'
+import { Blur as WithDebounceInputBlur } from '../examples/blur.examples.tsx'
+import { Enter as WithDebounceInputEnter } from '../examples/enter.examples.tsx'
+import { MinLength as WithDebounceInputMinLength } from '../examples/minlength.examples.tsx'
+import withDebounceInputDefaultSource from '!!raw-loader!../examples/default.examples.tsx'
+import withDebounceInputBlurSource from '!!raw-loader!../examples/blur.examples.tsx'
+import withDebounceInputEnterSource from '!!raw-loader!../examples/enter.examples.tsx'
+import withDebounceInputMinLengthSource from '!!raw-loader!../examples/minlength.examples.tsx'
+
+### Установка задержки для обновления `onChange`
+
+<Example 
+    component={WithDebounceInputDefault}
+    source={withDebounceInputDefaultSource}
+/>
+
+### Форсировать `onChange` при потере фокуса
+
+<Example 
+    component={WithDebounceInputBlur}
+    source={withDebounceInputBlurSource}
+/>
+
+### Форсировать `onChange` при нажатии Enter
+
+<Example 
+    component={WithDebounceInputEnter}
+    source={withDebounceInputEnterSource}
+/>
+
+### Минимальная длина строки для вызова `onChange`
+
+<Example 
+    component={WithDebounceInputMinLength}
+    source={withDebounceInputMinLengthSource}
+/>

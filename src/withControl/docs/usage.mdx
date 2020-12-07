@@ -1,0 +1,12 @@
+---
+id: WithControl
+---
+
+### Базовое применение
+
+```tsx
+const Component = (props) => <input {...props} />
+const EnhancedComponent = withControl(Component)
+
+const render = () => <EnhancedComponent onBlur={() => alert('hello')} />
+```

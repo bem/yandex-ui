@@ -1,0 +1,25 @@
+---
+id: WithDebounceInput
+---
+
+### Базовое применение
+
+```tsx
+const DebouncedInput = withDebounceInput(Textinput);
+
+export const Default = () => {
+    const [value, setValue] = useState('');
+
+    return (
+        <>
+            <DebouncedInput
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+                debounceTimeout={100}
+                minLength={5}
+                forceNotifyByEnter
+            />
+        </>
+    );
+};
+```

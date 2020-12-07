@@ -1,0 +1,16 @@
+---
+id: WithZIndex
+---
+
+### Базовое применение
+
+```tsx
+import React from 'react';
+import { withZIndex } from '@yandex-lego/components/withZIndex';
+
+const ComponentWithToggable = withZIndex(({ zIndex, innerRef }) => (
+    <Component style={{ zIndex }} ref={innerRef} />
+));
+
+export const Default = () => <ComponentWithToggable visible zIndexGroupLevel={3} />; 
+```

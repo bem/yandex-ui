@@ -1,0 +1,17 @@
+---
+id: WithZIndex
+---
+
+import { Default as WithZIndexDefault } from '../examples/default.examples.tsx'
+import withZIndexDefaultSource from '!!raw-loader!../examples/default.examples.tsx'
+
+### Обновление z-index
+
+`zIndexGroupLevel` позволяет объединять компоненты в общее пространство z-index. Компоненты с `zIndexGroupLevel` 0 имеют z-index от 1000, с 1 от 2000 и так далее.
+Z-index пересчитывается когда компонент меняет свое состояние из `visible` `false` в `true`.
+
+<Example
+    component={WithZIndexDefault}
+    source={withZIndexDefaultSource}
+    height={80}
+/>

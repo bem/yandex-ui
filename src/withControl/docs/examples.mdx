@@ -1,0 +1,14 @@
+---
+id: WithControl
+---
+
+import { Default as WithControlDefault } from '../examples/default.examples.tsx'
+import withControlDefaultSource from '!!raw-loader!../examples/default.examples.tsx'
+
+Хелпер добавляющий возможность определять обработчики onBlur, onFocus, onMouseDown, onMouseUp.
+Также позволяет устанавливать компонент в disabled, focused, pressed, состояния.
+
+<Example 
+    component={WithControlDefault}
+    source={withControlDefaultSource}
+/>
