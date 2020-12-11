@@ -1,13 +1,10 @@
-import React, { useState, RefObject } from 'react';
+import React, { useState } from 'react';
 
 import { withAutoFocus } from '@yandex-lego/components/withAutoFocus';
 import { Button } from '@yandex-lego/components/Button/Button.bundle/desktop';
 import { Textinput } from '@yandex-lego/components/Textinput/Textinput.bundle/desktop';
 
-function Input({ controlRef, ...rest }: { controlRef: RefObject<HTMLInputElement>; }) {
-    return <Textinput ref={controlRef} {...rest} />;
-}
-const InputWithAutoFocus = withAutoFocus(Input);
+const InputWithAutoFocus = withAutoFocus(Textinput);
 
 export const Default = () => {
     const [isFocused, setIsFocused] = useState(false);

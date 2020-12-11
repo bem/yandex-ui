@@ -1,23 +1,22 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 
 import { withZIndex } from '@yandex-lego/components/withZIndex';
 import { Button } from '@yandex-lego/components/Button/Button.bundle/desktop';
 
-const Component = ({ zIndex, innerRef, top, left, bgColor, style, ...rest } :
-    { top: number, left: number, bgColor: string }) => (
-        <div
-            style={{
-                width: '50px',
-                height: '50px',
-                position: 'absolute',
-                top,
-                left,
-                backgroundColor: bgColor,
-                zIndex: zIndex,
-            }}
-            ref={innerRef}
-            {...rest}
-        />
+const Component: FC<any> = ({ zIndex, innerRef, top, left, bgColor, style, ...rest }) => (
+    <div
+        style={{
+            width: '50px',
+            height: '50px',
+            position: 'absolute',
+            top,
+            left,
+            backgroundColor: bgColor,
+            zIndex: zIndex,
+        }}
+        ref={innerRef}
+        {...rest}
+    />
 );
 
 const ComponentWithZIndex1 = withZIndex(Component);

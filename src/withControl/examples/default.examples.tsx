@@ -4,7 +4,7 @@ import { withControl } from '@yandex-lego/components/withControl';
 import { Text } from '@yandex-lego/components/Text/Text.bundle/desktop';
 import { Button } from '@yandex-lego/components/Button/Button.bundle/desktop';
 
-const Component = (props) => <Button {...props} view="action" size="m"> Button </Button>;
+const Component = (props:any) => <Button {...props} view="action" size="m"> Button </Button>;
 const EnhancedComponent = withControl(Component);
 
 export const Default = () => {

@@ -35,7 +35,7 @@ export const Ignore = () => {
                 view="action"
                 size="m"
                 onClick={() => setVisible((prev) => !prev)}
-                ref={targetRef}
+                innerRef={targetRef}
             >
                 Click
             </Button> &nbsp;
