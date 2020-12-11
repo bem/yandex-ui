@@ -5,5 +5,5 @@
 
 /* focus */
 .utilityfocus .Link:focus {
-    outline: 2px solid var(--link-view-default-outliine-color);
+    outline: 2px solid var(--link-view-default-outline-color);
 }
