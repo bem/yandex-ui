@@ -40,7 +40,7 @@ export const useAdaptiveTabs = ({ tabs, tabsRefs, wrapperRef, moreRef }: IUseAda
 
         setVisibleTabs(tabs.slice(0, index));
         setHiddenTabs(tabs.slice(index));
-    }, [wrapperWidth, tabMoreWidth, tabWidths]);
+    }, [wrapperWidth, tabMoreWidth, tabWidths, tabs]);
 
     useIsomorphicLayoutEffect(() => {
         setTabMoreWidth(calculateItemWidth(moreRef, true) || tabMoreWidth || 0);
