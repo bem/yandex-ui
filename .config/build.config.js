@@ -74,6 +74,16 @@ module.exports = {
                 const componentsJSONPath = path.join(context.output, 'components.json');
                 fs.writeFileSync(componentsJSONPath, JSON.stringify(componentsNames, null, 2));
 
+                /**
+                 * Во время публикациюю делается npm pack ./publishConfig.directory
+                 * Из-за чего внутри dist запускаются lifecycle npm скрипты: создается еще одна папка dist, etc.
+                 * В dist уже всё собрано, поэтому вычищаю scripts, чтобы внутри dist ничего не запускалось.
+                 */
+                const packageJsonPath = path.join(context.output, 'package.json');
+                const packageJson = require(packageJsonPath);
+                packageJson.scripts = {};
+                fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
+
                 done();
             },
         },
