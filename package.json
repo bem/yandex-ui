@@ -45,6 +45,7 @@
     "@bem-react/core": "3.0.1",
     "@bem-react/di": "2.2.4",
     "@bem-react/pack": "1.1.0",
+    "@storybook/addons": "5.3.19",
     "@storybook/addon-actions": "5.3.19",
     "@storybook/addon-knobs": "5.1.9",
     "@storybook/addon-viewport": "6.0.21",
@@ -78,6 +79,7 @@
     "react-dom": "16.8.4",
     "react-test-renderer": "16.8.4",
     "storybook-addon-figma-new": "0.1.0",
+    "storybook-addon-performance": "0.13.0",
     "ts-jest": "^24.0.2",
     "typescript": "3.9.3",
     "yaspeller": "7.0.0"
