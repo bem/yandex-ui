@@ -1,0 +1,88 @@
+---
+id: Tumbler
+---
+
+### Конфигурация темы на уровне проекта:
+
+```ts
+// src/lib/theme.ts
+import { configureRootTheme } from '@yandex-lego/components/Theme'
+import { theme } from '@yandex-lego/components/Theme/presets/default'
+
+configureRootTheme({ theme })
+```
+
+### Использование с нужным набором модификаторов:
+
+```ts
+// src/App.ts
+import React, { useState } from 'react'
+import { compose } from '@bem-react/core'
+import {
+  Tumbler as TumblerDesktop,
+  withSizeM,
+  withViewDefault,
+} from '@yandex-lego/components/Tumbler/desktop'
+
+const Tumbler = compose(withSizeM, withViewDefault)(TumblerDesktop)
+
+const App = () => {
+  const [checked, setChecked] = useState(false)
+
+  return (
+    <Tumbler
+      view="default"
+      size="m"
+      checked={checked}
+      onChange={() => setChecked(!checked)}
+    />
+  )
+}
+```
+
+### Использование с полным набором модификаторов:
+
+```ts
+// src/App.ts
+import React, { useState } from 'react'
+import { Tumbler } from '@yandex-lego/components/Tumbler/desktop/bundle'
+
+const App = () => {
+  const [checked, setChecked] = useState(false)
+
+  return (
+    <Tumbler
+      view="default"
+      size="m"
+      checked={checked}
+      onChange={() => setChecked(!checked)}
+    />
+  )
+}
+```
+
+### Props
+
+<!-- props:start -->
+| Свойство     | Тип                                                                                                                                                                                                                                                               | Описание                                                                                                                          |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| checked      | `false \| true`                                                                                                                                                                                                                                                   | Состояние переключателя                                                                                                           |
+| className?   | `string`                                                                                                                                                                                                                                                          | Дополнительный класс у корневого DOM-элемента                                                                                     |
+| controlRef?  | `RefObject<HTMLInputElement>`                                                                                                                                                                                                                                     | Ссылка на нативный DOM-элемент нативного инпута                                                                                   |
+| disabled?    | `false \| true`                                                                                                                                                                                                                                                   | Неактивное состояние переключателя                                                                                                |
+| id?          | `string`                                                                                                                                                                                                                                                          | Уникальный id компонента                                                                                                          |
+| innerRef?    | `RefObject<HTMLSpanElement>`                                                                                                                                                                                                                                      | Ссылка на корневой DOM-элемент компонента                                                                                         |
+| labelAfter?  | `string \| number \| false \| true \| {} \| ReactElement<any, string \| ((props: any) => ReactElement<any, string \| ... \| (new (props: any) => Component<any, any, any>)>) \| (new (props: any) => Component<any, any, any>)> \| ReactNodeArray \| ReactPortal` | Подпись после переключателя                                                                                                       |
+| labelBefore? | `string \| number \| false \| true \| {} \| ReactElement<any, string \| ((props: any) => ReactElement<any, string \| ... \| (new (props: any) => Component<any, any, any>)>) \| (new (props: any) => Component<any, any, any>)> \| ReactNodeArray \| ReactPortal` | Подпись перед переключателем                                                                                                      |
+| name?        | `string`                                                                                                                                                                                                                                                          | Имя переключателя в форме                                                                                                         |
+| onBlur?      | `(event: FocusEvent<HTMLButtonElement>) => void`                                                                                                                                                                                                                  | Обработчик, который вызывается при потере фокуса переключателем                                                                   |
+| onChange     | `(event: ChangeEvent<HTMLInputElement>) => void`                                                                                                                                                                                                                  | Обработчик, который вызывается при изменении состояния                                                                            |
+| onClick?     | `(event: MouseEvent<HTMLButtonElement, MouseEvent>) => void`                                                                                                                                                                                                      | Обработчик, который вызывается при нажатии на переключатель                                                                       |
+| onFocus?     | `(event: FocusEvent<HTMLButtonElement>) => void`                                                                                                                                                                                                                  | Обработчик, который вызывается при получении фокуса переключателем                                                                |
+| onKeyDown?   | `(event: KeyboardEvent<HTMLButtonElement>) => void`                                                                                                                                                                                                               | Обработчик, который вызывается при нажатии клавиши на клавиатуре (при этом переключатель должен быть в фокусе)                    |
+| onKeyUp?     | `(event: KeyboardEvent<HTMLButtonElement>) => void`                                                                                                                                                                                                               | Обработчик, который вызывается при отжатии клавиши на клавиатуре (при этом переключатель должен быть в фокусе)                    |
+| tabIndex?    | `number`                                                                                                                                                                                                                                                          | Целое число, определяющее, должен ли переключатель участвовать в последовательной навигации по всей странице с помощью клавиатуры |
+| title?       | `string`                                                                                                                                                                                                                                                          | Всплывающая подсказка                                                                                                             |
+| autoFocus?   | `false \| true`                                                                                                                                                                                                                                                   | Устанавливает фокус в компонент при монтировании                                                                                  |
+| required?    | `false \| true`                                                                                                                                                                                                                                                   | Устанавливает в компоненте обязательное состояние                                                                                 |
+<!-- props:end -->

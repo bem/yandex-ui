@@ -1,0 +1,69 @@
+---
+id: Modal
+---
+
+### Использование с нужным набором модификаторов:
+
+```ts
+import React from 'react'
+import { compose } from '@bem-react/core'
+import {
+  Modal as ModalDesktop,
+  withThemeNormal,
+} from '@yandex-lego/components/Modal/desktop'
+import { withZIndex } from '@yandex-lego/components/withZIndex'
+
+// Композиция из различных модификаторов
+const Modal = compose(
+  withThemeNormal,
+  withZIndex,
+)(ModalDesktop)
+
+const App = () => (
+  <Modal
+    theme="normal"
+    onClose={() => this.setState({ visible: false })}
+    visible={this.state.visible}
+    zIndexGroupLevel={20}
+  >
+    Привет!
+  </Modal>
+)
+```
+
+### Использование с полным набором модификаторов:
+
+```ts
+// src/App.ts
+import React from 'react'
+import { Modal } from '@yandex-lego/components/Modal/desktop/bundle'
+
+const App = () => (
+  <Modal
+    theme="normal"
+    onClose={() => this.setState({ visible: false })}
+    visible={this.state.visible}
+    zIndexGroupLevel={20}
+  >
+    Привет!
+  </Modal>
+)
+```
+
+### Props
+
+<!-- props:start -->
+| Свойство              | Тип                                                                      | По умолчанию    | Описание                                                                                                                                  |
+| --------------------- | ------------------------------------------------------------------------ | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| contentVerticalAlign? | `"top" \| "middle" \| "bottom"`                                          | `'middle'`      | Выравнивание контента по вертикали                                                                                                        |
+| hasAnimation?         | `false \| true`                                                          | `true`          | Добавляет анимацию при открытии модального окна                                                                                           |
+| keepMounted?          | `false \| true`                                                          | `true`          | Сохраняет контейнер в DOM после создания                                                                                                  |
+| className?            | `string`                                                                 | —               | Дополнительный класс                                                                                                                      |
+| innerRef?             | `(instance: HTMLDivElement) => void \| RefObject<HTMLDivElement>`        | —               | Ссылка на корневой DOM-элемент компонента                                                                                                 |
+| zIndex?               | `number`                                                                 | —               | Задает слой `z-index`                                                                                                                     |
+| visible?              | `false \| true`                                                          | —               | Делает попап видимым                                                                                                                      |
+| scope?                | `RefObject<HTMLElement>`                                                 | `document.body` | Ссылка на DOM-элемент, в котором размещается попап. Важно, чтобы контейнер имел `position: relative` для корректного позиционирования   |
+| forceRender?          | `false \| true`                                                          | —               | Вызывает дополнительный рендер после создания                                                                                             |
+| onClose?              | `(event: KeyboardEvent \| MouseEvent, source: "esc" \| "click") => void` | —               | Обработчик, вызываемый после нажатия на клавишу Esc либо мышкой на область вне контейнера                                                 |
+| onClick?              | `(event: MouseEvent<HTMLDivElement, MouseEvent>) => void`                | —               | Обработчик, вызываемый при срабатывании события click                                                                                     |
+<!-- props:end -->

@@ -14,37 +14,55 @@ import SizeSource from '!!raw-loader!../Icon.examples/desktop/size.examples.tsx'
 import StyleSource from '!!raw-loader!../Icon.examples/desktop/style.examples.tsx'
 import TypeSource from '!!raw-loader!../Icon.examples/desktop/type.examples.tsx'
 
-#### Тип
+### Тип
+
+С помощью свойства `type`:
 
 <Example
     component={Type}
     source={TypeSource}
 />
 
-#### Glyph
+### Glyph
+
+С помощью свойства `glyph`:
 
 <Example
     component={Glyph}
     source={GlyphSource}
 />
 
-#### Направление
+### Направление
+
+Чтобы задать направление иконки-стрелки, установите свойство `direction` в одно из следующих значений: `"left"`, `"top"`, `"right"`, `"bottom"`.
 
 <Example
     component={Direction}
     source={DirectionSource}
 />
 
-#### Размер
+### Размер
+
+Чтобы задать размер иконки, используйте свойство `size`.
 
 <Example
     component={Size}
     source={SizeSource}
 />
 
-#### Кастомные стили
+### Кастомные стили
+
+Чтобы задать цвет `glyph`-иконки, используйте свойство `style`.
 
 <Example
     component={Style}
     source={StyleSource}
 />
+
+### Собственная иконка
+
+Чтобы вставить собственную иконку, используйте свойство `url`. В нем можно указать URL-путь до иконки или содержимое картинки в кодировке base64.
+
+Иконка вставляется как `span` с `background-image`, поэтому, чтобы иконка отображалась правильно, укажите ее ширину и высоту с помощью свойства `style`.
+
+<!-- TODO: example -->

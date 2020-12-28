@@ -1,0 +1,62 @@
+---
+id: Image
+---
+
+- Пока загружается картинка, пользователь будет видеть `<stub/>`
+- После загрузки картинки она будет плавно отображена поверх `<stub/>`
+- После плавного показана картинки `<stub/>` будет удалён из `DOM`
+- Если картинка загружается из кэша, то пользователь увидит сразу картинку без показа `<stub/>`
+- Если картинку не удалось загрузить, то покажется стандартная картинка из свойства `fallback`
+
+#### Использование с нужным набором модификаторов:
+
+```ts
+// src/App.ts
+import React from 'react'
+import { compose } from '@bem-react/core'
+import {
+  Icon as IconDesktop,
+  withGlyphTypeArrow,
+} from '@yandex-lego/components/Icon/desktop'
+
+const Icon = compose(withGlyphTypeArrow)(IconDesktop)
+
+const App = () => {
+  return <Icon glyph="type-arrow" />
+}
+```
+
+#### Использование с полным набором модификаторов:
+
+```ts
+// src/App.ts
+import React from 'react'
+import { Icon } from '@yandex-lego/components/Icon/desktop/bundle'
+
+const App = () => {
+  return <Icon glyph="type-arrow" />
+}
+```
+
+### Props
+
+<!-- props:start -->
+| Свойство        | Тип                                                                                                                                                                                                                                                               | Описание                                                                                                                                                                                                                                                                                     |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| innerRef?       | `RefObject<HTMLImageElement>`                                                                                                                                                                                                                                     | Ссылка на корневой DOM-элемент компонента                                                                                                                                                                                                                                                    |
+| src?            | `string`                                                                                                                                                                                                                                                          | Ссылка на изображение                                                                                                                                                                                                                                                                        |
+| srcSet?         | `string`                                                                                                                                                                                                                                                          | Набор источников для создания [адаптивных изображений](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images). Подробнее об атрибуте `srcSet` в документации [MDN web docs](https://developer.mozilla.org/ru/docs/Web/HTML/Element/img#attr-srcset) |
+| sizes?          | `string`                                                                                                                                                                                                                                                          | Набор размеров для создания [адаптивных изображений](https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images). Подробнее об атрибуте `sizes` в документации [MDN web docs](https://developer.mozilla.org/ru/docs/Web/HTML/Element/img#attr-sizes)     |
+| src2x?          | `string`                                                                                                                                                                                                                                                          | URL картинки для экранов с высокой плотностью пикселей = srcSet: "url 2x". srcSet имеет приоритет.                                                                                                                                                                                           |
+| fallbackSrc?    | `string`                                                                                                                                                                                                                                                          | Ссылка на изображение при неудачной загрузке                                                                                                                                                                                                                                                 |
+| className?      | `string`                                                                                                                                                                                                                                                          | Дополнительный класс                                                                                                                                                                                                                                                                         |
+| imageClassName? | `string`                                                                                                                                                                                                                                                          | Дополнительный класс для изображения                                                                                                                                                                                                                                                         |
+| stub?           | `string \| number \| false \| true \| {} \| ReactElement<any, string \| ((props: any) => ReactElement<any, string \| ... \| (new (props: any) => Component<any, any, any>)>) \| (new (props: any) => Component<any, any, any>)> \| ReactNodeArray \| ReactPortal` | Компонент для отображения во время загрузки картинки                                                                                                                                                                                                                                         |
+| alt?            | `string`                                                                                                                                                                                                                                                          | Альтернативный текст                                                                                                                                                                                                                                                                         |
+| ariaLabel?      | `string`                                                                                                                                                                                                                                                          | атрибут aria-label                                                                                                                                                                                                                                                                           |
+| onClick?        | `(event: MouseEvent<HTMLElement, MouseEvent>) => void`                                                                                                                                                                                                            | обработчик клика                                                                                                                                                                                                                                                                             |
+| loading?        | `"lazy" \| "eager" \| "auto"`                                                                                                                                                                                                                                     | атрибут [loading у изображения](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-loading)                                                                                                                                                                                  |
+| width?          | `string \| number`                                                                                                                                                                                                                                                | Ширина изображения                                                                                                                                                                                                                                                                           |
+| height?         | `string \| number`                                                                                                                                                                                                                                                | Высота изображения                                                                                                                                                                                                                                                                           |
+| borderRadius?   | `string \| number`                                                                                                                                                                                                                                                | Скругления изображения                                                                                                                                                                                                                                                                       |
+<!-- props:end -->

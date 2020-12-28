@@ -12,6 +12,8 @@ import WidthAndHeightSource from '!!raw-loader!../Image.examples/desktop/width-h
 
 #### Задание ширины и высоты
 
+Чтобы задать ширину, высоту и скругления изображения, используйте свойства `width`, `height` и `borderRadius`.
+
 <Example
     component={WidthAndHeight}
     source={WidthAndHeightSource}
@@ -19,12 +21,35 @@ import WidthAndHeightSource from '!!raw-loader!../Image.examples/desktop/width-h
 
 #### Заглушки при загрузке изображений
 
+Компонент состоит из трех частей:
+
+```html
+<container>
+    <img/>
+    <stub/>
+</container>
+```
+
+```typescript jsx
+import React from 'react';
+import { Image } from '@yandex-lego/components/Image/desktop';
+
+const App: React.FC = () => {
+    return (
+        <Image className="my-image" stub={<MyImageStub/>} />
+    );
+};
+```
+
 <Example
     component={LoadErrorStub}
     source={LoadErrorStubSource}
 />
 
 #### Размер изображения в зависимости от ширины экрана
+
+Изображение для ретины — `src2x`.
+Чтобы более гибко настроить адаптивные изображения, используйте свойства `sizes` и `srcSet`.
 
 Чтобы увидеть разницу, измените ширину окна браузера
 
