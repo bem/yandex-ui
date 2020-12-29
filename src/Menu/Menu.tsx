@@ -1,10 +1,4 @@
-import React, {
-    ReactNode,
-    RefObject,
-    PureComponent,
-    createRef,
-    CSSProperties,
-} from 'react';
+import React, { ReactNode, RefObject, PureComponent, createRef, CSSProperties, Ref } from 'react';
 import { cn } from '@bem-react/classname';
 import { ComponentRegistryConsumer } from '@bem-react/di';
 
@@ -34,7 +28,7 @@ export type ItemSimple = {
     /**
      * Идентификатор компонента
      */
-    id?: string
+    id?: string;
 };
 
 export type ItemGroup = {
@@ -103,7 +97,7 @@ export interface IMenuProps {
     /**
      * Ссылка на корневой DOM-элемент компонента
      */
-    innerRef?: React.RefObject<HTMLElement>;
+    innerRef?: Ref<HTMLElement>;
 
     /**
      * Дополнительный класс
@@ -264,7 +258,7 @@ export class Menu extends PureComponent<IMenuProps> {
             const nextActiveIndex = this.getNextNotDisabledIndex(direction);
             this.triggerOnMenuItemChange(nextActiveIndex);
 
-            this.scrollToItem(this.innerRef, this.itemsRef[nextActiveIndex]);
+            Menu.scrollToItem(this.innerRef, this.itemsRef[nextActiveIndex]);
             this.setState({ hoveredIndex: nextActiveIndex });
         }
 
@@ -274,7 +268,7 @@ export class Menu extends PureComponent<IMenuProps> {
         }
     };
 
-    private scrollToItem(menuRef: RefObject<HTMLElement>, itemRef?: RefObject<HTMLElement>) {
+    private static scrollToItem(menuRef: RefObject<HTMLElement>, itemRef?: RefObject<HTMLElement>) {
         if (menuRef.current === null || itemRef === undefined || itemRef.current === null) {
             return;
         }
@@ -282,7 +276,7 @@ export class Menu extends PureComponent<IMenuProps> {
         const { top: menuOffsetTop } = menuRef.current.getBoundingClientRect();
         const { top: itemOffsetTop } = itemRef.current.getBoundingClientRect();
 
-        let relativeScroll = 0;
+        let relativeScroll;
 
         if (itemOffsetTop < menuOffsetTop) {
             relativeScroll = itemOffsetTop - menuOffsetTop;
@@ -324,7 +318,7 @@ export class Menu extends PureComponent<IMenuProps> {
             -1,
         );
 
-        this.scrollToItem(this.innerRef, this.itemsRef[hoveredIndex]);
+        Menu.scrollToItem(this.innerRef, this.itemsRef[hoveredIndex]);
         this.setState({ hoveredIndex: hoveredIndex < 0 ? 0 : hoveredIndex });
     }
 

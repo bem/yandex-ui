@@ -11,14 +11,18 @@ import { canUseDOM } from './canUseDOM';
  */
 export const mergeRefs = <TElement extends HTMLElement>(
     source?: RefObject<HTMLElement>,
-    ...targets: Maybe<RefObject<HTMLElement>>[]
+    ...targets: Maybe<Ref<HTMLElement>>[]
 ) => {
     // Используем raf, т.к. ссылки устанавливаются асинхронно.
     if (canUseDOM()) {
         requestAnimationFrame(() => {
             targets.forEach((target) => {
                 if (source !== undefined && target !== undefined) {
-                    (target as MutableRefObject<any>).current = source.current;
+                    if (typeof target === 'function') {
+                        target(source.current);
+                    } else {
+                        (target as MutableRefObject<any>).current = source.current;
+                    }
                 }
             });
         });

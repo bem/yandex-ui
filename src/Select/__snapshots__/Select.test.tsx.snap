@@ -143,11 +143,7 @@ exports[`Select@desktop client environment должен вернуть полн�
                     <RenderOverride
                       className="Select2-Menu"
                       focused={false}
-                      innerRef={
-                        Object {
-                          "current": null,
-                        }
-                      }
+                      innerRef={[Function]}
                       items={
                         Array [
                           Object {

@@ -72,11 +72,6 @@ const SelectPresenter = class extends PureComponent<SelectProps> {
     private readonly innerRef = createRef<HTMLSpanElement>();
 
     /**
-     * Контейнер с ссылкой на корневой DOM элемент меню.
-     */
-    private readonly menuRef = createRef<HTMLDivElement>();
-
-    /**
      * Контейнер с ссылкой на корневой DOM элемент select.
      */
     private readonly controlRef = createRef<HTMLSelectElement>();
@@ -97,6 +92,8 @@ const SelectPresenter = class extends PureComponent<SelectProps> {
      * @see https://st.yandex-team.ru/ISL-7610
      */
     private preventClosable = false;
+
+    private menu: HTMLElement | null = null;
 
     componentDidMount() {
         this.forwardRefs();
@@ -126,9 +123,7 @@ const SelectPresenter = class extends PureComponent<SelectProps> {
         }
 
         if (this.drawingParams) {
-            // нужно для расчета максимальной высоты
-            // this.menuRef доступен уже после рендера menu в DOM
-            requestAnimationFrame(() => this.setMenuMaxHeight());
+            this.setMenuMaxHeight();
         }
     }
 
@@ -211,7 +206,7 @@ const SelectPresenter = class extends PureComponent<SelectProps> {
                                                 theme={theme}
                                                 value={value}
                                                 view={view}
-                                                innerRef={this.menuRef}
+                                                innerRef={this.onMenuRef}
                                             />
                                         </Popup>
                                         {addonAfter}
@@ -327,7 +322,7 @@ const SelectPresenter = class extends PureComponent<SelectProps> {
 
     private onActiveItemChange = (id: string) => {
         this.setState({ activeDescendant: id });
-    }
+    };
 
     private onMenuChange = (event: ChangeEvent<HTMLElement>) => {
         // Сюда приходит событие из Menu
@@ -364,13 +359,16 @@ const SelectPresenter = class extends PureComponent<SelectProps> {
         }
     }
 
+    private onMenuRef = (menu: HTMLElement | null) => {
+        this.menu = menu;
+        this.setMenuMaxHeight();
+    };
+
     private setMenuMaxHeight = () => {
-        if (this.menuRef.current === null) {
-            return;
-        }
+        if (!this.menu) return;
 
         let bestHeight = 0;
-        const { width: menuWidth } = this.menuRef.current.getBoundingClientRect();
+        const { width: menuWidth } = this.menu.getBoundingClientRect();
 
         this.drawingParams.forEach((params) => {
             if (params.width >= menuWidth && params.height > bestHeight) {
