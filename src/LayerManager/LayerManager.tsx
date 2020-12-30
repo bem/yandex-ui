@@ -44,7 +44,9 @@ export const LayerManager: EFC<LayerManagerProps> = ({ visible, onClose, childre
     const prevOnClose = usePreviousValue(onClose);
 
     const onDocumentKeyUp = useCallback((event: KeyboardEvent) => {
-        if (event.key === 'Escape') {
+        const key = event.key;
+        // @fixme: ISL-9529: keyboard.ts: использовать библиотеку для клавиатурных событий
+        if (key === 'Escape' || key === 'Esc') {
             const [layerId, layerOnClose] = LayerManager.stack[LayerManager.stack.length - 1] || [];
             // Дополнительно проверяем id слоя, чтобы не вызывать layerOnClose n-раз.
             if (layerId === id && layerOnClose !== undefined) {
