@@ -2,17 +2,14 @@
 id: TabsMenu
 ---
 
-import { Size as TabsMenuSize } from '../TabsMenu.examples/desktop/size.examples.tsx'
-import sizeTabsMenuSource from '!!raw-loader!../TabsMenu.examples/desktop/size.examples.tsx'
-
-import { View as TabsMenuView } from '../TabsMenu.examples/desktop/view.examples.tsx'
-import viewTabsMenuSource from '!!raw-loader!../TabsMenu.examples/desktop/view.examples.tsx'
-
-import { Theme as TabsMenuTheme } from '../TabsMenu.examples/desktop/theme.examples.tsx'
-import themeTabsMenuSource from '!!raw-loader!../TabsMenu.examples/desktop/theme.examples.tsx'
-
-import { Adaptive as TabsMenuAdaptive } from '../TabsMenu.examples/desktop/adaptive.examples.tsx'
-import adaptiveTabsMenuSource from '!!raw-loader!../TabsMenu.examples/desktop/adaptive.examples.tsx'
+import { Size as TabsMenuSize } from '../__examples__/size.tsx'
+import tabsMenuSizeSource from '!!raw-loader!../__examples__/size.tsx'
+import { View as TabsMenuView } from '../__examples__/view.tsx'
+import tabsMenuViewSource from '!!raw-loader!../__examples__/view.tsx'
+import { Theme as TabsMenuTheme } from '../__examples__/theme.tsx'
+import tabsMenuThemeSource from '!!raw-loader!../__examples__/theme.tsx'
+import { Adaptive as TabsMenuAdaptive } from '../__examples__/adaptive.tsx'
+import tabsMenuAdaptiveSource from '!!raw-loader!../__examples__/adaptive.tsx'
 
 ### Вид меню
 
@@ -20,7 +17,7 @@ import adaptiveTabsMenuSource from '!!raw-loader!../TabsMenu.examples/desktop/ad
 
 <Example
     component={TabsMenuView}
-    source={viewTabsMenuSource}
+    source={tabsMenuViewSource}
 />
 
 ### Стилевое оформление
@@ -29,7 +26,7 @@ import adaptiveTabsMenuSource from '!!raw-loader!../TabsMenu.examples/desktop/ad
 
 <Example
     component={TabsMenuTheme}
-    source={themeTabsMenuSource}
+    source={tabsMenuThemeSource}
 />
 
 ### Размер меню
@@ -38,7 +35,7 @@ import adaptiveTabsMenuSource from '!!raw-loader!../TabsMenu.examples/desktop/ad
 
 <Example
     component={TabsMenuSize}
-    source={sizeTabsMenuSource}
+    source={tabsMenuSizeSource}
 />
 
 ### Адаптивность
@@ -49,5 +46,5 @@ import adaptiveTabsMenuSource from '!!raw-loader!../TabsMenu.examples/desktop/ad
 
 <Example
     component={TabsMenuAdaptive}
-    source={adaptiveTabsMenuSource}
+    source={tabsMenuAdaptiveSource}
 />

@@ -2,29 +2,28 @@
 id: Textinput
 ---
 
-import { View as TextinputView } from '../Textinput.examples/desktop/view.examples.tsx'
-import { Theme as TextinputTheme } from '../Textinput.examples/desktop/theme.examples.tsx'
-import { Size as TextinputSize } from '../Textinput.examples/desktop/size.examples.tsx'
-import { Baseline as TextinputBaseline } from '../Textinput.examples/desktop/baseline.examples.tsx'
-import { Type as TextinputType } from '../Textinput.examples/desktop/type.examples.tsx'
-import { Pin as TextinputPin } from '../Textinput.examples/desktop/pin.examples.tsx'
-import { State as TextinputState } from '../Textinput.examples/desktop/state.examples.tsx'
-import { Debounce as TextinputDebounce } from '../Textinput.examples/desktop/debounce.examples.tsx'
-
-import viewTextinputSource from '!!raw-loader!../Textinput.examples/desktop/view.examples.tsx'
-import themeTextinputSource from '!!raw-loader!../Textinput.examples/desktop/theme.examples.tsx'
-import sizeTextinputSource from '!!raw-loader!../Textinput.examples/desktop/size.examples.tsx'
-import baselineTextinputSource from '!!raw-loader!../Textinput.examples/desktop/baseline.examples.tsx'
-import typeTextinputSource from '!!raw-loader!../Textinput.examples/desktop/type.examples.tsx'
-import pinTextinputSource from '!!raw-loader!../Textinput.examples/desktop/pin.examples.tsx'
-import stateTextinputSource from '!!raw-loader!../Textinput.examples/desktop/state.examples.tsx'
-import debounceTextinputSource from '!!raw-loader!../Textinput.examples/desktop/debounce.examples.tsx'
+import { View as TextinputView } from '../__examples__/view.tsx'
+import viewTextinputSource from '!!raw-loader!../__examples__/view.tsx'
+import { Theme as TextinputTheme } from '../__examples__/theme.tsx'
+import themeTextinputSource from '!!raw-loader!../__examples__/theme.tsx'
+import { Size as TextinputSize } from '../__examples__/size.tsx'
+import sizeTextinputSource from '!!raw-loader!../__examples__/size.tsx'
+import { Baseline as TextinputBaseline } from '../__examples__/baseline.tsx'
+import baselineTextinputSource from '!!raw-loader!../__examples__/baseline.tsx'
+import { Type as TextinputType } from '../__examples__/type.tsx'
+import typeTextinputSource from '!!raw-loader!../__examples__/type.tsx'
+import { Pin as TextinputPin } from '../__examples__/pin.tsx'
+import pinTextinputSource from '!!raw-loader!../__examples__/pin.tsx'
+import { State as TextinputState } from '../__examples__/state.tsx'
+import stateTextinputSource from '!!raw-loader!../__examples__/state.tsx'
+import { Debounce as TextinputDebounce } from '../__examples__/debounce.tsx'
+import debounceTextinputSource from '!!raw-loader!../__examples__/debounce.tsx'
 
 ### Вид поля
 
 Чтобы изменить вид поля, установите свойство `view` в значение `"default"`.
 
-<Example 
+<Example
     component={TextinputView}
     source={viewTextinputSource}
 />
@@ -40,7 +39,7 @@ import debounceTextinputSource from '!!raw-loader!../Textinput.examples/desktop/
     </p>
 </Disclaimer>
 
-<Example 
+<Example
     component={TextinputTheme}
     source={themeTextinputSource}
 />
@@ -49,7 +48,7 @@ import debounceTextinputSource from '!!raw-loader!../Textinput.examples/desktop/
 
 Чтобы изменить размер поля, установите свойство `size` в одно из следующих значений: `"m"`, `"s"`.
 
-<Example 
+<Example
     component={TextinputSize}
     source={sizeTextinputSource}
 />
@@ -58,7 +57,7 @@ import debounceTextinputSource from '!!raw-loader!../Textinput.examples/desktop/
 
 Чтобы выровнять компоненты по базовой линии, установите свойство `baseline`.
 
-<Example 
+<Example
     component={TextinputBaseline}
     source={baselineTextinputSource}
 />
@@ -67,7 +66,7 @@ import debounceTextinputSource from '!!raw-loader!../Textinput.examples/desktop/
 
 Чтобы изменить тип поля, установите свойство `type`.
 
-<Example 
+<Example
     component={TextinputType}
     source={typeTextinputSource}
 />
@@ -76,7 +75,7 @@ import debounceTextinputSource from '!!raw-loader!../Textinput.examples/desktop/
 
 Чтобы изменить границы поля, установите свойство `pin`.
 
-<Example 
+<Example
     component={TextinputPin}
     source={pinTextinputSource}
 />
@@ -86,7 +85,7 @@ import debounceTextinputSource from '!!raw-loader!../Textinput.examples/desktop/
 Чтобы задать состояние ошибки, нужно передать свойство `state` со значением `error`.
 Чтобы установить текст ошибки, нужно передать значение в свойство `hint`.
 
-<Example 
+<Example
     component={TextinputState}
     source={stateTextinputSource}
 />
@@ -99,7 +98,7 @@ import debounceTextinputSource from '!!raw-loader!../Textinput.examples/desktop/
 - `forceNotifyByEnter` — форсировать вызов `onChange` по нажатию Enter (по умолчанию `true`);
 - `forceNotifyOnBlur` — форсировать вызов `onChange` при потере фокуса (по умолчанию `true`).
 
-<Example 
+<Example
     component={TextinputDebounce}
     source={debounceTextinputSource}
 />

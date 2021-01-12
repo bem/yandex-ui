@@ -2,20 +2,16 @@
 id: Checkbox
 ---
 
-import { View as CheckboxView } from '../Checkbox.examples/desktop/view.examples.tsx'
-import viewCheckboxSource from '!!raw-loader!../Checkbox.examples/desktop/view.examples.tsx'
-
-import { Theme as CheckboxTheme } from '../Checkbox.examples/desktop/theme.examples.tsx'
-import themeCheckboxSource from '!!raw-loader!../Checkbox.examples/desktop/theme.examples.tsx'
-
-import { Size as CheckboxSize } from '../Checkbox.examples/desktop/size.examples.tsx'
-import sizeCheckboxSource from '!!raw-loader!../Checkbox.examples/desktop/size.examples.tsx'
-
-import { Indeterminate } from '../Checkbox.examples/desktop/indeterminate.examples.tsx'
-import indeterminateSource from '!!raw-loader!../Checkbox.examples/desktop/indeterminate.examples.tsx'
-
-import { Lines } from '../Checkbox.examples/desktop/lines.examples.tsx'
-import linesSource from '!!raw-loader!../Checkbox.examples/desktop/lines.examples.tsx'
+import { View as CheckboxView } from '../__examples__/view.tsx'
+import checkboxViewSource from '!!raw-loader!../__examples__/view.tsx'
+import { Theme as CheckboxTheme } from '../__examples__/theme.tsx'
+import CheckboxThemeSource from '!!raw-loader!../__examples__/theme.tsx'
+import { Size as CheckboxSize } from '../__examples__/size.tsx'
+import CheckboxSizeSource from '!!raw-loader!../__examples__/size.tsx'
+import { Indeterminate as CheckboxIndeterminate } from '../__examples__/indeterminate.tsx'
+import checkboxIndeterminateSource from '!!raw-loader!../__examples__/indeterminate.tsx'
+import { Lines as CheckboxLines } from '../__examples__/lines.tsx'
+import sheckboxLinesSource from '!!raw-loader!../__examples__/lines.tsx'
 
 ### Вид чекбокса
 
@@ -23,7 +19,7 @@ import linesSource from '!!raw-loader!../Checkbox.examples/desktop/lines.example
 
 <Example
     component={CheckboxView}
-    source={viewCheckboxSource}
+    source={checkboxViewSource}
 />
 
 ### Классический дизайн
@@ -35,7 +31,7 @@ import linesSource from '!!raw-loader!../Checkbox.examples/desktop/lines.example
 
 <Example
     component={CheckboxTheme}
-    source={themeCheckboxSource}
+    source={CheckboxThemeSource}
 />
 
 ### Размер
@@ -44,7 +40,7 @@ import linesSource from '!!raw-loader!../Checkbox.examples/desktop/lines.example
 
 <Example
     component={CheckboxSize}
-    source={sizeCheckboxSource}
+    source={CheckboxSizeSource}
 />
 
 ### Однострочные и многострочные подписи
@@ -56,8 +52,8 @@ import linesSource from '!!raw-loader!../Checkbox.examples/desktop/lines.example
 
 
 <Example
-    component={Lines}
-    source={linesSource}
+    component={CheckboxLines}
+    source={sheckboxLinesSource}
 />
 
 ### Переходное состояние
@@ -66,6 +62,6 @@ import linesSource from '!!raw-loader!../Checkbox.examples/desktop/lines.example
 
 
 <Example
-    component={Indeterminate}
-    source={indeterminateSource}
+    component={CheckboxIndeterminate}
+    source={checkboxIndeterminateSource}
 />

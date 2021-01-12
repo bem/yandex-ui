@@ -2,22 +2,22 @@
 id: Divider
 ---
 
-import { Simple } from '../Divider.examples/desktop/simple.examples.tsx'
-import { Color as DividerColor } from '../Divider.examples/desktop/color.examples.tsx'
-import { Size as DividerSize } from '../Divider.examples/desktop/size.examples.tsx'
-import { WithStyles } from '../Divider.examples/desktop/withStyles.examples.tsx'
-import { WithText } from '../Divider.examples/desktop/withText.exmaples.tsx'
-import simpleSource from '!!raw-loader!../Divider.examples/desktop/simple.examples.tsx'
-import colorDividerSource from '!!raw-loader!../Divider.examples/desktop/color.examples.tsx'
-import sizeDividerSource from '!!raw-loader!../Divider.examples/desktop/size.examples.tsx'
-import withStylesSource from '!!raw-loader!../Divider.examples/desktop/withStyles.examples.tsx'
-import withTextSource from '!!raw-loader!../Divider.examples/desktop/withText.exmaples.tsx'
+import { Simple as DividerSimple } from '../__examples__/simple.tsx'
+import dividerSimpleSource from '!!raw-loader!../__examples__/simple.tsx'
+import { Color as DividerColor } from '../__examples__/color.tsx'
+import dividerColorSource from '!!raw-loader!../__examples__/color.tsx'
+import { Size as DividerSize } from '../__examples__/size.tsx'
+import dividerSizeSource from '!!raw-loader!../__examples__/size.tsx'
+import { WithStyles as DividerWithStyles } from '../__examples__/withStyles.tsx'
+import dividerWithStylesSource from '!!raw-loader!../__examples__/withStyles.tsx'
+import { WithText as DividerWithText } from '../__examples__/withText.tsx'
+import dividerWithTextSource from '!!raw-loader!../__examples__/withText.tsx'
 
 ### Простой разделитель
 
 <Example
-    component={Simple}
-    source={simpleSource}
+    component={DividerSimple}
+    source={dividerSimpleSource}
 />
 
 ### Высота разделителя
@@ -26,7 +26,7 @@ import withTextSource from '!!raw-loader!../Divider.examples/desktop/withText.ex
 
 <Example
     component={DividerSize}
-    source={sizeDividerSource}
+    source={dividerSizeSource}
 />
 
 ### Цвет разделителя
@@ -35,14 +35,14 @@ import withTextSource from '!!raw-loader!../Divider.examples/desktop/withText.ex
 
 <Example
     component={DividerColor}
-    source={colorDividerSource}
+    source={dividerColorSource}
 />
 
 ### Разделитель с текстом
 
 <Example
-    component={WithText}
-    source={withTextSource}
+    component={DividerWithText}
+    source={dividerWithTextSource}
 />
 
 ### Разделитель с пользовательскими стилями
@@ -50,6 +50,6 @@ import withTextSource from '!!raw-loader!../Divider.examples/desktop/withText.ex
 Чтобы изменить внешние или внутренние отступы, установите свойство `style` с необходимыми параметрами.
 
 <Example
-    component={WithStyles}
-    source={withStylesSource}
+    component={DividerWithStyles}
+    source={dividerWithStylesSource}
 />

@@ -2,14 +2,12 @@
 id: Tooltip
 ---
 
-import { Direction as TooltipDirection } from '../Tooltip.examples/desktop/direction.examples.tsx'
-import directionTooltipSource from '!!raw-loader!../Tooltip.examples/desktop/direction.examples.tsx'
-
-import { Size as TooltipSize } from '../Tooltip.examples/desktop/size.examples.tsx'
-import sizeTooltipSource from '!!raw-loader!../Tooltip.examples/desktop/size.examples.tsx'
-
-import { State as TooltipState } from '../Tooltip.examples/desktop/state.examples.tsx'
-import stateTooltipSource from '!!raw-loader!../Tooltip.examples/desktop/state.examples.tsx'
+import { Direction as TooltipDirection } from '../__examples__/direction.tsx'
+import tooltipDirectionSource from '!!raw-loader!../__examples__/direction.tsx'
+import { Size as TooltipSize } from '../__examples__/size.tsx'
+import tooltipSizeSource from '!!raw-loader!../__examples__/size.tsx'
+import { State as TooltipState } from '../__examples__/state.tsx'
+import tooltipStateSource from '!!raw-loader!../__examples__/state.tsx'
 
 ### Размер подсказки
 
@@ -17,7 +15,7 @@ import stateTooltipSource from '!!raw-loader!../Tooltip.examples/desktop/state.e
 
 <Example
     component={TooltipSize}
-    source={sizeTooltipSource}
+    source={tooltipSizeSource}
 />
 
 ### Состояние подсказки
@@ -26,7 +24,7 @@ import stateTooltipSource from '!!raw-loader!../Tooltip.examples/desktop/state.e
 
 <Example
     component={TooltipState}
-    source={stateTooltipSource}
+    source={tooltipStateSource}
 />
 
 ### Направление раскрытия подсказки
@@ -37,5 +35,5 @@ import stateTooltipSource from '!!raw-loader!../Tooltip.examples/desktop/state.e
 
 <Example
     component={TooltipDirection}
-    source={directionTooltipSource}
+    source={tooltipDirectionSource}
 />

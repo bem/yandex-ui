@@ -2,12 +2,12 @@
 id: Attach
 ---
 
-import { View as AttachView } from '../Attach.examples/desktop/view.examples.tsx'
-import { Size as AttachSize } from '../Attach.examples/desktop/size.examples.tsx'
-import { HasHolder } from '../Attach.examples/desktop/hasHolder.examples.tsx'
-import viewAttachSource from '!!raw-loader!../Attach.examples/desktop/view.examples.tsx'
-import sizeAttachSource from '!!raw-loader!../Attach.examples/desktop/size.examples.tsx'
-import hasHolderSource from '!!raw-loader!../Attach.examples/desktop/hasHolder.examples.tsx'
+import { View as AttachView } from '../__examples__/view.tsx'
+import attachViewSource from '!!raw-loader!../__examples__/view.tsx'
+import { Size as AttachSize } from '../__examples__/size.tsx'
+import attachSizeSource from '!!raw-loader!../__examples__/size.tsx'
+import { HasHolder as AttachHasHolder } from '../__examples__/hasHolder.tsx'
+import attachHasHolderSource from '!!raw-loader!../__examples__/hasHolder.tsx'
 
 ### Вид компонента
 
@@ -15,7 +15,7 @@ import hasHolderSource from '!!raw-loader!../Attach.examples/desktop/hasHolder.e
 
 <Example
     component={AttachView}
-    source={viewAttachSource}
+    source={attachViewSource}
 />
 
 ### Размер компонента
@@ -24,7 +24,7 @@ import hasHolderSource from '!!raw-loader!../Attach.examples/desktop/hasHolder.e
 
 <Example
     component={AttachSize}
-    source={sizeAttachSource}
+    source={attachSizeSource}
 />
 
 ### Текст сообщения
@@ -32,6 +32,6 @@ import hasHolderSource from '!!raw-loader!../Attach.examples/desktop/hasHolder.e
 Чтобы отобразить текст сообщения, установите свойство `hasHolder` в значение `true`.
 
 <Example
-    component={HasHolder}
-    source={hasHolderSource}
+    component={AttachHasHolder}
+    source={attachHasHolderSource}
 />

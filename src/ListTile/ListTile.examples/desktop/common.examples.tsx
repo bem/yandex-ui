@@ -11,7 +11,7 @@ import { cnTheme } from '../../../Theme';
 
 export default {
     title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: [withKnobs, ...createDecorators({ scope: 'desktop' })],
+    decorators: [withKnobs, ...createDecorators()],
     parameters,
 };
 

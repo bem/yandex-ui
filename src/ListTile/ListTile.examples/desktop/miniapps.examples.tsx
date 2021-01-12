@@ -17,7 +17,7 @@ import { Spacer } from '../../../Spacer/Spacer';
 
 export default {
     title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: [withKnobs, ...createDecorators({ scope: 'touch-phone' })],
+    decorators: [withKnobs, ...createDecorators()],
     parameters,
 };
 

@@ -5,7 +5,7 @@ import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../example-
 
 export default {
     title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: createDecorators({ scope: 'desktop' }),
+    decorators: createDecorators(),
     parameters,
 };
 

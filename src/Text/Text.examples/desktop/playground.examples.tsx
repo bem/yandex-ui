@@ -1,6 +1,6 @@
-import { number, radios, select, text, withKnobs } from '@storybook/addon-knobs';
 import React from 'react';
-import { createDecorators, EXAMPLE_DESKTOP_TOKEN, parameters } from '../example-config';
+import { number, radios, select, text } from '@storybook/addon-knobs';
+import { EXAMPLE_DESKTOP_TOKEN, parameters } from '../example-config';
 import { cnTheme } from '../../../Theme';
 import { presets, presetsKeys } from '../../../Theme/presets';
 import { Text, TextAlignValue, TextOverflowValue, TextWeightValue } from '../../Text.bundle/desktop';
@@ -8,7 +8,6 @@ import { text as defaultText, typographyValues } from './assets';
 
 export default {
     title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: [withKnobs, ...createDecorators({ scope: 'desktop' })],
     parameters,
 };
 

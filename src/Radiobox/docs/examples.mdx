@@ -2,14 +2,12 @@
 id: Radiobox
 ---
 
-import { View as RadioboxView } from '../Radiobox.examples/desktop/view.examples.tsx'
-import viewRadioboxSource from '!!raw-loader!../Radiobox.examples/desktop/view.examples.tsx'
-
-import { Theme as RadioboxTheme } from '../Radiobox.examples/desktop/theme.examples.tsx'
-import themeRadioboxSource from '!!raw-loader!../Radiobox.examples/desktop/theme.examples.tsx'
-
-import { Size as RadioboxSize } from '../Radiobox.examples/desktop/size.examples.tsx'
-import sizeRadioboxSource from '!!raw-loader!../Radiobox.examples/desktop/size.examples.tsx'
+import { View as RadioboxView } from '../__examples__/view.tsx'
+import radioboxViewSource from '!!raw-loader!../__examples__/view.tsx'
+import { Theme as RadioboxTheme } from '../__examples__/theme.tsx'
+import radioboxThemeSource from '!!raw-loader!../__examples__/theme.tsx'
+import { Size as RadioboxSize } from '../__examples__/size.tsx'
+import radioboxSizeSource from '!!raw-loader!../__examples__/size.tsx'
 
 ### Вид радиопереключателя
 
@@ -17,7 +15,7 @@ import sizeRadioboxSource from '!!raw-loader!../Radiobox.examples/desktop/size.e
 
 <Example
     component={RadioboxView}
-    source={viewRadioboxSource}
+    source={radioboxViewSource}
 />
 
 ### Классический дизайн
@@ -26,7 +24,7 @@ import sizeRadioboxSource from '!!raw-loader!../Radiobox.examples/desktop/size.e
 
 <Example
     component={RadioboxTheme}
-    source={themeRadioboxSource}
+    source={radioboxThemeSource}
 />
 
 ### Размер радиопереключателя
@@ -35,5 +33,5 @@ import sizeRadioboxSource from '!!raw-loader!../Radiobox.examples/desktop/size.e
 
 <Example
     component={RadioboxSize}
-    source={sizeRadioboxSource}
+    source={radioboxSizeSource}
 />

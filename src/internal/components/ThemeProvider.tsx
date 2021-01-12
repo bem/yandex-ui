@@ -5,7 +5,7 @@ import { theme as themeBrand } from '../../Theme/presets/brand';
 import { theme as themeInverse } from '../../Theme/presets/inverse';
 import { cnTheme } from '../../Theme';
 
-export const ThemeProvider: FC<{ theme: string }> = ({ children, theme = 'default' }) => {
+export const ThemeProvider: FC<{ theme?: string }> = ({ children, theme = 'default' }) => {
     const mapping: Record<string, any> = {
         default: themeDefault,
         brand: themeBrand,

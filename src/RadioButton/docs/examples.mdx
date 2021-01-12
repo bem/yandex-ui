@@ -2,11 +2,10 @@
 id: RadioButton
 ---
 
-import { View as RadioButtonView } from '../RadioButton.examples/desktop/view.examples.tsx'
-import viewRadioButtonSource from '!!raw-loader!../RadioButton.examples/desktop/view.examples.tsx'
-
-import { Size as RadioButtonSize } from '../RadioButton.examples/desktop/size.examples.tsx'
-import sizeRadioButtonSource from '!!raw-loader!../RadioButton.examples/desktop/size.examples.tsx'
+import { View as RadioButtonView } from '../__examples__/view.tsx'
+import radioButtonViewSource from '!!raw-loader!../__examples__/view.tsx'
+import { Size as RadioButtonSize } from '../__examples__/size.tsx'
+import radioButtonSizeSource from '!!raw-loader!../__examples__/size.tsx'
 
 ### Оформление радиогруппы
 
@@ -14,7 +13,7 @@ import sizeRadioButtonSource from '!!raw-loader!../RadioButton.examples/desktop/
 
 <Example
     component={RadioButtonView}
-    source={viewRadioButtonSource}
+    source={radioButtonViewSource}
 />
 
 ### Размер радиогруппы
@@ -23,5 +22,5 @@ import sizeRadioButtonSource from '!!raw-loader!../RadioButton.examples/desktop/
 
 <Example
     component={RadioButtonSize}
-    source={sizeRadioButtonSource}
+    source={radioButtonSizeSource}
 />

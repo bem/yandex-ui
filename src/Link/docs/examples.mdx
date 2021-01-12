@@ -2,17 +2,14 @@
 id: Link
 ---
 
-import { Pseudo } from '../Link.examples/desktop/pseudo.examples.tsx'
-import { View } from '../Link.examples/desktop/view.examples.tsx'
-import { Theme } from '../Link.examples/desktop/theme.examples.tsx'
-import { Disabled } from '../Link.examples/desktop/disabled.examples.tsx'
-
-
-import PseudoSource from '!!raw-loader!../Link.examples/desktop/pseudo.examples.tsx'
-import ViewSource from '!!raw-loader!../Link.examples/desktop/view.examples.tsx'
-import ThemeSource from '!!raw-loader!../Link.examples/desktop/theme.examples.tsx'
-import DisabledSource from '!!raw-loader!../Link.examples/desktop/disabled.examples.tsx'
-
+import { Pseudo } from '../__examples__/pseudo.tsx'
+import pseudoSource from '!!raw-loader!../__examples__/pseudo.tsx'
+import { View } from '../__examples__/view.tsx'
+import viewSource from '!!raw-loader!../__examples__/view.tsx'
+import { Theme } from '../__examples__/theme.tsx'
+import themeSource from '!!raw-loader!../__examples__/theme.tsx'
+import { Disabled } from '../__examples__/disabled.tsx'
+import disabledSource from '!!raw-loader!../__examples__/disabled.tsx'
 
 ### Ссылка view="default"
 
@@ -20,7 +17,7 @@ import DisabledSource from '!!raw-loader!../Link.examples/desktop/disabled.examp
 
 <Example
     component={View}
-    source={ViewSource}
+    source={viewSource}
 />
 
 ### Псевдоссылка
@@ -35,7 +32,7 @@ import DisabledSource from '!!raw-loader!../Link.examples/desktop/disabled.examp
 
 <Example
     component={Pseudo}
-    source={PseudoSource}
+    source={pseudoSource}
 />
 
 ### Стилевое оформление
@@ -44,7 +41,7 @@ import DisabledSource from '!!raw-loader!../Link.examples/desktop/disabled.examp
 
 <Example
     component={Theme}
-    source={PseudoSource}
+    source={themeSource}
 />
 
 ### Недоступная ссылка
@@ -52,6 +49,6 @@ import DisabledSource from '!!raw-loader!../Link.examples/desktop/disabled.examp
 Чтобы сделать ссылку недоступной, установите свойство `disabled`.
 
 <Example
-    component={Theme}
-    source={PseudoSource}
+    component={Disabled}
+    source={disabledSource}
 />

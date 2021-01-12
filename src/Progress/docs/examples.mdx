@@ -2,17 +2,16 @@
 id: Progress
 ---
 
-import { Common as ProgressCommon } from '../Progress.examples/desktop/common.example.tsx'
-import { Custom as ProgressCustom } from '../Progress.examples/desktop/custom.example.tsx'
-
-import commonProgressSource from '!!raw-loader!../Progress.examples/desktop/common.example.tsx'
-import customProgressSource from '!!raw-loader!../Progress.examples/desktop/custom.example.tsx'
+import { Common as ProgressCommon } from '../__examples__/common.tsx'
+import progressCommonSource from '!!raw-loader!../__examples__/common.tsx'
+import { Custom as ProgressCustom } from '../__examples__/custom.tsx'
+import progressCustomSource from '!!raw-loader!../__examples__/custom.tsx'
 
 ### Вид по умолчанию
 
 <Example
     component={ProgressCommon}
-    source={commonProgressSource}
+    source={progressCommonSource}
 />
 
 ### Кастомная тема
@@ -34,5 +33,5 @@ progress:
 
 <Example
     component={ProgressCustom}
-    source={customProgressSource}
+    source={progressCustomSource}
 />

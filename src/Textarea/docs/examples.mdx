@@ -2,22 +2,22 @@
 id: Textarea
 ---
 
-import { View as TextareaView } from '../Textarea.examples/desktop/view.examples.tsx'
-import { Theme as TextareaTheme } from '../Textarea.examples/desktop/theme.examples.tsx'
-import { Size as TextareaSize } from '../Textarea.examples/desktop/size.examples.tsx'
-import { HasClear as TextareaHasClear } from '../Textarea.examples/desktop/has-clear.examples.tsx'
-import viewTextareaSource from '!!raw-loader!../Textarea.examples/desktop/view.examples.tsx'
-import themeTextareaSource from '!!raw-loader!../Textarea.examples/desktop/theme.examples.tsx'
-import sizeTextareaSource from '!!raw-loader!../Textarea.examples/desktop/size.examples.tsx'
-import hasClearTextareaSource from '!!raw-loader!../Textarea.examples/desktop/has-clear.examples.tsx'
+import { View as TextareaView } from '../__examples__/view.tsx'
+import textareaViewSource from '!!raw-loader!../__examples__/view.tsx'
+import { Theme as TextareaTheme } from '../__examples__/theme.tsx'
+import textareaThemeSource from '!!raw-loader!../__examples__/theme.tsx'
+import { Size as TextareaSize } from '../__examples__/size.tsx'
+import textareaSizeSource from '!!raw-loader!../__examples__/size.tsx'
+import { HasClear as TextareaHasClear } from '../__examples__/has.examples.tsx'
+import textareaHasClearSource from '!!raw-loader!../__examples__/has.examples.tsx'
 
 ### Вид поля
 
 Чтобы изменить вид текстового поля, установите свойство `view` в значение `"default"`.
 
-<Example 
+<Example
     component={TextareaView}
-    source={viewTextareaSource}
+    source={textareaViewSource}
 />
 
 ### Классический дизайн
@@ -31,18 +31,18 @@ import hasClearTextareaSource from '!!raw-loader!../Textarea.examples/desktop/ha
     </p>
 </Disclaimer>
 
-<Example 
+<Example
     component={TextareaTheme}
-    source={themeTextareaSource}
+    source={textareaThemeSource}
 />
 
 ### Размер поля
 
 Чтобы изменить размер текстового поля, установите свойство `size` в одно из следующих значений: `"m"`, `"s"`.
 
-<Example 
+<Example
     component={TextareaSize}
-    source={sizeTextareaSource}
+    source={textareaSizeSource}
 />
 
 ### Крестик для очистки
@@ -50,7 +50,7 @@ import hasClearTextareaSource from '!!raw-loader!../Textarea.examples/desktop/ha
 Чтобы добавить крестик для очистки текстового поля, установите свойство `hasClear`.
 Для появления крестика установите не пустое `value` в компоненте (не работает с `defaultValue`).
 
-<Example 
+<Example
     component={TextareaHasClear}
-    source={hasClearTextareaSource}
+    source={textareaHasClearSource}
 />

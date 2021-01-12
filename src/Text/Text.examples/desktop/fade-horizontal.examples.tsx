@@ -6,7 +6,7 @@ import { text } from './assets';
 
 export default {
     title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: createDecorators({ scope: 'desktop' }),
+    decorators: createDecorators(),
     parameters,
 };
 

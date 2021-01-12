@@ -20,6 +20,10 @@
     "src/**/*.examples.tsx",
     "src/**/*examples/**/*.ts",
     "src/**/*examples/**/*.tsx",
+    "src/**/__examples__/**/*.ts",
+    "src/**/__examples__/**/*.tsx",
+    "src/**/__tests__/**/*.ts",
+    "src/**/__tests__/**/*.tsx",
     "node_modules"
   ]
 }

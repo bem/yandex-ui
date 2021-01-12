@@ -2,25 +2,24 @@
 id: Icon
 ---
 
-import { Direction } from '../Icon.examples/desktop/direction.examples.tsx'
-import { Glyph } from '../Icon.examples/desktop/glyph.examples.tsx'
-import { Size } from '../Icon.examples/desktop/size.examples.tsx'
-import { Style } from '../Icon.examples/desktop/style.examples.tsx'
-import { Type } from '../Icon.examples/desktop/type.examples.tsx'
-
-import DirectionSource from '!!raw-loader!../Icon.examples/desktop/direction.examples.tsx'
-import GlyphSource from '!!raw-loader!../Icon.examples/desktop/glyph.examples.tsx'
-import SizeSource from '!!raw-loader!../Icon.examples/desktop/size.examples.tsx'
-import StyleSource from '!!raw-loader!../Icon.examples/desktop/style.examples.tsx'
-import TypeSource from '!!raw-loader!../Icon.examples/desktop/type.examples.tsx'
+import { Direction as IconDirection } from '../__examples__/direction.tsx'
+import iconDirectionSource from '!!raw-loader!../__examples__/direction.tsx'
+import { Glyph as IconGlyph } from '../__examples__/glyph.tsx'
+import iconGlyphSource from '!!raw-loader!../__examples__/glyph.tsx'
+import { Size as IconSize } from '../__examples__/size.tsx'
+import iconSizeSource from '!!raw-loader!../__examples__/size.tsx'
+import { Style as IconStyle } from '../__examples__/style.tsx'
+import iconStyleSource from '!!raw-loader!../__examples__/style.tsx'
+import { Type as IconType } from '../__examples__/type.tsx'
+import iconTypeSource from '!!raw-loader!../__examples__/type.tsx'
 
 ### Тип
 
 С помощью свойства `type`:
 
 <Example
-    component={Type}
-    source={TypeSource}
+    component={IconType}
+    source={iconTypeSource}
 />
 
 ### Glyph
@@ -28,8 +27,8 @@ import TypeSource from '!!raw-loader!../Icon.examples/desktop/type.examples.tsx'
 С помощью свойства `glyph`:
 
 <Example
-    component={Glyph}
-    source={GlyphSource}
+    component={IconGlyph}
+    source={iconGlyphSource}
 />
 
 ### Направление
@@ -37,8 +36,8 @@ import TypeSource from '!!raw-loader!../Icon.examples/desktop/type.examples.tsx'
 Чтобы задать направление иконки-стрелки, установите свойство `direction` в одно из следующих значений: `"left"`, `"top"`, `"right"`, `"bottom"`.
 
 <Example
-    component={Direction}
-    source={DirectionSource}
+    component={IconDirection}
+    source={iconDirectionSource}
 />
 
 ### Размер
@@ -46,8 +45,8 @@ import TypeSource from '!!raw-loader!../Icon.examples/desktop/type.examples.tsx'
 Чтобы задать размер иконки, используйте свойство `size`.
 
 <Example
-    component={Size}
-    source={SizeSource}
+    component={IconSize}
+    source={iconSizeSource}
 />
 
 ### Кастомные стили
@@ -55,8 +54,8 @@ import TypeSource from '!!raw-loader!../Icon.examples/desktop/type.examples.tsx'
 Чтобы задать цвет `glyph`-иконки, используйте свойство `style`.
 
 <Example
-    component={Style}
-    source={StyleSource}
+    component={IconStyle}
+    source={iconStyleSource}
 />
 
 ### Собственная иконка

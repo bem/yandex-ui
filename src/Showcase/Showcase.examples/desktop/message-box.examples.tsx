@@ -2,12 +2,11 @@ import React, { createRef, useState } from 'react';
 
 import { MessageBoxPopup } from '../../../MessageBox/MessageBox.bundle/desktop';
 
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators } from '../examples-config';
+import { EXAMPLE_DESKTOP_TOKEN } from '../examples-config';
 import { Direction } from '../../../Popup/Popup';
 
 export default {
     title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: createDecorators({ scope: 'desktop' }),
 };
 
 const DIRECTIONS: Direction[] = [
@@ -150,8 +149,4 @@ export const WithPopup = () => {
             </div>
         </div>
     );
-};
-
-WithPopup.story = {
-    name: 'messagebox-with-popup',
 };

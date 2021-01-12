@@ -2,27 +2,26 @@
 id: MessageBox
 ---
 
-import { View as MessageBoxView } from '../MessageBox.examples/desktop/view.examples.tsx'
-import { Size as MessageBoxSize } from '../MessageBox.examples/desktop/sizes.examples.tsx'
-import { Corners as MessageBoxCorners } from '../MessageBox.examples/desktop/corner.examples.tsx'
-import { Buttons as MessageBoxButtons } from '../MessageBox.examples/desktop/buttons.examples.tsx'
-import { Complex as MessageBoxComplex } from '../MessageBox.examples/desktop/complex.examples.tsx'
-import { Layout as MessageBoxLayout } from '../MessageBox.examples/desktop/layout.examples.tsx'
-import { WithPopup as MessageBoxWithPopup } from '../MessageBox.examples/desktop/withPopup.examples.tsx'
-
-import messageBoxViewSource from '!!raw-loader!../MessageBox.examples/desktop/view.examples.tsx'
-import messageBoxSizeSource from '!!raw-loader!../MessageBox.examples/desktop/sizes.examples.tsx'
-import messageBoxCornersSource from '!!raw-loader!../MessageBox.examples/desktop/corner.examples.tsx'
-import messageBoxButtonsSource from '!!raw-loader!../MessageBox.examples/desktop/buttons.examples.tsx'
-import messageBoxComplexSource from '!!raw-loader!../MessageBox.examples/desktop/complex.examples.tsx'
-import messageBoxLayoutSource from '!!raw-loader!../MessageBox.examples/desktop/layout.examples.tsx'
-import messageBoxWithPopupSource from '!!raw-loader!../MessageBox.examples/desktop/withPopup.examples.tsx'
+import { View as MessageBoxView } from '../__examples__/view.tsx'
+import messageBoxViewSource from '!!raw-loader!../__examples__/view.tsx'
+import { Size as MessageBoxSize } from '../__examples__/sizes.tsx'
+import messageBoxSizeSource from '!!raw-loader!../__examples__/sizes.tsx'
+import { Corners as MessageBoxCorners } from '../__examples__/corner.tsx'
+import messageBoxCornersSource from '!!raw-loader!../__examples__/corner.tsx'
+import { Buttons as MessageBoxButtons } from '../__examples__/buttons.tsx'
+import messageBoxButtonsSource from '!!raw-loader!../__examples__/buttons.tsx'
+import { Complex as MessageBoxComplex } from '../__examples__/complex.tsx'
+import messageBoxComplexSource from '!!raw-loader!../__examples__/complex.tsx'
+import { Layout as MessageBoxLayout } from '../__examples__/layout.tsx'
+import messageBoxLayoutSource from '!!raw-loader!../__examples__/layout.tsx'
+import { WithPopup as MessageBoxWithPopup } from '../__examples__/withPopup.tsx'
+import messageBoxWithPopupSource from '!!raw-loader!../__examples__/withPopup.tsx'
 
 ### Вид компонента
 
 Чтобы изменить вид компонента, установите свойство `view` в одно из следующих значений: `"default"`, `"inverse"`, `"promo"` (Компонент появится при нажатии на кнопку в примере).
 
-<Example 
+<Example
     component={MessageBoxView}
     source={messageBoxViewSource}
 />
@@ -31,7 +30,7 @@ import messageBoxWithPopupSource from '!!raw-loader!../MessageBox.examples/deskt
 
 Чтобы изменить размер компонента, установите свойство `size` в одно из следующих значений: `"s"`, `"m"`, `"l"`.
 
-<Example 
+<Example
     component={MessageBoxSize}
     source={messageBoxSizeSource}
 />
@@ -67,7 +66,7 @@ import {
 ```
 
 
-<Example 
+<Example
     component={MessageBoxCorners}
     source={messageBoxCornersSource}
 />
@@ -96,7 +95,7 @@ import {
 </MessageBox>
 ```
 
-<Example 
+<Example
     component={MessageBoxButtons}
     source={messageBoxButtonsSource}
 />
@@ -129,7 +128,7 @@ import {
 </MessageBox>
 ```
 
-<Example 
+<Example
     component={MessageBoxComplex}
     source={messageBoxComplexSource}
 />
@@ -142,7 +141,7 @@ import {
 - `layout="tooltip"` — Используется для создании различного рода подсказок.
 - `layout="functional"` — Используется для создания интерактивного компонента.
 
-<Example 
+<Example
     component={MessageBoxLayout}
     source={messageBoxLayoutSource}
 />
@@ -166,7 +165,7 @@ import { MessageBoxPopup } from '@yandex-lego/components/MessageBox/desktop/bund
 </MessageBoxPopup>
 ```
 
-<Example 
+<Example
     component={MessageBoxWithPopup}
     source={messageBoxWithPopupSource}
 />

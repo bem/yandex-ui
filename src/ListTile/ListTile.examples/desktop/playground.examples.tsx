@@ -8,7 +8,7 @@ import { blocks, getBlock } from './getBlock';
 
 export default {
     title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: [withKnobs, ...createDecorators({ scope: 'desktop' })],
+    decorators: [withKnobs, ...createDecorators()],
     parameters,
 };
 

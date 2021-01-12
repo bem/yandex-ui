@@ -1,11 +1,10 @@
 import React from 'react';
 
 import { Showcase } from '../../Showcase@touch-phone';
-import { EXAMPLE_TOUCH_PHONE_TOKEN, createDecorators, themes, parameters } from '../examples-config';
+import { EXAMPLE_TOUCH_PHONE_TOKEN, themes, parameters } from '../examples-config';
 
 export default {
     title: EXAMPLE_TOUCH_PHONE_TOKEN,
-    decorators: createDecorators({ scope: 'touch-phone' }),
     parameters,
 };
 
@@ -16,7 +15,3 @@ export const Default = () => (
         ))}
     </div>
 );
-
-Default.story = {
-    name: 'default',
-};

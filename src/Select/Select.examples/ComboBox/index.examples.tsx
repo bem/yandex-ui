@@ -6,7 +6,7 @@ import { Link } from '../../../Link/Link.bundle/desktop';
 
 export default {
     title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: createDecorators({ scope: 'desktop' }),
+    decorators: createDecorators(),
     parameters,
 };
 

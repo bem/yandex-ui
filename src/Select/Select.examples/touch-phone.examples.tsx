@@ -8,7 +8,7 @@ import { EXAMPLE_TOUCH_PHONE_TOKEN, createDecorators, parameters } from './examp
 
 export default {
     title: EXAMPLE_TOUCH_PHONE_TOKEN,
-    decorators: [withKnobs, ...createDecorators({ scope: 'desktop' })],
+    decorators: [withKnobs, ...createDecorators()],
     parameters,
 };
 
