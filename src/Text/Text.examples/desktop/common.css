@@ -1,24 +1,24 @@
-h1 {
+.text-common-example h1 {
     margin: 0 0 2.75rem;
 }
 
-h2 {
+.text-common-example h2 {
     margin: 2.75rem 0;
 }
 
-h3 {
+.text-common-example h3 {
     margin: .75rem 0;
 }
 
-section > h3 {
+.text-common-example section > h3 {
     margin-top: 2.75rem;
 }
 
-p {
+.text-common-example p {
     margin: .75rem 0;
 }
 
-ul {
+.text-common-example ul {
     display: flex;
 
     margin: 2.75rem 0;
@@ -27,11 +27,11 @@ ul {
     list-style: none;
 }
 
-ul li {
+.text-common-example ul li {
     margin-right: 1rem;
 }
 
-section {
+.text-common-example section {
     position: relative;
 
     display: block;
