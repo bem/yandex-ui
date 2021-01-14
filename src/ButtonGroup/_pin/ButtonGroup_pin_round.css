@@ -1,0 +1,37 @@
+/*  stylelint-disable no-descending-specificity, selector-max-universal */
+
+/* Roundness of the first and the last buttons, including Select and Dropdown examples with RTL support */
+/* `vertical` */
+.ButtonGroup.ButtonGroup_pin_round.ButtonGroup_vertical > .Button2:first-child::before,
+.ButtonGroup.ButtonGroup_pin_round.ButtonGroup_vertical > *:first-child .Button2:first-of-type::before {
+    border-top-left-radius: var(--button-group-pin-round-border-radius);
+    border-top-right-radius: var(--button-group-pin-round-border-radius);
+}
+
+.ButtonGroup.ButtonGroup_pin_round.ButtonGroup_vertical > .Button2:last-child::before,
+.ButtonGroup.ButtonGroup_pin_round.ButtonGroup_vertical > *:last-child .Button2:last-of-type::before {
+    border-bottom-right-radius: var(--button-group-pin-round-border-radius);
+    border-bottom-left-radius: var(--button-group-pin-round-border-radius);
+}
+
+/* Not `vertical` */
+.ButtonGroup.ButtonGroup_pin_round:not(.ButtonGroup_vertical) > .Button2:first-child::before,
+.ButtonGroup.ButtonGroup_pin_round:not(.ButtonGroup_vertical) > *:first-child .Button2:first-of-type::before {
+    border-radius: var(--button-group-pin-round-border-radius) 0 0 var(--button-group-pin-round-border-radius);
+}
+
+.ButtonGroup.ButtonGroup_pin_round:not(.ButtonGroup_vertical) > .Button2:last-child::before,
+.ButtonGroup.ButtonGroup_pin_round:not(.ButtonGroup_vertical) > *:last-child .Button2:last-of-type::before {
+    border-radius: 0 var(--button-group-pin-round-border-radius) var(--button-group-pin-round-border-radius) 0;
+}
+
+*[dir='rtl'] .ButtonGroup.ButtonGroup_pin_round:not(.ButtonGroup_vertical) > .Button2:first-child::before,
+*[dir='rtl'] .ButtonGroup.ButtonGroup_pin_round:not(.ButtonGroup_vertical) > *:first-child .Button2:first-of-type::before {
+    border-radius: 0 var(--button-group-pin-round-border-radius) var(--button-group-pin-round-border-radius) 0;
+}
+
+*[dir='rtl'] .ButtonGroup.ButtonGroup_pin_round:not(.ButtonGroup_vertical) > .Button2:last-child::before,
+*[dir='rtl'] .ButtonGroup.ButtonGroup_pin_round:not(.ButtonGroup_vertical) > *:last-child .Button2:last-of-type::before {
+    border-radius: var(--button-group-pin-round-border-radius) 0 0 var(--button-group-pin-round-border-radius);
+}
+/*  stylelint-enable no-descending-specificity, selector-max-universal */

@@ -1,0 +1,220 @@
+import React from 'react';
+import { render, screen, fireEvent, getNodeText } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+
+import { ButtonGroup as ButtonGroupCommon } from '../ButtonGroup';
+import { useButtonGroupState } from '../ButtonGroup.utils';
+import { ButtonGroup as ButtonGroupDesktop } from '../ButtonGroup@desktop';
+import { Button } from '../../Button/Button';
+
+const platforms = [['desktop', ButtonGroupDesktop]];
+
+describe.each<any>(platforms)('ButtonGroup@s', (_platform, ButtonGroup) => {
+    test('должен вернуть полный шаблон компонента (snapshot)', () => {
+        expect(
+            render(
+                <ButtonGroup>
+                    <Button />
+                    <Button />
+                    <Button />
+                </ButtonGroup>,
+            ),
+        ).toMatchSnapshot();
+    });
+});
+
+describe.each<any>(platforms)('ButtonGroup@%s', (_platform, ButtonGroup) => {
+    test('должен быть установлен корректный displayName', () => {
+        expect(ButtonGroupCommon.displayName).toBe('ButtonGroup');
+    });
+
+    test('при vertical=true должен быть установлен класс ButtonGroup_vertical', () => {
+        screen.debug();
+        render(<ButtonGroup vertical />);
+        expect(screen.getByRole('group')).toHaveClass('ButtonGroup_vertical');
+    });
+
+    test('при vertical=false должен быть потерян класс ButtonGroup_vertical', () => {
+        render(<ButtonGroup vertical={false} />);
+        expect(screen.getByRole('group')).not.toHaveClass('ButtonGroup_vertical');
+    });
+
+    test('должен вызываться onClick при клике на ребенка', () => {
+        const onClickFn = jest.fn();
+        render(
+            <ButtonGroup onClick={onClickFn}>
+                <Button />
+            </ButtonGroup>,
+        );
+        fireEvent.click(screen.getByRole('button'));
+        expect(onClickFn).toBeCalledTimes(1);
+    });
+
+    test('должен вызываться onClick ребенка и onClick ButtonGroup при клике на ребенка', () => {
+        const onClickFn1 = jest.fn();
+        const onClickFn2 = jest.fn();
+        render(
+            <ButtonGroup onClick={onClickFn1}>
+                <Button onClick={onClickFn2} />
+            </ButtonGroup>,
+        );
+        fireEvent.click(screen.getByRole('button'));
+        expect(onClickFn1).toBeCalledTimes(1);
+        expect(onClickFn2).toBeCalledTimes(1);
+    });
+
+    test('при disabled=true не должен вызывать onClick родителя и ребенка', () => {
+        const onClickFn1 = jest.fn();
+        const onClickFn2 = jest.fn();
+        render(
+            <ButtonGroup onClick={onClickFn1} disabled>
+                <Button onClick={onClickFn2} />
+            </ButtonGroup>,
+        );
+        fireEvent.click(screen.getByRole('button'));
+        expect(onClickFn1).toBeCalledTimes(0);
+        expect(onClickFn2).toBeCalledTimes(0);
+    });
+
+    test('divider=Component должен вставлять Component между прямыми потомками ButtonGroup', () => {
+        const divider = <>,</>;
+        render(
+            <ButtonGroup divider={divider}>
+                <>button</>
+                <>button</>
+                <>button</>
+            </ButtonGroup>,
+        );
+
+        expect(getNodeText(screen.getByRole('group'))).toBe('button,button,button');
+    });
+
+    test('ButtonGroup при useButtonState c type=`radio` только один Button может иметь состояние checked', () => {
+        const ButtonGroupRadio = () => {
+            const state = useButtonGroupState({ type: 'radio' });
+
+            return (
+                <ButtonGroup {...state}>
+                    <Button />
+                    <Button />
+                    <Button />
+                </ButtonGroup>
+            );
+        };
+
+        render(<ButtonGroupRadio />);
+
+        screen.getAllByRole('button').forEach((button, index) => {
+            fireEvent.click(button);
+            expect(button).toHaveClass('Button2_checked');
+
+            screen
+                .getAllByRole('button')
+                .filter((_, i) => i !== index)
+                .every((button) => expect(button).not.toHaveClass('Button2_checked'));
+        });
+    });
+
+    test('ButtonGroup при useButtonState c type=`checkbox` любое количество Button могут иметь свойство checked', () => {
+        const ButtonGroupRadio = () => {
+            const state = useButtonGroupState({ type: 'checkbox' });
+
+            return (
+                <ButtonGroup {...state}>
+                    <Button />
+                    <Button />
+                    <Button />
+                </ButtonGroup>
+            );
+        };
+
+        render(<ButtonGroupRadio />);
+
+        screen.getAllByRole('button').forEach((button) => {
+            fireEvent.click(button);
+        });
+        screen.getAllByRole('button').forEach((button) => {
+            expect(button).toHaveClass('Button2_checked');
+        });
+
+        fireEvent.click(screen.getAllByRole('button')[0]);
+        expect(screen.getAllByRole('button')[0]).not.toHaveClass('Button2_checked');
+
+        screen.getAllByRole('button').forEach((button, index) => {
+            if (index !== 0) {
+                expect(button).toHaveClass('Button2_checked');
+            }
+        });
+    });
+
+    test('параметер value должен устанавливать изначально выбранные кнопки в `checked`', () => {
+        const value = [1, 2];
+        const ButtonGroupRadioMappings = () => {
+            const state = useButtonGroupState({ type: 'radio', value });
+
+            return (
+                <ButtonGroup {...state}>
+                    <Button />
+                    <Button />
+                    <Button />
+                </ButtonGroup>
+            );
+        };
+
+        render(<ButtonGroupRadioMappings />);
+
+        screen.getAllByRole('button').forEach((button, index) => {
+            if (value.includes(index)) {
+                expect(button).toHaveClass('Button2_checked');
+            } else {
+                expect(button).not.toHaveClass('Button2_checked');
+            }
+        });
+    });
+
+    test('ButtonGroup при использовании useButtonGroupState с массивом mappings и type=`radio` должен возвращать помимо индекса выбранной кнопки элемент массива под этим индексом', () => {
+        const ButtonGroupRadioMappings = () => {
+            const state = useButtonGroupState({ type: 'radio', mappings: [1, 2, 3] });
+
+            return (
+                <ButtonGroup {...state}>
+                    <Button />
+                    <Button />
+                    <Button />
+                </ButtonGroup>
+            );
+        };
+
+        render(<ButtonGroupRadioMappings />);
+
+        screen.getAllByRole('button').forEach((button, index) => {
+            fireEvent.click(button);
+            expect(screen.getByRole('group')).toHaveAttribute('mapped', String(index + 1));
+        });
+    });
+
+    test('ButtonGroup при использовании useButtonGroupState с массивом mappings и type=`checkbox` должен возвращать помимо массива индекса, массив элементов mappings под этими индексами', () => {
+        const ButtonGroupRadioMappings = () => {
+            const state = useButtonGroupState({ type: 'checkbox', mappings: [1, 2, 3] });
+
+            return (
+                <ButtonGroup {...state}>
+                    <Button />
+                    <Button />
+                    <Button />
+                </ButtonGroup>
+            );
+        };
+
+        render(<ButtonGroupRadioMappings />);
+
+        expect(screen.getByRole('group')).toHaveAttribute('mapped', '');
+
+        const arr = [] as number[];
+        screen.getAllByRole('button').forEach((button, index) => {
+            fireEvent.click(button);
+            arr.push(index + 1);
+            expect(screen.getByRole('group')).toHaveAttribute('mapped', arr.join(','));
+        });
+    });
+});

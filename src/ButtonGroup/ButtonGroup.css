@@ -1,0 +1,23 @@
+.ButtonGroup {
+    display: inline-flex;
+}
+
+.ButtonGroup_vertical {
+    flex-direction: column;
+}
+
+/* Отключение анимации scale и fix ширины для Select, Dropdown */
+.ButtonGroup .Button2[class] {
+    width: 100%;
+
+    transform: scale(1);
+}
+
+.ButtonGroup.ButtonGroup_clear .Button2::before {
+    border-radius: 0;
+}
+
+/* Width of borders on focus */
+.utilityfocus .ButtonGroup[class][class] .Button2:focus::before {
+    border-width: 2px;
+}

@@ -64,6 +64,12 @@
     --button-size-l-icon-indentLeft: 35px; /* Размер внешнего левого отступа текста от иконки у l-button */
     --button-size-l-icon-indentRight: 35px; /* Размер внешнего правого отступа текста от иконки у l-button */
     --button-size-l-text-indentAll: 0 18px; /* Размер внешнего отступа у l-button */
+    --button-group-gap-s: 1px;
+    --button-group-gap-m: 4px;
+    --button-group-gap-l: 6px;
+    --button-group-gap-xl: 8px;
+    --button-group-pin-circle-border-radius: 100px;
+    --button-group-pin-round-border-radius: var(--button-borderRadius);
     --checkbox-view-outline-disabled-opacity: 0.4;
     --checkbox-font-family: var(--control-font-family);
     --checkbox-borderRadius: 4px;
@@ -90,7 +96,7 @@
     --menu-size-s-group-spaceHor: 0; /* Размер горизонтального внутреннего отступа от группе у s-menu */
     --menu-size-s-group-indentBottom: 4px; /* Размер нижнего внешнего отступа от группы до пунктов у s-menu */
     --menu-size-s-item-spaceVert: 3px; /* Размер вертикального внутреннего отступа в пункте у s-menu */
-    --menu-size-s-item-spaceHor: 9px; /* размер горизонтального внутреннего отступа в пункте у s-menu */
+    --menu-size-s-item-spaceHor: 9px; /* Размер горизонтального внутреннего отступа в пункте у s-menu */
     --menu-size-s-item-indentBottom: 4px; /* Размер правого внешнего отступа от иконки до текста у s-menu */
     --menu-size-s-item-icon-indentRight: 4px;
     --menu-size-s-titleSibling-indentLeft: 20px; /* Размер внешнего левого отступа у сущностей после тайтла у s-menu */

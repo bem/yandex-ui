@@ -1,0 +1,33 @@
+/*  stylelint-disable no-descending-specificity, selector-max-universal */
+
+/* Width of border between buttons, for views `link`, `pseudo` */
+/* `vertical` */
+.ButtonGroup.ButtonGroup_pin_base.ButtonGroup_vertical .Button2::before {
+    border-top-width: 0;
+}
+
+.ButtonGroup.ButtonGroup_pin_base.ButtonGroup_vertical > .Button2:first-child::before,
+.ButtonGroup.ButtonGroup_pin_base.ButtonGroup_vertical > *:first-child .Button2:first-of-type::before {
+    border-top-width: var(--button-border-width);
+}
+
+/* Not `vertical` */
+.ButtonGroup.ButtonGroup_pin_base:not(.ButtonGroup_vertical) .Button2::before {
+    border-left-width: 0;
+}
+
+.ButtonGroup.ButtonGroup_pin_base:not(.ButtonGroup_vertical) > .Button2:first-child::before,
+.ButtonGroup.ButtonGroup_pin_base:not(.ButtonGroup_vertical) > *:first-child .Button2:first-of-type::before {
+    border-left-width: var(--button-border-width);
+}
+
+*[dir='rtl'] .ButtonGroup.ButtonGroup_pin_base:not(.ButtonGroup_vertical) .Button2::before {
+    border-right-width: 0;
+    border-left-width: var(--button-border-width);
+}
+
+*[dir='rtl'] .ButtonGroup.ButtonGroup_pin_base:not(.ButtonGroup_vertical) > .Button2:first-child::before,
+*[dir='rtl'] .ButtonGroup.ButtonGroup_pin_base:not(.ButtonGroup_vertical) > *:first-child .Button2:first-of-type::before {
+    border-right-width: var(--button-border-width);
+}
+/*  stylelint-enable no-descending-specificity, selector-max-universal */

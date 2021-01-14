@@ -1,0 +1,14 @@
+/* stylelint-disable selector-max-universal */
+.ButtonGroup_gap_m.ButtonGroup_vertical > * + * {
+    margin-top: var(--button-group-gap-m);
+}
+
+.ButtonGroup_gap_m:not(.ButtonGroup_vertical) > * + * {
+    margin-left: var(--button-group-gap-m);
+}
+
+*[dir='rtl'] .ButtonGroup_gap_m:not(.ButtonGroup_vertical) > * + * {
+    margin-right: var(--button-group-gap-m);
+    margin-left: 0;
+}
+/* stylelint-enable selector-max-universal */

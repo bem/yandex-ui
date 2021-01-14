@@ -1,0 +1,22 @@
+buttonGroup:
+  gap:
+    s:
+      value: 1px
+
+    m:
+      value: 4px
+
+    l:
+      value: 6px
+
+    xl:
+      value: 8px
+
+  pin:
+    circle:
+      borderRadius:
+        value: 100px
+
+    round:
+      borderRadius:
+        value: "{button.border.radius.value}"
