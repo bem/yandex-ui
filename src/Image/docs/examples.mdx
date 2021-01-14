@@ -2,13 +2,12 @@
 id: Image
 ---
 
-import { LoadErrorStub } from '../Image.examples/desktop/load-error-stub.examples.tsx'
-import { SizesAndSrcset } from '../Image.examples/desktop/sizes-srcset.examples.tsx'
-import { WidthAndHeight } from '../Image.examples/desktop/width-height.examples.tsx'
-
-import LoadErrorStubSource from '!!raw-loader!../Image.examples/desktop/load-error-stub.examples.tsx'
-import SizesAndSrcsetSource from '!!raw-loader!../Image.examples/desktop/sizes-srcset.examples.tsx'
-import WidthAndHeightSource from '!!raw-loader!../Image.examples/desktop/width-height.examples.tsx'
+import { LoadErrorStub } from '../__examples__/load-error-stub.tsx'
+import loadErrorStubSource from '!!raw-loader!../__examples__/load-error-stub.tsx'
+import { SizesAndSrcset } from '../__examples__/sizes-srcset.tsx'
+import sizesAndSrcsetSource from '!!raw-loader!../__examples__/sizes-srcset.tsx'
+import { WidthAndHeight } from '../__examples__/width-height.tsx'
+import widthAndHeightSource from '!!raw-loader!../__examples__/width-height.tsx'
 
 #### Задание ширины и высоты
 
@@ -16,7 +15,7 @@ import WidthAndHeightSource from '!!raw-loader!../Image.examples/desktop/width-h
 
 <Example
     component={WidthAndHeight}
-    source={WidthAndHeightSource}
+    source={widthAndHeightSource}
 />
 
 #### Заглушки при загрузке изображений
@@ -43,7 +42,7 @@ const App: React.FC = () => {
 
 <Example
     component={LoadErrorStub}
-    source={LoadErrorStubSource}
+    source={loadErrorStubSource}
 />
 
 #### Размер изображения в зависимости от ширины экрана
@@ -55,5 +54,5 @@ const App: React.FC = () => {
 
 <Example
     component={SizesAndSrcset}
-    source={SizesAndSrcsetSource}
+    source={sizesAndSrcsetSource}
 />
