@@ -3,15 +3,15 @@ import { mount, render } from 'enzyme';
 import { ExtractProps } from '@bem-react/core';
 import { withRegistry } from '@bem-react/di';
 
-import { Menu as MenuCommon, ChangeEvent } from './Menu';
-import { Menu as MenuDesktop } from './Menu@desktop';
-import { Menu as MenuTouchPad } from './Menu@touch-pad';
-import { Menu as MenuTouchPhone } from './Menu@touch-phone';
-import { serverEnvironmentSetup, delay } from '../internal/utils';
-import { menuRegistry as menuRegistryDesktop } from './Menu.registry/desktop';
-import { menuRegistry as menuRegistryTouchPad } from './Menu.registry/touch-pad';
-import { menuRegistry as menuRegistryTouchPhone } from './Menu.registry/touch-phone';
-import { Keys } from '../lib/keyboard';
+import { Menu as MenuCommon, ChangeEvent } from '../Menu';
+import { Menu as MenuDesktop } from '../Menu@desktop';
+import { Menu as MenuTouchPad } from '../Menu@touch-pad';
+import { Menu as MenuTouchPhone } from '../Menu@touch-phone';
+import { serverEnvironmentSetup, delay } from '../../internal/utils';
+import { menuRegistry as menuRegistryDesktop } from '../Menu.registry/desktop';
+import { menuRegistry as menuRegistryTouchPad } from '../Menu.registry/touch-pad';
+import { menuRegistry as menuRegistryTouchPhone } from '../Menu.registry/touch-phone';
+import { Keys } from '../../lib/keyboard';
 
 const platforms = [
     ['desktop', withRegistry(menuRegistryDesktop)(MenuDesktop)],
