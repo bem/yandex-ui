@@ -172,6 +172,16 @@
     --checkbox-view-default-typo-color-base: var(--color-control-typo-primary);
     --checkbox-view-default-typo-color-checked-base: var(--color-control-bg-faint);
     --divider-fill-color: #e3e3e3;
+    --header-fill-color: #fff; /* Фон шапки */
+    --header-nav-link-color-base: #939cb0; /* Основной цвет текста навигационного таба */
+    --header-nav-link-color-hover: #222426; /* Цвет текста навигационного таба при наведении мыши */
+    --header-nav-link-color-active: #d00; /* Цвет текста навигационного таба при нажатии */
+    --header-search-fill-color-base: #ffdb4d; /* Основной цвет заливки и границ Textinput_view_search-arrow и Button_view_search-arrow */
+    --header-search-fill-color-hover: #ffd633; /* Цвет заливки и границ Textinput_view_search-arrow и Button_view_search-arrow при наведении мыши */
+    --header-search-fill-color-active: #fc0; /* Цвет заливки и границ Textinput_view_search-arrow и Button_view_search-arrow при нажатии */
+    --header-search-button-typo-color: #000; /* Цвет текста Button_view_search-arrow */
+    --header-search-textinput-typo-color: #000; /* Цвет текста Button_view_search-arrow */
+    --header-search-textinput-fill-color: #fff; /* Цвет заливки Textinput_view_search-arrow Texinput-Box */
     --link-view-default-outline-color: var(--color-control-bg-border-prism);
     --link-view-default-typo-color-base: var(--color-link);
     --link-view-default-typo-color-disabled: var(--color-typo-disable);

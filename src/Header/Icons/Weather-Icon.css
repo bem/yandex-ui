@@ -1,0 +1,5 @@
+@import './Header-Icons.css';
+
+.WeatherIcon {
+    background-image: url('./Icons.assets/weather.svg');
+}

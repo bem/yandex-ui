@@ -1,0 +1,9 @@
+.YandexHeader-Logo-Inline {
+    display: inline-flex;
+    overflow: hidden;
+    align-items: center;
+
+    height: var(--header-logo-height);
+
+    outline: none;
+}

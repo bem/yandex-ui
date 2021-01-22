@@ -1,0 +1,44 @@
+.YandexHeader-Logo {
+    display: inline-block;
+    overflow: hidden;
+
+    height: var(--header-logo-height);
+
+    outline: none;
+}
+
+.YandexHeader-Logo_lang_ru {
+    width: 67px;
+
+    background-image: url('./Logo.assets/yandex-ru.svg');
+}
+
+.YandexHeader-Logo_lang_en {
+    width: 70px;
+
+    background-image: url('./Logo.assets/yandex-en.svg');
+}
+
+.YandexHeader-Logo_lang_ru.YandexHeader-Logo_circle,
+.YandexHeader-Logo_lang_en.YandexHeader-Logo_circle {
+    width: 32px;
+}
+
+.YandexHeader-Logo_lang_en.YandexHeader-Logo_circle {
+    background-image: url('./Logo.assets/yandex-circle-en.svg');
+}
+
+.YandexHeader-Logo_lang_ru.YandexHeader-Logo_circle {
+    background-image: url('./Logo.assets/yandex-circle-ru.svg');
+}
+
+.YandexHeader-Logo_circle + .YandexHeader-Logoaas .YandexHeader-Image {
+    margin-top: var(--header-logo-circle-indent-top);
+}
+
+.YandexHeader-Logo_lang_ru,
+.YandexHeader-Logo_lang_en {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}

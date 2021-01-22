@@ -1,0 +1,13 @@
+.YandexHeader-Icon {
+    display: inline-block;
+
+    width: var(--header-icon-width);
+    height: var(--header-icon-height);
+    margin-right: var(--header-icon-indent-right);
+
+    vertical-align: baseline;
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}

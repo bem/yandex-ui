@@ -1,0 +1,68 @@
+.Button2.Button2_view_search-arrow {
+    overflow: hidden; /* Скрывает выступающие края уголка */
+
+    width: var(--header-search-button-width);
+
+    font-family: var(--header-search-font-family);
+    font-size: var(--header-search-button-font-size);
+    line-height: var(--header-search-button-line-height);
+
+    border: 0;
+    outline: 0;
+    background: none;
+}
+
+.Button2.Button2_view_search-arrow::before {
+    content: none;
+}
+
+.Button2.Button2_view_search-arrow .Button2-Text {
+    position: relative;
+
+    display: block;
+
+    margin-right: var(--header-search-button-indent-right);
+    padding-left: var(--header-search-button-space-left);
+
+    color: var(--header-search-button-typo-color);
+    border: 0 solid var(--header-search-fill-color-base);
+    background-color: var(--header-search-fill-color-base);
+
+    transition: .1s ease-out;
+    transition-property: border-color, background;
+}
+
+/**
+ * 1. Если установить псевдоэлемент у .button2_view_search-arrow, уголок начинал прыгать при нажатии кнопки в IE8.
+ * При отказе от поддержки IE8 переверстывать было дорого и бессмысленно.
+ * 2. Если установить свойство `border-color: transparent;`, в старых Firefox у уголка появляется черная граница.
+ *    `transparent` интерпретируется как «черный прозрачный». Если соседняя граница прямоугольника непрозрачная,
+ *    то этот черный цвет становится видимым на стыке границ. Поэтому нужно делать «желтый прозрачный».
+ * 3. Граница псевдоэлемента наследует цвет и transition.
+ */
+.Button2.Button2_view_search-arrow .Button2-Text::before /* 1 */ {
+    position: absolute;
+    top: var(--header-search-button-before-top);
+    right: var(--header-search-button-before-right);
+
+    width: 0;
+    height: 0;
+
+    content: '';
+
+    border-width: var(--header-search-button-before-border-width); /* Уголок шире на 2px, чтобы не отрываться при изменении масштаба */
+    border-style: solid;
+    border-color: rgba(255, 219, 76, 0); /* 2 */
+    border-left-color: inherit; /* 3 */
+}
+
+.Button2.Button2_view_search-arrow:not([aria-disabled='true']):active .Button2-Text,
+.Button2.Button2_view_search-arrow.Button2_pressed[class] .Button2-Text {
+    border-color: var(--header-search-fill-color-active);
+    background-color: var(--header-search-fill-color-active);
+}
+
+.Button2.Button2_view_search-arrow:not([aria-disabled='true']):hover .Button2-Text {
+    border-color: var(--header-search-fill-color-hover);
+    background-color: var(--header-search-fill-color-hover);
+}

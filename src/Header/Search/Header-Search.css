@@ -1,0 +1,10 @@
+.YandexHeader-Search {
+    position: relative;
+
+    display: inline-flex;
+
+    width: var(--header-search-width);
+    min-width: var(--header-search-min-width);
+    max-width: var(--header-search-max-width);
+    margin-left: var(--header-search-indent-left);
+}

@@ -1,0 +1,43 @@
+.YandexHeader-InlineIcon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    display: inline-block;
+
+    width: 36px;
+    height: 36px;
+    margin: auto;
+    padding: 0;
+
+    cursor: pointer;
+
+    border: none;
+    outline: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.YandexHeader-InlineIcon svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: auto;
+
+    fill: #939cb0;
+}
+
+.SearchIcon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.YandexHeader-InlineIcon:focus svg,
+.YandexHeader-InlineIcon:hover svg {
+    fill: #4b4c5a;
+}

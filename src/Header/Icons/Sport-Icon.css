@@ -1,0 +1,8 @@
+@import './Header-Icons.css';
+
+.SportIcon {
+    width: 21px;
+    height: 19px;
+
+    background-image: url('./Icons.assets/sport.svg');
+}

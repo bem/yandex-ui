@@ -1,0 +1,53 @@
+.YandexHeader {
+    position: relative;
+    z-index: var(--header-z-index);
+
+    padding: var(--header-space-all);
+
+    font-family: var(--header-font-family);
+
+    background: var(--header-fill-color);
+    box-shadow: var(--header-shadow);
+}
+
+.YandexHeader-Base {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-sizing: border-box;
+    max-width: var(--header-content-max-width);
+    height: var(--header-content-height);
+    margin: auto;
+    padding: var(--header-content-space-all);
+}
+
+.YandexHeader-Content {
+    display: inline-flex;
+    align-items: center;
+
+    width: var(--header-content-width);
+    margin-right: var(--header-content-indent-right);
+}
+
+.YandexHeader-LogoWrapper {
+    display: inline-flex;
+    align-items: inherit;
+
+    margin-right: var(--header-logo-indent-right);
+
+    white-space: nowrap;
+}
+
+.YandexHeader-Actions {
+    display: inline-flex;
+    flex-shrink: 0;
+    justify-content: flex-end;
+    align-items: center;
+
+    padding-left: var(--header-actions-space-left);
+}
+
+.YandexHeader-Actions > * + * { /* stylelint-disable-line selector-max-universal */
+    margin-left: var(--header-actions-gap);
+}

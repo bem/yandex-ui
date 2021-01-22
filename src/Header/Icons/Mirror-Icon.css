@@ -1,0 +1,5 @@
+@import './Header-Icons.css';
+
+.MirrorIcon {
+    background-image: url('./Icons.assets/mirror.svg');
+}

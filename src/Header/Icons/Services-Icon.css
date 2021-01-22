@@ -1,0 +1,5 @@
+@import './Header-Icons.css';
+
+.ServicesIcon svg {
+    padding: 2px 0 0 2px;
+}

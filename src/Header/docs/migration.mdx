@@ -1,0 +1,173 @@
+---
+id: Header
+---
+
+import { Link } from "gatsby"
+
+# Миграция c @yandex-lego/serp-header
+
+Эта информация, если вы используете шапку из serp-header и хотите перейти на React реализацию.
+Показаны шаги для переезда на примере блока `yandex-header`.
+
+<details>
+<summary>Подключение шапки из serp-header</summary>
+
+```tsx
+const dist = require('@yandex-lego/serp-header/dist/base/yandex-header.desktop');
+
+const content = dist.getContent({
+    /* идентификатор бандла (base по умолчанию) */
+    key: 'base',
+
+    /* домен */
+    tld: 'ru',
+
+    /* язык */
+    lang: 'ru',
+
+    /* массив экспериментальных флагов, если есть эксперименты с этим блоком */
+    expFlags: [{ flagName: flagValue }],
+
+    /*
+     * Тип возвращаемого контента.
+     * Тут html, css или js, all – это html + css
+     */
+    content: 'all',
+
+    /* nonce */
+    nonce: 123,
+
+
+    /* Параметры, которые подставятся в разметку.
+     *
+     * Параметры вида (ctx.param === 1 ? 'hello' : 'world') - это выражения,
+     * которые выполняются у нас внутри getContent() в момент его вызова.
+     * То есть, тут нужно передавать `ctx: { param: 1 }`, например.
+     */
+    ctx: {
+        /*  Цветовая тема шапки — default | white | black | grey, по умолчанию default */
+         theme,
+
+         /*  Ссылка на логотипе сервиса */
+         serviceLogoUrl,
+
+         /*  Ссылки в шапке: [{ href: 'yandex.ru', text: 'Main', active: true, shortText: 'M' }], но можно и HTML [{html: '<h1>Hello!</h1>'}] */
+         nav,
+
+         /*  Текст плейсхолдера в поисковой строке */
+         inputPlaceholderText,
+
+         /*  Максимальная длина для инпута в поисковой строке */
+         inputMaxLength,
+
+         /*  action поисковой формы */
+         formAction,
+
+         /*  eslint-disable-next-line quotes */
+         tld,
+
+         /*  Кнопка-ссылка, вставляется при наличии actionButtonText и actionButtonLink */
+         actionButtonText,
+
+         /*  Кнопка-ссылка, вставляется при наличии actionButtonText и actionButtonLink */
+         actionButtonLink,
+
+         /*  HTML Плюса, логика показа отдаётся сервису – если передали, рисуем, блок yaplus */
+         yaplusHTML,
+
+         /*   Иконка-ссылка Все сервисы @boolean */
+         showAllServicesIcon,
+
+         /*  HTML иконки Коллекций, блок favorites-icon */
+         favoritesHTML,
+
+         /*  HTML Колокола, вставляется только при наличии uid, блок notifier */
+         notifierHTML,
+
+         /*  Вставка Колокола */
+         (ctx.uid && ctx.notifierHTML || ""),
+
+         /*  HTML ссылки Регистрация, вставляется только если нет !uid, блок signup-link */
+         signupHTML,
+
+         /*  Вставляется контейнер-заглушка вместо блока пользователя */
+         userPlaceholder,
+
+         /*  HTML кнопки Войти, блок login-button */
+         loginHTML,
+
+         /*  HTML блока пользователя, блок user2 */
+         userHTML,
+
+         /*  В шапку вставляется кнопка Войти или Блок пользователя в зависимости от наличия uid в ctx */
+         uid,
+
+         /*  retpath */
+         retpath,
+
+         /*  Параметр origin в ссылке на Паспорт */
+         origin,
+
+         /*  Ссылка на все сервисы */
+         allLink,
+
+    }
+
+
+});
+```
+</details>
+
+1. Подключаем шапку в нужном месте приложения:
+
+```tsx
+import { Header } from '@yandex-lego/components/Header/desktop';
+```
+
+2. Блоки с действиями (user2, actionButton, favorites, etc) еще не реализованы на React, поэтому временно можно их брать с serp-header и постепенно мигрировать.
+Для этого
+
+```tsx
+const customActions={
+    <>
+        <div dangerouslySetInnerHTML={{ __html: yaplusHTML + favoritesHTML + signupHTML + userHTML + etcHTML  }} />
+    </>
+}
+```
+
+3. Подготовить логотип для сервиса.
+Подробнее про это можно почитать <Link to="/components/Header/usage/#логотипы">вот здесь</Link>.
+
+4. Определить токены для шапки, если у вас переопределения внешнего вида. Можно воспользоваться <a href='https://lego.yandex-team.ru/themes-constructor'>конструктором тем</a>.
+Либо воспользуейтесь дефолтной темой из Лего.
+
+5. Формируем навигационные табы, если передавали в serp-header `navs`.
+Подробнее про это можно почитать <Link to="/components/Header/usage/#навигационные-табы">вот здесь</Link>.
+
+```tsx
+import React from 'react';
+import { HeaderNav, HeaderNavItem } from '@yandex-lego/components/Header/desktop';
+
+const navs = (
+    <HeaderNav>
+        <HeaderNavItem>Таб 1</HeaderNavItem>
+        <HeaderNavItem active>Таб 2</HeaderNavItem>
+    </HeaderNav>
+);
+```
+
+6. Добавляем поиск.
+Подробнее про это можно почитать <Link to="/components/Header/usage/#поиск">вот здесь</Link>.
+
+
+7. Отображаем шапку:
+
+```tsx
+<Header
+    logo={customLogo}
+    actions={customActions}
+>
+    {navs}
+    {search}
+</Header>
+```

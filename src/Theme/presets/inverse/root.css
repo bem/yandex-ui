@@ -87,6 +87,51 @@
     --checkbox-size-m-tick-height: 10px;
     --checkbox-disabled-opacity: 0.6;
     --divider-indent-all: 16px;
+    --header-font-family: 'YS Text', arial, sans-serif; /* Шрифт шапки */
+    --header-shadow: none; /* Тень шапки */
+    --header-space-all: 0 20px; /* Внутренние отступы шапки */
+    --header-z-index: auto; /* Расположение шапки по оси Z */
+    --header-content-height: 60px; /* Высота шапки */
+    --header-content-width: auto; /* Ширина шапки */
+    --header-content-indent-right: auto; /* Внешний отступ контента от блока с действиями. По умолчанию контент расположен рядом с логотипом. */
+    --header-content-max-width: 1400px; /* Максимальная ширина шапки */
+    --header-content-space-all: 0; /* Внутренние отступы контента шапки (область между Логотипом и блоком с действиями) */
+    --header-logo-height: 32px; /* Высота логотипов */
+    --header-logo-indent-right: 29px; /* Внешний отступ справа от основного логотипа */
+    --header-logo-circle-indent-top: -3px; /* Внешний отступ сверху круглого логотипа */
+    --header-logoaas-height: 32px; /* Высота Logoaas логотипа */
+    --header-logoaas-indent: -5px 0 0 5px; /* Внешние отступы изображения внутри Logoaas */
+    --header-icon-width: 20px; /* Ширина иконки */
+    --header-icon-height: 20px; /* Высота иконки */
+    --header-icon-indent-right: 8px; /* Внешний отступ справа от иконки */
+    --header-actions-gap: 14px; /* Расстояние между action блоками */
+    --header-actions-space-left: 24px; /* Внутренний отступ справа в блоке с действиями */
+    --header-nav-indent: 0; /* Внешние отступы в навигационных табах */
+    --header-nav-space-all: 0; /* Внутренние отступы в навигационных табах */
+    --header-nav-link-font-size: 16px; /* Размер шрифта в навигационных табах */
+    --header-nav-link-font-weight: 500; /* Насыщенность шрифта в навигационных табах */
+    --header-nav-link-line-height: 21px; /* Межстрочный интервал в навигационных табах */
+    --header-nav-link-space-all: 8px 2px; /* Внутренний отступ навигационного таба */
+    --header-nav-link-border: 2px solid transparent; /* Граница навигационного таба */
+    --header-nav-link-gap: 12px; /* Отступ между навигационными табами */
+    --header-search-font-family: Arial, sans-serif; /* Шрифт Button_view_search-arrow */
+    --header-search-min-width: 220px; /* Минимальная ширина поисковой формы */
+    --header-search-max-width: 470px; /* Максимальная ширина поисковой формы */
+    --header-search-width: 470px; /* Ширина поисковой формы */
+    --header-search-indent-left: 29px; /* Внешний отступ слева поисковой формы */
+    --header-search-button-font-size: 16px; /* Размер шрифта Button_view_search-arrow */
+    --header-search-button-line-height: 36px; /* Межстрочный интервал Button_view_search-arrow */
+    --header-search-button-width: 88px; /* Ширина Button_view_search-arrow */
+    --header-search-button-indent-right: 9px; /* Внешний отступ справа у элемента Text внутри Button_view_search-arrow */
+    --header-search-button-space-left: 5px; /* Внутренний отступ слева у элемента Text внутри Button_view_search-arrow */
+    --header-search-button-before-border-width: 22px 0 22px 11px; /* Ширина границы :before Button_view_search-arrow */
+    --header-search-button-before-top: -4px; /* Значение top :before Button_view_search-arrow */
+    --header-search-button-before-right: -9px; /* Значение right :before Button_view_search-arrow */
+    --header-search-textinput-height: 36px; /* Высота Texinput_view_search-arrow */
+    --header-search-textinput-border-radius: 4px; /* Радиус скругления Texinput_view_search-arrow */
+    --header-search-textinput-control-font-size: 18px; /* Размер шрифта Textinput_view_search-arrow Textinput-Control */
+    --header-search-textinput-control-border-width: 0 30px 0 13px; /* Ширина границы Textinput_view_search-arrow Textinput-Control */
+    --header-search-textinput-box-border-width: 2px 0 2px 2px; /* Ширина границы Textinput_view_search-arrow Texinput-Box */
     --menu-font-family: var(--control-font-family);
     --menu-group-borderWidth: 1px; /* Бордер у menu-group меню */
     --menu-size-s-fontSize: var(--typography-controls-size-s-font-size); /* Размер текста у s-menu */

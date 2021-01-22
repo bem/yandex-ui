@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InlineLogo should render src 1`] = `
+<div>
+  <span
+    class="Link YandexHeader-Logo-Inline"
+    tabindex="-1"
+  >
+    <img
+      class="YandexHeader-Image"
+      src="ya.svg"
+    />
+  </span>
+</div>
+`;
+
+exports[`InlineLogo should set props 1`] = `
+<div>
+  <span
+    class="Link YandexHeader-Logo-Inline"
+    tabindex="-1"
+  >
+    <img
+      class="YandexHeader-Image"
+      height="2"
+      src="//ya.ru"
+      width="1"
+    />
+  </span>
+</div>
+`;
+
+exports[`Logoaas should render Яндекс by default 1`] = `
+<div>
+  <a
+    class="Link YandexHeader-Logoaas"
+    href="//yandex.ru"
+    tabindex="-1"
+  >
+    <img
+      class="YandexHeader-Image"
+      src="//yastatic.net/q/logoaas/Яндекс.svg?size=32&color=000&first=f00&circle=0"
+    />
+  </a>
+</div>
+`;
+
+exports[`Logoaas should set props 1`] = `
+<div>
+  <a
+    class="Link YandexHeader-Logoaas"
+    href="//ya.ru"
+    tabindex="-1"
+  >
+    <img
+      class="YandexHeader-Image"
+      src="//yastatic.net/q/logoaas/Яндекс.svg?size=12&color=fff&first=00f&circle=1"
+    />
+  </a>
+</div>
+`;
+
+exports[`YandexLogo should render Яндекс by default 1`] = `
+<div>
+  <a
+    class="Link YandexHeader-Logo YandexHeader-Logo_lang_ru"
+    href="//yandex.ru"
+    tabindex="-1"
+  />
+</div>
+`;
+
+exports[`YandexLogo should set props 1`] = `
+<div>
+  <a
+    class="Link YandexHeader-Logo YandexHeader-Logo_circle YandexHeader-Logo_lang_en"
+    href="//ya.ru"
+    tabindex="-1"
+  />
+</div>
+`;

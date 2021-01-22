@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render correctly 1`] = `
+<div>
+  <header
+    class="YandexHeader"
+  >
+    <div
+      class="YandexHeader-Base"
+    >
+      <div
+        class="YandexHeader-LogoWrapper"
+      >
+        <a
+          class="Link YandexHeader-Logo YandexHeader-Logo_lang_ru"
+          href="//yandex.ru"
+          tabindex="-1"
+        />
+      </div>
+      <div
+        class="YandexHeader-Content"
+      />
+    </div>
+  </header>
+</div>
+`;

@@ -1,0 +1,183 @@
+header:
+  fontFamily:
+    value: "'YS Text', arial, sans-serif"
+    comment: "Шрифт шапки"
+  fillColor:
+    value: "#fff"
+    comment: "Фон шапки"
+  shadow:
+    value: none
+    comment: "Тень шапки"
+  spaceAll:
+    value: 0 20px
+    comment: "Внутренние отступы шапки"
+  zIndex:
+    value: auto
+    comment: "Расположение шапки по оси Z"
+  content:
+    height:
+      value: 60px
+      comment: "Высота шапки"
+    width:
+      value: auto
+      comment: "Ширина шапки"
+    indentRight:
+      value: auto
+      comment: "Внешний отступ контента от блока с действиями. По умолчанию контент расположен рядом с логотипом."
+    maxWidth:
+      value: 1400px
+      comment: "Максимальная ширина шапки"
+    spaceAll:
+      value: 0
+      comment: "Внутренние отступы контента шапки (область между Логотипом и блоком с действиями)"
+  logo:
+    height:
+      value: 32px
+      comment: "Высота логотипов"
+    indentRight:
+      value: 29px
+      comment: "Внешний отступ справа от основного логотипа"
+    circle:
+      indentTop:
+        value: -3px
+        comment: "Внешний отступ сверху круглого логотипа"
+  logoaas:
+    height:
+      value: 32px
+      comment: "Высота Logoaas логотипа"
+    indent:
+      value: -5px 0 0 5px
+      comment: "Внешние отступы изображения внутри Logoaas"
+  icon:
+    width:
+      value: 20px
+      comment: "Ширина иконки"
+    height:
+      value: 20px
+      comment: "Высота иконки"
+    indentRight:
+      value: 8px
+      comment: "Внешний отступ справа от иконки"
+
+  actions:
+    gap:
+      value: 14px
+      comment: "Расстояние между action блоками"
+    spaceLeft:
+      value: 24px
+      comment: "Внутренний отступ справа в блоке с действиями"
+  nav:
+    indent:
+      value: 0
+      comment: "Внешние отступы в навигационных табах"
+    spaceAll:
+      value: 0
+      comment: "Внутренние отступы в навигационных табах"
+  navLink:
+    fontSize:
+      value: 16px
+      comment: "Размер шрифта в навигационных табах"
+    fontWeight:
+      value: 500
+      comment: "Насыщенность шрифта в навигационных табах"
+    lineHeight:
+      value: 21px
+      comment: "Межстрочный интервал в навигационных табах"
+    spaceAll:
+      value: 8px 2px
+      comment: "Внутренний отступ навигационного таба"
+    border:
+      value: "2px solid transparent"
+      comment: "Граница навигационного таба"
+    gap:
+      value: 12px
+      comment: "Отступ между навигационными табами"
+    color:
+      base:
+        value: "#939cb0"
+        comment: "Основной цвет текста навигационного таба"
+      hover:
+        value: "#222426"
+        comment: "Цвет текста навигационного таба при наведении мыши"
+      active:
+        value: "#d00"
+        comment: "Цвет текста навигационного таба при нажатии"
+  search:
+    fontFamily:
+      value: "Arial, sans-serif"
+      comment: "Шрифт Button_view_search-arrow"
+    minWidth:
+      value: 220px
+      comment: "Минимальная ширина поисковой формы"
+    maxWidth:
+      value: 470px
+      comment: "Максимальная ширина поисковой формы"
+    width:
+      value: 470px
+      comment: "Ширина поисковой формы"
+    indentLeft:
+      value: 29px
+      comment: "Внешний отступ слева поисковой формы"
+    fillColor:
+      base:
+        value: "#ffdb4d"
+        comment: "Основной цвет заливки и границ Textinput_view_search-arrow и Button_view_search-arrow"
+      hover:
+        value: "#ffd633"
+        comment: "Цвет заливки и границ Textinput_view_search-arrow и Button_view_search-arrow при наведении мыши"
+      active:
+        value: "#fc0"
+        comment: "Цвет заливки и границ Textinput_view_search-arrow и Button_view_search-arrow при нажатии"
+  searchButton:
+    typoColor:
+      value: "#000"
+      comment: "Цвет текста Button_view_search-arrow"
+    fontSize:
+      value: 16px
+      comment: "Размер шрифта Button_view_search-arrow"
+    lineHeight:
+      value: 36px
+      comment: "Межстрочный интервал Button_view_search-arrow"
+    width:
+      value: 88px
+      comment: "Ширина Button_view_search-arrow"
+    indentRight:
+      value: 9px
+      comment: "Внешний отступ справа у элемента Text внутри Button_view_search-arrow"
+    spaceLeft:
+      value: 5px
+      comment: "Внутренний отступ слева у элемента Text внутри Button_view_search-arrow"
+    before:
+      borderWidth:
+        value: 22px 0 22px 11px
+        comment: "Ширина границы :before Button_view_search-arrow"
+      top:
+        value: -4px
+        comment: "Значение top :before Button_view_search-arrow"
+      right:
+        value: -9px
+        comment: "Значение right :before Button_view_search-arrow"
+  searchTextinput:
+    height:
+      value: 36px
+      comment: "Высота Texinput_view_search-arrow"
+    typoColor:
+      value: "#000"
+      comment: "Цвет текста Button_view_search-arrow"
+    borderRadius:
+      value: 4px
+      comment: "Радиус скругления Texinput_view_search-arrow"
+    fillColor:
+      value: "#fff"
+      comment: "Цвет заливки Textinput_view_search-arrow Texinput-Box"
+    control:
+      fontSize:
+        value: 18px
+        comment: "Размер шрифта Textinput_view_search-arrow Textinput-Control"
+      borderWidth:
+        value: 0 30px 0 13px
+        comment: "Ширина границы Textinput_view_search-arrow Textinput-Control"
+    box:
+      borderWidth:
+        value: 2px 0 2px 2px
+        comment: "Ширина границы Textinput_view_search-arrow Texinput-Box"

@@ -1,0 +1,28 @@
+.Textinput_view_search-arrow {
+    height: var(--header-search-textinput-height);
+}
+
+.Textinput_view_search-arrow .Textinput-Control {
+    height: var(--header-search-textinput-height);
+
+    font-family: var(--header-search-font-family);
+    font-size: var(--header-search-textinput-control-font-size);
+    line-height: normal;
+
+    color: var(--header-search-textinput-typo-color);
+    border-width: var(--header-search-textinput-control-border-width);
+}
+
+.Textinput_view_search-arrow .Textinput-Box {
+    border-width: var(--header-search-textinput-box-border-width);
+    border-style: solid;
+    border-color: var(--header-search-fill-color-base);
+    border-top-left-radius: var(--header-search-textinput-border-radius);
+    border-bottom-left-radius: var(--header-search-textinput-border-radius);
+    background-color: var(--header-search-textinput-fill-color);
+}
+
+/**
+* TODO: https://st.yandex-team.ru/ISL-9555
+* Добавить свой clear, как в serp-header
+*/

@@ -1,0 +1,5 @@
+@import './Header-Icons.css';
+
+.NewsIcon {
+    background-image: url('./Icons.assets/news.svg');
+}

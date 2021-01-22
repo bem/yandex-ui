@@ -1,0 +1,14 @@
+.YandexHeader-Logoaas {
+    display: inline-block;
+    overflow: hidden;
+
+    height: var(--header-logo-height);
+
+    outline: none;
+}
+
+.YandexHeader-Logoaas .YandexHeader-Image {
+    margin: var(--header-logoaas-indent);
+    margin-top: -5px;
+    margin-left: 5px;
+}
