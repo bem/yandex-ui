@@ -1,5 +1,4 @@
 import figmaDecorator from 'storybook-addon-figma-new';
-import 'yandex-font/build/browser.css';
 
 export const EXAMPLE_DESKTOP_TOKEN = 'Layout|ListTile/desktop';
 

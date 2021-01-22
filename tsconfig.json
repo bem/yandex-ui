@@ -4,9 +4,7 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@yandex-lego/components/*": [
-        "./src/*"
-      ]
+      "@yandex-lego/components/*": ["./src/*"]
     }
   },
   "include": [

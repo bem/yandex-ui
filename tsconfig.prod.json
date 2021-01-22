@@ -4,6 +4,7 @@
     "rootDir": "src",
     "baseUrl": ".",
     "paths": {
+      "@yandex-lego/components/*": ["./src/*"],
       "@bem-react/*": ["node_modules/@bem-react/*"],
       "react": ["node_modules/@types/react"]
     },
@@ -16,14 +17,10 @@
     "src/**/*.test.ts",
     "src/**/*.test.tsx",
     "src/**/*tests/**/*",
-    "src/**/*.examples.ts",
-    "src/**/*.examples.tsx",
-    "src/**/*examples/**/*.ts",
-    "src/**/*examples/**/*.tsx",
-    "src/**/__examples__/**/*.ts",
-    "src/**/__examples__/**/*.tsx",
     "src/**/__tests__/**/*.ts",
     "src/**/__tests__/**/*.tsx",
+    "src/docs/**/*.ts",
+    "src/docs/**/*.tsx",
     "node_modules"
   ]
 }

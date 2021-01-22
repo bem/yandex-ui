@@ -5,7 +5,6 @@ import { cnTheme } from '../../../Theme';
 import { presets, presetsKeys } from '../../../Theme/presets';
 import { Text, TextProps } from '../../Text.bundle/desktop';
 import { maps, pin, stat, typographyValues } from './assets';
-import 'yandex-font/build/browser.css';
 import './common.css';
 
 export default {
