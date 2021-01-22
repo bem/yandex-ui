@@ -2,6 +2,8 @@
 id: RadioButton
 ---
 
+import radioButtonProps from '!!ts-docgen-loader!./props.tsx';
+
 ### Конфигурация темы на уровне проекта:
 
 ```ts
@@ -72,17 +74,4 @@ const App = () => {
 ```
 ### Props
 
-<!-- props:start -->
-| Свойство    | Тип                                                         | Описание                                        |
-| ----------- | ----------------------------------------------------------- | ----------------------------------------------- |
-| options     | `IRadioButtonOption[]`                                      | Набор опций                                     |
-| innerRef?   | `RefObject<HTMLSpanElement>`                                | Ссылка на корневой DOM-элемент компонента       |
-| style?      | `CSSProperties`                                             | Пользовательские стили на корневом DOM-элементе |
-| aria-label? | `string`                                                    | Метка для радиогруппы                           |
-| value       | `string`                                                    | HTML-атрибут `value`, значение контрола         |
-| name?       | `string`                                                    | HTML-атрибут `name`, имя компонента             |
-| disabled?   | `false \| true`                                             | HTML-атрибут `disabled`                         |
-| className?  | `string`                                                    | Дополнительный класс                            |
-| onClick?    | `(event: MouseEvent<HTMLInputElement, MouseEvent>) => void` | Обработчик клика                                |
-| onChange?   | `(event: ChangeEvent<HTMLInputElement>) => void`            | Обработчик изменения значения                   |
-<!-- props:end -->
+<PropsTable props={radioButtonProps} />

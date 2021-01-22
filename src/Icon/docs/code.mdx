@@ -2,6 +2,8 @@
 id: Icon
 ---
 
+import iconProps from '!!ts-docgen-loader!./props.tsx';
+
 #### Использование с нужным набором модификаторов:
 
 ```ts
@@ -34,15 +36,4 @@ const App = () => {
 
 ### Props
 
-<!-- props:start -->
-| Свойство   | Тип                                                                                                                                                                                   | По умолчанию | Описание                                                         |
-| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | ---------------------------------------------------------------- |
-| direction? | `"left" \| "top" \| "right" \| "bottom"`                                                                                                                                              | —            | Направление для иконки-стрелки                                   |
-| size?      | `"ns" \| "xs" \| "s" \| "m" \| "n" \| "l" \| "head"`                                                                                                                                  | —            | Размер иконки                                                    |
-| style?     | `CSSProperties`                                                                                                                                                                       | `{}`         | CSS-стили иконки                                                 |
-| url?       | `string`                                                                                                                                                                              | —            | Ссылка на изображение или содержимое картинки в кодировке base64 |
-| className? | `string`                                                                                                                                                                              | —            | Дополнительный класс                                             |
-| children?  | `ReactElement<any, string \| ((props: any) => ReactElement<any, string \| ... \| (new (props: any) => Component<any, any, any>)>) \| (new (props: any) => Component<any, any, any>)>` | —            | Контент иконки                                                   |
-| title?     | `string`                                                                                                                                                                              | —            | Всплывающая подсказка                                            |
-| onClick?   | `(event: MouseEvent<HTMLSpanElement, MouseEvent>) => void`                                                                                                                            | —            | Обработчик, который вызывается при клике на иконку               |
-<!-- props:end -->
+<PropsTable props={iconProps} />

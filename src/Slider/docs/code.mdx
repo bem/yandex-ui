@@ -2,6 +2,8 @@
 id: Slider
 ---
 
+import sliderProps from '!!ts-docgen-loader!./props.tsx';
+
 ### Конфигурация темы на уровне проекта:
 
 ```ts
@@ -52,25 +54,4 @@ const App = () => {
 
 ### Props
 
-<!-- props:start -->
-
-| Свойство         | Тип                                                                                                                                                                                                                          | По умолчанию       | Описание                                                                                                         |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ | ---------------------------------------------------------------------------------------------------------------- |
-| value            | `number[]`                                                                                                                                                                                                                   | —                  | Выбранные значения на слайдере                                                                                   |
-| className?       | `string`                                                                                                                                                                                                                     | —                  | Дополнительный класс у корневого DOM-элемента                                                                    |
-| disabled?        | `false \| true`                                                                                                                                                                                                              | `false`            | Неактивное состояние слайдера                                                                                    |
-| min?             | `number`                                                                                                                                                                                                                     | `0`                | Минимальное число, которое можно выбрать на слайдере. Может быть как положительным, так и отрицательным числом   |
-| max?             | `number`                                                                                                                                                                                                                     | `100`              | Максимальное число, которое можно выбрать на слайдере. Должен быть только положительным числом                   |
-| step?            | `number`                                                                                                                                                                                                                     | `1`                | Шаг, который делает бегунок за одно обновление. Должен быть больше 0 и делиться на (max - min)                   |
-| filled?          | `false \| true`                                                                                                                                                                                                              | `false`            | Отображает индикатор выбранного диапазона                                                                        |
-| reverse?         | `false \| true`                                                                                                                                                                                                              | `false`            | Отображает слайдер в противоположном направлении                                                                 |
-| vertical?        | `false \| true`                                                                                                                                                                                                              | `false`            | Устанавливает слайдер в вертикальную ориентацию                                                                  |
-| onInput          | `(event: any, value: number[]) => void`                                                                                                                                                                                      | —                  | Обработчик, который вызывается при каждом обновлении бегунка                                                     |
-| onChange?        | `(event: any, value: number[]) => void`                                                                                                                                                                                      | —                  | Обработчик, который вызывается при окончательном выборе значения                                                 |
-| renderThumb?     | `(props: SliderThumbProps, component: any) => ReactElement<any, string \| ((props: any) => ReactElement<any, string \| ... \| (new (props: any) => Component<any, any, any>)>) \| (new (props: any) => Component<...>)>`     | —                  | Переопределяет компонент `SliderThumb`                                                                           |
-| renderTickLabel? | `(props: SliderTickLabelProps, component: any) => ReactElement<any, string \| ((props: any) => ReactElement<any, string \| ... \| (new (props: any) => Component<any, any, any>)>) \| (new (props: any) => Component<...>)>` | `$renderTickLabel` | Переопределяет компонент `SliderTickLabel`                                                                       |
-| showTicks?       | `false \| true`                                                                                                                                                                                                              | `false`            | Показывает метки на треке                                                                                        |
-| showTickValues?  | `false \| true`                                                                                                                                                                                                              | `false`            | Отображает значения на метках трека. По умолчанию показывает только минимальное и максимальное значения          |
-| testId?          | `string`                                                                                                                                                                                                                     | —                  | Идентификатор, используемый в тестах                                                                             |
-
-<!-- props:end -->
+<PropsTable props={sliderProps} />

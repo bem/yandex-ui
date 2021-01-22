@@ -2,6 +2,8 @@
 id: TabsMenu
 ---
 
+import tabsMenuProps from '!!ts-docgen-loader!./props.tsx';
+
 ## Когда использовать
 
 С помощью компонента можно создать:
@@ -86,11 +88,5 @@ const App = () => {
 
 ### Props
 
-<!-- props:start -->
-| Свойство   | Тип                           | Описание                                  |
-| ---------- | ----------------------------- | ----------------------------------------- |
-| activeTab? | `string`                      | Идентификатор активного пункта меню       |
-| tabs       | `ITabsMenuTabProps[]`         | Массив пунктов меню                       |
-| innerRef?  | `RefObject<HTMLUListElement>` | Ссылка на корневой DOM-элемент компонента |
-| className? | `string`                      | Дополнительный класс                      |
-<!-- props:end -->
+<PropsTable props={tabsMenuProps} />
+

@@ -2,6 +2,8 @@
 id: Spin
 ---
 
+import spinProps from '!!ts-docgen-loader!./props.tsx';
+
 ### Конфигурация темы на уровне проекта:
 
 ```ts
@@ -46,10 +48,4 @@ const App = () => {
 
 ### Props
 
-<!-- props:start -->
-| Свойство   | Тип                         | Описание                                  |
-| ---------- | --------------------------- | ----------------------------------------- |
-| innerRef?  | `RefObject<HTMLDivElement>` | Ссылка на корневой DOM-элемент компонента |
-| progress?  | `false \| true`             | Видимость индикатора загрузки             |
-| className? | `string`                    | Дополнительный класс                      |
-<!-- props:end -->
+<PropsTable props={spinProps} />

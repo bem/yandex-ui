@@ -2,6 +2,8 @@
 id: Badge
 ---
 
+import badgeProps from '!!ts-docgen-loader!./props.tsx';
+
 Передайте компонент, которому нужно включить индикатор, внутрь блока `Badge`.
 
 ```ts
@@ -18,14 +20,4 @@ const App = () => (
 
 ### Props
 
-<!-- props:start -->
-| Свойство      | Тип                         | Описание                                  |
-| ------------- | --------------------------- | ----------------------------------------- |
-| innerRef?     | `RefObject<HTMLDivElement>` | Ссылка на корневой DOM-элемент компонента |
-| style?        | `CSSProperties`             | Пользовательские стили                    |
-| className?    | `string`                    | Дополнительный класс                      |
-| content?      | `string \| number`          | Содержимое, отображаемое внутри значка    |
-| color?        | `string`                    | Цвет заливки блока                        |
-| textColor?    | `string`                    | Цвет текста блока                         |
-| outlineColor? | `string`                    | Цвет обводки блока                        |
-<!-- props:end -->
+<PropsTable props={badgeProps} />
