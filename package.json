@@ -63,7 +63,6 @@
     "@types/storybook__react": "4.0.2",
     "@yandex/themekit": "1.6.0",
     "core-js": "^3.1.4",
-    "csscomb": "4.3.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "enzyme-to-json": "^3.3.5",
