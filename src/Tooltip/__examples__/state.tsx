@@ -9,10 +9,9 @@ export const State = () => {
     const anchorRef1 = useRef<HTMLDivElement>(null);
     const anchorRef2 = useRef<HTMLDivElement>(null);
     const anchorRef3 = useRef<HTMLDivElement>(null);
-    const scopeRef = useRef<HTMLDivElement>(null);
 
     return (
-        <div style={{ position: 'relative', display: 'flex', height: 64 }} ref={scopeRef}>
+        <div style={{ display: 'flex', height: 64 }}>
             <div style={{ marginLeft: 32, marginRight: 32 }}>
                 <Button innerRef={anchorRef1} size="m" view="default" onClick={() => setVisible1(!visible1)}>
                     Warning
@@ -30,11 +29,10 @@ export const State = () => {
             </div>
             <Tooltip
                 hasTail
-                direction="bottom-center"
+                direction="bottom"
                 view="default"
                 size="m"
                 anchor={anchorRef1}
-                scope={scopeRef}
                 visible={visible1}
                 state="warning"
             >
@@ -42,11 +40,10 @@ export const State = () => {
             </Tooltip>
             <Tooltip
                 hasTail
-                direction="bottom-center"
+                direction="bottom"
                 view="default"
                 size="m"
                 anchor={anchorRef2}
-                scope={scopeRef}
                 visible={visible2}
                 state="alert"
             >
@@ -54,11 +51,10 @@ export const State = () => {
             </Tooltip>
             <Tooltip
                 hasTail
-                direction="bottom-center"
+                direction="bottom"
                 view="default"
                 size="m"
                 anchor={anchorRef3}
-                scope={scopeRef}
                 visible={visible3}
                 state="success"
             >

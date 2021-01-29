@@ -1,49 +1,37 @@
-import React, { useRef } from 'react';
-import { select, boolean, object, text } from '@storybook/addon-knobs';
-import { Popup } from '@yandex-lego/components/Popup/desktop/bundle';
-
-const allDirections = [
-    'bottom-left',
-    'bottom-center',
-    'bottom-right',
-    'top-left',
-    'top-center',
-    'top-right',
-    'right-top',
-    'right-center',
-    'right-bottom',
-    'left-top',
-    'left-center',
-    'left-bottom',
-];
+import React, { useState, useRef } from 'react';
+import { select, text } from '@storybook/addon-knobs';
+import { Popup, directions } from '@yandex-lego/components/Popup/desktop/bundle';
+import { Button } from '@yandex-lego/components/Button/desktop/bundle';
 
 export const Playground = () => {
-    const scopeRef = useRef<HTMLDivElement>(null);
-    const visible = boolean('visible', !true);
-    const nonvisual = boolean('nonvisual', false) as any;
+    const anchorRef = useRef<HTMLButtonElement>(null);
+    const [visible, setVisible] = useState(!false);
     const children = text(
         'children',
         'Общедоступная многоязычная универсальная интернет-энциклопедия со свободным контентом.',
-    ) as any;
+    );
     const view = select('view', ['default', ''], 'default') as any;
     const theme = view === '' ? (select('theme', ['normal', 'clear'], 'normal') as any) : null;
-    const position = object('position ', { top: 0, left: 0 }) as any;
-    const direction = select('direction', allDirections, 'bottom-center') as any;
+    const direction = select('direction', directions, 'bottom-start');
 
     return (
-        <div ref={scopeRef} style={{ position: 'relative' }}>
+        <>
+            <Button onClick={() => setVisible(!visible)} innerRef={anchorRef} size="m" view="default">
+                Open popup
+            </Button>
             <Popup
-                scope={scopeRef}
-                theme={theme}
-                view={view}
+                hasTail
+                target="anchor"
+                anchor={anchorRef}
                 direction={direction}
+                view={view}
+                theme={theme}
                 visible={visible}
-                nonvisual={nonvisual}
-                position={position}
                 style={{ maxWidth: 280 }}
+                onClose={() => setVisible(false)}
             >
                 <div style={{ padding: 16, fontFamily: 'var(--control-font-family)' }}>{children}</div>
             </Popup>
-        </div>
+        </>
     );
 };

@@ -17,7 +17,7 @@ export const SplitButton = () => {
                 <Button view="action" size="s" className="Button_wide">
                     Button
                 </Button>
-                <Dropdown direction="bottom-right" view="default" hasTail content={<SampleMenu />}>
+                <Dropdown direction="bottom-start" view="default" hasTail content={<SampleMenu />}>
                     <Button
                         innerRef={anchor}
                         view="action"
@@ -34,7 +34,7 @@ export const SplitButton = () => {
                 <Button view="link" size="s">
                     Button
                 </Button>
-                <Dropdown direction="right-center" view="default" hasTail content={<SampleMenu />}>
+                <Dropdown direction="right" view="default" hasTail content={<SampleMenu />}>
                     <Button
                         innerRef={anchor}
                         view="link"

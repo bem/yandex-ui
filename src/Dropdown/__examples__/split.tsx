@@ -18,7 +18,7 @@ export const Split = () => {
                 <Button view="link" size="s" pin="round-brick">
                     Dropdown
                 </Button>
-                <Dropdown direction="top-left" view="default" hasTail content={<SampleMenu />}>
+                <Dropdown direction="top-start" view="default" hasTail content={<SampleMenu />}>
                     <Button
                         innerRef={anchor}
                         view="link"

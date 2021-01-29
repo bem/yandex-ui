@@ -39,7 +39,7 @@ export const MiniApps = () => {
                     layout="tooltip"
                     scope={scopeRef}
                     anchor={anchorRef1}
-                    direction="left-center"
+                    direction="left"
                 >
                     <Wrapper align="left">Подсказка</Wrapper>
                 </MessageBoxPopup>
@@ -50,7 +50,7 @@ export const MiniApps = () => {
                     hasTail
                     tailType="rounded"
                     scope={scopeRef}
-                    direction="bottom-center"
+                    direction="bottom"
                     anchor={anchorRef1}
                     view="default"
                     size="s"
@@ -65,7 +65,7 @@ export const MiniApps = () => {
                     hasTail
                     tailType="rounded"
                     scope={scopeRef}
-                    direction="top-center"
+                    direction="top"
                     anchor={anchorRef1}
                     view="default"
                     size="s"
@@ -80,7 +80,7 @@ export const MiniApps = () => {
                     hasTail
                     tailType="rounded"
                     scope={scopeRef}
-                    direction="right-center"
+                    direction="right"
                     anchor={anchorRef1}
                     view="default"
                     size="s"
@@ -98,7 +98,7 @@ export const MiniApps = () => {
                     hasTail
                     tailType="rounded"
                     scope={scopeRef}
-                    direction="top-center"
+                    direction="top"
                     anchor={anchorRef2}
                     view="promo"
                     size="m"
@@ -113,7 +113,7 @@ export const MiniApps = () => {
                     hasTail
                     tailType="rounded"
                     scope={scopeRef}
-                    direction="bottom-center"
+                    direction="bottom"
                     anchor={anchorRef2}
                     view="promo"
                     size="m"
@@ -141,7 +141,7 @@ export const MiniApps = () => {
                     hasTail
                     tailType="rounded"
                     scope={scopeRef}
-                    direction="left-center"
+                    direction="left"
                     onClose={() => null}
                     anchor={anchorRef2}
                     view="promo"
@@ -157,7 +157,7 @@ export const MiniApps = () => {
                     hasTail
                     tailType="rounded"
                     scope={scopeRef}
-                    direction="right-center"
+                    direction="right"
                     anchor={anchorRef2}
                     onClose={() => null}
                     view="promo"

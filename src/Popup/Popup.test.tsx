@@ -72,11 +72,6 @@ describe.each<any>(platforms)('Popup@%s', (_platform, Popup: ComponentType<Popup
             expect(wrapper.find('.before')).toHaveLength(1);
         });
 
-        test('должен устанавливать position', () => {
-            wrapper = mount(<Popup visible position={{ top: 10, left: 10 }} />);
-            expect(wrapper.find('.Popup2').prop('style')).toEqual({ top: 10, left: 10 });
-        });
-
         test('не должен рендериться в body если visible и keepMounted не установлены', async () => {
             const innerRef = createRef<HTMLDivElement>();
             wrapper = mount(<Popup innerRef={innerRef} keepMounted={false} />);

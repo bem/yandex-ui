@@ -65,44 +65,64 @@ exports[`Select@desktop client environment должен вернуть полн�
                   <RegistryResolver(Popup2)
                     anchor={
                       Object {
-                        "current": <span
-                          class="Select2 mix"
+                        "current": <button
+                          aria-expanded="false"
+                          aria-haspopup="true"
+                          aria-multiselectable="false"
+                          aria-pressed="false"
+                          autocomplete="off"
+                          class="Button2 Select2-Button"
+                          role="listbox"
+                          type="button"
                         >
-                          <button
-                            aria-expanded="false"
-                            aria-haspopup="true"
-                            aria-multiselectable="false"
-                            aria-pressed="false"
-                            autocomplete="off"
-                            class="Button2 Select2-Button"
-                            role="listbox"
-                            type="button"
+                          <span
+                            aria-hidden="true"
+                            class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
+                          />
+                          <span
+                            class="Button2-Text"
                           >
-                            <span
-                              aria-hidden="true"
-                              class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
-                            />
-                            <span
-                              class="Button2-Text"
-                            >
-                              —
-                            </span>
-                          </button>
-                        </span>,
+                            —
+                          </span>
+                        </button>,
                       }
                     }
                     className="Select2-Popup"
-                    directions={
+                    direction={
                       Array [
-                        "bottom-left",
-                        "bottom-right",
-                        "top-left",
-                        "top-right",
+                        "bottom-start",
+                        "bottom-end",
+                        "top-start",
+                        "top-end",
                       ]
                     }
-                    getPossibleDrawingParams={[Function]}
                     innerRef={[Function]}
-                    mainOffset={5}
+                    modifiers={
+                      Array [
+                        Object {
+                          "effect": [Function],
+                          "enabled": true,
+                          "fn": [Function],
+                          "name": "applyMinWidth",
+                          "phase": "beforeWrite",
+                          "requires": Array [
+                            "computeStyles",
+                          ],
+                        },
+                        Object {
+                          "enabled": true,
+                          "fn": [Function],
+                          "name": "applyMaxHeight",
+                          "options": Object {
+                            "maxHeight": undefined,
+                          },
+                          "phase": "main",
+                          "requires": Array [
+                            "computeStyles",
+                          ],
+                        },
+                      ]
+                    }
                     onClose={[Function]}
                     scope={
                       Object {
@@ -132,18 +152,12 @@ exports[`Select@desktop client environment должен вернуть полн�
                         </span>,
                       }
                     }
-                    style={
-                      Object {
-                        "minWidth": 0,
-                      }
-                    }
                     target="anchor"
                     visible={false}
                   >
                     <RenderOverride
                       className="Select2-Menu"
                       focused={false}
-                      innerRef={[Function]}
                       items={
                         Array [
                           Object {
@@ -154,11 +168,6 @@ exports[`Select@desktop client environment должен вернуть полн�
                       }
                       onActiveItemChange={[Function]}
                       onChange={[Function]}
-                      style={
-                        Object {
-                          "maxHeight": undefined,
-                        }
-                      }
                       width="max"
                     />
                   </RegistryResolver(Popup2)>
@@ -368,44 +377,64 @@ exports[`Select@desktop client environment должен вернуть полн�
                     <RegistryResolver(Popup2)
                       anchor={
                         Object {
-                          "current": <span
-                            class="Select2 mix"
+                          "current": <button
+                            aria-expanded="false"
+                            aria-haspopup="true"
+                            aria-multiselectable="false"
+                            aria-pressed="false"
+                            autocomplete="off"
+                            class="Button2 Select2-Button"
+                            role="listbox"
+                            type="button"
                           >
-                            <button
-                              aria-expanded="false"
-                              aria-haspopup="true"
-                              aria-multiselectable="false"
-                              aria-pressed="false"
-                              autocomplete="off"
-                              class="Button2 Select2-Button"
-                              role="listbox"
-                              type="button"
+                            <span
+                              aria-hidden="true"
+                              class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
+                            />
+                            <span
+                              class="Button2-Text"
                             >
-                              <span
-                                aria-hidden="true"
-                                class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
-                              />
-                              <span
-                                class="Button2-Text"
-                              >
-                                —
-                              </span>
-                            </button>
-                          </span>,
+                              —
+                            </span>
+                          </button>,
                         }
                       }
                       className="Select2-Popup"
-                      directions={
+                      direction={
                         Array [
-                          "bottom-left",
-                          "bottom-right",
-                          "top-left",
-                          "top-right",
+                          "bottom-start",
+                          "bottom-end",
+                          "top-start",
+                          "top-end",
                         ]
                       }
-                      getPossibleDrawingParams={[Function]}
                       innerRef={[Function]}
-                      mainOffset={5}
+                      modifiers={
+                        Array [
+                          Object {
+                            "effect": [Function],
+                            "enabled": true,
+                            "fn": [Function],
+                            "name": "applyMinWidth",
+                            "phase": "beforeWrite",
+                            "requires": Array [
+                              "computeStyles",
+                            ],
+                          },
+                          Object {
+                            "enabled": true,
+                            "fn": [Function],
+                            "name": "applyMaxHeight",
+                            "options": Object {
+                              "maxHeight": undefined,
+                            },
+                            "phase": "main",
+                            "requires": Array [
+                              "computeStyles",
+                            ],
+                          },
+                        ]
+                      }
                       onClose={[Function]}
                       scope={
                         Object {
@@ -435,55 +464,70 @@ exports[`Select@desktop client environment должен вернуть полн�
                           </span>,
                         }
                       }
-                      style={
-                        Object {
-                          "minWidth": 0,
-                        }
-                      }
                       target="anchor"
                       visible={false}
                     >
                       <Popup2
                         anchor={
                           Object {
-                            "current": <span
-                              class="Select2 mix"
+                            "current": <button
+                              aria-expanded="false"
+                              aria-haspopup="true"
+                              aria-multiselectable="false"
+                              aria-pressed="false"
+                              autocomplete="off"
+                              class="Button2 Select2-Button"
+                              role="listbox"
+                              type="button"
                             >
-                              <button
-                                aria-expanded="false"
-                                aria-haspopup="true"
-                                aria-multiselectable="false"
-                                aria-pressed="false"
-                                autocomplete="off"
-                                class="Button2 Select2-Button"
-                                role="listbox"
-                                type="button"
+                              <span
+                                aria-hidden="true"
+                                class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
+                              />
+                              <span
+                                class="Button2-Text"
                               >
-                                <span
-                                  aria-hidden="true"
-                                  class="Icon Icon_direction_bottom Button2-Icon Button2-Icon_side_right"
-                                />
-                                <span
-                                  class="Button2-Text"
-                                >
-                                  —
-                                </span>
-                              </button>
-                            </span>,
+                                —
+                              </span>
+                            </button>,
                           }
                         }
                         className="Select2-Popup"
-                        directions={
+                        direction={
                           Array [
-                            "bottom-left",
-                            "bottom-right",
-                            "top-left",
-                            "top-right",
+                            "bottom-start",
+                            "bottom-end",
+                            "top-start",
+                            "top-end",
                           ]
                         }
-                        getPossibleDrawingParams={[Function]}
                         innerRef={[Function]}
-                        mainOffset={5}
+                        modifiers={
+                          Array [
+                            Object {
+                              "effect": [Function],
+                              "enabled": true,
+                              "fn": [Function],
+                              "name": "applyMinWidth",
+                              "phase": "beforeWrite",
+                              "requires": Array [
+                                "computeStyles",
+                              ],
+                            },
+                            Object {
+                              "enabled": true,
+                              "fn": [Function],
+                              "name": "applyMaxHeight",
+                              "options": Object {
+                                "maxHeight": undefined,
+                              },
+                              "phase": "main",
+                              "requires": Array [
+                                "computeStyles",
+                              ],
+                            },
+                          ]
+                        }
                         onClose={[Function]}
                         scope={
                           Object {
@@ -511,11 +555,6 @@ exports[`Select@desktop client environment должен вернуть полн�
                                 </span>
                               </button>
                             </span>,
-                          }
-                        }
-                        style={
-                          Object {
-                            "minWidth": 0,
                           }
                         }
                         target="anchor"

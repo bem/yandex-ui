@@ -444,11 +444,11 @@
     --tooltip-size-m-fontSize: var(--typography-controls-size-m-font-size); /* Размер текста у m-tooltip */
     --tooltip-size-m-lineHeight: 14px; /* Межстрочный интервал текста у m-tooltip */
     --tooltip-size-m-content-spaceAll: 9px 10px; /* Размер внутренних отступов у контента m-tooltip */
-    --tooltip-size-m-tail-size: 12px; /* Размер хвоста m-tooltip */
+    --tooltip-size-m-tail-size: 24px; /* Размер хвоста m-tooltip */
     --tooltip-size-l-fontSize: 16px; /* Размер текста у l-tooltip */
     --tooltip-size-l-lineHeight: 16px; /* Межстрочный интервал текста у l-tooltip */
     --tooltip-size-l-content-spaceAll: 18px; /* Размер внутренних отступов у контента l-tooltip */
-    --tooltip-size-l-tail-size: 18px; /* Размер хвоста l-tooltip */
+    --tooltip-size-l-tail-size: 36px; /* Размер хвоста l-tooltip */
     --tooltip-view-default-shadow: 0 10px 20px -5px rgba(0, 0, 0, .4);
     --tumbler-font-family: var(--control-font-family);
     --tumbler-button-space: 2px;

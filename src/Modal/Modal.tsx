@@ -9,7 +9,7 @@ import './Modal.css';
 
 type PartialPopupProps = Pick<
     IPopupProps,
-    'keepMounted' | 'className' | 'innerRef' | 'zIndex' | 'visible' | 'scope' | 'forceRender' | 'onClose' | 'onClick'
+    'keepMounted' | 'className' | 'innerRef' | 'zIndex' | 'visible' | 'scope' | 'onClose' | 'onClick'
 >;
 
 export interface IModalProps extends PartialPopupProps {

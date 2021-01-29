@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { ExtractProps } from '@bem-react/core';
 import { useComponentRegistry } from '@bem-react/di';
 
-import { Direction } from '../Popup/Popup';
+import { Direction } from '../Popup';
 import { MessageBox, MessageBoxProps, cnMessageBox } from './MessageBox';
 import { MessageBoxRegistry } from './MessageBox.registry/interface';
 
@@ -50,12 +50,10 @@ export const MessageBoxPopup: FC<MessageBoxPopupProps> = (props) => {
     } = props;
     const { Popup } = useComponentRegistry<MessageBoxRegistry>(cnMessageBox());
 
-    const directions = Array.isArray(direction) ? direction : [direction as Direction];
-
     return (
         <Popup
             anchor={anchor}
-            directions={directions}
+            direction={direction}
             mainOffset={mainOffset}
             motionless={motionless}
             nonvisual

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Select } from '@yandex-lego/components/Select/Select.bundle/desktop';
+import { Select } from '@yandex-lego/components/Select/desktop/bundle';
 
 const options = [
     { value: 'a', content: 'Каждый' },

@@ -3,26 +3,11 @@ import React, { createRef, useState } from 'react';
 import { MessageBoxPopup } from '../../../MessageBox/MessageBox.bundle/desktop';
 
 import { EXAMPLE_DESKTOP_TOKEN } from '../examples-config';
-import { Direction } from '../../../Popup/Popup';
+import { directions } from '../../../Popup';
 
 export default {
     title: EXAMPLE_DESKTOP_TOKEN,
 };
-
-const DIRECTIONS: Direction[] = [
-    'bottom-left',
-    'bottom-center',
-    'bottom-right',
-    'top-left',
-    'top-center',
-    'top-right',
-    'right-top',
-    'right-center',
-    'right-bottom',
-    'left-top',
-    'left-center',
-    'left-bottom',
-];
 
 const scopeRef = createRef<HTMLDivElement>();
 const anchorRef = createRef<HTMLDivElement>();
@@ -60,7 +45,7 @@ export const WithPopup = () => {
             >
                 Anchor
             </div>
-            {DIRECTIONS.map((direction, index) => (
+            {directions.map((direction, index) => (
                 <MessageBoxPopup
                     key={index}
                     visible={arePopupsVisible}
@@ -94,7 +79,7 @@ export const WithPopup = () => {
                 visible={areSmallAnchorPopupsVisible}
                 hasTail
                 scope={scopeRef}
-                direction="bottom-right"
+                direction="bottom-end"
                 anchor={smallAnchorRef}
                 view="default"
                 size="s"
@@ -107,7 +92,7 @@ export const WithPopup = () => {
                 visible={areSmallAnchorPopupsVisible}
                 hasTail
                 scope={scopeRef}
-                direction="top-left"
+                direction="top-start"
                 anchor={smallAnchorRef}
                 view="default"
                 size="s"
@@ -138,7 +123,7 @@ export const WithPopup = () => {
                     visible={withZIndexVisible}
                     hasTail
                     scope={scopeRef}
-                    direction="bottom-center"
+                    direction="bottom"
                     anchor={zIndexAnchorRef}
                     view="default"
                     size="s"

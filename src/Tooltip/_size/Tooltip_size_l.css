@@ -5,7 +5,7 @@
     line-height: var(--tooltip-size-l-lineHeight);
 }
 
-.Tooltip_size_l .Popup2-tail {
+.Tooltip_size_l .Popup2-Tail {
     width: var(--tooltip-size-l-tail-size);
     height: var(--tooltip-size-l-tail-size);
 }

@@ -1,8 +1,8 @@
 import React, { useState, useRef, useLayoutEffect, createContext, useCallback, useContext, useMemo } from 'react';
 
-import { Textinput } from '@yandex-lego/components/Textinput/Textinput.bundle/desktop';
-import { Spacer } from '@yandex-lego/components/Spacer/desktop/';
-import { Select } from '@yandex-lego/components/Select/Select.bundle/desktop';
+import { Textinput } from '@yandex-lego/components/Textinput/desktop/bundle';
+import { Spacer } from '@yandex-lego/components/Spacer/desktop';
+import { Select } from '@yandex-lego/components/Select/desktop/bundle';
 
 const INITIAL_OPTIONS = [
     { value: 'a', content: 'Каждый' },
@@ -55,19 +55,17 @@ export const Overriden = () => {
     }, []);
 
     return (
-        <div style={{ position: 'relative' }}>
-            <SearchContext.Provider value={{ onChange: onInputChange, value: searchValue }}>
-                <Select
-                    view="default"
-                    size="m"
-                    value={value}
-                    onChange={(event) => setValue(event.target.value)}
-                    options={options}
-                    renderMenu={RenderMenu}
-                    placeholder={content}
-                    showAlwaysPlaceholder
-                />
-            </SearchContext.Provider>
-        </div>
+        <SearchContext.Provider value={{ onChange: onInputChange, value: searchValue }}>
+            <Select
+                view="default"
+                size="m"
+                value={value}
+                onChange={(event) => setValue(event.target.value)}
+                options={options}
+                renderMenu={RenderMenu}
+                placeholder={content}
+                showAlwaysPlaceholder
+            />
+        </SearchContext.Provider>
     );
 };

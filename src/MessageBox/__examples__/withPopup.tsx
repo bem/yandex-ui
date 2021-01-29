@@ -2,10 +2,9 @@ import React, { useRef, useState } from 'react';
 import { MessageBoxPopup } from '@yandex-lego/components/MessageBox/desktop/bundle';
 import { Direction } from '@yandex-lego/components/Popup/desktop/bundle';
 
-const DIRECTIONS: Direction[] = ['top-center', 'right-center', 'bottom-center', 'left-center'];
+const DIRECTIONS: Direction[] = ['top', 'right', 'bottom', 'left'];
 
 export const WithPopup = () => {
-    const scopeRef = useRef<HTMLDivElement>(null);
     const anchorRef = useRef<HTMLDivElement>(null);
 
     const [isTopCenterVisible, setIsTopCenterVisible] = useState(true);
@@ -37,7 +36,7 @@ export const WithPopup = () => {
     const hidePopupArr = [hideTopCenterPopup, hideRightCenterPopup, hideBottomCenterPopup, hideLeftCenterPopup];
 
     return (
-        <div style={{ position: 'relative', margin: 64, display: 'flex', justifyContent: 'center' }} ref={scopeRef}>
+        <div style={{ margin: 64, display: 'flex', justifyContent: 'center' }}>
             <div
                 style={{
                     background: '#e6e6e6',
@@ -58,7 +57,6 @@ export const WithPopup = () => {
                     key={index}
                     visible={isVisibleArr[index]}
                     hasTail
-                    scope={scopeRef}
                     direction={direction}
                     anchor={anchorRef}
                     view="default"

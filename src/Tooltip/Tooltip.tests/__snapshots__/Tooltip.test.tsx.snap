@@ -50,79 +50,20 @@ exports[`Tooltip@desktop client environment должен вернуть полн
             }
           }
           className="Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-          directions={
-            Array [
-              "bottom-left",
-              "bottom-center",
-              "bottom-right",
-              "top-left",
-              "top-center",
-              "top-right",
-              "right-top",
-              "right-center",
-              "right-bottom",
-              "left-top",
-              "left-center",
-              "left-bottom",
-            ]
-          }
           mainOffset={4}
-          scope={
-            Object {
-              "current": <body>
-                <div
-                  class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                  style="top: -9999px; left: -9999px;"
-                >
-                  <div
-                    class="Tooltip-Content"
-                    role="tooltip"
-                  >
-                    Добавить в избранное
-                  </div>
-                  <div
-                    class="Tooltip-Backdrop"
-                  />
-                </div>
-              </body>,
-            }
-          }
-          secondaryOffset={0}
-          tailOffset={0}
           target="anchor"
           unstable_onRenderTail={[Function]}
           view="default"
-          viewportOffset={0}
           visible={true}
         >
           <RegistryResolver(Popup2)
             className="Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-            direction="bottom-left"
             innerRef={[Function]}
-            position={
+            style={
               Object {
                 "left": -9999,
+                "position": "fixed",
                 "top": -9999,
-              }
-            }
-            scope={
-              Object {
-                "current": <body>
-                  <div
-                    class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                    style="top: -9999px; left: -9999px;"
-                  >
-                    <div
-                      class="Tooltip-Content"
-                      role="tooltip"
-                    >
-                      Добавить в избранное
-                    </div>
-                    <div
-                      class="Tooltip-Backdrop"
-                    />
-                  </div>
-                </body>,
               }
             }
             tailRef={[Function]}
@@ -139,32 +80,12 @@ exports[`Tooltip@desktop client environment должен вернуть полн
           >
             <Popup2
               className="Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-              direction="bottom-left"
               innerRef={[Function]}
-              position={
+              style={
                 Object {
                   "left": -9999,
+                  "position": "fixed",
                   "top": -9999,
-                }
-              }
-              scope={
-                Object {
-                  "current": <body>
-                    <div
-                      class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                      style="top: -9999px; left: -9999px;"
-                    >
-                      <div
-                        class="Tooltip-Content"
-                        role="tooltip"
-                      >
-                        Добавить в избранное
-                      </div>
-                      <div
-                        class="Tooltip-Backdrop"
-                      />
-                    </div>
-                  </body>,
                 }
               }
               tailRef={[Function]}
@@ -183,8 +104,8 @@ exports[`Tooltip@desktop client environment должен вернуть полн
                 containerInfo={
                   <body>
                     <div
-                      class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                      style="top: -9999px; left: -9999px;"
+                      class="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                      style="top: -9999px; left: -9999px; position: fixed;"
                     >
                       <div
                         class="Tooltip-Content"
@@ -204,8 +125,8 @@ exports[`Tooltip@desktop client environment должен вернуть полн
                     Array [
                       Object {
                         "current": <div
-                          class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                          style="top: -9999px; left: -9999px;"
+                          class="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                          style="top: -9999px; left: -9999px; position: fixed;"
                         >
                           <div
                             class="Tooltip-Content"
@@ -223,14 +144,14 @@ exports[`Tooltip@desktop client environment должен вернуть полн
                       },
                     ]
                   }
-                  onClose={[Function]}
                   visible={true}
                 >
                   <div
-                    className="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                    className="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
                     style={
                       Object {
                         "left": -9999,
+                        "position": "fixed",
                         "top": -9999,
                         "zIndex": undefined,
                       }
@@ -311,79 +232,20 @@ exports[`Tooltip@touch-pad client environment должен вернуть пол
             }
           }
           className="Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-          directions={
-            Array [
-              "bottom-left",
-              "bottom-center",
-              "bottom-right",
-              "top-left",
-              "top-center",
-              "top-right",
-              "right-top",
-              "right-center",
-              "right-bottom",
-              "left-top",
-              "left-center",
-              "left-bottom",
-            ]
-          }
           mainOffset={4}
-          scope={
-            Object {
-              "current": <body>
-                <div
-                  class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                  style="top: -9999px; left: -9999px;"
-                >
-                  <div
-                    class="Tooltip-Content"
-                    role="tooltip"
-                  >
-                    Добавить в избранное
-                  </div>
-                  <div
-                    class="Tooltip-Backdrop"
-                  />
-                </div>
-              </body>,
-            }
-          }
-          secondaryOffset={0}
-          tailOffset={0}
           target="anchor"
           unstable_onRenderTail={[Function]}
           view="default"
-          viewportOffset={0}
           visible={true}
         >
           <RegistryResolver(Popup2)
             className="Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-            direction="bottom-left"
             innerRef={[Function]}
-            position={
+            style={
               Object {
                 "left": -9999,
+                "position": "fixed",
                 "top": -9999,
-              }
-            }
-            scope={
-              Object {
-                "current": <body>
-                  <div
-                    class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                    style="top: -9999px; left: -9999px;"
-                  >
-                    <div
-                      class="Tooltip-Content"
-                      role="tooltip"
-                    >
-                      Добавить в избранное
-                    </div>
-                    <div
-                      class="Tooltip-Backdrop"
-                    />
-                  </div>
-                </body>,
               }
             }
             tailRef={[Function]}
@@ -400,32 +262,12 @@ exports[`Tooltip@touch-pad client environment должен вернуть пол
           >
             <Popup2
               className="Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-              direction="bottom-left"
               innerRef={[Function]}
-              position={
+              style={
                 Object {
                   "left": -9999,
+                  "position": "fixed",
                   "top": -9999,
-                }
-              }
-              scope={
-                Object {
-                  "current": <body>
-                    <div
-                      class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                      style="top: -9999px; left: -9999px;"
-                    >
-                      <div
-                        class="Tooltip-Content"
-                        role="tooltip"
-                      >
-                        Добавить в избранное
-                      </div>
-                      <div
-                        class="Tooltip-Backdrop"
-                      />
-                    </div>
-                  </body>,
                 }
               }
               tailRef={[Function]}
@@ -444,8 +286,8 @@ exports[`Tooltip@touch-pad client environment должен вернуть пол
                 containerInfo={
                   <body>
                     <div
-                      class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                      style="top: -9999px; left: -9999px;"
+                      class="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                      style="top: -9999px; left: -9999px; position: fixed;"
                     >
                       <div
                         class="Tooltip-Content"
@@ -465,8 +307,8 @@ exports[`Tooltip@touch-pad client environment должен вернуть пол
                     Array [
                       Object {
                         "current": <div
-                          class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                          style="top: -9999px; left: -9999px;"
+                          class="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                          style="top: -9999px; left: -9999px; position: fixed;"
                         >
                           <div
                             class="Tooltip-Content"
@@ -484,14 +326,14 @@ exports[`Tooltip@touch-pad client environment должен вернуть пол
                       },
                     ]
                   }
-                  onClose={[Function]}
                   visible={true}
                 >
                   <div
-                    className="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                    className="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
                     style={
                       Object {
                         "left": -9999,
+                        "position": "fixed",
                         "top": -9999,
                         "zIndex": undefined,
                       }
@@ -572,79 +414,20 @@ exports[`Tooltip@touch-phone client environment должен вернуть по
             }
           }
           className="Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-          directions={
-            Array [
-              "bottom-left",
-              "bottom-center",
-              "bottom-right",
-              "top-left",
-              "top-center",
-              "top-right",
-              "right-top",
-              "right-center",
-              "right-bottom",
-              "left-top",
-              "left-center",
-              "left-bottom",
-            ]
-          }
           mainOffset={4}
-          scope={
-            Object {
-              "current": <body>
-                <div
-                  class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                  style="top: -9999px; left: -9999px;"
-                >
-                  <div
-                    class="Tooltip-Content"
-                    role="tooltip"
-                  >
-                    Добавить в избранное
-                  </div>
-                  <div
-                    class="Tooltip-Backdrop"
-                  />
-                </div>
-              </body>,
-            }
-          }
-          secondaryOffset={0}
-          tailOffset={0}
           target="anchor"
           unstable_onRenderTail={[Function]}
           view="default"
-          viewportOffset={0}
           visible={true}
         >
           <RegistryResolver(Popup2)
             className="Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-            direction="bottom-left"
             innerRef={[Function]}
-            position={
+            style={
               Object {
                 "left": -9999,
+                "position": "fixed",
                 "top": -9999,
-              }
-            }
-            scope={
-              Object {
-                "current": <body>
-                  <div
-                    class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                    style="top: -9999px; left: -9999px;"
-                  >
-                    <div
-                      class="Tooltip-Content"
-                      role="tooltip"
-                    >
-                      Добавить в избранное
-                    </div>
-                    <div
-                      class="Tooltip-Backdrop"
-                    />
-                  </div>
-                </body>,
               }
             }
             tailRef={[Function]}
@@ -661,32 +444,12 @@ exports[`Tooltip@touch-phone client environment должен вернуть по
           >
             <Popup2
               className="Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-              direction="bottom-left"
               innerRef={[Function]}
-              position={
+              style={
                 Object {
                   "left": -9999,
+                  "position": "fixed",
                   "top": -9999,
-                }
-              }
-              scope={
-                Object {
-                  "current": <body>
-                    <div
-                      class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                      style="top: -9999px; left: -9999px;"
-                    >
-                      <div
-                        class="Tooltip-Content"
-                        role="tooltip"
-                      >
-                        Добавить в избранное
-                      </div>
-                      <div
-                        class="Tooltip-Backdrop"
-                      />
-                    </div>
-                  </body>,
                 }
               }
               tailRef={[Function]}
@@ -705,8 +468,8 @@ exports[`Tooltip@touch-phone client environment должен вернуть по
                 containerInfo={
                   <body>
                     <div
-                      class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                      style="top: -9999px; left: -9999px;"
+                      class="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                      style="top: -9999px; left: -9999px; position: fixed;"
                     >
                       <div
                         class="Tooltip-Content"
@@ -726,8 +489,8 @@ exports[`Tooltip@touch-phone client environment должен вернуть по
                     Array [
                       Object {
                         "current": <div
-                          class="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                          style="top: -9999px; left: -9999px;"
+                          class="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                          style="top: -9999px; left: -9999px; position: fixed;"
                         >
                           <div
                             class="Tooltip-Content"
@@ -745,14 +508,14 @@ exports[`Tooltip@touch-phone client environment должен вернуть по
                       },
                     ]
                   }
-                  onClose={[Function]}
                   visible={true}
                 >
                   <div
-                    className="Popup2 Popup2_visible Popup2_direction_bottom-left Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                    className="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
                     style={
                       Object {
                         "left": -9999,
+                        "position": "fixed",
                         "top": -9999,
                         "zIndex": undefined,
                       }

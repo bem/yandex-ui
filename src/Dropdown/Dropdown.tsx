@@ -75,15 +75,6 @@ export interface DropdownState {
     prevVisible: boolean;
 }
 
-const getDirections = (direction?: Direction | Direction[]): Direction[] => {
-    if (direction === undefined) {
-        return ['bottom-left'];
-    } else if (Array.isArray(direction)) {
-        return direction;
-    }
-    return [direction];
-};
-
 /**
  * Компонент для создания выпадающего списка
  * @param {DropdownProps} props
@@ -100,6 +91,7 @@ export const withDropdown = <T extends IPopupProps>(Popup: ComponentType<T>) =>
             blurDelay: 0.15,
             visible: false,
             trigger: ['hover'],
+            direction: 'bottom-start',
         };
 
         componentWillUnmount() {
@@ -182,7 +174,6 @@ export const withDropdown = <T extends IPopupProps>(Popup: ComponentType<T>) =>
                 content,
                 style,
                 scope,
-                direction,
                 onVisibleChange,
                 mouseLeaveDelay,
                 mouseEnterDelay,
@@ -203,11 +194,9 @@ export const withDropdown = <T extends IPopupProps>(Popup: ComponentType<T>) =>
                 target: 'anchor',
                 anchor: this.innerRef,
                 scope: scope || this.innerRef,
-                directions: getDirections(direction),
                 visible: this.state.visible,
                 onClose: () => this.setPopupVisible(false),
             };
-
             const newChildProps = {} as any;
 
             if (trigger.indexOf('hover') !== -1) {

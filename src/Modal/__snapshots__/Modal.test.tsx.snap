@@ -73,7 +73,6 @@ exports[`Modal@desktop client environment должен вернуть полны
                 },
               ]
             }
-            onClose={[Function]}
             visible={true}
           >
             <div
@@ -184,7 +183,6 @@ exports[`Modal@touch-pad client environment должен вернуть полн
                 },
               ]
             }
-            onClose={[Function]}
             visible={true}
           >
             <div
@@ -295,7 +293,6 @@ exports[`Modal@touch-phone client environment должен вернуть пол
                 },
               ]
             }
-            onClose={[Function]}
             visible={true}
           >
             <div

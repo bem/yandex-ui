@@ -9,10 +9,9 @@ export const Size = () => {
     const anchorRef1 = useRef<HTMLDivElement>(null);
     const anchorRef2 = useRef<HTMLDivElement>(null);
     const anchorRef3 = useRef<HTMLDivElement>(null);
-    const scopeRef = useRef<HTMLDivElement>(null);
 
     return (
-        <div style={{ position: 'relative', display: 'flex', height: 96 }} ref={scopeRef}>
+        <div style={{ display: 'flex', height: 96 }}>
             <div style={{ marginLeft: 32, marginRight: 32 }}>
                 <Button innerRef={anchorRef1} size="m" view="default" onClick={() => setVisible1(!visible1)}>
                     Target
@@ -30,33 +29,30 @@ export const Size = () => {
             </div>
             <Tooltip
                 hasTail
-                direction="bottom-center"
+                direction="bottom"
                 view="default"
                 size="s"
                 anchor={anchorRef1}
-                scope={scopeRef}
                 visible={visible1}
             >
                 Size small
             </Tooltip>
             <Tooltip
                 hasTail
-                direction="bottom-center"
+                direction="bottom"
                 view="default"
                 size="m"
                 anchor={anchorRef2}
-                scope={scopeRef}
                 visible={visible2}
             >
                 Size medium
             </Tooltip>
             <Tooltip
                 hasTail
-                direction="bottom-center"
+                direction="bottom"
                 view="default"
                 size="l"
                 anchor={anchorRef3}
-                scope={scopeRef}
                 visible={visible3}
             >
                 Size large

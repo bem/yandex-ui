@@ -3,7 +3,6 @@ import figmaDecorator from 'storybook-addon-figma-new';
 export * from './playground';
 export * from './direction';
 export * from './nonvisual';
-export * from './position';
 export * from './scrollable';
 export * from './target';
 export * from './theme';

@@ -17,7 +17,7 @@ import { cnSelect, Select as SelectCommon } from './Select';
 import { Select as SelectDesktop } from './Select@desktop';
 import { Select as SelectTouchPad } from './Select@touch-pad';
 import { Select as SelectTouchPhone } from './Select@touch-phone';
-import { jestEnvironmentSetup, getRoot } from '../internal/utils/jestEnvironmentSetup';
+import { jestEnvironmentSetup } from '../internal/utils/jestEnvironmentSetup';
 
 const selectRegistry = new Registry({ id: cnSelect() });
 
@@ -95,28 +95,6 @@ describe.each<any>(platforms)('Select@%s', (platform, Select: ComponentType<Sele
         });
 
         if (platform === 'desktop') {
-            test('при нажатии должен открыться, при потере фокуса - закрыться', async () => {
-                const wrapper = mount(<Select options={[{ value: '1', content: 'Тест' }]} />, { attachTo: getRoot() });
-                wrapper.find('.Select2-Button').first().simulate('click');
-                expect(wrapper.find(SelectCommon).prop('opened')).toBe(true);
-                document.querySelector<HTMLElement>('.Select2-Button')!.blur();
-                await delay(0);
-                wrapper.update();
-                expect(wrapper.find(SelectCommon).prop('opened')).toBe(false);
-            });
-
-            test('не должен закрыться, если фокус перешел на попап', async () => {
-                const wrapper = mount(<Select options={[{ value: '1', content: 'Тест' }]} />, { attachTo: getRoot() });
-                wrapper.find('.Select2-Button').first().simulate('click');
-                expect(wrapper.find(SelectCommon).prop('opened')).toBe(true);
-                document.querySelector<HTMLElement>('.Select2-Button')!.blur();
-                document.querySelector<HTMLElement>('.Select2-Menu')!.tabIndex = 1;
-                document.querySelector<HTMLElement>('.Select2-Menu')!.focus();
-                await delay(0);
-                wrapper.update();
-                expect(wrapper.find(SelectCommon).prop('opened')).toBe(true);
-            });
-
             test('при нажатии на ENTER не открывается Select', () => {
                 const preventDefault = jest.fn();
                 const wrapper = mount(<Select options={[{ value: '1', content: 'test' }]} />);
@@ -176,14 +154,12 @@ describe.each<any>(platforms)('Select@%s', (platform, Select: ComponentType<Sele
                 expect(wrapper.find(Menu).prop('items')).toBe(options);
             });
 
-            test('innerRef прокидывается в Popup', async () => {
-                const innerRef = createRef<HTMLElement>();
-                const wrapper = mount(
-                    <Select options={[{ value: '1', content: 'test' }]} theme="m" innerRef={innerRef} />,
-                );
-                await delay(100);
-                expect(innerRef.current).not.toBe(null);
-                expect(wrapper.find(Popup).prop('anchor')).toStrictEqual(innerRef);
+            test('popupRef прокидывается в Popup', async () => {
+                const popupRef = createRef<HTMLDivElement>();
+                const wrapper = mount(<Select options={[]} popupRef={popupRef} />);
+                // prettier-ignore
+                wrapper.find('.Select2-Button').first().simulate('click');
+                expect(popupRef.current).toEqual(wrapper.find('.Popup2').getDOMNode());
             });
 
             test('в Menu пробрасывается value', () => {

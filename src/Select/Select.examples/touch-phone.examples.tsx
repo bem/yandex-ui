@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { withKnobs, select, boolean, object } from '@storybook/addon-knobs';
 
 import { cnTheme } from '../../Theme';
@@ -24,7 +24,6 @@ const rawOptions = [
 
 export const Playground = () => {
     const [value, setValue] = useState('a');
-    const scopeRef = useRef(null);
 
     const preset = select('theme-preset', presetsKeys, 'default');
     const size = select('size', ['m', 's'], 'm') as any;
@@ -34,7 +33,7 @@ export const Playground = () => {
     const options = object('options', rawOptions);
 
     return (
-        <div ref={scopeRef} style={{ position: 'relative' }} className={cnTheme(presets[preset])}>
+        <div className={cnTheme(presets[preset])}>
             <Select
                 disabled={disabled}
                 theme={theme}

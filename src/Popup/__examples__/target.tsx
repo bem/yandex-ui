@@ -3,25 +3,19 @@ import { Popup } from '@yandex-lego/components/Popup/desktop/bundle';
 import { Button } from '@yandex-lego/components/Button/desktop/bundle';
 
 export const Target = () => {
-    const scopeRef = useRef<HTMLDivElement>(null);
-    const anchorRef = useRef<HTMLDivElement>(null);
+    const anchorRef = useRef<HTMLButtonElement>(null);
     const [visible, setVisible] = useState(false);
 
     return (
-        <div style={{ position: 'relative' }} ref={scopeRef}>
-            <Button
-                onClick={() => setVisible(!visible)}
-                innerRef={anchorRef}
-                size="m"
-                view="default"
-                children="_target_anchor"
-            />
+        <>
+            <Button onClick={() => setVisible(!visible)} innerRef={anchorRef} size="m" view="default">
+                Open popup
+            </Button>
             <Popup
                 hasTail
                 target="anchor"
                 anchor={anchorRef}
-                directions={['bottom-left']}
-                scope={scopeRef}
+                direction="bottom-start"
                 view="default"
                 visible={visible}
                 style={{ maxWidth: 280 }}
@@ -31,6 +25,6 @@ export const Target = () => {
                     Общедоступная многоязычная универсальная интернет-энциклопедия со свободным контентом.
                 </div>
             </Popup>
-        </div>
+        </>
     );
 };

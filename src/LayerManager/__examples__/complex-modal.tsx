@@ -55,7 +55,7 @@ export const ComplexModal = () => {
                             visible={visible3}
                             hasTail
                             anchor={buttonRef3}
-                            direction="bottom-center"
+                            direction="bottom"
                             view="default"
                             size="m"
                         >

@@ -1,52 +1,36 @@
 import React, { useRef, useState } from 'react';
 import { Button } from '@yandex-lego/components/Button/desktop/bundle';
-import { Direction as DirectionT, Tooltip } from '@yandex-lego/components/Tooltip/desktop/bundle';
-
-const DIRECTIONS: DirectionT[] = [
-    'top-left',
-    'top-center',
-    'top-right',
-    'right-top',
-    'right-center',
-    'right-bottom',
-    'bottom-right',
-    'bottom-center',
-    'bottom-left',
-    'left-bottom',
-    'left-center',
-    'left-top',
-];
+import { Tooltip } from '@yandex-lego/components/Tooltip/desktop/bundle';
+import { directions } from '@yandex-lego/components/Popup';
 
 export const Direction = () => {
     const [visible, setVisible] = useState(true);
     const [directionIndex, setDirectionIndex] = useState(0);
-    const scopeRef = useRef<HTMLDivElement>(null);
-    const anchorRef = useRef<HTMLDivElement>(null);
+    const anchorRef = useRef<HTMLButtonElement>(null);
 
     return (
-        <div style={{ position: 'relative', margin: 32, display: 'flex', justifyContent: 'center' }} ref={scopeRef}>
+        <div style={{ margin: 32, display: 'flex', justifyContent: 'center' }}>
             <Button
                 size="m"
                 view="default"
                 innerRef={anchorRef}
                 onClick={() => {
                     setVisible(true);
-                    setDirectionIndex((directionIndex + 1) % DIRECTIONS.length);
+                    setDirectionIndex((directionIndex + 1) % directions.length);
                 }}
             >
-                Current direction: {DIRECTIONS[directionIndex]}
+                Current direction: {directions[directionIndex]}
             </Button>
             <Tooltip
                 hasTail
-                key={DIRECTIONS[directionIndex]}
-                direction={DIRECTIONS[directionIndex]}
+                key={directions[directionIndex]}
+                direction={directions[directionIndex]}
                 anchor={anchorRef}
-                scope={scopeRef}
                 view="default"
                 visible={visible}
                 size="s"
             >
-                {DIRECTIONS[directionIndex]}
+                {directions[directionIndex]}
             </Tooltip>
         </div>
     );

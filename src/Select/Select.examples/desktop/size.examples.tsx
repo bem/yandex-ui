@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { Select } from '@yandex-lego/components/Select/Select.bundle/desktop';
+import React, { useState } from 'react';
+import { Select } from '@yandex-lego/components/Select/desktop/bundle';
 
 const options = [
     { value: 'a', content: 'Каждый' },
@@ -14,12 +14,10 @@ const options = [
 export const Size = () => {
     const [value1, setValue1] = useState('a');
     const [value2, setValue2] = useState('a');
-    const scopeRef = useRef(null);
 
     return (
-        <div ref={scopeRef} style={{ position: 'relative' }}>
+        <>
             <Select
-                unsafe_scope={scopeRef}
                 size="m"
                 view="default"
                 value={value1}
@@ -27,13 +25,12 @@ export const Size = () => {
                 options={options}
             />{' '}
             <Select
-                unsafe_scope={scopeRef}
                 size="s"
                 view="default"
                 value={value2}
                 onChange={(event) => setValue2(event.target.value)}
                 options={options}
             />
-        </div>
+        </>
     );
 };

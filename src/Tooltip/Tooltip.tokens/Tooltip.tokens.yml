@@ -40,7 +40,7 @@ tooltip:
 
       tail:
         size:
-          value: 12px
+          value: 24px
           comment: "Размер хвоста m-tooltip"
 
     l:
@@ -58,7 +58,7 @@ tooltip:
 
       tail:
         size:
-          value: 18px
+          value: 36px
           comment: "Размер хвоста l-tooltip"
 
   viewDefault:

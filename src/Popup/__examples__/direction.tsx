@@ -1,54 +1,35 @@
-import React, { useRef, useState } from 'react';
-import { Popup } from '@yandex-lego/components/Popup/desktop/bundle';
-
-const allDirections = [
-    'bottom-left',
-    'bottom-center',
-    'bottom-right',
-    'top-left',
-    'top-center',
-    'top-right',
-    'right-top',
-    'right-center',
-    'right-bottom',
-    'left-top',
-    'left-center',
-    'left-bottom',
-];
+import React, { useRef } from 'react';
+import { Popup, directions } from '@yandex-lego/components/Popup/desktop/bundle';
 
 export const Direction = () => {
-    const [visible] = useState(true);
-    const scopeRef = useRef<HTMLDivElement>(null);
     const anchorRef = useRef<HTMLDivElement>(null);
 
     return (
-        <div style={{ position: 'relative', top: 25, left: 100 }} ref={scopeRef}>
+        <div style={{ marginLeft: 112, marginTop: 32 }}>
             <div
                 style={{
                     background: '#e6e6e6',
-                    height: 100,
+                    height: 160,
                     width: 320,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    borderRadius: 3,
                 }}
                 ref={anchorRef}
             >
                 Anchor
             </div>
-            {allDirections.map((direction: any) => (
+            {directions.map((direction) => (
                 <Popup
                     key={direction}
                     anchor={anchorRef}
-                    directions={[direction]}
+                    direction={direction}
                     hasTail
                     target="anchor"
-                    scope={scopeRef}
                     view="default"
-                    visible={visible}
+                    visible
                 >
-                    {direction}
+                    <div style={{ padding: 8, fontFamily: 'var(--control-font-family)' }}>{direction}</div>
                 </Popup>
             ))}
         </div>

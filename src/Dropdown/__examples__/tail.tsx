@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from '@yandex-lego/components/Button/desktop/bundle';
 import { Text } from '@yandex-lego/components/Text/bundle';
-import { Direction } from '@yandex-lego/components/Popup';
 import { Dropdown } from '@yandex-lego/components/Dropdown/desktop';
+import { Direction } from '@yandex-lego/components/Popup';
 
 import { SampleMenu } from './SampleMenu';
 
@@ -12,7 +12,7 @@ export const Tail = () => (
             Направления c хвостиком у попапа
         </Text>
         <div>
-            {['bottom-left', 'bottom-center', 'bottom-right', 'top-left', 'top-center', 'top-right'].map(
+            {(['bottom-start', 'bottom', 'bottom-end', 'top-start', 'top', 'top-end']).map(
                 (direction, index) => (
                     <Dropdown
                         key={index}

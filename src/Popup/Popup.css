@@ -1,14 +1,11 @@
-/**
- * Без important стили класса перебиваются inline-стилями
- */
 .Popup2 {
     position: absolute;
     z-index: 1400;
 }
 
-.Popup2_outside {
-    top: -10000px !important;
-    left: -10000px !important;
+.Popup2[data-popper-reference-hidden],
+.Popup2[data-popper-escaped] {
+    visibility: hidden !important;
 
-    display: block !important;
+    pointer-events: none !important;
 }

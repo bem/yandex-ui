@@ -2,13 +2,13 @@ import React, { FC } from 'react';
 import { cn } from '@bem-react/classname';
 import { useComponentRegistry } from '@bem-react/di';
 
-import { IPopupProps, Direction } from '../Popup/Popup';
+import { IPopupProps, Direction } from '../Popup';
 import { IPopupTargetAnchorProps } from '../Popup/_target/Popup_target_anchor';
 import { TooltipBackdrop as Backdrop } from './Backdrop/Tooltip-Backdrop';
 import { TooltipRegistry } from './Tooltip.registry/interface';
 import './Tooltip.css';
 
-export { Direction } from '../Popup/Popup';
+export { Direction } from '../Popup';
 
 export const cnTooltip = cn('Tooltip');
 
@@ -66,7 +66,6 @@ export const Tooltip: FC<TooltipProps> = ({
 }) => {
     const defaultMainOffset = hasTail ? 0 : 4;
     const { Popup } = useComponentRegistry<TooltipRegistry>(cnTooltip());
-    const directions = Array.isArray(direction) ? direction : [direction as Direction];
 
     return (
         <Popup
@@ -74,7 +73,7 @@ export const Tooltip: FC<TooltipProps> = ({
             onClick={onClick}
             anchor={anchor}
             className={cnTooltip({ visible, state }, [className])}
-            directions={direction ? directions : undefined}
+            direction={direction}
             hasTail={hasTail}
             innerRef={innerRef}
             keepMounted={keepMounted}

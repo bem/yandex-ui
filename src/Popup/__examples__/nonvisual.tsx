@@ -3,24 +3,22 @@ import { Popup } from '@yandex-lego/components/Popup/desktop/bundle';
 import { Button } from '@yandex-lego/components/Button/desktop/bundle';
 
 export const Nonvisual = () => {
-    const [visible1, setVisible1] = useState(false);
-    const scopeRef = useRef<HTMLDivElement>(null);
-    const anchorRef1 = useRef<HTMLDivElement>(null);
+    const [visible, setVisible] = useState(false);
+    const anchorRef = useRef<HTMLButtonElement>(null);
 
     return (
-        <div style={{ position: 'relative', display: 'flex' }} ref={scopeRef}>
-            <Button onClick={() => setVisible1(!visible1)} innerRef={anchorRef1} view="default" size="m">
-                hello
+        <div style={{ display: 'flex' }}>
+            <Button onClick={() => setVisible(!visible)} innerRef={anchorRef} view="default" size="m">
+                Open popup
             </Button>
             <Popup
                 hasTail
                 target="anchor"
-                anchor={anchorRef1}
-                directions={['bottom-center']}
-                scope={scopeRef}
+                anchor={anchorRef}
+                direction="bottom"
                 view="default"
                 nonvisual
-                visible={visible1}
+                visible={visible}
             >
                 <div style={{ padding: 8, fontFamily: 'var(--control-font-family)' }}>Nonvisual</div>
             </Popup>

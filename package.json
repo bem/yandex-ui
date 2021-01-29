@@ -35,6 +35,7 @@
     "react-dom": "^16.8.4"
   },
   "dependencies": {
+    "@popperjs/core": "2.5.4",
     "react-debounce-input": "^3.2.2",
     "react-range": "1.8.0",
     "rebound": "0.1.0",

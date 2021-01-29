@@ -11,3 +11,11 @@
 
     box-shadow: none;
 }
+
+.Popup2.Popup2_nonvisual .Popup2-TailFill {
+    fill: none;
+}
+
+.Popup2.Popup2_nonvisual .Popup2-TailBorder {
+    fill: none;
+}
