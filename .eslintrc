@@ -18,7 +18,8 @@
       "anonymous": "never",
       "named": "never"
     }],
-    "no-use-before-define": [2, { "functions": false, "classes": true, "variables": true }],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": [2, { "functions": false, "classes": true, "variables": true }],
 
     // React
     "react/jsx-no-bind": 0,
