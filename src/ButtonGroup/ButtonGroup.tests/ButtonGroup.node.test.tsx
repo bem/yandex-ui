@@ -4,7 +4,7 @@
 import React from 'react';
 import { render } from 'enzyme';
 
-import { ButtonGroup } from '../desktop';
+import { ButtonGroup } from '../desktop/bundle';
 import { Button } from '../../Button/desktop/bundle';
 
 describe('ButtonGroup@dekstop', () => {

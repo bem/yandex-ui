@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ButtonGroup } from '@yandex-lego/components/ButtonGroup/desktop';
+import { ButtonGroup } from '@yandex-lego/components/ButtonGroup/desktop/bundle';
 import { Button } from '@yandex-lego/components/Button/desktop/bundle';
 
 export const Size = () => (

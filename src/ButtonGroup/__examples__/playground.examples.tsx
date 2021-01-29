@@ -1,7 +1,7 @@
 import React from 'react';
 import { select, boolean } from '@storybook/addon-knobs';
 
-import { ButtonGroup } from '@yandex-lego/components/ButtonGroup/desktop';
+import { ButtonGroup } from '@yandex-lego/components/ButtonGroup/desktop/bundle';
 import { Button } from '@yandex-lego/components/Button/Button.bundle/desktop';
 
 export const Playground = () => {

@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-import { ButtonGroup, useButtonGroupState } from '@yandex-lego/components/ButtonGroup/desktop';
+import { ButtonGroup, useButtonGroupState } from '@yandex-lego/components/ButtonGroup/desktop/bundle';
 import { Button } from '@yandex-lego/components/Button/Button.bundle/desktop';
 import { Dropdown as DropdownWrapper } from '@yandex-lego/components/Dropdown/desktop';
 

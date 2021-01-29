@@ -2,21 +2,27 @@ buttonGroup:
   gap:
     s:
       value: 1px
+      comment: "Растояние s между кнопками"
 
     m:
       value: 4px
+      comment: "Растояние m между кнопками"
 
     l:
       value: 6px
+      comment: "Растояние l между кнопками"
 
     xl:
       value: 8px
+      comment: "Растояние xl между кнопками"
 
   pin:
     circle:
       borderRadius:
         value: 100px
+        comment: "Радиус у кнопок с формой circle"
 
     round:
       borderRadius:
         value: "{button.border.radius.value}"
+        comment: "Радиус у кнопок с формой round"

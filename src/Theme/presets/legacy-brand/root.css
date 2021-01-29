@@ -64,12 +64,12 @@
     --button-size-l-icon-indentLeft: 35px; /* Размер внешнего левого отступа текста от иконки у l-button */
     --button-size-l-icon-indentRight: 35px; /* Размер внешнего правого отступа текста от иконки у l-button */
     --button-size-l-text-indentAll: 0 18px; /* Размер внешнего отступа у l-button */
-    --button-group-gap-s: 1px;
-    --button-group-gap-m: 4px;
-    --button-group-gap-l: 6px;
-    --button-group-gap-xl: 8px;
-    --button-group-pin-circle-border-radius: 100px;
-    --button-group-pin-round-border-radius: var(--button-borderRadius);
+    --button-group-gap-s: 1px; /* Растояние s между кнопками */
+    --button-group-gap-m: 4px; /* Растояние m между кнопками */
+    --button-group-gap-l: 6px; /* Растояние l между кнопками */
+    --button-group-gap-xl: 8px; /* Растояние xl между кнопками */
+    --button-group-pin-circle-border-radius: 100px; /* Радиус у кнопок с формой circle */
+    --button-group-pin-round-border-radius: var(--button-borderRadius); /* Радиус у кнопок с формой round */
     --checkbox-view-outline-disabled-opacity: 0.4;
     --checkbox-font-family: var(--control-font-family);
     --checkbox-borderRadius: 4px;

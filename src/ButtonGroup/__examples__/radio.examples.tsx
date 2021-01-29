@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ButtonGroup, useButtonGroupState } from '@yandex-lego/components/ButtonGroup/desktop';
+import { ButtonGroup, useButtonGroupState } from '@yandex-lego/components/ButtonGroup/desktop/bundle';
 import { Button } from '@yandex-lego/components/Button/Button.bundle/desktop';
 
 const value = [1];

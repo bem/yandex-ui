@@ -2,9 +2,8 @@ import React from 'react';
 import { render, screen, fireEvent, getNodeText } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
-import { ButtonGroup as ButtonGroupCommon } from '../ButtonGroup';
-import { useButtonGroupState } from '../ButtonGroup.utils';
-import { ButtonGroup as ButtonGroupDesktop } from '../ButtonGroup@desktop';
+import { ButtonGroup as ButtonGroupCommon, useButtonGroupState } from '..';
+import { ButtonGroup as ButtonGroupDesktop } from '../desktop/bundle';
 import { Button } from '../../Button/Button';
 
 const platforms = [['desktop', ButtonGroupDesktop]];

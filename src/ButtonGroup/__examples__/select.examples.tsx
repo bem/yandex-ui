@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-import { ButtonGroup } from '@yandex-lego/components/ButtonGroup/desktop';
+import { ButtonGroup } from '@yandex-lego/components/ButtonGroup/desktop/bundle';
 import { Select as SelectComponent } from '@yandex-lego/components/Select/desktop/bundle';
 
 const options = [

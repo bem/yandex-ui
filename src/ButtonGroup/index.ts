@@ -1,4 +1,5 @@
 export * from './ButtonGroup';
+export * from './ButtonGroup.utils';
 
 export * from './_gap/ButtonGroup_gap_s';
 export * from './_gap/ButtonGroup_gap_m';
