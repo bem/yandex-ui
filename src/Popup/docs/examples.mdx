@@ -12,8 +12,6 @@ import { Nonvisual as PopupNonvisual } from '../__examples__/nonvisual.tsx'
 import popupNonvisualSources from '!!raw-loader!../__examples__/nonvisual.tsx'
 import { Direction as PopupDirection } from '../__examples__/direction.tsx'
 import popupDirectionSources from '!!raw-loader!../__examples__/direction.tsx'
-import { Position as PopupPosition } from '../__examples__/position.tsx'
-import popupPositionSources from '!!raw-loader!../__examples__/position.tsx'
 
 ### Привязывание к блоку
 
@@ -80,16 +78,4 @@ import popupPositionSources from '!!raw-loader!../__examples__/position.tsx'
     height={150}
     component={PopupDirection}
     source={popupDirectionSources}
-/>
-
-### Позиционирование
-
-Чтобы указать абсолютную позицию попапа в области открытия `scope`, используйте свойство `position`.
-
-> **Внимание!** Свойство `position` необходимо использовать без модификатора `target_anchor`.
-
-<Example
-    height={200}
-    component={PopupPosition}
-    source={popupPositionSources}
 />
