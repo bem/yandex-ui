@@ -2,7 +2,7 @@ import React, { FC, ComponentType, ReactElement, useRef, createElement, useEffec
 
 import { createGlobalState } from '../createGlobalState';
 
-export type RenderOverride<T = any, U = any> = (props: T, component: React.ComponentType<U>) => ReactElement | null;
+export type RenderOverride<T = any, U = T> = (props: T, component: React.ComponentType<U>) => ReactElement | null;
 
 /**
  * Реакт-хук для создания компонента с возможностью переопределения.
@@ -29,7 +29,7 @@ export function useRenderOverride<T>(component: ComponentType<T>, render?: Rende
         if (deps === undefined || nextRender === undefined) {
             return createElement(nextComponent as ComponentType, props);
         }
-        return nextRender(props, nextComponent as ComponentType);
+        return nextRender(props, nextComponent as ComponentType<T>);
     });
 
     useEffect(() => {

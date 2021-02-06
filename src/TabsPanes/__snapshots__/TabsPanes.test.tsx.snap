@@ -40,7 +40,7 @@ exports[`TabsPanes client environment должен показывать новы
     className="TabsPanes"
     role="tabpanel"
   >
-    <Component
+    <TabsPanesPane
       content={
         <div>
           Pane 3 Маркет
@@ -55,7 +55,7 @@ exports[`TabsPanes client environment должен показывать новы
           Pane 3 Маркет
         </div>
       </div>
-    </Component>
+    </TabsPanesPane>
   </div>
 </TabsPanes>
 `;
@@ -86,7 +86,7 @@ exports[`TabsPanes client environment должно быть видно соде�
     className="TabsPanes"
     role="tabpanel"
   >
-    <Component
+    <TabsPanesPane
       content="Pane 1 Поиск"
     >
       <div
@@ -95,7 +95,7 @@ exports[`TabsPanes client environment должно быть видно соде�
       >
         Pane 1 Поиск
       </div>
-    </Component>
+    </TabsPanesPane>
   </div>
 </TabsPanes>
 `;

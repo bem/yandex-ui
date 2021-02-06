@@ -12,6 +12,8 @@ import { withViewDefault } from '../_view/Menu_view_default@desktop';
 // _width
 import { withWidthAuto } from '../_width/Menu_width_auto';
 import { withWidthMax } from '../_width/Menu_width_max';
+// _jsxContent
+import { withJsxContent } from '../_jsxContent/Menu_jsxContent';
 
 export * from '../Menu@desktop';
 
@@ -20,6 +22,6 @@ export const Menu = compose(
     composeU(withWidthAuto, withWidthMax),
     withViewDefault,
     withThemeNormal,
-)(MenuDesktop);
+)(withJsxContent(MenuDesktop));
 
 export type IMenuProps = ExtractProps<typeof Menu>;

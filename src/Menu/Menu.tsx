@@ -6,8 +6,12 @@ import { IS_TESTING } from '../lib/env';
 import { Keys, isKeyCode } from '../lib/keyboard';
 import { mergeRefs } from '../lib/mergeRefs';
 import { flatMap } from '../lib/flatMap';
+import { RenderOverride, RenderOverrideProvider } from '../lib/render-override';
+import { IMenuItemProps as MenuItemProps } from './Item/Menu-Item';
 import { IMenuRegistry } from './Menu.registry';
 import './Menu.css';
+
+export { MenuItemProps };
 
 export type ItemSimple = {
     /**
@@ -29,6 +33,12 @@ export type ItemSimple = {
      * Идентификатор компонента
      */
     id?: string;
+
+    /**
+     * @internal
+     */
+    // eslint-disable-next-line camelcase
+    unsafe_props?: any;
 };
 
 export type ItemGroup = {
@@ -41,6 +51,12 @@ export type ItemGroup = {
      * Набор элементов в группе
      */
     items: ItemSimple[];
+
+    /**
+     * @internal
+     */
+    // eslint-disable-next-line camelcase
+    unsafe_props?: any;
 };
 
 export type MixedItem = ItemSimple | ItemGroup;
@@ -108,6 +124,11 @@ export interface IMenuProps {
      * Html атрибут `style`
      */
     style?: CSSProperties;
+
+    /**
+     * Переопределяет компонент `Item`
+     */
+    renderItem?: RenderOverride<MenuItemProps>;
 }
 
 export const cnMenu = cn('Menu');
@@ -176,29 +197,38 @@ export class Menu extends PureComponent<IMenuProps> {
             onActiveItemChange,
             value,
             innerRef,
+            renderItem,
             ...props
         } = this.props;
 
         return (
             <ComponentRegistryConsumer id={cnMenu()}>
-                {({ Item, Group }: IMenuRegistry) => {
-                    const getNextItemCount = createCounter();
-                    const getNextGroupCount = createCounter();
-                    return (
-                        <div
-                            {...props}
-                            ref={this.innerRef}
-                            aria-disabled={disabled}
-                            aria-multiselectable={Array.isArray(value)}
-                            role={value !== undefined ? 'listbox' : undefined}
-                            className={cnMenu(null, [className])}
-                        >
-                            {items.map(
-                                this.mapChildren({ Item, Group }, { getNextItemCount, getNextGroupCount, disabled }),
-                            )}
-                        </div>
-                    );
-                }}
+                {({ Item: ItemOriginal, Group }: IMenuRegistry) => (
+                    <RenderOverrideProvider component={ItemOriginal} render={renderItem}>
+                        {(Item: typeof ItemOriginal) => {
+                            const getNextItemCount = createCounter();
+                            const getNextGroupCount = createCounter();
+
+                            return (
+                                <div
+                                    {...props}
+                                    ref={this.innerRef}
+                                    aria-disabled={disabled}
+                                    aria-multiselectable={Array.isArray(value)}
+                                    role={value !== undefined ? 'listbox' : undefined}
+                                    className={cnMenu(null, [className])}
+                                >
+                                    {items.map(
+                                        this.mapChildren(
+                                            { Item, Group },
+                                            { getNextItemCount, getNextGroupCount, disabled },
+                                        ),
+                                    )}
+                                </div>
+                            );
+                        }}
+                    </RenderOverrideProvider>
+                )}
             </ComponentRegistryConsumer>
         );
     }
@@ -214,7 +244,7 @@ export class Menu extends PureComponent<IMenuProps> {
         if (isGroup(item)) {
             const groupIndex = getNextGroupCount();
             return (
-                <Group title={item.title} key={`group-${groupIndex}`}>
+                <Group title={item.title} key={`group-${groupIndex}`} {...item.unsafe_props}>
                     {item.items.map(
                         this.mapChildren({ Item, Group }, { getNextItemCount, getNextGroupCount, disabled }),
                     )}
@@ -232,6 +262,7 @@ export class Menu extends PureComponent<IMenuProps> {
 
         return (
             <Item
+                {...item.unsafe_props}
                 id={item.id || `item-${this.uniqId}-${itemIndex}`}
                 key={`item-${itemIndex}`}
                 data-key={`item-${itemIndex}`}
@@ -244,6 +275,7 @@ export class Menu extends PureComponent<IMenuProps> {
                 onClick={this.onMenuItemClick}
                 type={value === undefined ? value : 'option'}
                 innerRef={this.itemsRef[itemIndex]}
+                value={item.value}
             >
                 {item.content}
             </Item>

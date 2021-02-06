@@ -163,11 +163,11 @@ exports[`Tooltip@desktop client environment должен вернуть полн
                     >
                       Добавить в избранное
                     </div>
-                    <Component>
+                    <TooltipBackdrop>
                       <div
                         className="Tooltip-Backdrop"
                       />
-                    </Component>
+                    </TooltipBackdrop>
                   </div>
                 </LayerManager>
               </Portal>
@@ -345,11 +345,11 @@ exports[`Tooltip@touch-pad client environment должен вернуть пол
                     >
                       Добавить в избранное
                     </div>
-                    <Component>
+                    <TooltipBackdrop>
                       <div
                         className="Tooltip-Backdrop"
                       />
-                    </Component>
+                    </TooltipBackdrop>
                   </div>
                 </LayerManager>
               </Portal>
@@ -527,11 +527,11 @@ exports[`Tooltip@touch-phone client environment должен вернуть по
                     >
                       Добавить в избранное
                     </div>
-                    <Component>
+                    <TooltipBackdrop>
                       <div
                         className="Tooltip-Backdrop"
                       />
-                    </Component>
+                    </TooltipBackdrop>
                   </div>
                 </LayerManager>
               </Portal>

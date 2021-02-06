@@ -1,4 +1,13 @@
-import React, { FC, Ref, MouseEvent, KeyboardEventHandler, MouseEventHandler, KeyboardEvent, useCallback } from 'react';
+import React, {
+    FC,
+    Ref,
+    MouseEvent,
+    KeyboardEventHandler,
+    MouseEventHandler,
+    KeyboardEvent,
+    useCallback,
+    CSSProperties,
+} from 'react';
 
 import { getTestId } from '../../internal/utils/getTestId';
 import { forkFn } from '../../lib/forkFn';
@@ -73,6 +82,11 @@ export type SliderThumbProps = {
      * {testId}-thumb
      */
     testId?: string;
+
+    /**
+     * Пользовательские стили на DOM элементе.
+     */
+    style?: CSSProperties;
 };
 
 const cnSliderHandle = cnSlider('Handle');

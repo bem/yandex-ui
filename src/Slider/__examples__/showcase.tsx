@@ -190,7 +190,7 @@ export const Showcase = () => (
                     value={[100, 500]}
                     renderThumb={({ value, ...props }, Thumb) => {
                         return (
-                            <Thumb {...props} style={{ width: 48, height: 28, borderRadius: 4 }}>
+                            <Thumb {...props} value={value} style={{ width: 48, height: 28, borderRadius: 4 }}>
                                 {value}
                             </Thumb>
                         );

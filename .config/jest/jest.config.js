@@ -4,7 +4,7 @@ const { resolve } = require('path');
  * @type {import('ts-jest/dist/types').TsJestConfig}
  */
 const tsJestConfig = {
-    tsConfig: {
+    tsconfig: {
         noUnusedLocals: true,
         noUnusedParameters: true,
     },

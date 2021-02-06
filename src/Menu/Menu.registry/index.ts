@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { FunctionComponent, ComponentType } from 'react';
 
 import { MenuGroupProps } from '../Group/Menu-Group';
 import { IMenuItemProps } from '../Item/Menu-Item';
@@ -9,7 +9,7 @@ import { IWithGlyphTypeCheckProps } from '../../Icon/_glyph/Icon_glyph_type-chec
 
 export interface IMenuRegistry {
     Group: FunctionComponent<MenuGroupProps>;
-    Item: FunctionComponent<IMenuItemProps>;
+    Item: ComponentType<IMenuItemProps>;
     Text: FunctionComponent<MenuTextProps>;
     Title: FunctionComponent<MenuTitleProps>;
     Icon: FunctionComponent<IIconProps & IWithGlyphTypeCheckProps>;

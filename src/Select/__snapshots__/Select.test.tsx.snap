@@ -342,7 +342,7 @@ exports[`Select@desktop client environment должен вернуть полн�
                           role="listbox"
                           type="button"
                         >
-                          <Component
+                          <ButtonIcon
                             provider={[Function]}
                             side="right"
                           >
@@ -363,14 +363,14 @@ exports[`Select@desktop client environment должен вернуть полн�
                                 />
                               </Icon>
                             </RenderOverride>
-                          </Component>
-                          <Component>
+                          </ButtonIcon>
+                          <ButtonText>
                             <span
                               className="Button2-Text"
                             >
                               —
                             </span>
-                          </Component>
+                          </ButtonText>
                         </button>
                       </Button2>
                     </RenderOverride>
@@ -781,7 +781,7 @@ exports[`Select@touch-pad client environment должен вернуть пол�
                     role="listbox"
                     type="button"
                   >
-                    <Component
+                    <ButtonIcon
                       provider={[Function]}
                       side="right"
                     >
@@ -802,14 +802,14 @@ exports[`Select@touch-pad client environment должен вернуть пол�
                           />
                         </Icon>
                       </RenderOverride>
-                    </Component>
-                    <Component>
+                    </ButtonIcon>
+                    <ButtonText>
                       <span
                         className="Button2-Text"
                       >
                         —
                       </span>
-                    </Component>
+                    </ButtonText>
                   </button>
                 </Button2>
               </RenderOverride>
@@ -1051,7 +1051,7 @@ exports[`Select@touch-phone client environment должен вернуть по�
                     role="listbox"
                     type="button"
                   >
-                    <Component
+                    <ButtonIcon
                       provider={[Function]}
                       side="right"
                     >
@@ -1072,14 +1072,14 @@ exports[`Select@touch-phone client environment должен вернуть по�
                           />
                         </Icon>
                       </RenderOverride>
-                    </Component>
-                    <Component>
+                    </ButtonIcon>
+                    <ButtonText>
                       <span
                         className="Button2-Text"
                       >
                         —
                       </span>
-                    </Component>
+                    </ButtonText>
                   </button>
                 </Button2>
               </RenderOverride>

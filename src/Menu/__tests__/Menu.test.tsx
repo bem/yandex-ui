@@ -12,6 +12,7 @@ import { menuRegistry as menuRegistryDesktop } from '../Menu.registry/desktop';
 import { menuRegistry as menuRegistryTouchPad } from '../Menu.registry/touch-pad';
 import { menuRegistry as menuRegistryTouchPhone } from '../Menu.registry/touch-phone';
 import { Keys } from '../../lib/keyboard';
+import { withJsxContent, Item, Group } from '../_jsxContent/Menu_jsxContent';
 
 const platforms = [
     ['desktop', withRegistry(menuRegistryDesktop)(MenuDesktop)],
@@ -167,6 +168,65 @@ describe.each<any>(platforms)('Menu@%s', (platform, Menu: ComponentType<MenuProp
                 .simulate('mouseenter')
                 .simulate('click');
             expect(onChangeFn.mock.calls[0][0].target.value).toBe(refValue);
+        });
+
+        test('должен переопределить элемент меню с помощью renderItem', () => {
+            const wrapper = mount(
+                <Menu
+                    items={[{ value: 'testVal1', content: 'Тест1' }, { value: 'testVal2', content: 'Тест2' }]}
+                    renderItem={(props) => <div className="TestMenuItem">{props.children}</div>}
+                />,
+            );
+
+            expect(wrapper.find('.TestMenuItem')).toHaveLength(2);
+        });
+
+        describe('_withJsxContent', () => {
+            const MenuWithJsxContent = withJsxContent(Menu);
+
+            test('должен проставляться дополнительный className у item', () => {
+                const wrapper = mount(
+                    <MenuWithJsxContent>
+                        <Item className="TestMenuItem" value="1">
+                            Тест1
+                        </Item>
+                    </MenuWithJsxContent>,
+                );
+
+                expect(
+                    wrapper
+                        .find('.TestMenuItem')
+                        .hostNodes()
+                        .text(),
+                ).toBe('Тест1');
+            });
+
+            test('должен проставляться дополнительный className у group', () => {
+                const wrapper = mount(
+                    <MenuWithJsxContent>
+                        <Group className="TestMenuGroup">
+                            <Item value="testVal1">Тест1</Item>
+                        </Group>
+                        <Group>
+                            <Item value="testVal2">Тест2</Item>
+                        </Group>
+                    </MenuWithJsxContent>,
+                );
+
+                expect(
+                    wrapper
+                        .find('.TestMenuGroup')
+                        .hostNodes()
+                        .text(),
+                ).toBe('Тест1');
+            });
+        });
+
+        test('должен прокидывать value в renderItem', () => {
+            const renderItem = jest.fn(() => null);
+            mount(<Menu items={[{ value: 'test1', content: 'Тест1' }]} renderItem={renderItem} />);
+
+            expect(renderItem).toHaveBeenCalledWith(expect.objectContaining({ value: 'test1' }), expect.anything());
         });
 
         if (platform === 'desktop') {

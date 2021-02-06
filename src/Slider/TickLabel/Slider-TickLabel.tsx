@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { CSSProperties, FC } from 'react';
 
 import { cnSlider } from '../Slider.const';
 import './Slider-TickLabel.css';
@@ -23,6 +23,11 @@ export type SliderTickLabelProps = {
      * Дополнительный класс у корневого DOM-элемента
      */
     className?: string;
+
+    /**
+     * Пользовательские стили на DOM элементе.
+     */
+    style?: CSSProperties;
 };
 
 export const SliderTickLabel: FC<SliderTickLabelProps> = ({ className, index, isFirst, isLast, ...props }) => (
