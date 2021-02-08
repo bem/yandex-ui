@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import { ExtractProps } from '@bem-react/core';
 import { useComponentRegistry } from '@bem-react/di';
 
-import { Direction } from '../Popup';
 import { MessageBox, MessageBoxProps, cnMessageBox } from './MessageBox';
 import { MessageBoxRegistry } from './MessageBox.registry/interface';
 
@@ -13,22 +12,16 @@ type PopupProps = Pick<
     | 'scope'
     | 'mainOffset'
     | 'secondaryOffset'
-    | 'onOutsideClick'
     | 'motionless'
     | 'tailOffset'
     | 'viewportOffset'
     | 'onClose'
     | 'onClick'
     | 'zIndex'
+    | 'direction'
 >;
 
-export type MessageBoxPopupProps = MessageBoxProps &
-    PopupProps & {
-        /**
-         * Направление для раскрытия компонента
-         */
-        direction?: Direction | Direction[];
-    };
+export type MessageBoxPopupProps = MessageBoxProps & PopupProps;
 
 export const MessageBoxPopup: FC<MessageBoxPopupProps> = (props) => {
     const {
@@ -36,8 +29,6 @@ export const MessageBoxPopup: FC<MessageBoxPopupProps> = (props) => {
         direction,
         mainOffset,
         motionless,
-        // TODO: https://st.yandex-team.ru/ISL-8670
-        onOutsideClick,
         scope,
         secondaryOffset,
         tailOffset,
@@ -58,7 +49,6 @@ export const MessageBoxPopup: FC<MessageBoxPopupProps> = (props) => {
             motionless={motionless}
             nonvisual
             onClose={onClose}
-            onOutsideClick={onOutsideClick}
             onClick={onClick}
             scope={scope}
             secondaryOffset={secondaryOffset}

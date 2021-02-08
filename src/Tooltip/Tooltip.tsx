@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { cn } from '@bem-react/classname';
 import { useComponentRegistry } from '@bem-react/di';
 
-import { IPopupProps, Direction } from '../Popup';
+import { IPopupProps } from '../Popup';
 import { IPopupTargetAnchorProps } from '../Popup/_target/Popup_target_anchor';
 import { TooltipBackdrop as Backdrop } from './Backdrop/Tooltip-Backdrop';
 import { TooltipRegistry } from './Tooltip.registry/interface';
@@ -19,7 +19,7 @@ type PartialPopupProps = Pick<
 
 type PartialPopupTargetAnchorProps = Pick<
     IPopupTargetAnchorProps,
-    'mainOffset' | 'secondaryOffset' | 'tailOffset' | 'anchor'
+    'mainOffset' | 'secondaryOffset' | 'tailOffset' | 'anchor' | 'direction'
 >;
 
 export type TooltipProps = PartialPopupProps &
@@ -28,11 +28,6 @@ export type TooltipProps = PartialPopupProps &
          * Визуальное состояние подсказки
          */
         state?: 'warning' | 'alert' | 'success';
-
-        /**
-         * Направление для раскрытия подсказки
-         */
-        direction?: Direction | Direction[];
 
         /**
          * Уникальный id подсказки
