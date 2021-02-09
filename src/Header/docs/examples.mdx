@@ -24,12 +24,25 @@ import { Mirror } from '../__examples__/mirror';
 import MirrorSource from '!!raw-loader!../__examples__/mirror';
 import { Q } from '../__examples__/q';
 import QSource from '!!raw-loader!../__examples__/q';
+import { ZenVideo } from '../__examples__/zenvideo';
+import ZenVideoSource from '!!raw-loader!../__examples__/zenvideo';
+import { SerpHeader } from '../__examples__/serpheader';
+import SerpHeaderSource from '!!raw-loader!../__examples__/serpheader';
 
 ## Примеры использования шапки
 
 > Докуменация ограничена шириной 960 пикселей
 >
 > Подробные примеры смотрите в <a target="_blank" href="https://lego.yandex-team.ru/components/lego/latest/?storybook=%2Fstory%2Flayout-header-desktop--playground">сторибуке</a>.
+
+### SerpHeader
+
+Использования компонента с виджетами из пакета serp-header, которые еще не портированы на React.
+
+<Example
+    component={SerpHeader}
+    source={SerpHeaderSource}
+/>
 
 
 ### Web4
@@ -109,6 +122,13 @@ import QSource from '!!raw-loader!../__examples__/q';
 <Example
     component={Moe}
     source={MoeSource}
+/>
+
+### Новая главная Видео
+
+<Example
+    component={ZenVideo}
+    source={ZenVideoSource}
 />
 
 

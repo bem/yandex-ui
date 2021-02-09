@@ -14,6 +14,8 @@ export * from './sport';
 export * from './local';
 export * from './directory';
 export * from './q';
+export * from './zenvideo';
+export * from './serpheader';
 
 export default {
     title: 'Layout|Header/desktop',
