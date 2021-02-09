@@ -1,4 +1,4 @@
-import React, { FC, MouseEventHandler, ReactNode } from 'react';
+import React, { FC, MouseEvent, ReactNode } from 'react';
 import { useComponentRegistry } from '@bem-react/di';
 
 import { cnMenu } from '../Menu';
@@ -14,11 +14,12 @@ export interface IMenuItemProps {
     needIconGlyph?: boolean;
     innerRef?: React.RefObject<HTMLDivElement>;
     className?: string;
-    onMouseEnter?: MouseEventHandler<HTMLDivElement>;
-    onMouseLeave?: MouseEventHandler<HTMLDivElement>;
-    onClick?: MouseEventHandler<HTMLDivElement>;
+    onMouseEnter?: (event: MouseEvent<HTMLElement>, index: number) => void;
+    onMouseLeave?: (event: MouseEvent<HTMLElement>, index: number) => void;
+    onClick?: (event: MouseEvent<HTMLElement>, index: number) => void;
     id: string;
     value: any;
+    index: number;
 }
 
 export const MenuItem: FC<IMenuItemProps> = ({ needIconGlyph, children, innerRef, value, ...props }) => {

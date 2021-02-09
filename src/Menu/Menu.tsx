@@ -1,4 +1,4 @@
-import React, { ReactNode, RefObject, PureComponent, createRef, CSSProperties, Ref } from 'react';
+import React, { ReactNode, RefObject, PureComponent, createRef, CSSProperties, Ref, MouseEvent } from 'react';
 import { cn } from '@bem-react/classname';
 import { ComponentRegistryConsumer } from '@bem-react/di';
 
@@ -270,12 +270,13 @@ export class Menu extends PureComponent<IMenuProps> {
                 checked={values.indexOf(item.value) !== -1}
                 disabled={item.disabled || disabled}
                 hovered={disabled ? false : hoveredIndex === itemIndex}
-                onMouseEnter={this.setHoveredOnMouseEnter(true, itemIndex)}
-                onMouseLeave={this.setHoveredOnMouseEnter(false, itemIndex)}
+                onMouseEnter={this.setHoveredOnMouseEnter}
+                onMouseLeave={this.setHoveredOnMouseLeave}
                 onClick={this.onMenuItemClick}
                 type={value === undefined ? value : 'option'}
                 innerRef={this.itemsRef[itemIndex]}
                 value={item.value}
+                index={itemIndex}
             >
                 {item.content}
             </Item>
@@ -324,8 +325,10 @@ export class Menu extends PureComponent<IMenuProps> {
         menuRef.current.scrollTop = menuRef.current.scrollTop + relativeScroll;
     }
 
-    private onMenuItemClick = () => {
-        this.triggerOnChange();
+    private onMenuItemClick = (_event: MouseEvent<HTMLElement>, index: number) => {
+        this.setState({ hoveredIndex: index }, () => {
+            this.triggerOnChange();
+        });
     };
 
     private subscribeToEvents() {
@@ -336,8 +339,12 @@ export class Menu extends PureComponent<IMenuProps> {
         document.removeEventListener('keydown', this.onKeyDown);
     }
 
-    private setHoveredOnMouseEnter = (hovered: boolean, index: number) => () => {
-        this.setState({ hoveredIndex: hovered ? index : -1 });
+    private setHoveredOnMouseEnter = (_event: MouseEvent<HTMLElement>, index: number) => {
+        this.setState({ hoveredIndex: index });
+    };
+
+    private setHoveredOnMouseLeave = (_event: MouseEvent<HTMLElement>, _index: number) => {
+        this.setState({ hoveredIndex: -1 });
     };
 
     private hoverAndScrollToFirstSelectedElement() {

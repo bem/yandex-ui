@@ -106,6 +106,7 @@ describe.each<any>(platforms)('Menu@%s', (platform, Menu: ComponentType<MenuProp
                 .at(0)
                 .simulate('click');
             expect(onChangeFn.mock.calls.length).toBe(1);
+            expect(onChangeFn.mock.calls[0][0].target.value).toEqual('1');
         });
 
         test('должен при нажатии на пункт меню с multiselect вызывать onChange и в него передавать массив', () => {
@@ -129,7 +130,7 @@ describe.each<any>(platforms)('Menu@%s', (platform, Menu: ComponentType<MenuProp
                 .at(0)
                 .simulate('click');
 
-            expect(Array.isArray(onChangeFn.mock.calls[0][0].target.value)).toBe(true);
+            expect(onChangeFn.mock.calls[0][0].target.value).toEqual(['1']);
         });
 
         test('Должен корректно работать со строками, числами и объектами переданными по ссылке', () => {
@@ -149,7 +150,6 @@ describe.each<any>(platforms)('Menu@%s', (platform, Menu: ComponentType<MenuProp
             wrapper
                 .find('.Menu-Item')
                 .at(0)
-                .simulate('mouseenter')
                 .simulate('click');
             expect(onChangeFn.mock.calls[0][0].target.value).toBe('str');
             onChangeFn.mockReset();
@@ -157,7 +157,6 @@ describe.each<any>(platforms)('Menu@%s', (platform, Menu: ComponentType<MenuProp
             wrapper
                 .find('.Menu-Item')
                 .at(1)
-                .simulate('mouseenter')
                 .simulate('click');
             expect(onChangeFn.mock.calls[0][0].target.value).toBe(2);
             onChangeFn.mockReset();
@@ -165,7 +164,6 @@ describe.each<any>(platforms)('Menu@%s', (platform, Menu: ComponentType<MenuProp
             wrapper
                 .find('.Menu-Item')
                 .at(2)
-                .simulate('mouseenter')
                 .simulate('click');
             expect(onChangeFn.mock.calls[0][0].target.value).toBe(refValue);
         });
