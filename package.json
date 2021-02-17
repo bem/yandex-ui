@@ -42,7 +42,7 @@
     "tslib": "^1.9.3"
   },
   "devDependencies": {
-    "@bem-react/classname": "1.5.6",
+    "@bem-react/classname": "1.5.9",
     "@bem-react/core": "3.0.1",
     "@bem-react/di": "2.2.4",
     "@bem-react/pack": "1.1.0",
