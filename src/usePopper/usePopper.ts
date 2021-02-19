@@ -28,10 +28,6 @@ export type PopupHookProps = {
      */
     enabled?: boolean;
     /**
-     * Позволяет попапу менять направление при переполнении свободного пространства
-     */
-    enabldFlipBoundary?: boolean;
-    /**
      * Значение относительно краев контейнера при котором нужно сменить направление
      */
     marginThreshold?: number;
@@ -47,6 +43,10 @@ export type PopupHookProps = {
      * Отступ хвостика относительно основного направления
      */
     unsafe_tailOffset?: number;
+    /**
+     * Закрепляет положение попапа после открытия
+     */
+    motionless?: boolean;
 };
 
 export type PopupHookResult = {
@@ -73,9 +73,9 @@ export function usePopper(props: PopupHookProps): PopupHookResult {
         arrowMarginThreshold = 4,
         placement = 'bottom',
         enabled = true,
-        enabldFlipBoundary = true,
         marginThreshold = 16,
         modifiers = [],
+        motionless,
         offset,
         unsafe_tailOffset,
         children,
@@ -100,6 +100,10 @@ export function usePopper(props: PopupHookProps): PopupHookResult {
             // все остальные направления применяются в модификаторе flip.
             placement: placements[0],
             modifiers: [
+                {
+                    name: 'eventListeners',
+                    enabled: !motionless,
+                },
                 {
                     name: 'offset',
                     options: {
@@ -130,7 +134,6 @@ export function usePopper(props: PopupHookProps): PopupHookResult {
                 },
                 {
                     name: 'flip',
-                    enabled: enabldFlipBoundary,
                     options: {
                         padding: marginThreshold,
                         fallbackPlacements: placements,
@@ -155,7 +158,7 @@ export function usePopper(props: PopupHookProps): PopupHookResult {
         offset,
         arrowNode,
         arrowMarginThreshold,
-        enabldFlipBoundary,
+        motionless,
         marginThreshold,
         unsafe_tailOffset,
         modifiers,

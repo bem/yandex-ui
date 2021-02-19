@@ -23,10 +23,14 @@ describe('Popup', () => {
         return this.browser
             .url('Popup/hermione/hermione.html?scenario=flipping&motionless=true')
 
-            .execute(function(s) { document.querySelector(s).scrollTop = 140 }, elements.container)
+            .execute(function(s) { document.querySelector(s).scrollTop = 180 }, elements.container)
             .click(elements.anchor)
             .waitForVisible(elements.popup)
-            .assertView('bottom-position', [elements.container]);
+            .assertView('before-scroll', [elements.container])
+            .execute(function(s) { document.querySelector(s).scrollTop = 160 }, elements.container)
+            .assertView('after-scroll', [elements.container])
+            .execute(function(s) { document.querySelector(s).scrollTop = 10 }, elements.container)
+            .assertView('hidden-anchor', [elements.container]);
     });
 
     it('should render correctly with scale anchor', function() {

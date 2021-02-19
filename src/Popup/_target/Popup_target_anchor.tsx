@@ -98,7 +98,7 @@ export const withTargetAnchor = withBemMod<IPopupTargetAnchorProps, IPopupProps>
                 anchorRef: anchor as RefObject<HTMLElement>,
                 children: otherProps.children,
                 placement: direction,
-                enabldFlipBoundary: !motionless,
+                motionless,
                 enabled: visible,
                 marginThreshold: viewportOffset,
                 modifiers,
