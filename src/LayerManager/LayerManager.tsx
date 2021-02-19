@@ -1,4 +1,4 @@
-import React, { FC, useEffect, RefObject, ReactNode, useCallback } from 'react';
+import React, { FC, useEffect, RefObject, ReactNode, useCallback, useRef } from 'react';
 
 import { usePreviousValue } from '../usePreviousValue';
 import { useUniqId } from '../useUniqId';
@@ -42,6 +42,7 @@ export const LayerManager: EFC<LayerManagerProps> = ({ visible, onClose, childre
     const id = useUniqId('layer');
     const prevVisible = usePreviousValue(visible);
     const prevOnClose = usePreviousValue(onClose);
+    const mouseDownRef = useRef<EventTarget | null>(null);
 
     const onDocumentKeyUp = useCallback((event: KeyboardEvent) => {
         const key = event.key;
@@ -57,7 +58,20 @@ export const LayerManager: EFC<LayerManagerProps> = ({ visible, onClose, childre
     }, []);
 
     const onDocumentMouseDown = useCallback((event: MouseEvent) => {
+        mouseDownRef.current = event.target;
+    }, []);
+
+    const onDocumentClick = useCallback((event: MouseEvent) => {
         const [layerId, layerOnClose, refs] = LayerManager.stack[LayerManager.stack.length - 1] || [];
+
+        // Убеждаемся, что элемент, который был нажат, совпадает с последним
+        // при срабатывании события mousedown. Это предотвращает закрытие диалогового окна
+        // перетаскиванием курсора (например, выделением текста внутри диалогового окна
+        // и отпусканием мыши за его пределами).
+        if (mouseDownRef.current !== event.target) {
+            return;
+        }
+
         // Дополнительно проверяем id слоя, чтобы не вызывать layerOnClose n-раз.
         if (layerId === id && layerOnClose !== undefined && refs !== undefined) {
             const isEssentionalClick = refs
@@ -88,6 +102,7 @@ export const LayerManager: EFC<LayerManagerProps> = ({ visible, onClose, childre
 
             document.addEventListener('keyup', onDocumentKeyUp);
             document.addEventListener('mousedown', onDocumentMouseDown);
+            document.addEventListener('click', onDocumentClick);
         } else {
             const [layerId] = LayerManager.stack[LayerManager.stack.length - 1] || [];
             // Проверяем id текущего слоя, чтобы не удалить лишний обработчик при forceRender.
@@ -100,6 +115,7 @@ export const LayerManager: EFC<LayerManagerProps> = ({ visible, onClose, childre
 
             document.removeEventListener('keyup', onDocumentKeyUp);
             document.removeEventListener('mousedown', onDocumentMouseDown);
+            document.removeEventListener('click', onDocumentClick);
         }
         // Не добавляем onClose и essentialRefs в зависимости,
         // т.к. они нужны единожды при добавлении в стек.
@@ -112,6 +128,7 @@ export const LayerManager: EFC<LayerManagerProps> = ({ visible, onClose, childre
 
             document.removeEventListener('keyup', onDocumentKeyUp);
             document.removeEventListener('mousedown', onDocumentMouseDown);
+            document.removeEventListener('click', onDocumentClick);
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);

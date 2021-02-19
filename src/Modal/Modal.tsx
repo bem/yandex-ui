@@ -4,6 +4,7 @@ import { cn } from '@bem-react/classname';
 
 import { IPopupProps } from '../Popup/Popup';
 import { IModalRegistry } from './Modal.registry/interface';
+import { usePreventScroll } from '../usePreventScroll';
 
 import './Modal.css';
 
@@ -26,6 +27,13 @@ export interface IModalProps extends PartialPopupProps {
      * @default true
      */
     hasAnimation?: boolean;
+
+    /**
+     * Блокирует прокрутку на теле документа, при открытом модальном окне.
+     *
+     * @default true
+     */
+    preventBodyScroll?: boolean;
 }
 
 export const cnModal = cn('Modal');
@@ -40,11 +48,14 @@ export const Modal: FC<IModalProps> = ({
     contentVerticalAlign: align = 'middle',
     hasAnimation = true,
     visible,
+    preventBodyScroll = true,
     onClick,
     ...props
 }) => {
     const contentRef = useRef<HTMLDivElement>(null);
     const { Popup } = useComponentRegistry<IModalRegistry>(cnModal());
+
+    usePreventScroll({ enabled: preventBodyScroll && visible });
 
     return (
         <Popup
@@ -54,14 +65,16 @@ export const Modal: FC<IModalProps> = ({
             unstable_hostRef={contentRef}
             onClick={onClick}
         >
-            <div className={cnModal('Table')}>
-                <div className={cnModal('Cell', { align })}>
-                    <div ref={contentRef} className={cnModal('Content')}>
-                        {children}
+            <div className={cnModal('Overlay')} />
+            <div className={cnModal('Wrapper')}>
+                <div className={cnModal('Table')}>
+                    <div className={cnModal('Cell', { align })}>
+                        <div ref={contentRef} className={cnModal('Content')}>
+                            {children}
+                        </div>
                     </div>
                 </div>
             </div>
-            <div className={cnModal('Overlay')} />
         </Popup>
     );
 };

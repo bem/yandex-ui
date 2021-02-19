@@ -93,6 +93,16 @@ describe('LayerManager', () => {
 
         // Клик в контент не должен вызывать onClose.
         fireEvent.mouseDown(getByText(/content-2/));
+        fireEvent.click(getByText(/content-2/));
+        expect(onClose2).toHaveBeenCalledTimes(0);
+        expect(onClose1).toHaveBeenCalledTimes(0);
+
+        onClose1.mockReset();
+        onClose2.mockReset();
+
+        // mousedown в контент и click вне контента не должен вызывать onClose.
+        fireEvent.mouseDown(getByText(/content-2/));
+        fireEvent.click(getByText(/content-1/));
         expect(onClose2).toHaveBeenCalledTimes(0);
         expect(onClose1).toHaveBeenCalledTimes(0);
 
@@ -101,6 +111,7 @@ describe('LayerManager', () => {
 
         // Клик вне контента должен вызывать onClose.
         fireEvent.mouseDown(getByText(/content-1/));
+        fireEvent.click(getByText(/content-1/));
         expect(onClose2).toHaveBeenCalledTimes(1);
         expect(onClose1).toHaveBeenCalledTimes(0);
 
@@ -114,6 +125,7 @@ describe('LayerManager', () => {
 
         // Клик вне контента должен вызывать onClose.
         fireEvent.mouseDown(document.body);
+        fireEvent.click(document.body);
         expect(onClose2).toHaveBeenCalledTimes(0);
         expect(onClose1).toHaveBeenCalledTimes(1);
 
@@ -151,6 +163,7 @@ describe('LayerManager', () => {
         await delay(100);
 
         fireEvent.mouseDown(document.body);
+        fireEvent.click(document.body);
         expect(onClose3).toHaveBeenCalledTimes(1);
         expect(onClose2).toHaveBeenCalledTimes(0);
         expect(onClose1).toHaveBeenCalledTimes(0);
@@ -165,6 +178,7 @@ describe('LayerManager', () => {
         expect(LayerManager.stack.length).toBe(1);
 
         fireEvent.mouseDown(document.body);
+        fireEvent.click(document.body);
         expect(onClose3).toHaveBeenCalledTimes(0);
         expect(onClose2).toHaveBeenCalledTimes(0);
         expect(onClose1).toHaveBeenCalledTimes(1);

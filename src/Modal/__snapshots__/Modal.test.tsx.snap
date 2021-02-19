@@ -37,26 +37,32 @@ exports[`Modal@desktop client environment должен вернуть полны
       >
         <Portal
           containerInfo={
-            <body>
+            <body
+              style="overflow: hidden; overflow-x: hidden; overflow-y: hidden;"
+            >
               <div
                 class="Popup2 Popup2_visible Modal Modal_visible Modal_hasAnimation mix"
               >
                 <div
-                  class="Modal-Table"
+                  class="Modal-Overlay"
+                />
+                <div
+                  class="Modal-Wrapper"
                 >
                   <div
-                    class="Modal-Cell Modal-Cell_align_middle"
+                    class="Modal-Table"
                   >
                     <div
-                      class="Modal-Content"
+                      class="Modal-Cell Modal-Cell_align_middle"
                     >
-                      content
+                      <div
+                        class="Modal-Content"
+                      >
+                        content
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="Modal-Overlay"
-                />
               </div>
             </body>
           }
@@ -84,21 +90,25 @@ exports[`Modal@desktop client environment должен вернуть полны
               }
             >
               <div
-                className="Modal-Table"
+                className="Modal-Overlay"
+              />
+              <div
+                className="Modal-Wrapper"
               >
                 <div
-                  className="Modal-Cell Modal-Cell_align_middle"
+                  className="Modal-Table"
                 >
                   <div
-                    className="Modal-Content"
+                    className="Modal-Cell Modal-Cell_align_middle"
                   >
-                    content
+                    <div
+                      className="Modal-Content"
+                    >
+                      content
+                    </div>
                   </div>
                 </div>
               </div>
-              <div
-                className="Modal-Overlay"
-              />
             </div>
           </LayerManager>
         </Portal>
@@ -147,26 +157,32 @@ exports[`Modal@touch-pad client environment должен вернуть полн
       >
         <Portal
           containerInfo={
-            <body>
+            <body
+              style="overflow: hidden; overflow-x: hidden; overflow-y: hidden;"
+            >
               <div
                 class="Popup2 Popup2_visible Modal Modal_visible Modal_hasAnimation mix"
               >
                 <div
-                  class="Modal-Table"
+                  class="Modal-Overlay"
+                />
+                <div
+                  class="Modal-Wrapper"
                 >
                   <div
-                    class="Modal-Cell Modal-Cell_align_middle"
+                    class="Modal-Table"
                   >
                     <div
-                      class="Modal-Content"
+                      class="Modal-Cell Modal-Cell_align_middle"
                     >
-                      content
+                      <div
+                        class="Modal-Content"
+                      >
+                        content
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="Modal-Overlay"
-                />
               </div>
             </body>
           }
@@ -194,21 +210,25 @@ exports[`Modal@touch-pad client environment должен вернуть полн
               }
             >
               <div
-                className="Modal-Table"
+                className="Modal-Overlay"
+              />
+              <div
+                className="Modal-Wrapper"
               >
                 <div
-                  className="Modal-Cell Modal-Cell_align_middle"
+                  className="Modal-Table"
                 >
                   <div
-                    className="Modal-Content"
+                    className="Modal-Cell Modal-Cell_align_middle"
                   >
-                    content
+                    <div
+                      className="Modal-Content"
+                    >
+                      content
+                    </div>
                   </div>
                 </div>
               </div>
-              <div
-                className="Modal-Overlay"
-              />
             </div>
           </LayerManager>
         </Portal>
@@ -257,26 +277,32 @@ exports[`Modal@touch-phone client environment должен вернуть пол
       >
         <Portal
           containerInfo={
-            <body>
+            <body
+              style="overflow: hidden; overflow-x: hidden; overflow-y: hidden;"
+            >
               <div
                 class="Popup2 Popup2_visible Modal Modal_visible Modal_hasAnimation mix"
               >
                 <div
-                  class="Modal-Table"
+                  class="Modal-Overlay"
+                />
+                <div
+                  class="Modal-Wrapper"
                 >
                   <div
-                    class="Modal-Cell Modal-Cell_align_middle"
+                    class="Modal-Table"
                   >
                     <div
-                      class="Modal-Content"
+                      class="Modal-Cell Modal-Cell_align_middle"
                     >
-                      content
+                      <div
+                        class="Modal-Content"
+                      >
+                        content
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div
-                  class="Modal-Overlay"
-                />
               </div>
             </body>
           }
@@ -304,21 +330,25 @@ exports[`Modal@touch-phone client environment должен вернуть пол
               }
             >
               <div
-                className="Modal-Table"
+                className="Modal-Overlay"
+              />
+              <div
+                className="Modal-Wrapper"
               >
                 <div
-                  className="Modal-Cell Modal-Cell_align_middle"
+                  className="Modal-Table"
                 >
                   <div
-                    className="Modal-Content"
+                    className="Modal-Cell Modal-Cell_align_middle"
                   >
-                    content
+                    <div
+                      className="Modal-Content"
+                    >
+                      content
+                    </div>
                   </div>
                 </div>
               </div>
-              <div
-                className="Modal-Overlay"
-              />
             </div>
           </LayerManager>
         </Portal>

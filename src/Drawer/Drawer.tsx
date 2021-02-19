@@ -2,9 +2,10 @@ import React, { FC, PropsWithChildren, ReactNode, useEffect, useMemo, useState }
 import { useComponentRegistry } from '@bem-react/di';
 
 import { IPopupProps } from '../Popup/Popup';
+import { usePreventScroll } from '../usePreventScroll';
 
 import { IDrawerRegistry } from './Drawer.registry';
-import { useLockBodyScroll, useSpring, useClientHeight } from './Drawer.utils';
+import { useSpring, useClientHeight } from './Drawer.utils';
 import { DrawerContent } from './Content/Drawer-Content';
 import { cnDrawer } from './Drawer.const';
 import './Drawer.css';
@@ -93,7 +94,7 @@ export const Drawer: FC<IDrawerProps> = (props) => {
     const clientHeight = useClientHeight();
     const popupStyle = useMemo(() => ({ height: clientHeight && clientHeight + 'px' }), [clientHeight]);
 
-    useLockBodyScroll(springVisible);
+    usePreventScroll({ enabled: springVisible });
 
     useEffect(() => {
         setSpringDisabled(false);
