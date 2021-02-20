@@ -1,6 +1,9 @@
 .Popup2-Tail {
     width: 24px;
     height: 24px;
+
+    /* Отключаем взаимодействие, т.к. хвостик может накладываться на якорь */
+    pointer-events: none;
 }
 
 .Popup2-TailSvg {

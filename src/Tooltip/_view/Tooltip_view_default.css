@@ -13,6 +13,10 @@
     fill: var(--tooltip-view-default-fill-color-base);
 }
 
+.Tooltip.Tooltip_view_default .Popup2-TailBorder {
+    fill: none;
+}
+
 .Tooltip_view_default.Tooltip_state_success {
     color: var(--tooltip-view-default-typo-color-state-success);
 }
