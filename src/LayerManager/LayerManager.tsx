@@ -104,27 +104,23 @@ export const LayerManager: EFC<LayerManagerProps> = ({ visible, onClose, childre
             document.addEventListener('mousedown', onDocumentMouseDown, true);
             document.addEventListener('click', onDocumentClick, true);
         } else {
-            const [layerId] = LayerManager.stack[LayerManager.stack.length - 1] || [];
-            // Проверяем id текущего слоя, чтобы не удалить лишний обработчик при forceRender.
-            if (layerId === id) {
-                // Т.к. onCloseHandlers у нас не является стейтом компонента,
-                // то удаление обработчика может произойти раньше, чем его вызов,
-                // поэтому используем raf для удаления в следующем тике.
-                requestAnimationFrame(() => LayerManager.stack.pop());
-            }
+            // Т.к. onCloseHandlers у нас не является стейтом компонента,
+            // то удаление обработчика может произойти раньше, чем его вызов,
+            // поэтому используем raf для удаления в следующем тике.
+            requestAnimationFrame(() => removeLayerById(id));
 
             document.removeEventListener('keyup', onDocumentKeyUp);
             document.removeEventListener('mousedown', onDocumentMouseDown, true);
             document.removeEventListener('click', onDocumentClick, true);
         }
-        // Не добавляем onClose и essentialRefs в зависимости,
+        // Не добавляем essentialRefs в зависимости,
         // т.к. они нужны единожды при добавлении в стек.
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [prevVisible, visible, onClose, prevOnClose]);
 
     useEffect(() => {
         return () => {
-            requestAnimationFrame(() => LayerManager.stack.pop());
+            requestAnimationFrame(() => removeLayerById(id));
 
             document.removeEventListener('keyup', onDocumentKeyUp);
             document.removeEventListener('mousedown', onDocumentMouseDown, true);
@@ -138,3 +134,7 @@ export const LayerManager: EFC<LayerManagerProps> = ({ visible, onClose, childre
 
 LayerManager.stack = [];
 LayerManager.displayName = 'LayerManager';
+
+function removeLayerById(id: string) {
+    LayerManager.stack = LayerManager.stack.filter(([layerId]) => layerId !== id);
+}

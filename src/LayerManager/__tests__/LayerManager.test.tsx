@@ -4,9 +4,10 @@ import { render, fireEvent } from '@testing-library/react';
 import { LayerManager } from '../LayerManager';
 import { delay } from '../../internal/utils/delay';
 
-const LayerUnitCase: FC<any> = ({ onClose1, onClose2, visible1, visible2 }) => {
+const LayerUnitCase: FC<any> = ({ onClose1, onClose2, onClose3, visible1, visible2, visible3 }) => {
     const contentRef1 = useRef<HTMLDivElement>(null);
     const contentRef2 = useRef<HTMLDivElement>(null);
+    const contentRef3 = useRef<HTMLDivElement>(null);
 
     return (
         <>
@@ -15,6 +16,10 @@ const LayerUnitCase: FC<any> = ({ onClose1, onClose2, visible1, visible2 }) => {
                 <LayerManager visible={visible2} onClose={onClose2} essentialRefs={[contentRef2]}>
                     <div ref={contentRef2}>content-2</div>
                 </LayerManager>
+            </LayerManager>
+
+            <LayerManager visible={visible3} onClose={onClose3} essentialRefs={[contentRef3]}>
+                <div ref={contentRef3}>content-3</div>
             </LayerManager>
         </>
     );
@@ -182,5 +187,37 @@ describe('LayerManager', () => {
         expect(onClose3).toHaveBeenCalledTimes(0);
         expect(onClose2).toHaveBeenCalledTimes(0);
         expect(onClose1).toHaveBeenCalledTimes(1);
+    });
+
+    test('должен корректно добавлять/удалять слои', async () => {
+        const onClose = jest.fn();
+
+        // Рендерим все слои невидимыми.
+        const { rerender, unmount } = render(
+            <LayerUnitCase visible1={false} visible3={false} onClose1={onClose} onClose3={onClose} />,
+        );
+        await delay(100);
+
+        expect(LayerManager.stack).toHaveLength(0);
+
+        // Рендерим первый слой видимым.
+        rerender(<LayerUnitCase visible1 visible3={false} onClose1={onClose} onClose3={onClose} />);
+        await delay(500);
+        const [firstLayerId] = LayerManager.stack[LayerManager.stack.length - 1];
+
+        expect(LayerManager.stack).toHaveLength(1);
+
+        // Рендерим предыдущий видимый слой невидимым, а второй слой видимым.
+        rerender(<LayerUnitCase visible1={false} visible3 onClose1={onClose} onClose3={onClose} />);
+        await delay(100);
+        const [secondLayerId] = LayerManager.stack[LayerManager.stack.length - 1];
+
+        expect(LayerManager.stack).toHaveLength(1);
+        expect(firstLayerId).not.toBe(secondLayerId);
+
+        unmount();
+        await delay(100);
+
+        expect(LayerManager.stack).toHaveLength(0);
     });
 });
