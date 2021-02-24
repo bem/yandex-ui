@@ -31,11 +31,17 @@ function clearLockState(node: HTMLElement) {
     delete node[SCROLL_LOCK_STATE_KEY];
 }
 
+function hasStaticVerticalScroll(node: HTMLElement) {
+    const { overflowY } = getComputedStyle(node);
+
+    return /scroll/.test(overflowY);
+}
+
 function getScrollbarSize(node: HTMLElement) {
-    if (
-        (isRootHTMLElement(node) && document.documentElement.scrollHeight > window.innerHeight) ||
-        node.scrollHeight > node.clientHeight
-    ) {
+    const hasScrollbarRoot = isRootHTMLElement(node) && window.innerWidth - document.documentElement.clientWidth > 0;
+    const hasScrollbarNode = node.scrollHeight > node.clientHeight;
+
+    if (hasScrollbarRoot || hasScrollbarNode || hasStaticVerticalScroll(node)) {
         return getScrollBarGap();
     }
 

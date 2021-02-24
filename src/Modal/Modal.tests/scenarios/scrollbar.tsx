@@ -14,7 +14,7 @@ const cssVariables = {
     colorScrollHandleHover: 'rgba(0, 0, 0, 0.15)',
 };
 
-const styles = `
+const getStyles = (overflow: string) => `
     html {
         scrollbar-width: ${cssVariables.scrollbarWidth};
         scrollbar-color: ${cssVariables.colorScrollHandle} ${cssVariables.colorScrollTrack};
@@ -49,7 +49,7 @@ const styles = `
     }
 
     body {
-        overflow: auto; /*1*/
+        overflow-y: ${overflow}; /*1*/
         height: 100%;
     }
 
@@ -59,7 +59,7 @@ const styles = `
 `;
 
 export const ScrollBarHermioneCase: FC<any> = (props) => {
-    const { modalLines = 10, bodyLines = 50 } = props;
+    const { modalLines = 10, bodyLines = 50, overflow = 'auto' } = props;
     const [visible, setVisible] = React.useState(false);
     const scopeRef = useRef(null);
 
@@ -68,7 +68,7 @@ export const ScrollBarHermioneCase: FC<any> = (props) => {
 
     return (
         <>
-            <style>{styles}</style>
+            <style>{getStyles(overflow)}</style>
             <BPage innerRef={scopeRef}>
                 <Hermione>
                     <Hermione element="Trigger" onClick={open}>
