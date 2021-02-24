@@ -101,8 +101,8 @@ export const LayerManager: EFC<LayerManagerProps> = ({ visible, onClose, childre
             LayerManager.stack.push([id, onClose, essentialRefs]);
 
             document.addEventListener('keyup', onDocumentKeyUp);
-            document.addEventListener('mousedown', onDocumentMouseDown);
-            document.addEventListener('click', onDocumentClick);
+            document.addEventListener('mousedown', onDocumentMouseDown, true);
+            document.addEventListener('click', onDocumentClick, true);
         } else {
             const [layerId] = LayerManager.stack[LayerManager.stack.length - 1] || [];
             // Проверяем id текущего слоя, чтобы не удалить лишний обработчик при forceRender.
@@ -114,8 +114,8 @@ export const LayerManager: EFC<LayerManagerProps> = ({ visible, onClose, childre
             }
 
             document.removeEventListener('keyup', onDocumentKeyUp);
-            document.removeEventListener('mousedown', onDocumentMouseDown);
-            document.removeEventListener('click', onDocumentClick);
+            document.removeEventListener('mousedown', onDocumentMouseDown, true);
+            document.removeEventListener('click', onDocumentClick, true);
         }
         // Не добавляем onClose и essentialRefs в зависимости,
         // т.к. они нужны единожды при добавлении в стек.
@@ -127,8 +127,8 @@ export const LayerManager: EFC<LayerManagerProps> = ({ visible, onClose, childre
             requestAnimationFrame(() => LayerManager.stack.pop());
 
             document.removeEventListener('keyup', onDocumentKeyUp);
-            document.removeEventListener('mousedown', onDocumentMouseDown);
-            document.removeEventListener('click', onDocumentClick);
+            document.removeEventListener('mousedown', onDocumentMouseDown, true);
+            document.removeEventListener('click', onDocumentClick, true);
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
