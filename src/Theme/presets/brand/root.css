@@ -100,7 +100,7 @@
     --header-logo-indent-right: 29px; /* Внешний отступ справа от основного логотипа */
     --header-logo-circle-indent-top: -3px; /* Внешний отступ сверху круглого логотипа */
     --header-logoaas-height: 32px; /* Высота Logoaas логотипа */
-    --header-logoaas-indent: -5px 0 0 5px; /* Внешние отступы изображения внутри Logoaas */
+    --header-logoaas-indent: -5px auto 5px auto; /* Внешние отступы изображения внутри Logoaas */
     --header-icon-width: 20px; /* Ширина иконки */
     --header-icon-height: 20px; /* Высота иконки */
     --header-icon-indent-right: 8px; /* Внешний отступ справа от иконки */

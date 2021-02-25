@@ -46,7 +46,7 @@ header:
       value: 32px
       comment: "Высота Logoaas логотипа"
     indent:
-      value: -5px 0 0 5px
+      value: -5px auto 5px auto
       comment: "Внешние отступы изображения внутри Logoaas"
   icon:
     width:

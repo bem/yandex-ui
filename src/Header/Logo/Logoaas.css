@@ -9,6 +9,4 @@
 
 .YandexHeader-Logoaas .YandexHeader-Image {
     margin: var(--header-logoaas-indent);
-    margin-top: -5px;
-    margin-left: 5px;
 }
