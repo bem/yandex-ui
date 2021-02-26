@@ -4,34 +4,10 @@ id: Progress
 
 import { Common as ProgressCommon } from '../__examples__/common.tsx'
 import progressCommonSource from '!!raw-loader!../__examples__/common.tsx'
-import { Custom as ProgressCustom } from '../__examples__/custom.tsx'
-import progressCustomSource from '!!raw-loader!../__examples__/custom.tsx'
 
 ### Вид по умолчанию
 
 <Example
     component={ProgressCommon}
     source={progressCommonSource}
-/>
-
-### Кастомная тема
-
-Вы также можете настроить внешний вид Progress с помощью токенов:
-
-`progress-outer-fill-color` - цвет подложки
-`progress-inner-fill-color:` - цвет внутренней заливки
-
-```yaml
-progress:
-  outer:
-    fillColor:
-      value: "#ebedf1"
-  inner:
-    fillColor:
-      value: "#6c99fd"
-```
-
-<Example
-    component={ProgressCustom}
-    source={progressCustomSource}
 />

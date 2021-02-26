@@ -5,9 +5,7 @@
     "brand": "./src/Theme/themes/brand.theme.json",
     "legacy-default": "./src/Theme/themes/legacy-default.theme.json",
     "legacy-inverse": "./src/Theme/themes/legacy-inverse.theme.json",
-    "legacy-brand": "./src/Theme/themes/legacy-brand.theme.json",
-    "turbo": "./src/Theme/themes/turbo.theme.json",
-    "turbo-inverse": "./src/Theme/themes/turbo-inverse.theme.json"
+    "legacy-brand": "./src/Theme/themes/legacy-brand.theme.json"
   },
   "output": {
     "css": {

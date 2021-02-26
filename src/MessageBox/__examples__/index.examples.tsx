@@ -1,6 +1,5 @@
 import figmaDecorator from 'storybook-addon-figma-new';
 
-export * from './apps';
 export * from './buttons';
 export * from './complex';
 export * from './corner';

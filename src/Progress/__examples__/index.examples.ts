@@ -1,6 +1,5 @@
 export * from './playground';
 export * from './common';
-export * from './custom';
 
 export default {
     title: 'Progress|Progress/desktop',
