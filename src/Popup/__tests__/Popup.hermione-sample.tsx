@@ -9,6 +9,7 @@ import { FlippingHermioneCase } from './scenarios/flipping';
 import { DirectionsHermioneCase } from './scenarios/directions';
 import { OverflowHermioneCase } from './scenarios/overflow';
 import { ScaleHermioneCase } from './scenarios/scale';
+import { BoundaryHermioneCase } from './scenarios/boundary';
 
 const { scenario, tokens, ...props } = parseQueryString(window.location.search);
 
@@ -22,6 +23,8 @@ function getHermioneCase(scenario: string, props: any) {
             return <OverflowHermioneCase {...props} />;
         case 'scale':
             return <ScaleHermioneCase {...props} />;
+        case 'boundary':
+            return <BoundaryHermioneCase {...props} />;
         default:
             return <div>{scenario} not found</div>;
     }

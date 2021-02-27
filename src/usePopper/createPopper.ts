@@ -1,9 +1,10 @@
 import { OptionsGeneric, popperGenerator } from '@popperjs/core';
-import { arrow, computeStyles, eventListeners, flip, hide, popperOffsets, preventOverflow } from '@popperjs/core';
+import { arrow, computeStyles, eventListeners, flip, popperOffsets, preventOverflow } from '@popperjs/core';
 
 import { applyStyles } from './modifiers/applyStyles';
 import { offset } from './modifiers/offset';
 import { patchScaleFactor } from './modifiers/patchScaleFactor';
+import { hide } from './modifiers/hide';
 
 /**
  * Набор стандартных popper модификаторов.

@@ -3,13 +3,14 @@ import { Popup } from '@yandex-lego/components/Popup/desktop/bundle';
 import { Button } from '@yandex-lego/components/Button/desktop/bundle';
 
 export const Theme = () => {
+    const scopeRef = useRef<HTMLDivElement>(null);
     const anchorRef1 = useRef<HTMLButtonElement>(null);
     const anchorRef2 = useRef<HTMLButtonElement>(null);
     const [visible1, setVisible1] = useState(false);
     const [visible2, setVisible2] = useState(false);
 
     return (
-        <div style={{ display: 'flex' }}>
+        <div ref={scopeRef} style={{ display: 'flex' }}>
             <Button onClick={() => setVisible1(!visible1)} innerRef={anchorRef1} view="default" size="m">
                 Open popup (theme clear)
             </Button>
@@ -20,6 +21,7 @@ export const Theme = () => {
                 direction="bottom"
                 theme="clear"
                 visible={visible1}
+                scope={scopeRef}
             >
                 <div style={{ padding: 8, fontFamily: 'var(--control-font-family)' }}>Clear</div>
             </Popup>
@@ -34,6 +36,7 @@ export const Theme = () => {
                 direction="bottom"
                 theme="normal"
                 visible={visible2}
+                scope={scopeRef}
             >
                 <div style={{ padding: 8, fontFamily: 'var(--control-font-family)' }}>Normal</div>
             </Popup>

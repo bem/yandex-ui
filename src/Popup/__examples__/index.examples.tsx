@@ -7,6 +7,7 @@ export * from './scrollable';
 export * from './target';
 export * from './theme';
 export * from './view';
+export * from './boundary';
 
 export default {
     title: 'Surface|Popup/desktop',

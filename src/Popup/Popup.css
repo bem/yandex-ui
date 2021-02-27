@@ -7,5 +7,7 @@
 .Popup2[data-popper-escaped] {
     visibility: hidden !important;
 
+    margin: -9999px 0 0 -9999px !important;
+
     pointer-events: none !important;
 }

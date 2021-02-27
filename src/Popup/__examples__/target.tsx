@@ -3,11 +3,12 @@ import { Popup } from '@yandex-lego/components/Popup/desktop/bundle';
 import { Button } from '@yandex-lego/components/Button/desktop/bundle';
 
 export const Target = () => {
+    const scopeRef = useRef<HTMLDivElement>(null);
     const anchorRef = useRef<HTMLButtonElement>(null);
     const [visible, setVisible] = useState(false);
 
     return (
-        <>
+        <div ref={scopeRef}>
             <Button onClick={() => setVisible(!visible)} innerRef={anchorRef} size="m" view="default">
                 Open popup
             </Button>
@@ -20,11 +21,12 @@ export const Target = () => {
                 visible={visible}
                 style={{ maxWidth: 280 }}
                 onClose={() => setVisible(false)}
+                scope={scopeRef}
             >
                 <div style={{ padding: 16, fontFamily: 'var(--control-font-family)' }}>
                     Общедоступная многоязычная универсальная интернет-энциклопедия со свободным контентом.
                 </div>
             </Popup>
-        </>
+        </div>
     );
 };

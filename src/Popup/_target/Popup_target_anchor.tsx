@@ -1,7 +1,7 @@
 import React, { FC, RefObject, CSSProperties } from 'react';
 import { withBemMod } from '@bem-react/core';
 
-import { PopperAnyModifiers, Direction, usePopper } from '../../usePopper';
+import { PopperAnyModifiers, Direction, Boundary, usePopper } from '../../usePopper';
 import { useForkRef } from '../../useForkRef';
 import { IPopupProps, cnPopup, directions } from '../index';
 
@@ -62,6 +62,11 @@ export interface IPopupTargetAnchorProps {
      * Пользовательский набор модификаторов для popperjs
      */
     modifiers?: PopperAnyModifiers;
+
+    /**
+     * Ссылка на элемент или ссылки на элементы, в которые должен вписываться попап
+     */
+    boundary?: Boundary;
 }
 
 // Устанавливаем отрицательные координаты для избежания моргания при монтировании попапа.
@@ -91,6 +96,7 @@ export const withTargetAnchor = withBemMod<IPopupTargetAnchorProps, IPopupProps>
                 visible = false,
                 innerRef,
                 tailRef,
+                boundary,
                 ...otherProps
             } = props;
 
@@ -104,6 +110,7 @@ export const withTargetAnchor = withBemMod<IPopupTargetAnchorProps, IPopupProps>
                 modifiers,
                 offset: [secondaryOffset, mainOffset],
                 unsafe_tailOffset: tailOffset,
+                boundary,
             });
 
             return (

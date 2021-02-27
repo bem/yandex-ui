@@ -2,10 +2,11 @@ import React, { useRef } from 'react';
 import { Popup, directions } from '@yandex-lego/components/Popup/desktop/bundle';
 
 export const Direction = () => {
+    const scopeRef = useRef<HTMLDivElement>(null);
     const anchorRef = useRef<HTMLDivElement>(null);
 
     return (
-        <div style={{ marginLeft: 112, marginTop: 32 }}>
+        <div ref={scopeRef} style={{ marginLeft: 112, marginTop: 32 }}>
             <div
                 style={{
                     background: '#e6e6e6',
@@ -23,6 +24,7 @@ export const Direction = () => {
                 <Popup
                     key={direction}
                     anchor={anchorRef}
+                    scope={scopeRef}
                     direction={direction}
                     hasTail
                     target="anchor"

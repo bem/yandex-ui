@@ -5,6 +5,8 @@ import { isEqual } from '../lib/isEqual';
 import { useIsomorphicLayoutEffect as useLayoutEffect } from '../useIsomorphicLayoutEffect';
 import { Options, createPopper } from './createPopper';
 import { Direction } from './directions';
+import { Boundary } from './types';
+import { getElementsFromRefs } from './utils';
 
 export type PopupHookProps = {
     /**
@@ -47,6 +49,10 @@ export type PopupHookProps = {
      * Закрепляет положение попапа после открытия
      */
     motionless?: boolean;
+    /**
+     * Ссылка на элемент или ссылки на элементы, в которые должен вписываться попап
+     */
+    boundary?: Boundary;
 };
 
 export type PopupHookResult = {
@@ -79,8 +85,8 @@ export function usePopper(props: PopupHookProps): PopupHookResult {
         offset,
         unsafe_tailOffset,
         children,
+        boundary,
     } = props;
-
     const placements = Array.isArray(placement) ? placement : ([placement] as Direction[]);
 
     const popperRef = useRef<Instance | null>(null);
@@ -92,13 +98,16 @@ export function usePopper(props: PopupHookProps): PopupHookResult {
     const [arrowNode, setArrowNode] = useState<HTMLElement>();
 
     const popperOptions = useMemo(() => {
+        const [placement, ...fallbackPlacements] = placements;
+        const popperBoundary = getElementsFromRefs(boundary);
+
         const options: Options = {
             // Добавляем children в опции popper для того,
             // чтобы обновить координаты при изменении контента.
             children,
             // При инициализации указываем единственное направление,
             // все остальные направления применяются в модификаторе flip.
-            placement: placements[0],
+            placement,
             modifiers: [
                 {
                     name: 'eventListeners',
@@ -122,6 +131,7 @@ export function usePopper(props: PopupHookProps): PopupHookResult {
                     options: {
                         // Свойство позволяет учитывать границы в overflow контейнере.
                         altBoundary: true,
+                        boundary: popperBoundary,
                     },
                 },
                 {
@@ -136,9 +146,16 @@ export function usePopper(props: PopupHookProps): PopupHookResult {
                     name: 'flip',
                     options: {
                         padding: marginThreshold,
-                        fallbackPlacements: placements,
+                        fallbackPlacements,
                         // Свойство позволяет учитывать границы в overflow контейнере.
                         altBoundary: true,
+                        boundary: popperBoundary,
+                    },
+                },
+                {
+                    name: 'hide',
+                    options: {
+                        boundary: popperBoundary,
                     },
                 },
                 ...modifiers,
@@ -163,6 +180,7 @@ export function usePopper(props: PopupHookProps): PopupHookResult {
         unsafe_tailOffset,
         modifiers,
         children,
+        boundary,
     ]);
 
     useLayoutEffect(() => {

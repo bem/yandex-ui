@@ -114,4 +114,13 @@ describe('Popup', () => {
             .waitForVisible(elements.popup)
             .assertView('plain', [elements.container]);
     });
+
+    it('should render correctly with boundary and inside clipping container', function() {
+        return this.browser
+            .url('Popup/hermione/hermione.html?scenario=boundary')
+            .execute(function(s) { document.querySelector(s).scrollTop = 80 }, elements.container)
+            .click(elements.anchor)
+            .waitForVisible(elements.popup)
+            .assertView('plain', [elements.container]);
+    });
 });

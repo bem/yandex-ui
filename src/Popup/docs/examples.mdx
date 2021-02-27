@@ -12,6 +12,8 @@ import { Nonvisual as PopupNonvisual } from '../__examples__/nonvisual.tsx'
 import popupNonvisualSources from '!!raw-loader!../__examples__/nonvisual.tsx'
 import { Direction as PopupDirection } from '../__examples__/direction.tsx'
 import popupDirectionSources from '!!raw-loader!../__examples__/direction.tsx'
+import { Boundary as PopupBoundary } from '../__examples__/boundary.tsx'
+import popupBoundarySources from '!!raw-loader!../__examples__/direction.tsx'
 
 ### Привязывание к блоку
 
@@ -75,7 +77,17 @@ import popupDirectionSources from '!!raw-loader!../__examples__/direction.tsx'
 Чтобы задать направление раскрытия попапа, используйте свойство `directions`.
 
 <Example
-    height={150}
+    height={250}
     component={PopupDirection}
     source={popupDirectionSources}
+/>
+
+### Границы отображения попапа
+
+Чтобы задать границы отображения попапа, используйте свойство `boundary`. Это может быть полезно, когда якорь находится внутри контейнера с `overflow: hidden` или вы хотите явно задать границы отображения. По-умолчанию, попап автоматически пытыется найти ближайшего родителя относительно якоря со свойством `overflow`.
+
+<Example
+    height={300}
+    component={PopupBoundary}
+    source={popupBoundarySources}
 />
