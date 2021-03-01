@@ -1,6 +1,8 @@
 .Tumbler-Button {
     position: relative;
 
+    flex-shrink: 0;
+
     margin: 0;
     padding: 0;
 
