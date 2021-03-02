@@ -1,0 +1,26 @@
+---
+id: ListTile
+---
+
+import listTileProps from '!!ts-docgen-loader!./props.tsx';
+
+### Базовый вариант
+
+```tsx
+import React from 'react'
+import { ListTile } from '@yandex-lego/components/ListTile'
+
+const App = () => (
+  <ListTile
+    alignItems="start"
+    leading="before"
+    trailing="after"
+  >
+    Content
+  </ListTile>
+)
+```
+
+### Props
+
+<PropsTable props={listTileProps} />

@@ -1,22 +1,16 @@
 import React from 'react';
-import { withKnobs, text, boolean, select } from '@storybook/addon-knobs';
+import { text, boolean, select } from '@storybook/addon-knobs';
+import { Text } from '@yandex-lego/components/Text/bundle';
+import { AlignItemsValue, ListTile, ListTileWrapperSpace } from '@yandex-lego/components/ListTile';
 
-import { AlignItemsValue, ListTile, ListTileWrapperSpace } from '../../ListTile';
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
-import { Text } from '../../../Text/Text.bundle/common';
-import { blocks, getBlock } from './getBlock';
+import { blocks, getBlock } from './assets';
 
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: [withKnobs, ...createDecorators()],
-    parameters,
-};
-
-const spaces = ['3xs', '2xs', 'xs', 's', 'm', 'l', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl']
-    .reduce<Record<string, string>>((acc, cur) => {
-        acc[cur] = cur;
-        return acc;
-    }, {});
+const spaces = ['3xs', '2xs', 'xs', 's', 'm', 'l', 'xl', '2xl', '3xl', '4xl', '5xl', '6xl'].reduce<
+    Record<string, string>
+>((acc, cur) => {
+    acc[cur] = cur;
+    return acc;
+}, {});
 
 const widgets = blocks.reduce<Record<string, string>>((acc, cur) => {
     acc[cur] = cur;
@@ -52,27 +46,23 @@ export const Playground = () => {
             leading={hasLeading ? getBlock(leading) : undefined}
             trailing={hasTrailing ? getBlock(trailing) : undefined}
         >
-            {
-                hasOverline ? (
-                    <Text as="div" typography="overline-l" weight="medium" color="secondary">
-                        {overline}
-                    </Text>
-                ) : undefined
-            }
+            {hasOverline ? (
+                <Text as="div" typography="overline-l" weight="medium" color="secondary">
+                    {overline}
+                </Text>
+            ) : (
+                undefined
+            )}
             <Text as="div" typography="control-xl" weight="regular" color="primary">
                 {title}
             </Text>
-            {
-                hasSubtitle ? (
-                    <Text as="div" typography="control-m" weight="regular" color="secondary">
-                        {subtitle}
-                    </Text>
-                ) : undefined
-            }
+            {hasSubtitle ? (
+                <Text as="div" typography="control-m" weight="regular" color="secondary">
+                    {subtitle}
+                </Text>
+            ) : (
+                undefined
+            )}
         </ListTile>
     );
-};
-
-Playground.story = {
-    name: 'playground',
 };
