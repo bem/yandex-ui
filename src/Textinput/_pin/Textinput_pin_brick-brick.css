@@ -1,3 +1,4 @@
-.Textinput.Textinput_pin_brick-brick .Textinput-Box {
+/* Усиливаем селектор для сохранения специфичности при раскрытии css-переменных. */
+.Textinput.Textinput_pin_brick-brick[class][class] .Textinput-Box {
     border-radius: 0;
 }

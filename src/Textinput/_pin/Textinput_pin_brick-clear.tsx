@@ -1,7 +1,6 @@
 import { withBemMod } from '@bem-react/core';
 
 import { ITextinputProps, cnTextinput } from '../Textinput';
-import '../_hasPin/Textinput_hasPin.css';
 import './Textinput_pin_brick-clear.css';
 
 export interface ITextinputPinBrickClearProps {

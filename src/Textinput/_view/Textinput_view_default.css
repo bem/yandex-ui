@@ -58,5 +58,6 @@
 
 /* focus */
 .Textinput.Textinput_view_default.Textinput_focused .Textinput-Box[class] {
+    border-width: var(--textinput-borderWidth);
     border-color: var(--textinput-view-default-border-color-focused);
 }

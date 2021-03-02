@@ -16,6 +16,10 @@
     background-color: #fff;
 }
 
+.Textinput_theme_normal[class*='_pin_'] .Textinput-Box {
+    border-radius: 3px;
+}
+
 .Textinput_theme_normal.Textinput_state_error .Textinput-Box {
     border-color: var(--color-control-bg-border-default-state-error);
 }
