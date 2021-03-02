@@ -19,7 +19,7 @@ export type RadioboxRadioProps = {
     /**
      * Текст подписи к переключателю
      */
-    children: ReactNode;
+    children?: ReactNode;
 
     /**
      * Имя переключателя
