@@ -1,0 +1,10 @@
+/* The hovered state of a clear Button */
+@define-mixin Button_clear-hovered
+    /* Sets the view modifier name of a Button */
+    $viewName {
+    .Button2_view_$(viewName):not([aria-disabled='true']):hover .Button2-Text,
+    .Button2_view_$(viewName):not([aria-disabled='true']):hover .Button2-Icon {
+        opacity: 1;
+    }
+}
+

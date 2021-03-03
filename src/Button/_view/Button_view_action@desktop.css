@@ -1,22 +1,16 @@
 /* hover */
-.Button2_view_action:not([aria-disabled='true']):hover {
-    color: var(--button-view-action-typo-color-hovered);
-}
-
-.Button2_view_action:not([aria-disabled='true']):hover::before {
-    background-color: var(--button-view-action-fill-color-hovered);
-}
+@mixin Button_hovered
+    action,
+    var(--button-view-action-typo-color-hovered),
+    var(--button-view-action-fill-color-hovered);
 
 /* check */
-.Button2_view_action.Button2_checked:not([aria-disabled='true']):hover {
-    color: var(--button-view-action-typo-color-checked-hovered);
-}
-
-.Button2_view_action.Button2_checked:not([aria-disabled='true']):hover::before {
-    background-color: var(--button-view-action-fill-color-checked-hovered);
-}
+@mixin Button_checked-hovered
+    action,
+    var(--button-view-action-typo-color-checked-hovered),
+    var(--button-view-action-fill-color-checked-hovered);
 
 /* focus */
-.utilityfocus .Button2_view_action:focus::before {
-    border: 2px solid var(--button-view-action-border-color-focused);
-}
+@mixin Button_focused
+    action,
+    var(--button-view-action-border-color-focused);

@@ -1,26 +1,9 @@
-.Button2_size_l {
-    height: var(--button-size-l-height);
-
-    font-size: var(--button-size-l-font);
-    line-height: var(--button-size-l-lineHeight);
-}
-
-.Button2_size_l .Button2-Text {
-    margin: var(--button-size-l-text-indentAll);
-}
-
-.Button2_size_l .Button2-Icon {
-    width: var(--button-size-l-icon-width);
-}
-
-.Button2_size_l .Button2-Icon.Icon_type_arrow {
-    width: var(--button-size-l-icon-width);
-}
-
-.Button2_size_l .Button2-Icon_side_left ~ .Button2-Text {
-    margin-left: var(--button-size-l-icon-indentLeft);
-}
-
-.Button2_size_l .Button2-Icon_side_right ~ .Button2-Text {
-    margin-right: var(--button-size-l-icon-indentRight);
-}
+@mixin Button_size
+/* $sizeName         */    l,
+/* $height           */    var(--button-size-l-height),
+/* $fontSize         */    var(--button-size-l-font),
+/* $lineHeight       */    var(--button-size-l-lineHeight),
+/* $indentAll        */    var(--button-size-l-text-indentAll),
+/* $iconWidth        */    var(--button-size-l-icon-width),
+/* $iconIndentLeft   */    var(--button-size-l-icon-indentLeft),
+/* $iconIndentRight  */    var(--button-size-l-icon-indentRight);

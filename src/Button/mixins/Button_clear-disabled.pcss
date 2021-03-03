@@ -1,0 +1,18 @@
+/* The disabled state of a clear Button */
+@define-mixin Button_clear-disabled
+    /* Sets the view modifier name of a Button */
+    $viewName,
+    /* Sets the foreground color value of a Button's text */
+    $color,
+    /* Sets the background color of a Button */
+    $fillColor {
+    @mixin Button_disabled
+        $viewName,
+        $color,
+        $fillColor;
+
+    .Button2_view_$(viewName)[aria-disabled='true'] .Button2-Text,
+    .Button2_view_$(viewName)[aria-disabled='true'] .Button2-Icon {
+        opacity: 1;
+    }
+}

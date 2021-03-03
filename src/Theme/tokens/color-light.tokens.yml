@@ -33,6 +33,9 @@ color:
     value: "#0057d3"
   hover:
     value: "#c00"
+  # used in mixins for correct handling of specificity in postcss-theme-fold
+  transparent:
+    value: transparent
 
   fillColor:
     brand:

@@ -11,6 +11,7 @@
     --color-system: #778a9b; /* системный цвет, от которого выстраивается как статусный фон так и типографика */
     --color-promo: #0057d3;
     --color-hover: #c00;
+    --color-transparent: transparent;
     --color-bg-brand: var(--color-project);
     --color-bg-inverse: var(--color-base);
     --color-bg-action: rgb(255, 219, 77);

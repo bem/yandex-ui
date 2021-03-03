@@ -30,6 +30,7 @@ module.exports = {
         useCssPlugin({
             context: './src',
             src: './**/*.css',
+            postcssConfigPath: './.config/postcss.config.js',
             // Дополнительно собираем css для esm сборки.
             output: ['./dist', './dist/esm'],
             ignore: ['**/*.tests/**', '**/internal/**'],
@@ -50,6 +51,11 @@ module.exports = {
                 src: './codeshifts/**/*',
                 ignore: ['**/*.test*', '**/fixtures/**'],
             },
+            {
+                context: './src',
+                src: './*/mixins/**/*.pcss',
+                output: ['./dist'],
+            },
         ]),
 
         {
@@ -67,7 +73,8 @@ module.exports = {
                 });
                 // названия компонентов достаем из директории
                 // если папка начинается с большой буквы, значит компонент
-                const componentsNames = fs.readdirSync(context.output, { withFileTypes: true })
+                const componentsNames = fs
+                    .readdirSync(context.output, { withFileTypes: true })
                     .filter((dir) => dir.isDirectory() && /^[A-Z]/.test(dir.name))
                     .map((dir) => ({ block: dir.name }));
 

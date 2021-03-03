@@ -10,6 +10,7 @@
     --color-normal: #dde3e5;
     --color-system: #778a9b;
     --color-promo: #fc0;
+    --color-transparent: transparent;
     --color-bg-brand: var(--color-project);
     --color-bg-inverse: var(--color-base);
     --color-bg-action: rgb(255, 219, 77);

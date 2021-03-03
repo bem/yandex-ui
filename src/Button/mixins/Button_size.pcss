@@ -1,0 +1,45 @@
+/* Modifier for setting button sizes */
+@define-mixin Button_size
+    /* Sets a size alias name */
+    $sizeName,
+    /* Sets a Button's height */
+    $height,
+    /* Sets a Button's font size */
+    $fontSize,
+    /* Sets a Button's height of a line box */
+    $lineHeight,
+    /* Sets a Button's text margins */
+    $indentAll,
+    /* Sets a Button's icon width */
+    $iconWidth,
+    /* Sets a Button's left icon margin */
+    $iconIndentLeft,
+    /* Sets a Button's right icon margin */
+    $iconIndentRight {
+    .Button2_size_$(sizeName) {
+        height: $height;
+
+        font-size: $fontSize;
+        line-height: $lineHeight;
+    }
+
+    .Button2_size_$(sizeName) .Button2-Text {
+        margin: $indentAll;
+    }
+
+    .Button2_size_$(sizeName) .Button2-Icon {
+        width: $iconWidth;
+    }
+
+    .Button2_size_$(sizeName) .Button2-Icon.Icon_type_arrow {
+        width: $iconWidth;
+    }
+
+    .Button2_size_$(sizeName) .Button2-Icon_side_left ~ .Button2-Text {
+        margin-left: $iconIndentLeft;
+    }
+
+    .Button2_size_$(sizeName) .Button2-Icon_side_right ~ .Button2-Text {
+        margin-right: $iconIndentRight;
+    }
+}

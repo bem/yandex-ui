@@ -1,0 +1,18 @@
+/* Modifier for the styling of an elevated buttons */
+@define-mixin Button_raised
+    /* Sets the view modifier name of a Button */
+    $viewName,
+    /* Sets the shadow color of a Button */
+    $shadowColor,
+    /* Sets the additional shadow color of a Button in the pressed state */
+    $shadowColorPressed {
+    .Button2_view_$(viewName)::before,
+    .Button2_view_$(viewName).Button2_raised::before {
+        box-shadow: 0 0 0 1px $shadowColor, 0 1px 0 1px $shadowColor, 0 4px 6px 0 $shadowColor;
+    }
+
+    .Button2_view_$(viewName).Button2_pressed,
+    .Button2_view_$(viewName).Button2_raised.Button2_pressed {
+        box-shadow: 0 1px 1px 0 $shadowColorPressed, 0 1px 1px 0 $shadowColorPressed, 0 1px 2px 0 $shadowColorPressed;
+    }
+}

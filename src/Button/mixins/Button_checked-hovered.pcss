@@ -1,0 +1,17 @@
+/* The combination of checked and hovered states of a Button */
+@define-mixin Button_checked-hovered
+    /* Sets the view modifier name of a Button */
+    $viewName,
+    /* Sets the foreground color value of a Button's text */
+    $color,
+    /* Sets the background color of a Button */
+    $fillColor {
+    .Button2_view_$(viewName).Button2_checked:not([aria-disabled='true']):hover {
+        color: $color;
+    }
+
+    .Button2_view_$(viewName).Button2_checked:not([aria-disabled='true']):hover::before {
+        background-color: $fillColor;
+    }
+}
+

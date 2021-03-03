@@ -21,6 +21,9 @@ color:
     value: "#778a9b"
   promo:
     value: "#fc0"
+  # used in mixins for correct handling of specificity in postcss-theme-fold
+  transparent:
+    value: transparent
 
   fillColor:
     brand:

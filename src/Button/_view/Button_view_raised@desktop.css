@@ -1,14 +1,16 @@
 /* hover */
-.Button2_view_raised:not([aria-disabled='true']):hover::before {
-    background-color: var(--button-view-raised-fill-color-hovered);
-}
+@mixin Button_hovered
+    raised,
+    var(--button-view-raised-typo-color-base),
+    var(--button-view-raised-fill-color-hovered);
 
 /* check */
-.Button2_view_raised.Button2_checked:not([aria-disabled='true']):hover::before {
-    background-color: var(--button-view-raised-fill-color-checked-hovered);
-}
+@mixin Button_checked-hovered
+    raised,
+    var(--button-view-raised-typo-color-checked-base),
+    var(--button-view-raised-fill-color-checked-hovered);
 
 /* focus */
-.utilityfocus .Button2_view_raised:focus::before {
-    border: 2px solid var(--button-view-raised-border-color-focused);
-}
+@mixin Button_focused
+    raised,
+    var(--button-view-raised-border-color-focused);

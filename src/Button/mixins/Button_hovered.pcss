@@ -1,0 +1,13 @@
+@define-mixin Button_hovered
+    $viewName,
+    $color,
+    $fillColor {
+    .Button2_view_$(viewName):not([aria-disabled='true']):hover {
+        color: $color;
+    }
+
+    .Button2_view_$(viewName):not([aria-disabled='true']):hover::before {
+        background-color: $fillColor;
+    }
+}
+
