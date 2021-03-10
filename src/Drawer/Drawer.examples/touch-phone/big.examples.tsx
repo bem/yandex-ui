@@ -1,20 +1,9 @@
 import React, { useState } from 'react';
-
 import { Drawer } from '@yandex-lego/components/Drawer/touch-phone/bundle';
 
 export const Big = () => {
     const scopeRef = React.useRef<HTMLDivElement>(null);
     const [visible, setVisible] = useState(false);
-
-    const nested = false;
-    const dragDisabled = false;
-    const direction = 'bottom';
-    const animation = {
-        tension: 230,
-        friction: 24,
-        disabled: false,
-        dragImmediate: false,
-    };
 
     return (
         <div ref={scopeRef}>
@@ -39,10 +28,6 @@ export const Big = () => {
                 visible={visible}
                 onClose={() => setVisible(false)}
                 scope={scopeRef}
-                nested={nested}
-                dragDisabled={dragDisabled}
-                direction={direction}
-                animation={animation}
                 view="default"
             >
                 <div className="DrawerInnerContent">

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { select, boolean, number, text } from '@storybook/addon-knobs';
-
 import { Drawer } from '@yandex-lego/components/Drawer/touch-phone/bundle';
 
 export const Playground = () => {

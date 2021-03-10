@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Spring, SpringSystem, Listener } from 'rebound';
 
-export const useSpring = (targetValue: number = 0, tension: number = 50, friction: number = 3, immediate = false) => {
+export const useSpring = (targetValue: number, tension: number, friction: number, immediate?: boolean) => {
     const [spring, setSpring] = useState<Spring | null>(null);
     const [value, setValue] = useState<number>(targetValue);
 
@@ -34,7 +34,7 @@ export const useSpring = (targetValue: number = 0, tension: number = 50, frictio
         }
 
         return destroySpring;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [tension, friction, immediate, spring, listener, destroySpring]);
 
     useEffect(() => {

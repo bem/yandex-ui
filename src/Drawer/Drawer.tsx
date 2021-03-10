@@ -16,8 +16,13 @@ export interface IDrawerAnimationParams {
     /**
      * Основные параметры анимации для rebound
      * @see https://github.com/facebook/rebound-js
+     *
+     * @default 230
      */
     tension: number;
+    /**
+     * @default 24
+     */
     friction: number;
 
     /**
@@ -54,6 +59,8 @@ export interface IDrawerProps extends PropsWithChildren<PartialPopupProps> {
 
     /**
      * Направление, откуда появляется шторка.
+     *
+     * @default 'bottom'
      */
     direction?: 'bottom' | 'left' | 'right';
 
@@ -66,8 +73,15 @@ export interface IDrawerProps extends PropsWithChildren<PartialPopupProps> {
     /**
      * Параметры анимации шторки.
      */
-    animation: IDrawerAnimationParams;
+    animation?: IDrawerAnimationParams;
 }
+
+const defaultAnimation: IDrawerAnimationParams = {
+    dragImmediate: false,
+    disabled: false,
+    tension: 230,
+    friction: 24,
+};
 
 /**
  * Используется для создания шторки.
@@ -76,13 +90,13 @@ export interface IDrawerProps extends PropsWithChildren<PartialPopupProps> {
 export const Drawer: FC<IDrawerProps> = (props) => {
     const { Popup } = useComponentRegistry<IDrawerRegistry>(cnDrawer());
 
-    const { className, visible, nested, direction = 'bottom', innerRef, animation } = props;
+    const { className, visible, nested, direction = 'bottom', innerRef, animation = defaultAnimation } = props;
 
     // прогресс открытия шторки от 0 до 1
-    const [progress, setProgress] = useState<number>(0);
+    const [progress, setProgress] = useState(0);
 
     // признак того, что анимация временно отключена (напр. на время drag жеста)
-    const [springDisabled, setSpringDisabled] = useState<boolean>(false);
+    const [springDisabled, setSpringDisabled] = useState(false);
 
     // спринговое значение прогресса и его производные
     const springImmediate = (animation.dragImmediate && springDisabled) || animation.disabled;

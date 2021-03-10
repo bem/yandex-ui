@@ -1,38 +1,9 @@
-import React, { useMemo, useState } from 'react';
-
+import React, { useState } from 'react';
 import { Drawer } from '@yandex-lego/components/Drawer/touch-phone/bundle';
 
 export const CustomTitle = () => {
     const scopeRef = React.useRef<HTMLDivElement>(null);
     const [visible, setVisible] = useState(false);
-
-    const TitleComponent = useMemo(
-        () => (
-            <div className="DrawerTitleComponent">
-                Это заголовок.
-                <a
-                    href="#"
-                    onClick={(e) => {
-                        e.preventDefault();
-                        setVisible(false);
-                    }}
-                >
-                    &times;
-                </a>
-            </div>
-        ),
-        [setVisible],
-    );
-
-    const nested = false;
-    const dragDisabled = false;
-    const direction = 'bottom';
-    const animation = {
-        tension: 230,
-        friction: 24,
-        disabled: false,
-        dragImmediate: false,
-    };
 
     return (
         <div ref={scopeRef}>
@@ -49,11 +20,12 @@ export const CustomTitle = () => {
                 visible={visible}
                 onClose={() => setVisible(false)}
                 scope={scopeRef}
-                titleComponent={TitleComponent}
-                nested={nested}
-                dragDisabled={dragDisabled}
-                direction={direction}
-                animation={animation}
+                titleComponent={
+                    <div className="DrawerTitleComponent">
+                        Это заголовок.
+                        <button onClick={() => setVisible(false)}>&times;</button>
+                    </div>
+                }
                 view="default"
             >
                 <div className="DrawerInnerContent">

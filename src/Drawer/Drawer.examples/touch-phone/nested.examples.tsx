@@ -1,19 +1,10 @@
 import React, { useState } from 'react';
-
 import { Drawer } from '@yandex-lego/components/Drawer/touch-phone/bundle';
 
 export const Nested = () => {
     const scopeRef = React.useRef<HTMLDivElement>(null);
     const [visible, setVisible] = useState(false);
     const [nestedVisible, setNestedVisible] = useState(false);
-
-    const dragDisabled = false;
-    const animation = {
-        tension: 230,
-        friction: 24,
-        disabled: false,
-        dragImmediate: false,
-    };
 
     return (
         <div ref={scopeRef}>
@@ -28,14 +19,7 @@ export const Nested = () => {
                     Открыть шторку
                 </button>
             </p>
-            <Drawer
-                visible={visible}
-                onClose={() => setVisible(false)}
-                scope={scopeRef}
-                view="default"
-                animation={animation}
-                dragDisabled={dragDisabled}
-            >
+            <Drawer visible={visible} onClose={() => setVisible(false)} scope={scopeRef} view="default">
                 <div className="DrawerInnerContent">
                     <p>
                         Phasellus sollicitudin in pellentesque cras sagittis platea mattis himenaeos, dui ligula congue
@@ -68,8 +52,6 @@ export const Nested = () => {
                 visible={nestedVisible}
                 onClose={() => setNestedVisible(false)}
                 scope={scopeRef}
-                animation={animation}
-                dragDisabled={dragDisabled}
                 view="default"
                 nested
             >
