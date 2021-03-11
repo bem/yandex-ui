@@ -1,14 +1,11 @@
 import React from 'react';
 import { render, screen, fireEvent, getNodeText } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 
 import { ButtonGroup as ButtonGroupCommon, useButtonGroupState } from '..';
-import { ButtonGroup as ButtonGroupDesktop } from '../desktop/bundle';
+import { ButtonGroup } from '../desktop/bundle';
 import { Button } from '../../Button/Button';
 
-const platforms = [['desktop', ButtonGroupDesktop]];
-
-describe.each<any>(platforms)('ButtonGroup@s', (_platform, ButtonGroup) => {
+describe('ButtonGroup', () => {
     test('должен вернуть полный шаблон компонента (snapshot)', () => {
         expect(
             render(
@@ -20,22 +17,9 @@ describe.each<any>(platforms)('ButtonGroup@s', (_platform, ButtonGroup) => {
             ),
         ).toMatchSnapshot();
     });
-});
 
-describe.each<any>(platforms)('ButtonGroup@%s', (_platform, ButtonGroup) => {
     test('должен быть установлен корректный displayName', () => {
         expect(ButtonGroupCommon.displayName).toBe('ButtonGroup');
-    });
-
-    test('при vertical=true должен быть установлен класс ButtonGroup_vertical', () => {
-        screen.debug();
-        render(<ButtonGroup vertical />);
-        expect(screen.getByRole('group')).toHaveClass('ButtonGroup_vertical');
-    });
-
-    test('при vertical=false должен быть потерян класс ButtonGroup_vertical', () => {
-        render(<ButtonGroup vertical={false} />);
-        expect(screen.getByRole('group')).not.toHaveClass('ButtonGroup_vertical');
     });
 
     test('должен вызываться onClick при клике на ребенка', () => {

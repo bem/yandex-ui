@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ButtonGroup@s должен вернуть полный шаблон компонента (snapshot) 1`] = `
+exports[`ButtonGroup должен вернуть полный шаблон компонента (snapshot) 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

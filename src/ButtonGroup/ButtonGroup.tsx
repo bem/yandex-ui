@@ -7,6 +7,7 @@ import React, {
     isValidElement,
     MouseEventHandler,
     MouseEvent,
+    Fragment,
 } from 'react';
 import { cn } from '@bem-react/classname';
 
@@ -129,11 +130,11 @@ export const ButtonGroup: FC<ButtonGroupProps> = (props: ButtonGroupProps) => {
         >
             {!divider
                 ? clonedChildren
-                : clonedChildren.map((el, i) => (
-                    <>
-                        {i > 0 && divider}
-                        {el}
-                    </>
+                : clonedChildren.map((element, index) => (
+                    <Fragment key={index}>
+                        {index > 0 && divider}
+                        {element}
+                    </Fragment>
                 ))}
         </AsComponent>
     );

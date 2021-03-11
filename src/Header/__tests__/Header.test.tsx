@@ -1,6 +1,5 @@
 import React, { createRef } from 'react';
 import { render, screen, cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 
 import { Header } from '../Header';
 

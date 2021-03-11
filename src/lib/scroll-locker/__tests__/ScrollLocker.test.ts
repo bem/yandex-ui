@@ -1,5 +1,3 @@
-import '@testing-library/jest-dom/extend-expect';
-
 import * as ScrollLocker from '../ScrollLocker';
 
 describe('ScrollLocker', () => {
