@@ -5,10 +5,14 @@ const { useCopyAssetsPlugin } = require('@bem-react/pack/lib/plugins/CopyAssetsP
 const { useCssPlugin } = require('@bem-react/pack/lib/plugins/CssPlugin');
 const { useTypeScriptPlugin } = require('@bem-react/pack/lib/plugins/TypeScriptPlugin');
 
+const CI = process.env.TRENDBOX_CI;
+
 /**
  * @type {import('@bem-react/pack/lib/interfaces').Config}
  */
 module.exports = {
+    silent: CI,
+
     context: resolve(__dirname, '..'),
 
     output: './dist',
@@ -42,7 +46,7 @@ module.exports = {
                 src: './**/*.{svg,png,md,json,yml}',
                 // Дополнительно копируем статику для esm сборки.
                 output: ['./dist', './dist/esm'],
-                ignore: ['**/*.tests/**', '**/internal/**'],
+                ignore: ['**/*.tests/**', '**/internal/**', '**/__tests__/**'],
             },
             {
                 src: ['./package.json', './README.md'],
