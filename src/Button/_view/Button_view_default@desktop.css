@@ -1,16 +1,16 @@
 /* hover */
 @mixin Button_hovered
-    default,
-    var(--button-view-default-typo-color-hovered),
-    var(--button-view-default-fill-color-hovered);
+/* $viewName                 */    default,
+/* $color                    */    var(--button-view-default-typo-color-hovered),
+/* $fillColor                */    var(--button-view-default-fill-color-hovered);
 
 /* check */
 @mixin Button_checked-hovered
-    default,
-    var(--button-view-default-typo-color-checked-hovered),
-    var(--button-view-default-fill-color-checked-hovered);
+/* $viewName                 */    default,
+/* $color                    */    var(--button-view-default-typo-color-checked-hovered),
+/* $fillColor                */    var(--button-view-default-fill-color-checked-hovered);
 
 /* focus */
 @mixin Button_focused
-    default,
-    var(--button-view-default-border-color-focused);
+/* $viewName                 */    default,
+/* $borderColor              */    var(--button-view-default-border-color-focused)
