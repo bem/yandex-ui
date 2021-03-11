@@ -101,75 +101,79 @@ exports[`Tooltip@desktop client environment должен вернуть полн
               visible={true}
             >
               <Portal
-                containerInfo={
-                  <body>
+                visible={true}
+              >
+                <Portal
+                  containerInfo={
+                    <body>
+                      <div
+                        class="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                        style="top: -9999px; left: -9999px; position: fixed;"
+                      >
+                        <div
+                          class="Tooltip-Content"
+                          role="tooltip"
+                        >
+                          Добавить в избранное
+                        </div>
+                        <div
+                          class="Tooltip-Backdrop"
+                        />
+                      </div>
+                    </body>
+                  }
+                >
+                  <LayerManager
+                    essentialRefs={
+                      Array [
+                        Object {
+                          "current": <div
+                            class="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                            style="top: -9999px; left: -9999px; position: fixed;"
+                          >
+                            <div
+                              class="Tooltip-Content"
+                              role="tooltip"
+                            >
+                              Добавить в избранное
+                            </div>
+                            <div
+                              class="Tooltip-Backdrop"
+                            />
+                          </div>,
+                        },
+                        Object {
+                          "current": null,
+                        },
+                      ]
+                    }
+                    visible={true}
+                  >
                     <div
-                      class="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                      style="top: -9999px; left: -9999px; position: fixed;"
+                      className="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                      style={
+                        Object {
+                          "left": -9999,
+                          "position": "fixed",
+                          "top": -9999,
+                          "zIndex": undefined,
+                        }
+                      }
                     >
                       <div
-                        class="Tooltip-Content"
+                        className="Tooltip-Content"
                         role="tooltip"
                       >
                         Добавить в избранное
                       </div>
-                      <div
-                        class="Tooltip-Backdrop"
-                      />
+                      <TooltipBackdrop>
+                        <div
+                          className="Tooltip-Backdrop"
+                        />
+                      </TooltipBackdrop>
                     </div>
-                  </body>
-                }
-              >
-                <LayerManager
-                  essentialRefs={
-                    Array [
-                      Object {
-                        "current": <div
-                          class="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                          style="top: -9999px; left: -9999px; position: fixed;"
-                        >
-                          <div
-                            class="Tooltip-Content"
-                            role="tooltip"
-                          >
-                            Добавить в избранное
-                          </div>
-                          <div
-                            class="Tooltip-Backdrop"
-                          />
-                        </div>,
-                      },
-                      Object {
-                        "current": null,
-                      },
-                    ]
-                  }
-                  visible={true}
-                >
-                  <div
-                    className="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                    style={
-                      Object {
-                        "left": -9999,
-                        "position": "fixed",
-                        "top": -9999,
-                        "zIndex": undefined,
-                      }
-                    }
-                  >
-                    <div
-                      className="Tooltip-Content"
-                      role="tooltip"
-                    >
-                      Добавить в избранное
-                    </div>
-                    <TooltipBackdrop>
-                      <div
-                        className="Tooltip-Backdrop"
-                      />
-                    </TooltipBackdrop>
-                  </div>
-                </LayerManager>
+                  </LayerManager>
+                </Portal>
               </Portal>
             </Popup2>
           </RegistryResolver(Popup2)>
@@ -283,75 +287,79 @@ exports[`Tooltip@touch-pad client environment должен вернуть пол
               visible={true}
             >
               <Portal
-                containerInfo={
-                  <body>
+                visible={true}
+              >
+                <Portal
+                  containerInfo={
+                    <body>
+                      <div
+                        class="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                        style="top: -9999px; left: -9999px; position: fixed;"
+                      >
+                        <div
+                          class="Tooltip-Content"
+                          role="tooltip"
+                        >
+                          Добавить в избранное
+                        </div>
+                        <div
+                          class="Tooltip-Backdrop"
+                        />
+                      </div>
+                    </body>
+                  }
+                >
+                  <LayerManager
+                    essentialRefs={
+                      Array [
+                        Object {
+                          "current": <div
+                            class="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                            style="top: -9999px; left: -9999px; position: fixed;"
+                          >
+                            <div
+                              class="Tooltip-Content"
+                              role="tooltip"
+                            >
+                              Добавить в избранное
+                            </div>
+                            <div
+                              class="Tooltip-Backdrop"
+                            />
+                          </div>,
+                        },
+                        Object {
+                          "current": null,
+                        },
+                      ]
+                    }
+                    visible={true}
+                  >
                     <div
-                      class="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                      style="top: -9999px; left: -9999px; position: fixed;"
+                      className="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                      style={
+                        Object {
+                          "left": -9999,
+                          "position": "fixed",
+                          "top": -9999,
+                          "zIndex": undefined,
+                        }
+                      }
                     >
                       <div
-                        class="Tooltip-Content"
+                        className="Tooltip-Content"
                         role="tooltip"
                       >
                         Добавить в избранное
                       </div>
-                      <div
-                        class="Tooltip-Backdrop"
-                      />
+                      <TooltipBackdrop>
+                        <div
+                          className="Tooltip-Backdrop"
+                        />
+                      </TooltipBackdrop>
                     </div>
-                  </body>
-                }
-              >
-                <LayerManager
-                  essentialRefs={
-                    Array [
-                      Object {
-                        "current": <div
-                          class="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                          style="top: -9999px; left: -9999px; position: fixed;"
-                        >
-                          <div
-                            class="Tooltip-Content"
-                            role="tooltip"
-                          >
-                            Добавить в избранное
-                          </div>
-                          <div
-                            class="Tooltip-Backdrop"
-                          />
-                        </div>,
-                      },
-                      Object {
-                        "current": null,
-                      },
-                    ]
-                  }
-                  visible={true}
-                >
-                  <div
-                    className="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                    style={
-                      Object {
-                        "left": -9999,
-                        "position": "fixed",
-                        "top": -9999,
-                        "zIndex": undefined,
-                      }
-                    }
-                  >
-                    <div
-                      className="Tooltip-Content"
-                      role="tooltip"
-                    >
-                      Добавить в избранное
-                    </div>
-                    <TooltipBackdrop>
-                      <div
-                        className="Tooltip-Backdrop"
-                      />
-                    </TooltipBackdrop>
-                  </div>
-                </LayerManager>
+                  </LayerManager>
+                </Portal>
               </Portal>
             </Popup2>
           </RegistryResolver(Popup2)>
@@ -465,75 +473,79 @@ exports[`Tooltip@touch-phone client environment должен вернуть по
               visible={true}
             >
               <Portal
-                containerInfo={
-                  <body>
+                visible={true}
+              >
+                <Portal
+                  containerInfo={
+                    <body>
+                      <div
+                        class="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                        style="top: -9999px; left: -9999px; position: fixed;"
+                      >
+                        <div
+                          class="Tooltip-Content"
+                          role="tooltip"
+                        >
+                          Добавить в избранное
+                        </div>
+                        <div
+                          class="Tooltip-Backdrop"
+                        />
+                      </div>
+                    </body>
+                  }
+                >
+                  <LayerManager
+                    essentialRefs={
+                      Array [
+                        Object {
+                          "current": <div
+                            class="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                            style="top: -9999px; left: -9999px; position: fixed;"
+                          >
+                            <div
+                              class="Tooltip-Content"
+                              role="tooltip"
+                            >
+                              Добавить в избранное
+                            </div>
+                            <div
+                              class="Tooltip-Backdrop"
+                            />
+                          </div>,
+                        },
+                        Object {
+                          "current": null,
+                        },
+                      ]
+                    }
+                    visible={true}
+                  >
                     <div
-                      class="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                      style="top: -9999px; left: -9999px; position: fixed;"
+                      className="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
+                      style={
+                        Object {
+                          "left": -9999,
+                          "position": "fixed",
+                          "top": -9999,
+                          "zIndex": undefined,
+                        }
+                      }
                     >
                       <div
-                        class="Tooltip-Content"
+                        className="Tooltip-Content"
                         role="tooltip"
                       >
                         Добавить в избранное
                       </div>
-                      <div
-                        class="Tooltip-Backdrop"
-                      />
+                      <TooltipBackdrop>
+                        <div
+                          className="Tooltip-Backdrop"
+                        />
+                      </TooltipBackdrop>
                     </div>
-                  </body>
-                }
-              >
-                <LayerManager
-                  essentialRefs={
-                    Array [
-                      Object {
-                        "current": <div
-                          class="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                          style="top: -9999px; left: -9999px; position: fixed;"
-                        >
-                          <div
-                            class="Tooltip-Content"
-                            role="tooltip"
-                          >
-                            Добавить в избранное
-                          </div>
-                          <div
-                            class="Tooltip-Backdrop"
-                          />
-                        </div>,
-                      },
-                      Object {
-                        "current": null,
-                      },
-                    ]
-                  }
-                  visible={true}
-                >
-                  <div
-                    className="Popup2 Popup2_visible Popup2_target_anchor Popup2_view_default Tooltip Tooltip_visible"
-                    style={
-                      Object {
-                        "left": -9999,
-                        "position": "fixed",
-                        "top": -9999,
-                        "zIndex": undefined,
-                      }
-                    }
-                  >
-                    <div
-                      className="Tooltip-Content"
-                      role="tooltip"
-                    >
-                      Добавить в избранное
-                    </div>
-                    <TooltipBackdrop>
-                      <div
-                        className="Tooltip-Backdrop"
-                      />
-                    </TooltipBackdrop>
-                  </div>
-                </LayerManager>
+                  </LayerManager>
+                </Portal>
               </Portal>
             </Popup2>
           </RegistryResolver(Popup2)>

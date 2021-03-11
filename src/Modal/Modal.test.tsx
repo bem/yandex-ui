@@ -3,7 +3,7 @@ import { ReactWrapper, mount, render } from 'enzyme';
 import { ExtractProps } from '@bem-react/core';
 
 import { Modal as ModalCommon } from './Modal';
-import { Modal as ModalDesktop } from './Modal@desktop';
+import { Modal as ModalDesktop } from './Modal';
 import { Modal as ModalTouchPad } from './Modal@touch-phone';
 import { Modal as ModalTouchPhone } from './Modal@touch-pad';
 import { serverEnvironmentSetup, delay } from '../internal/utils';
@@ -49,34 +49,6 @@ describe.each<any>(platforms)('Modal@%s', (_platform, Modal: ComponentType<Modal
 
         test('должен быть установлен корректный displayName', () => {
             expect(ModalCommon.displayName).toBe('Modal');
-        });
-
-        test('должен устанавливать модификатор visible если открыт при инициализации', () => {
-            wrapper = mount(<Modal visible />);
-            expect(
-                wrapper
-                    .find('.Modal')
-                    .last()
-                    .hasClass('Modal_visible'),
-            ).toEqual(true);
-        });
-
-        test('должен устанавливать/удалять модификатор visible при открытии/закрытии', () => {
-            wrapper = mount(<Modal />);
-            wrapper.setProps({ visible: true });
-            expect(
-                wrapper
-                    .find('.Modal')
-                    .last()
-                    .hasClass('Modal_visible'),
-            ).toEqual(true);
-            wrapper.setProps({ visible: false });
-            expect(
-                wrapper
-                    .find('.Modal')
-                    .last()
-                    .hasClass('Modal_visible'),
-            ).toEqual(false);
         });
     });
 });

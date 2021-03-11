@@ -25,6 +25,8 @@ export type LayerManagerProps = {
     essentialRefs: RefObject<HTMLElement>[];
 };
 
+export type LayerManagerExtendableProps = Pick<LayerManagerProps, 'onClose'>;
+
 export type OnClose = (event: KeyboardEvent | MouseEvent, source: 'esc' | 'click') => void;
 
 type LayerId = string;

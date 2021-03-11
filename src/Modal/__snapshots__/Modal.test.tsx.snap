@@ -1,361 +1,274 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Modal@desktop client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
-<RegistryResolver(Modal)
+<Modal
   className="mix"
   visible={true}
 >
-  <Modal
-    className="mix"
+  <Portal
     visible={true}
   >
-    <RegistryResolver(Popup2)
-      className="Modal Modal_visible Modal_hasAnimation mix"
-      unstable_hostRef={
-        Object {
-          "current": <div
-            class="Modal-Content"
+    <Portal
+      containerInfo={
+        <body
+          style="overflow: hidden; overflow-x: hidden; overflow-y: hidden;"
+        >
+          <div
+            class="Modal Modal_visible Modal_hasAnimation mix"
           >
-            content
-          </div>,
-        }
-      }
-      visible={true}
-    >
-      <Popup2
-        className="Modal Modal_visible Modal_hasAnimation mix"
-        unstable_hostRef={
-          Object {
-            "current": <div
-              class="Modal-Content"
-            >
-              content
-            </div>,
-          }
-        }
-        visible={true}
-      >
-        <Portal
-          containerInfo={
-            <body
-              style="overflow: hidden; overflow-x: hidden; overflow-y: hidden;"
+            <div
+              class="Modal-Overlay"
+            />
+            <div
+              class="Modal-Wrapper"
             >
               <div
-                class="Popup2 Popup2_visible Modal Modal_visible Modal_hasAnimation mix"
+                class="Modal-Table"
               >
                 <div
-                  class="Modal-Overlay"
-                />
-                <div
-                  class="Modal-Wrapper"
+                  class="Modal-Cell Modal-Cell_align_middle"
                 >
                   <div
-                    class="Modal-Table"
-                  >
-                    <div
-                      class="Modal-Cell Modal-Cell_align_middle"
-                    >
-                      <div
-                        class="Modal-Content"
-                      >
-                        content
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </body>
-          }
-        >
-          <LayerManager
-            essentialRefs={
-              Array [
-                Object {
-                  "current": <div
                     class="Modal-Content"
                   >
                     content
-                  </div>,
-                },
-              ]
-            }
-            visible={true}
-          >
-            <div
-              className="Popup2 Popup2_visible Modal Modal_visible Modal_hasAnimation mix"
-              style={
-                Object {
-                  "zIndex": undefined,
-                }
-              }
-            >
-              <div
-                className="Modal-Overlay"
-              />
-              <div
-                className="Modal-Wrapper"
-              >
-                <div
-                  className="Modal-Table"
-                >
-                  <div
-                    className="Modal-Cell Modal-Cell_align_middle"
-                  >
-                    <div
-                      className="Modal-Content"
-                    >
-                      content
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </LayerManager>
-        </Portal>
-      </Popup2>
-    </RegistryResolver(Popup2)>
-  </Modal>
-</RegistryResolver(Modal)>
+          </div>
+        </body>
+      }
+    >
+      <LayerManager
+        essentialRefs={
+          Array [
+            Object {
+              "current": <div
+                class="Modal-Content"
+              >
+                content
+              </div>,
+            },
+          ]
+        }
+        visible={true}
+      >
+        <div
+          className="Modal Modal_visible Modal_hasAnimation mix"
+          style={
+            Object {
+              "zIndex": undefined,
+            }
+          }
+        >
+          <div
+            className="Modal-Overlay"
+          />
+          <div
+            className="Modal-Wrapper"
+          >
+            <div
+              className="Modal-Table"
+            >
+              <div
+                className="Modal-Cell Modal-Cell_align_middle"
+              >
+                <div
+                  className="Modal-Content"
+                >
+                  content
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </LayerManager>
+    </Portal>
+  </Portal>
+</Modal>
 `;
 
 exports[`Modal@desktop server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `null`;
 
 exports[`Modal@touch-pad client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
-<RegistryResolver(Modal)
+<Modal
   className="mix"
   visible={true}
 >
-  <Modal
-    className="mix"
+  <Portal
     visible={true}
   >
-    <RegistryResolver(Popup2)
-      className="Modal Modal_visible Modal_hasAnimation mix"
-      unstable_hostRef={
-        Object {
-          "current": <div
-            class="Modal-Content"
+    <Portal
+      containerInfo={
+        <body
+          style="overflow: hidden; overflow-x: hidden; overflow-y: hidden;"
+        >
+          <div
+            class="Modal Modal_visible Modal_hasAnimation mix"
           >
-            content
-          </div>,
-        }
-      }
-      visible={true}
-    >
-      <Popup2
-        className="Modal Modal_visible Modal_hasAnimation mix"
-        unstable_hostRef={
-          Object {
-            "current": <div
-              class="Modal-Content"
-            >
-              content
-            </div>,
-          }
-        }
-        visible={true}
-      >
-        <Portal
-          containerInfo={
-            <body
-              style="overflow: hidden; overflow-x: hidden; overflow-y: hidden;"
+            <div
+              class="Modal-Overlay"
+            />
+            <div
+              class="Modal-Wrapper"
             >
               <div
-                class="Popup2 Popup2_visible Modal Modal_visible Modal_hasAnimation mix"
+                class="Modal-Table"
               >
                 <div
-                  class="Modal-Overlay"
-                />
-                <div
-                  class="Modal-Wrapper"
+                  class="Modal-Cell Modal-Cell_align_middle"
                 >
                   <div
-                    class="Modal-Table"
-                  >
-                    <div
-                      class="Modal-Cell Modal-Cell_align_middle"
-                    >
-                      <div
-                        class="Modal-Content"
-                      >
-                        content
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </body>
-          }
-        >
-          <LayerManager
-            essentialRefs={
-              Array [
-                Object {
-                  "current": <div
                     class="Modal-Content"
                   >
                     content
-                  </div>,
-                },
-              ]
-            }
-            visible={true}
-          >
-            <div
-              className="Popup2 Popup2_visible Modal Modal_visible Modal_hasAnimation mix"
-              style={
-                Object {
-                  "zIndex": undefined,
-                }
-              }
-            >
-              <div
-                className="Modal-Overlay"
-              />
-              <div
-                className="Modal-Wrapper"
-              >
-                <div
-                  className="Modal-Table"
-                >
-                  <div
-                    className="Modal-Cell Modal-Cell_align_middle"
-                  >
-                    <div
-                      className="Modal-Content"
-                    >
-                      content
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </LayerManager>
-        </Portal>
-      </Popup2>
-    </RegistryResolver(Popup2)>
-  </Modal>
-</RegistryResolver(Modal)>
+          </div>
+        </body>
+      }
+    >
+      <LayerManager
+        essentialRefs={
+          Array [
+            Object {
+              "current": <div
+                class="Modal-Content"
+              >
+                content
+              </div>,
+            },
+          ]
+        }
+        visible={true}
+      >
+        <div
+          className="Modal Modal_visible Modal_hasAnimation mix"
+          style={
+            Object {
+              "zIndex": undefined,
+            }
+          }
+        >
+          <div
+            className="Modal-Overlay"
+          />
+          <div
+            className="Modal-Wrapper"
+          >
+            <div
+              className="Modal-Table"
+            >
+              <div
+                className="Modal-Cell Modal-Cell_align_middle"
+              >
+                <div
+                  className="Modal-Content"
+                >
+                  content
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </LayerManager>
+    </Portal>
+  </Portal>
+</Modal>
 `;
 
 exports[`Modal@touch-pad server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `null`;
 
 exports[`Modal@touch-phone client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
-<RegistryResolver(Modal)
+<Modal
   className="mix"
   visible={true}
 >
-  <Modal
-    className="mix"
+  <Portal
     visible={true}
   >
-    <RegistryResolver(Popup2)
-      className="Modal Modal_visible Modal_hasAnimation mix"
-      unstable_hostRef={
-        Object {
-          "current": <div
-            class="Modal-Content"
+    <Portal
+      containerInfo={
+        <body
+          style="overflow: hidden; overflow-x: hidden; overflow-y: hidden;"
+        >
+          <div
+            class="Modal Modal_visible Modal_hasAnimation mix"
           >
-            content
-          </div>,
-        }
-      }
-      visible={true}
-    >
-      <Popup2
-        className="Modal Modal_visible Modal_hasAnimation mix"
-        unstable_hostRef={
-          Object {
-            "current": <div
-              class="Modal-Content"
-            >
-              content
-            </div>,
-          }
-        }
-        visible={true}
-      >
-        <Portal
-          containerInfo={
-            <body
-              style="overflow: hidden; overflow-x: hidden; overflow-y: hidden;"
+            <div
+              class="Modal-Overlay"
+            />
+            <div
+              class="Modal-Wrapper"
             >
               <div
-                class="Popup2 Popup2_visible Modal Modal_visible Modal_hasAnimation mix"
+                class="Modal-Table"
               >
                 <div
-                  class="Modal-Overlay"
-                />
-                <div
-                  class="Modal-Wrapper"
+                  class="Modal-Cell Modal-Cell_align_middle"
                 >
                   <div
-                    class="Modal-Table"
-                  >
-                    <div
-                      class="Modal-Cell Modal-Cell_align_middle"
-                    >
-                      <div
-                        class="Modal-Content"
-                      >
-                        content
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </body>
-          }
-        >
-          <LayerManager
-            essentialRefs={
-              Array [
-                Object {
-                  "current": <div
                     class="Modal-Content"
                   >
                     content
-                  </div>,
-                },
-              ]
-            }
-            visible={true}
-          >
-            <div
-              className="Popup2 Popup2_visible Modal Modal_visible Modal_hasAnimation mix"
-              style={
-                Object {
-                  "zIndex": undefined,
-                }
-              }
-            >
-              <div
-                className="Modal-Overlay"
-              />
-              <div
-                className="Modal-Wrapper"
-              >
-                <div
-                  className="Modal-Table"
-                >
-                  <div
-                    className="Modal-Cell Modal-Cell_align_middle"
-                  >
-                    <div
-                      className="Modal-Content"
-                    >
-                      content
-                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </LayerManager>
-        </Portal>
-      </Popup2>
-    </RegistryResolver(Popup2)>
-  </Modal>
-</RegistryResolver(Modal)>
+          </div>
+        </body>
+      }
+    >
+      <LayerManager
+        essentialRefs={
+          Array [
+            Object {
+              "current": <div
+                class="Modal-Content"
+              >
+                content
+              </div>,
+            },
+          ]
+        }
+        visible={true}
+      >
+        <div
+          className="Modal Modal_visible Modal_hasAnimation mix"
+          style={
+            Object {
+              "zIndex": undefined,
+            }
+          }
+        >
+          <div
+            className="Modal-Overlay"
+          />
+          <div
+            className="Modal-Wrapper"
+          >
+            <div
+              className="Modal-Table"
+            >
+              <div
+                className="Modal-Cell Modal-Cell_align_middle"
+              >
+                <div
+                  className="Modal-Content"
+                >
+                  content
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </LayerManager>
+    </Portal>
+  </Portal>
+</Modal>
 `;
 
 exports[`Modal@touch-phone server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `null`;

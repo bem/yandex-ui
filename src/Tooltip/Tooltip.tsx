@@ -50,22 +50,20 @@ export const Tooltip: FC<TooltipProps> = ({
     innerRef,
     keepMounted,
     mainOffset,
+    onClick,
+    onClose,
     scope,
     secondaryOffset,
     state,
     tailOffset,
     visible,
     zIndex,
-    onClose,
-    onClick,
 }) => {
     const defaultMainOffset = hasTail ? 0 : 4;
     const { Popup } = useComponentRegistry<TooltipRegistry>(cnTooltip());
 
     return (
         <Popup
-            onClose={onClose}
-            onClick={onClick}
             anchor={anchor}
             className={cnTooltip({ visible, state }, [className])}
             direction={direction}
@@ -73,6 +71,8 @@ export const Tooltip: FC<TooltipProps> = ({
             innerRef={innerRef}
             keepMounted={keepMounted}
             mainOffset={mainOffset || defaultMainOffset}
+            onClick={onClick}
+            onClose={onClose}
             scope={scope}
             secondaryOffset={secondaryOffset}
             tailOffset={tailOffset}

@@ -48,8 +48,8 @@ export const MessageBoxPopup: FC<MessageBoxPopupProps> = (props) => {
             mainOffset={mainOffset}
             motionless={motionless}
             nonvisual
-            onClose={onClose}
             onClick={onClick}
+            onClose={onClose}
             scope={scope}
             secondaryOffset={secondaryOffset}
             tailOffset={tailOffset}

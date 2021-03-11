@@ -44,7 +44,11 @@ exports[`Drawer client environment должен вернуть полный ша
             }
           }
           visible={false}
-        />
+        >
+          <Portal
+            visible={false}
+          />
+        </Popup2>
       </RegistryResolver(Popup2)>
     </Drawer>
   </RegistryResolver(Drawer)>

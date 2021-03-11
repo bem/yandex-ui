@@ -1,19 +1,12 @@
-import React, { FC, useRef } from 'react';
-import { useComponentRegistry } from '@bem-react/di';
+import React, { FC, MouseEventHandler, RefObject, useRef } from 'react';
 import { cn } from '@bem-react/classname';
 
-import { IPopupProps } from '../Popup/Popup';
-import { IModalRegistry } from './Modal.registry/interface';
 import { usePreventScroll } from '../usePreventScroll';
-
+import { PortalExtendableProps, Portal } from '../Portal';
+import { LayerManagerExtendableProps, LayerManager } from '../LayerManager';
 import './Modal.css';
 
-type PartialPopupProps = Pick<
-    IPopupProps,
-    'keepMounted' | 'className' | 'innerRef' | 'zIndex' | 'visible' | 'scope' | 'onClose' | 'onClick'
->;
-
-export interface IModalProps extends PartialPopupProps {
+export interface IModalProps extends PortalExtendableProps, LayerManagerExtendableProps {
     /**
      * Выравнивание контента по вертикали
      *
@@ -34,6 +27,26 @@ export interface IModalProps extends PartialPopupProps {
      * @default true
      */
     preventBodyScroll?: boolean;
+
+    /**
+     * Дополнительный класс у корневого DOM-элемента
+     */
+    className?: string;
+
+    /**
+     * Обработчик, вызываемый при срабатывании события click
+     */
+    onClick?: MouseEventHandler<HTMLDivElement>;
+
+    /**
+     * Ссылка на корневой DOM-элемент компонента
+     */
+    innerRef?: RefObject<HTMLDivElement>;
+
+    /**
+     * Задает слой `z-index`
+     */
+    zIndex?: number;
 }
 
 export const cnModal = cn('Modal');
@@ -47,35 +60,41 @@ export const Modal: FC<IModalProps> = ({
     className,
     contentVerticalAlign: align = 'middle',
     hasAnimation = true,
-    visible,
+    innerRef,
+    keepMounted,
+    onClose,
     preventBodyScroll = true,
-    onClick,
+    scope,
+    visible,
+    zIndex,
     ...props
 }) => {
     const contentRef = useRef<HTMLDivElement>(null);
-    const { Popup } = useComponentRegistry<IModalRegistry>(cnModal());
 
     usePreventScroll({ enabled: preventBodyScroll && visible });
 
     return (
-        <Popup
-            {...props}
-            className={cnModal({ visible, hasAnimation }, [className])}
-            visible={visible}
-            unstable_hostRef={contentRef}
-            onClick={onClick}
-        >
-            <div className={cnModal('Overlay')} />
-            <div className={cnModal('Wrapper')}>
-                <div className={cnModal('Table')}>
-                    <div className={cnModal('Cell', { align })}>
-                        <div ref={contentRef} className={cnModal('Content')}>
-                            {children}
+        <Portal scope={scope} visible={visible} keepMounted={keepMounted}>
+            <LayerManager visible={visible} onClose={onClose} essentialRefs={[contentRef]}>
+                <div
+                    {...props}
+                    ref={innerRef}
+                    className={cnModal({ visible, hasAnimation }, [className])}
+                    style={{ zIndex }}
+                >
+                    <div className={cnModal('Overlay')} />
+                    <div className={cnModal('Wrapper')}>
+                        <div className={cnModal('Table')}>
+                            <div className={cnModal('Cell', { align })}>
+                                <div ref={contentRef} className={cnModal('Content')}>
+                                    {children}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </Popup>
+            </LayerManager>
+        </Portal>
     );
 };
 
