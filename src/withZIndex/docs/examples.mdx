@@ -7,6 +7,13 @@ import withZIndexDefaultSource from '!!raw-loader!../__examples__/default.tsx'
 
 ### Обновление z-index
 
+<Disclaimer>
+    <p>
+    Важно! Лучше не используйте модификатор <b>withZIndex</b> с <b>Popup</b>, <b>Modal</b>, <b>Tooltip</b>, <b>MessageBox</b>. 
+    Каждый из этих компонентов имеет свой <i>z-index</i> и его переопределение может привести к ошибкам.
+    </p>
+</Disclaimer>
+
 `zIndexGroupLevel` позволяет объединять компоненты в общее пространство z-index. Компоненты с `zIndexGroupLevel` 0 имеют z-index от 1000, с 1 от 2000 и так далее.
 Z-index пересчитывается когда компонент меняет свое состояние из `visible` `false` в `true`.
 
