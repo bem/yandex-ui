@@ -1,11 +1,17 @@
-import './pointerfocus';
+import { dispose } from './pointerfocus';
 
-describe('Pointerfocus', () => {
-    test('по умолчанию должен выставлять utilityfocus на body', () => {
+describe('pointerfocus', () => {
+    beforeEach(() => {
+        const event = document.createEvent('Event');
+        event.initEvent('DOMContentLoaded');
+        window.document.dispatchEvent(event);
+    });
+
+    test('should set utilityfocus className for body after init', () => {
         expect(window.document.body.classList.contains('utilityfocus')).toBe(true);
     });
 
-    test('должен выставлять utilityfocus на body по onKeyDown/focusin', () => {
+    test('should set utilityfocus className for body after keydown/focusin', () => {
         window.document.dispatchEvent(new Event('keydown'));
         expect(window.document.body.classList.contains('utilityfocus')).toBe(true);
 
@@ -13,7 +19,7 @@ describe('Pointerfocus', () => {
         expect(window.document.body.classList.contains('utilityfocus')).toBe(true);
     });
 
-    test('должен выставлять pointerfocus на body по mousedown/mouseup', () => {
+    test('should set pointerfocus className for body after mousedown/mouseup', () => {
         window.document.dispatchEvent(new Event('mousedown'));
         window.document.dispatchEvent(new Event('focusin'));
         expect(window.document.body.classList.contains('pointerfocus')).toBe(true);
@@ -21,5 +27,11 @@ describe('Pointerfocus', () => {
         window.dispatchEvent(new Event('blur'));
         window.document.dispatchEvent(new Event('mouseup'));
         expect(window.document.body.classList.contains('pointerfocus')).toBe(true);
+    });
+
+    test('should remove className after dispose', () => {
+        dispose();
+        expect(window.document.body.classList.contains('pointerfocus')).toBe(false);
+        expect(window.document.body.classList.contains('utilityfocus')).toBe(false);
     });
 });

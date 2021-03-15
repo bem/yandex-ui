@@ -1,5 +1,4 @@
 import { canUseDOM } from '../../lib/canUseDOM';
-import { Nullable } from '../../typings/utility-types';
 
 class PointerFocus {
     private timeoutId: number;
@@ -74,12 +73,16 @@ class PointerFocus {
     };
 }
 
-let pointerFocus: Nullable<PointerFocus> = null;
+let pointerFocusInstance: PointerFocus | null = null;
+let disposed = false;
 
 if (canUseDOM()) {
-    if (pointerFocus === null) {
-        pointerFocus = PointerFocus.create();
-    }
+    document.addEventListener('DOMContentLoaded', () => {
+        if (disposed) {
+            return;
+        }
+        pointerFocusInstance = PointerFocus.create();
+    });
 }
 
 /**
@@ -88,7 +91,8 @@ if (canUseDOM()) {
  * @internal
  */
 export function dispose() {
-    if (pointerFocus) {
-        pointerFocus.dispose();
+    disposed = true;
+    if (pointerFocusInstance) {
+        pointerFocusInstance.dispose();
     }
 }
