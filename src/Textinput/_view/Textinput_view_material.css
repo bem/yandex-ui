@@ -62,6 +62,35 @@
     right: calc(var(--textinput-view-material-space-right) * 2 + var(--textinput-view-material-icon-width));
 }
 
+/* label */
+.Textinput_view_material .Textinput-Label {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    right: initial;
+    left: 0;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+    pointer-events: none;
+
+    color: var(--textinput-view-material-label-color-base);
+
+    transition: color .15s cubic-bezier(.4, 0, .2, 1) 0s, transform .15s cubic-bezier(.4, 0, .2, 1) 0s, top .15s cubic-bezier(.4, 0, .2, 1) 0s;
+    transform: translate(0, -50%) scale(1);
+    transform-origin: top left;
+    will-change: transform;
+}
+
+.Textinput_view_material .Textinput-Label_floated {
+    top: 0;
+
+    color: var(--textinput-view-material-label-color-floated-base);
+
+    transform: translate(0, 9.5px) scale(0.75);
+}
+
 .Textinput_view_material.Textinput_iconLeft .Textinput-Label {
     left: calc(var(--textinput-view-material-space-left) * 2 + var(--textinput-view-material-icon-width));
 }
