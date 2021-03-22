@@ -130,6 +130,7 @@
     --button-view-default-fill-color-checked-base: var(--color-control-bg-check);
     --button-view-default-fill-color-checked-hovered: var(--color-control-bg-check-hover);
     --button-view-default-typo-color-base: var(--color-control-typo-primary);
+    --button-view-default-typo-color-hovered: var(--color-control-typo-primary);
     --button-view-default-typo-color-disabled: var(--color-control-typo-disable);
     --button-view-default-typo-color-checked-base: var(--color-control-typo-faint);
     --button-view-default-typo-color-checked-hovered: var(--color-control-typo-faint);
