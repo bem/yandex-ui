@@ -4,6 +4,13 @@ id: Modal
 
 import { Playground as ModalPlayground } from '../__examples__/playground.tsx'
 import modalPlaygroundSource from '!!raw-loader!../__examples__/playground.tsx'
+import { FocusTrap as ModalFocusTrap } from '../__examples__/focus-trap.tsx'
+import modalFocusTrapSource from '!!raw-loader!../__examples__/focus-trap.tsx'
+import { AutoFocus as ModalAutoFocus } from '../__examples__/auto-focus.tsx'
+import modalAutoFocusSource from '!!raw-loader!../__examples__/auto-focus.tsx'
+
+import stubsModalContentSource from '!!raw-loader!../__examples__/stubs/ModalContent.tsx'
+import stubsFieldSource from '!!raw-loader!../__examples__/stubs/Field.tsx'
 
 ### Базовое использование
 
@@ -13,6 +20,93 @@ import modalPlaygroundSource from '!!raw-loader!../__examples__/playground.tsx'
     component={ModalPlayground}
     source={modalPlaygroundSource}
 />
+
+### Управление фокусом
+
+Далее, термин `элемент табуляции` будет относится к элементу, у которого значение атрибута `tabIndex` больше или равно нулю.
+
+**Принцип работы**
+
+- при открытии модального окна, фокус переходит на первый элемент табуляции.
+- при нажатии на клавишу `Tab`:
+  - фокус перемещается на следующий элемент табуляции
+  - если фокус находится на последнем элементе, то фокус перемещается на первый элемент табуляции
+- при нажатии на клавишу `Shift+Tab`:
+  - фокус перемещается на предыдущий элемент табуляции
+  - если фокус находится на первом элементе, то фокус перемещается на последний элемент табуляции
+- при закрытии модального окна фокус возвращается на элемент, который вызвал его.
+
+> Важно! Данный функционал включен по-умолчанию, так как соответствует тому, как должны работать модальные окна согласно спецификации доступности. Однако могут быть сценарии, в которых вам нужно вручную контролировать управление фокусом. Для этого, модальное окно поддерживает следующие свойства для управления фокусом:
+
+- `autoFocus` - выставляет фокус на первый элемент табуляции, после открытия модального окна. По-умолчанию, значение `true`.
+
+- `restoreFocus` - включает или отключает возврат фокуса на элемент при закрытии модального окна. По-умолчанию, значение `true`.
+
+- `restoreFocusRef` - ссылка на элемент, который получит фокус после закрытия модального окна. По-умолчанию, значение `document.activeElement`, которое выставляется в момент открытия модального окна.
+
+> Если вы установите `restoreFocus` в значение `false` вместе c `restoreFocusRef`, то фокус не вернется на `restoreFocusRef` после закрытия модального окна.
+
+<Example
+    component={ModalFocusTrap}
+    source={modalFocusTrapSource}
+/>
+
+> На текущий момент нельзя задать ссылку на элемент, на который необходимо переместить фокус при открытии модального окна. В данном случае есть 2 споcоба решение проблемы:
+> - установить свойство `autoFocus` на необходимый элемент внутри модального окна.
+> - программно установить фокус на элемент при открытии модального окна.
+
+**Установка фокуса при открытии модального окна с помощью свойства `autoFocus`**
+
+Данный метод очень простой, но в тоже время обладает одним недостатком – из-за особеностей работы `React`, фокус устанавилвается только один раз при монтирования компонента. Для того, чтобы фокус устанавливался при кажом открытии модального окна, нужно передать свойство `keepMounted` со значением `false`, но при этом, после каждого закрытия, модальное окно будет удаляться из DOM.
+
+```tsx
+import React, { FC, useCallback, useEffect, useRef, useState } from 'react';
+import { Modal } from '@yandex-lego/components/Modal/desktop/bundle';
+import { Textinput } from '@yandex-lego/components/Textinput/desktop/bundle';
+
+const Example = ({ visible, onClose }) => {
+    return (
+        <Modal theme="normal" keepMounted={false} visible={visible} onClose={onClose}>
+            <Textinput view="default" size="m" autoFocus />
+        </Modal>
+    );
+};
+```
+
+**Программная установка фокуса при открытии модального окна**
+
+У данного метода отсутствует такой недостаток, как при установке свойства `autoFocus`, но на текущий момент требуется написать больше кода. Возможно, в будущем, мы поддержим такой метод установки фокуса из коробки.
+
+<Example
+    component={ModalAutoFocus}
+    source={modalAutoFocusSource}
+    codeSandboxFiles={{
+        'stubs/ModalContent.tsx': {
+            content: stubsModalContentSource,
+            isBinary: false,
+        },
+        'stubs/Field.tsx': {
+            content: stubsFieldSource,
+            isBinary: false,
+        }
+    }}
+/>
+
+### Отключение удержания фокуса
+
+По-умолчанию, модальное окно удерживает фокус внутри своего содержимого. Это соответствует тому, как должны работать модальные окна согласно спецификации доступности.
+
+Для отключения удержания фокуса передайте свойство `trapFocus` со значение `false`.
+
+```tsx
+<Modal trapFocus={false} {...props} />
+```
+
+<Disclaimer>
+    <p>
+    Хотя не рекомендуется использовать этот вариант, из-за того что, это влияет на доступность компонента, но могут возникнуть определенные ситуации, когда вы, возможно, не захотите, чтобы модальное окно удерживало фокус.
+    </p>
+</Disclaimer>
 
 ### Классический дизайн
 

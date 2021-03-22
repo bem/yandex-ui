@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useFocusTrap должен обновить DOM если поменялась ссылка на контейнер 1`] = `
+<div
+  data-testid="wrapper"
+>
+  <div
+    data-testid="container"
+  >
+    <span
+      aria-hidden="true"
+      data-focus-trap-guard="true"
+      style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+      tabindex="1"
+    />
+    <div
+      data-testid="container-1"
+    />
+    <span
+      aria-hidden="true"
+      data-focus-trap-guard="true"
+      style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+      tabindex="0"
+    />
+    <div
+      data-testid="container-2"
+    />
+  </div>
+</div>
+`;
+
+exports[`useFocusTrap должен обновить DOM если поменялась ссылка на контейнер 2`] = `
+<div
+  data-testid="wrapper"
+>
+  <div
+    data-testid="container"
+  >
+    <div
+      data-testid="container-1"
+    />
+    <span
+      aria-hidden="true"
+      data-focus-trap-guard="true"
+      style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+      tabindex="1"
+    />
+    <div
+      data-testid="container-2"
+    />
+    <span
+      aria-hidden="true"
+      data-focus-trap-guard="true"
+      style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+      tabindex="0"
+    />
+  </div>
+</div>
+`;
+
+exports[`useFocusTrap должен обновить DOM если поменялась ссылка на контейнер 3`] = `
+<div
+  data-testid="wrapper"
+>
+  <div
+    data-testid="container"
+  >
+    <div
+      data-testid="container-1"
+    />
+    <div
+      data-testid="container-2"
+    />
+  </div>
+</div>
+`;
+
+exports[`useFocusTrap должен создать элементы-ловушки для контейнера только при включенном состоянии 1`] = `
+<div
+  data-testid="wrapper"
+>
+  <div
+    data-testid="container"
+  />
+</div>
+`;
+
+exports[`useFocusTrap должен создать элементы-ловушки для контейнера только при включенном состоянии 2`] = `
+<div
+  data-testid="wrapper"
+>
+  <span
+    aria-hidden="true"
+    data-focus-trap-guard="true"
+    style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+    tabindex="1"
+  />
+  <div
+    data-testid="container"
+  />
+  <span
+    aria-hidden="true"
+    data-focus-trap-guard="true"
+    style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+    tabindex="0"
+  />
+</div>
+`;
+
+exports[`useFocusTrap должен создать элементы-ловушки для контейнера только при включенном состоянии 3`] = `
+<div
+  data-testid="wrapper"
+>
+  <div
+    data-testid="container"
+  />
+</div>
+`;

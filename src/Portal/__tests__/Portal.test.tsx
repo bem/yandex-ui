@@ -1,5 +1,4 @@
 import React, { useLayoutEffect, useRef } from 'react';
-import '@testing-library/jest-dom/extend-expect';
 
 import { Portal } from '../Portal';
 import { screen, queryByTestId, createClientRender, createServerRender, createContainer } from '../../internal/testing';

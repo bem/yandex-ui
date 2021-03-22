@@ -4,9 +4,11 @@
  * рендеринга, что и сделано. Подробнее http://cantina.co/thought_leadership/ios-5-native-scrolling-grins-and-gothcas/
  */
 
-/* Усиливаем селектор, т.к. Modal является миксом для Popup
-   из-за этого стили могут приезжать не в правильном порядке */
-.Modal[class] {
+.Modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+
     display: none;
 }
 
@@ -61,6 +63,7 @@
     text-align: left;
 
     border-radius: var(--modal-border-radius);
+    outline: none;
 
     transform: translate3d(0, 0, 0); /* 1 */
 }

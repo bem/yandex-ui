@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`focus-trap getTabbables должен вернуть tabbable-элементы внутри контейнера 1`] = `
+Array [
+  "link-tabindex",
+  "input",
+  "input-readonly",
+  "textarea",
+  "textarea-readonly",
+  "select",
+  "select-readonly",
+  "link-anchor",
+  "button",
+  "audio-control",
+  "video-control",
+  "div-tabindex",
+  "div-contenteditable-true",
+  "div-contenteditable-nesting",
+  "button-visible-parent-hidden",
+]
+`;
+
+exports[`focus-trap getTabbables должен отфильтровать tabbable-элементы 1`] = `
+Array [
+  "button",
+  "button-visible-parent-hidden",
+]
+`;

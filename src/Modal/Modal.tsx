@@ -2,11 +2,43 @@ import React, { FC, MouseEventHandler, RefObject, useRef } from 'react';
 import { cn } from '@bem-react/classname';
 
 import { usePreventScroll } from '../usePreventScroll';
+import { useFocusTrap } from '../useFocusTrap';
 import { PortalExtendableProps, Portal } from '../Portal';
 import { LayerManagerExtendableProps, LayerManager } from '../LayerManager';
 import './Modal.css';
 
-export interface IModalProps extends PortalExtendableProps, LayerManagerExtendableProps {
+interface FocusTrapProps {
+    /**
+     * Включить ловушку фокуса
+     *
+     * @default true
+     */
+    trapFocus?: boolean;
+
+    /**
+     * Выставить фокус на первый интерактивный элемент
+     * в пределах модального окна
+     *
+     * @default true
+     */
+    autoFocus?: boolean;
+
+    /**
+     * Вернуть фокус на элемент после закрытия,
+     * который вызвал модальное окно
+     *
+     * @default true
+     */
+    restoreFocus?: boolean;
+
+    /**
+     * Ссылка на элемент, на который будет возвращен
+     * фокус после закрытия
+     */
+    restoreFocusRef?: RefObject<HTMLElement>;
+}
+
+export interface IModalProps extends PortalExtendableProps, LayerManagerExtendableProps, FocusTrapProps {
     /**
      * Выравнивание контента по вертикали
      *
@@ -67,11 +99,22 @@ export const Modal: FC<IModalProps> = ({
     scope,
     visible,
     zIndex,
+    trapFocus = true,
+    autoFocus = true,
+    restoreFocus = true,
+    restoreFocusRef,
     ...props
 }) => {
     const contentRef = useRef<HTMLDivElement>(null);
 
     usePreventScroll({ enabled: preventBodyScroll && visible });
+    useFocusTrap({
+        enabled: trapFocus && visible,
+        scopeRef: contentRef,
+        autoFocus,
+        restoreFocus,
+        restoreFocusRef,
+    });
 
     return (
         <Portal scope={scope} visible={visible} keepMounted={keepMounted}>
@@ -86,7 +129,13 @@ export const Modal: FC<IModalProps> = ({
                     <div className={cnModal('Wrapper')}>
                         <div className={cnModal('Table')}>
                             <div className={cnModal('Cell', { align })}>
-                                <div ref={contentRef} className={cnModal('Content')}>
+                                <div
+                                    ref={contentRef}
+                                    className={cnModal('Content')}
+                                    tabIndex={-1}
+                                    role="dialog"
+                                    aria-modal
+                                >
                                     {children}
                                 </div>
                             </div>
