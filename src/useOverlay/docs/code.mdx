@@ -1,0 +1,38 @@
+---
+id: UseOverlay
+---
+
+import useOverlayOptions from '!!ts-docgen-loader!./props.tsx';
+
+## Использование
+
+```tsx
+import React, { useRef, useState, useMemo } from 'react';
+import { useOverlay, OnClose } from '@yandex-lego/components/useOverlay';
+
+export interface ModalProps {
+  visible?: boolean;
+  onClose?: OnClose;
+}
+
+const Modal: FC<ModalProps> = (props) => {
+  const { visible, onClose, children } = props;
+  const hostRef = useRef(null);
+
+  useOverlay({ visible, onClose, essentialRefs: [hostRef] });
+
+  return <div ref={hostRef}>{children}</div>;
+}
+```
+
+## Принцип работы
+
+Т.к. инстансов компонента может быть несколько и они могут быть не вложены друг в друга, то вся информация хранится во внутреннем менеджере слоёв, который реализует следующий алгоритм:
+
+1. При установке `visible: true` в стек добавляется слой с обработчиком закрытия (`onClose`) и набором ссылок на DOM-узлы (`essentialRefs`).
+2. После нажатия на клавишу `escape`, либо при нажатии мышкой вне `essentialRefs` узлов происходит вызов последнего обработчика (`onClose`) из стека с источником нажатия (`esc` или `click`).
+3. После установки `visible: false` из стека удаляется слой с обработчиком и набором ссылок.
+
+### Параметры
+
+<PropsTable props={useOverlayOptions} />

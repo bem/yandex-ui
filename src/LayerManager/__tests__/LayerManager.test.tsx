@@ -2,7 +2,7 @@ import React, { FC, useRef } from 'react';
 import { render, fireEvent } from '@testing-library/react';
 
 import { LayerManager } from '../LayerManager';
-import { delay } from '../../internal/utils/delay';
+import { OverlayManager } from '../../useOverlay';
 
 const LayerUnitCase: FC<any> = ({ onClose1, onClose2, onClose3, visible1, visible2, visible3 }) => {
     const contentRef1 = useRef<HTMLDivElement>(null);
@@ -26,6 +26,8 @@ const LayerUnitCase: FC<any> = ({ onClose1, onClose2, onClose3, visible1, visibl
 };
 
 describe('LayerManager', () => {
+    const manager = OverlayManager.getInstance();
+
     test('должен быть установлен корректный displayName', () => {
         expect(LayerManager.displayName).toBe('LayerManager');
     });
@@ -38,18 +40,15 @@ describe('LayerManager', () => {
         const { rerender } = render(
             <LayerUnitCase visible1={false} visible2={false} onClose1={onClose1} onClose2={onClose2} />,
         );
-        await delay(100);
-        expect(LayerManager.stack.length).toBe(0);
+        expect(manager.count()).toBe(0);
 
         // Рендерим первый слой видимым.
         rerender(<LayerUnitCase visible1 visible2={false} onClose1={onClose1} onClose2={onClose2} />);
-        await delay(100);
-        expect(LayerManager.stack.length).toBe(1);
+        expect(manager.count()).toBe(1);
 
         // Рендерим второй слой видимым.
         rerender(<LayerUnitCase visible1 visible2 onClose1={onClose1} onClose2={onClose2} />);
-        await delay(100);
-        expect(LayerManager.stack.length).toBe(2);
+        expect(manager.count()).toBe(2);
 
         // Вызываем второй onClose.
         fireEvent.keyUp(document.body, { key: 'Escape' });
@@ -61,8 +60,7 @@ describe('LayerManager', () => {
 
         // Рендерим второй слой невидимым.
         rerender(<LayerUnitCase visible1 visible2={false} onClose1={onClose1} onClose2={onClose2} />);
-        await delay(100);
-        expect(LayerManager.stack.length).toBe(1);
+        expect(manager.count()).toBe(1);
 
         // Вызываем первый onClose.
         fireEvent.keyUp(document.body, { key: 'Escape' });
@@ -71,8 +69,8 @@ describe('LayerManager', () => {
 
         // Рендерим первый слой невидимым.
         rerender(<LayerUnitCase visible1={false} visible2={false} onClose1={onClose1} onClose2={onClose2} />);
-        await delay(100);
-        expect(LayerManager.stack.length).toBe(0);
+
+        expect(manager.count()).toBe(0);
     });
 
     test('должен при нажатии на область вне essentialRefs вызывать onClose', async () => {
@@ -83,18 +81,15 @@ describe('LayerManager', () => {
         const { getByText, rerender } = render(
             <LayerUnitCase visible1={false} visible2={false} onClose1={onClose1} onClose2={onClose2} />,
         );
-        await delay(100);
-        expect(LayerManager.stack.length).toBe(0);
+        expect(manager.count()).toBe(0);
 
         // Рендерим первый слой видимым.
         rerender(<LayerUnitCase visible1 visible2={false} onClose1={onClose1} onClose2={onClose2} />);
-        await delay(100);
-        expect(LayerManager.stack.length).toBe(1);
+        expect(manager.count()).toBe(1);
 
         // Рендерим первый слой видимым.
         rerender(<LayerUnitCase visible1 visible2 onClose1={onClose1} onClose2={onClose2} />);
-        await delay(100);
-        expect(LayerManager.stack.length).toBe(2);
+        expect(manager.count()).toBe(2);
 
         // Клик в контент не должен вызывать onClose.
         fireEvent.mouseDown(getByText(/content-2/));
@@ -122,8 +117,7 @@ describe('LayerManager', () => {
 
         // Рендерим второй слой невидимым.
         rerender(<LayerUnitCase visible1 visible2={false} onClose1={onClose1} onClose2={onClose2} />);
-        await delay(100);
-        expect(LayerManager.stack.length).toBe(1);
+        expect(manager.count()).toBe(1);
 
         onClose1.mockReset();
         onClose2.mockReset();
@@ -136,8 +130,7 @@ describe('LayerManager', () => {
 
         // Рендерим первый слой невидимым.
         rerender(<LayerUnitCase visible1={false} visible2={false} onClose1={onClose1} onClose2={onClose2} />);
-        await delay(100);
-        expect(LayerManager.stack.length).toBe(0);
+        expect(manager.count()).toBe(0);
     });
 
     test('должен обновлять onClose', async () => {
@@ -149,23 +142,19 @@ describe('LayerManager', () => {
         const { rerender } = render(
             <LayerUnitCase visible1={false} visible2={false} onClose1={onClose1} onClose2={onClose2} />,
         );
-        await delay(100);
-        expect(LayerManager.stack.length).toBe(0);
+        expect(manager.count()).toBe(0);
 
         // Рендерим первый слой видимым.
         rerender(<LayerUnitCase visible1 visible2={false} onClose1={onClose1} onClose2={onClose2} />);
-        await delay(100);
-        expect(LayerManager.stack.length).toBe(1);
+        expect(manager.count()).toBe(1);
 
         // Рендерим второй слой видимым.
         // Приходится рендерить слои видимыми по очереди, т.к. в тестах и в браузере
         // очередность вызова useEffect - разная, и в тестах слои добавляются в неправильном порядке.
         rerender(<LayerUnitCase visible1 visible2 onClose1={onClose1} onClose2={onClose2} />);
-        await delay(100);
-        expect(LayerManager.stack.length).toBe(2);
+        expect(manager.count()).toBe(2);
 
         rerender(<LayerUnitCase visible1 visible2 onClose1={onClose1} onClose2={onClose3} />);
-        await delay(100);
 
         fireEvent.mouseDown(document.body);
         fireEvent.click(document.body);
@@ -179,8 +168,7 @@ describe('LayerManager', () => {
 
         // Рендерим второй слой невидимым
         rerender(<LayerUnitCase visible1 visible2={false} onClose1={onClose1} onClose2={onClose2} />);
-        await delay(100);
-        expect(LayerManager.stack.length).toBe(1);
+        expect(manager.count()).toBe(1);
 
         fireEvent.mouseDown(document.body);
         fireEvent.click(document.body);
@@ -196,28 +184,23 @@ describe('LayerManager', () => {
         const { rerender, unmount } = render(
             <LayerUnitCase visible1={false} visible3={false} onClose1={onClose} onClose3={onClose} />,
         );
-        await delay(100);
 
-        expect(LayerManager.stack).toHaveLength(0);
+        expect(manager.count()).toBe(0);
 
         // Рендерим первый слой видимым.
         rerender(<LayerUnitCase visible1 visible3={false} onClose1={onClose} onClose3={onClose} />);
-        await delay(500);
-        const [firstLayerId] = LayerManager.stack[LayerManager.stack.length - 1];
+        const firstOverlayOptions = manager.getTopOverlayOptions();
 
-        expect(LayerManager.stack).toHaveLength(1);
+        expect(manager.count()).toBe(1);
 
         // Рендерим предыдущий видимый слой невидимым, а второй слой видимым.
         rerender(<LayerUnitCase visible1={false} visible3 onClose1={onClose} onClose3={onClose} />);
-        await delay(100);
-        const [secondLayerId] = LayerManager.stack[LayerManager.stack.length - 1];
+        const secondOverlatOptions = manager.getTopOverlayOptions();
 
-        expect(LayerManager.stack).toHaveLength(1);
-        expect(firstLayerId).not.toBe(secondLayerId);
+        expect(manager.count()).toBe(1);
+        expect(firstOverlayOptions).not.toBe(secondOverlatOptions);
 
         unmount();
-        await delay(100);
-
-        expect(LayerManager.stack).toHaveLength(0);
+        expect(manager.count()).toBe(0);
     });
 });

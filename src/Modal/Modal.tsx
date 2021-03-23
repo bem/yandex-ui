@@ -3,8 +3,8 @@ import { cn } from '@bem-react/classname';
 
 import { usePreventScroll } from '../usePreventScroll';
 import { useFocusTrap } from '../useFocusTrap';
+import { useOverlay, OnClose } from '../useOverlay';
 import { PortalExtendableProps, Portal } from '../Portal';
-import { LayerManagerExtendableProps, LayerManager } from '../LayerManager';
 import './Modal.css';
 
 interface FocusTrapProps {
@@ -38,7 +38,7 @@ interface FocusTrapProps {
     restoreFocusRef?: RefObject<HTMLElement>;
 }
 
-export interface IModalProps extends PortalExtendableProps, LayerManagerExtendableProps, FocusTrapProps {
+export interface IModalProps extends PortalExtendableProps, FocusTrapProps {
     /**
      * Выравнивание контента по вертикали
      *
@@ -69,6 +69,12 @@ export interface IModalProps extends PortalExtendableProps, LayerManagerExtendab
      * Обработчик, вызываемый при срабатывании события click
      */
     onClick?: MouseEventHandler<HTMLDivElement>;
+
+    /**
+     * Обработчик, вызывающийся после нажатия на клавишу esc,
+     * либо мышкой на область вне контейнера
+     */
+    onClose?: OnClose;
 
     /**
      * Ссылка на корневой DOM-элемент компонента
@@ -115,34 +121,27 @@ export const Modal: FC<IModalProps> = ({
         restoreFocus,
         restoreFocusRef,
     });
+    useOverlay({ visible, onClose, essentialRefs: [contentRef] });
 
     return (
         <Portal scope={scope} visible={visible} keepMounted={keepMounted}>
-            <LayerManager visible={visible} onClose={onClose} essentialRefs={[contentRef]}>
-                <div
-                    {...props}
-                    ref={innerRef}
-                    className={cnModal({ visible, hasAnimation }, [className])}
-                    style={{ zIndex }}
-                >
-                    <div className={cnModal('Overlay')} />
-                    <div className={cnModal('Wrapper')}>
-                        <div className={cnModal('Table')}>
-                            <div className={cnModal('Cell', { align })}>
-                                <div
-                                    ref={contentRef}
-                                    className={cnModal('Content')}
-                                    tabIndex={-1}
-                                    role="dialog"
-                                    aria-modal
-                                >
-                                    {children}
-                                </div>
+            <div
+                {...props}
+                ref={innerRef}
+                className={cnModal({ visible, hasAnimation }, [className])}
+                style={{ zIndex }}
+            >
+                <div className={cnModal('Overlay')} />
+                <div className={cnModal('Wrapper')}>
+                    <div className={cnModal('Table')}>
+                        <div className={cnModal('Cell', { align })}>
+                            <div ref={contentRef} className={cnModal('Content')} tabIndex={-1} role="dialog" aria-modal>
+                                {children}
                             </div>
                         </div>
                     </div>
                 </div>
-            </LayerManager>
+            </div>
         </Portal>
     );
 };

@@ -4,7 +4,7 @@ import { cn } from '@bem-react/classname';
 
 import { useForkRef } from '../useForkRef';
 import { PortalExtendableProps, Portal } from '../Portal';
-import { OnClose, LayerManager } from '../LayerManager';
+import { useOverlay, OnClose } from '../useOverlay';
 import { IPopupRegistry } from './Popup.registry';
 import './Popup.css';
 
@@ -71,7 +71,8 @@ export interface IPopupProps extends PortalExtendableProps {
     children?: ReactNode | ((props: { tailRef?: Ref<HTMLDivElement> }) => ReactNode);
 
     /**
-     * Обработчик, вызывающийся после нажатия на клавишу esc либо мышкой на область вне контейнера
+     * Обработчик, вызывающийся после нажатия на клавишу esc,
+     * либо мышкой на область вне контейнера
      */
     onClose?: OnClose;
 
@@ -125,26 +126,26 @@ export const Popup: FC<IPopupProps> = ({
     const containerRef = useRef(null);
     const { Tail } = useComponentRegistry<IPopupRegistry>(cnPopup());
 
+    useOverlay({ visible, onClose, essentialRefs: [containerRef, ...unstable_essentialRefs] });
+
     return (
         <Portal scope={scope} visible={visible} keepMounted={keepMounted}>
-            <LayerManager visible={visible} onClose={onClose} essentialRefs={[containerRef, ...unstable_essentialRefs]}>
-                <div
-                    {...props}
-                    className={cnPopup({ visible }, [className])}
-                    ref={useForkRef(containerRef, innerRef)}
-                    style={{ ...style, zIndex }}
-                    onClick={onClick}
-                >
-                    {addonBefore}
-                    {typeof children === 'function' ? children({ tailRef }) : children}
-                    {addonAfter}
-                    {unstable_onRenderTail &&
-                        unstable_onRenderTail(<Tail ref={tailRef} style={{ height: tailSize, width: tailSize }} />)}
-                    {!unstable_onRenderTail && hasTail && (
-                        <Tail ref={tailRef} style={{ height: tailSize, width: tailSize }} />
-                    )}
-                </div>
-            </LayerManager>
+            <div
+                {...props}
+                className={cnPopup({ visible }, [className])}
+                ref={useForkRef(containerRef, innerRef)}
+                style={{ ...style, zIndex }}
+                onClick={onClick}
+            >
+                {addonBefore}
+                {typeof children === 'function' ? children({ tailRef }) : children}
+                {addonAfter}
+                {unstable_onRenderTail &&
+                    unstable_onRenderTail(<Tail ref={tailRef} style={{ height: tailSize, width: tailSize }} />)}
+                {!unstable_onRenderTail && hasTail && (
+                    <Tail ref={tailRef} style={{ height: tailSize, width: tailSize }} />
+                )}
+            </div>
         </Portal>
     );
 };
