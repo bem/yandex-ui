@@ -47,6 +47,8 @@ function applyStylesEffect({ state }: ModifierArguments<{}>) {
         position: state.options.strategy,
         left: 0,
         top: 0,
+        right: 'auto',
+        bottom: 'auto',
         margin: 0,
     };
 
