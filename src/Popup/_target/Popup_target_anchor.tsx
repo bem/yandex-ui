@@ -1,7 +1,7 @@
 import React, { FC, RefObject, CSSProperties } from 'react';
 import { withBemMod } from '@bem-react/core';
 
-import { PopperAnyModifiers, Direction, Boundary, usePopper } from '../../usePopper';
+import { PopperAnyModifiers, Direction, Boundary, usePopper, VirtualElement } from '../../usePopper';
 import { useForkRef } from '../../useForkRef';
 import { IPopupProps, cnPopup, directions } from '../index';
 
@@ -9,7 +9,7 @@ export interface IPopupTargetAnchorProps {
     /**
      * Элемент, относительно которого позиционируется попап
      */
-    anchor?: RefObject<HTMLElement>;
+    anchor?: RefObject<HTMLElement | VirtualElement>;
 
     /**
      * Направления раскрытия блока
@@ -101,7 +101,8 @@ export const withTargetAnchor = withBemMod<IPopupTargetAnchorProps, IPopupProps>
             } = props;
 
             const { setPopupRef, setArrowRef } = usePopper({
-                anchorRef: anchor as RefObject<HTMLElement>,
+                // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+                anchorRef: anchor!,
                 children: otherProps.children,
                 placement: direction,
                 motionless,

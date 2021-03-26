@@ -3,6 +3,7 @@ import { Modifier } from '@popperjs/core';
 
 export * from './types';
 export * from './usePopper';
+export * from './useVirtualElementRef';
 export * from './directions';
 export * from './modifiers/applyMinWidth';
 export * from './modifiers/applyMaxHeight';

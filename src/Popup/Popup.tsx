@@ -5,6 +5,7 @@ import { cn } from '@bem-react/classname';
 import { useForkRef } from '../useForkRef';
 import { PortalExtendableProps, Portal } from '../Portal';
 import { useOverlay, OnClose } from '../useOverlay';
+import { VirtualElement } from '../usePopper';
 import { IPopupRegistry } from './Popup.registry';
 import './Popup.css';
 
@@ -81,7 +82,7 @@ export interface IPopupProps extends PortalExtendableProps {
      *
      * @internal
      */
-    unstable_essentialRefs?: RefObject<HTMLElement>[];
+    unstable_essentialRefs?: RefObject<HTMLElement | VirtualElement>[];
 
     /**
      * Обработчик, вызываемый при срабатывании события click

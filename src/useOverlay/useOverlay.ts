@@ -1,6 +1,7 @@
 import { RefObject, useEffect, useRef } from 'react';
 
-import { OverlayOptions, OverlayManager, OnClose } from './OverlayManager';
+import { VirtualElement } from '../usePopper';
+import { OverlayOptions, OverlayManager, OnClose, CloseStrategy } from './OverlayManager';
 
 export interface UseOverlayOptions {
     /**
@@ -16,7 +17,18 @@ export interface UseOverlayOptions {
     /**
      * Список ссылок на DOM-узлы в рамках которых не нужно отслеживать нажатия
      */
-    essentialRefs: RefObject<HTMLElement>[];
+    essentialRefs: RefObject<HTMLElement | VirtualElement>[];
+
+    /**
+     * Стратегия закрытия слоя.
+     * `pressdown` - закрытие при нажатие мыши (mousedown)
+     * `pressup` - закрытие при отпускании мыши (click)
+     *
+     * @default 'pressdown'
+     * @internal
+     */
+    // eslint-disable-next-line camelcase
+    unsafe_strategy?: CloseStrategy;
 }
 
 /**
@@ -25,8 +37,8 @@ export interface UseOverlayOptions {
  * по умолчанию используется внутри `Popup` и `Modal`.
  */
 export function useOverlay(options: UseOverlayOptions) {
-    const { visible, onClose, essentialRefs } = options;
-    const optionsRef = useRef<OverlayOptions>({ onClose, refs: essentialRefs });
+    const { visible, onClose, essentialRefs, unsafe_strategy: closeStrategy = 'pressdown' } = options;
+    const optionsRef = useRef<OverlayOptions>({ onClose, refs: essentialRefs, closeStrategy });
 
     useEffect(() => {
         if (optionsRef.current.onClose !== onClose) {

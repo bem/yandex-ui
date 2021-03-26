@@ -1,4 +1,4 @@
-import React, { FC, MouseEventHandler, RefObject, useRef } from 'react';
+import React, { FC, MouseEventHandler, Ref, RefObject, useRef } from 'react';
 import { cn } from '@bem-react/classname';
 
 import { usePreventScroll } from '../usePreventScroll';
@@ -79,7 +79,7 @@ export interface IModalProps extends PortalExtendableProps, FocusTrapProps {
     /**
      * Ссылка на корневой DOM-элемент компонента
      */
-    innerRef?: RefObject<HTMLDivElement>;
+    innerRef?: Ref<HTMLDivElement>;
 
     /**
      * Задает слой `z-index`
@@ -121,7 +121,12 @@ export const Modal: FC<IModalProps> = ({
         restoreFocus,
         restoreFocusRef,
     });
-    useOverlay({ visible, onClose, essentialRefs: [contentRef] });
+    useOverlay({
+        visible,
+        onClose,
+        essentialRefs: [contentRef],
+        unsafe_strategy: 'pressup',
+    });
 
     return (
         <Portal scope={scope} visible={visible} keepMounted={keepMounted}>

@@ -1,16 +1,17 @@
-export interface OnClose {
-    (event: KeyboardEvent, source: 'esc'): void;
-    (event: MouseEvent, source: 'click'): void;
-    (event: KeyboardEvent | MouseEvent, source: 'esc' | 'click'): void;
-}
+import { VirtualElement } from '../usePopper';
+
+export type OnClose = (event: KeyboardEvent | MouseEvent, source: 'esc' | 'click') => void;
+
+export type CloseStrategy = 'pressdown' | 'pressup';
 
 type RefHTMLElement = {
-    readonly current: HTMLElement | null;
+    readonly current: VirtualElement | HTMLElement | null;
 };
 
 export interface OverlayOptions {
     onClose?: OnClose;
     refs: RefHTMLElement[];
+    closeStrategy: CloseStrategy;
 }
 
 /**
@@ -27,9 +28,11 @@ export class OverlayManager {
         return this.instance;
     }
 
-    private stack: OverlayOptions[] = [];
+    private overlays: OverlayOptions[] = [];
 
     private eventTarget: HTMLElement | null = null;
+
+    private activeOverlay?: OverlayOptions | null;
 
     constructor() {
         this.onDocumentKeyUp = this.onDocumentKeyUp.bind(this);
@@ -38,41 +41,39 @@ export class OverlayManager {
     }
 
     count() {
-        return this.stack.length;
+        return this.overlays.length;
     }
 
     addOverlay(options: OverlayOptions) {
-        if (this.stack.length === 0) {
+        if (this.overlays.length === 0) {
             this.attachEvents();
         }
 
-        this.stack.push(options);
+        this.overlays.push(options);
     }
 
     removeOverlay(options: OverlayOptions) {
-        this.stack.splice(this.stack.indexOf(options), 1);
+        this.overlays.splice(this.overlays.indexOf(options), 1);
 
-        if (this.stack.length === 0) {
+        if (this.overlays.length === 0) {
             this.detachEvents();
         }
     }
 
     getTopOverlayOptions(): OverlayOptions | undefined {
-        return this.stack[this.stack.length - 1];
+        return this.overlays[this.overlays.length - 1];
     }
 
     private isEssentionalClick(refs: RefHTMLElement[], target: HTMLElement | null) {
         return refs.some((ref) => {
-            return ref.current && ref.current.contains(target);
+            return ref.current instanceof HTMLElement && ref.current.contains(target);
         });
     }
 
-    private handleClose(event: KeyboardEvent, source: 'esc'): void;
-    private handleClose(event: MouseEvent, source: 'click'): void;
-    private handleClose(event: KeyboardEvent | MouseEvent, source: 'esc' | 'click'): void {
+    private handleClose(event: KeyboardEvent | MouseEvent, source: 'esc' | 'click', strategy?: CloseStrategy): void {
         const options = this.getTopOverlayOptions();
 
-        if (!options || options.onClose === undefined) {
+        if (!options || !options.onClose || (strategy && strategy !== options.closeStrategy)) {
             return;
         }
 
@@ -96,11 +97,27 @@ export class OverlayManager {
 
     private onDocumentMouseDown(event: MouseEvent) {
         this.eventTarget = event.target as HTMLElement;
+        this.activeOverlay = this.getTopOverlayOptions();
+
+        this.handleClose(event, 'click', 'pressdown');
     }
 
     private onDocumentClick(event: MouseEvent) {
         const target = this.eventTarget;
         this.eventTarget = null;
+
+        const activeOverlay = this.activeOverlay;
+        this.activeOverlay = null;
+
+        if (event.button > 0) {
+            return;
+        }
+
+        // Проверяем, что слой тот же, что при `mousedown`,
+        // иначе можем закрыть 2 слоя за одно нажатие
+        if (activeOverlay !== this.getTopOverlayOptions()) {
+            return;
+        }
 
         // Убеждаемся, что элемент, который был нажат, совпадает с последним
         // при срабатывании события mousedown. Это предотвращает закрытие диалогового окна
@@ -110,7 +127,7 @@ export class OverlayManager {
             return;
         }
 
-        this.handleClose(event, 'click');
+        this.handleClose(event, 'click', 'pressup');
     }
 
     private attachEvents() {

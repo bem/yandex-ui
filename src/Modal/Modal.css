@@ -6,6 +6,7 @@
 
 .Modal {
     position: fixed;
+    z-index: 1300;
     top: 0;
     left: 0;
 
@@ -14,7 +15,6 @@
 
 .Modal-Wrapper {
     position: fixed;
-    z-index: 1300;
     top: 0;
     left: 0;
 

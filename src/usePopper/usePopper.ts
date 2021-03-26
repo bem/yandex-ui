@@ -1,11 +1,11 @@
 import { ReactNode, RefObject, useMemo, useRef, useState } from 'react';
-import { Instance, Modifier, VirtualElement } from '@popperjs/core';
+import { Instance, Modifier } from '@popperjs/core';
 
 import { isEqual } from '../lib/isEqual';
 import { useIsomorphicLayoutEffect as useLayoutEffect } from '../useIsomorphicLayoutEffect';
 import { Options, createPopper } from './createPopper';
 import { Direction } from './directions';
-import { Boundary } from './types';
+import { Boundary, VirtualElement } from './types';
 import { getElementsFromRefs } from './utils';
 
 export type PopupHookProps = {
@@ -94,8 +94,8 @@ export function usePopper(props: PopupHookProps): PopupHookResult {
 
     // Используем useState вместо useRef для установки ссылок, т.к. нам
     // важно выполнить обновление в момент установки, а не на следующем тике.
-    const [popupNode, setPopupNode] = useState<HTMLElement>();
-    const [arrowNode, setArrowNode] = useState<HTMLElement>();
+    const [popupNode, setPopupNode] = useState<HTMLElement | null>(null);
+    const [arrowNode, setArrowNode] = useState<HTMLElement | null>(null);
 
     const popperOptions = useMemo(() => {
         const [placement, ...fallbackPlacements] = placements;
@@ -208,7 +208,7 @@ export function usePopper(props: PopupHookProps): PopupHookResult {
 
     return {
         popper: popperRef.current,
-        setArrowRef: setArrowNode as any,
-        setPopupRef: setPopupNode as any,
+        setArrowRef: setArrowNode,
+        setPopupRef: setPopupNode,
     };
 }

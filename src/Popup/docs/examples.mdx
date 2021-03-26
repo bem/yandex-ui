@@ -14,6 +14,8 @@ import { Direction as PopupDirection } from '../__examples__/direction.tsx'
 import popupDirectionSources from '!!raw-loader!../__examples__/direction.tsx'
 import { Boundary as PopupBoundary } from '../__examples__/boundary.tsx'
 import popupBoundarySources from '!!raw-loader!../__examples__/boundary.tsx'
+import { ContextMenu as PopupContextMenu } from '../__examples__/contextmenu.tsx'
+import popupContextMenuSources from '!!raw-loader!../__examples__/contextmenu.tsx'
 
 ### Привязывание к блоку
 
@@ -24,18 +26,6 @@ import popupBoundarySources from '!!raw-loader!../__examples__/boundary.tsx'
     component={PopupTarget}
     source={popupTargetSources}
 />
-
-| Свойство                  | Тип                                        | По умолчанию                                                                                                                                                                     | Описание                                                  |
-| ------------------------- | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
-| anchor?                   | `RefObject<HTMLElement>`                   | —                                                                                                                                                                                | Элемент, относительно которого позиционируется попап      |
-| directions?               | `Direction[]`                              | `['bottom-left', 'bottom-center', 'bottom-right', 'top-left', 'top-center', 'top-right', 'right-top', 'right-center', 'right-bottom', 'left-top', 'left-center', 'left-bottom']` | Направления раскрытия блока                               |
-| mainOffset?               | `number`                                   | `0`                                                                                                                                                                              | Отступ попапа относительно основного направления          |
-| motionless?               | `false \| true`                            | —                                                                                                                                                                                | Закрепляет положение попапа после открытия                |
-| secondaryOffset?          | `number`                                   | `0`                                                                                                                                                                              | Отступ попапа относительно второстепенного направления    |
-| tailOffset?               | `number`                                   | `0`                                                                                                                                                                              | Отступ хвостика от края попапа                            |
-| target?                   | `"anchor"`                                 | —                                                                                                                                                                                | Позиционирование попапа относительно переданного элемента |
-| viewportOffset?           | `number`                                   | `0`                                                                                                                                                                              | Отступ от края окна браузера                              |
-| getPossibleDrawingParams? | `(drawingParams: DrawingParams[]) => void` | —                                                                                                                                                                                | Расчет параметров для отрисовки                           |
 
 ### Вид попапа
 
@@ -90,4 +80,26 @@ import popupBoundarySources from '!!raw-loader!../__examples__/boundary.tsx'
     height={300}
     component={PopupBoundary}
     source={popupBoundarySources}
+/>
+
+### Виртуальный элемент
+
+Для некоторых сценариев вам может понадобится привязать попап, например, к указателю мыши. Для этого есть вспомогательный React-хук `useVirtualElementRef`, который принимает координаты, относительно `viewport` в виде `{ top: number; left: number; bottom: number; right: number }`.
+
+```tsx
+import { useVirtualElementRef } from '@yandex-lego/components/usePopper';
+
+const Example = () => {
+    // `right` и `bottom` по-умолчанию будут равны `left` и `top` соответственно
+    const anchorRef = useVirtualElementRef({ rect: { left: 50, top: 50 } });
+
+    return <Popup target="anchor" anchor={anchorRef} />
+}
+```
+
+Ниже представлен пример с простой реализацией контекстного меню.
+
+<Example
+    component={PopupContextMenu}
+    source={popupContextMenuSources}
 />

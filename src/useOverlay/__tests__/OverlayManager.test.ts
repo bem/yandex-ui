@@ -12,8 +12,8 @@ describe('useOverlay', () => {
 
         test('должен добавлять (удалять) слой в стек (из стека)', () => {
             const manager = new OverlayManager();
-            const a: OverlayOptions = { refs: [], onClose: jest.fn() };
-            const b: OverlayOptions = { refs: [], onClose: jest.fn() };
+            const a: OverlayOptions = { refs: [], onClose: jest.fn(), closeStrategy: 'pressup' };
+            const b: OverlayOptions = { refs: [], onClose: jest.fn(), closeStrategy: 'pressup' };
 
             expect(manager.count()).toBe(0);
 
@@ -33,7 +33,7 @@ describe('useOverlay', () => {
         test('должен вызвать `onClose` при нажатии на `Esc`', () => {
             const manager = new OverlayManager();
             const onClose = jest.fn();
-            const options: OverlayOptions = { refs: [], onClose };
+            const options: OverlayOptions = { refs: [], onClose, closeStrategy: 'pressup' };
             manager.addOverlay(options);
 
             fireEvent.keyUp(document.body, { key: 'Esc' });
@@ -58,7 +58,7 @@ describe('useOverlay', () => {
 
         test('не должен вызывать `onClose` после удаления слоя из стека при нажатии на `Esc`', () => {
             const manager = new OverlayManager();
-            const options: OverlayOptions = { refs: [], onClose: jest.fn() };
+            const options: OverlayOptions = { refs: [], onClose: jest.fn(), closeStrategy: 'pressup' };
             manager.addOverlay(options);
             manager.removeOverlay(options);
 
@@ -72,8 +72,17 @@ describe('useOverlay', () => {
 
             const manager = new OverlayManager();
             const ref = { current };
-            const options: OverlayOptions = { refs: [ref], onClose: jest.fn() };
+            const onClose = jest.fn();
+            const options: OverlayOptions = { refs: [ref], onClose, closeStrategy: 'pressdown' };
             manager.addOverlay(options);
+
+            fireEvent.mouseDown(document.body);
+
+            expect(onClose).toBeCalledTimes(1);
+            expect(onClose).toBeCalledWith(expect.objectContaining({ type: 'mousedown' }), 'click');
+
+            onClose.mockReset();
+            options.closeStrategy = 'pressup';
 
             fireEvent.mouseDown(document.body);
             fireEvent.click(document.body);
@@ -90,8 +99,15 @@ describe('useOverlay', () => {
 
             const manager = new OverlayManager();
             const ref = { current };
-            const options: OverlayOptions = { refs: [ref], onClose: jest.fn() };
+            const onClose = jest.fn();
+            const options: OverlayOptions = { refs: [ref], onClose, closeStrategy: 'pressdown' };
             manager.addOverlay(options);
+
+            fireEvent.mouseDown(current);
+
+            expect(options.onClose).toBeCalledTimes(0);
+
+            options.closeStrategy = 'pressup';
 
             fireEvent.mouseDown(current);
             fireEvent.click(current);
@@ -107,7 +123,7 @@ describe('useOverlay', () => {
 
             const manager = new OverlayManager();
             const ref = { current };
-            const options: OverlayOptions = { refs: [ref], onClose: jest.fn() };
+            const options: OverlayOptions = { refs: [ref], onClose: jest.fn(), closeStrategy: 'pressup' };
             manager.addOverlay(options);
 
             fireEvent.mouseDown(current);
@@ -119,7 +135,7 @@ describe('useOverlay', () => {
         });
 
         test('должен вызвать `onClose` если установить обработчик после добавления слоя', () => {
-            const options: OverlayOptions = { refs: [] };
+            const options: OverlayOptions = { refs: [], closeStrategy: 'pressup' };
             const onClose = jest.fn();
             const manager = new OverlayManager();
             manager.addOverlay(options);
@@ -144,8 +160,8 @@ describe('useOverlay', () => {
         test('должен вызвать `onClose` для последнего слоя в стеке', () => {
             const onClose1 = jest.fn();
             const onClose2 = jest.fn();
-            const options1: OverlayOptions = { refs: [], onClose: onClose1 };
-            const options2: OverlayOptions = { refs: [], onClose: onClose2 };
+            const options1: OverlayOptions = { refs: [], onClose: onClose1, closeStrategy: 'pressup' };
+            const options2: OverlayOptions = { refs: [], onClose: onClose2, closeStrategy: 'pressup' };
             const manager = new OverlayManager();
 
             manager.addOverlay(options1);
