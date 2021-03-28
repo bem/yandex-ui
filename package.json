@@ -1,6 +1,6 @@
 {
   "name": "@yandex/ui",
-  "version": "3.9.0",
+  "version": "3.9.1",
   "description": "Yandex UI components",
   "keywords": [
     "ui",
@@ -85,5 +85,6 @@
     "ts-jest": "25.5.1",
     "typescript": "4.1.3",
     "yaspeller": "7.0.0"
-  }
+  },
+  "gitCommit": "027486010639e13c1eb4a0db33ce730a749b6ffc"
 }
