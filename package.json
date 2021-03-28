@@ -68,7 +68,7 @@
     "enzyme-to-json": "^3.3.5",
     "fast-glob": "3.2.2",
     "get-port-sync": "1.0.0",
-    "hermione": "3.8.7",
+    "hermione": "3.11.0",
     "jest": "25.1.0",
     "jest-html-reporter": "2.8.0",
     "jscodeshift": "0.7.0",
