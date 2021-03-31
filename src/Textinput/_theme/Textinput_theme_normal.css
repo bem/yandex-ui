@@ -2,13 +2,15 @@
     color: #000;
 }
 
+
+.Textinput_theme_normal .Textinput-Control::placeholder,
+.Textinput_theme_normal .Textinput-Control::-webkit-input-placeholder {
+    color: #999;
+}
+
 .Textinput_disabled.Textinput_theme_normal .Textinput-Control {
     color: #aaa;
     -webkit-text-fill-color: #aaa; /* https://st.yandex-team.ru/ISL-2132 Safari needs it to blend color properly */
-}
-
-.Textinput_theme_normal .Textinput-Control::placeholder {
-    color: #999;
 }
 
 .Textinput_theme_normal .Textinput-Box {
