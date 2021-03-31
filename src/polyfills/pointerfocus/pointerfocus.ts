@@ -12,11 +12,11 @@ class PointerFocus {
         this.timeoutId = 0;
         this.isPointer = false;
 
-        window.addEventListener('blur', this.onBlur);
-        window.document.addEventListener('keydown', this.onKeyDown);
-        window.document.addEventListener('mousedown', this.onMouseDown);
-        window.document.addEventListener('mouseup', this.onMouseDown);
-        window.document.addEventListener('focusin', this.onFocus);
+        window.addEventListener('blur', this.onBlur, true);
+        window.document.addEventListener('keydown', this.onKeyDown, true);
+        window.document.addEventListener('mousedown', this.onMouseDown, true);
+        window.document.addEventListener('mouseup', this.onMouseDown, true);
+        window.document.addEventListener('focusin', this.onFocus, true);
 
         if (
             !window.document.body.classList.contains('pointerfocus') &&
@@ -30,11 +30,11 @@ class PointerFocus {
      * Удаляет все обработчики и классы с документа.
      */
     dispose(): void {
-        window.removeEventListener('blur', this.onBlur);
-        window.document.removeEventListener('keydown', this.onKeyDown);
-        window.document.removeEventListener('mousedown', this.onMouseDown);
-        window.document.removeEventListener('mouseup', this.onMouseDown);
-        window.document.removeEventListener('focusin', this.onFocus);
+        window.removeEventListener('blur', this.onBlur, true);
+        window.document.removeEventListener('keydown', this.onKeyDown, true);
+        window.document.removeEventListener('mousedown', this.onMouseDown, true);
+        window.document.removeEventListener('mouseup', this.onMouseDown, true);
+        window.document.removeEventListener('focusin', this.onFocus, true);
         window.document.body.classList.remove('pointerfocus', 'utilityfocus');
     }
 
