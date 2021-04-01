@@ -1,6 +1,6 @@
 {
   "name": "@yandex/ui",
-  "version": "3.9.4",
+  "version": "3.9.5",
   "description": "Yandex UI components",
   "keywords": [
     "ui",
@@ -87,5 +87,5 @@
     "yaspeller": "7.0.0"
   },
   "gitCommit": "027486010639e13c1eb4a0db33ce730a749b6ffc",
-  "arcCommit": "447278a53f4366a4deb44ca359d58d2c9832c4a3"
+  "arcCommit": "67e9dee529fca4ab5429dc8e29cf4ee883c4a113"
 }
