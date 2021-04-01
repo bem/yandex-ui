@@ -214,13 +214,13 @@ const SelectPresenter = class extends PureComponent<SelectProps> {
     }
 
     private subscribeToEvents = () => {
-        document.addEventListener('mousedown', this.onDocumentMouseDown);
+        document.addEventListener('mousedown', this.onDocumentMouseDown, true);
         window.addEventListener('resize', this.onWindowChange);
         window.addEventListener('orientationchange', this.onWindowChange);
     };
 
     private unsubscribeFromEvents = () => {
-        document.removeEventListener('mousedown', this.onDocumentMouseDown);
+        document.removeEventListener('mousedown', this.onDocumentMouseDown, true);
         window.removeEventListener('resize', this.onWindowChange);
         window.removeEventListener('orientationchange', this.onWindowChange);
     };
