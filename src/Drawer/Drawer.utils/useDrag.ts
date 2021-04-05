@@ -1,13 +1,5 @@
-import { RefObject, useCallback, useLayoutEffect, useRef } from 'react';
+import React, { useCallback, useRef } from 'react';
 import { noop } from './noop';
-
-/**
- * Опции для подписки на события
- */
-const listenerOptions = {
-    passive: false,
-    capture: false,
-};
 
 /**
  * Вектор, выраженный двумя координатами
@@ -71,7 +63,7 @@ interface GestureState<T> {
     /**
      * Исходный объект события
      */
-    event: TouchEvent;
+    event: React.TouchEvent;
 
     /**
      * Пользовательские данные
@@ -88,13 +80,13 @@ type StateChangeCallback<T> = (arg: Readonly<GestureState<T>>) => void;
  * Предоставляет унифицированный интерфейс для работы с
  * простыми тачевыми событиями (где используется один палец)
  */
-export const useDrag = <T>(elementRef: RefObject<HTMLElement>, onStateChange: StateChangeCallback<T>) => {
+export const useDrag = <T>(onStateChange: StateChangeCallback<T>) => {
     const touchIdentifierRef = useRef<number>();
     const gestureStateRef = useRef<GestureState<T>>();
     const onStateChangeRef = useRef<StateChangeCallback<T>>();
 
     const handler = useCallback(
-        (event: TouchEvent) => {
+        (event: React.TouchEvent) => {
             const onStateChange = onStateChangeRef.current || noop;
             let state = gestureStateRef.current;
             let touch = Array.from(event.changedTouches).find((item) => item.identifier === touchIdentifierRef.current);
@@ -160,25 +152,14 @@ export const useDrag = <T>(elementRef: RefObject<HTMLElement>, onStateChange: St
     // обновляем колбэк при каждом рендере, так нам не нужно будет использовать useCallback
     onStateChangeRef.current = onStateChange;
 
-    /**
-     * Управляет подписками на события
-     */
-    useLayoutEffect(() => {
-        if (!elementRef.current) return;
+    const dragProps = {
+        onTouchStart: handler,
+        onTouchMove: handler,
+        onTouchEnd: handler,
+        onTouchCancel: handler,
+    };
 
-        const elem = elementRef.current;
-
-        elem.addEventListener('touchstart', handler, listenerOptions);
-        elem.addEventListener('touchmove', handler, listenerOptions);
-        elem.addEventListener('touchend', handler, listenerOptions);
-        elem.addEventListener('touchcancel', handler, listenerOptions);
-
-        return () => {
-            elem.removeEventListener('touchstart', handler, listenerOptions);
-            elem.removeEventListener('touchmove', handler, listenerOptions);
-            elem.removeEventListener('touchend', handler, listenerOptions);
-            elem.removeEventListener('touchcancel', handler, listenerOptions);
-        };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [elementRef, handler, elementRef.current]);
+    return {
+        dragProps,
+    };
 };

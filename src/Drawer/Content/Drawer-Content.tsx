@@ -48,7 +48,6 @@ export const DrawerContent: FC<IDrawerContentProps> = ({
     setSpringDisabled,
     setProgress,
 }) => {
-    const dragObserverRef = useRef<HTMLDivElement>(null);
     const contentRef = useRef<HTMLDivElement>(null);
 
     const axis = direction === 'bottom' ? 'y' : 'x';
@@ -68,7 +67,7 @@ export const DrawerContent: FC<IDrawerContentProps> = ({
     /**
      * Обработчик drag событий с корневого DOM элемента шторки
      */
-    useDrag<IDragStateData>(dragObserverRef, (dragState) => {
+    const { dragProps } = useDrag<IDragStateData>((dragState) => {
         if (!visible || !contentRef.current) return;
 
         const {
@@ -147,7 +146,7 @@ export const DrawerContent: FC<IDrawerContentProps> = ({
     });
 
     return (
-        <div className={cnDrawerDragObserver} ref={dragObserverRef}>
+        <div className={cnDrawerDragObserver} {...dragProps}>
             <div className={cnDrawerOverlay} style={{ opacity: springOpacity }} onClick={onClose} />
             <div className={cnDrawerCurtain} style={curtainStyle}>
                 <div className={cnDrawerHandle} style={{ opacity: springOpacity }} />
