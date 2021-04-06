@@ -1,0 +1,58 @@
+.Calendar-Cell {
+    position: relative;
+
+    display: flex;
+    flex: 1 0;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    font-size: inherit;
+    line-height: inherit;
+    cursor: pointer;
+
+    border: 0;
+    outline: none;
+    background: none;
+    -moz-user-focus: ignore;
+}
+
+.Calendar-Cell::-moz-focus-inner {
+    padding: 0;
+
+    border: 0;
+}
+
+.Calendar-Cell[aria-hidden=true] {
+    visibility: hidden;
+}
+
+.Calendar-Cell[aria-disabled=true] {
+    pointer-events: none;
+}
+
+.Calendar-Cell::before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    content: '';
+}
+
+.Calendar-Cell_rangeSelected::after,
+.Calendar-Cell_rangePreview::after {
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    content: '';
+}

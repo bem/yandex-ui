@@ -1,0 +1,10 @@
+.Calendar-GridAside {
+    display: flex;
+    flex-direction: column;
+    grid-area: aside;
+}
+
+.Calendar-GridAside .Calendar-Cell {
+    cursor: default;
+    pointer-events: none;
+}

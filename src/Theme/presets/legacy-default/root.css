@@ -70,6 +70,34 @@
     --button-group-gap-xl: 8px; /* Растояние xl между кнопками */
     --button-group-pin-circle-border-radius: 100px; /* Радиус у кнопок с формой circle */
     --button-group-pin-round-border-radius: var(--button-borderRadius); /* Радиус у кнопок с формой round */
+    --calendar-font-family: var(--typography-font-family);
+    --calendar-size-s-min-width: 252px;
+    --calendar-size-s-min-height: 180px;
+    --calendar-size-s-line-height: var(--text-control-size-s-line-height);
+    --calendar-size-s-font-size: var(--text-control-size-s-font-size);
+    --calendar-size-s-grid-aside-min-width: 28px;
+    --calendar-size-s-grid-aside-indent-right: 8px;
+    --calendar-size-s-cell-width: 36px;
+    --calendar-size-s-cell-space: 2px;
+    --calendar-size-m-min-width: 308px;
+    --calendar-size-m-min-height: 220px;
+    --calendar-size-m-line-height: var(--text-control-size-m-line-height);
+    --calendar-size-m-font-size: var(--text-control-size-m-font-size);
+    --calendar-size-m-grid-aside-min-width: 32px;
+    --calendar-size-m-grid-aside-indent-right: 12px;
+    --calendar-size-m-cell-width: 44px;
+    --calendar-size-m-cell-space: 4px;
+    --calendar-size-l-min-width: 378px;
+    --calendar-size-l-min-height: 270px;
+    --calendar-size-l-line-height: var(--text-control-size-l-line-height);
+    --calendar-size-l-font-size: var(--text-control-size-l-font-size);
+    --calendar-size-l-grid-aside-min-width: 36px;
+    --calendar-size-l-grid-aside-indent-right: 16px;
+    --calendar-size-l-cell-width: 54px;
+    --calendar-size-l-cell-space: 6px;
+    --calendar-view-default-grid-aside-border-radius: 4px;
+    --calendar-view-default-cell-border-width: 1px;
+    --calendar-view-default-cell-border-radius: 100px;
     --checkbox-view-outline-disabled-opacity: 0.4;
     --checkbox-font-family: var(--control-font-family);
     --checkbox-borderRadius: 4px;

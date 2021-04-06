@@ -1,0 +1,9 @@
+.Calendar-GridHead {
+    display: flex;
+    grid-area: head;
+}
+
+.Calendar-GridHead .Calendar-Cell {
+    cursor: default;
+    pointer-events: none;
+}

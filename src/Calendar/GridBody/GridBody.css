@@ -1,0 +1,10 @@
+.Calendar-GridBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    grid-area: body;
+}
+
+.Calendar-GridBody .Calendar-Row {
+    display: flex;
+}

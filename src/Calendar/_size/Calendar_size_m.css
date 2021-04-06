@@ -1,0 +1,49 @@
+.Calendar_size_m {
+    font-size: var(--calendar-size-m-font-size);
+    line-height: var(--calendar-size-m-line-height);
+}
+
+.Calendar_size_m .Calendar-Grid {
+    min-width: var(--calendar-size-m-min-width);
+    min-height: var(--calendar-size-m-min-height);
+}
+
+.Calendar_size_m .Calendar-GridHead {
+    padding-left: var(--calendar-size-m-cell-width);
+}
+
+.Calendar_size_m .Calendar-Cell {
+    min-width: var(--calendar-size-m-cell-width);
+    min-height: var(--calendar-size-m-cell-width);
+}
+
+.Calendar_size_m .Calendar-GridAside .Calendar-Cell {
+    min-width: var(--calendar-size-m-grid-aside-min-width);
+}
+
+.Calendar_size_m .Calendar-GridAside {
+    margin-right: var(--calendar-size-m-grid-aside-indent-right);
+}
+
+.Calendar_size_m .Calendar-Cell::before {
+    margin: var(--calendar-size-m-cell-space);
+}
+
+.Calendar_size_m .Calendar-Cell_rangeSelected::after {
+    margin: var(--calendar-size-m-cell-space) 0;
+}
+
+.Calendar_size_m .Calendar-Cell_rangePreview::after {
+    /* NOTE: Крайне странно использовать токен view внутри модификатора size. */
+    margin: var(--calendar-size-m-cell-space) var(--calendar-view-default-cell-border-width);
+}
+
+.Calendar_size_m .Calendar-Cell.Calendar-Cell_selectionStart::after,
+.Calendar_size_m .Calendar-Cell.Calendar-Cell_rangePreviewStart::after {
+    margin-left: var(--calendar-size-m-cell-space);
+}
+
+.Calendar_size_m .Calendar-Cell.Calendar-Cell_selectionEnd::after,
+.Calendar_size_m .Calendar-Cell.Calendar-Cell_rangePreviewEnd::after {
+    margin-right: var(--calendar-size-m-cell-space);
+}

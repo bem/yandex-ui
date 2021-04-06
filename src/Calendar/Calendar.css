@@ -1,0 +1,19 @@
+.Calendar {
+    position: relative;
+    z-index: 0;
+
+    display: inline-flex;
+    flex-direction: column;
+
+    font-family: var(--calendar-font-family);
+    user-select: none;
+}
+
+.Calendar-Grid {
+    display: -ms-inline-grid;
+    display: inline-grid;
+    grid-template-areas: 'head head' 'aside body';
+    grid-template-columns: auto 1fr;
+    /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
+    grid-template-rows: auto 1fr;
+}

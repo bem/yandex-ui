@@ -1,0 +1,125 @@
+calendar:
+  fontFamily:
+    value: "{typography.font.family.value}"
+
+  sizeS:
+    minWidth:
+      value: 252px
+    minHeight:
+      value: 180px
+    lineHeight:
+      value: "{text.control.size.s.lineHeight.value}"
+    fontSize:
+      value: "{text.control.size.s.fontSize.value}"
+
+    gridAside:
+      minWidth:
+        value: 28px
+      indentRight:
+        value: 8px
+
+    cell:
+      width:
+        value: 36px
+      space:
+        value: 2px
+
+  sizeM:
+    minWidth:
+      value: 308px
+    minHeight:
+      value: 220px
+    lineHeight:
+      value: "{text.control.size.m.lineHeight.value}"
+    fontSize:
+      value: "{text.control.size.m.fontSize.value}"
+
+    gridAside:
+      minWidth:
+        value: 32px
+      indentRight:
+        value: 12px
+
+    cell:
+      width:
+        value: 44px
+      space:
+        value: 4px
+
+  sizeL:
+    minWidth:
+      value: 378px
+    minHeight:
+      value: 270px
+    lineHeight:
+      value: "{text.control.size.l.lineHeight.value}"
+    fontSize:
+      value: "{text.control.size.l.fontSize.value}"
+
+    gridAside:
+      minWidth:
+        value: 36px
+      indentRight:
+        value: 16px
+
+    cell:
+      width:
+        value: 54px
+      space:
+        value: 6px
+
+  viewDefault:
+    gridAside:
+      borderRadius:
+        value: 4px
+
+      typoColor:
+        base:
+          value: rgba(0, 0, 0, 0.6)
+
+      fillColor:
+        base:
+          value: rgba(0, 0, 0, 0.05)
+
+    current:
+      borderColor:
+        value: "#ff3737"
+
+    cell:
+      borderWidth:
+        value: 1px
+      borderRadius:
+        value: 100px
+      borderColor:
+        hovered:
+           value: rgba(0, 0, 0, 0.1)
+        focused:
+          value: "#fdb100"
+        current:
+          value: rgba(0, 0, 0, 0.05)
+
+      typoColor:
+        base:
+          value: rgba(0, 0, 0, 0.8)
+        disabled:
+          value: rgba(0, 0, 0, 0.45)
+        selected:
+          base:
+            value: "#fff"
+        weekend:
+          value: "#ff3737"
+
+      fillColor:
+        hovered:
+          value: rgba(0, 0, 0, 0.05)
+        pressed:
+          value: rgba(0, 0, 0, 0.1)
+        selected:
+          base:
+            value: "#ff3737"
+          range:
+            value: rgba(0, 0, 0, 0.05)
+          hovered:
+            value: "#ff0000"
+          disabled:
+            value: "#f2f2f2"
