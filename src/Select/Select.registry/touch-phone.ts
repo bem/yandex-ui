@@ -2,7 +2,7 @@ import { Registry } from '@bem-react/di';
 
 import { cnSelect } from '../Select';
 
-export * from '.';
+export type { ISelectRegistry } from './index';
 
 export const selectRegistry = new Registry({ id: cnSelect() });
 

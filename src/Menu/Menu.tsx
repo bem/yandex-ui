@@ -11,7 +11,7 @@ import { IMenuItemProps as MenuItemProps } from './Item/Menu-Item';
 import { IMenuRegistry } from './Menu.registry';
 import './Menu.css';
 
-export { MenuItemProps };
+export type { MenuItemProps };
 
 export type ItemSimple = {
     /**

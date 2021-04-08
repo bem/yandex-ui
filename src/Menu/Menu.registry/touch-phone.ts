@@ -8,7 +8,7 @@ import { MenuTitle } from '../Title/Menu-Title';
 import { Icon } from '../../Icon/Icon';
 import { withGlyphTypeCheck } from '../../Icon/_glyph/Icon_glyph_type-check';
 
-export * from '.';
+export type { IMenuRegistry } from './index';
 
 export const menuRegistry = new Registry({ id: cnMenu() });
 
