@@ -1,4 +1,4 @@
-import { withBemMod } from '@bem-react/core';
+import { createClassNameModifier } from '@bem-react/core';
 
 import { cnTextinput } from '../Textinput';
 import './Textinput_baseline.css';
@@ -14,4 +14,4 @@ export interface ITextinputBaselineProps {
  * Модификатор, отвечающий за выравнивание текстового поля по базовой линии.
  * @param {ITextinputBaselineProps} props
  */
-export const withBaseline = withBemMod<ITextinputBaselineProps>(cnTextinput(), { baseline: true });
+export const withBaseline = createClassNameModifier<ITextinputBaselineProps>(cnTextinput(), { baseline: true });
