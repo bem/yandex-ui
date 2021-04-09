@@ -24,5 +24,8 @@ function patchScaleFactorFn({ state, instance }: ModifierArguments<{}>) {
 }
 
 function hasTransformScale(element: HTMLElement): boolean {
-    return window.getComputedStyle(element).transform.indexOf('matrix') !== -1;
+    const styles = window.getComputedStyle(element);
+    const transform = styles.transform || styles.webkitTransform;
+
+    return transform.indexOf('matrix') !== -1;
 }
