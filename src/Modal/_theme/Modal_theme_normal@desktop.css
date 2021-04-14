@@ -13,13 +13,29 @@
     margin: 0;
 }
 
-.Modal_theme_normal,
+.Modal_theme_normal .Modal-Overlay,
+.Modal_theme_normal .Modal-Wrapper {
+    visibility: hidden;
+
+    margin: -9999px 0 0 -9999px;
+}
+
+.Modal_theme_normal .Modal-Overlay,
+.Modal_theme_normal .Modal-Wrapper,
 .Modal_theme_normal .Modal-Content {
     animation-duration: .2s;
     animation-timing-function: ease-in-out;
 }
 
-.Modal_theme_normal.Modal_hasAnimation {
+.Modal_theme_normal.Modal_visible .Modal-Overlay,
+.Modal_theme_normal.Modal_visible .Modal-Wrapper {
+    visibility: visible;
+
+    margin: 0;
+}
+
+.Modal_theme_normal.Modal_hasAnimation .Modal-Overlay,
+.Modal_theme_normal.Modal_hasAnimation .Modal-Wrapper {
     animation-name: Modal_theme_normal;
 }
 
@@ -27,7 +43,8 @@
     animation-name: Modal-Content_theme_normal;
 }
 
-.Modal_theme_normal.Modal_visible.Modal_hasAnimation {
+.Modal_theme_normal.Modal_visible.Modal_hasAnimation .Modal-Overlay,
+.Modal_theme_normal.Modal_visible.Modal_hasAnimation .Modal-Wrapper {
     animation-name: Modal_theme_normal_visible;
 }
 
