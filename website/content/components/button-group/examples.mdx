@@ -1,0 +1,151 @@
+import { Checkbox as ButtonGroupCheckbox } from '@yandex-lego/components/ButtonGroup/__examples__/checkbox.examples.tsx'
+import { Default as ButtonGroupDefault } from '@yandex-lego/components/ButtonGroup/__examples__/default.examples.tsx'
+import { Disabled as ButtonGroupDisabled } from '@yandex-lego/components/ButtonGroup/__examples__/disabled.examples.tsx'
+import { Divider as ButtonGroupDivider } from '@yandex-lego/components/ButtonGroup/__examples__/divider.examples.tsx'
+import { DropDown as ButtonGroupDropDown } from '@yandex-lego/components/ButtonGroup/__examples__/drop-down.examples.tsx'
+import { Gap as ButtonGroupGap } from '@yandex-lego/components/ButtonGroup/__examples__/gap.examples.tsx'
+import { Pin as ButtonGroupPin } from '@yandex-lego/components/ButtonGroup/__examples__/pin.examples.tsx'
+import { Radio as ButtonGroupRadio } from '@yandex-lego/components/ButtonGroup/__examples__/radio.examples.tsx'
+import { Rtl as ButtonGroupRtl } from '@yandex-lego/components/ButtonGroup/__examples__/rtl.examples.tsx'
+import { Size as ButtonGroupSize } from '@yandex-lego/components/ButtonGroup/__examples__/size.examples.tsx'
+import { Select as ButtonGroupSelect } from '@yandex-lego/components/ButtonGroup/__examples__/select.examples.tsx'
+import { Showcase as ButtonGroupShowcase } from '@yandex-lego/components/ButtonGroup/__examples__/showcase.examples.tsx'
+import { SplitButton as ButtonGroupSplitButton } from '@yandex-lego/components/ButtonGroup/__examples__/split.examples.tsx'
+import { Vertical as ButtonGroupVertical } from '@yandex-lego/components/ButtonGroup/__examples__/vertical.examples.tsx'
+import { View as ButtonGroupView } from '@yandex-lego/components/ButtonGroup/__examples__/view.examples.tsx'
+
+import checkboxButtonGroupSource from '!!raw-loader!@yandex-lego/components/ButtonGroup/__examples__/checkbox.examples.tsx'
+import defaultButtonGroupSource from '!!raw-loader!@yandex-lego/components/ButtonGroup/__examples__/default.examples.tsx'
+import dividerButtonGroupSource from '!!raw-loader!@yandex-lego/components/ButtonGroup/__examples__/divider.examples.tsx'
+import disabledButtonGroupSource from '!!raw-loader!@yandex-lego/components/ButtonGroup/__examples__/disabled.examples.tsx'
+import dropDownButtonGroupSource from '!!raw-loader!@yandex-lego/components/ButtonGroup/__examples__/drop-down.examples.tsx'
+import gapButtonGroupSource from '!!raw-loader!@yandex-lego/components/ButtonGroup/__examples__/gap.examples.tsx'
+import pinButtonGroupSource from '!!raw-loader!@yandex-lego/components/ButtonGroup/__examples__/pin.examples.tsx'
+import radioButtonGroupSource from '!!raw-loader!@yandex-lego/components/ButtonGroup/__examples__/radio.examples.tsx'
+import rtlButtonGroupSource from '!!raw-loader!@yandex-lego/components/ButtonGroup/__examples__/rtl.examples.tsx'
+import sizeButtonGroupSource from '!!raw-loader!@yandex-lego/components/ButtonGroup/__examples__/size.examples.tsx'
+import selectButtonGroupSource from '!!raw-loader!@yandex-lego/components/ButtonGroup/__examples__/select.examples.tsx'
+import showcaseButtonGroupSource from '!!raw-loader!@yandex-lego/components/ButtonGroup/__examples__/showcase.examples.tsx'
+import splitButtonButtonGroupSource from '!!raw-loader!@yandex-lego/components/ButtonGroup/__examples__/split.examples.tsx'
+import verticalButtonGroupSource from '!!raw-loader!@yandex-lego/components/ButtonGroup/__examples__/vertical.examples.tsx'
+import viewButtonGroupSource from '!!raw-loader!@yandex-lego/components/ButtonGroup/__examples__/view.examples.tsx'
+
+### Дефолтный компонент
+
+<Example
+    component={ButtonGroupDefault}
+    source={defaultButtonGroupSource}
+/>
+
+### Расстояние между компонентами внутри ButtonGroup
+
+Свойство `gap` позволяет установить расстояние между компонентами внутри ButtonGroup. Допустимые значения: `'s' | 'm' | 'l' | 'xl' | undefined` (`1px | 4px | 6px | 8px | 0px`, по умолчанию, можно сконфигурировать другие значения через вашу тему).
+
+<Example
+    component={ButtonGroupGap}
+    source={gapButtonGroupSource}
+/>
+
+### Форма кнопок внутри компонента
+
+Свойство `pin` у ButtonGroup позволяет устанавливать форму для каждой кнопки в зависимости от ее порядкого номера.
+Доступные значения свойства `circle` - каждая кнопка в округлой форме, `round` - первая и последняя кнопки округлены в конце и в начале, остальные плоские.
+
+<Example
+    component={ButtonGroupPin}
+    source={pinButtonGroupSource}
+/>
+
+## Разделитель (divider)
+
+Свойство `divider` принимает на вход компонент, который будет вставлен между кнопками.
+
+Свойство `gap` работает с разделителем, однако стоит знать, что `gap` будет устанавливать расстояние между всеми элементами, включая разделитель.
+
+<Example
+    component={ButtonGroupDivider}
+    source={dividerButtonGroupSource}
+/>
+
+### Кастомный внешний вид и размеры кнопок внутри компонента
+
+Если не подходят реализованные pin'ы, можно собрать внешний вид компонента на свой вкус, используя гранцы нкопки и внешний вид из <Link to="/components/button/examples/#границы-кнопки"> Button</Link>.
+
+<Example
+    component={ButtonGroupView}
+    source={viewButtonGroupSource}
+/>
+
+### Включение/Выключение на редактирование
+
+<Example
+    component={ButtonGroupDisabled}
+    source={disabledButtonGroupSource}
+/>
+
+### Вертикальный компонент
+
+Prop `vertical` позволяет изменять направление кнопок в компоненте на вертикальное. Если было указан `gap`, он будет также устанавливать расстояние между кнопками по вертикали.
+
+<Example
+    component={ButtonGroupVertical}
+    source={verticalButtonGroupSource}
+/>
+
+### Radio режим
+
+Хук, useButtonGroupState с параметром `type: radio` позволяет использовать кнопки вкачестве radio кнопок. Хук возвращает `selected` - массив индексов элементов, которые были выбраны и `onClick` который будет вызван при нажатии на кнопку после ее собственного onClick.
+
+Также можно передать массив `mappings` одним из параметров. В таком случае, помимо `selected`, будет массив данных `mapped`, в котором лежат данные из `mappings` по индексам из `selected`.
+
+<Example
+    component={ButtonGroupRadio}
+    source={radioButtonGroupSource}
+/>
+
+### Checkbox режим
+
+Хук, useButtonGroupState с параметром `type: checkbox` позволяет использовать кнопки вкачестве checkbox. Хук возвращает `selected` - массив индексов элементов, которые были выбраны и `onClick` который будет вызван при нажатии на кнопку после ее собственного onClick.
+
+Также можно передать массив `mappings` одним из параметров. В таком случае, помимо `selected`, будет массив данных `mapped`, в котором лежат данные из `mappings` по индексам из `selected`.
+
+<Example
+    component={ButtonGroupCheckbox}
+    source={checkboxButtonGroupSource}
+/>
+
+### Использование с Dropdown
+
+<Example
+    component={ButtonGroupDropDown}
+    source={dropDownButtonGroupSource}
+/>
+
+### SplitButton
+
+<Example
+    component={ButtonGroupSplitButton}
+    source={splitButtonButtonGroupSource}
+    height={300}
+/>
+
+### Использование с Select
+
+<Example
+    component={ButtonGroupSelect}
+    source={selectButtonGroupSource}
+    height={300}
+/>
+
+### Поддержка Rtl
+
+<Example
+    component={ButtonGroupRtl}
+    source={rtlButtonGroupSource}
+/>
+
+### Showcase
+
+<Example
+    component={ButtonGroupShowcase}
+/>

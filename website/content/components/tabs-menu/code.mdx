@@ -1,0 +1,88 @@
+import tabsMenuProps from '!!ts-docgen-loader!./props.tsx';
+
+## Когда использовать
+
+С помощью компонента можно создать:
+
+- статическое меню с ссылками на другие страницы;
+- меню с использованием собственного JS-кода (например, чтобы сделать пункт меню активным);
+- переключатель для вкладок `TabsPanes`.
+
+## Пример использования
+
+### Конфигурация темы на уровне проекта:
+
+```ts
+// src/lib/theme.ts
+import { configureRootTheme } from '@yandex-lego/components/Theme'
+import { theme } from '@yandex-lego/components/Theme/presets/default'
+
+configureRootTheme({ theme })
+```
+
+### Использование с нужным набором модификаторов:
+
+```ts
+// src/App.ts
+import React, { useState } from 'react'
+import { compose } from '@bem-react/core'
+import {
+  TabsMenu as TabsMenuDesktop,
+  withSizeM,
+  withLayoutHoriz,
+  withViewDefault,
+} from '@yandex-lego/components/TabsMenu/desktop'
+
+const TabsMenu = compose(
+  withSizeM,
+  withViewDefault,
+  withLayoutHoriz,
+)(TabsMenuDesktop)
+
+const App = () => {
+  const [activeTab, setActiveTab] = useState('tab1')
+
+  return (
+    <TabsMenu
+      size="m"
+      view="default"
+      layout="horiz"
+      activeTab={activeTab}
+      tabs={[
+        { id: 'tab1', onClick: () => setActiveTab('tab1'), content: 'Tab 1' },
+        { id: 'tab2', onClick: () => setActiveTab('tab2'), content: 'Tab 2' },
+      ]}
+    />
+  )
+}
+```
+
+### Использование с полным набором модификаторов:
+
+```ts
+// src/App.ts
+import React, { useState } from 'react'
+import { TabsMenu } from '@yandex-lego/components/TabsMenu/desktop/bundle'
+
+const App = () => {
+  const [activeTab, setActiveTab] = useState('tab1')
+
+  return (
+    <TabsMenu
+      size="m"
+      view="default"
+      layout="horiz"
+      activeTab={activeTab}
+      tabs={[
+        { id: 'tab1', onClick: () => setActiveTab('tab1'), content: 'Tab 1' },
+        { id: 'tab2', onClick: () => setActiveTab('tab2'), content: 'Tab 2' },
+      ]}
+    />
+  )
+}
+```
+
+### Props
+
+<PropsTable props={tabsMenuProps} />
+

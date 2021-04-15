@@ -1,0 +1,3 @@
+Хук `useIsomorphicLayoutEffect` позволяет запускать `useLayoutEffect` или `useEffect` в зависимости от окружения. Если в текущем окружении можно использовать браузерный API, то запускается `useLayoutEffect`, иначе `useEffect`.
+
+Хук избавляет от предупреждений в консоли при использовании `useLayoutEffect` в SSR приложении.

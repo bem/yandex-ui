@@ -1,0 +1,101 @@
+import { Target as PopupTarget } from '@yandex-lego/components/Popup/__examples__/target.tsx'
+import popupTargetSources from '!!raw-loader!@yandex-lego/components/Popup/__examples__/target.tsx'
+import { View as PopupView } from '@yandex-lego/components/Popup/__examples__/view.tsx'
+import popupViewSources from '!!raw-loader!@yandex-lego/components/Popup/__examples__/view.tsx'
+import { Theme as PopupTheme } from '@yandex-lego/components/Popup/__examples__/theme.tsx'
+import popupThemeSources from '!!raw-loader!@yandex-lego/components/Popup/__examples__/theme.tsx'
+import { Nonvisual as PopupNonvisual } from '@yandex-lego/components/Popup/__examples__/nonvisual.tsx'
+import popupNonvisualSources from '!!raw-loader!@yandex-lego/components/Popup/__examples__/nonvisual.tsx'
+import { Direction as PopupDirection } from '@yandex-lego/components/Popup/__examples__/direction.tsx'
+import popupDirectionSources from '!!raw-loader!@yandex-lego/components/Popup/__examples__/direction.tsx'
+import { Boundary as PopupBoundary } from '@yandex-lego/components/Popup/__examples__/boundary.tsx'
+import popupBoundarySources from '!!raw-loader!@yandex-lego/components/Popup/__examples__/boundary.tsx'
+import { ContextMenu as PopupContextMenu } from '@yandex-lego/components/Popup/__examples__/contextmenu.tsx'
+import popupContextMenuSources from '!!raw-loader!@yandex-lego/components/Popup/__examples__/contextmenu.tsx'
+
+### Привязывание к блоку
+
+Чтобы попап прикреплялся к нужному элементу, установите свойство `target` в значение `anchor`, а в свойстве `anchor` нужный элемент.
+
+<Example
+    height={150}
+    component={PopupTarget}
+    source={popupTargetSources}
+/>
+
+### Вид попапа
+
+Чтобы изменить вид попапа, установите свойство `view` в значение `default`.
+
+<Example
+    height={100}
+    component={PopupView}
+    source={popupViewSources}
+/>
+
+### Классический дизайн
+
+Чтобы задать тему попапа, установите свойство `theme` в одно из следующих значений: `"clear"`, `"normal"`.
+
+<Disclaimer>
+    <p>
+    Важно! Модификаторы <b>view</b> и <b>theme</b> являются взаимоисключающими. Не используйте их вместе. <br />
+    Модификатор <b>theme</b>  не кастомизируется с помощью дизайн-токенов.
+    </p>
+</Disclaimer>
+
+<Example
+    height={100}
+    component={PopupTheme}
+    source={popupThemeSources}
+/>
+
+Чтобы совсем убрать стилевое оформление, установите свойство `nonvisual` в значение `true`.
+
+<Example
+    height={100}
+    component={PopupNonvisual}
+    source={popupNonvisualSources}
+/>
+
+### Направление раскрытия попапа
+
+Чтобы задать направление раскрытия попапа, используйте свойство `directions`.
+
+<Example
+    height={250}
+    component={PopupDirection}
+    source={popupDirectionSources}
+/>
+
+### Границы отображения попапа
+
+Чтобы задать границы отображения попапа, используйте свойство `boundary`. Это может быть полезно, когда якорь находится внутри контейнера с `overflow: hidden` или вы хотите явно задать границы отображения. По-умолчанию, попап автоматически пытыется найти ближайшего родителя относительно якоря со свойством `overflow`.
+
+<Example
+    height={300}
+    component={PopupBoundary}
+    source={popupBoundarySources}
+/>
+
+### Виртуальный элемент
+
+Для некоторых сценариев вам может понадобится привязать попап, например, к указателю мыши. Для этого есть вспомогательный React-хук `useVirtualElementRef`, который принимает координаты, относительно `viewport` в виде `{ top: number; left: number; bottom: number; right: number }`.
+
+```tsx
+import { useVirtualElementRef } from '@yandex-lego/components/usePopper';
+
+const Example = () => {
+    // `right` и `bottom` по-умолчанию будут равны `left` и `top` соответственно
+    const anchorRef = useVirtualElementRef({ rect: { left: 50, top: 50 } });
+
+    return <Popup target="anchor" anchor={anchorRef} />
+}
+```
+
+Ниже представлен пример с простой реализацией контекстного меню.
+
+<Example
+    component={PopupContextMenu}
+    source={popupContextMenuSources}
+/>

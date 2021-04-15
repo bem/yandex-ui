@@ -1,0 +1,12 @@
+Чтобы обеспечить доступность с использованием компонента `stateless`, необходимо связать `anchor` с подсказкой, указав `aria-describedby` и `id`.
+
+> ⚠️ При использовании компонента `stateful` эта логика реализована внутри.
+
+```ts
+<button aria-describedby="tooltip-1">
+  Target
+</button>
+<Tooltip id="tooltip-1">
+  Description
+</Tooltip>
+```

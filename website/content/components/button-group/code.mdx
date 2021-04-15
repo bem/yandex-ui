@@ -1,0 +1,55 @@
+import buttonGroupProps from '!!ts-docgen-loader!./props.tsx';
+
+### Конфигурация темы на уровне проекта:
+
+```ts
+// src/lib/theme.ts
+import { configureRootTheme } from '@yandex-lego/components/Theme'
+import { theme } from '@yandex-lego/components/Theme/presets/default'
+
+configureRootTheme({ theme })
+```
+
+### Использование с нужным набором модификаторов:
+
+```ts
+// src/App.ts
+import React from 'react'
+import { compose } from '@bem-react/core'
+import {
+  ButtonGroup as ButtonGroupDesktop,
+  withGapM,
+  withPinRound,
+} from '@yandex-lego/components/ButtonGroup/desktop'
+import { Button } from '@yandex-lego/components/Button/desktop'
+
+const ButtonGroup = compose(withGapM, withPinRound)(ButtonGroupDesktop)
+
+const App = () => (
+  <ButtonGroup pin="round" gap="m">
+    <Button />
+    <Button />
+    <Button />
+  </ButtonGroup>
+)
+```
+
+### Использование с полным набором модификаторов:
+
+```ts
+// src/App.ts
+import React from 'react'
+import { ButtonGroup } from '@yandex-lego/components/ButtonGroup/desktop/bundle'
+
+const App = () => (
+  <ButtonGroup view="default" size="m">
+    <Button />
+    <Button />
+    <Button />
+  </ButtonGroup>
+)
+```
+
+### Props
+
+<PropsTable props={buttonGroupProps} />

@@ -1,0 +1,116 @@
+import tooltipProps from '!!ts-docgen-loader!./props.tsx';
+
+### Конфигурация темы на уровне проекта:
+
+```ts
+// src/lib/theme.ts
+import { configureRootTheme } from '@yandex-lego/components/Theme'
+import { theme } from '@yandex-lego/components/Theme/presets/default'
+
+configureRootTheme({ theme })
+```
+
+### Использование с нужным набором модификаторов:
+
+```ts
+// src/App.ts
+import React from 'react'
+import { compose } from '@bem-react/core'
+import {
+  Tooltip as TooltipDesktop,
+  withSizeM,
+  withViewDefault,
+} from '@yandex-lego/components/Tooltip/desktop'
+
+const Tooltip = compose(
+  withSizeM,
+  withViewDefault,
+)(TooltipDesktop)
+
+const App = () => {
+  const [visible, setVisible] = React.useState(false)
+  const buttonRef = React.useRef(null)
+
+  return (
+    <>
+      <button
+        ref={buttonRef}
+        onMouseOver={() => setVisible(true)}
+        onMouseLeave={() => setVisible(false)}
+      >
+        Target
+      </button>
+      <Tooltip view="default" size="m" anchor={buttonRef} visible={visible}>
+        Description
+      </Tooltip>
+    </>
+  )
+}
+```
+
+### Использование с полным набором модификаторов:
+
+При использовании компонента `stateless` необходимо связать `target` и `tooltip` через свойство `anchor`, а также задать свойство `visible`.
+
+```ts
+// src/App.ts
+import React from 'react'
+import { Tooltip } from '@yandex-lego/components/Tooltip/desktop/bundle'
+
+const App = () => {
+  const [visible, setVisible] = React.useState(false)
+  const buttonRef = React.useRef(null)
+
+  return (
+    <>
+      <button
+        ref={buttonRef}
+        onMouseOver={() => setVisible(true)}
+        onMouseLeave={() => setVisible(false)}
+      >
+        Target
+      </button>
+      <Tooltip view="default" size="m" anchor={buttonRef} visible={visible}>
+        Description
+      </Tooltip>
+    </>
+  )
+}
+```
+
+### TooltipStateful
+
+При использовании компонента `stateful` достаточно обернуть любой react-элемент в `TooltipStateful` и задать описание в `content`.
+
+```ts
+import React from 'react'
+import { TooltipStateful } from '@yandex-lego/components/Tooltip/desktop/bundle'
+
+const App = () => (
+  <TooltipStateful view="default" size="m" content="Description">
+    <button>
+      Target
+    </button>
+  </TooltipStateful>
+)
+```
+
+### Props
+
+### Stateless
+
+Компонент частично реализует интерфейс `Popup` и `PopupTargetAnchor`.
+
+<PropsTable props={tooltipProps} />
+
+
+### Stateful
+
+Компонент частично реализует интерфейс `Tooltip`.
+
+| Свойство        | Тип                                          | По умолчанию | Описание                                                        |
+| --------------- | -------------------------------------------- | ------------ | --------------------------------------------------------------  |
+| children        | `ReactNode`                                  | —            | Компонент или элемент, для которого нужно показать подсказку    |
+| content         | `ReactNode`                                  | —            | Содержимое, которое будет показано в подсказке                  |
+| trigger?        | `"click" \| "hover" \| "focus" \| Trigger[]` | `hover`      | Режим для показа подсказки; может содержать несколько значений  |
+| defaultVisible? | `false \| true`                              | `false`      | Показывает подсказку сразу видимой                              |

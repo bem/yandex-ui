@@ -1,0 +1,88 @@
+[
+  {
+    "label": "🤔 Guidelines",
+    "items": [
+      "Start"
+    ]
+  },
+  {
+    "label": "🗂 Components",
+    "items": [
+      "Attach",
+      "Button",
+      "ButtonGroup",
+      "Badge",
+      "Checkbox",
+      "Divider",
+      "Drawer",
+      "Link",
+      "ListTile",
+      "Menu",
+      "MessageBox",
+      "Modal",
+      "Header",
+      "Icon",
+      "Image",
+      "LayerManager",
+      "Popup",
+      "Portal",
+      "Progress",
+      "Radiobox",
+      "RadioButton",
+      "Select",
+      "Slider",
+      "Text",
+      "Textarea",
+      "Textinput",
+      "Theme",
+      "Tumbler",
+      "UserPic",
+      "Spacer",
+      "Spin",
+      "TabsMenu",
+      "TabsPanes",
+      "Tooltip",
+      {
+        "label": "Calendar",
+        "badge": "В разработке",
+        "path": "https://st.yandex-team.ru/ISL-8580",
+        "__skip": true
+      },
+      {
+        "label": "Table",
+        "badge": "В разработке",
+        "path": "https://st.yandex-team.ru/ISL-8818",
+        "__skip": true
+      }
+    ]
+  },
+  {
+    "label": "🏗 Hooks",
+    "items": [
+      "UseUpdateEffect",
+      "UseIsomorphicLayoutEffect",
+      "UsePreviousValue",
+      "UseUniqId",
+      "UsePopper",
+      "UsePreventScroll"
+    ]
+  },
+  {
+    "label": "🦔 HOCs",
+    "items": [
+      "WithAutoFocus",
+      "WithControl",
+      "WithDebounceInput",
+      "WithOutsideClick",
+      "WithTogglable",
+      "WithZIndex"
+    ]
+  },
+  {
+    "label": "📚 Libs",
+    "items": [
+      "RenderOverride",
+      "ScrollLocker"
+    ]
+  }
+]

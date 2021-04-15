@@ -1,0 +1,117 @@
+import { Link } from "gatsby"
+import { Playground } from '@yandex-lego/components/Header/__examples__/playground.tsx'
+import playgroundSource from '!!raw-loader!@yandex-lego/components/Header/__examples__/playground.tsx'
+import { icons } from '@yandex-lego/components/Header/__examples__/icons.tsx'
+import iconsSource from '!!raw-loader!@yandex-lego/components/Header/__examples__/icons.tsx'
+import { YandexLogo } from '@yandex-lego/components/Header/__examples__/yandexlogo.tsx'
+import YandexLogoSource from '!!raw-loader!@yandex-lego/components/Header/__examples__/yandexlogo.tsx'
+import { logoaas } from '@yandex-lego/components/Header/__examples__/logoaas.tsx'
+import logoaasSource from '!!raw-loader!@yandex-lego/components/Header/__examples__/logoaas.tsx'
+import { inlineLogo } from '@yandex-lego/components/Header/__examples__/inlinelogo.tsx'
+import inlineLogoSource from '!!raw-loader!@yandex-lego/components/Header/__examples__/inlinelogo.tsx'
+import { nav } from '@yandex-lego/components/Header/__examples__/nav.tsx'
+import navSource from '!!raw-loader!@yandex-lego/components/Header/__examples__/nav.tsx'
+import { Web4 } from '@yandex-lego/components/Header/__examples__/web4.tsx'
+import Web4Source from '!!raw-loader!@yandex-lego/components/Header/__examples__/web4.tsx'
+import { Q } from '@yandex-lego/components/Header/__examples__/q';
+import QSource from '!!raw-loader!@yandex-lego/components/Header/__examples__/q';
+
+
+Это базовый компонент шапки, через который можно выразить шапку вашего сервиса.
+Он приходит на смену шапок из @yandex-lego/serp-header для React сервисов.
+
+Перед использованием ознакомьтесь со <Link to="/components/Header/structure">структурой</Link> компонента, чтобы лучше ориентироваться.
+Больше примеров можно найти на вкладке <Link to="/components/Header/examples">examples</Link>.
+
+## Использование
+
+Базовый компонент представляет собой контейнер с логотипом Яндекс.
+
+- Можно передать свой логотип в свойство ``logo``.
+- Можно передать блоки с действиями в свойство ``actions``.
+- Основной контент надо передавать внутрь компонента.
+
+<Example
+    component={Playground}
+    source={playgroundSource}
+/>
+
+Больше примеров можно найти на вкладке <Link to="/components/Header/examples">examples</Link>.
+
+### Логотипы
+
+Шапка по умолчанию показывает логотип «Яндекс», но можно передать свой или конфигурировать логотип Яндекса.
+Всего с шапкой поставляется 3 вида логотипов ``YandexLogo, Logoaas, InlineLogo``.
+Их можно комбинировать между собой, или вообще использовать свои компоненты, чтобы добавить их в шапку (через свойство `logo`).
+
+
+#### Яндекс
+Логотип по умолчанию. Его  можно отдельно импортировать и сконфигурировать, как требуется для сервиса.
+
+<Example
+    component={YandexLogo}
+    source={YandexLogoSource}
+/>
+
+#### Logoaas
+Это компонент использует сервис Logo As Service.
+Поддерживает всё, что реализует сервис.
+Подробнее в документации: https://github.yandex-team.ru/soft/logoaas
+
+
+<Example
+    component={logoaas}
+    source={logoaasSource}
+/>
+
+#### InlineLogo
+
+Если у вас есть свой логотип картинкой, вы можете использовать `InlineLogo` и передать ссылку на свой логотип в свойство `src`.
+
+<Example
+    component={inlineLogo}
+    source={inlineLogoSource}
+/>
+
+### Форма поиска
+
+Cреди компонентов поставляется обертка над формой, чтобы удобно использовать её в поисковом сценарии шапки.
+Она принимает произвольный контент и свойства формы.
+Также реализована поддержка контролов поисковой формы.
+
+```tsx
+import { Header, HeaderSearch } from '@yandex-lego/components/Header/desktop';
+
+<Header>
+    <HeaderSearch action='/search'>
+        Textinput + Button + etc
+    </HeaderSearch>
+</Header>
+```
+#### Поисковая стрелка
+
+<Example
+    component={Web4}
+    source={Web4Source}
+/>
+
+### Иконки
+
+В пакет были добавлены иконки из serp-header.
+
+<Example
+    component={icons}
+    source={iconsSource}
+/>
+
+### Навигационные табы
+Для работы с навигацией есть несколько компонентов, которые поставляются с шапкой.
+`HeaderNav` и `HeaderNavItem`.
+
+Айтемы надо отрисовать внутри навигации и эту конструкцию добавить внутрь компонента шапки.
+Если `HeaderNavItem` вам не подходит, то можно использовать любые компоненты (и комбинировать их).
+
+<Example
+    component={nav}
+    source={navSource}
+/>

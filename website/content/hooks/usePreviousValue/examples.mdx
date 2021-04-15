@@ -1,0 +1,18 @@
+import { Default as usePreviousValueDefault } from '@yandex-lego/components/usePreviousValue/examples/default.examples';
+import { Rerender as usePreviousValueRerender } from '@yandex-lego/components/usePreviousValue/examples/rerender.examples';
+import usePreviousValueDefaultSource from '!!raw-loader!@yandex-lego/components/usePreviousValue/examples/default.examples';
+import usePreviousValueRerenderSource from '!!raw-loader!@yandex-lego/components/usePreviousValue/examples/rerender.examples';
+
+Хук `UsePreviousValue` сохраняет значение свойства из предыдущего рендера.
+
+<Example
+    component={usePreviousValueDefault}
+    source={usePreviousValueDefaultSource}
+/>
+
+Важное замечание, что хук сохраняет не предыдущее значение свойства, а значения свойства из **предыдущего рендера**.
+
+<Example
+    component={usePreviousValueRerender}
+    source={usePreviousValueRerenderSource}
+/>

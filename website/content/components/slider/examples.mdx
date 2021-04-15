@@ -1,0 +1,93 @@
+import { Basic as SliderBasic } from '@yandex-lego/components/Slider/__examples__/basic.tsx'
+import sliderBasicSource from '!!raw-loader!@yandex-lego/components/Slider/__examples__/basic.tsx'
+import { Filled as SliderFilled } from '@yandex-lego/components/Slider/__examples__/filled.tsx'
+import sliderFilledSource from '!!raw-loader!@yandex-lego/components/Slider/__examples__/filled.tsx'
+import { Reversed as SliderReversed} from '@yandex-lego/components/Slider/__examples__/reversed.tsx'
+import sliderReversedSource from '!!raw-loader!@yandex-lego/components/Slider/__examples__/reversed.tsx'
+import { Stepped as SliderStepped } from '@yandex-lego/components/Slider/__examples__/stepped.tsx'
+import sliderSteppedSource from '!!raw-loader!@yandex-lego/components/Slider/__examples__/stepped.tsx'
+import { Marked as SliderMarked } from '@yandex-lego/components/Slider/__examples__/marked.tsx'
+import sliderMarkedSource from '!!raw-loader!@yandex-lego/components/Slider/__examples__/marked.tsx'
+import { CustomThumb as SliderCustomThumb } from '@yandex-lego/components/Slider/__examples__/customThumb.tsx'
+import sliderCustomThumbSource from '!!raw-loader!@yandex-lego/components/Slider/__examples__/customThumb.tsx'
+import { CustomLabelTick as SliderLabelTick } from '@yandex-lego/components/Slider/__examples__/customLabelTick.tsx'
+import sliderLabelTickSource from '!!raw-loader!@yandex-lego/components/Slider/__examples__/customLabelTick.tsx'
+import { Showcase as SliderShowcase } from '@yandex-lego/components/Slider/__examples__/showcase.tsx'
+
+### Базовый
+
+В самом простом случае достаточно указать `view` и `value`. Для того, чтобы задать диапазон, необходимо в свойство `value` передать два числа.
+
+<Example
+    component={SliderBasic}
+    source={sliderBasicSource}
+/>
+
+### Заполненный
+
+Чтобы показать индикатор выбранного диапазона, установите свойство `filled`.
+
+<Example
+    component={SliderFilled}
+    source={sliderFilledSource}
+/>
+
+### Развернутый
+
+Чтобы отобразить слайдер в обратном направлении, установите свойство `reverse`.
+
+<Example
+    component={SliderReversed}
+    source={sliderFilledSource}
+/>
+
+### Дискретный
+
+Чтобы задать шаг смещения, установите свойство `step` с необходимым значением.
+
+> ⚠️ При больших значениях min/max рекомендуется так же устанавливать большое значение для шага.
+
+<Example
+    component={SliderStepped}
+    source={sliderSteppedSource}
+/>
+
+### Маркированный
+
+Чтобы разметить слайдер или показать значения в определенном шаге, установите следующие свойства:
+
+- `showTicks` — Показывает метки на треке
+- `showTickValues` — отображает значения на метках трека (по умолчанию показывает только минимальное и максимальное значения)
+
+> ⚠️ Не рекомендуется использовать данные свойства при очень больших значениях (min/max) и маленьком шаге (step), т.к. они создают лишние DOM-узлы.
+
+<Example
+    component={SliderMarked}
+    source={sliderMarkedSource}
+/>
+
+### Пользовательский Thumb
+
+При необходимости можно заменить элемент `Thumb` на свою реализацию, для этого установите свойство `renderThumb` со своим компонентом.
+
+<Example
+    component={SliderCustomThumb}
+    source={sliderCustomThumbSource}
+/>
+
+### Пользовательский LabelTick
+
+При необходимости можно заменить элемент `LabelTick` на свою реализацию, для этого установите свойство `renderTickLabel` со своим компонентом.
+
+<Example
+    component={SliderLabelTick}
+    source={sliderLabelTickSource}
+/>
+
+### Showcase
+
+Примеры использования `Slider` также можно посмотреть в [Storybook](https://lego.yandex-team.ru/components/lego/latest/?storybook=%2Fstory%2Fcontrols-slider-desktop--showcase)
+
+<Example
+    component={SliderShowcase}
+/>

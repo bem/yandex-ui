@@ -1,0 +1,63 @@
+import { View as CheckboxView } from '@yandex-lego/components/Checkbox/__examples__/view.tsx'
+import checkboxViewSource from '!!raw-loader!@yandex-lego/components/Checkbox/__examples__/view.tsx'
+import { Theme as CheckboxTheme } from '@yandex-lego/components/Checkbox/__examples__/theme.tsx'
+import CheckboxThemeSource from '!!raw-loader!@yandex-lego/components/Checkbox/__examples__/theme.tsx'
+import { Size as CheckboxSize } from '@yandex-lego/components/Checkbox/__examples__/size.tsx'
+import CheckboxSizeSource from '!!raw-loader!@yandex-lego/components/Checkbox/__examples__/size.tsx'
+import { Indeterminate as CheckboxIndeterminate } from '@yandex-lego/components/Checkbox/__examples__/indeterminate.tsx'
+import checkboxIndeterminateSource from '!!raw-loader!@yandex-lego/components/Checkbox/__examples__/indeterminate.tsx'
+import { Lines as CheckboxLines } from '@yandex-lego/components/Checkbox/__examples__/lines.tsx'
+import sheckboxLinesSource from '!!raw-loader!@yandex-lego/components/Checkbox/__examples__/lines.tsx'
+
+### Вид чекбокса
+
+Чтобы изменить вид чекбокса, установите свойство `view` в значение `dafault`.
+
+<Example
+    component={CheckboxView}
+    source={checkboxViewSource}
+/>
+
+### Классический дизайн
+
+Чтобы изменить стилевое оформление чекбокса, установите свойство `theme` в одно из указанных ниже значений.
+
+- `normal` — стандартная тема, используется в большинстве случаев.
+- `pseudo` — прозрачная тема, используется, чтобы сделать переключатель менее заметным на странице.
+
+<Example
+    component={CheckboxTheme}
+    source={CheckboxThemeSource}
+/>
+
+### Размер
+
+Чтобы изменить размер чекбокса, установите свойство `size` в одно из следующих значений: `"m"`, `"s"`.
+
+<Example
+    component={CheckboxSize}
+    source={CheckboxSizeSource}
+/>
+
+### Однострочные и многострочные подписи
+
+Чтобы задать тип подписи чекбоксу, установите свойство `lines` в одно из указанных ниже значений.
+
+- `one` — однострочная подпись. Обрезается многоточием, если ее длина превышает длину родительского элемента.
+- `multi` — многострочная подпись.
+
+
+<Example
+    component={CheckboxLines}
+    source={sheckboxLinesSource}
+/>
+
+### Переходное состояние
+
+Чтобы задать переходное состояние чекбоксу, установите свойство `indeterminate` в значение `true`.
+
+
+<Example
+    component={CheckboxIndeterminate}
+    source={checkboxIndeterminateSource}
+/>

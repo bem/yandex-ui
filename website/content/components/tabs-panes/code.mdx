@@ -1,0 +1,23 @@
+import tabsPanesProps from '!!ts-docgen-loader!./props.tsx';
+
+### Пример использования
+
+```js
+// src/App.ts
+import React, { useState } from 'react'
+import { TabsPanes } from '@yandex-lego/components/TabsPanes/desktop/bundle'
+
+const App = () => (
+  <TabsPanes
+    activePane="1"
+    panes={[
+      { id: '1', content: 'Pane 1 content' },
+      { id: '2', content: 'Pane 2 content' },
+    ]}
+  />
+)
+```
+
+### Props
+
+<PropsTable props={tabsPanesProps} />

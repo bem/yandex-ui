@@ -1,0 +1,21 @@
+import dropdownProps from '!!ts-docgen-loader!./props.tsx';
+
+```ts
+// src/App.ts
+import React from 'react'
+import { Dropdown } from '@yandex-lego/components/Dropdown/desktop/bundle'
+import { Button } from '@yandex-lego/components/Button/desktop/bundle'
+
+const App = () => (
+  <Dropdown view="default" direction="bottom-end" content={<div></div>}>
+    <Button view="default" size="s">
+        {direction}
+        &nbsp;direction
+    </Button>
+  </Badge>
+)
+```
+
+### Props
+
+<PropsTable props={dropdownProps} />

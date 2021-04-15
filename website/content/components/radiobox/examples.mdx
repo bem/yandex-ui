@@ -1,0 +1,37 @@
+---
+id: Radiobox
+---
+
+import { View as RadioboxView } from '@yandex-lego/components/Radiobox/__examples__/view.tsx'
+import radioboxViewSource from '!!raw-loader!@yandex-lego/components/Radiobox/__examples__/view.tsx'
+import { Theme as RadioboxTheme } from '@yandex-lego/components/Radiobox/__examples__/theme.tsx'
+import radioboxThemeSource from '!!raw-loader!@yandex-lego/components/Radiobox/__examples__/theme.tsx'
+import { Size as RadioboxSize } from '@yandex-lego/components/Radiobox/__examples__/size.tsx'
+import radioboxSizeSource from '!!raw-loader!@yandex-lego/components/Radiobox/__examples__/size.tsx'
+
+### Вид радиопереключателя
+
+Для различного оформления радиопереключателей установите свойство `view` в значение `"default"` или `"outline"`.
+
+<Example
+    component={RadioboxView}
+    source={radioboxViewSource}
+/>
+
+### Классический дизайн
+
+Чтобы использовать классический дизайн для радиопереключателей, установите свойство `theme` в одно из следующих значений: `"normal"`, `"pseudo"`.
+
+<Example
+    component={RadioboxTheme}
+    source={radioboxThemeSource}
+/>
+
+### Размер радиопереключателя
+
+Чтобы изменить размер радиопереключателя, установите свойство `size` в одно из следующих значений: `"m"`, `"s"`.
+
+<Example
+    component={RadioboxSize}
+    source={radioboxSizeSource}
+/>

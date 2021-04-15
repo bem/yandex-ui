@@ -1,0 +1,64 @@
+import propsTumbler from '!!ts-docgen-loader!./props.tsx';
+
+### Конфигурация темы на уровне проекта:
+
+```ts
+// src/lib/theme.ts
+import { configureRootTheme } from '@yandex-lego/components/Theme'
+import { theme } from '@yandex-lego/components/Theme/presets/default'
+
+configureRootTheme({ theme })
+```
+
+### Использование с нужным набором модификаторов:
+
+```ts
+// src/App.ts
+import React, { useState } from 'react'
+import { compose } from '@bem-react/core'
+import {
+  Tumbler as TumblerDesktop,
+  withSizeM,
+  withViewDefault,
+} from '@yandex-lego/components/Tumbler/desktop'
+
+const Tumbler = compose(withSizeM, withViewDefault)(TumblerDesktop)
+
+const App = () => {
+  const [checked, setChecked] = useState(false)
+
+  return (
+    <Tumbler
+      view="default"
+      size="m"
+      checked={checked}
+      onChange={() => setChecked(!checked)}
+    />
+  )
+}
+```
+
+### Использование с полным набором модификаторов:
+
+```ts
+// src/App.ts
+import React, { useState } from 'react'
+import { Tumbler } from '@yandex-lego/components/Tumbler/desktop/bundle'
+
+const App = () => {
+  const [checked, setChecked] = useState(false)
+
+  return (
+    <Tumbler
+      view="default"
+      size="m"
+      checked={checked}
+      onChange={() => setChecked(!checked)}
+    />
+  )
+}
+```
+
+### Props
+
+<PropsTable props={propsTumbler} />

@@ -1,0 +1,9 @@
+{
+  "name": "gatsby-theme-lego",
+  "version": "0.0.1",
+  "private": "true",
+  "dependencies": {},
+  "owners": [
+    "https://abc.yandex-team.ru/services/lego2"
+  ]
+}

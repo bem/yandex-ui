@@ -1,0 +1,11 @@
+import { Default as useUpdateEffectDefault } from '@yandex-lego/components/useUpdateEffect/examples/default.examples';
+import useUpdateEffectSource from '!!raw-loader!@yandex-lego/components/useUpdateEffect/examples/default.examples'
+
+Хук `useUpdateEffect` используется также как и `useEffect`. Ему передается callback и список зависимостей. Эффект не будет запускаться при первом рендере, он будет запускаться только при обновлении списка зависимостей.
+
+В примере ниже alert запуститься только при изменении значения `count`. Если заменить `useUpdateEffect` на `useEffect`, то alert запуститься при первом рендере без нажатия на кнопку.
+
+<Example
+    component={useUpdateEffectDefault}
+    source={useUpdateEffectSource}
+/>

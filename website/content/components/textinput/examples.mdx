@@ -1,0 +1,100 @@
+import { View as TextinputView } from '@yandex-lego/components/Textinput/__examples__/view.tsx'
+import viewTextinputSource from '!!raw-loader!@yandex-lego/components/Textinput/__examples__/view.tsx'
+import { Theme as TextinputTheme } from '@yandex-lego/components/Textinput/__examples__/theme.tsx'
+import themeTextinputSource from '!!raw-loader!@yandex-lego/components/Textinput/__examples__/theme.tsx'
+import { Size as TextinputSize } from '@yandex-lego/components/Textinput/__examples__/size.tsx'
+import sizeTextinputSource from '!!raw-loader!@yandex-lego/components/Textinput/__examples__/size.tsx'
+import { Baseline as TextinputBaseline } from '@yandex-lego/components/Textinput/__examples__/baseline.tsx'
+import baselineTextinputSource from '!!raw-loader!@yandex-lego/components/Textinput/__examples__/baseline.tsx'
+import { Type as TextinputType } from '@yandex-lego/components/Textinput/__examples__/type.tsx'
+import typeTextinputSource from '!!raw-loader!@yandex-lego/components/Textinput/__examples__/type.tsx'
+import { Pin as TextinputPin } from '@yandex-lego/components/Textinput/__examples__/pin.tsx'
+import pinTextinputSource from '!!raw-loader!@yandex-lego/components/Textinput/__examples__/pin.tsx'
+import { State as TextinputState } from '@yandex-lego/components/Textinput/__examples__/state.tsx'
+import stateTextinputSource from '!!raw-loader!@yandex-lego/components/Textinput/__examples__/state.tsx'
+import { Debounce as TextinputDebounce } from '@yandex-lego/components/Textinput/__examples__/debounce.tsx'
+import debounceTextinputSource from '!!raw-loader!@yandex-lego/components/Textinput/__examples__/debounce.tsx'
+
+### Вид поля
+
+Чтобы изменить вид поля, установите свойство `view` в значение `"default"`.
+
+<Example
+    component={TextinputView}
+    source={viewTextinputSource}
+/>
+
+### Классический дизайн
+
+Чтобы изменить стилевое оформление поля, установите свойство `theme` в одно из следующих значений: `"normal"`, `"websearch"`.
+
+<Disclaimer>
+    <p>
+    Важно! Модификаторы <b>view</b> и <b>theme</b> являются взаимоисключающими. Не используйте их вместе. <br />
+    Модификатор <b>theme</b>  не кастомизируется с помощью дизайн-токенов.
+    </p>
+</Disclaimer>
+
+<Example
+    component={TextinputTheme}
+    source={themeTextinputSource}
+/>
+
+### Размер поля
+
+Чтобы изменить размер поля, установите свойство `size` в одно из следующих значений: `"m"`, `"s"`.
+
+<Example
+    component={TextinputSize}
+    source={sizeTextinputSource}
+/>
+
+### Выравнивание
+
+Чтобы выровнять компоненты по базовой линии, установите свойство `baseline`.
+
+<Example
+    component={TextinputBaseline}
+    source={baselineTextinputSource}
+/>
+
+### Тип поля
+
+Чтобы изменить тип поля, установите свойство `type`.
+
+<Example
+    component={TextinputType}
+    source={typeTextinputSource}
+/>
+
+### Границы поля
+
+Чтобы изменить границы поля, установите свойство `pin`.
+
+<Example
+    component={TextinputPin}
+    source={pinTextinputSource}
+/>
+
+### Состояние ошибки
+
+Чтобы задать состояние ошибки, нужно передать свойство `state` со значением `error`.
+Чтобы установить текст ошибки, нужно передать значение в свойство `hint`.
+
+<Example
+    component={TextinputState}
+    source={stateTextinputSource}
+/>
+
+### debounce для onChange
+
+Чтобы обработчик `onChange` текстового поля срабатывал реже, можно применить `withDebounceInput`, который добавляет свойства:
+- `minLength` — минимальная длина строки для вызова `onChange` (по умолчанию `0`);
+- `debounceTimeout` — минимальное время между вызовами `onChange` в миллисекундах (по умолчанию `0`);
+- `forceNotifyByEnter` — форсировать вызов `onChange` по нажатию Enter (по умолчанию `true`);
+- `forceNotifyOnBlur` — форсировать вызов `onChange` при потере фокуса (по умолчанию `true`).
+
+<Example
+    component={TextinputDebounce}
+    source={debounceTextinputSource}
+/>

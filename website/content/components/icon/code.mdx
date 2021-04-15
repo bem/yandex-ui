@@ -1,0 +1,35 @@
+import iconProps from '!!ts-docgen-loader!./props.tsx';
+
+#### Использование с нужным набором модификаторов:
+
+```ts
+// src/App.ts
+import React from 'react'
+import { compose } from '@bem-react/core'
+import {
+  Icon as IconDesktop,
+  withGlyphTypeArrow,
+} from '@yandex-lego/components/Icon/desktop'
+
+const Icon = compose(withGlyphTypeArrow)(IconDesktop)
+
+const App = () => {
+  return <Icon glyph="type-arrow" />
+}
+```
+
+#### Использование с полным набором модификаторов:
+
+```ts
+// src/App.ts
+import React from 'react'
+import { Icon } from '@yandex-lego/components/Icon/desktop/bundle'
+
+const App = () => {
+  return <Icon glyph="type-arrow" />
+}
+```
+
+### Props
+
+<PropsTable props={iconProps} />

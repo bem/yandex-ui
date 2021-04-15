@@ -7,7 +7,7 @@ const { resolve } = require('path');
 const { promisify } = require('util');
 
 const execa = promisify(exec);
-const websiteDir = resolve(__dirname, '../docs-site');
+const websiteDir = resolve(__dirname, '../website');
 const YENV = process.env.YENV || 'testing';
 
 async function build() {

@@ -1,0 +1,79 @@
+### Конфигурация темы на уровне проекта:
+
+```ts
+// src/lib/theme.ts
+import { configureRootTheme } from '@yandex-lego/components/Theme'
+import { theme } from '@yandex-lego/components/Theme/presets/default'
+
+configureRootTheme({ theme })
+```
+
+### Использование с нужным набором модификаторов:
+
+```ts
+// src/App.ts
+import React from 'react'
+import { compose } from '@bem-react/core'
+import {
+  MessageBox as MessageBoxDesktop,
+  withSizeM,
+  withViewDefault,
+} from '@yandex-lego/components/MessageBox/desktop'
+
+const MessageBox = compose(
+  withSizeM,
+  withViewDefault,
+)(MessageBoxDesktop)
+
+const App = () => (
+  <MessageBox view="default" size="m">
+    MessageBox
+  </MessageBox>
+)
+```
+
+### Использование с полным набором модификаторов:
+
+```ts
+// src/App.ts
+import React from 'react'
+import { MessageBox } from '@yandex-lego/components/MessageBox/desktop/bundle'
+
+const App = () => (
+  <MessageBox view="default" size="m">
+    MessageBox
+  </MessageBox>
+)
+```
+
+### Props
+
+#### MessageBox
+
+| Свойство    | Тип                                                                                                                                                                                                                                                               | По умолчанию | Описание                                                                    |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------------------------------------------------------------------- |
+| className?  | `string`                                                                                                                                                                                                                                                          | —            | Дополнительный className                                                    |
+| corner?     | `string \| number \| false \| true \| {} \| ReactElement<any, string \| ((props: any) => ReactElement<any, string \| ... \| (new (props: any) => Component<any, any, any>)>) \| (new (props: any) => Component<any, any, any>)> \| ReactNodeArray \| ReactPortal` | —            | Элемент, который будет размещен в углу компонента                           |
+| opaque?     | `false \| true`                                                                                                                                                                                                                                                   | —            | Делает фон непрозрачным                                                     |
+| onClose?    | `(event: MouseEvent<HTMLButtonElement, MouseEvent>) => void`                                                                                                                                                                                                      | —            | Обработчик клика на close элемент и индикатор того, что close надо показать |
+| actions?    | `string \| number \| false \| true \| {} \| ReactElement<any, string \| ((props: any) => ReactElement<any, string \| ... \| (new (props: any) => Component<any, any, any>)>) \| (new (props: any) => Component<any, any, any>)> \| ReactNodeArray \| ReactPortal` | —            | Кнопка или набор кнопок, которые будут размещены внизу компонента           |
+| background? | `string \| number \| false \| true \| {} \| ReactElement<any, string \| ((props: any) => ReactElement<any, string \| ... \| (new (props: any) => Component<any, any, any>)>) \| (new (props: any) => Component<any, any, any>)> \| ReactNodeArray \| ReactPortal` | —            | Элемент, который будет размещен на фоне компонента                          |
+| layout?     | `"tooltip" \| "plain" \| "functional"`                                                                                                                                                                                                                            | `'plain'`    | Раскладка компонента                                                        |
+| innerRef?   | `RefObject<HTMLDivElement>`                                                                                                                                                                                                                                       | —            | Ссылка на корневой DOM-элемент компонента                                   |
+| tailRef?    | `(instance: HTMLDivElement) => void \| RefObject<HTMLDivElement>`                                                                                                                                                                                                 | —            | Ссылка на DOM-элемент хвостика                                              |
+| hasTail?    | `false \| true`                                                                                                                                                                                                                                                   | —            | Включает/отключает хвостик у компонента                                     |
+| tailType?   | `"default" \| "rounded"`                                                                                                                                                                                                                                          | `'default'`  | Тип хвостика                                                                |
+
+#### MessageBoxPopup
+
+Компонент частично реализует интерфейс `MessageBox`, `Popup`, `WithOutsideClick` и `PopupTargetAnchor`.
+
+<!-- props:start -->
+| Свойство   | Тип                                                       | По умолчанию    | Описание                                                                                                                                  |
+| ---------- | --------------------------------------------------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| visible?   | `false \| true`                                           | —               | Делает попап видимым                                                                                                                      |
+| anchor?    | `RefObject<HTMLElement>`                                  | —               | Элемент, относительно которого позиционируется попап                                                                                      |
+| scope?     | `RefObject<HTMLElement>`                                  | `document.body` | Ссылка на DOM-элемент, в котором размещается попап. Важно, чтобы контейнер имел `position: relative` для корректного позиционирования   |
+| direction? | `Direction | Direction[]`                                 | —               | Направление для раскрытия компонента                                                                                                      |
+| onClick?   | `(event: MouseEvent<HTMLDivElement, MouseEvent>) => void` | —               | Обработчик, вызываемый при срабатывании события click                                                                                     |
+<!-- props:end -->

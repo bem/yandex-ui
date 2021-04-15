@@ -1,0 +1,54 @@
+import { View as MenuView } from '@yandex-lego/components/Menu/__examples__/view.tsx'
+import menuViewSource from '!!raw-loader!@yandex-lego/components/Menu/__examples__/view.tsx'
+import { Size as MenuSize } from '@yandex-lego/components/Menu/__examples__/size.tsx'
+import menuSizeSource from '!!raw-loader!@yandex-lego/components/Menu/__examples__/size.tsx'
+import { Width as MenuWidth } from '@yandex-lego/components/Menu/__examples__/width.tsx'
+import menuWidthSource from '!!raw-loader!@yandex-lego/components/Menu/__examples__/width.tsx'
+import { Theme as MenuTheme} from '@yandex-lego/components/Menu/__examples__/theme.tsx'
+import menuThemeSource from '!!raw-loader!@yandex-lego/components/Menu/__examples__/theme.tsx'
+
+### Вид меню
+
+<Example
+    component={MenuView}
+    source={menuViewSource}
+/>
+
+Чтобы изменить вид меню, установите свойство `view` в значение `default`.
+
+### Классический дизайн
+
+Чтобы изменить стилевое оформление меню, установите свойство `theme` в значение `"normal"`.
+
+<Disclaimer>
+    <p>
+    Важно! Модификаторы <b>view</b> и <b>theme</b> являются взаимоисключающими. Не используйте их вместе. <br />
+    Модификатор <b>theme</b>  не кастомизируется с помощью дизайн-токенов.
+    </p>
+</Disclaimer>
+
+<Example
+    component={MenuTheme}
+    source={menuThemeSource}
+/>
+
+### Размер меню
+
+Чтобы изменить размер меню, установите свойство `size` в одно из следующих значений: `"m"`, `"s"`.
+
+<Example
+    component={MenuSize}
+    source={menuSizeSource}
+/>
+
+### Ширина меню
+
+Чтобы изменить ширину меню, установите свойство `width` в одно из следующих значений:
+
+- `auto` — ширина определяется шириной текста. Ширина меню не может быть больше ширины контейнера. Если ширина текста больше ширины контейнера, текст обрезается многоточием.
+- `max` — ширина определяется шириной контейнера. Если ширина текста больше ширины контейнера, текст обрезается многоточием.
+
+<Example
+    component={MenuWidth}
+    source={menuWidthSource}
+/>

@@ -1,0 +1,46 @@
+import { Size as TabsMenuSize } from '@yandex-lego/components/TabsMenu/__examples__/size.tsx'
+import tabsMenuSizeSource from '!!raw-loader!@yandex-lego/components/TabsMenu/__examples__/size.tsx'
+import { View as TabsMenuView } from '@yandex-lego/components/TabsMenu/__examples__/view.tsx'
+import tabsMenuViewSource from '!!raw-loader!@yandex-lego/components/TabsMenu/__examples__/view.tsx'
+import { Theme as TabsMenuTheme } from '@yandex-lego/components/TabsMenu/__examples__/theme.tsx'
+import tabsMenuThemeSource from '!!raw-loader!@yandex-lego/components/TabsMenu/__examples__/theme.tsx'
+import { Adaptive as TabsMenuAdaptive } from '@yandex-lego/components/TabsMenu/__examples__/adaptive.tsx'
+import tabsMenuAdaptiveSource from '!!raw-loader!@yandex-lego/components/TabsMenu/__examples__/adaptive.tsx'
+
+### Вид меню
+
+Чтобы изменить вид меню, установите свойство `view` в значение `"default"`.
+
+<Example
+    component={TabsMenuView}
+    source={tabsMenuViewSource}
+/>
+
+### Стилевое оформление
+
+Чтобы изменить стилевое оформление меню, установите свойство `theme` в значение `"normal"`.
+
+<Example
+    component={TabsMenuTheme}
+    source={tabsMenuThemeSource}
+/>
+
+### Размер меню
+
+Чтобы задать размер горизонтального меню, установите свойство `size` в одно из следующих значений: `"m"`, `"s"`.
+
+<Example
+    component={TabsMenuSize}
+    source={tabsMenuSizeSource}
+/>
+
+### Адаптивность
+
+Чтобы включить адаптивность, установите свойство `adaptive` и обработчик `onChange`.
+
+> ⚠️ Данная функциональность находится в стадии доработок и может быть изменена в будущем.
+
+<Example
+    component={TabsMenuAdaptive}
+    source={tabsMenuAdaptiveSource}
+/>

@@ -1,0 +1,33 @@
+import { View as AttachView } from '@yandex-lego/components/Attach/__examples__/view.tsx'
+import attachViewSource from '!!raw-loader!@yandex-lego/components/Attach/__examples__/view.tsx'
+import { Size as AttachSize } from '@yandex-lego/components/Attach/__examples__/size.tsx'
+import attachSizeSource from '!!raw-loader!@yandex-lego/components/Attach/__examples__/size.tsx'
+import { HasHolder as AttachHasHolder } from '@yandex-lego/components/Attach/__examples__/hasHolder.tsx'
+import attachHasHolderSource from '!!raw-loader!@yandex-lego/components/Attach/__examples__/hasHolder.tsx'
+
+### Вид компонента
+
+Чтобы изменить вид компонента, используйте свойство `_view` со значением как у компонента `Button`.
+
+<Example
+    component={AttachView}
+    source={attachViewSource}
+/>
+
+### Размер компонента
+
+Чтобы изменить размер компонента, установите свойство `size` в одно из допустимых значений: `"s"`, `"m"`, `"l"`.
+
+<Example
+    component={AttachSize}
+    source={attachSizeSource}
+/>
+
+### Текст сообщения
+
+Чтобы отобразить текст сообщения, установите свойство `hasHolder` в значение `true`.
+
+<Example
+    component={AttachHasHolder}
+    source={attachHasHolderSource}
+/>

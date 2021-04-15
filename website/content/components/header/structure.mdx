@@ -1,0 +1,52 @@
+## Структура шапки
+
+Если пройтись по разным сервисам Яндекса, то можно столкнуться с большим отличием между интерфейсами, однако структура шапки во многих сервисах схожа.
+Схематично её можно представить вот так:
+<img src="https://jing.yandex-team.ru/files/axaxaman/structure-header.png" />
+
+- контент до шапки (баннер, алерт)
+- логотип
+- ссылки внутри сервиса
+- поиск
+- дополнительные ссылки
+- блок с действиями
+
+На эту структуру можно разложить большинство шапок Яндекса:
+
+<img src="https://jing.yandex-team.ru/files/axaxaman/structure-example.png" />
+
+Это упражнение можно проделать и на других шапках, на которые мы смотрели во время разработки этого компонента.
+<details>
+    <summary>Разные публичные сервисы</summary>
+    <img src="https://jing.yandex-team.ru/files/axaxaman/headers.png" />
+</details>
+<details>
+    <summary>Внутренние сервисы</summary>
+    <img src="https://jing.yandex-team.ru/files/axaxaman/headers1.png" />
+</details>
+<details>
+    <summary>Персональные сервисы и облако</summary>
+    <img src="https://jing.yandex-team.ru/files/axaxaman/headers2.png" />
+</details>
+<details>
+    <summary>Медиа сервисы</summary>
+    <img src="https://jing.yandex-team.ru/files/axaxaman/headers3.png" />
+</details>
+<details>
+    <summary>Поисковые сервисы</summary>
+    <img src="https://jing.yandex-team.ru/files/axaxaman/headers4.png" />
+</details>
+
+Некоторые блоки могут отсутствовать, внутри может меняться расположение компонентов, поэтому базово шапка выглядит вот так:
+<img src="https://jing.yandex-team.ru/files/axaxaman/anatomy-header.png" />
+
+- Логотип
+- Какой-то контент (навигация, поиск)
+- Блок с действиями
+
+React компонент реализует именно эту структуру и поставляет с собой ряд вспомогательных компонентов, чтобы можно было легко сделать шапку для сервиса:
+
+- Поисковая форма (стрелочный вид и простой) (с отдельным view для Button и Textinput)
+- Логотипы
+- Навигационные табы
+- Вспомогательные иконки

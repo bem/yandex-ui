@@ -1,0 +1,92 @@
+import { Base } from '@yandex-lego/components/Text/__examples__/base.tsx'
+import baseSource from '!!raw-loader!@yandex-lego/components/Text/__examples__/base.tsx'
+import { Ellipsis } from '@yandex-lego/components/Text/__examples__/ellipsis.tsx'
+import ellipsisSource from '!!raw-loader!@yandex-lego/components/Text/__examples__/ellipsis.tsx'
+import { Fade } from '@yandex-lego/components/Text/__examples__/fade.tsx'
+import fadeSource from '!!raw-loader!@yandex-lego/components/Text/__examples__/fade.tsx'
+import { FadeHorizontal } from '@yandex-lego/components/Text/__examples__/fade-horizontal.tsx'
+import fadeHorizontalSource from '!!raw-loader!@yandex-lego/components/Text/__examples__/fade-horizontal.tsx'
+import { Align } from '@yandex-lego/components/Text/__examples__/align.tsx'
+import alignSource from '!!raw-loader!@yandex-lego/components/Text/__examples__/align.tsx'
+import { Color } from '@yandex-lego/components/Text/__examples__/color.tsx'
+import colorSource from '!!raw-loader!@yandex-lego/components/Text/__examples__/color.tsx'
+import { ControlColor } from '@yandex-lego/components/Text/__examples__/control-color.tsx'
+import controlColorSource from '!!raw-loader!@yandex-lego/components/Text/__examples__/control-color.tsx'
+import { LinkColor } from '@yandex-lego/components/Text/__examples__/link-color.tsx'
+import linkColorSource from '!!raw-loader!@yandex-lego/components/Text/__examples__/link-color.tsx'
+
+
+### Стандартный текст без ограничений по количеству строк
+
+Может быть в одну или несколько строк, **maxLines** (количество строк) задаётся при наличии модификатора **overflow**
+(обрезание).
+
+<Example
+    component={Base}
+    source={baseSource}
+/>
+
+### Модификатор overflow ellipsis
+
+**ellipsis** хорошо работает с текстовым контентом, т.к. попадая на границы пробелов, остаётся видимым и легко
+считывается пользователями. Такой тип обрезания текста <em>не</em> подходит сервисам, поддерживающим <em>IE11</em>, лучше выбрать
+**overflow="fade"**.
+
+<Example
+    component={Ellipsis}
+    source={ellipsisSource}
+/>
+
+### Модификатор overflow fade
+
+**fade** хорошо работает с текстовым контентом, когда важно сохранить как можно больше информации на экране, только
+последняя строка в тексте будет обрезана. Оптимальный размер **fade={2em}**, не уменьшайте это значение, при попадании
+на пробел пользователи могут не понять, что часть контента обрезана.
+
+<Example
+    component={Fade}
+    source={fadeSource}
+/>
+
+### Модификатора overflow fadeHorizontal
+
+**fadeHorizontal** хорошо работает с текстовым контентом, когда попадает в блоки, подразумевающие «расхлоп».
+Оптимальный размер **fadeHorizontal={1em}**, не используйте большие значения, такое обрезание текста не будет видно
+пользователям.
+
+<Example
+    component={FadeHorizontal}
+    source={fadeHorizontalSource}
+/>
+
+### align start
+
+Выравнивание Text реализованы модификаторами start, end, center, justify. Это нужно для того, чтобы поддержать настройки
+отображения текста для разных систем письменности «LTR» — слева направо, «RTL» — справа налево. Подробнее можно
+прочитать в статье RTL Styling 101 — [подробное руководство по RTL-стилизации в CSS](https://medium.com/@hisbvdis/rtl-styling-101-подробное-руководство-по-rtl-стилизации-в-css-d8ef7d884cb6).
+
+<Example
+    component={Align}
+    source={alignSource}
+/>
+
+### Цвета доступные обычному тексту
+
+<Example
+    component={Color}
+    source={colorSource}
+/>
+
+### Цвета доступные текстам в контролах
+
+<Example
+    component={ControlColor}
+    source={controlColorSource}
+/>
+
+### Цвета доступные текстам в ссылках
+
+<Example
+    component={LinkColor}
+    source={linkColorSource}
+/>

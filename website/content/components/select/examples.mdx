@@ -1,0 +1,99 @@
+import { View as SelectView } from '@yandex-lego/components/Select/Select.examples/desktop/view.examples.tsx'
+import viewSelectSource from '!!raw-loader!@yandex-lego/components/Select/Select.examples/desktop/view.examples.tsx'
+
+import { Size as SelectSize } from '@yandex-lego/components/Select/Select.examples/desktop/size.examples.tsx'
+import sizeSelectSource from '!!raw-loader!@yandex-lego/components/Select/Select.examples/desktop/size.examples.tsx'
+
+import { Theme as SelectTheme } from '@yandex-lego/components/Select/Select.examples/desktop/theme.examples.tsx'
+import themeSelectSource from '!!raw-loader!@yandex-lego/components/Select/Select.examples/desktop/theme.examples.tsx'
+
+import { Width as SelectWidth } from '@yandex-lego/components/Select/Select.examples/desktop/width.examples.tsx'
+import widthSelectSource from '!!raw-loader!@yandex-lego/components/Select/Select.examples/desktop/width.examples.tsx'
+
+import { Icon as SelectIcon } from '@yandex-lego/components/Select/Select.examples/desktop/icon.examples.tsx'
+import iconSelectSource from '!!raw-loader!@yandex-lego/components/Select/Select.examples/desktop/icon.examples.tsx'
+
+import { Overriden as SelectOverriden } from '@yandex-lego/components/Select/Select.examples/desktop/overriden.examples.tsx'
+import overridenSelectSource from '!!raw-loader!@yandex-lego/components/Select/Select.examples/desktop/overriden.examples.tsx'
+
+import { Type as SelectType } from '@yandex-lego/components/Select/Select.examples/desktop/type.examples.tsx'
+import typeSelectSource from '!!raw-loader!@yandex-lego/components/Select/Select.examples/desktop/type.examples.tsx'
+
+
+### Вид компонента
+
+Чтобы изменить вид компонента, установите свойство `view` в значение `"default"`.
+
+<Example
+    height={300}
+    component={SelectView}
+    source={viewSelectSource}
+/>
+
+### Размер компонента
+
+Чтобы изменить размер компонента, установите свойство `size` в одно из следующих значений: `"s"`, `"m"`.
+
+<Example
+    height={300}
+    component={SelectSize}
+    source={sizeSelectSource}
+/>
+
+### Ширина компонента
+
+Чтобы изменить ширину компонента, установите свойство `width` в одно из следующих значений:
+- `max` — ширина определяется шириной контейнера. Если ширина текста больше ширины контейнера, текст обрезается многоточием.
+
+<Example
+    height={350}
+    component={SelectWidth}
+    source={widthSelectSource}
+/>
+
+### Выравнивание по базовой линии
+
+Чтобы выровнять компоненты по базовой линии, установите свойство `baseline` в значение `true`.
+
+### Тип селекта
+
+Селект может работать в нескольких режимах:
+- `radio` — Можно выбрать одно значение (тип `value` — **примитив**).
+- `check` — Можно выбрать несколько значений (тип `value` — **массив**).
+
+<Example
+    height={350}
+    component={SelectType}
+    source={typeSelectSource}
+/>
+
+
+### Изменение иконки
+
+Чтобы передать параметры для иконки в триггере, воспользуйтесь свойством `iconProps`.
+
+<Example
+    height={300}
+    component={SelectIcon}
+    source={iconSelectSource}
+/>
+
+### Кастомизация меню
+
+Вы также можете передать кастомное меню c помощьюж свойства `renderMenu`
+
+<Example
+    height={400}
+    component={SelectOverriden}
+    source={overridenSelectSource}
+/>
+
+
+### Combobox
+
+На основе `Select` можно собрать `Combobox`.
+Пример можно посмотреть в [storybook](https://lego.yandex-team.ru/components/lego/latest/?storybook=%2Fstory%2Fcontrols-select-desktop--combo-box-example)
+cсылка на [исходники](https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/Select/Select.examples/ComboBox)
+
+
+![image](https://jing.yandex-team.ru/files/anyatyu/2020-11-23_18-47-48.png)

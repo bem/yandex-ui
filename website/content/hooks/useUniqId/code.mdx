@@ -1,0 +1,25 @@
+### Базовое использование
+
+```ts
+import React from 'react';
+
+import { useUniqId } from '@yandex-lego/components/useUniqId';
+
+export const Default = () => {
+    const id = useUniqId('componentName');
+
+    return (
+        <div id={id}>
+            Block
+        </div>
+    );
+};
+```
+
+### Props
+
+<!-- props:start -->
+| Свойство   | Тип                    | Описание                                                                                                                                |
+| ---------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| prefix   | `string`        | Префикс для генерации уникального id (по умолчанию `xuniq`) |
+<!-- props:end -->
