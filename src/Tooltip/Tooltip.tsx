@@ -19,7 +19,14 @@ type PartialPopupProps = Pick<
 
 type PartialPopupTargetAnchorProps = Pick<
     IPopupTargetAnchorProps,
-    'mainOffset' | 'secondaryOffset' | 'tailOffset' | 'anchor' | 'direction'
+    | 'anchor'
+    | 'boundary'
+    | 'direction'
+    | 'mainOffset'
+    | 'modifiers'
+    | 'secondaryOffset'
+    | 'tailOffset'
+    | 'viewportOffset'
 >;
 
 export type TooltipProps = PartialPopupProps &
@@ -37,53 +44,55 @@ export type TooltipProps = PartialPopupProps &
 
 /**
  * Компонент используется для создания всплывающих подсказок.
- *
- * @param {TooltipProps} props Свойства компонента.
  */
-export const Tooltip: FC<TooltipProps> = ({
-    anchor,
-    children,
-    className,
-    direction,
-    hasTail,
-    id,
-    innerRef,
-    keepMounted,
-    mainOffset,
-    onClick,
-    onClose,
-    scope,
-    secondaryOffset,
-    state,
-    tailOffset,
-    visible,
-    zIndex,
-}) => {
+export const Tooltip: FC<TooltipProps> = (props) => {
+    const {
+        anchor,
+        boundary,
+        children,
+        className,
+        direction,
+        hasTail,
+        id,
+        innerRef,
+        keepMounted,
+        mainOffset,
+        modifiers,
+        onClick,
+        onClose,
+        scope,
+        secondaryOffset,
+        state,
+        tailOffset,
+        viewportOffset,
+        visible,
+        zIndex,
+    } = props;
     const defaultMainOffset = hasTail ? 0 : 4;
     const { Popup } = useComponentRegistry<TooltipRegistry>(cnTooltip());
 
     return (
         <Popup
             anchor={anchor}
+            boundary={boundary}
             className={cnTooltip({ visible, state }, [className])}
             direction={direction}
             hasTail={hasTail}
             innerRef={innerRef}
             keepMounted={keepMounted}
             mainOffset={mainOffset || defaultMainOffset}
+            modifiers={modifiers}
             onClick={onClick}
             onClose={onClose}
             scope={scope}
             secondaryOffset={secondaryOffset}
             tailOffset={tailOffset}
             target="anchor"
+            unstable_onRenderTail={(tail) => <Backdrop>{hasTail && tail}</Backdrop>}
             view="default"
+            viewportOffset={viewportOffset}
             visible={visible}
             zIndex={zIndex}
-            // prettier-ignore
-            unstable_onRenderTail={(tail) => (
-                <Backdrop>{hasTail && tail}</Backdrop>
-            )}
         >
             <div role="tooltip" id={id} className={cnTooltip('Content')}>
                 {children}

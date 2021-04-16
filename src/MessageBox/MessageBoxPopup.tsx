@@ -7,18 +7,20 @@ import { MessageBoxRegistry } from './MessageBox.registry/interface';
 
 type PopupProps = Pick<
     ExtractProps<MessageBoxRegistry['Popup']>,
-    | 'visible'
     | 'anchor'
-    | 'scope'
+    | 'boundary'
+    | 'direction'
     | 'mainOffset'
-    | 'secondaryOffset'
+    | 'modifiers'
     | 'motionless'
+    | 'onClick'
+    | 'onClose'
+    | 'scope'
+    | 'secondaryOffset'
     | 'tailOffset'
     | 'viewportOffset'
-    | 'onClose'
-    | 'onClick'
+    | 'visible'
     | 'zIndex'
-    | 'direction'
 >;
 
 export type MessageBoxPopupProps = MessageBoxProps & PopupProps;
@@ -26,16 +28,18 @@ export type MessageBoxPopupProps = MessageBoxProps & PopupProps;
 export const MessageBoxPopup: FC<MessageBoxPopupProps> = (props) => {
     const {
         anchor,
+        boundary,
         direction,
         mainOffset,
+        modifiers,
         motionless,
+        onClick,
+        onClose,
         scope,
         secondaryOffset,
         tailOffset,
         viewportOffset,
         visible,
-        onClose,
-        onClick,
         zIndex,
         ...restProps
     } = props;
@@ -44,8 +48,10 @@ export const MessageBoxPopup: FC<MessageBoxPopupProps> = (props) => {
     return (
         <Popup
             anchor={anchor}
+            boundary={boundary}
             direction={direction}
             mainOffset={mainOffset}
+            modifiers={modifiers}
             motionless={motionless}
             nonvisual
             onClick={onClick}
