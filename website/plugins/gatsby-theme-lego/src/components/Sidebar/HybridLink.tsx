@@ -42,7 +42,7 @@ const StyledLink = styled.a<any>`
     user-select: none;
     text-decoration: none;
 
-    color: rgba(0, 0, 0, 0.85);
+    color: #000;
     border-radius: 4px;
     outline: 0;
 
@@ -56,11 +56,11 @@ const StyledLink = styled.a<any>`
     ${(props) =>
         props.active
             ? css`
-                  background-color: rgba(0, 0, 0, 0.05);
+                  background-color: #f1f2f5;
               `
             : css`
                   &:hover {
-                      background-color: rgba(0, 0, 0, 0.025);
+                      background-color: #f7f8fa;
                   }
               `}
 `;

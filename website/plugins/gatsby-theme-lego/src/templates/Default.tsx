@@ -8,6 +8,7 @@ import { Sidebar } from '../components/Sidebar';
 import { PageHeader } from '../components/PageHeader';
 import { PageTabs } from '../components/PageTabs';
 import { Footer } from '../components/Footer';
+import { FeedbackForm } from '../components/FeedbackForm';
 import { applyStyledScroll } from '../libs/styled/scroll';
 
 type PageContext = {
@@ -66,6 +67,7 @@ const DefaultTemplate: FC<DefaultProps> = (props) => {
                         {tabs && <PageTabs tabs={tabs} slug={slug} currentTab={currentTab} />}
                         {children}
                     </Content>
+                    <FeedbackForm slug={slug} />
                     <Footer />
                 </Main>
             </Container>
@@ -93,7 +95,7 @@ const Main = styled.div`
     display: grid;
     overflow-y: scroll;
     grid-area: main;
-    grid-template-areas: 'hero hero' 'content nav' 'footer footer';
+    grid-template-areas: 'hero hero' 'content nav' 'feedback feedback' 'footer footer';
     grid-template-columns: minmax(640px, 960px) 1fr;
 
     grid-template-rows: auto 1fr;

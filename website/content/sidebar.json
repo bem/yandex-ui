@@ -45,13 +45,25 @@
       "Tooltip",
       {
         "label": "Calendar",
-        "badge": "В разработке",
+        "badge": "unstable",
         "path": "https://st.yandex-team.ru/ISL-8580",
         "__skip": true
       },
       {
+        "label": "SvgIcon",
+        "badge": "develop",
+        "path": "https://st.yandex-team.ru/ISL-8531",
+        "__skip": true
+      },
+      {
+        "label": "DatePicker",
+        "badge": "develop",
+        "path": "https://st.yandex-team.ru/ISL-9886",
+        "__skip": true
+      },
+      {
         "label": "Table",
-        "badge": "В разработке",
+        "badge": "develop",
         "path": "https://st.yandex-team.ru/ISL-8818",
         "__skip": true
       }

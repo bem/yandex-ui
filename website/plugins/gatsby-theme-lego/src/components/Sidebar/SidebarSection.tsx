@@ -22,7 +22,7 @@ export const SidebarSection: FC<SidebarSectionProps> = (props) => {
             {items.map((item) => (
                 <HybridLink key={item.label} active={isActive(item.id)} href={item.path} disabled={item.disabled}>
                     {item.label}
-                    {item.badge && <Badge>{item.badge}</Badge>}
+                    {item.badge && <Badge data-status={item.badge}>{badgeText[item.badge]}</Badge>}
                 </HybridLink>
             ))}
         </Container>
@@ -47,16 +47,29 @@ const Headline = styled.div`
     line-height: 20px;
     user-select: none;
 
-    color: rgba(0, 0, 0, 0.85);
+    color: #000;
 `;
 
 const Badge = styled.span`
-    padding: 4px 6px;
+    padding: 2px 8px;
 
-    font-size: 12px;
-    line-height: 12px;
+    font-size: 13px;
+    line-height: 16px;
 
-    color: rgba(0, 0, 0, 0.85);
-    border-radius: 2px;
-    background-color: #ffdc60;
+    border-radius: 4px;
+
+    &[data-status='unstable'] {
+        color: #f20008;
+        background-color: #ffe2db;
+    }
+
+    &[data-status='develop'] {
+        color: #ff8800;
+        background-color: #fff4d0;
+    }
 `;
+
+const badgeText: Record<string, string> = {
+    develop: 'В разработке',
+    unstable: 'Нестабильный',
+};
