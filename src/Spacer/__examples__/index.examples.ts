@@ -4,7 +4,7 @@ export default {
     title: 'Layout|Spacer/desktop',
     parameters: {
         docs: {
-            readme: require('../Spacer.md'),
+            readme: require('../readme.md'),
         },
     },
 };

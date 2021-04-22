@@ -1,12 +1,3 @@
 # withAutoFocus
 
-Хелпер для установки фокуса на элемент в оборачиваемом компоненте.
-
-Важно, чтобы оборачиваемый компонент поддерживал свойство `controlRef`, которое будет устанавливать ссылку на элемент:
-
-```tsx
-const Component = ({ controlRef }) => <input ref={controlRef} />
-const EnhancedComponent = withAutoFocus(Component)
-
-const render = () => <EnhancedComponent focused />
-```
+Более подробную информацию смотрите в <a href="https://lego.yandex-team.ru/lego-components/hocs/with-auto-focus/examples" target="_blank">документации</a>.

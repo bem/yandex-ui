@@ -4,11 +4,11 @@ import { cnTheme } from '@yandex-lego/components/Theme';
 import { presets, presetsKeys } from '@yandex-lego/components/Theme/presets';
 import { Select } from '@yandex-lego/components/Select/desktop/bundle';
 
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
+import { EXAMPLE_DESKTOP_TOKEN, parameters } from '../examples-config';
 
 export default {
     title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: [withKnobs, ...createDecorators()],
+    decorators: [withKnobs],
     parameters,
 };
 

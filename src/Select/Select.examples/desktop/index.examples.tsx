@@ -1,7 +1,7 @@
 import { withKnobs } from '@storybook/addon-knobs';
 import { IS_PRODUCTION } from '@yandex-lego/components/lib/env';
 
-import { EXAMPLE_DESKTOP_TOKEN, createDecorators, parameters } from '../examples-config';
+import { EXAMPLE_DESKTOP_TOKEN, parameters } from '../examples-config';
 
 export * from './icon.examples';
 export * from './size.examples';
@@ -17,7 +17,7 @@ export * from '../../Select.tests/scenarios/long';
 
 export default {
     title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: [withKnobs, ...createDecorators()],
+    decorators: [withKnobs],
     parameters,
     includeStories: !IS_PRODUCTION ? /^(?!.+Hermione).+/ : null,
 };

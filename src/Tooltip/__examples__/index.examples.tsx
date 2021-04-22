@@ -8,7 +8,7 @@ export default {
     title: 'Surface|Tooltip/desktop',
     parameters: {
         docs: {
-            readme: require('../Tooltip.md'),
+            readme: require('../readme.md'),
         },
     },
 };

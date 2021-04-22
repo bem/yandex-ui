@@ -1,3 +1,3 @@
 # usePopper
 
-Подробное описание с примерами использования смотрите в [документации](https://nda.ya.ru/t/guAQpSzN3i5cn8).
+Более подробную информацию смотрите в <a href="https://lego.yandex-team.ru/lego-components/hooks/use-popper/usage" target="_blank">документации</a>.

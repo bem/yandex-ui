@@ -4,11 +4,11 @@ import { withKnobs, select, boolean, object } from '@storybook/addon-knobs';
 import { cnTheme } from '../../Theme';
 import { presets, presetsKeys } from '../../Theme/presets';
 import { Select } from '../Select.bundle/touch-phone';
-import { EXAMPLE_TOUCH_PHONE_TOKEN, createDecorators, parameters } from './examples-config';
+import { EXAMPLE_TOUCH_PHONE_TOKEN, parameters } from './examples-config';
 
 export default {
     title: EXAMPLE_TOUCH_PHONE_TOKEN,
-    decorators: [withKnobs, ...createDecorators()],
+    decorators: [withKnobs],
     parameters,
 };
 

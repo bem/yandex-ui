@@ -9,7 +9,7 @@ export default {
     title: 'Content|Divider/desktop',
     parameters: {
         docs: {
-            readme: require('../Divider.md'),
+            readme: require('../readme.md'),
         },
     },
 };

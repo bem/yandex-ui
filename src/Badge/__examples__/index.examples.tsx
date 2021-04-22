@@ -7,7 +7,7 @@ export default {
     title: 'Content|Badge/desktop',
     parameters: {
         docs: {
-            readme: require('../Badge.md'),
+            readme: require('../readme.md'),
         },
     },
 };

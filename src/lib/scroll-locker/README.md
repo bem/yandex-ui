@@ -1,3 +1,3 @@
 # scroll-locker
 
-Подробное описание с примерами использования смотрите в [документации](https://nda.ya.ru/t/emjgIh6y3kBrxu).
+Более подробную информацию смотрите в <a href="https://lego.yandex-team.ru/lego-components/libs/scroll-locker/usage" target="_blank">документации</a>.

@@ -1,62 +1,80 @@
 # @yandex-lego/docs
 
-Сайт сделан на gatsby, за тем как работает эта технология [сюда](https://www.gatsbyjs.com/)
+Сайт с документацией для `@yandex-lego/components`.
 
-## Как писать документацию:
+## Разработка
 
-Файлы с документацией мы собираем из папки lego-componets, обрабатываем все `mdx` файлы из папко docs в компонентах, структура должна быть вот такая
+**Локальная разработка:**
 
-```bash
-docs/
-  __meta.mdx - тут файл конфигурация
-  ... остальные файлы которые превратятся потом в табики (eg examples usage что душе угодно)
+```sh
+npm start
 ```
 
-Файл index.mdx содержит примерно такую структуру:
+**Локальная разработка конкретного раздела:**
 
-```mdx
+```sh
+id=Button npm start
+```
+
+**Продакшен сборка:**
+
+```sh
+npm run build
+```
+
+## Работа с документацией
+
+### Расположение
+
+Все документы лежат в папке `content`, итоговый путь формируется на основе расположения на файловой системе, например документ `content/guidelines/start.mdx` будет доступен по ссылке `/content/guidelines/start`.
+
+### Информация документа
+
+В начале каждого документа необходимо описать секцию `frontmatter`, которая будет содержать все необходимы поля:
+
+* `id` — уникальный номер документа
+* `title` — заголовок
+* `description?` — описание
+* `links?` — ссылки на дополнительные ресурсы (например исходный код)
+* `tabs?` — список поздразделов
+
+**Пример frontmatter:**
+
+```yaml
 ---
-id: button
-path: /components/button
+id: Attach
 
-title: Button
-description: Компонент для создания кнопок.
+title: Attach
+description: Компонент для создания кнопки выбора файла, предназначенного для отправки на сервер.
 
 links:
  - label: source
-   url: https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/Button
- - label: startrek
-   url: https://search.yandex-team.ru/stsearch?text=Button.ts&facet.queue=ISL&facet.type=bug&facet.status=128
+   url: https://a.yandex-team.ru/arc_vcs/frontend/packages/lego-components/src/Attach
 
 tabs:
  - Examples
- - Usage
- - Guidelines
+ - Code
 ---
 ```
 
-id также следует указывать в других файлах с докой, чтобы мы могли построить принадлежность к какому то разделу
+### Структура
 
-Чтобы ссылка появилась в боковом меню нужно добавить раздел с этим блоком в файл `docs-site/sidebar.js`  в нем мы описываем всю структуру чтобы строить боковое меню
+Если раздел содержит несколько подразделов, то необходимо создать файл `__meta.mdx` в котором будет размещаться информация о документе и его подразделах.
 
-## Как разрабатыватся:
+**Один раздел:**
 
-`npm ci`
-`npm start`
+```sh
+content/guidelines/
+└── start.mdx
+```
 
-## Про техническую реализацию:
-Договорились использовать css модули и не использвать Лего компоненты для разработки блоков сайта для того чтобы исключить баги влияния на компоненты примеров. Делаем все максимально инкапсулировано.
+**Несколько подразделов:**
 
-## Собрать прод сборку:
+```sh
+content/components/attach/
+├── __meta.mdx
+├── code.mdx
+└── examples.mdx
+```
 
-`npm run build -- --prefix-paths`
-
-## Deploy:
-
-перейти в папку lego-components и выполнить команду `static-uploader` еще нужны переменные окружения `LEGO_S3_ACCESS_KEY_ID` и `LEGO_S3_SECRET_ACCESS_KEY`
-
-пока так, пока не сделаем нормальный деплой в ci
-
-сайт обновится тут (настроены редиректы для ngnix) https://lego.yandex-team.ru/lego-components
-
-в s3 файлы лежат тут https://lego-docs.s3.mds.yandex.net/lego-components в бакете lego-docs под таргетом lego-components
+[gatsby]: https://www.gatsbyjs.com/

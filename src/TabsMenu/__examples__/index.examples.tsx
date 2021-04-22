@@ -10,7 +10,7 @@ export default {
     title: 'Navigation|TabsMenu/desktop',
     parameters: {
         docs: {
-            readme: require('../TabsMenu.md'),
+            readme: require('../readme.md'),
         },
     },
 };

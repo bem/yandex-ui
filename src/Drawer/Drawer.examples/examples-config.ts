@@ -4,7 +4,7 @@ export const EXAMPLE_TOKEN = 'Surface|Drawer/touch-phone';
 
 export const parameters = {
     docs: {
-        readme: require('../Drawer.md'),
+        readme: require('../readme.md'),
     },
     viewport: {
         viewports: INITIAL_VIEWPORTS,

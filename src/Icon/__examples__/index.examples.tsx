@@ -10,7 +10,7 @@ export default {
     title: 'Content|Icon/desktop',
     parameters: {
         docs: {
-            readme: require('../Icon.md'),
+            readme: require('../readme.md'),
         },
     },
 };

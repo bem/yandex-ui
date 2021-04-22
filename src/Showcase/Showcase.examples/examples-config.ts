@@ -11,6 +11,6 @@ export const EXAMPLE_TOUCH_PAD_TOKEN = 'Utility|Showcase/touch-pad';
 
 export const parameters = {
     docs: {
-        readme: require('../Showcase.md'),
+        readme: require('../readme.md'),
     },
 };

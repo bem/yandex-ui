@@ -5,7 +5,7 @@ export default {
     title: 'Progress|Progress/desktop',
     parameters: {
         docs: {
-            readme: require('../Progress.md'),
+            readme: require('../readme.md'),
         },
     },
 };

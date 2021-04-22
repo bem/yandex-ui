@@ -21,7 +21,7 @@ export default {
     title: 'Layout|Header/desktop',
     parameters: {
         docs: {
-            readme: require('../Header.md'),
+            readme: require('../readme.md'),
         },
     },
 };

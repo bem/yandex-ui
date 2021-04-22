@@ -5,7 +5,7 @@ export default {
     title: 'Utility|LayerManager (I)',
     parameters: {
         docs: {
-            readme: require('../LayerManager.md'),
+            readme: require('../readme.md'),
         },
     },
 };

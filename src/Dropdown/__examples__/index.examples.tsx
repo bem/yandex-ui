@@ -9,7 +9,7 @@ export default {
     title: 'Surface|Dropdown/desktop',
     parameters: {
         docs: {
-            readme: require('../Dropdown.md'),
+            readme: require('../readme.md'),
         },
     },
 };

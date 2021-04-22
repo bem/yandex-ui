@@ -4,7 +4,7 @@ export default {
     title: 'Surface|Modal/desktop',
     parameters: {
         docs: {
-            readme: require('../Modal.md'),
+            readme: require('../readme.md'),
         },
     },
 };

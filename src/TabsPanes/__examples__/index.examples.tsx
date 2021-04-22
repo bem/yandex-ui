@@ -6,7 +6,7 @@ export default {
     title: 'Surface|TabsPanes/desktop',
     parameters: {
         docs: {
-            readme: require('../TabsPanes.md'),
+            readme: require('../readme.md'),
         },
     },
 };

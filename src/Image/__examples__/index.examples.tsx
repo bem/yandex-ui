@@ -7,7 +7,7 @@ export default {
     title: 'Content|Image/desktop',
     parameters: {
         docs: {
-            readme: require('../Image.md'),
+            readme: require('../readme.md'),
         },
     },
 };
