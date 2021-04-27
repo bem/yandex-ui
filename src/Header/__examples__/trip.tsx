@@ -7,8 +7,8 @@ export const Trip = () => (
     <Header
         logo={
             <>
-                <YandexLogo href="//staff.yandex-team.ru" />
-                <Logoaas name="Командировки" href="//yandex.ru/pogoda" />
+                <YandexLogo rebranding circle href="//staff.yandex-team.ru" />
+                <Logoaas rebranding size={32} name=" Командировки" href="//yandex.ru/pogoda" />
             </>
         }
         actions={<div><Image src="https://jing.yandex-team.ru/files/axaxaman/actions.png" /></div>}

@@ -13,8 +13,8 @@ const DirectoryBase: FC<DirectoryProps> = ({ lang = 'ru', name = 'Справоч
     <Header
         logo={
             <>
-                <YandexLogo lang={lang} />
-                <Logoaas href="//yandex.ru/sprav/add" name={name} />
+                <YandexLogo rebranding lang={lang} circle />
+                <Logoaas href="//yandex.ru/sprav/add" rebranding color="red" first="white" size={32} name={' ' + name} />
             </>
         }
     >
@@ -28,7 +28,7 @@ const DirectoryBase: FC<DirectoryProps> = ({ lang = 'ru', name = 'Справоч
 
 export const Directory = () => (
     <>
-        <style>{'.Directory { --header-nav-link-color-base: #222426; }'}</style>
+        <style>{'.Directory { --header-nav-link-color-base: #222426; --header-logoaas-indent: 0; --header-logo-circle-indent-top: 0; }'}</style>
         <div className={cnTheme(theme, ['Directory'])}>
             <DirectoryBase />
             <DirectoryBase lang="en" name="Directory" />

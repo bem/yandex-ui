@@ -13,10 +13,22 @@
     background-image: url('./Logo.assets/yandex-ru.svg');
 }
 
+.YandexHeader-Logo_rebranding {
+    background-position: 0 3px;
+}
+
+.YandexHeader-Logo_lang_ru.YandexHeader-Logo_rebranding {
+    background-image: url('./Logo.assets/rebrand/yandex-ru.svg');
+}
+
 .YandexHeader-Logo_lang_en {
     width: 70px;
 
     background-image: url('./Logo.assets/yandex-en.svg');
+}
+
+.YandexHeader-Logo_lang_en.YandexHeader-Logo_rebranding {
+    background-image: url('./Logo.assets/rebrand/yandex-en.svg');
 }
 
 .YandexHeader-Logo_lang_ru.YandexHeader-Logo_circle,
@@ -28,8 +40,16 @@
     background-image: url('./Logo.assets/yandex-circle-en.svg');
 }
 
+.YandexHeader-Logo_lang_en.YandexHeader-Logo_circle.YandexHeader-Logo_rebranding {
+    background-image: url('./Logo.assets/rebrand/yandex-circle-en.svg');
+}
+
 .YandexHeader-Logo_lang_ru.YandexHeader-Logo_circle {
     background-image: url('./Logo.assets/yandex-circle-ru.svg');
+}
+
+.YandexHeader-Logo_lang_ru.YandexHeader-Logo_circle.YandexHeader-Logo_rebranding {
+    background-image: url('./Logo.assets/rebrand/yandex-circle-ru.svg');
 }
 
 .YandexHeader-Logo_circle + .YandexHeader-Logoaas .YandexHeader-Image {

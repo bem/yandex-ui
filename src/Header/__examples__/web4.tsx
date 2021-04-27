@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Header, HeaderSearch, Logoaas } from '@yandex-lego/components/Header/desktop';
+import { Header, HeaderSearch, Logoaas, YandexLogo } from '@yandex-lego/components/Header/desktop';
 import { withViewSearchArrow } from '@yandex-lego/components/Header/Button';
 import { Button } from '@yandex-lego/components/Button/desktop';
 import { Textinput, withHasClear } from '@yandex-lego/components/Textinput/desktop';
@@ -43,7 +43,7 @@ export const Web4 = () => {
             <style>{styles}</style>
             <Header className="SearchHeader">
                 <HeaderSearch action="//yandex.ru/search">
-                    <SearchInput view="search-arrow" name="text" hasClear value="Yandex" />
+                    <SearchInput view="search-arrow" name="text" value="Yandex" />
                     <SearchButton view="search-arrow">Найти</SearchButton>
                 </HeaderSearch>
             </Header>
@@ -53,7 +53,30 @@ export const Web4 = () => {
                     logo={<Logoaas color="fff" size={33} />}
                 >
                     <HeaderSearch action="//yandex.ru/search">
-                        <SearchInput view="search-arrow" name="text" hasClear value="Yandex" />
+                        <SearchInput view="search-arrow" name="text" value="Yandex" />
+                        <SearchButton view="search-arrow">Найти</SearchButton>
+                    </HeaderSearch>
+                </Header>
+            </div>
+            <br />
+            <b>Редизайн</b>
+            <br />
+            <Header
+                className="SearchHeader"
+                logo={<YandexLogo rebranding lang="en" />}
+            >
+                <HeaderSearch action="//yandex.ru/search">
+                    <SearchInput view="search-arrow" name="text" value="Yandex" />
+                    <SearchButton view="search-arrow">Найти</SearchButton>
+                </HeaderSearch>
+            </Header>
+            <div className="DarkHeader">
+                <Header
+                    className="SearchHeader"
+                    logo={<Logoaas color="fff" size={33} />}
+                >
+                    <HeaderSearch action="//yandex.ru/search">
+                        <SearchInput view="search-arrow" name="text" value="Yandex" />
                         <SearchButton view="search-arrow">Найти</SearchButton>
                     </HeaderSearch>
                 </Header>

@@ -39,7 +39,7 @@ exports[`Logoaas should render Яндекс by default 1`] = `
   >
     <img
       class="YandexHeader-Image"
-      src="//yastatic.net/q/logoaas/Яндекс.svg?size=32&color=000&first=f00&circle=0"
+      src="//yastatic.net/q/logoaas/Яндекс.svg?size=32&color=000&first=f00&circle=0&single=0"
     />
   </a>
 </div>
@@ -54,7 +54,7 @@ exports[`Logoaas should set props 1`] = `
   >
     <img
       class="YandexHeader-Image"
-      src="//yastatic.net/q/logoaas/Яндекс.svg?size=12&color=fff&first=00f&circle=1"
+      src="//yastatic.net/q/logoaas/Яндекс.svg?size=12&color=fff&first=00f&circle=1&single=0"
     />
   </a>
 </div>

@@ -10,3 +10,7 @@
 .YandexHeader-Logoaas .YandexHeader-Image {
     margin: var(--header-logoaas-indent);
 }
+
+.YandexHeader-Logoaas.YandexHeader-Logoaas_rebranding .YandexHeader-Image {
+    margin: 0;
+}
