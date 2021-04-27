@@ -6,6 +6,7 @@ import { CodeHighlighter } from './CodeHighlighter';
 import { Example } from './Example';
 import { Disclaimer } from './Disclaimer';
 import * as Typography from './Typography';
+import { InlineCode } from './InlineCode';
 
 const components: MDXProviderComponents = {
     PropsTable,
@@ -13,6 +14,7 @@ const components: MDXProviderComponents = {
     Disclaimer,
 
     code: CodeHighlighter,
+    inlineCode: InlineCode,
 
     h1: Typography.H1,
     h2: Typography.H2,
@@ -21,6 +23,7 @@ const components: MDXProviderComponents = {
     h5: Typography.H5,
     p: Typography.P,
     a: Typography.Link,
+    strong: Typography.Strong,
 
     // Unstyled components.
     blockquote: Typography.Blockquote,

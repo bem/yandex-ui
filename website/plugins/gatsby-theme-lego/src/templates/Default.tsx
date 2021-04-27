@@ -38,10 +38,7 @@ function useCurrentSlug(location: Location) {
 
     const slug = pathPrefix ? location.pathname.replace(pathPrefix, '') : location.pathname;
 
-    const currentTab = slug
-        .split('/')
-        .filter(Boolean)
-        .slice(-1)[0];
+    const currentTab = slug.split('/').filter(Boolean).slice(-1)[0];
 
     return { slug, currentTab };
 }
@@ -82,7 +79,7 @@ const Container = styled.div`
     overflow: hidden;
     grid-template-areas: 'header header' 'sidebar main';
     grid-template-columns: 272px 1fr;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: max-content 1fr auto;
 
     height: 100vh;
 `;
@@ -109,7 +106,7 @@ const Content = styled.div`
     grid-auto-rows: max-content;
 
     max-width: 960px;
-    padding: 32px 80px;
+    padding: 32px 56px;
 
     & > * {
         grid-column: 1 / span 12;

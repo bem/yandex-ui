@@ -31,7 +31,8 @@ export const CopyButton: FC<CopyButtonProps> = (props) => {
 const StyledButton = styled.button`
     position: absolute;
     top: 0;
-    right: 0;
+    right: 15px;
+    color: #fff;
 
     & .Button2-Text {
         display: flex;

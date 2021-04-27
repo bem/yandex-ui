@@ -1,36 +1,42 @@
-export const theme = {
+import { PrismTheme } from 'prism-react-renderer';
+
+export const theme: PrismTheme = {
     plain: {
-        backgroundColor: '#f5f5f5',
-        color: '#111',
+        backgroundColor: '#161616',
+        color: 'rgb(255, 255, 255, 0.9)',
     },
     styles: [
         {
-            style: { color: '#777' },
+            style: { color: 'rgba(255, 255, 255, 0.75)' },
             types: ['comment'],
         },
         {
-            style: { color: '#009688' },
-            types: ['string', 'url', 'attr-value'],
+            style: { color: '#9df0f0' },
+            types: ['string', 'url'],
         },
         {
-            style: { color: '#660099' },
-            types: ['number'],
-        },
-        {
-            style: { color: '#777' },
             types: ['punctuation'],
+            style: { color: '#2bbac5' },
         },
         {
-            style: { color: '#00009f' },
-            types: ['keyword', 'tag', 'atrule'],
+            types: ['class-name', 'function'],
+            style: { color: '#e5c07b' },
         },
         {
-            style: { color: '#777' },
-            types: ['operator'],
-        },
-        {
-            style: { color: '#111' },
             types: ['attr-name'],
+            style: { color: '#d19a66' },
+        },
+        {
+            types: ['attr-value'],
+            style: { color: '#89ca78' },
+        },
+        {
+            style: { color: '#77a9fe' },
+            types: ['keyword', 'atrule'],
+        },
+        {
+            style: { color: 'rgb(255, 255, 255, 0.9)' },
+            types: ['constant'],
         },
     ],
 };

@@ -46,21 +46,22 @@ const Container = styled.div`
 `;
 
 const Pre = styled.pre`
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: auto;
 
     max-height: 360px;
     margin: 0;
     padding: 12px 20px;
 
     font-family: Menlo, monospace;
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 18px;
     white-space: pre;
     word-spacing: normal;
     word-wrap: normal;
     word-break: normal;
     tab-size: 4;
 
-    color: #111;
-    border-radius: 3px;
+    border-radius: 4px;
     overflow-wrap: normal;
 `;

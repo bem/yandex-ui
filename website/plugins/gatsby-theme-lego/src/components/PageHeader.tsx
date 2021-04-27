@@ -1,7 +1,8 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
-import { Link } from '@yandex-lego/components/Link/desktop/bundle';
+import { Button, IButtonProps } from '@yandex-lego/components/Button/desktop/bundle';
 
+import { ArcIcon, FigmaIcon, StorybookIcon } from '../icons';
 import { H1, Subheader } from './Typography';
 import { Flex } from './Flex';
 
@@ -19,36 +20,67 @@ export const PageHeader: FC<PageHeaderProps> = (props) => {
             <Inner>
                 <H1>{title}</H1>
                 {description && <Subheader>{description}</Subheader>}
-                {links && <PageLinks links={links} />}
             </Inner>
+            {links && <PageLinks links={links} />}
         </Container>
     );
+};
+
+// FIXME: Вынести отсюда и сделать добавление иконки и текста декларативно
+const LINKS_MAP: Record<string, { label: string; iconProvider?: IButtonProps['icon'] }> = {
+    source: {
+        label: 'Code',
+        iconProvider: (className: string) => <ArcIcon className={className} />,
+    },
+    storybook: {
+        label: 'Playground',
+        iconProvider: (className: string) => <StorybookIcon className={className} />,
+    },
+    figma: {
+        label: 'Design',
+        iconProvider: (className: string) => <FigmaIcon className={className} />,
+    },
 };
 
 const PageLinks = (props) => {
     const { links } = props;
 
     return (
-        <Flex gap="8px">
-            {links.map(({ label, url }) => (
-                <Link theme="normal" key={url} href={url} target="_blank">
-                    {label}
-                </Link>
-            ))}
+        <Flex gap="12px">
+            {links.map(({ label: id, url }) => {
+                const { label = id, iconProvider } = LINKS_MAP[id] || {};
+
+                return (
+                    <Button
+                        key={url}
+                        type="link"
+                        view="raised"
+                        size="s"
+                        url={url}
+                        target="_blank"
+                        iconLeft={iconProvider}
+                    >
+                        {label}
+                    </Button>
+                );
+            })}
         </Flex>
     );
 };
 
 const Container = styled.div`
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+
     grid-area: hero;
 
-    min-height: 224px;
-    padding-left: 80px;
+    min-height: 190px;
+    padding: 42px 56px;
 
     background-color: #f7f8fa;
 `;
 
 const Inner = styled.div`
     max-width: 640px;
-    padding-top: 42px;
 `;

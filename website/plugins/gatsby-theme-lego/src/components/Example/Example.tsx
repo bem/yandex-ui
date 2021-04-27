@@ -1,30 +1,40 @@
 import React, { ComponentType, FC, useState } from 'react';
 import styled from '@emotion/styled';
-import { css } from '@emotion/react';
 import { Button } from '@yandex-lego/components/Button/desktop/bundle';
+import { Text } from '@yandex-lego/components/Text/desktop/bundle';
+import { MDXProviderComponents, MDXProvider } from '@mdx-js/react';
 
+import { CodeIcon, CodeSandboxIcon, BackgroundIcon } from '../../icons';
+import { fork } from '../../libs/fork';
 import { LegoThemeProvider } from '../LegoThemeProvider';
 import { CodeHighlighter } from '../CodeHighlighter';
-import { CodeIcon, CodeSandboxIcon, BackgroundIcon } from '../../icons';
+import { InlineCode } from '../InlineCode';
 import { createCodeSandbox } from './utils';
 
 type ExampleProps = {
     component: ComponentType;
     source?: string;
     height?: number;
+    children?: string;
+    defaultBackground?: 'white' | 'gray';
+};
+
+const exampleComponents: MDXProviderComponents = {
+    code: InlineCode,
+    h4: fork(Text, { as: 'h4', typography: 'control-xl' }),
 };
 
 export const Example: FC<ExampleProps> = (props) => {
-    const { component: ExampleComponent, source, height = 'auto' } = props;
+    const { children, component: ExampleComponent, source, height = 'auto', defaultBackground = 'gray' } = props;
     const [isVisibleSource, setVisibleSource] = useState(false);
-    const [isTransparent, setTransparent] = useState(true);
+    const [background, setBackground] = useState<'white' | 'gray'>(defaultBackground);
 
     const toggleSourceVisible = () => {
         setVisibleSource(!isVisibleSource);
     };
 
     const toggleBackground = () => {
-        setTransparent(!isTransparent);
+        setBackground(background === 'gray' ? 'white' : 'gray');
     };
 
     const openCodeSandbox = () => {
@@ -33,7 +43,19 @@ export const Example: FC<ExampleProps> = (props) => {
 
     return (
         <Container>
-            <Header>
+            <Canvas style={{ height }} data-background={background}>
+                <LegoThemeProvider>
+                    <ExampleComponent />
+                </LegoThemeProvider>
+            </Canvas>
+
+            {children && (
+                <Description>
+                    <MDXProvider components={exampleComponents}>{children}</MDXProvider>
+                </Description>
+            )}
+
+            <Toolbar>
                 {source && (
                     <Button view="clear" size="s" data-analytics="button-codesandbox" onClick={openCodeSandbox}>
                         <CodeSandboxIcon />
@@ -47,15 +69,11 @@ export const Example: FC<ExampleProps> = (props) => {
                 <Button view="clear" size="s" onClick={toggleBackground}>
                     <BackgroundIcon />
                 </Button>
-            </Header>
-            <Canvas style={{ height }} transparent={isTransparent}>
-                <LegoThemeProvider>
-                    <ExampleComponent />
-                </LegoThemeProvider>
-            </Canvas>
+            </Toolbar>
+
             {isVisibleSource && (
                 <SourceContainer>
-                    <CodeHighlighter className="language-ts">{source}</CodeHighlighter>
+                    <CodeHighlighter className="language-tsx">{source}</CodeHighlighter>
                 </SourceContainer>
             )}
         </Container>
@@ -68,23 +86,22 @@ const Container = styled.div`
     overflow: hidden;
 
     box-sizing: border-box;
-    margin: 24px 0;
+    margin: 12px 0 32px;
 
     border-radius: 4px;
     background-color: #fff;
     box-shadow: 0px 0px 0px 0.5px rgba(0, 44, 94, 0.1), 0px 4px 8px -2px rgba(0, 44, 94, 0.15);
 `;
 
-const Header = styled.div`
+const Toolbar = styled.footer`
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
 
     width: 100%;
     height: 52px;
 
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    background-color: #fff;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 
     /* FIXME: Должно работать из коробки. */
     .Button2-Text {
@@ -93,20 +110,25 @@ const Header = styled.div`
 `;
 
 const Canvas = styled.div<any>`
-    padding: 24px;
+    padding: 24px 16px;
 
-    background-color: #fff;
     background-position: 0 0, 10px 0, 10px -10px, 0 10px;
     background-size: 20px 20px;
 
-    ${(props) =>
-        props.transparent &&
-        css`
-            background-image: linear-gradient(45deg, rgb(249, 249, 250) 25%, transparent 25%),
-                linear-gradient(135deg, rgb(249, 249, 250) 25%, transparent 25%),
-                linear-gradient(45deg, transparent 75%, rgb(249, 249, 250) 75%),
-                linear-gradient(135deg, transparent 75%, rgb(249, 249, 250) 75%);
-        `}
+    &[data-background='white'] {
+        background-color: #fff;
+    }
+
+    &[data-background='gray'] {
+        background-color: #f7f8fa;
+    }
+
+    &[data-background='transparent'] {
+        background-image: linear-gradient(45deg, rgb(249, 249, 250) 25%, transparent 25%),
+            linear-gradient(135deg, rgb(249, 249, 250) 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, rgb(249, 249, 250) 75%),
+            linear-gradient(135deg, transparent 75%, rgb(249, 249, 250) 75%);
+    }
 `;
 
 const SourceContainer = styled.div`
@@ -116,4 +138,9 @@ const SourceContainer = styled.div`
         border-top-left-radius: 0;
         border-top-right-radius: 0;
     }
+`;
+
+const Description = styled.section`
+    padding: 16px 16px 24px 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
 `;

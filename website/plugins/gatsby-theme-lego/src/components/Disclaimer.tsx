@@ -9,7 +9,7 @@ export const Disclaimer: FC = (props) => {
 
 const Container = styled.div`
     margin: 9px 0;
-    padding: 20px;
+    padding: 0 24px;
 
     border-radius: 4px;
     background-color: rgba(235, 50, 38, 0.08);

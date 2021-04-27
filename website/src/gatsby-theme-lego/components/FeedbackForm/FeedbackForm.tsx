@@ -61,7 +61,7 @@ export const FeedbackForm: FC<FeedbackFormProps> = (props) => {
 };
 
 const Container = styled.div`
-    padding: 32px 80px;
+    padding: 32px 56px;
     display: flex;
     align-items: center;
     grid-area: feedback;

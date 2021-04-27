@@ -1,114 +1,179 @@
-import { View as ButtonView } from '@yandex-lego/components/Button/__examples__/view.example.tsx'
-import { Theme as ButtonTheme } from '@yandex-lego/components/Button/__examples__/theme.example.tsx'
-import { Size as ButtonSize} from '@yandex-lego/components/Button/__examples__/size.example.tsx'
-import { Pin } from '@yandex-lego/components/Button/__examples__/pin.example.tsx'
-import { Width as ButtonWidth } from '@yandex-lego/components/Button/__examples__/width.example.tsx'
-import { All as ButtonAll } from '@yandex-lego/components/Button/__examples__/all.example.tsx'
-import viewButtonSource from '!!raw-loader!@yandex-lego/components/Button/__examples__/view.example.tsx'
-import themeButtonSource from '!!raw-loader!@yandex-lego/components/Button/__examples__/theme.example.tsx'
-import sizeButtonSource from '!!raw-loader!@yandex-lego/components/Button/__examples__/size.example.tsx'
-import pinSource from '!!raw-loader!@yandex-lego/components/Button/__examples__/pin.example.tsx'
-import widthButtonSource from '!!raw-loader!@yandex-lego/components/Button/__examples__/width.example.tsx'
+import { View as ButtonView } from '@yandex-lego/components/Button/__examples__/view.tsx'
+import viewButtonSource from '!!raw-loader!@yandex-lego/components/Button/__examples__/view.tsx'
+import { Content as ButtonContent } from '@yandex-lego/components/Button/__examples__/content.tsx'
+import contentButtonSource from '!!raw-loader!@yandex-lego/components/Button/__examples__/content.tsx'
+import { CustomContent as ButtonCustomContent } from '@yandex-lego/components/Button/__examples__/custom-content.tsx'
+import customContentButtonSource from '!!raw-loader!@yandex-lego/components/Button/__examples__/custom-content.tsx'
+import { Pin as ButtonPin } from '@yandex-lego/components/Button/__examples__/pin.tsx'
+import pinButtonSource from '!!raw-loader!@yandex-lego/components/Button/__examples__/pin.tsx'
+import { States as ButtonStates } from '@yandex-lego/components/Button/__examples__/states.tsx'
+import statesButtonSource from '!!raw-loader!@yandex-lego/components/Button/__examples__/states.tsx'
+import { Size as ButtonSize} from '@yandex-lego/components/Button/__examples__/size.tsx'
+import sizeButtonSource from '!!raw-loader!@yandex-lego/components/Button/__examples__/size.tsx'
+import { Width as ButtonWidth } from '@yandex-lego/components/Button/__examples__/width.tsx'
+import widthButtonSource from '!!raw-loader!@yandex-lego/components/Button/__examples__/width.tsx'
+import { Baseline as ButtonBaseline } from '@yandex-lego/components/Button/__examples__/baseline.tsx'
+import baselineButtonSource from '!!raw-loader!@yandex-lego/components/Button/__examples__/baseline.tsx'
+import { Theme as ButtonTheme } from '@yandex-lego/components/Button/__examples__/theme.tsx'
+import themeButtonSource from '!!raw-loader!@yandex-lego/components/Button/__examples__/theme.tsx'
 
-### Вид кнопки
+### Виды
 
-Чтобы изменить вид кнопки, установите свойство `view` в одно из следующих значений: `"default"`, `"action"`, `"link"`, `"pseudo"`, `"clear"`, `"raised"`.
+В Лего есть 6 видов кнопок, которые задаются модификатором `view`:
+
+- **Action button:** главные целевые действия, используйте экономно, целевых действий не может быть много.
+- **Default button:** второстепенные действия, используйте на страницах перегруженных текстами.
+- **Pseudo button:** второстепенные действия, используйте в ситуациях со сложными цветными фонами.
+- **Link button:** второстепенные действия, используйте для внешних ссылок, или, чтобы создать дополнительный акцент.
+- **Clear button:** второстепенные действия, используется для обозначения действий не требующих повышенного внимания.
+- **Raised button:** второстепенные действия, используйте в ситуациях со сложными цветными фонами или поверх контента блока / страницы.
 
 <Example
     component={ButtonView}
     source={viewButtonSource}
-/>
+>
 
-### Классический дизайн
+#### View
 
-Чтобы изменить стилевое оформление кнопки для классического дизайна, установите свойство `theme` в одно из следующих значений: `"normal"`, `"action"`, `"clear"`, `"link"`, `"pseudo"`, `"raised"`, `"websearch"`.
+Чтобы изменить вид компонента, установите свойство `view` в одно из следующих значений: `"action"`, `"default"`, `"pseudo"`, `"link"`, `"clear"`, `"raised"`.
 
-<Disclaimer>
-    <p>
-    Важно! Модификаторы <b>view</b> и <b>theme</b> являются взаимоисключающими. Не используйте их вместе. <br />
-    Модификатор <b>theme</b>  не кастомизируется с помощью дизайн-токенов.
-    </p>
-</Disclaimer>
+</Example>
+
+### Контент
+
+Компонент `Button` может включать в себя `Icon`
 
 <Example
-    component={ButtonTheme}
-    source={themeButtonSource}
-/>
+    component={ButtonContent}
+    source={contentButtonSource}
+>
 
-### Размер кнопки
+#### Контент
 
-Чтобы изменить размер кнопки, установите свойство `size` в одно из следующих значений: `"l"`, `"m"`, `"s"`.
+Чтобы добавить `Icon` в кнопку, добавьте свойства `iconLeft`, `iconRight`, `icon`, если нужна только иконка без лейбла.
+
+</Example>
+
+Также `Button` может включать в себя кастомный контент, например `Badge` или `Spin`
+
+<Example
+    component={ButtonCustomContent}
+    source={customContentButtonSource}
+>
+
+#### Свой контент
+
+Если вы хотите добавить свой контент в кнопку, например `Badge` или `Spin`, сделайте это с помощью свойства `addonAfter` или   `addonBefore`, либо измените контент в `iconLeft`, `iconRight`
+
+</Example>
+
+
+### Формы
+
+`Button` может быть разной формы, в Лего для этого есть модификатор `pin`:
+
+- **Round** — скруглённые уголки
+- **Circle** — круглые уголки
+- **Brick** — прямоугольные уголки
+- **Clear** — нет боковой границы
+
+<Example
+    component={ButtonPin}
+    source={pinButtonSource}
+>
+
+#### Pin
+
+Чтобы управлять формами кнопок, воспользуйтесь модификатором `pin`. Допустимыми значениями модификатора являются комбинации двух ключевых слов через дефис (-), которые определяют (слева направо) форму уголков, видимость границ, скругление границ. Используйте значения: `circle-circle`, `brick-clear`, `clear-clear`, `clear-brick`, `round-clear`, `clear-round`, `circle-clear`, `clear-circle`, `round-brick`, `brick-brick`, `brick-round`, `circle-brick`, `brick-circle`.
+
+</Example>
+
+### Состояния
+
+`Button` может быть в разных состояниях:
+
+- **base** — базовое состояние
+- **disabled** — неактивная кнопка
+- **progress** — кнопка в процессе выполнения действия
+- **checked** — выбранная кнопка в `checkbox` или `radio` [ButtonGroup](/components/button-group/examples)
+
+<Example
+    component={ButtonStates}
+    source={statesButtonSource}
+    defaultBackground="white"
+>
+
+#### Состояния
+
+Чтобы сделать кнопку неактивной – укажите свойство `disabled`, чтобы показать выполнение действия – используйте свойство `progress`, чтобы показать выбранную кнопку – используйте свойство `checked`.
+
+</Example>
+
+### Размеры
+
+Для управления размером кнопки, используйте модификатор `size`.
 
 <Example
     component={ButtonSize}
     source={sizeButtonSource}
-/>
+>
 
-### Границы кнопки
+#### Size
 
-Свойство `pin` задает форму кнопке. Используется для группировки с другими блоками, например, с textinput.
+Чтобы изменить размер кнопки, установите свойство `size` в одно из следующих значений: `"s"`, `"m"` или `"l"`
 
-Допустимые значения: `brick-clear`, `clear-brick`, `round-clear`, `clear-round`, `circle-clear`, `clear-circle`, `round-brick`, `brick-round`, `circle-brick`, `brick-circle`, `clear-clear`, `brick-brick`, `round-round`, `circle-circle`.
+</Example>
 
-Допустимыми значениями модификатора являются комбинации двух ключевых слов через дефис (-), которые определяют (слева направо):
+### Ширина
 
-- форму уголков;
-- видимость границ;
-- скругление границ.
+Ширина `Button` может использоваться со следующими свойствами:
 
-Ключевое слово:
-
-`clear` — нет боковой границы;
-`brick` — прямоугольная граница;
-`round` — граница со скругленными уголками;
-`circle` — граница круглой формы.
-
-<Example
-    component={Pin}
-    source={pinSource}
-/>
-
-### Ширина кнопки
-
-Чтобы изменить ширину кнопки, установите свойство `width` в одно из следующих значений:
 - `max` — ширина определяется шириной контейнера. Если ширина текста больше ширины контейнера, текст обрезается многоточием.
 - `auto` — ширина определяется шириной текста. Ширина кнопки не может быть больше ширины контейнера. Если ширина текста больше ширины контейнера, текст обрезается многоточием.
 
 <Example
     component={ButtonWidth}
     source={widthButtonSource}
-/>
+>
 
-### Выравнивание по базовой линии
+#### Width
+
+Чтобы изменить ширину кнопки, установите свойство `width` в одно из следующих значений: `"max"` или `"auto"`.
+
+</Example>
+
+### Выравнивание
+
+`Button` может использоваться внутри или рядом с текстом, и в таких случаях лучше выравнивать кнопку по базовой линии. Это позволяет визуально скомпенсировать вертикальный ритм.
+
+<Example
+    component={ButtonBaseline}
+    source={baselineButtonSource}
+>
+
+#### Baseline
 
 Чтобы выровнять кнопки по базовой линии, установите свойство `baseline` в значение `true`.
 
-### Тип кнопки
+</Example>
 
-Чтобы задать тип кнопке, установите свойство `type` в одно из указанных ниже значений.
+### Классический дизайн
 
-| Свойство  | Тип                  | Описание                                                                                                |
-| --------- | -------------------- | ------------------------------------------------------------------------------------------------------  |
-| type?     | `"link" \| "submit"` | Тип кнопки                                                                                              |
-| url?      | `string`             | Адрес                                                                                                   |
-| target?   | `string`             | Поведение, которое определяет, где показать содержимое по ссылке                                        |
-| rel?      | `string`             | Отношения между ссылками                                                                                |
-| tabIndex? | `number`             | HTML-атрибут tabIndex; определяет последовательность перехода между ссылками при нажатии на клавишу Tab |
+Чтобы использовать предыдущую версию дизайна контролов вопользуйтесь модификатором `theme`. 
 
-### Showcase
+<Disclaimer>
+
+Этот модификатор не кастомизируется с помощью дизайн-токенов. Модификаторы `view` и `theme` являются взаимоисключающими — не используйте их вместе.
+
+</Disclaimer>
 
 <Example
-    component={ButtonAll}
-/>
+    component={ButtonTheme}
+    source={themeButtonSource}
+>
 
-### ButtonGroup
+#### Theme
 
-Из кнопок можно собрать группу
+Чтобы изменить стилевое оформление кнопки для классического дизайна, установите свойство `theme` в одно из следующих значений: `"action"`, `"normal"`, `"link"`, `"pseudo"`, `"raised"`, `"clear"`, `"websearch"`.
 
-<iframe
-    src="https://codesandbox.io/embed/button-radio-group-6b3s8?fontsize=14&hidenavigation=1&theme=dark"
-    style="width:100%; height:200px; border:0; border-radius: 4px; overflow:hidden;"
-    title="button radio group"
-    allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-    sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-/>
+</Example>

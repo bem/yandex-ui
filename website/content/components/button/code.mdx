@@ -1,6 +1,8 @@
 import buttonProps from '!!ts-docgen-loader!./props.tsx';
 
-### Конфигурация темы на уровне проекта:
+### Использование
+
+Конфигурация темы на уровне проекта
 
 ```ts
 // src/lib/theme.ts
@@ -10,9 +12,9 @@ import { theme } from '@yandex-lego/components/Theme/presets/default'
 configureRootTheme({ theme })
 ```
 
-### Использование с нужным набором модификаторов:
+Использование с нужным набором модификаторов
 
-```ts
+```tsx
 // src/App.ts
 import React from 'react'
 import { compose } from '@bem-react/core'
@@ -31,9 +33,9 @@ const App = () => (
 )
 ```
 
-### Использование с полным набором модификаторов:
+Использование с полным набором модификаторов
 
-```ts
+```tsx
 // src/App.ts
 import React from 'react'
 import { Button } from '@yandex-lego/components/Button/desktop/bundle'
@@ -45,6 +47,8 @@ const App = () => (
 )
 ```
 
-### Props
+<br />
+
+### API
 
 <PropsTable props={buttonProps} />

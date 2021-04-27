@@ -1,9 +1,13 @@
-export * from './view.example';
-export * from './pin.example';
-export * from './size.example';
-export * from './theme.example';
-export * from './width.example';
-export * from './playground.example';
+export * from './baseline';
+export * from './content';
+export * from './custom-content';
+export * from './pin';
+export * from './playground';
+export * from './size';
+export * from './states';
+export * from './theme';
+export * from './view';
+export * from './width';
 
 export default {
     title: 'Controls|Button/desktop',
