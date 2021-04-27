@@ -1,37 +1,26 @@
 #!/usr/bin/env node
 
-/* eslint-disable no-console */
-
-const { exec } = require('child_process');
 const { resolve } = require('path');
-const { promisify } = require('util');
+const { exec, FAILURE_BEHAVIOUR } = require('@yandex-int/frontend.ci.utils');
 
-const execa = promisify(exec);
 const websiteDir = resolve(__dirname, '../website');
 const YENV = process.env.YENV || 'testing';
 
-async function build() {
-    // TODO: Залогировать все этапы выполнения.
-    const [install, build] = await Promise.all([
-        await execa('npm ci', { cwd: websiteDir }),
-        await execa('npm run build', { cwd: websiteDir }),
-    ]);
-
-    console.log(install.stderr || install.stdout);
-    console.log(build.stderr || build.stdout);
+function build() {
+    exec('npm ci', FAILURE_BEHAVIOUR.THROW, websiteDir);
+    exec('npm run build', FAILURE_BEHAVIOUR.THROW, websiteDir);
 }
 
 // TODO: В идеале не использовать static-uploader,
 // а использоать aws node api, чтобы очищать бакет
 // от артефакторв прошлых сборок.
-async function deploy() {
-    const { stderr, stdout } = await execa(`YENV=${YENV} npm run deploy`, { cwd: websiteDir });
-    console.log(stderr || stdout);
+function deploy() {
+    exec(`YENV=${YENV} npm run deploy`, FAILURE_BEHAVIOUR.THROW, websiteDir);
 }
 
-async function main() {
-    await build();
-    await deploy();
+function main() {
+    build();
+    deploy();
 }
 
 main();
