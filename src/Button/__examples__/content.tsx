@@ -8,7 +8,7 @@ const FilterIcon: FC<{ className: string }> = ({ className }) => (
         style={{ display: 'inline-flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}
     >
         <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fillRule="evenodd" clipRule="evenodd" d="M12 0L7 5V10L5 12V5L0 0H12Z" fill="black" />
+            <path fillRule="evenodd" clipRule="evenodd" d="M12 0L7 5V10L5 12V5L0 0H12Z" />
         </svg>
     </span>
 );
