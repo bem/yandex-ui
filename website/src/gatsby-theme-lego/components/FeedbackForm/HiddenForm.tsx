@@ -19,9 +19,9 @@ export const HiddenForm: FC<HiddenFormProps> = (props) => {
                 ref={formRef}
                 style={{ display: 'none' }}
             >
-                <input type="text" name="rating" defaultValue={rating} />
-                <input type="text" name="slug" defaultValue={slug} />
-                <input type="text" name="feedback" defaultValue={feedback} />
+                <input type="hidden" name="rating" value={rating} />
+                <input type="hidden" name="slug" value={slug} />
+                <input type="hidden" name="feedback" value={feedback} />
             </form>
             <iframe name="my-frame" style={{ display: 'none' }} />
         </Fragment>
