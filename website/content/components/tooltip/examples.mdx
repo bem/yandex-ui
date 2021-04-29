@@ -4,6 +4,8 @@ import { Size as TooltipSize } from '@yandex-lego/components/Tooltip/__examples_
 import tooltipSizeSource from '!!raw-loader!@yandex-lego/components/Tooltip/__examples__/size.tsx'
 import { State as TooltipState } from '@yandex-lego/components/Tooltip/__examples__/state.tsx'
 import tooltipStateSource from '!!raw-loader!@yandex-lego/components/Tooltip/__examples__/state.tsx'
+import { Delay as TooltipDelay } from '@yandex-lego/components/Tooltip/__examples__/delay.tsx'
+import tooltipDelaySource from '!!raw-loader!@yandex-lego/components/Tooltip/__examples__/delay.tsx'
 
 ### Размер подсказки
 
@@ -33,3 +35,18 @@ import tooltipStateSource from '!!raw-loader!@yandex-lego/components/Tooltip/__e
     component={TooltipDirection}
     source={tooltipDirectionSource}
 />
+
+### Задержка при открытии/закрытии
+
+Компонент `TooltipStateful` поддерживает задержку при открытии или закрытии подсказки.
+
+<Example
+    component={TooltipDelay}
+    source={tooltipDelaySource}
+>
+
+#### Delay
+
+Чтобы установить задержку при открытии подсказки, используйте свойство `openDelay`, чтобы установить задержку при закрытии – используйте свойство `closeDelay`.
+
+</Example>

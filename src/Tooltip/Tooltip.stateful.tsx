@@ -1,9 +1,10 @@
-import React, { FC, useState, cloneElement, ReactElement, useRef, ReactNode, useCallback, Children } from 'react';
+import React, { FC, cloneElement, ReactElement, useRef, ReactNode, Children } from 'react';
 
 import { mergeRefs } from '../lib/mergeRefs';
 import { forkFn } from '../lib/forkFn';
 import { useUniqId } from '../useUniqId';
 import { TooltipProps as TooltipStatelessProps, Tooltip } from './Tooltip';
+import { useTooltipState } from './hooks/useTooltipState';
 
 type TooltipProps = Omit<TooltipStatelessProps, 'visible' | 'anchor'>;
 type Trigger = 'click' | 'hover' | 'focus';
@@ -32,6 +33,20 @@ export type TooltipStatefulProps = TooltipProps & {
      * @default false
      */
     defaultVisible?: boolean;
+
+    /**
+     * Задержка в `ms` перед открытием подсказки
+     *
+     * @default 0
+     */
+    openDelay?: number;
+
+    /**
+     * Задержка в `ms` перед закрытием подсказки
+     *
+     * @default 0
+     */
+    closeDelay?: number;
 };
 
 /**
@@ -43,12 +58,15 @@ export const TooltipStateful: FC<TooltipStatefulProps> = ({
     children,
     content,
     defaultVisible = false,
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    id = useUniqId('tooltip'),
+    id: propId,
     trigger = 'hover',
+    openDelay,
+    closeDelay,
     ...props
 }) => {
-    const [visible, setVisible] = useState(defaultVisible);
+    const uniqId = useUniqId('tooltip');
+    const id = propId || uniqId;
+    const { visible, open, close, toggle } = useTooltipState({ openDelay, closeDelay, defaultVisible });
     const anchorRef = useRef<HTMLElement>(null);
 
     const child = Children.only(children);
@@ -58,23 +76,19 @@ export const TooltipStateful: FC<TooltipStatefulProps> = ({
     const handlers = triggers.reduce<any>((acc, trigger) => {
         switch (trigger) {
             case 'click':
-                acc.onClick = forkFn(child.props.onClick, () => setVisible(!visible));
+                acc.onClick = forkFn(child.props.onClick, () => toggle());
                 break;
             case 'focus':
-                acc.onFocus = forkFn(child.props.onFocus, () => setVisible(true));
-                acc.onBlur = forkFn(child.props.onBlur, () => setVisible(false));
+                acc.onFocus = forkFn(child.props.onFocus, () => open());
+                acc.onBlur = forkFn(child.props.onBlur, () => close());
                 break;
             case 'hover':
-                acc.onMouseEnter = forkFn(child.props.onMouseEnter, () => setVisible(true));
-                acc.onMouseLeave = forkFn(child.props.onMouseLeave, () => setVisible(false));
+                acc.onMouseEnter = forkFn(child.props.onMouseEnter, () => open());
+                acc.onMouseLeave = forkFn(child.props.onMouseLeave, () => close());
                 break;
         }
         return acc;
     }, {});
-
-    const onClose = useCallback(() => {
-        setVisible(false);
-    }, []);
 
     // Определяем тип ссылки в зависимости от типа потомка,
     // нативные элементы реализуют ref, лего-компоненты должны реализовывать innerRef.
@@ -88,7 +102,7 @@ export const TooltipStateful: FC<TooltipStatefulProps> = ({
                 [refKey]: ref,
                 ['aria-describedby']: id,
             })}
-            <Tooltip {...props} id={id} visible={visible} anchor={anchorRef} onClose={onClose}>
+            <Tooltip {...props} id={id} visible={visible} anchor={anchorRef} onClose={close}>
                 {content}
             </Tooltip>
         </>

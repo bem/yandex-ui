@@ -1,83 +1,125 @@
-import React, { ComponentType, createRef } from 'react';
-import { ReactWrapper, mount, render } from 'enzyme';
-import { ExtractProps } from '@bem-react/core';
+import React, { createRef, FC, RefObject } from 'react';
 
+import { createClientRender, screen, fireEvent } from '../../internal/testing';
 import { Tooltip as TooltipCommon } from '../Tooltip';
-import { Tooltip as TooltipDesktop } from '../Tooltip@desktop';
-import { Tooltip as TooltipTouchPad } from '../Tooltip@touch-phone';
-import { Tooltip as TooltipTouchPhone } from '../Tooltip@touch-pad';
-import { serverEnvironmentSetup, delay } from '../../internal/utils';
-import { Nullable } from '../../typings/utility-types';
+import { Tooltip as TooltipDesktop, TooltipStateful as TooltipStatefulDesktop } from '../Tooltip@desktop';
+import { Tooltip as TooltipTouchPad, TooltipStateful as TooltipStatefulTouchPad } from '../Tooltip@touch-phone';
+import { Tooltip as TooltipTouchPhone, TooltipStateful as TooltipStatefulTouchPhone } from '../Tooltip@touch-pad';
 
 // prettier-ignore
 const platforms = [
-    ['desktop', TooltipDesktop],
-    ['touch-pad', TooltipTouchPad],
-    ['touch-phone', TooltipTouchPhone],
-];
+    ['desktop', TooltipDesktop, TooltipStatefulDesktop],
+    ['touch-pad', TooltipTouchPad, TooltipStatefulTouchPad],
+    ['touch-phone', TooltipTouchPhone, TooltipStatefulTouchPhone],
+] as const;
 
-type TooltipProps = ExtractProps<typeof TooltipDesktop>;
+describe.each(platforms)('Tooltip@%s', (_platform, Tooltip, TooltipStatefull) => {
+    const render = createClientRender();
 
-describe.each<any>(platforms)('Tooltip@%s', (_platform, Tooltip: ComponentType<TooltipProps>) => {
-    let wrapper: Nullable<ReactWrapper> = null;
+    test('должен вернуть полный шаблон компонента (snapshot)', () => {
+        render(
+            <Tooltip visible anchor={createRef()}>
+                Добавить в избранное
+            </Tooltip>,
+        );
 
-    afterEach(() => {
-        if (wrapper !== null && wrapper.length > 0) {
-            wrapper.unmount();
-        }
+        expect(document.body).toMatchSnapshot();
     });
 
-    describe('server environment', () => {
-        serverEnvironmentSetup();
-
-        test('должен вернуть полный шаблон компонента (snapshot)', () => {
-            expect(render(<Tooltip className="mix" anchor={createRef()}>content</Tooltip>)).toMatchSnapshot();
-        });
+    test('должен быть установлен корректный displayName', () => {
+        expect(TooltipCommon.displayName).toBe('Tooltip');
     });
 
-    describe('client environment', () => {
-        test('должен вернуть полный шаблон компонента (snapshot)', () => {
-            wrapper = mount(<Tooltip visible anchor={createRef()}>Добавить в избранное</Tooltip>);
-            expect(wrapper).toMatchSnapshot();
+    test('должен устанавливать ссылку на корневой DOM элемент', async () => {
+        const innerRef = createRef<HTMLDivElement>();
+        render(<Tooltip visible innerRef={innerRef} anchor={createRef()} />);
+
+        expect(innerRef.current).not.toBe(null);
+    });
+
+    test('должен устанавливать модификатор visible если открыт при инициализации', () => {
+        const innerRef = createRef<HTMLDivElement>();
+        render(<Tooltip innerRef={innerRef} visible anchor={createRef()} />);
+
+        expect(innerRef.current).toHaveClass('Tooltip_visible');
+    });
+
+    test('должен устанавливать/удалять модификатор visible при открытии/закрытии', () => {
+        const innerRef = createRef<HTMLDivElement>();
+        const { setProps } = render(<Tooltip innerRef={innerRef} anchor={createRef()} />);
+
+        setProps({ visible: true });
+        expect(innerRef.current).toHaveClass('Tooltip_visible');
+
+        setProps({ visible: false });
+        expect(innerRef.current).not.toHaveClass('Tooltip_visible');
+    });
+
+    describe('stateful', () => {
+        beforeEach(() => {
+            jest.useFakeTimers();
         });
 
-        test('должен быть установлен корректный displayName', () => {
-            expect(TooltipCommon.displayName).toBe('Tooltip');
+        afterEach(() => {
+            jest.useRealTimers();
         });
 
-        test('должен устанавливать ссылку на корневой DOM элемент', async () => {
-            const innerRef = createRef<HTMLDivElement>();
-            wrapper = mount(<Tooltip visible innerRef={innerRef} anchor={createRef()} />);
-            await delay(100);
-            expect(innerRef.current).not.toBe(null);
+        it('должен установить innerRef', () => {
+            const Anchor: FC<{ innerRef: RefObject<HTMLButtonElement> }> = ({ innerRef }) => {
+                return (
+                    <button ref={innerRef} data-testid="trigger">
+                        trigger
+                    </button>
+                );
+            };
+            const ref = createRef<HTMLButtonElement>();
+
+            render(
+                <TooltipStatefull defaultVisible content={<span data-testid="tooltip">content</span>}>
+                    <Anchor innerRef={ref}>trigger</Anchor>
+                </TooltipStatefull>,
+            );
+
+            expect(ref.current).not.toBe(null);
         });
 
-        test('должен устанавливать модификатор visible если открыт при инициализации', () => {
-            wrapper = mount(<Tooltip visible anchor={createRef()} />);
-            expect(
-                wrapper
-                    .find('.Tooltip')
-                    .at(0)
-                    .hasClass('Tooltip_visible'),
-            ).toEqual(true);
+        it('должен открыть tooltip с задержкой', () => {
+            render(
+                <TooltipStatefull
+                    content={<span data-testid="tooltip">content</span>}
+                    trigger="click"
+                    openDelay={1000}
+                    keepMounted={false}
+                >
+                    <span data-testid="trigger">trigger</span>
+                </TooltipStatefull>,
+            );
+
+            fireEvent.click(screen.getByTestId('trigger'));
+            expect(screen.queryByTestId('tooltip')).not.toBeInTheDocument();
+
+            jest.runOnlyPendingTimers();
+            expect(screen.getByTestId('tooltip')).toBeInTheDocument();
         });
 
-        test('должен устанавливать/удалять модификатор visible при открытии/закрытии', () => {
-            wrapper = mount(<Tooltip anchor={createRef()} />);
-            wrapper.setProps({ visible: true });
-            expect(
-                wrapper
-                    .find('.Tooltip')
-                    .at(0)
-                    .hasClass('Tooltip_visible'),
-            ).toEqual(true);
-            wrapper.setProps({ visible: false });
-            expect(
-                wrapper
-                    .find('.Tooltip')
-                    .at(0)
-                    .hasClass('Tooltip_visible'),
-            ).toEqual(false);
+        it('должен закрыть tooltip с задержкой', () => {
+            render(
+                <TooltipStatefull
+                    defaultVisible
+                    content={<span data-testid="tooltip">content</span>}
+                    trigger="click"
+                    closeDelay={1000}
+                    keepMounted={false}
+                >
+                    <span data-testid="trigger">trigger</span>
+                </TooltipStatefull>,
+            );
+
+            fireEvent.click(screen.getByTestId('trigger'));
+            expect(screen.getByTestId('tooltip')).toBeInTheDocument();
+
+            jest.runOnlyPendingTimers();
+            expect(screen.queryByTestId('tooltip')).not.toBeInTheDocument();
         });
     });
 });
