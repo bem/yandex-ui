@@ -147,7 +147,7 @@ export const DrawerContent: FC<IDrawerContentProps> = ({
 
     return (
         <div className={cnDrawerDragObserver} {...dragProps}>
-            <div className={cnDrawerOverlay} style={{ opacity: springOpacity }} onClick={onClose} />
+            <div className={cnDrawerOverlay} style={{ opacity: springOpacity }} onClick={() => onClose()} />
             <div className={cnDrawerCurtain} style={curtainStyle}>
                 <div className={cnDrawerHandle} style={{ opacity: springOpacity }} />
                 {titleComponent && <div className={cnDrawerTitle}>{titleComponent}</div>}
