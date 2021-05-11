@@ -2,6 +2,7 @@ import React, { ComponentType, FC, useState } from 'react';
 import styled from '@emotion/styled';
 import { Button } from '@yandex-lego/components/Button/desktop/bundle';
 import { Text } from '@yandex-lego/components/Text/desktop/bundle';
+import { TooltipStateful } from '@yandex-lego/components/Tooltip/desktop/bundle';
 import { MDXProviderComponents, MDXProvider } from '@mdx-js/react';
 
 import { CodeIcon, CodeSandboxIcon, BackgroundIcon } from '../../icons';
@@ -18,6 +19,15 @@ type ExampleProps = {
     children?: string;
     defaultBackground?: 'white' | 'gray';
 };
+
+const Tooltip = fork(TooltipStateful, {
+    view: 'default',
+    trigger: ['focus', 'hover'],
+    size: 's',
+    scope: 'inplace',
+    direction: 'top',
+    hasTail: true,
+});
 
 const exampleComponents: MDXProviderComponents = {
     code: InlineCode,
@@ -57,18 +67,29 @@ export const Example: FC<ExampleProps> = (props) => {
 
             <Toolbar>
                 {source && (
-                    <Button view="clear" size="s" data-analytics="button-codesandbox" onClick={openCodeSandbox}>
-                        <CodeSandboxIcon />
-                    </Button>
+                    <Tooltip content="Открыть пример в CodeSandbox">
+                        <Button view="clear" size="s" data-analytics="button-codesandbox" onClick={openCodeSandbox}>
+                            <CodeSandboxIcon />
+                        </Button>
+                    </Tooltip>
                 )}
                 {source && (
-                    <Button view="clear" size="s" data-analytics="button-example-code" onClick={toggleSourceVisible}>
-                        <CodeIcon />
-                    </Button>
+                    <Tooltip content={`${isVisibleSource ? 'Скрыть' : 'Показать'} код примера`}>
+                        <Button
+                            view="clear"
+                            size="s"
+                            data-analytics="button-example-code"
+                            onClick={toggleSourceVisible}
+                        >
+                            <CodeIcon />
+                        </Button>
+                    </Tooltip>
                 )}
-                <Button view="clear" size="s" onClick={toggleBackground}>
-                    <BackgroundIcon />
-                </Button>
+                <Tooltip content="Переключить фон">
+                    <Button view="clear" size="s" onClick={toggleBackground}>
+                        <BackgroundIcon />
+                    </Button>
+                </Tooltip>
             </Toolbar>
 
             {isVisibleSource && (
@@ -107,6 +128,9 @@ const Toolbar = styled.footer`
     .Button2-Text {
         display: flex;
     }
+
+    --popup-view-default-typo-color: #fff;
+    --tooltip-view-default-fill-color-base: #000;
 `;
 
 const Canvas = styled.div<any>`

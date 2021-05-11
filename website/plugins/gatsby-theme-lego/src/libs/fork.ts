@@ -1,6 +1,6 @@
 import { ComponentType } from 'react';
 
-export function fork<T>(component: ComponentType<T>, defaultProps: T): ComponentType {
+export function fork<T>(component: ComponentType<T>, defaultProps: Partial<T>): ComponentType<T> {
     const forkedComponent = component.bind({});
 
     if (defaultProps) {
