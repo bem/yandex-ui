@@ -23,7 +23,7 @@ exports.onCreatePage = ({ actions, page }) => {
     }
 
     if (page.context.frontmatter.tabs) {
-        page.context.frontmatter.tabs = [...page.context.frontmatter.tabs, 'Issues'];
+        page.context.frontmatter.tabs = [...page.context.frontmatter.tabs, 'Issues', 'FAQ'];
     }
 
     processedPagesSet.add(id);
@@ -31,6 +31,12 @@ exports.onCreatePage = ({ actions, page }) => {
     createPage({
         component: path.resolve(__dirname, './src/templates/Issues.tsx'),
         path: path.join(path.dirname(page.path), 'issues'),
+        context: page.context,
+    });
+
+    createPage({
+        component: path.resolve(__dirname, './src/templates/Faq.tsx'),
+        path: path.join(path.dirname(page.path), 'faq'),
         context: page.context,
     });
 };

@@ -2,13 +2,15 @@ import React, { FC } from 'react';
 import styled from '@emotion/styled';
 
 export interface IssuesProps {
-    componentId: string;
+    queue: string;
+    status?: string;
+    components?: string;
+    tags?: string;
+    sortBy?: string;
 }
 
 export const Issues: FC<IssuesProps> = (props) => {
-    const { componentId } = props;
-
-    return <Frame src={getIssuesUrl(componentId)} />;
+    return <Frame src={getIssuesUrl(props)} />;
 };
 
 const Frame = styled.iframe`
@@ -18,18 +20,22 @@ const Frame = styled.iframe`
     border: none;
 `;
 
-function getIssuesUrl(componentId: string) {
+function getIssuesUrl(props: IssuesProps) {
+    const { queue, status, components, tags, sortBy = 'Created DESC' } = props;
+
     const filter: Record<string, string> = {
-        Queue: 'ISL',
-        Status: 'inScope, inProgress, inReview',
-        Components: 'lego-components',
-        Tags: componentId,
-        'Sort by': 'Created DESC',
+        Queue: queue,
+        Status: status,
+        Components: components,
+        Tags: tags,
+        'Sort by': sortBy,
     };
 
     const query = Object.keys(filter)
         .reduce<string[]>((acc, key) => {
-            acc.push(`"${key}": ${filter[key]}`);
+            if (typeof filter[key] !== 'undefined') {
+                acc.push(`"${key}": ${filter[key]}`);
+            }
 
             return acc;
         }, [])
