@@ -1,12 +1,6 @@
 import { dispose } from './pointerfocus';
 
 describe('pointerfocus', () => {
-    beforeEach(() => {
-        const event = document.createEvent('Event');
-        event.initEvent('DOMContentLoaded');
-        window.document.dispatchEvent(event);
-    });
-
     test('should set utilityfocus className for body after init', () => {
         expect(window.document.body.classList.contains('utilityfocus')).toBe(true);
     });

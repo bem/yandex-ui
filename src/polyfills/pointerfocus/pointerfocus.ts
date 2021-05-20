@@ -12,7 +12,7 @@ class PointerFocus {
         this.timeoutId = 0;
         this.isPointer = false;
 
-        window.addEventListener('blur', this.onBlur, true);
+        window.addEventListener('blur', this.onBlur, false);
         window.document.addEventListener('keydown', this.onKeyDown, true);
         window.document.addEventListener('mousedown', this.onMouseDown, true);
         window.document.addEventListener('mouseup', this.onMouseDown, true);
@@ -30,7 +30,7 @@ class PointerFocus {
      * Удаляет все обработчики и классы с документа.
      */
     dispose(): void {
-        window.removeEventListener('blur', this.onBlur, true);
+        window.removeEventListener('blur', this.onBlur, false);
         window.document.removeEventListener('keydown', this.onKeyDown, true);
         window.document.removeEventListener('mousedown', this.onMouseDown, true);
         window.document.removeEventListener('mouseup', this.onMouseDown, true);
@@ -76,13 +76,20 @@ class PointerFocus {
 let pointerFocusInstance: PointerFocus | null = null;
 let disposed = false;
 
+function setupPointerFocus() {
+    if (disposed || pointerFocusInstance) {
+        return;
+    }
+
+    pointerFocusInstance = PointerFocus.create();
+}
+
 if (canUseDOM()) {
-    document.addEventListener('DOMContentLoaded', () => {
-        if (disposed) {
-            return;
-        }
-        pointerFocusInstance = PointerFocus.create();
-    });
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupPointerFocus);
+    } else {
+        setupPointerFocus();
+    }
 }
 
 /**
