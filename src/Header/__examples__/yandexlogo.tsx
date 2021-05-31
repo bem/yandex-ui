@@ -7,8 +7,10 @@ export const YandexLogo = () => (
     <Text typography="body-short-m">
         <table>
             <thead>
-                <td>1. Отображение по умолчанию</td>
-                <td>2. Передано rebranding=true</td>
+                <tr>
+                    <td>1. Отображение по умолчанию</td>
+                    <td>2. Передано rebranding=true</td>
+                </tr>
             </thead>
             <tbody>
                 <tr>

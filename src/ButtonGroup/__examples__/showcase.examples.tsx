@@ -17,15 +17,16 @@ export const Showcase = () => {
         | 'raised'
         | 'link'
         | 'pseudo'
-        | 'clear')[];
+        | 'clear'
+    )[];
     const pins = ['round', 'circle'] as ('round' | 'circle')[];
     const sizes = ['s', 'm', 'l'] as ('s' | 'm' | 'l')[];
 
     return views.map((view) => (
-        <>
+        <div key={view}>
             {pins.map((pin) =>
                 sizes.map((size) => (
-                    <>
+                    <div key={`${pin}-${size}`}>
                         <ButtonGroup
                             pin={pin}
                             gap={view !== 'link' && view !== 'pseudo' && view !== 'clear' ? 's' : undefined}
@@ -46,11 +47,11 @@ export const Showcase = () => {
                             </Button>
                         </ButtonGroup>
                         <br /> <br />
-                    </>
+                    </div>
                 )),
             )}
             {sizes.map((size) => (
-                <>
+                <div key={size}>
                     <ButtonGroup
                         pin="round"
                         gap={view !== 'link' && view !== 'pseudo' && view !== 'clear' ? 's' : undefined}
@@ -72,8 +73,8 @@ export const Showcase = () => {
                         </Button>
                     </ButtonGroup>
                     <br /> <br />
-                </>
+                </div>
             ))}
-        </>
+        </div>
     ));
 };

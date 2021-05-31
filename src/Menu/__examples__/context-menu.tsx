@@ -6,7 +6,7 @@ import { Text } from '@yandex-lego/components/Text/desktop/bundle';
 import { Menu } from '@yandex-lego/components/Menu/desktop/bundle';
 import { Group, Item, MenuItemProps, useMenuItem } from '@yandex-lego/components/Menu/desktop';
 
-import { CopyIcon, DownloadIcon, PaseIcon, ShareIcon } from './icons';
+import { CopyIcon, DownloadIcon, PasteIcon, ShareIcon } from './icons';
 
 const styles = `
     .ContextMenu {
@@ -60,9 +60,7 @@ const RenderItem: RenderOverride<MenuItemProps> = ({ needIconGlyph, children, in
         <Text as="kbd" typography="control-s" color="secondary">
             {keyboard}
         </Text>
-    ) : (
-        undefined
-    );
+    ) : undefined;
 
     return (
         <div {...itemProps}>
@@ -104,7 +102,7 @@ export const ContextMenu = () => {
                         <Text>Копировать</Text>
                     </Item>
                     <Item value="paste" disabled>
-                        <PaseIcon />
+                        <PasteIcon />
                         <Text>Вставить</Text>
                     </Item>
                 </Group>

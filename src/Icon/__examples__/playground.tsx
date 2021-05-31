@@ -24,22 +24,26 @@ export const Playground = () => {
 
     return (
         <table cellSpacing={5} style={{ textAlign: 'center' }}>
-            <tr>
-                <td>_type</td>
-                <td>_glyph</td>
-                <td>url</td>
-            </tr>
-            <tr>
-                <td>
-                    <Icon type={type} style={style} />
-                </td>
-                <td>
-                    <Icon glyph={glyph} style={style} />
-                </td>
-                <td>
-                    <Icon url={url} style={{ width: 16 }} />
-                </td>
-            </tr>
+            <thead>
+                <tr>
+                    <td>_type</td>
+                    <td>_glyph</td>
+                    <td>url</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <Icon type={type} style={style} />
+                    </td>
+                    <td>
+                        <Icon glyph={glyph} style={style} />
+                    </td>
+                    <td>
+                        <Icon url={url} style={{ width: 16 }} />
+                    </td>
+                </tr>
+            </tbody>
         </table>
     );
 };

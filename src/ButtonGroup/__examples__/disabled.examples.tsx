@@ -20,7 +20,7 @@ export const Disabled = () => {
             &nbsp;
             <Checkbox
                 checked={disabled}
-                onClick={() => setDisabled((prev) => !prev)}
+                onChange={(event) => setDisabled(event.target.checked)}
                 view="default"
                 size="m"
                 label="Disabled"

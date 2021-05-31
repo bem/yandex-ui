@@ -16,13 +16,15 @@ const glyphs = [
 
 export const Glyph = () => (
     <table cellSpacing={5}>
-        {glyphs.map((glyph: any) => (
-            <tr key={glyph}>
-                <td>
-                    <Icon glyph={glyph} style={{ width: 16, height: 16 }} />
-                </td>
-                <td>_glyph_{glyph}</td>
-            </tr>
-        ))}
+        <tbody>
+            {glyphs.map((glyph: any) => (
+                <tr key={glyph}>
+                    <td>
+                        <Icon glyph={glyph} style={{ width: 16, height: 16 }} />
+                    </td>
+                    <td>_glyph_{glyph}</td>
+                </tr>
+            ))}
+        </tbody>
     </table>
 );

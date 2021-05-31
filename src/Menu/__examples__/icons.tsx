@@ -5,8 +5,8 @@ export const CopyIcon = () => {
         <span className="Icon Icon_hasGlyph Icon_size_m" style={{ width: 24 }}>
             <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M8 5h7.795c1.115 0 1.519.116 1.926.334.407.218.727.538.945.945.218.407.334.811.334 1.926V16a1 1 0 102 0V8.128c0-1.783-.186-2.43-.534-3.082a3.635 3.635 0 00-1.512-1.512C18.302 3.186 17.655 3 15.872 3H8a1 1 0 000 2zm7.721 2.334C15.314 7.116 14.91 7 13.795 7h-7.59c-1.115 0-1.519.116-1.926.334a2.272 2.272 0 00-.945.945C3.116 8.686 3 9.09 3 10.205v7.59c0 1.114.116 1.519.334 1.926.218.407.538.727.945.945.407.218.811.334 1.926.334h7.59c1.114 0 1.519-.116 1.926-.334.407-.218.727-.538.945-.945.218-.407.334-.811.334-1.926v-7.59c0-1.115-.116-1.519-.334-1.926a2.272 2.272 0 00-.945-.945z"
                     fill="#000000"
                 />
@@ -15,7 +15,7 @@ export const CopyIcon = () => {
     );
 };
 
-export const PaseIcon = () => {
+export const PasteIcon = () => {
     return (
         <span className="Icon Icon_hasGlyph Icon_size_m" style={{ width: 24 }}>
             <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
@@ -34,7 +34,7 @@ export const ShareIcon = () => {
                     fill="#000000"
                     stroke="none"
                     stroke-width="1"
-                    fill-rule="evenodd"
+                    fillRule="evenodd"
                 />
             </svg>
         </span>
@@ -46,8 +46,8 @@ export const DownloadIcon = () => {
         <span className="Icon Icon_hasGlyph Icon_size_m" style={{ width: 24 }}>
             <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M12 2c-.55 0-1 .45-1 1v8.922a10 10 0 00.254 2.24l-.206.206-.215-.344c-.4-.64-.873-1.234-1.407-1.768l-.966-.966a.996.996 0 00-1.41 0c-.39.39-.39 1.03 0 1.42l3.89 3.883a1.5 1.5 0 002.12 0l3.89-3.883c.39-.39.39-1.03 0-1.42a.996.996 0 00-1.41 0l-.966.966a10.004 10.004 0 00-1.407 1.768l-.215.344-.206-.207a10 10 0 00.254-2.24V3c0-.55-.45-1-1-1zM6 20a1 1 0 100 2h12a1 1 0 100-2H6z"
                     fill="#000000"
                 />

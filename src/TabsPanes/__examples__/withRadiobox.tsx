@@ -11,10 +11,11 @@ export const WithRadiobox = () => {
                 size="m"
                 view="default"
                 value={activeTab}
+                onChange={(event) => setActiveTab(event.target.value)}
                 options={[
-                    { label: 'Поиск', value: 'search', onClick: () => setActiveTab('search') },
-                    { label: 'Картинки', value: 'images', onClick: () => setActiveTab('images') },
-                    { label: 'Видео', value: 'video', onClick: () => setActiveTab('video') },
+                    { label: 'Поиск', value: 'search' },
+                    { label: 'Картинки', value: 'images' },
+                    { label: 'Видео', value: 'video' },
                 ]}
             />
             <TabsPanes

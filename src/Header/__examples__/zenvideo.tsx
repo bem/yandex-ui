@@ -94,13 +94,19 @@ export const ZenVideo = () => {
                     }
                     actions={
                         <>
-                            <ButtonZen size="m" iconRight={() => (<div className="ExampleIcon" />)} view="clear">Добавить</ButtonZen>
+                            <ButtonZen size="m" iconRight={() => <div className="ExampleIcon" />} view="clear">
+                                Добавить
+                            </ButtonZen>
                             <UserPic plus size="s" avatarId="43978/351415393-30646433" />
                         </>
                     }
                 >
                     <HeaderSearch action="//yandex.ru/search">
-                        <SearchInput view="search-arrow" name="text" value="Пример с UserPic из lego/components" />
+                        <SearchInput
+                            view="search-arrow"
+                            name="text"
+                            defaultValue="Пример с UserPic из lego/components"
+                        />
                         <SearchButton view="search-arrow">Найти</SearchButton>
                     </HeaderSearch>
                 </Header>
@@ -120,7 +126,7 @@ export const ZenVideo = () => {
                     }
                 >
                     <HeaderSearch action="//yandex.ru/search">
-                        <SearchInput view="search-arrow" name="text" value="Пример с user2 из serp-header" />
+                        <SearchInput view="search-arrow" name="text" defaultValue="Пример с user2 из serp-header" />
                         <SearchButton view="search-arrow">Найти</SearchButton>
                     </HeaderSearch>
                 </Header>

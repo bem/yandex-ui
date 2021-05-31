@@ -2,7 +2,7 @@ import React, { FC, useState } from 'react';
 import { withZIndex } from '@yandex-lego/components/withZIndex';
 import { Button } from '@yandex-lego/components/Button/desktop/bundle';
 
-const Component: FC<any> = ({ zIndex, innerRef, top, left, bgColor, style, ...rest }) => (
+const Component: FC<any> = ({ zIndex, innerRef, top, left, bgColor, style, visible, ...rest }) => (
     <div
         style={{
             width: '50px',

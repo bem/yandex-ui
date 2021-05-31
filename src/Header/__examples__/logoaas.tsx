@@ -3,17 +3,25 @@ import React from 'react';
 import { Text } from '@yandex-lego/components/Text/desktop/bundle';
 import { Logoaas } from '@yandex-lego/components/Header/desktop';
 
+const styles = `
+    .YandexHeader-Logoaas {
+        --header-logo-height: auto;
+    }
+
+    .YandexHeader-Logoaas .YandexHeader-Image {
+        margin: 0;
+    }
+`;
+
 export const logoaas = () => (
-    <Text typography="body-short-m">
-        <style>{`
-            .YandexHeader-Logoaas {--header-logo-height: auto}
-            .YandexHeader-Logoaas .YandexHeader-Image { margin: 0 }
-        `}
-        </style>
+    <Text as="div" typography="body-short-m">
+        <style>{styles}</style>
         <table>
             <thead>
-                <td>1. Отображение по умолчанию</td>
-                <td>2. Передано rebranding=true</td>
+                <tr>
+                    <td>1. Отображение по умолчанию</td>
+                    <td>2. Передано rebranding=true</td>
+                </tr>
             </thead>
             <tbody>
                 <tr>

@@ -15,7 +15,7 @@ export const HybridLink: FC<HybridLinkProps> = (props) => {
 
     if (href.match(/http/)) {
         return (
-            <StyledLink disabled={disabled} active={active ? 1 : 0} href={href} as={Link}>
+            <StyledLink disabled={disabled} active={active ? 1 : 0} href={href} as={Link} target="_blank">
                 {children}
             </StyledLink>
         );
