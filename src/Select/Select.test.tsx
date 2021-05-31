@@ -287,7 +287,7 @@ describe.each<any>(platforms)('Select@%s', (platform, Select: ComponentType<Sele
                 wrapper
                     .find('.Select2-Button')
                     .get(0)
-                    .props.onClick();
+                    .props.onClick({ nativeEvent: {} });
             }
             wrapper
                 .find('.Select2-Button')

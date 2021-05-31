@@ -267,6 +267,12 @@ const SelectPresenter = class extends PureComponent<SelectProps> {
     };
 
     private onClick = (event: MouseEvent<HTMLElement>) => {
+        // В Firefox предотвращаем onClick, если он произошел с клавиатуры
+        // @ts-expect-error
+        if (event.nativeEvent.mozInputSource === 6 /* MOZ_SOURCE_KEYBOARD */) {
+            return;
+        }
+
         if (this.props.setOpened !== undefined) {
             this.props.setOpened(!this.props.opened);
         }
