@@ -1,0 +1,12 @@
+@define-mixin Button_hovered
+    $viewName,
+    $color,
+    $fillColor {
+    .Button2_view_$(viewName).Button2_hovered {
+        color: $color;
+    }
+
+    .Button2_view_$(viewName).Button2_hovered::before {
+        background-color: $fillColor;
+    }
+}

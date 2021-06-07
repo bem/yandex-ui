@@ -1,0 +1,7 @@
+@mixin Button_clear
+/* $viewName                 */    clear,
+/* $colorBase                */    var(--button-view-clear-typo-color-base),
+/* $colorDisabled            */    var(--button-view-clear-typo-color-disabled),
+/* $fillColorDisabled        */    var(--button-view-clear-fill-color-disabled),
+/* $colorChecked             */    var(--button-view-clear-typo-color-checked-base),
+/* $fillColorChecked         */    var(--button-view-clear-fill-color-checked-base);

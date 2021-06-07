@@ -1,0 +1,14 @@
+/* The pressed state of a Button */
+@define-mixin Button_pressed
+    /* Sets the view modifier name of a Button */
+    $viewName {
+    .Button2_view_$(viewName).Button2_pressed {
+        transition: none;
+        transform: scale(.96);
+    }
+
+    /* 1.042 ≈ 1/0.96 */
+    .Button2_view_$(viewName).Button2_pressed::after {
+        transform: scale(1.042);
+    }
+}

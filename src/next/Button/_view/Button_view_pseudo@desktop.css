@@ -1,0 +1,16 @@
+/* hover */
+@mixin Button_hovered
+/* $viewName                 */    pseudo,
+/* $color                    */    var(--button-view-pseudo-typo-color-base),
+/* $fillColor                */    var(--button-view-pseudo-fill-color-hovered);
+
+/* check */
+@mixin Button_checked-hovered
+/* $viewName                 */    pseudo,
+/* $color                    */    var(--button-view-link-typo-color-checked-base),
+/* $fillColor                */    var(--button-view-pseudo-fill-color-checked-hovered);
+
+/* focus */
+@mixin Button_focused
+/* $viewName                 */    pseudo,
+/* $borderColor              */    var(--button-view-pseudo-border-color-focused);

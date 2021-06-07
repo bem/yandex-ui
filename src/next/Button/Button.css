@@ -1,0 +1,89 @@
+/**
+ * 1. Значения padding и margin каждый браузер выставляет по-своему – сбрасываем в ноль.
+ * 2. Не должно быть возможности выделить контент кнопки, в т.ч. кнопки-ссылки.
+ * 3. У содержимого кнопок-ссылок не должно быть подчеркивания.
+ * 4. Кнопка не предполагает многострочного содержимого.
+ * 5. Чтобы FF под MacOS не делал blur после программного выставления фокуса по mousedown.
+ *    Подробности: http://jsfiddle.net/mishaberezin/892yppts/10/.
+ * 6. Для кнопок-ссылок.
+ * 7. Убираем нативную подсветку на iOS и Android.
+ * 8. В IE по дефолту hidden, в остальных браузерах visible, требуется нормализация.
+ *    В пользу visible, т.к. мы используем тень для отображения фокуса.
+ * 9. Такой сброс стилей нужен для всех тем.
+ * 10. Сбрасываем браузерные стили для кнопок, в особенности для link.
+ */
+.Button2 {
+    position: relative;
+
+    display: inline-block; /* 6 */
+    overflow: visible; /* 8 */
+
+    box-sizing: border-box;
+    margin: 0; /* 1 */
+    padding: 0; /* 1 */
+
+    font-family: var(--button-font-family);
+    -moz-user-focus: ignore; /* 5 */
+    user-select: none; /* 2 */
+    text-align: center; /* 10 */
+    white-space: nowrap; /* 4 */
+    text-decoration: none; /* 3 */
+
+    border-width: 0;
+    outline: 0;
+    background: transparent; /* 9 */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* 7 */
+
+    touch-action: manipulation;
+}
+
+/**
+ * Перестаем реагировать на события мыши, если компонент не как тэг кнопка,
+ * а на пример как ссылка, в остальных случаях достаточно атрибута disabled.
+ */
+.Button2.Button2_disabled,
+.Button2.Button2_progress {
+    pointer-events: none;
+}
+
+/**
+ * В FF 4+ у содержимого кнопки есть внутренняя обводка, которая используется для
+ * индикации фокуса на кнопках с измененными css-свойствами border или background.
+ * Обводка влияет на размеры, для нормализации с другими браузерами ее нужно убрать.
+ * Подробности: http://stackoverflow.com/questions/8859908.
+ */
+.Button2::-moz-focus-inner {
+    padding: 0;
+
+    border: 0;
+}
+
+.Button2::before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    content: '';
+
+    border-radius: var(--button-borderRadius);
+}
+
+/**
+ * Псевдоэлемент для исправления нажатия на край кнопки
+ * https://st.yandex-team.ru/ISL-5480
+ */
+.Button2::after {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    content: '';
+
+    transform: scale(0);
+}

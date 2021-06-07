@@ -1,0 +1,18 @@
+.Button2_width_max {
+    width: 100%;
+}
+
+/**
+ * У кнопок-ссылок выставляем блочное представление для того,
+ * чтобы избавиться от лишнего отступа снизу из-за vertical-align: baseline
+ */
+.Button2_width_max.Button2_type_link {
+    display: block;
+}
+
+.Button2_width_max .Button2-Text {
+    display: block;
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}

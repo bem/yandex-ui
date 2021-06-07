@@ -1,0 +1,268 @@
+button:
+  fontFamily:
+    value: "{typography.controls.fontFamily.value}"
+
+  border:
+    width:
+      value: 1px
+    radius:
+      value: 4px
+      comment: "Радиус внутреннего блока"
+
+  size:
+    s:
+      fontSize:
+        value: "{typography.controls.size.s.fontSize.value}"
+        comment: "Размер текста у s-button"
+      lineHeight:
+        value: 32px
+        comment: "Межстрочный интервал текста у s-button"
+      height:
+        value: 32px
+        comment: "Высота у s-button"
+
+      icon:
+        width:
+          value: 32px
+          comment: "Ширина иконки у s-button"
+        indentLeft:
+          value: 25px
+          comment: "Размер внешнего левого отступа текста от иконки у s-button"
+        indentRight:
+          value: 25px
+          comment: "Размер внешнего правого отступа текста от иконки у s-button"
+
+      text:
+        indentAll:
+          value: 0 13px
+          comment: "Размер внешнего отступа у s-button"
+
+    m:
+      fontSize:
+        value: "{typography.controls.size.m.fontSize.value}"
+        comment: "Размер текста у m-button"
+      lineHeight:
+        value: 36px
+        comment: "Межстрочный интервал текста у m-button"
+      height:
+        value: 36px
+        comment: "Высота у m-button"
+
+      icon:
+        width:
+          value: 36px
+          comment: "Ширина иконки у m-button"
+        indentLeft:
+          value: 29px
+          comment: "Размер внешнего левого отступа текста от иконки у m-button"
+        indentRight:
+          value: 29px
+          comment: "Размер внешнего правого отступа текста от иконки у m-button"
+
+      text:
+        indentAll:
+          value: 0 15px
+          comment: "Размер внешнего отступа у m-button"
+
+    l:
+      fontSize:
+        value: "{typography.controls.size.l.fontSize.value}"
+        comment: "Размер текста у l-button"
+      lineHeight:
+        value: 42px
+        comment: "Межстрочный интервал текста у l-button"
+      height:
+        value: 42px
+        comment: "Высота у l-button"
+
+      icon:
+        width:
+          value: 42px
+          comment: "Ширина иконки у l-button"
+        indentLeft:
+          value: 35px
+          comment: "Размер внешнего левого отступа текста от иконки у l-button"
+        indentRight:
+          value: 35px
+          comment: "Размер внешнего правого отступа текста от иконки у l-button"
+
+      text:
+        indentAll:
+          value: 0 18px
+          comment: "Размер внешнего отступа у l-button"
+
+  viewAction:
+    borderColor:
+      focused:
+        value: "{color.control.borderColor.prism.value}"
+
+    fillColor:
+      base:
+        value: "{color.control.type.action.fillColor.base.value}"
+      disabled:
+        value: "{color.control.type.default.fillColor.disable.value}"
+      hovered:
+        value: "{color.control.type.action.fillColor.hover.value}"
+      progress:
+        base:
+          value: "{color.control.type.progress.fillColor.base.value}"
+        process:
+          value: "{color.control.type.progress.fillColor.process.value}"
+      checked:
+        base:
+          value: "{color.control.type.check.fillColor.base.value}"
+        hovered:
+          value: "{color.control.type.check.fillColor.hover.value}"
+
+    typoColor:
+      base:
+        value: "{color.control.typo.passive.value}"
+      disabled:
+        value: "{color.control.typo.disable.value}"
+      hovered:
+        value: "{color.control.typo.passive.value}"
+      progress:
+        base:
+          value: "{color.control.typo.passive.value}"
+      checked:
+        base:
+          value: "{color.control.typo.faint.value}"
+        hovered:
+          value: "{color.control.typo.faint.value}"
+
+  viewClear:
+    borderColor:
+      focused:
+        value: "{color.control.borderColor.prism.value}"
+
+    fillColor:
+      disabled:
+        value: "{color.control.type.default.fillColor.disable.value}"
+      checked:
+        base:
+          value: "{color.control.type.check.fillColor.base.value}"
+        hovered:
+          value: "{color.control.type.check.fillColor.hover.value}"
+
+    typoColor:
+      base:
+        value: "{color.control.typo.primary.value}"
+      disabled:
+        value: "{color.control.typo.disable.value}"
+      checked:
+        base:
+          value: "{color.control.typo.faint.value}"
+
+  viewDefault:
+    borderColor:
+      focused:
+        value: "{color.control.borderColor.prism.value}"
+
+    fillColor:
+      base:
+        value: "{color.control.type.default.fillColor.base.value}"
+      disabled:
+        value: "{color.control.type.default.fillColor.disable.value}"
+      hovered:
+        value: "{color.control.type.default.fillColor.hover.value}"
+      checked:
+        base:
+          value: "{color.control.type.check.fillColor.base.value}"
+        hovered:
+          value: "{color.control.type.check.fillColor.hover.value}"
+
+    typoColor:
+      base:
+        value: "{color.control.typo.primary.value}"
+      hovered:
+        value: "{color.control.typo.primary.value}"
+      disabled:
+        value: "{color.control.typo.disable.value}"
+      checked:
+        base:
+          value: "{color.control.typo.faint.value}"
+        hovered:
+          value: "{color.control.typo.faint.value}"
+
+  viewLink:
+    borderColor:
+      base:
+        value: "{color.control.type.link.borderColor.base.value}"
+      focused:
+        value: "{color.control.borderColor.prism.value}"
+
+    fillColor:
+      base:
+        value: "{color.control.type.faint.fillColor.base.value}"
+      disabled:
+        value: "{color.control.type.default.fillColor.disable.value}"
+      hovered:
+        value: "{color.control.type.link.fillColor.hover.value}"
+      checked:
+        base:
+          value: "{color.control.type.check.fillColor.base.value}"
+        hovered:
+          value: "{color.control.type.check.fillColor.hover.value}"
+
+    typoColor:
+      base:
+        value: "{color.control.typo.link.value}"
+      disabled:
+        value: "{color.control.typo.disable.value}"
+      checked:
+        base:
+          value: "{color.control.typo.faint.value}"
+
+  viewPseudo:
+    borderColor:
+      base:
+        value: "{color.control.type.pseudo.borderColor.base.value}"
+      focused:
+        value: "{color.control.borderColor.prism.value}"
+
+    fillColor:
+      disabled:
+        value: "{color.control.type.default.fillColor.disable.value}"
+      hovered:
+        value: "{color.control.type.pseudo.fillColor.hover.value}"
+      checked:
+        base:
+          value: "{color.control.type.check.fillColor.base.value}"
+        hovered:
+          value: "{color.control.type.check.fillColor.hover.value}"
+
+    typoColor:
+      base:
+        value: "{color.control.typo.primary.value}"
+      disabled:
+        value: "{color.control.typo.disable.value}"
+      checked:
+        base:
+          value: "{color.control.typo.faint.value}"
+
+  viewRaised:
+    borderColor:
+      focused:
+        value: "{color.control.borderColor.prism.value}"
+
+    fillColor:
+      base:
+        value: "{color.control.type.raised.fillColor.base.value}"
+      disabled:
+        value: "{color.control.type.raised.fillColor.disable.value}"
+      hovered:
+        value: "{color.control.type.raised.fillColor.hover.value}"
+      checked:
+        base:
+          value: "{color.control.type.check.fillColor.base.value}"
+        hovered:
+          value: "{color.control.type.check.fillColor.hover.value}"
+
+    typoColor:
+      base:
+        value: "{color.control.type.raised.typo.base.value}"
+      disabled:
+        value: "{color.control.type.raised.typo.disable.value}"
+      checked:
+        base:
+          value: "{color.control.typo.faint.value}"

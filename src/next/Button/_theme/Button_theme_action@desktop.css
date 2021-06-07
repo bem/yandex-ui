@@ -1,0 +1,23 @@
+.Button2_theme_action::before {
+    transition: background-color .1s ease-out 0s;
+}
+
+.Button2_theme_action.Button2_hovered::before {
+    background-color: #ffd633;
+}
+
+.utilityfocus .Button2_theme_action:focus::before {
+    animation: button2-action-focus 1s infinite linear;
+}
+
+@keyframes button2-action-focus {
+    from,
+    to {
+        background-color: #fc0;
+    }
+
+    40%,
+    60% {
+        background-color: #ffe066;
+    }
+}

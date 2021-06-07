@@ -1,0 +1,8 @@
+@mixin Button_filled
+/* $viewName                 */    default,
+/* $colorBase                */    var(--button-view-default-typo-color-base),
+/* $fillColorBase            */    var(--button-view-default-fill-color-base),
+/* $colorDisabled            */    var(--button-view-default-typo-color-disabled),
+/* $fillColorDisabled        */    var(--button-view-default-fill-color-disabled),
+/* $colorChecked             */    var(--button-view-default-typo-color-checked-base),
+/* $fillColorChecked         */    var(--button-view-default-fill-color-checked-base);

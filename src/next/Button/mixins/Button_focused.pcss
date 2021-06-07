@@ -1,0 +1,10 @@
+/* The focused state of a Button */
+@define-mixin Button_focused
+    /* Sets the view modifier name of a Button */
+    $viewName,
+    /* Sets the border color of a focused Button */
+    $borderColor {
+    .utilityfocus .Button2_view_$(viewName):focus::before {
+        border: 2px solid $borderColor;
+    }
+}

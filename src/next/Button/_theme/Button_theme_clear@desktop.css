@@ -1,0 +1,24 @@
+/**
+ * Толщина рамки здесь не анимируется. В других темах это нужно чтобы избежать «скачка»,
+ * когда граница толщиной в 1px превращается в желтую рамку фокуса толщиной 2px.
+ * Здесь граница изначально нулевой толщины и анимация утолщения её до двух пикселей смотрится неуместно.
+ */
+.Button2_theme_clear::before {
+    transition: background-color .1s ease-out;
+}
+
+.Button2_theme_clear .Button2-Text,
+.Button2_theme_clear .Button2-Icon {
+    transition: opacity .1s ease-out;
+}
+
+/* stylelint-disable no-descending-specificity */
+.Button2_theme_clear.Button2_hovered .Button2-Text,
+.Button2_theme_clear.Button2_hovered .Button2-Icon {
+    opacity: .8;
+}
+
+
+.utilityfocus .Button2_theme_clear:focus::before {
+    border: 2px solid #ffdb4d;
+}

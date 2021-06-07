@@ -1,0 +1,14 @@
+@mixin Button_filled
+/* $viewName                 */    raised,
+/* $colorBase                */    var(--button-view-raised-typo-color-base),
+/* $fillColorBase            */    var(--button-view-raised-fill-color-base),
+/* $colorDisabled            */    var(--button-view-raised-typo-color-disabled),
+/* $fillColorDisabled        */    var(--button-view-raised-fill-color-disabled),
+/* $colorChecked             */    var(--button-view-raised-typo-color-checked-base),
+/* $fillColorChecked         */    var(--button-view-raised-fill-color-checked-base);
+
+/* raised */
+@mixin Button_raised
+/* $viewName                 */    raised,
+/* $shadowColor              */    rgba(0, 0, 0, .05),
+/* $shadowColorPressed       */    rgba(0, 0, 0, .1);

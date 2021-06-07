@@ -1,0 +1,53 @@
+.Button2_theme_action {
+    position: relative;
+    z-index: 0;
+
+    color: #000;
+    border: none;
+    outline: none;
+}
+
+.Button2_theme_action::before {
+    border-radius: 3px;
+    background-color: #ffdb4d;
+}
+
+.Button2.Button2_theme_action.Button2_pressed[class]::before {
+    background-color: #fc0;
+}
+
+.Button2_theme_action.Button2_disabled::before {
+    background-color: rgba(0, 0, 0, .08);
+}
+
+.Button2_theme_action.Button2_disabled .Button2-Text,
+.Button2_theme_action.Button2_disabled .Button2-Icon {
+    opacity: .5;
+}
+
+.Button2_theme_action.Button2_progress::before {
+    background-color: #ffd426;
+    background-image: repeating-linear-gradient(-45deg, #ffd426, #ffd426 4px, #f7c600 4px, #f7c600 8px);
+    background-size: 34px 34px; /* 34 ~= Math.sqrt(8² + 8²) * 3times = 33.941125496954285 */
+}
+
+.Button2.Button2_theme_action.Button2_progress .Button2-Icon {
+    opacity: 1;
+}
+
+@keyframes button2-progress {
+    0% {
+        background-position: -12px 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.Button2.Button2_theme_action.Button2_progress::before {
+    animation-name: button2-progress;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}

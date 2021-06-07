@@ -14,9 +14,11 @@ class PointerFocus {
 
         window.addEventListener('blur', this.onBlur, false);
         window.document.addEventListener('keydown', this.onKeyDown, true);
-        window.document.addEventListener('mousedown', this.onMouseDown, true);
-        window.document.addEventListener('mouseup', this.onMouseDown, true);
+        window.document.addEventListener('mousedown', this.onPointerCall, true);
+        window.document.addEventListener('mouseup', this.onPointerCall, true);
         window.document.addEventListener('focusin', this.onFocus, true);
+        window.document.addEventListener('pointerdown', this.onPointerCall, true);
+        window.document.addEventListener('pointerup', this.onPointerCall, true);
 
         if (
             !window.document.body.classList.contains('pointerfocus') &&
@@ -32,9 +34,11 @@ class PointerFocus {
     dispose(): void {
         window.removeEventListener('blur', this.onBlur, false);
         window.document.removeEventListener('keydown', this.onKeyDown, true);
-        window.document.removeEventListener('mousedown', this.onMouseDown, true);
-        window.document.removeEventListener('mouseup', this.onMouseDown, true);
+        window.document.removeEventListener('mousedown', this.onPointerCall, true);
+        window.document.removeEventListener('mouseup', this.onPointerCall, true);
         window.document.removeEventListener('focusin', this.onFocus, true);
+        window.document.removeEventListener('pointerdown', this.onPointerCall, true);
+        window.document.removeEventListener('pointerup', this.onPointerCall, true);
         window.document.body.classList.remove('pointerfocus', 'utilityfocus');
     }
 
@@ -43,7 +47,7 @@ class PointerFocus {
         this.isPointer = false;
     };
 
-    private onMouseDown = () => {
+    private onPointerCall = () => {
         this.isPointer = true;
         window.clearTimeout(this.timeoutId);
         this.timeoutId = window.setTimeout(() => (this.isPointer = false), 600);

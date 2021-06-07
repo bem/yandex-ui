@@ -1,0 +1,8 @@
+.Button2.Button2.Button2_pin_circle-clear::before {
+    border-right-width: 0;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    /* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
+    border-bottom-left-radius: 100px;
+}

@@ -1,0 +1,18 @@
+/* The disabled state of a Button */
+@define-mixin Button_disabled
+    /* Sets the view modifier name of a Button */
+    $viewName,
+    /* Sets the foreground color value of a Button's text */
+    $color,
+    /* Sets the background color of a Button */
+    $fillColor {
+    .Button2_view_$(viewName).Button2_disabled {
+        color: $color;
+    }
+
+    .Button2_view_$(viewName).Button2_disabled::before {
+        /* uses --color-transparent token for correct handling of specificity in postcss-theme-fold */
+        border-color: var(--color-transparent);
+        background-color: $fillColor;
+    }
+}

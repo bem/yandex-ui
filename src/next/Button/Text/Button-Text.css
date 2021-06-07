@@ -1,0 +1,18 @@
+/**
+ * 1. В IE9+ с помощью position:relative у <button> лечится супер эффект "нажимания".
+ *    Подробнее: http://stackoverflow.com/questions/6744406;
+ * 2. В IE8 нужно, чтобы элемент приобрел "layout" и применялись фильтры прозрачности.
+ *    Сделано на common для однообразности.
+ * 3. Если не прибить resize в Safari 8 у __text появляется "уголочек".
+ *    http://jing.yandex-team.ru/files/karamadjong/2015-03-18_1319.png
+ * 4. Устраняет проблему с mouseover/mouseout внутри кнопки.
+ */
+.Button2-Text {
+    position: relative; /* 1 */
+
+    display: inline-block; /* 2 */
+
+    resize: none; /* 3 */
+    white-space: nowrap;
+    pointer-events: none; /* 4 */
+}

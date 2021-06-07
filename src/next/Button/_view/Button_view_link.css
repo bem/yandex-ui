@@ -1,0 +1,10 @@
+@mixin Button_outlined
+/* $viewName                 */    link,
+/* $colorBase                */    var(--button-view-link-typo-color-base),
+/* $fillColorBase            */    var(--button-view-link-fill-color-base),
+/* $borderWidth              */    var(--button-border-width),
+/* $borderColor              */    var(--button-view-link-border-color-base),
+/* $colorDisabled            */    var(--button-view-link-typo-color-disabled),
+/* $fillColorDisabled        */    var(--button-view-link-fill-color-disabled),
+/* $colorChecked             */    var(--button-view-link-typo-color-checked-base),
+/* $fillColorChecked         */    var(--button-view-link-fill-color-checked-base);

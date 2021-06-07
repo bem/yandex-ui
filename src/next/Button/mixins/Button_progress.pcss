@@ -1,0 +1,37 @@
+/* The progress state of a Button */
+@define-mixin Button_progress
+    /* Sets the view modifier name of a Button */
+    $viewName,
+    /* Sets the foreground color value of a Button's text */
+    $color,
+    /* Sets the background color of a Button */
+    $fillColor,
+    /* Sets the additional background color of a Button the progress state */
+    $fillColorProcess {
+    .Button2_view_$(viewName).Button2_progress::before {
+        background-image: repeating-linear-gradient(-45deg, $fillColor, $fillColor 4px, $fillColorProcess 4px, $fillColorProcess 8px);
+        background-size: 34px 34px;
+
+        /* stylelint-disable-next-line no-unknown-animations */
+        animation-name: button-view-$(viewName)-progress;
+        animation-duration: .5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    .Button2_view_$(viewName).Button2_progress {
+        color: $color;
+    }
+
+    /* stylelint-disable-next-line */
+    @keyframes button-view-$(viewName)-progress {
+        0% {
+            background-position: -12px 0;
+        }
+
+        100% {
+            background-position: 0 0;
+        }
+    }
+}
+

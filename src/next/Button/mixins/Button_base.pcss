@@ -1,0 +1,21 @@
+/* The base state of a filled Button */
+@define-mixin Button_base
+    /* Sets the view modifier name of a Button */
+    $viewName,
+    /* Sets the foreground color value of a Button's text */
+    $color,
+    /* Sets the background color of a Button */
+    $fillColor {
+    .Button2_view_$(viewName) {
+        color: $color;
+
+        transition: transform .1s ease-out, color .15s linear;
+        transform: scale(1);
+    }
+
+    .Button2_view_$(viewName)::before {
+        background-color: $fillColor;
+
+        transition: background-color .15s linear;
+    }
+}

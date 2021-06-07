@@ -1,0 +1,9 @@
+.Button2_theme_link {
+    position: relative;
+    z-index: 0;
+
+    color: #04b;
+    border: none;
+    outline: none;
+    background: transparent;
+}

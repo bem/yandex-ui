@@ -1,0 +1,21 @@
+/* The base state of a clear Button */
+@define-mixin Button_clear-base
+    /* Sets the view modifier name of a Button */
+    $viewName,
+    /* Sets the foreground color value of a Button's text */
+    $color {
+    .Button2_view_$(viewName) {
+        color: $color;
+    }
+
+    .Button2_view_$(viewName) .Button2-Text,
+    .Button2_view_$(viewName) .Button2-Icon {
+        opacity: .65;
+
+        transition: opacity .1s ease-out;
+    }
+
+    .Button2_view_$(viewName)::before {
+        transition: background-color .15s linear;
+    }
+}

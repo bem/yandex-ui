@@ -1,0 +1,52 @@
+/**
+ * 1. Полупрозрачные границы должны накладываться на общий фон, а не на фон самой кнопки.
+ * 2. Нельзя использовать border:none, т.к. в сочетании с анимированным border-color
+ *    Chrome показывает черную рамку при переключении.
+ *    Подробнее: http://jing.yandex-team.ru/files/karamadjong/2015-04-28_1218.swf?w=111&h=178
+ */
+.Button2_theme_pseudo {
+    position: relative;
+    z-index: 0;
+
+    color: #000;
+    border: none;
+    outline: none;
+}
+
+.Button2_theme_pseudo::before {
+    border-width: var(--button-border-width);
+    border-style: solid;
+    border-color: rgba(0, 0, 0, .2);
+    border-radius: 3px;
+    background-color: transparent;
+    background-clip: padding-box; /* 1 */
+}
+
+.Button2_theme_pseudo.Button2_pressed::before {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+.Button2_theme_pseudo.Button2_checked::before {
+    border-color: rgba(153, 122, 0, .5);
+    background-color: #ffeba0;
+}
+
+.Button2_theme_pseudo.Button2_checked.Button2_pressed::before {
+    border-color: rgba(129, 103, 0, .6);
+    background-color: #fee481;
+}
+
+.Button2_theme_pseudo.Button2_disabled::before {
+    border-color: rgba(0, 0, 0, .08) /* 2 */;
+    background-color: rgba(0, 0, 0, .08);
+}
+
+.Button2_theme_pseudo.Button2_disabled.Button2_checked::before {
+    border-color: rgba(0, 0, 0, .15);
+    background-color: rgba(0, 0, 0, .15);
+}
+
+.Button2_theme_pseudo.Button2_disabled .Button2-Text,
+.Button2_theme_pseudo.Button2_disabled .Button2-Icon {
+    opacity: .5;
+}

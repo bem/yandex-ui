@@ -1,0 +1,62 @@
+.Button2.Button2_theme_websearch {
+    overflow: hidden; /* Скрывает выступающие края уголка */
+
+    width: 88px;
+
+    font-family: Arial, sans-serif; /* Нужно для единообразия с Серпом */
+    font-size: 16px;
+    line-height: 36px;
+
+    border: 0;
+    outline: 0;
+    background: none;
+}
+
+.Button2.Button2_theme_websearch::before {
+    content: none;
+}
+
+.Button2.Button2_theme_websearch .Button2-Text {
+    position: relative;
+
+    display: block;
+
+    margin-right: 9px;
+    padding-left: 5px;
+
+    color: #000;
+    border: 0 solid #ffdb4d; /* В Opera 12 не анимируется :before. Анимируем элемент, а для :before ставим inherit */
+    background-color: #ffdb4d;
+
+    transition: .1s ease-out; /* TODO: https://st.yandex-team.ru/ISL-2547 (3) */
+    transition-property: border-color, background;
+}
+
+/**
+ * 1. Если установить псевдоэлемент у .button2_theme_websearch, уголок начинал прыгать при нажатии кнопки в IE8.
+ * При отказе от поддержки IE8 переверстывать было дорого и бессмысленно.
+ * 2. Если установить свойство `border-color: transparent;`, в старых Firefox у уголка появляется черная граница.
+ *    `transparent` интерпретируется как «черный прозрачный». Если соседняя граница прямоугольника непрозрачная,
+ *    то этот черный цвет становится видимым на стыке границ. Поэтому нужно делать «желтый прозрачный».
+ * 3. Граница псевдоэлемента наследует цвет и transition.
+ */
+.Button2.Button2_theme_websearch .Button2-Text::before /* 1 */ {
+    position: absolute;
+    top: -4px;
+    right: -9px;
+
+    width: 0;
+    height: 0;
+
+    content: '';
+
+    border-width: 22px 0 22px 11px; /* Уголок шире на 2px, чтобы не отрываться при изменении масштаба */
+    border-style: solid;
+    border-color: rgba(255, 219, 76, 0); /* 2 */
+    border-left-color: inherit; /* 3 */
+}
+
+.Button2.Button2_theme_websearch.Button2_pressed[class] .Button2-Text {
+    border-color: #fc0;
+    background-color: #fc0;
+}

@@ -1,0 +1,20 @@
+/**
+ * 1. border-width нужен для меняющейся толщины обводки при фокусе.
+ */
+.Button2_theme_pseudo::before {
+    transition: .1s ease-out;
+    transition-property: border-color, border-width, background-color;
+}
+
+.Button2_theme_pseudo.Button2_hovered::before {
+    border-color: rgba(0, 0, 0, .3);
+}
+
+.Button2_theme_pseudo.Button2_checked.Button2_hovered::before {
+    border-color: rgba(118, 94, 0, .65);
+}
+
+.utilityfocus.utilityfocus .Button2.Button2_theme_pseudo:focus::before {
+    border-width: 2px; /* 1 */
+    border-color: #ffdb4d;
+}

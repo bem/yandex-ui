@@ -1,0 +1,9 @@
+@mixin Button_size
+/* $sizeName         */    s,
+/* $height           */    var(--button-size-s-height),
+/* $fontSize         */    var(--button-size-s-font),
+/* $lineHeight       */    var(--button-size-s-lineHeight),
+/* $indentAll        */    var(--button-size-s-text-indentAll),
+/* $iconWidth        */    var(--button-size-s-icon-width),
+/* $iconIndentLeft   */    var(--button-size-s-icon-indentLeft),
+/* $iconIndentRight  */    var(--button-size-s-icon-indentRight);

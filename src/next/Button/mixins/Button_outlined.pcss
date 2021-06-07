@@ -1,0 +1,33 @@
+@define-mixin Button_outlined
+    $viewName,
+    $colorBase,
+    $fillColorBase,
+    $borderWidth,
+    $borderColor,
+    $colorDisabled,
+    $fillColorDisabled,
+    $colorChecked,
+    $fillColorChecked {
+    /* common */
+    @mixin Button_outlined-base
+        $viewName,
+        $colorBase,
+        $fillColorBase,
+        $borderWidth,
+        $borderColor;
+    /* press */
+    @mixin Button_pressed
+        $viewName;
+
+    /* disable */
+    @mixin Button_disabled
+        $viewName,
+        $colorDisabled,
+        $fillColorDisabled;
+
+    /* check */
+    @mixin Button_checked
+        $viewName,
+        $colorChecked,
+        $fillColorChecked;
+}
