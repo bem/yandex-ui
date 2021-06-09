@@ -2,7 +2,9 @@ const id = process.env.id;
 
 function shouldCreatePage(page) {
     if (id) {
-        return page.frontmatter.id === id;
+        const chunks = id.split(',');
+
+        return chunks.some((chunk) => page.frontmatter.id === chunk);
     }
 
     return true;

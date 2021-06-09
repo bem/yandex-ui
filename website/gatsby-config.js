@@ -20,9 +20,22 @@ module.exports = {
         {
             resolve: 'gatsby-theme-lego',
             options: {
-                pages: './content',
-                sidebar: './content/sidebar',
-                shouldCreatePage,
+                sections: [
+                    {
+                        pathPrefix: '/',
+                        name: 'components',
+                        pages: './content',
+                        sidebar: './content/sidebar',
+                        shouldCreatePage,
+                    },
+                    {
+                        pathPrefix: '/docs',
+                        name: 'documentation',
+                        pages: './documentation',
+                        sidebar: './documentation/sidebar',
+                        shouldCreatePage,
+                    },
+                ],
             },
         },
         {

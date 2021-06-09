@@ -6,7 +6,17 @@ import { Flex } from '../../../plugins/gatsby-theme-lego/src/components/Flex';
 import { Logo } from '../../components/Logo';
 import { HeaderNav, HeaderNavItem } from './HeaderNav';
 
-export const Header: FC = () => {
+interface HeaderProps {
+    currentSection: string;
+}
+
+export const Header: FC<HeaderProps> = (props) => {
+    const { currentSection } = props;
+
+    const isActive = (section: string) => {
+        return section === currentSection;
+    };
+
     return (
         <Flex as={Container} alignItems="center">
             <LogoWrapper>
@@ -16,6 +26,12 @@ export const Header: FC = () => {
             </LogoWrapper>
 
             <HeaderNav>
+                <HeaderNavItem active={isActive('components')} href="/guidelines/start">
+                    Компоненты
+                </HeaderNavItem>
+                <HeaderNavItem active={isActive('documentation')} href="/docs/developing/design-tokens">
+                    Документация
+                </HeaderNavItem>
                 <HeaderNavItem href="https://clubs.at.yandex-team.ru/lego/?tag=51607" target="_blank">
                     Блог
                 </HeaderNavItem>

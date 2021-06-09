@@ -1,7 +1,11 @@
 import React, { FC } from 'react';
 import { Global, css } from '@emotion/react';
 
+import { fonts } from '../fonts';
+
 const styles = css`
+    ${fonts}
+
     body {
         margin: 0;
         padding: 0;

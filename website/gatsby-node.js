@@ -11,8 +11,9 @@ exports.onPreInit = () => {
 
 exports.onCreatePage = ({ actions, page }) => {
     const { createPage } = actions;
+    const isComponentsPage = page.context.section === 'components';
 
-    if (!page.context.frontmatter) {
+    if (!page.context.frontmatter || !isComponentsPage) {
         return;
     }
 

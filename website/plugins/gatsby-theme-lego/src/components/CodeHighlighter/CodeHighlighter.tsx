@@ -53,7 +53,7 @@ const Pre = styled.pre`
     margin: 0;
     padding: 12px 20px;
 
-    font-family: Menlo, monospace;
+    font-family: 'JetBrains Mono', Menlo, monospace;
     font-size: 12px;
     line-height: 18px;
     white-space: pre;

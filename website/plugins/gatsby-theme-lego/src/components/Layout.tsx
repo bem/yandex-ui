@@ -20,7 +20,7 @@ const titleTemplate = `%s – ${defaultTitle}`;
 
 export const Layout: FC<LayoutProps> = (props) => {
     const { children, location, pageContext } = props;
-    const { sidebar, frontmatter = {} } = pageContext;
+    const { sidebar, frontmatter = {}, section } = pageContext;
     const { title, id } = frontmatter;
 
     const { slug } = useCurrentSlug(location);
@@ -32,7 +32,7 @@ export const Layout: FC<LayoutProps> = (props) => {
             </Helmet>
 
             <Container data-sidebar={Boolean(sidebar)}>
-                <Header />
+                <Header currentSection={section} />
                 {sidebar && <Sidebar items={sidebar} activeId={id} />}
                 <Main key={location.pathname}>
                     {children}

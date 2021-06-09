@@ -1,5 +1,5 @@
 import { FC } from 'react';
 
-export const Header: FC = () => {
+export const Header: FC<any> = () => {
     return null;
 };

@@ -19,6 +19,7 @@ export interface Frontmatter {
 export interface PageContext {
     sidebar?: SidebarSection[];
     frontmatter?: Frontmatter;
+    section: string;
 }
 
 export interface Location {

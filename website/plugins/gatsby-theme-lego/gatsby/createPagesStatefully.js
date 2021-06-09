@@ -5,15 +5,24 @@ const matter = require('gray-matter');
 
 async function createPagesStatefully({ actions }, options) {
     const { createPage } = actions;
-    const pages = getPages(options.pages, options.shouldCreatePage);
-    const sidebar = getSidebar(options.sidebar, pages);
 
-    for (const page of pages) {
-        createPage({
-            component: page.componentPath,
-            path: page.routePath,
-            context: { sidebar, frontmatter: page.frontmatter },
-        });
+    for (const section of options.sections) {
+        const pages = getPages(section.pages, section.shouldCreatePage);
+        const sidebar = getSidebar(section.sidebar, pages);
+        const pathPrefix = section.pathPrefix || '/';
+
+        for (const page of pages) {
+            createPage({
+                component: page.componentPath,
+                path: path.join(pathPrefix, page.routePath),
+                context: {
+                    sidebar,
+                    frontmatter: page.frontmatter,
+                    prefix: pathPrefix,
+                    section: section.name,
+                },
+            });
+        }
     }
 }
 
@@ -70,10 +79,7 @@ function getSidebar(sidebarPath, pages) {
                     let pagePath = page.frontmatter.path || page.routePath;
 
                     if (page.frontmatter.tabs) {
-                        const currentPath = pagePath
-                            .split('/')
-                            .filter(Boolean)
-                            .slice(-1)[0];
+                        const currentPath = pagePath.split('/').filter(Boolean).slice(-1)[0];
                         const normalizedTab = page.frontmatter.tabs[0].toLowerCase();
                         pagePath = pagePath.replace(currentPath, normalizedTab);
                     }
