@@ -1,4 +1,4 @@
-@mixin Button_clear
+@mixin Button_clear-next
 /* $viewName                 */    clear,
 /* $colorBase                */    var(--button-view-clear-typo-color-base),
 /* $colorDisabled            */    var(--button-view-clear-typo-color-disabled),

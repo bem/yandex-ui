@@ -1,4 +1,4 @@
-@mixin Button_filled
+@mixin Button_filled-next
 /* $viewName                 */    action,
 /* $colorBase                */    var(--button-view-action-typo-color-base),
 /* $fillColorBase            */    var(--button-view-action-fill-color-base),
@@ -8,7 +8,7 @@
 /* $fillColorChecked         */    var(--button-view-action-fill-color-checked-base);
 
 /* progress */
-@mixin Button_progress
+@mixin Button_progress-next
 /* $viewName                 */    action,
 /* $colorProgress            */    var(--button-view-action-typo-color-progress-base),
 /* $fillColorProgress        */    var(--button-view-action-fill-color-progress-base),

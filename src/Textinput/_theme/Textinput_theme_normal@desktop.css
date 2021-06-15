@@ -6,12 +6,7 @@
     border-color: var(--color-control-bg-border-default-state-error-hovered);
 }
 
-.Textinput_theme_normal.Textinput_focused {
-    border: 0;
-}
-
-.Textinput.Textinput_theme_normal.Textinput_focused .Textinput-Box,
-.Textinput.Textinput_theme_normal.Textinput_focused.Textinput_hovered .Textinput-Box {
+.Textinput.Textinput_theme_normal.Textinput_focused[class][class] .Textinput-Box {
     border: 2px solid #ffdb4d;
 }
 

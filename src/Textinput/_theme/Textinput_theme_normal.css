@@ -2,7 +2,6 @@
     color: #000;
 }
 
-
 .Textinput_theme_normal .Textinput-Control::placeholder,
 .Textinput_theme_normal .Textinput-Control::-webkit-input-placeholder {
     color: #999;

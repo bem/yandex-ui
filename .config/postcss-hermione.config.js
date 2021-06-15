@@ -5,7 +5,7 @@ const __PROD__ = NODE_ENV === 'production';
 
 const plugins = [
     require('postcss-mixins')({
-        mixinsDir: join(__dirname, '../src/*/mixins'),
+        mixinsDir: join(__dirname, '../src/**/mixins'),
     }),
 ];
 

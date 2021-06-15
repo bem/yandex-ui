@@ -1,4 +1,4 @@
-@mixin Button_size
+@mixin Button_size-next
 /* $sizeName         */    m,
 /* $height           */    var(--button-size-m-height),
 /* $fontSize         */    var(--button-size-m-font),

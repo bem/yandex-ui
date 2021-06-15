@@ -1,4 +1,4 @@
-@mixin Button_outlined
+@mixin Button_outlined-next
 /* $viewName                 */    link,
 /* $colorBase                */    var(--button-view-link-typo-color-base),
 /* $fillColorBase            */    var(--button-view-link-fill-color-base),

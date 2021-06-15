@@ -38,9 +38,9 @@ const styles = css`
         padding: 1px 6px;
 
         font-family: Menlo, monospace;
-        font-size: var(--text-body-short-size-m-font-size);
-        line-height: var(--text-body-short-size-m-line-height);
-        letter-spacing: var(--text-body-short-size-m-letter-spacing);
+        font-size: var(--text-body-short-size-xl-font-size);
+        line-height: var(--text-body-short-size-xl-line-height);
+        letter-spacing: var(--text-body-short-size-xl-letter-spacing);
 
         border-radius: 4px;
         background-color: #f1f2f5;
@@ -60,9 +60,9 @@ const styles = css`
         border-collapse: collapse;
 
         font-family: var(--typography-font-family);
-        font-size: var(--text-body-short-size-m-font-size);
-        line-height: var(--text-body-short-size-m-line-height);
-        letter-spacing: var(--text-body-short-size-m-letter-spacing);
+        font-size: var(--text-body-short-size-xl-font-size);
+        line-height: var(--text-body-short-size-xl-line-height);
+        letter-spacing: var(--text-body-short-size-xl-letter-spacing);
 
         border: 1px solid #f5f5f5;
     }
@@ -84,9 +84,9 @@ const styles = css`
     .unstyled-ul,
     .unstyled-ol {
         font-family: var(--typography-font-family);
-        font-size: var(--text-body-long-size-m-font-size);
-        line-height: var(--text-body-long-size-m-line-height);
-        letter-spacing: var(--text-body-long-size-m-letter-spacing);
+        font-size: var(--text-body-long-size-xl-font-size);
+        line-height: var(--text-body-long-size-xl-line-height);
+        letter-spacing: var(--text-body-long-size-xl-letter-spacing);
 
         padding-left: 32px;
     }

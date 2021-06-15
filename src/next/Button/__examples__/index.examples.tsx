@@ -8,6 +8,7 @@ export * from './states';
 export * from './theme';
 export * from './view';
 export * from './width';
+export * from './perf';
 
 export default {
     title: 'Next|Button',

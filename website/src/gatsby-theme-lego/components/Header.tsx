@@ -32,12 +32,8 @@ export const Header: FC<HeaderProps> = (props) => {
                 <HeaderNavItem active={isActive('documentation')} href="/docs/developing/design-tokens">
                     Документация
                 </HeaderNavItem>
-                <HeaderNavItem href="https://clubs.at.yandex-team.ru/lego/?tag=51607" target="_blank">
-                    Блог
-                </HeaderNavItem>
-                <HeaderNavItem href={getRoadmapLink()} target="_blank">
-                    Roadmap
-                </HeaderNavItem>
+                <HeaderNavItem href="https://clubs.at.yandex-team.ru/lego/?tag=51607">Блог</HeaderNavItem>
+                <HeaderNavItem href={getRoadmapLink()}>Roadmap</HeaderNavItem>
             </HeaderNav>
         </Flex>
     );

@@ -54,8 +54,8 @@ const Pre = styled.pre`
     padding: 12px 20px;
 
     font-family: 'JetBrains Mono', Menlo, monospace;
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 21px;
     white-space: pre;
     word-spacing: normal;
     word-wrap: normal;

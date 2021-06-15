@@ -1,14 +1,14 @@
 /* hover */
-@mixin Button_clear-hovered
+@mixin Button_clear-hovered-next
 /* $viewName                 */    clear;
 
 /* check */
-@mixin Button_checked-hovered
+@mixin Button_checked-hovered-next
 /* $viewName                 */    clear,
 /* $color                    */    var(--button-view-clear-typo-color-checked-base),
 /* $fillColor                */    var(--button-view-clear-fill-color-checked-hovered);
 
 /* focus */
-@mixin Button_focused
+@mixin Button_focused-next
 /* $viewName                 */    clear,
 /* $borderColor              */    var(--button-view-clear-border-color-focused);

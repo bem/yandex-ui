@@ -1,5 +1,5 @@
 function parseValue(value: any) {
-    if (!isNaN(Number(value)) && (typeof value === 'string' && value.trim() !== '')) {
+    if (!isNaN(Number(value)) && typeof value === 'string' && value.trim() !== '') {
         value = Number(value);
     } else if (value !== null && (value.toLowerCase() === 'true' || value.toLowerCase() === 'false')) {
         value = value.toLowerCase() === 'true';
@@ -9,13 +9,14 @@ function parseValue(value: any) {
 
 export function parseQueryString<T>(search: string): T {
     const hashes = search.slice(search.indexOf('?') + 1).split('&');
-    return hashes.reduce(
-        (params, hash) => {
-            const split = hash.indexOf('=');
-            const key = hash.slice(0, split);
-            const value = parseValue(hash.slice(split + 1));
-            return Object.assign(params, { [key]: value });
-        },
-        {} as any,
-    );
+    return hashes.reduce((params, hash) => {
+        const split = hash.indexOf('=');
+        const key = hash.slice(0, split);
+        const value = parseValue(hash.slice(split + 1));
+        return Object.assign(params, { [key]: value });
+    }, {} as any);
+}
+
+export function useParams<T>(): T {
+    return parseQueryString(window.location.search);
 }

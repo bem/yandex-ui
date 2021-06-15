@@ -1,26 +1,37 @@
-import React, { forwardRef } from 'react';
+import React, { ReactNode, forwardRef } from 'react';
 import styled from '@emotion/styled';
+import { Link as LegoLink } from '@yandex-lego/components/Link';
+import { Link as GatsbyLink } from 'gatsby';
 
 export const HeaderNav = styled.nav`
     display: flex;
     flex-shrink: 0;
 `;
 
-export type HeaderNavItemProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
+export type HeaderNavItemProps = {
     active?: boolean;
+    children: ReactNode;
+    href: string;
 };
 
 export const HeaderNavItem = forwardRef<HTMLAnchorElement, HeaderNavItemProps>((props, ref) => {
-    const { children, active, ...other } = props;
+    const { children, active, href } = props;
+    let linkProps = {};
+
+    if (href.match(/http/)) {
+        linkProps = { href, as: LegoLink, target: '_blank' };
+    } else {
+        linkProps = { to: href, as: GatsbyLink };
+    }
 
     return (
-        <HeaderNavItemStyled ref={ref} data-active={active} {...other}>
+        <Container ref={ref} data-active={active} {...linkProps}>
             {children}
-        </HeaderNavItemStyled>
+        </Container>
     );
 });
 
-const HeaderNavItemStyled = styled.a<HeaderNavItemProps>`
+const Container = styled.a`
     display: inline-flex;
     box-sizing: border-box;
     font-family: var(--typography-font-family);

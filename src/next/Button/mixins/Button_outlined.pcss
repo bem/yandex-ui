@@ -1,4 +1,4 @@
-@define-mixin Button_outlined
+@define-mixin Button_outlined-next
     $viewName,
     $colorBase,
     $fillColorBase,
@@ -9,24 +9,24 @@
     $colorChecked,
     $fillColorChecked {
     /* common */
-    @mixin Button_outlined-base
+    @mixin Button_outlined-base-next
         $viewName,
         $colorBase,
         $fillColorBase,
         $borderWidth,
         $borderColor;
     /* press */
-    @mixin Button_pressed
+    @mixin Button_pressed-next
         $viewName;
 
     /* disable */
-    @mixin Button_disabled
+    @mixin Button_disabled-next
         $viewName,
         $colorDisabled,
         $fillColorDisabled;
 
     /* check */
-    @mixin Button_checked
+    @mixin Button_checked-next
         $viewName,
         $colorChecked,
         $fillColorChecked;
