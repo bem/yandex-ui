@@ -9,25 +9,23 @@ describe('Menu', () => {
     it('should render menu with default theme', async function() {
         const browser = this.browser;
         await browser
-            .url('Menu/hermione/hermione.html?scenario=default&size=m')
+            .openScenario('Menu', 'DefaultHermioneCase', { size: 'm' })
             .assertView('size-m', [elements.menu])
             .moveToObject(elements.item1)
             .assertView('hovered', [elements.menu]);
-        await browser
-            .url('Menu/hermione/hermione.html?scenario=default&size=s')
-            .assertView('size-s', [elements.menu]);
+        await browser.openScenario('Menu', 'DefaultHermioneCase', { size: 's' }).assertView('size-s', [elements.menu]);
         return browser;
     });
 
     it('should render menu with disabled state', function() {
         return this.browser
-            .url('Menu/hermione/hermione.html?scenario=default&disabled=true')
+            .openScenario('Menu', 'DefaultHermioneCase', { disabled: 'true' })
             .assertView('plain', [elements.menu]);
     });
 
     it('should render menu with max width', function() {
         return this.browser
-            .url('Menu/hermione/hermione.html?scenario=default&width=max')
+            .openScenario('Menu', 'DefaultHermioneCase', { width: 'max' })
             .setViewportSize({ width: 800, height: 600 })
             .assertView('plain', [elements.menu]);
     });
@@ -35,19 +33,19 @@ describe('Menu', () => {
     it('should render menu with classic design', async function() {
         const browser = this.browser;
         await browser
-            .url('Menu/hermione/hermione.html?scenario=default&theme=normal&view=&size=m')
+            .openScenario('Menu', 'DefaultHermioneCase', { theme: 'normal', view: undefined, size: 'm' })
             .assertView('size-m', [elements.menu])
             .moveToObject(elements.item1)
             .assertView('hovered', [elements.menu]);
         await browser
-            .url('Menu/hermione/hermione.html?scenario=default&theme=normal&view=&size=s')
+            .openScenario('Menu', 'DefaultHermioneCase', { theme: 'normal', view: undefined, size: 's' })
             .assertView('size-s', [elements.menu]);
         return browser;
     });
 
     it('should render menu with inverse theme', function() {
         return this.browser
-            .url('Menu/hermione/hermione.html?scenario=default&tokens=inverse')
+            .openScenario('Menu', 'DefaultHermioneCase', { tokens: 'inverse' })
             .assertView('plain', [elements.menu])
             .moveToObject(elements.item1)
             .assertView('hovered', [elements.menu]);
@@ -55,7 +53,7 @@ describe('Menu', () => {
 
     it('should render menu with brand theme', function() {
         return this.browser
-            .url('Menu/hermione/hermione.html?scenario=default&tokens=brand')
+            .openScenario('Menu', 'DefaultHermioneCase', { tokens: 'brand' })
             .assertView('plain', [elements.menu])
             .moveToObject(elements.item1)
             .assertView('hovered', [elements.menu]);
@@ -63,7 +61,7 @@ describe('Menu', () => {
 
     it('should correctly highlights items with multiple options', function() {
         return this.browser
-            .url('Menu/hermione/hermione.html?scenario=default')
+            .openScenario('Menu', 'DefaultHermioneCase')
             .moveToObject(elements.item1)
             .click(elements.item1)
             .assertView('check-first', [elements.menu])

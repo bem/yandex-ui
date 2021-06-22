@@ -1,4 +1,4 @@
-import React, { FC, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Popup } from '@yandex-lego/components/Popup/desktop/bundle';
 
 const styles = `
@@ -40,7 +40,7 @@ const styles = `
     }
 `;
 
-export const BoundaryHermioneCase: FC<any> = () => {
+export const BoundaryHermioneCase = () => {
     const [visible, setVisible] = useState(false);
     const anchorRef = useRef<HTMLDivElement>(null);
     const boundaryRef = useRef<HTMLDivElement>(null);

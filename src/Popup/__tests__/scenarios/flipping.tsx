@@ -1,5 +1,6 @@
-import React, { FC, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Popup } from '@yandex-lego/components/Popup/desktop/bundle';
+import { useParams } from '@yandex-lego/components/internal/utils/parseQueryString';
 
 const styles = `
     body {
@@ -34,8 +35,8 @@ const styles = `
     }
 `;
 
-export const FlippingHermioneCase: FC<any> = (props) => {
-    const { motionless = false } = props;
+export const FlippingHermioneCase = () => {
+    const { motionless = false } = useParams();
     const [visible, setVisible] = useState(false);
     const scopeRef = useRef<HTMLDivElement>(null);
     const anchorRef = useRef<HTMLDivElement>(null);

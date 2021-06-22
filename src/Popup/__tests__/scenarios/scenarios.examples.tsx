@@ -4,8 +4,9 @@ export * from './directions';
 export * from './flipping';
 export * from './overflow';
 export * from './scale';
+export * from './boundary';
 
 export default {
     title: 'Hermione|Popup',
-    includeStories: IS_PRODUCTION ? null : /^(?!.+Hermione).+/,
+    excludeStories: IS_PRODUCTION ? /Hermione/ : null,
 };

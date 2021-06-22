@@ -1,8 +1,11 @@
 import { IS_PRODUCTION } from '../../../lib/env';
 
 export * from './default';
+export * from './logo';
+export * from './search';
+export * from './tabs';
 
 export default {
     title: 'Hermione|Header',
-    includeStories: IS_PRODUCTION ? null : /^(?!.+Hermione).+/,
+    excludeStories: IS_PRODUCTION ? /Hermione/ : null,
 };

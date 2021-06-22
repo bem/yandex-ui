@@ -2,22 +2,18 @@
 describe('Header', () => {
     it('default', async function() {
         const browser = this.browser;
-        await browser
-            .url('Header/hermione/hermione.html?scenario=default')
-            .assertView('Default', '.YandexHeader');
+        await browser.openScenario('Header', 'DefaultHermioneCase').assertView('Default', '.YandexHeader');
         return browser;
     });
     it('logo', async function() {
         const browser = this.browser;
-        await browser
-            .url('Header/hermione/hermione.html?scenario=logo')
-            .assertView('Logo', '.YandexHeader');
+        await browser.openScenario('Header', 'LogoHermioneCase').assertView('Logo', '.YandexHeader');
         return browser;
     });
     it('tabs', async function() {
         const browser = this.browser;
         await browser
-            .url('Header/hermione/hermione.html?scenario=tabs')
+            .openScenario('Header', 'TabsHermioneCase')
             .assertView('Tabs', '.YandexHeader')
             .moveToObject('.YandexHeader-NavLink_active')
             .assertView('hovered', '.YandexHeader');
@@ -25,9 +21,7 @@ describe('Header', () => {
     });
     it('search', async function() {
         const browser = this.browser;
-        await browser
-            .url('Header/hermione/hermione.html?scenario=search')
-            .assertView('Search-arrow', '.YandexHeader');
+        await browser.openScenario('Header', 'SearchHermioneCase').assertView('Search-arrow', '.YandexHeader');
         return browser;
     });
 });

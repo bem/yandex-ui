@@ -1,7 +1,7 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Header, YandexLogo, Logoaas } from '@yandex-lego/components/Header/desktop';
 
-export const LogoHermioneCase: FC<any> = () => {
+export const LogoHermioneCase = () => {
     return (
         <Header
             logo={(

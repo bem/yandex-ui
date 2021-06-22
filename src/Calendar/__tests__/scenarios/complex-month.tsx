@@ -1,5 +1,7 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { unstable_Calendar as Calendar, useCalendarState } from '@yandex-lego/components/Calendar/desktop/bundle';
+import { useParams } from '@yandex-lego/components/internal/utils/parseQueryString';
+import { LocaleProvider } from '@yandex-lego/components/i18n';
 
 const styles = `
     [data-testid=container] {
@@ -11,15 +13,17 @@ const styles = `
     }
 `;
 
-export const ComplexMonthHermioneCase: FC<any> = (props) => {
-    const { size = 'm', showQuarterIndexes } = props;
+export const ComplexMonthHermioneCase = () => {
+    const { size = 'm', showQuarterIndexes } = useParams();
     const state = useCalendarState({ currentDate: new Date(2020, 2, 10) });
 
     return (
         <>
             <style>{styles}</style>
             <div data-testid="container">
-                <Calendar {...state} showQuarterIndexes={showQuarterIndexes} type="month" view="default" size={size} />
+                <LocaleProvider locale="ru-RU">
+                    <Calendar {...state} showQuarterIndexes={showQuarterIndexes} type="month" view="default" size={size} />
+                </LocaleProvider>
             </div>
         </>
     );

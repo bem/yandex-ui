@@ -4,5 +4,5 @@ export * from './default';
 
 export default {
     title: 'Hermione|Menu',
-    includeStories: IS_PRODUCTION ? null : /^(?!.+Hermione).+/,
+    excludeStories: IS_PRODUCTION ? /Hermione/ : null,
 };

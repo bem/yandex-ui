@@ -1,5 +1,6 @@
-import React, { FC, useState } from 'react';
+import React, { useState } from 'react';
 import { Menu, MixedItem } from '@yandex-lego/components/Menu/desktop/bundle';
+import { useParams } from '@yandex-lego/components/internal/utils/parseQueryString';
 
 const items: MixedItem[] = [
     { content: 'Black (ungrouped)', value: '0' },
@@ -23,8 +24,8 @@ const items: MixedItem[] = [
     { content: 'White (ungrouped)', value: '8' },
 ];
 
-export const DefaultHermioneCase: FC<any> = (props) => {
-    const { size = 'm', view = 'default', theme, disabled, width } = props;
+export const DefaultHermioneCase = () => {
+    const { size = 'm', view = 'default', theme, disabled, width } = useParams();
     const [value, setValue] = useState([]);
 
     return (

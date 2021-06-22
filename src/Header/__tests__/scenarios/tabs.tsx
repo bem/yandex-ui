@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Header, HeaderNav, HeaderNavItem, SportIcon } from '@yandex-lego/components/Header/desktop';
 import { Button } from '@yandex-lego/components/Button/desktop/bundle';
 
-export const TabsHermioneCase: FC<any> = () => {
+export const TabsHermioneCase = () => {
     return (
         <Header actions={<Button size="m" view="action">Войти</Button>}>
             <HeaderNav>

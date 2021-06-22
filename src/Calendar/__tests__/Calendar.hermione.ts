@@ -13,46 +13,58 @@ describe('Calendar', () => {
 
     it('should render calendar with extra days', function() {
         return this.browser
-            .url('Calendar/hermione/hermione.html?scenario=complex-day&showExtraDays=true')
+            .openScenario('Calendar', 'ComplexDayHermioneCase', { showExtraDays: true })
             .assertView('plain', [elements.container]);
     });
 
     hermione.skip.in(['win-ie11']);
     it('should render day calendar with day labels and week indexes', function() {
         return this.browser
-            .url('Calendar/hermione/hermione.html?scenario=complex-day&size=s&showWeekIndexes=true&showDayLabels=true')
+            .openScenario('Calendar', 'ComplexDayHermioneCase', {
+                size: 's',
+                showWeekIndexes: true,
+                showDayLabels: true,
+            })
             .assertView('size-s', [elements.container])
-            .url('Calendar/hermione/hermione.html?scenario=complex-day&size=m&showWeekIndexes=true&showDayLabels=true')
+            .openScenario('Calendar', 'ComplexDayHermioneCase', {
+                size: 'm',
+                showWeekIndexes: true,
+                showDayLabels: true,
+            })
             .assertView('size-m', [elements.container])
-            .url('Calendar/hermione/hermione.html?scenario=complex-day&size=l&showWeekIndexes=true&showDayLabels=true')
+            .openScenario('Calendar', 'ComplexDayHermioneCase', {
+                size: 'l',
+                showWeekIndexes: true,
+                showDayLabels: true,
+            })
             .assertView('size-l', [elements.container]);
     });
 
     hermione.skip.in(['win-ie11']);
     it('should render month calendar with quarter indexes', function() {
         return this.browser
-            .url('Calendar/hermione/hermione.html?scenario=complex-month&size=s&showQuarterIndexes=true')
+            .openScenario('Calendar', 'ComplexMonthHermioneCase', { size: 's', showQuarterIndexes: true })
             .assertView('size-s', [elements.container])
-            .url('Calendar/hermione/hermione.html?scenario=complex-month&size=m&showQuarterIndexes=true')
+            .openScenario('Calendar', 'ComplexMonthHermioneCase', { size: 'm', showQuarterIndexes: true })
             .assertView('size-m', [elements.container])
-            .url('Calendar/hermione/hermione.html?scenario=complex-month&size=l&showQuarterIndexes=true')
+            .openScenario('Calendar', 'ComplexMonthHermioneCase', { size: 'l', showQuarterIndexes: true })
             .assertView('size-l', [elements.container]);
     });
 
     hermione.skip.in(['win-ie11']);
     it('should render year calendar', function() {
         return this.browser
-            .url('Calendar/hermione/hermione.html?scenario=complex-year&size=s')
+            .openScenario('Calendar', 'ComplexYearHermioneCase', { size: 's' })
             .assertView('size-s', [elements.container])
-            .url('Calendar/hermione/hermione.html?scenario=complex-year&size=m')
+            .openScenario('Calendar', 'ComplexYearHermioneCase', { size: 'm' })
             .assertView('size-m', [elements.container])
-            .url('Calendar/hermione/hermione.html?scenario=complex-year&size=l')
+            .openScenario('Calendar', 'ComplexYearHermioneCase', { size: 'l' })
             .assertView('size-l', [elements.container]);
     });
 
     it('should render calendar', function() {
         return this.browser
-            .url('Calendar/hermione/hermione.html?scenario=complex-day')
+            .openScenario('Calendar', 'ComplexDayHermioneCase')
             .moveToObject(elements.dayCell1)
             .assertView('hovered-day', [elements.container])
             .click(elements.dayCell1)
@@ -65,13 +77,13 @@ describe('Calendar', () => {
 
     it('should render day calendar with disable all days', function() {
         return this.browser
-            .url('Calendar/hermione/hermione.html?scenario=complex-day&allDisabled=true')
+            .openScenario('Calendar', 'ComplexDayHermioneCase', { allDisabled: true })
             .assertView('plain', [elements.container]);
     });
 
     it('should render day range calendar', function() {
         return this.browser
-            .url('Calendar/hermione/hermione.html?scenario=complex-range&type=day')
+            .openScenario('Calendar', 'ComplexRangeHermioneCase', { type: 'day' })
             .moveToObject(elements.dayCell1)
             .assertView('hovered-start', [elements.container])
             .click(elements.dayCell1)
@@ -85,7 +97,7 @@ describe('Calendar', () => {
     hermione.skip.in(['win-ie11']);
     it('should render month range calendar', function() {
         return this.browser
-            .url('Calendar/hermione/hermione.html?scenario=complex-range&type=month')
+            .openScenario('Calendar', 'ComplexRangeHermioneCase', { type: 'month' })
             .moveToObject(elements.monthCell1)
             .assertView('hovered-start', [elements.container])
             .click(elements.monthCell1)
@@ -99,7 +111,7 @@ describe('Calendar', () => {
     hermione.skip.in(['win-ie11']);
     it('should render year range calendar', function() {
         return this.browser
-            .url('Calendar/hermione/hermione.html?scenario=complex-range&type=year')
+            .openScenario('Calendar', 'ComplexRangeHermioneCase', { type: 'year' })
             .moveToObject(elements.yearCell1)
             .assertView('hovered-start', [elements.container])
             .click(elements.yearCell1)

@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Header, HeaderSearch, HeaderNav, HeaderNavItem } from '@yandex-lego/components/Header/desktop';
 import { withViewSearchArrow as withButtonView } from '@yandex-lego/components/Header/Button';
 import { withViewSearchArrow as withTextinputView } from '@yandex-lego/components/Header/Textinput';
@@ -8,7 +8,7 @@ import { Textinput } from '@yandex-lego/components/Textinput/desktop';
 const SearchButton = withButtonView(Button);
 const SearchInput = withTextinputView(Textinput);
 
-export const SearchHermioneCase: FC<any> = () => {
+export const SearchHermioneCase = () => {
     return (
         <Header>
             <HeaderNav>

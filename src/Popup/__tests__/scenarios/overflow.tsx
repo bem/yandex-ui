@@ -5,7 +5,7 @@ const styles = `
     body {
         font-family: Helvetica, Arial, sans-serif;
         margin: 0;
-        padding: 0;
+        padding: 0!important;
     }
 
     .container {

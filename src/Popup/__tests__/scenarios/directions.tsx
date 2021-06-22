@@ -1,5 +1,6 @@
-import React, { FC, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Popup, directions } from '@yandex-lego/components/Popup/desktop/bundle';
+import { useParams } from '@yandex-lego/components/internal/utils/parseQueryString';
 
 const styles = `
     body {
@@ -19,8 +20,8 @@ const styles = `
     }
 `;
 
-export const DirectionsHermioneCase: FC<any> = (props) => {
-    const { hasTail, mainOffset, secondaryOffset, visible: initialVisible = false, theme, view = 'default' } = props;
+export const DirectionsHermioneCase = () => {
+    const { hasTail, mainOffset, secondaryOffset, visible: initialVisible = false, theme, view = 'default' } = useParams();
     const [visible, setVisible] = useState(initialVisible);
     const scopeRef = useRef<HTMLDivElement>(null);
     const anchorRef = useRef<HTMLDivElement>(null);
