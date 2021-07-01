@@ -1,21 +1,21 @@
 import { Registry } from '@bem-react/di';
 
-import { Attach } from '../../Attach/Attach.bundle/touch-phone';
-import { Button } from '../../Button/Button.bundle/touch-phone';
-import { Checkbox } from '../../Checkbox/Checkbox.bundle/touch-phone';
-import { Icon } from '../../Icon/Icon.bundle/touch-phone';
-import { Image } from '../../Image/Image.bundle/touch-phone';
-import { Link } from '../../Link/Link.bundle/touch-phone';
-import { Progress } from '../../Progress/Progress.bundle/touch-phone';
-import { Spin } from '../../Spin/Spin.bundle/touch-phone';
-import { Menu } from '../../Menu/Menu.bundle/touch-phone';
-import { Radiobox } from '../../Radiobox/Radiobox.bundle/touch-phone';
-import { Select } from '../../Select/Select.bundle/touch-phone';
-import { TabsMenu } from '../../TabsMenu/TabsMenu.bundle/touch-phone';
-import { TabsPanes } from '../../TabsPanes/TabsPanes.bundle/touch-phone';
-import { Textarea } from '../../Textarea/Textarea.bundle/touch-phone';
-import { Textinput } from '../../Textinput/Textinput.bundle/touch-phone';
-import { UserPic } from '../../UserPic/UserPic.bundle/touch-phone';
+import { Attach } from '../../Attach/touch-phone/bundle';
+import { Button } from '../../Button/touch-phone/bundle';
+import { Checkbox } from '../../Checkbox/touch-phone/bundle';
+import { Icon } from '../../Icon/touch-phone/bundle';
+import { Image } from '../../Image/touch-phone/bundle';
+import { Link } from '../../Link/touch-phone/bundle';
+import { Progress } from '../../Progress/touch-phone/bundle';
+import { Spin } from '../../Spin/touch-phone/bundle';
+import { Menu } from '../../Menu/touch-phone/bundle';
+import { Radiobox } from '../../Radiobox/touch-phone/bundle';
+import { Select } from '../../Select/touch-phone/bundle';
+import { TabsMenu } from '../../TabsMenu/touch-phone/bundle';
+import { TabsPanes } from '../../TabsPanes/touch-phone/bundle';
+import { Textarea } from '../../Textarea/touch-phone/bundle';
+import { Textinput } from '../../Textinput/touch-phone/bundle';
+import { UserPic } from '../../UserPic/touch-phone/bundle';
 import { cnShowcase } from '../Showcase';
 
 export const showcaseRegistry = new Registry({ id: cnShowcase() });

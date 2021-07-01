@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComboBox, IItem } from './index';
 import { EXAMPLE_DESKTOP_TOKEN, parameters } from '../examples-config';
-import { Text } from '../../../Text/Text.bundle/desktop';
-import { Link } from '../../../Link/Link.bundle/desktop';
+import { Text } from '../../../Text/desktop/bundle';
+import { Link } from '../../../Link/desktop/bundle';
 
 export default {
     title: EXAMPLE_DESKTOP_TOKEN,

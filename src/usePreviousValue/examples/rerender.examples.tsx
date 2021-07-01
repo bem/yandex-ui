@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { usePreviousValue } from '@yandex-lego/components/usePreviousValue';
-import { Button } from '@yandex-lego/components/Button/Button.bundle/desktop';
+import { Button } from '@yandex-lego/components/Button/desktop/bundle';
 
 const useForceUpdate = () => {
     const [, setValue] = useState(0);

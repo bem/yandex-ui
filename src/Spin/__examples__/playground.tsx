@@ -1,6 +1,6 @@
 import React from 'react';
 import { select, boolean } from '@storybook/addon-knobs';
-import { Spin } from '@yandex-lego/components/Spin/Spin.bundle/desktop';
+import { Spin } from '@yandex-lego/components/Spin/desktop/bundle';
 
 export const Playground = () => {
     const view = select('view', ['default'], 'default') as any;

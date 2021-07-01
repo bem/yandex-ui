@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import { ButtonGroup } from '@yandex-lego/components/ButtonGroup/desktop/bundle';
 import { Button } from '@yandex-lego/components/Button/desktop/bundle';
 import { Dropdown } from '@yandex-lego/components/Dropdown/desktop';
-import { Icon } from '@yandex-lego/components/Icon/Icon.bundle/desktop';
+import { Icon } from '@yandex-lego/components/Icon/desktop/bundle';
 import { SampleMenu } from './SampleMenu';
 
 import './split.css';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from '@yandex-lego/components/Text/Text.bundle/desktop';
+import { Text } from '@yandex-lego/components/Text/desktop/bundle';
 
 export const Color = () => (
     <>

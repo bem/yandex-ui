@@ -1,21 +1,21 @@
 import { Registry } from '@bem-react/di';
 
-import { Attach } from '../../Attach/Attach.bundle/touch-pad';
-import { Button } from '../../Button/Button.bundle/touch-pad';
-import { Checkbox } from '../../Checkbox/Checkbox.bundle/touch-pad';
-import { Icon } from '../../Icon/Icon.bundle/touch-pad';
-import { Image } from '../../Image/Image.bundle/touch-pad';
-import { Link } from '../../Link/Link.bundle/touch-pad';
-import { Progress } from '../../Progress/Progress.bundle/touch-pad';
-import { Spin } from '../../Spin/Spin.bundle/common';
-import { Menu } from '../../Menu/Menu.bundle/touch-pad';
-import { Radiobox } from '../../Radiobox/Radiobox.bundle/touch-pad';
-import { Select } from '../../Select/Select.bundle/touch-pad';
-import { TabsMenu } from '../../TabsMenu/TabsMenu.bundle/touch-pad';
-import { TabsPanes } from '../../TabsPanes/TabsPanes.bundle/touch-pad';
-import { Textarea } from '../../Textarea/Textarea.bundle/touch-pad';
-import { Textinput } from '../../Textinput/Textinput.bundle/touch-pad';
-import { UserPic } from '../../UserPic/UserPic.bundle/touch-pad';
+import { Attach } from '../../Attach/touch-pad/bundle';
+import { Button } from '../../Button/touch-pad/bundle';
+import { Checkbox } from '../../Checkbox/touch-pad/bundle';
+import { Icon } from '../../Icon/touch-pad/bundle';
+import { Image } from '../../Image/touch-pad/bundle';
+import { Link } from '../../Link/touch-pad/bundle';
+import { Progress } from '../../Progress/touch-pad/bundle';
+import { Spin } from '../../Spin/touch-pad/bundle';
+import { Menu } from '../../Menu/touch-pad/bundle';
+import { Radiobox } from '../../Radiobox/touch-pad/bundle';
+import { Select } from '../../Select/touch-pad/bundle';
+import { TabsMenu } from '../../TabsMenu/touch-pad/bundle';
+import { TabsPanes } from '../../TabsPanes/touch-pad/bundle';
+import { Textarea } from '../../Textarea/touch-pad/bundle';
+import { Textinput } from '../../Textinput/touch-pad/bundle';
+import { UserPic } from '../../UserPic/touch-pad/bundle';
 import { cnShowcase } from '../Showcase';
 
 export const showcaseRegistry = new Registry({ id: cnShowcase() });

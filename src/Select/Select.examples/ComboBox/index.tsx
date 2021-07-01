@@ -2,18 +2,18 @@ import React from 'react';
 import { Registry, withRegistry } from '@bem-react/di';
 import { compose } from '@bem-react/core';
 import { cn } from '@bem-react/classname';
-import { Select, ISelectProps, cnSelect } from '../../Select.bundle/desktop';
+import { Select, ISelectProps, cnSelect } from '../../desktop/bundle';
 import { withOutsideClick } from '../../../withOutsideClick/withOutsideClick';
 import { withZIndex } from '../../../withZIndex/withZIndex';
-import { Popup } from '../../../Popup/Popup.bundle/desktop';
-import { Menu } from '../../../Menu/Menu.bundle/desktop';
-import { Icon } from '../../../Icon/Icon.bundle/desktop';
-import { Text } from '../../../Text/Text.bundle/desktop';
+import { Popup } from '../../../Popup/desktop/bundle';
+import { Menu } from '../../../Menu/desktop/bundle';
+import { Icon } from '../../../Icon/desktop/bundle';
+import { Text } from '../../../Text/desktop/bundle';
 import { ISelectRegistry } from '../../Select.registry';
-import { Button } from '../../../Button/Button.bundle/desktop';
+import { Button } from '../../../Button/desktop/bundle';
 import { ListTile } from '../../../ListTile/ListTile';
-import { Textinput } from '../../../Textinput/Textinput.bundle/desktop';
-import { Spin } from '../../../Spin/Spin.bundle/desktop';
+import { Textinput } from '../../../Textinput/desktop/bundle';
+import { Spin } from '../../../Spin/desktop/bundle';
 import { Spacer } from '../../../Spacer/Spacer';
 import { UserPic } from '../../../UserPic/UserPic@desktop';
 import './index.css';
@@ -69,12 +69,14 @@ const Trigger: ISelectRegistry['Trigger'] = ({ className, ...props }) => {
 };
 
 const MenuWithSearch: ISelectRegistry['Menu'] = (props) => {
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     const { searchText, searchInProgress, onChangeSearchText } = React.useContext(SearchTextContext)!;
     const inputRef = React.useRef<HTMLInputElement>(null);
     const initialActiveElement = React.useRef<HTMLElement | null>(null);
 
     // Фокусируемся на текстовом поле при открытии попапа, возвращаем фокус при закрытии
     React.useLayoutEffect(() => {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
         const input = inputRef.current!;
         if (props.focused) {
             initialActiveElement.current = document.activeElement as HTMLElement;

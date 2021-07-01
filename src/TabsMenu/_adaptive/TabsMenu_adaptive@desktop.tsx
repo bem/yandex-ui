@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { withBemMod } from '@bem-react/core';
 
-import { Select } from '../../Select/Select.bundle/desktop';
+import { Select } from '../../Select/desktop/bundle';
 import { cnTabsMenu, ITabsMenuProps } from '../TabsMenu';
 import { TabsMenuTab } from '../Tab/TabsMenu-Tab';
 import { ITabsMenuSizeSProps } from '../_size/TabsMenu_size_s';

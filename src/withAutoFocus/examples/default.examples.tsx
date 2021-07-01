@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 import { withAutoFocus } from '@yandex-lego/components/withAutoFocus';
-import { Button } from '@yandex-lego/components/Button/Button.bundle/desktop';
-import { Textinput } from '@yandex-lego/components/Textinput/Textinput.bundle/desktop';
+import { Button } from '@yandex-lego/components/Button/desktop/bundle';
+import { Textinput } from '@yandex-lego/components/Textinput/desktop/bundle';
 
 const InputWithAutoFocus = withAutoFocus(Textinput);
 

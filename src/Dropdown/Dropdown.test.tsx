@@ -4,7 +4,7 @@ import { Dropdown as DropdownDesktop } from './desktop';
 import { Dropdown as DropdownTouchPhone } from './touch-phone';
 import { Dropdown as DropdownTouchPad } from './touch-pad';
 import { Popup } from '../Popup/Popup';
-import { Button } from '../Button/Button.bundle/desktop';
+import { Button } from '../Button/desktop/bundle';
 
 const platforms = [['desktop', DropdownDesktop], ['touch-phone', DropdownTouchPhone], ['touch-pad', DropdownTouchPad]];
 

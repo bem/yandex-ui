@@ -2,7 +2,7 @@ import React, { createRef } from 'react';
 import { mount, render } from 'enzyme';
 
 import { MessageBox as MessageBoxBase } from '../MessageBox';
-import { MessageBox, Corner } from '../MessageBox.bundle/desktop';
+import { MessageBox, Corner } from '../desktop/bundle';
 import { serverEnvironmentSetup, delay } from '../../internal/utils';
 
 describe('MessageBox', () => {

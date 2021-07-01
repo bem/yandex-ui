@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 
 import { ButtonGroup, useButtonGroupState } from '@yandex-lego/components/ButtonGroup/desktop/bundle';
-import { Button } from '@yandex-lego/components/Button/Button.bundle/desktop';
+import { Button } from '@yandex-lego/components/Button/desktop/bundle';
 import { Dropdown as DropdownWrapper } from '@yandex-lego/components/Dropdown/desktop';
 
 // Обертка над Dropdown, для того передачи пропсов из ButtonGroup в кнопку

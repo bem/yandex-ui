@@ -1,6 +1,6 @@
 import React, { createRef, useState } from 'react';
 
-import { MessageBoxPopup } from '../../../MessageBox/MessageBox.bundle/desktop';
+import { MessageBoxPopup } from '../../../MessageBox/desktop/bundle';
 
 import { EXAMPLE_DESKTOP_TOKEN } from '../examples-config';
 import { directions } from '../../../Popup';

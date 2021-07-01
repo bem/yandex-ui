@@ -4,7 +4,7 @@
 import React from 'react';
 import { render } from 'enzyme';
 import { Dropdown } from './desktop';
-import { Button } from '../Button/Button.bundle/desktop';
+import { Button } from '../Button/desktop/bundle';
 
 describe('Dropdown@dekstop', () => {
     test('должен вернуть полный шаблон компонента (snapshot)', () => {

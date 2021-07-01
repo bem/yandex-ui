@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { withDebounceInput } from '@yandex-lego/components/withDebounceInput';
-import { Textinput } from '@yandex-lego/components/Textinput/Textinput.bundle/desktop';
+import { Textinput } from '@yandex-lego/components/Textinput/desktop/bundle';
 
 const DebouncedInput = withDebounceInput(Textinput);
 

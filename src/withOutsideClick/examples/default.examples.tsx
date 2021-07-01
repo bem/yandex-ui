@@ -1,7 +1,7 @@
 import React, { RefObject, useState } from 'react';
 
 import { withOutsideClick } from '@yandex-lego/components/withOutsideClick';
-import { Button } from '@yandex-lego/components/Button/Button.bundle/desktop';
+import { Button } from '@yandex-lego/components/Button/desktop/bundle';
 
 const ComponentWithOutsideClick = withOutsideClick(({ visible, targetRef, ...props }) => (
     <>

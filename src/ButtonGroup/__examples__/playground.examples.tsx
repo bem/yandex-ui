@@ -2,7 +2,7 @@ import React from 'react';
 import { select, boolean } from '@storybook/addon-knobs';
 
 import { ButtonGroup } from '@yandex-lego/components/ButtonGroup/desktop/bundle';
-import { Button } from '@yandex-lego/components/Button/Button.bundle/desktop';
+import { Button } from '@yandex-lego/components/Button/desktop/bundle';
 
 export const Playground = () => {
     const gap = select('gapSize', ['s', 'm', 'l', 'xl', ''], '') as any;

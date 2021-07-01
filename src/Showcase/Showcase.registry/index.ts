@@ -1,19 +1,19 @@
-import { Attach } from '../../Attach/Attach.bundle/desktop';
-import { Button } from '../../Button/Button.bundle/desktop';
-import { Checkbox } from '../../Checkbox/Checkbox.bundle/desktop';
-import { Icon } from '../../Icon/Icon.bundle/desktop';
-import { Image } from '../../Image/Image.bundle/desktop';
-import { Link } from '../../Link/Link.bundle/desktop';
-import { Progress } from '../../Progress/Progress.bundle/desktop';
-import { Spin } from '../../Spin/Spin.bundle/desktop';
-import { Menu } from '../../Menu/Menu.bundle/desktop';
-import { Radiobox } from '../../Radiobox/Radiobox.bundle/desktop';
-import { Select } from '../../Select/Select.bundle/desktop';
-import { TabsMenu } from '../../TabsMenu/TabsMenu.bundle/desktop';
-import { TabsPanes } from '../../TabsPanes/TabsPanes.bundle/desktop';
-import { Textarea } from '../../Textarea/Textarea.bundle/desktop';
-import { Textinput } from '../../Textinput/Textinput.bundle/desktop';
-import { UserPic } from '../../UserPic/UserPic.bundle/desktop';
+import { Attach } from '../../Attach/desktop/bundle';
+import { Button } from '../../Button/desktop/bundle';
+import { Checkbox } from '../../Checkbox/desktop/bundle';
+import { Icon } from '../../Icon/desktop/bundle';
+import { Image } from '../../Image/desktop/bundle';
+import { Link } from '../../Link/desktop/bundle';
+import { Progress } from '../../Progress/desktop/bundle';
+import { Spin } from '../../Spin/desktop/bundle';
+import { Menu } from '../../Menu/desktop/bundle';
+import { Radiobox } from '../../Radiobox/desktop/bundle';
+import { Select } from '../../Select/desktop/bundle';
+import { TabsMenu } from '../../TabsMenu/desktop/bundle';
+import { TabsPanes } from '../../TabsPanes/desktop/bundle';
+import { Textarea } from '../../Textarea/desktop/bundle';
+import { Textinput } from '../../Textinput/desktop/bundle';
+import { UserPic } from '../../UserPic/desktop/bundle';
 
 export interface IShowcaseRegistry {
     Icon: typeof Icon;

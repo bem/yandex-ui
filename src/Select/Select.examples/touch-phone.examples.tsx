@@ -3,7 +3,7 @@ import { withKnobs, select, boolean, object } from '@storybook/addon-knobs';
 
 import { cnTheme } from '../../Theme';
 import { presets, presetsKeys } from '../../Theme/presets';
-import { Select } from '../Select.bundle/touch-phone';
+import { Select } from '../touch-phone/bundle';
 import { EXAMPLE_TOUCH_PHONE_TOKEN, parameters } from './examples-config';
 
 export default {
