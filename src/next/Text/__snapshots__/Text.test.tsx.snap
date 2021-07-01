@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text@desktop client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Text Text_weight_regular Text_color_primary mix"
+/>
+`;
+
+exports[`Text@desktop server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Text Text_weight_regular Text_color_primary mix"
+/>
+`;
+
+exports[`Text@touch-pad client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Text Text_weight_regular Text_color_primary mix"
+/>
+`;
+
+exports[`Text@touch-pad server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Text Text_weight_regular Text_color_primary mix"
+/>
+`;
+
+exports[`Text@touch-phone client environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Text Text_weight_regular Text_color_primary mix"
+/>
+`;
+
+exports[`Text@touch-phone server environment должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Text Text_weight_regular Text_color_primary mix"
+/>
+`;

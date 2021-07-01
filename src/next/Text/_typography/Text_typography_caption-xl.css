@@ -1,0 +1,6 @@
+.Text_typography_caption-xl {
+    font-family: var(--text-caption-size-xl-font-family);
+    font-size: var(--text-caption-size-xl-font-size);
+    line-height: var(--text-caption-size-xl-line-height);
+    letter-spacing: var(--text-caption-size-xl-letter-spacing);
+}

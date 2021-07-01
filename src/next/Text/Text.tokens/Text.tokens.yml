@@ -1,0 +1,323 @@
+text:
+  display:
+    size:
+      xl:
+        fontSize:
+          value: 3.5rem
+        lineHeight:
+          value: 4rem
+        letterSpacing:
+          value: normal
+        fontFamily:
+          value: "{typography.font.family.value}"
+      l:
+        fontSize:
+          value: 3rem
+        lineHeight:
+          value: 3.5rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      m:
+        fontSize:
+          value: 2.5rem
+        lineHeight:
+          value: 3rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      s:
+        fontSize:
+          value: 2.125rem
+        lineHeight:
+          value: 2.5rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+  headline:
+    size:
+      xl:
+        fontSize:
+          value: 2rem
+        lineHeight:
+          value: 2.5rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      l:
+        fontSize:
+          value: 1.75rem
+        lineHeight:
+          value: 2.25rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      m:
+        fontSize:
+          value: 1.5rem
+        lineHeight:
+          value: 1.875rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      s:
+        fontSize:
+          value: 1.25rem
+        lineHeight:
+          value: 1.5rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      xs:
+        fontSize:
+          value: 1.125rem
+        lineHeight:
+          value: 1.5rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+  subheader:
+    size:
+      xl:
+        fontSize:
+          value: 1rem
+        lineHeight:
+          value: 1.25rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      l:
+        fontSize:
+          value: 0.9375rem
+        lineHeight:
+          value: 1.125rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      m:
+        fontSize:
+          value: 0.875rem
+        lineHeight:
+          value: 1.125rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      s:
+        fontSize:
+          value: 0.8125rem
+        lineHeight:
+          value: 1.125rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+  bodyLong:
+    size:
+      xl:
+        fontSize:
+          value: 1rem
+        lineHeight:
+          value: 1.5rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      l:
+        fontSize:
+          value: 0.9375rem
+        lineHeight:
+          value: 1.25rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      m:
+        fontSize:
+          value: 0.875rem
+        lineHeight:
+          value: 1.25rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      s:
+        fontSize:
+          value: 0.8125rem
+        lineHeight:
+          value: 1.125rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+  bodyShort:
+    size:
+      xl:
+        fontSize:
+          value: 1rem
+        lineHeight:
+          value: 1.25rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      l:
+        fontSize:
+          value: 0.9375rem
+        lineHeight:
+          value: 1.125rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      m:
+        fontSize:
+          value: 0.875rem
+        lineHeight:
+          value: 1.125rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      s:
+        fontSize:
+          value: 0.8125rem
+        lineHeight:
+          value: 1rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+  caption:
+    size:
+      xl:
+        fontSize:
+          value: 0.8125rem
+        lineHeight:
+          value: 1rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      l:
+        fontSize:
+          value: 0.75rem
+        lineHeight:
+          value: 1rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      m:
+        fontSize:
+          value: 0.6875rem
+        lineHeight:
+          value: 1rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+  overline:
+    size:
+      l:
+        fontSize:
+          value: 0.75rem
+        lineHeight:
+          value: 0.875rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      m:
+        fontSize:
+          value: 0.6875rem
+        lineHeight:
+          value: 0.875rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      s:
+        fontSize:
+          value: 0.625rem
+        lineHeight:
+          value: 0.75rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+  control:
+    size:
+      xxl:
+        fontSize:
+          value: 1.125rem
+        lineHeight:
+          value: 1.5rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      xl:
+        fontSize:
+          value: 1rem
+        lineHeight:
+          value: 1.25rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      l:
+        fontSize:
+          value: 0.9375rem
+        lineHeight:
+          value: 1.25rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      m:
+        fontSize:
+          value: 0.875rem
+        lineHeight:
+          value: 1rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      s:
+        fontSize:
+          value: 0.8125rem
+        lineHeight:
+          value: 1rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      xs:
+        fontSize:
+          value: 0.75rem
+        lineHeight:
+          value: 1rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"
+      xxs:
+        fontSize:
+          value: 0.6875rem
+        lineHeight:
+          value: 1rem
+        letterSpacing:
+          value: 0.0065em
+        fontFamily:
+          value: "{typography.font.family.value}"

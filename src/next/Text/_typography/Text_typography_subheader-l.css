@@ -1,0 +1,6 @@
+.Text_typography_subheader-l {
+    font-family: var(--text-subheader-size-l-font-family);
+    font-size: var(--text-subheader-size-l-font-size);
+    line-height: var(--text-subheader-size-l-line-height);
+    letter-spacing: var(--text-subheader-size-l-letter-spacing);
+}

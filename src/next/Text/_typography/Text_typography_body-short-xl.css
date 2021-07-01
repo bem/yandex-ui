@@ -1,0 +1,6 @@
+.Text_typography_body-short-xl {
+    font-family: var(--text-body-short-size-xl-font-family);
+    font-size: var(--text-body-short-size-xl-font-size);
+    line-height: var(--text-body-short-size-xl-line-height);
+    letter-spacing: var(--text-body-short-size-xl-letter-spacing);
+}

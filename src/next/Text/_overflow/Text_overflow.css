@@ -1,0 +1,37 @@
+.Text_overflow_fade,
+.Text_overflow_fade-horizontal {
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+}
+
+.Text_overflow_fade::after,
+.Text_overflow_fade-horizontal::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    content: '\00a0';
+}
+
+.Text_overflow_fade::after {
+    width: 2em;
+
+    background-image: linear-gradient(270deg, var(--color-bg-default) 35%, transparent);
+}
+
+.Text_overflow_fade-horizontal::after {
+    left: 0;
+
+    background-image: linear-gradient(0deg, var(--color-bg-default) 35%, transparent);
+}
+
+.Text_overflow_ellipsis {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    white-space: normal;
+    text-overflow: ellipsis;
+}

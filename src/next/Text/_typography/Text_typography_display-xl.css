@@ -1,0 +1,6 @@
+.Text_typography_display-xl {
+    font-family: var(--text-display-size-xl-font-family);
+    font-size: var(--text-display-size-xl-font-size);
+    line-height: var(--text-display-size-xl-line-height);
+    letter-spacing: var(--text-display-size-xl-letter-spacing);
+}

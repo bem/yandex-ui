@@ -1,0 +1,15 @@
+.Text_align_start {
+    text-align: left;
+}
+
+.Text_align_center {
+    text-align: center;
+}
+
+.Text_align_end {
+    text-align: right;
+}
+
+.Text_align_justify {
+    text-align: justify;
+}

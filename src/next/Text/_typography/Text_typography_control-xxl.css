@@ -1,0 +1,6 @@
+.Text_typography_control-xxl {
+    font-family: var(--text-control-size-xxl-font-family);
+    font-size: var(--text-control-size-xxl-font-size);
+    line-height: var(--text-control-size-xxl-line-height);
+    letter-spacing: var(--text-control-size-xxl-letter-spacing);
+}

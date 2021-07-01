@@ -1,0 +1,87 @@
+.Text_color_primary {
+    color: var(--color-typo-primary);
+}
+
+.Text_color_brand {
+    color: var(--color-typo-brand);
+}
+
+.Text_color_inverse {
+    color: var(--color-typo-inverse);
+}
+
+.Text_color_promo {
+    color: var(--color-typo-promo);
+}
+
+.Text_color_secondary {
+    color: var(--color-typo-secondary);
+}
+
+.Text_color_ghost {
+    color: var(--color-typo-ghost);
+}
+
+.Text_color_success {
+    color: var(--color-typo-success);
+}
+
+.Text_color_alert {
+    color: var(--color-typo-alert);
+}
+
+.Text_color_disable {
+    color: var(--color-typo-disable);
+}
+
+.Text_color_warning {
+    color: var(--color-typo-warning);
+}
+
+.Text_color_control-primary {
+    color: var(--color-control-typo-primary);
+}
+
+.Text_color_control-secondary {
+    color: var(--color-control-typo-secondary);
+}
+
+.Text_color_control-passive {
+    color: var(--color-control-typo-passive);
+}
+
+.Text_color_control-ghost {
+    color: var(--color-control-typo-ghost);
+}
+
+.Text_color_control-faint {
+    color: var(--color-control-typo-faint);
+}
+
+.Text_color_control-disable {
+    color: var(--color-control-typo-disable);
+}
+
+.Text_color_control-link {
+    color: var(--color-control-typo-link);
+}
+
+.Text_color_control-error {
+    color: var(--color-control-typo-error);
+}
+
+.Text_color_link {
+    color: var(--color-link);
+}
+
+.Text_color_link-external {
+    color: var(--color-link-external);
+}
+
+.Text_color_link-minor {
+    color: var(--color-link-minor);
+}
+
+.Text_color_link-hover {
+    color: var(--color-link-hover);
+}

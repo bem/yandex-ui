@@ -1,0 +1,6 @@
+.Text_typography_control-xl {
+    font-family: var(--text-control-size-xl-font-family);
+    font-size: var(--text-control-size-xl-font-size);
+    line-height: var(--text-control-size-xl-line-height);
+    letter-spacing: var(--text-control-size-xl-letter-spacing);
+}

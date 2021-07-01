@@ -1,0 +1,91 @@
+.text-common-example h1 {
+    margin: 0 0 2.75rem;
+}
+
+.text-common-example h2 {
+    margin: 2.75rem 0;
+}
+
+.text-common-example h3 {
+    margin: .75rem 0;
+}
+
+.text-common-example section > h3 {
+    margin-top: 2.75rem;
+}
+
+.text-common-example p {
+    margin: .75rem 0;
+}
+
+.text-common-example ul {
+    display: flex;
+
+    margin: 2.75rem 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.text-common-example ul li {
+    margin-right: 1rem;
+}
+
+.text-common-example section {
+    position: relative;
+
+    display: block;
+
+    max-width: 1066px;
+    padding-left: 94px;
+}
+
+.body-long::before {
+    content: 'Body Long';
+}
+
+.body-short::before {
+    content: 'Body Short';
+}
+
+.display::before {
+    content: 'Display';
+}
+
+.headline::before {
+    content: 'Headline';
+}
+
+.overline::before {
+    content: 'Overline';
+}
+
+.subheader::before {
+    content: 'Subheader';
+}
+
+.caption::before {
+    content: 'Caption';
+}
+
+.display::before,
+.headline::before,
+.caption::before,
+.overline::before,
+.paragraph::before,
+.body-long::before,
+.body-short::before,
+.subheader::before {
+    position: relative;
+    left: -94px;
+
+    float: left;
+
+    margin-right: -100%;
+
+    font-size: .875rem;
+    font-weight: 400;
+
+    color: var(--color-control-typo-link);
+}
+
