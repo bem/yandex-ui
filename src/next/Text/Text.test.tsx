@@ -4,9 +4,13 @@ import { Text as TextCommon } from './Text';
 import { Text as TextDesktop, cnText, TextAlignValue, TextOverflowValue } from './Text.bundle/desktop';
 import { Text as TextTouchPhone } from './Text.bundle/touch-phone';
 import { Text as TextTouchPad } from './Text.bundle/touch-pad';
-import { serverEnvironmentSetup } from '../internal/utils';
+import { serverEnvironmentSetup } from '../../internal/utils';
 
-const platforms = [['desktop', TextDesktop], ['touch-pad', TextTouchPad], ['touch-phone', TextTouchPhone]];
+const platforms = [
+    ['desktop', TextDesktop],
+    ['touch-pad', TextTouchPad],
+    ['touch-phone', TextTouchPhone],
+];
 
 describe('Text@common', () => {
     describe('common environment', () => {
@@ -44,7 +48,9 @@ describe.each<any>(platforms)('Text@%s', (_platform, Text: typeof TextDesktop) =
 
         test('должен управлять переполнением через props', () => {
             (['ellipsis', 'fade', 'fade-horizontal'] as TextOverflowValue[]).forEach((overflow) => {
-                expect(mount(<Text overflow={overflow} />).find(`span.${cnText()}_overflow_${overflow}`)).toHaveLength(1);
+                expect(mount(<Text overflow={overflow} />).find(`span.${cnText()}_overflow_${overflow}`)).toHaveLength(
+                    1,
+                );
             });
         });
 

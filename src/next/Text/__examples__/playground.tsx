@@ -1,6 +1,6 @@
 import React from 'react';
 import { number, radios, select, text } from '@storybook/addon-knobs';
-import { Text, TextAlignValue, TextOverflowValue, TextWeightValue } from '@yandex-lego/components/Text/bundle';
+import { Text, TextAlignValue, TextOverflowValue, TextWeightValue } from '@yandex-lego/components/next/Text/bundle';
 
 import { typographyValues } from './assets';
 

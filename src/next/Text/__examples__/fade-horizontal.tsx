@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text } from '@yandex-lego/components/Text/bundle';
+import { Text } from '@yandex-lego/components/next/Text/bundle';
 
 export const FadeHorizontal = () => (
     <Text typography="display-s" weight="light" maxLines={2} overflow="fade-horizontal">

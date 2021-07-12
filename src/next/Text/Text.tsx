@@ -1,8 +1,8 @@
 import React, { CSSProperties, Ref, useState, useEffect, useRef, WeakValidationMap, ValidationMap } from 'react';
 import { Composition } from '@bem-react/core';
 import { cn } from '@bem-react/classname';
-import { canUseDOM } from '../lib/canUseDOM';
-import { mergeAllRefs } from '../lib/mergeRefs';
+import { canUseDOM } from '../../lib/canUseDOM';
+import { mergeAllRefs } from '../../lib/mergeRefs';
 import type { TextOverflowValue } from './_overflow/Text_overflow';
 
 type ComponentType = React.ComponentType<{
@@ -35,12 +35,16 @@ type CommonProps = {
      * Задает типографику текста в компоненте.
      */
     typography?: unknown;
-}
+};
 
 type Props<T extends TextElementType> = CommonProps & {
     ref?: T extends keyof JSX.IntrinsicElements
-        ? (JSX.IntrinsicElements[T] extends React.ClassAttributes<infer R> ? Ref<R> : never)
-        : (T extends React.ComponentType<{ ref?: infer R }> ? R : never);
+        ? JSX.IntrinsicElements[T] extends React.ClassAttributes<infer R>
+            ? Ref<R>
+            : never
+        : T extends React.ComponentType<{ ref?: infer R }>
+        ? R
+        : never;
 
     /**
      * Тип элемента для отображения как (строка или компонент).
@@ -49,8 +53,7 @@ type Props<T extends TextElementType> = CommonProps & {
     as?: T;
 };
 
-export type TextProps<T extends TextElementType> =
-    Props<T> & Omit<React.ComponentProps<T>, keyof Props<T>>;
+export type TextProps<T extends TextElementType> = Props<T> & Omit<React.ComponentProps<T>, keyof Props<T>>;
 
 export const cnText = cn('Text');
 
@@ -72,26 +75,18 @@ export type Text<U = {}> = {
     contextTypes?: ValidationMap<any>;
     defaultProps?: Partial<CommonProps & U>;
     displayName?: string;
-}
+};
 
-export type PropsOfText<C extends Text<any>, T extends TextElementType = 'span'> =
-    C extends Text<infer U> ? TextProps<T> & U : never;
+export type PropsOfText<C extends Text<any>, T extends TextElementType = 'span'> = C extends Text<infer U>
+    ? TextProps<T> & U
+    : never;
 
 /**
  * Базовый примитив представления текстовых данных.
  * @param { TextProps } props
  */
 export const Text = React.memo(<T extends ShortElementType = 'span'>(props: TextProps<T>) => {
-    const {
-        as: As = 'span',
-        ref,
-        className,
-        overflow,
-        maxLines = 1,
-        style = {},
-        typography,
-        ...otherProps
-    } = props;
+    const { as: As = 'span', ref, className, overflow, maxLines = 1, style = {}, typography, ...otherProps } = props;
     const [, forceUpdate] = useState({});
     const textElement = useRef<HTMLElement>(null);
 
@@ -117,18 +112,14 @@ export const Text = React.memo(<T extends ShortElementType = 'span'>(props: Text
     }
 
     return (
-        <As
-            ref={mergeAllRefs(ref, textElement)}
-            style={newStyle}
-            className={cnText({}, [className])}
-            {...otherProps}
-        />
+        <As ref={mergeAllRefs(ref, textElement)} style={newStyle} className={cnText({}, [className])} {...otherProps} />
     );
 }) as Text;
 Text.displayName = cnText();
 
 export function enhanceText<H extends Composition<any>, P = {}>(
-    hoc: H, Comp?: Text<P>,
+    hoc: H,
+    Comp?: Text<P>,
 ): Text<P & (H extends Composition<infer T> ? T : never)> {
     return hoc(Comp || Text) as any;
 }

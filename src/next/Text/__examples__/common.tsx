@@ -1,12 +1,12 @@
 import React from 'react';
 import { select } from '@storybook/addon-knobs';
 import { Composition } from '@bem-react/core';
-import { Text, enhanceText, TextProps } from '@yandex-lego/components/Text/bundle';
+import { Text, enhanceText, TextProps } from '@yandex-lego/components/next/Text/bundle';
 
 import { maps, pin, stat, typographyValues } from './assets';
 import './common.css';
 
-const withGroupId: Composition<{groupId: string}> = (Component: any) => ({
+const withGroupId: Composition<{ groupId: string }> = (Component: any) => ({
     groupId,
     typography,
     weight,
