@@ -1,15 +1,14 @@
+/* eslint-disable space-before-function-paren */
 // @ts-nocheck
-
-// eslint-disable-next-line mocha/no-skipped-tests
-describe.skip('Button', () => {
+describe('Button@next', () => {
     const elements = {
         button: '[data-testid=button]',
         container: '[data-testid=container]',
     };
 
-    it('should render view default', function() {
+    it('should render view default', function () {
         return this.browser
-            .url('Button-next/hermione/hermione.html?scenario=view')
+            .openScenario('Button@next', 'ViewHermioneCase', { view: 'default' })
             .assertView('plain', [elements.container]);
     });
 });

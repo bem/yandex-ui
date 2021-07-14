@@ -1,6 +1,6 @@
-// @ts-nocheck
-import React, { FC } from 'react';
+import React from 'react';
 import { Button } from '@yandex-lego/components/next/Button/desktop/bundle';
+import { useParams } from '@yandex-lego/components/internal/utils/parseQueryString';
 
 const styles = `
     body {
@@ -14,8 +14,8 @@ const styles = `
     }
 `;
 
-export const ViewHermioneCase: FC<any> = (props) => {
-    const { disabled = false, view = 'default' } = props;
+export const ViewHermioneCase = () => {
+    const { disabled = false, view = 'default' } = useParams();
 
     return (
         <>

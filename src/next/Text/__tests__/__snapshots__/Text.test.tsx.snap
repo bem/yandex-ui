@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text@desktop (next) should return the full component snapshot 1`] = `
+<span
+  class="Text Text_weight_regular Text_color_primary mix"
+  data-testid="text"
+/>
+`;
+
+exports[`Text@touch-pad (next) should return the full component snapshot 1`] = `
+<span
+  class="Text Text_weight_regular Text_color_primary mix"
+  data-testid="text"
+/>
+`;
+
+exports[`Text@touch-phone (next) should return the full component snapshot 1`] = `
+<span
+  class="Text Text_weight_regular Text_color_primary mix"
+  data-testid="text"
+/>
+`;

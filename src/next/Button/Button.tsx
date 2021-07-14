@@ -9,7 +9,7 @@ import React, {
     useRef,
 } from 'react';
 import { cn } from '@bem-react/classname';
-import { PressEventHandler, useButton } from 'web-platform-alpha';
+import { PressEventHandler, useButton, useHover } from 'web-platform-alpha';
 
 import { useForkRef } from '../../useForkRef';
 import { IconProvider, ButtonIcon as Icon } from './Icon/Button-Icon';
@@ -136,10 +136,11 @@ export const Button: FC<IButtonProps> = (props) => {
         ...otherProps
     } = props;
     const buttonRef = useRef<HTMLButtonElement>(null);
-    const { ElementType, buttonProps, pressed, hovered } = useButton(
+    const { ElementType, buttonProps, isPressed: pressed } = useButton(
         { ...otherProps, disabled: progress || disabled },
         buttonRef,
     );
+    const { hoverProps, isHovered: hovered } = useHover({ disabled: progress || disabled });
     const ref = useForkRef(buttonRef, innerRef);
 
     const iconLeftOrIcon = iconLeft || icon;
@@ -152,6 +153,7 @@ export const Button: FC<IButtonProps> = (props) => {
     return (
         <ElementType
             {...buttonProps}
+            {...hoverProps}
             className={cnButton({ checked, progress, pressed, hovered, disabled }, [className])}
             aria-pressed={checked || undefined}
             aria-busy={progress || undefined}
