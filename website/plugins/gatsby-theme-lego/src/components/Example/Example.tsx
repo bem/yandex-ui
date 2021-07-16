@@ -1,9 +1,8 @@
-import React, { ComponentType, FC, useState } from 'react';
+import React, { ComponentType, FC, ReactNode, useState } from 'react';
 import styled from '@emotion/styled';
 import { Button } from '@yandex-lego/components/Button/desktop/bundle';
-import { Text } from '@yandex-lego/components/Text/desktop/bundle';
 import { TooltipStateful } from '@yandex-lego/components/Tooltip/desktop/bundle';
-import { MDXProviderComponents, MDXProvider } from '@mdx-js/react';
+import ReactMarkdown from 'react-markdown';
 
 import { CodeIcon, CodeSandboxIcon, BackgroundIcon } from '../../icons';
 import { fork } from '../../libs/fork';
@@ -11,12 +10,14 @@ import { LegoThemeProvider } from '../LegoThemeProvider';
 import { CodeHighlighter } from '../CodeHighlighter';
 import { InlineCode } from '../InlineCode';
 import { createCodeSandbox } from './utils';
+import { H4 } from '../Typography';
+import { components } from '../MDXLayoutProvider';
 
 type ExampleProps = {
     component: ComponentType;
     source?: string;
     height?: number;
-    children?: string;
+    children?: ReactNode;
     defaultBackground?: 'white' | 'gray';
 };
 
@@ -28,11 +29,6 @@ const Tooltip = fork(TooltipStateful, {
     direction: 'top',
     hasTail: true,
 });
-
-const exampleComponents: MDXProviderComponents = {
-    code: InlineCode,
-    h4: fork(Text, { as: 'h4', typography: 'control-xl' }),
-};
 
 export const Example: FC<ExampleProps> = (props) => {
     const { children, component: ExampleComponent, source, height = 'auto', defaultBackground = 'gray' } = props;
@@ -54,17 +50,13 @@ export const Example: FC<ExampleProps> = (props) => {
     return (
         <Container>
             <Canvas style={{ height }} data-background={background}>
-                <LegoThemeProvider>
-                    <ExampleComponent />
-                </LegoThemeProvider>
+                <Aligner>
+                    <LegoThemeProvider>
+                        <ExampleComponent />
+                    </LegoThemeProvider>
+                </Aligner>
             </Canvas>
-
-            {children && (
-                <Description>
-                    <MDXProvider components={exampleComponents}>{children}</MDXProvider>
-                </Description>
-            )}
-
+            {children && <DescriptionContainer>{children}</DescriptionContainer>}
             <Toolbar>
                 {source && (
                     <Tooltip content="Открыть пример в CodeSandbox">
@@ -99,6 +91,18 @@ export const Example: FC<ExampleProps> = (props) => {
             )}
         </Container>
     );
+};
+
+export const Title: FC = (props) => {
+    const { children } = props;
+
+    return <H4>{children}</H4>;
+};
+export const Description: FC<{ children: string }> = (props) => {
+    const { children } = props;
+    const renderers = { ...components, code: InlineCode };
+
+    return <ReactMarkdown components={renderers}>{children}</ReactMarkdown>;
 };
 
 const Container = styled.div`
@@ -164,7 +168,16 @@ const SourceContainer = styled.div`
     }
 `;
 
-const Description = styled.section`
-    padding: 16px 16px 24px 16px;
+const DescriptionContainer = styled.section`
+    padding: 24px;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
+
+    & p {
+        margin-bottom: 0;
+    }
+`;
+
+const Aligner = styled.div`
+    display: flex;
+    justify-content: center;
 `;

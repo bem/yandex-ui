@@ -2,6 +2,7 @@ import React, { RefObject, ReactNode, FC, CSSProperties, ReactElement, Ref, useR
 import { useComponentRegistry } from '@bem-react/di';
 import { cn } from '@bem-react/classname';
 
+import { Direction } from '../usePopper';
 import { useForkRef } from '../useForkRef';
 import { PortalExtendableProps, Portal } from '../Portal';
 import { useOverlay, OnClose } from '../useOverlay';
@@ -19,6 +20,11 @@ export interface IPopupProps extends PortalExtendableProps {
      * Дополнительный контент перед содержимым попапа
      */
     addonBefore?: ReactNode;
+
+    /**
+     * Направления раскрытия блока
+     */
+    direction?: Direction | Direction[];
 
     /**
      * Включает/отключает хвостик у попапа
@@ -101,6 +107,7 @@ export const Popup: FC<IPopupProps> = ({
     addonBefore,
     children,
     className,
+    direction,
     hasTail,
     innerRef,
     keepMounted,
@@ -134,9 +141,10 @@ export const Popup: FC<IPopupProps> = ({
             <div
                 {...props}
                 className={cnPopup({ visible }, [className])}
+                data-popper-placement={direction}
+                onClick={onClick}
                 ref={useForkRef(containerRef, innerRef)}
                 style={{ ...style, zIndex }}
-                onClick={onClick}
             >
                 {addonBefore}
                 {typeof children === 'function' ? children({ tailRef }) : children}

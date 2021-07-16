@@ -1,12 +1,12 @@
-export * from './playground';
+export * from './boundary';
+export * from './contextmenu';
 export * from './direction';
-export * from './nonvisual';
-export * from './scrollable';
+export * from './floating';
+export * from './playground';
+export * from './tail-size';
 export * from './target';
 export * from './theme';
 export * from './view';
-export * from './boundary';
-export * from './contextmenu';
 
 export default {
     title: 'Surface|Popup/desktop',

@@ -3,14 +3,16 @@ import { MDXProviderComponents, MDXProvider } from '@mdx-js/react';
 
 import { PropsTable } from './PropsTable';
 import { CodeHighlighter } from './CodeHighlighter';
-import { Example } from './Example';
+import { Example, Title, Description } from './Example';
 import { Disclaimer } from './Disclaimer';
 import * as Typography from './Typography';
 import { InlineCode } from './InlineCode';
 
-const components: MDXProviderComponents = {
+export const components: MDXProviderComponents = {
     PropsTable,
     Example,
+    Title,
+    Description,
     Disclaimer,
 
     code: CodeHighlighter,

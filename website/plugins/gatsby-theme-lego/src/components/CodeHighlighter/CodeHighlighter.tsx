@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 import Highlight, { defaultProps, Language } from 'prism-react-renderer';
 import copy from 'copy-to-clipboard';
 
-import { theme } from './theme';
 import { CopyButton } from './CopyButton';
 
 type CodeHighlighterType = {
@@ -23,7 +22,7 @@ export const CodeHighlighter: FC<CodeHighlighterType> = (props) => {
 
     return (
         <Container>
-            <Highlight {...defaultProps} theme={theme} code={children.trim()} language={language}>
+            <Highlight {...defaultProps} theme={undefined} code={children.trim()} language={language}>
                 {({ style, tokens, getLineProps, getTokenProps }) => (
                     <Pre style={style}>
                         {tokens.map((line, key1) => (
@@ -43,6 +42,8 @@ export const CodeHighlighter: FC<CodeHighlighterType> = (props) => {
 
 const Container = styled.div`
     position: relative;
+    background-color: #282c34;
+    color: #fff;
 `;
 
 const Pre = styled.pre`
@@ -54,8 +55,8 @@ const Pre = styled.pre`
     padding: 12px 20px;
 
     font-family: 'JetBrains Mono', Menlo, monospace;
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 16px;
+    line-height: 24px;
     white-space: pre;
     word-spacing: normal;
     word-wrap: normal;

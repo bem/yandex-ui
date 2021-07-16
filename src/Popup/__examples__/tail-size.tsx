@@ -1,29 +1,30 @@
 import React, { FC, forwardRef, useRef, useState } from 'react';
 import { Popup, directions } from '@yandex-lego/components/Popup/desktop/bundle';
-import { RadioButton } from '@yandex-lego/components/RadioButton/desktop/bundle';
+import { Textinput } from '@yandex-lego/components/Textinput/desktop/bundle';
 import { Text } from '@yandex-lego/components/Text/bundle';
 
-export const Direction = () => {
+export const TailSize = () => {
     const anchorRef = useRef<HTMLDivElement>(null);
-    const [hasTail, setTail] = useState(1);
+    const [tailSize, setTailSize] = useState(24);
 
     return (
         <>
             <style>{styles}</style>
-            <div className="container-4bsz7d">
-                <Box ref={anchorRef} hasTail={hasTail} setTail={setTail} />
+            <div className="container-y84ep4">
+                <Box ref={anchorRef} tailSize={tailSize} setTailSize={setTailSize} />
                 {directions.map((direction) => (
                     <Popup
-                        // Use dynamic key for update math of arrow, need only for dynamic has tail.
-                        key={direction + Boolean(hasTail)}
+                        // Use dynamic key for update math of arrow, need only for dynamic tail size.
+                        key={direction + tailSize}
                         anchor={anchorRef}
                         scope="inplace"
                         direction={direction}
-                        hasTail={Boolean(hasTail)}
+                        hasTail
                         target="anchor"
                         view="default"
                         visible
                         mainOffset={16}
+                        tailSize={tailSize}
                     >
                         <Content>{direction}</Content>
                     </Popup>
@@ -34,17 +35,16 @@ export const Direction = () => {
 };
 
 const styles = `
-    .container-4bsz7d {
+    .container-y84ep4 {
         padding: 80px 128px;
     }
 
-    .box-4bsz7d {
+    .box-y84ep4 {
         background: #fff;
         border: 1px solid #E6E9F0;
         height: 158px;
         width: 342px;
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
         border-radius: 12px;
@@ -52,23 +52,24 @@ const styles = `
 `;
 
 const Box = forwardRef<HTMLDivElement, any>((props, ref) => {
-    const { hasTail, setTail } = props;
+    const { tailSize, setTailSize } = props;
 
     return (
-        <div className="box-4bsz7d" ref={ref}>
-            <Text color="ghost" typography="caption-xl" weight="bold" style={{ marginBottom: 16 }}>
-                Направления Popup
+        <div className="box-y84ep4" ref={ref}>
+            <Text color="ghost" typography="caption-xl" weight="bold" style={{ marginRight: 24 }}>
+                Размер Tail
             </Text>
-            <RadioButton
+            <Textinput
+                value={tailSize}
+                onChange={(event) => setTailSize(Number(event.target.value))}
                 size="s"
                 view="default"
-                value={String(hasTail)}
-                options={[
-                    { value: '1', children: 'С хвостиком' },
-                    { value: '0', children: 'Без хвостика' },
-                ]}
-                onChange={(event) => setTail(Number(event.target.value))}
+                type="number"
+                style={{ width: 70 }}
             />
+            <Text color="ghost" typography="caption-xl" style={{ marginLeft: 4 }}>
+                px
+            </Text>
         </div>
     );
 });
