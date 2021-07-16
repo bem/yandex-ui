@@ -1,7 +1,7 @@
 // Public API
 import { Modifier } from '@popperjs/core';
 
-export * from './types';
+export { VirtualElement, Boundary } from './types';
 export * from './usePopper';
 export * from './useVirtualElementRef';
 export * from './directions';
