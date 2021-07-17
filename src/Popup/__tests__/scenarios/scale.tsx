@@ -15,7 +15,8 @@ const styles = `
     }
 
     .anchor {
-        height: 32px;
+        /* Use floated number as height for check sub-pixel offset. */
+        height: 32.5px;
         width: 180px;
         background-color: #ccc;
         transition: transform 200ms ease-in-out;

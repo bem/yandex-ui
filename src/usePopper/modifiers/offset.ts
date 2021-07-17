@@ -51,8 +51,9 @@ function offsetFn({ state, options }: ModifierArguments<OffsetOptions>) {
     const { x, y } = data[state.placement];
 
     if (state.modifiersData.popperOffsets) {
-        state.modifiersData.popperOffsets.x = Math.ceil(state.modifiersData.popperOffsets.x + x);
-        state.modifiersData.popperOffsets.y = Math.ceil(state.modifiersData.popperOffsets.y + y);
+        // Use round for correct offset for sub-pixel render.
+        state.modifiersData.popperOffsets.x = Math.round(state.modifiersData.popperOffsets.x + x);
+        state.modifiersData.popperOffsets.y = Math.round(state.modifiersData.popperOffsets.y + y);
     }
 
     // Записываем данные для дальнейшего использования в detectOverflow.

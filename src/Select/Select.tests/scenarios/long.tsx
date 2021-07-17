@@ -37,6 +37,8 @@ export const LongHermioneCase: FC<any> = (props) => {
                     onChange={(event) => setValue(event.target.value)}
                     options={options}
                     maxHeight={maxHeight}
+                    placeholder="Select option"
+                    showAlwaysPlaceholder
                 />
             </div>
         </>
