@@ -1,0 +1,311 @@
+calendar:
+  fontFamily:
+    value: "{typography.font.family.value}"
+
+  sizeS:
+    minWidth:
+      value: 252px
+    minHeight:
+      value: 252px
+    lineHeight:
+      value: "{text.control.size.s.lineHeight.value}"
+    fontSize:
+      value: "{text.control.size.s.fontSize.value}"
+    spaceHorizontal:
+      value: 16px
+
+    header:
+      spaceTop:
+        value: 8px
+      spaceBottom:
+        value: 8px
+
+    navAction:
+      width:
+        value: 32px
+      height:
+        value: 32px
+
+    body:
+      spaceTop:
+        value: 8px
+      spaceBottom:
+        value: 24px
+
+    aside:
+      minWidth:
+        value: 28px
+      indentRight:
+        value: 8px
+
+    cell:
+      width:
+        value: 36px
+      space:
+        value: 2px
+
+  sizeM:
+    minWidth:
+      value: 308px
+    minHeight:
+      value: 308px
+    lineHeight:
+      value: "{text.control.size.m.lineHeight.value}"
+    fontSize:
+      value: "{text.control.size.m.fontSize.value}"
+    spaceHorizontal:
+      value: 24px
+
+    header:
+      spaceTop:
+        value: 12px
+      spaceBottom:
+        value: 12px
+
+    navAction:
+      width:
+        value: 36px
+      height:
+        value: 36px
+
+    body:
+      spaceTop:
+        value: 12px
+      spaceBottom:
+        value: 32px
+
+    aside:
+      minWidth:
+        value: 32px
+      indentRight:
+        value: 12px
+
+    cell:
+      width:
+        value: 44px
+      space:
+        value: 4px
+
+  sizeL:
+    minWidth:
+      value: 378px
+    minHeight:
+      value: 378px
+    lineHeight:
+      value: "{text.control.size.l.lineHeight.value}"
+    fontSize:
+      value: "{text.control.size.l.fontSize.value}"
+    spaceHorizontal:
+      value: 32px
+
+    header:
+      spaceTop:
+        value: 16px
+      spaceBottom:
+        value: 16px
+
+    navAction:
+      width:
+        value: 42px
+      height:
+        value: 42px
+
+    body:
+      spaceTop:
+        value: 16px
+      spaceBottom:
+        value: 40px
+
+    aside:
+      minWidth:
+        value: 36px
+      indentRight:
+        value: 16px
+
+    cell:
+      width:
+        value: 54px
+      space:
+        value: 6px
+
+  viewDefault:
+    fillColor:
+      value: "#fff"
+
+    header:
+      fillColor:
+        value: "transparent"
+
+    aside:
+      borderRadius:
+        value: 8px
+      typoColor:
+        base:
+          value: rgba(0, 0, 0, 0.6)
+      fillColor:
+        base:
+          value: rgba(0, 0, 0, 0.05)
+
+    weekday:
+      typoColor:
+        base:
+          value: "#000000"
+
+    weekend:
+      typoColor:
+        base:
+          value: "#ff3029"
+
+    cell:
+      borderWidth:
+        value: 1px
+      borderRadius:
+        value: 100px
+      borderColor:
+        hovered:
+           value: rgba(0, 0, 0, 0.1)
+        focused:
+          value: "#e69900"
+        today:
+          value: rgba(0, 0, 0, 0.05)
+      underlineColor:
+        today:
+          value: "#ff3737"
+      typoColor:
+        base:
+          value: rgba(0, 0, 0, 0.8)
+        disabled:
+          value: rgba(0, 0, 0, 0.45)
+        selected:
+          base:
+            value: "#fff"
+        weekend:
+          value: "#ff3737"
+      fillColor:
+        hovered:
+          value: "#f2f2f2"
+        pressed:
+          value: "#e5e5e5"
+        rangeSelected:
+          base:
+            value: "#f2f2f2"
+          hovered:
+            value: "#e6e6e6"
+          pressed:
+            value: "#d9d9d9"
+        selected:
+          base:
+            value: "#ff3333"
+          hovered:
+            value: "#ff0000"
+          pressed:
+            value: "#f20008"
+          disabled:
+            value: "#f7f8fA"
+
+    navAction:
+      typoColor:
+        base:
+          value: rgba(0, 0, 0, 0.65)
+        hovered:
+          value: rgba(0, 0, 0, 1)
+        disabled:
+          value: "#808080"
+
+    navTitleButton:
+      typoColor:
+        base:
+          value: "#000"
+        hovered:
+          value: rgba(0, 0, 0, 0.65)
+
+  viewBrand:
+    fillColor:
+      value: "#fff"
+
+    header:
+      fillColor:
+        value: "#1a1a1a"
+
+    aside:
+      borderRadius:
+        value: 8px
+      typoColor:
+        base:
+          value: rgba(0, 0, 0, 0.6)
+      fillColor:
+        base:
+          value: rgba(0, 0, 0, 0.05)
+
+    weekday:
+      typoColor:
+        base:
+          value: "#fff"
+
+    weekend:
+      typoColor:
+        base:
+          value: "rgba(255, 255, 255, 0.75)"
+
+    cell:
+      borderWidth:
+        value: 1px
+      borderRadius:
+        value: 100px
+      borderColor:
+        hovered:
+           value: rgba(0, 0, 0, 0.1)
+        focused:
+          value: "#fdb100"
+        today:
+          value: rgba(0, 0, 0, 0.05)
+      underlineColor:
+        today:
+          value: "#ff3737"
+      typoColor:
+        base:
+          value: rgba(0, 0, 0, 0.8)
+        disabled:
+          value: rgba(0, 0, 0, 0.45)
+        selected:
+          base:
+            value: "#fff"
+        weekend:
+          value: "#ff3737"
+      fillColor:
+        hovered:
+          value: "#f2f2f2"
+        pressed:
+          value: "#e5e5e5"
+        rangeSelected:
+          base:
+            value: "#f2f2f2"
+          hovered:
+            value: "#e6e6e6"
+          pressed:
+            value: "#d9d9d9"
+        selected:
+          base:
+            value: "#ff3333"
+          hovered:
+            value: "#ff0000"
+          pressed:
+            value: "#f20008"
+          disabled:
+            value: "#f7f8fA"
+
+    navAction:
+      typoColor:
+        base:
+          value: rgba(255, 255, 255, 0.65)
+        hovered:
+          value: rgba(255, 255, 255, 1)
+        disabled:
+          value: rgba(255, 255, 255, 0.4)
+
+    navTitleButton:
+      typoColor:
+        base:
+          value: "#fff"
+        hovered:
+          value: rgba(255, 255, 255, 0.65)

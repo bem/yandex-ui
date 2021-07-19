@@ -36,7 +36,6 @@
   },
   "dependencies": {
     "@popperjs/core": "2.5.4",
-    "date-fns": "^2.19.0",
     "react-debounce-input": "^3.2.2",
     "react-range": "1.8.7",
     "rebound": "0.1.0",

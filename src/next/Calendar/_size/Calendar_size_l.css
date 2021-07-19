@@ -1,0 +1,60 @@
+.Calendar_size_l {
+    font-size: var(--calendar-size-l-font-size);
+    line-height: var(--calendar-size-l-line-height);
+}
+
+.Calendar_size_l .Calendar-Header {
+    padding: var(--calendar-size-l-header-space-top) var(--calendar-size-l-space-horizontal) var(--calendar-size-l-header-space-bottom);
+}
+
+.Calendar_size_l .Calendar-Body {
+    padding: var(--calendar-size-l-body-space-top) var(--calendar-size-l-space-horizontal) var(--calendar-size-l-body-space-bottom);
+}
+
+.Calendar_size_l .Calendar-Body .Calendar-Grid {
+    min-height: var(--calendar-size-l-min-height);
+}
+
+.Calendar_size_l .Calendar-View_type_day .Calendar-Body .Calendar-Grid {
+    min-height: calc(var(--calendar-size-l-min-height) - var(--calendar-size-l-cell-width));
+}
+
+.Calendar_size_l .Calendar-GridSection_type_aside {
+    margin-right: var(--calendar-size-l-aside-indent-right);
+}
+
+.Calendar_size_l .Calendar-GridSection_type_body {
+    min-width: var(--calendar-size-l-min-width);
+}
+
+.Calendar_size_l .Calendar-GridCell {
+    min-width: var(--calendar-size-l-cell-width);
+    min-height: var(--calendar-size-l-cell-width);
+}
+
+.Calendar_size_l .Calendar-GridSection_type_aside .Calendar-GridCell {
+    min-width: var(--calendar-size-l-aside-min-width);
+}
+
+.Calendar_size_l .Calendar-DateButton::before {
+    margin: var(--calendar-size-l-cell-space);
+}
+
+.Calendar_size_l .Calendar-DateButton::after {
+    margin: var(--calendar-size-l-cell-space) 0;
+}
+
+.Calendar_size_l .Calendar-DateButton.Calendar-DateButton_selectionStart::after,
+.Calendar_size_l .Calendar-DateButton.Calendar-DateButton_rangePreviewStart::after {
+    margin-left: var(--calendar-size-l-cell-space);
+}
+
+.Calendar_size_l .Calendar-DateButton.Calendar-DateButton_selectionEnd::after,
+.Calendar_size_l .Calendar-DateButton.Calendar-DateButton_rangePreviewEnd::after {
+    margin-right: var(--calendar-size-l-cell-space);
+}
+
+.Calendar_size_l .Calendar-NavigationAction {
+    width: var(--calendar-size-l-nav-action-width);
+    height: var(--calendar-size-l-nav-action-height);
+}

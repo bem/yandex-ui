@@ -1,0 +1,168 @@
+/* Calendar */
+.Calendar_view_brand {
+    background-color: var(--calendar-view-brand-fill-color);
+}
+
+/* Header */
+.Calendar_view_brand .Calendar-Header {
+    background-color: var(--calendar-view-brand-header-fill-color);
+}
+
+/* GridSection_type_aside */
+.Calendar_view_brand .Calendar-Body .Calendar-GridSection_type_aside {
+    border-radius: var(--calendar-view-brand-aside-border-radius);
+    background-color: var(--calendar-view-brand-aside-fill-color-base);
+}
+
+.Calendar_view_brand .Calendar-Body .Calendar-GridSection_type_aside .Calendar-GridCell {
+    color: var(--calendar-view-brand-aside-typo-color-base);
+}
+
+/* DaysOfWeek */
+.Calendar_view_brand .Calendar-DayOfWeek {
+    color: var(--calendar-view-brand-weekday-typo-color-base);
+}
+
+.Calendar_view_brand .Calendar-DayOfWeek_weekend[class] {
+    color: var(--calendar-view-brand-weekend-typo-color-base);
+}
+
+/* DateButton */
+.Calendar_view_brand .Calendar-DateButton {
+    color: var(--calendar-view-brand-cell-typo-color-base);
+}
+
+.Calendar_view_brand .Calendar-DateButton::before {
+    border-radius: var(--calendar-view-brand-cell-border-radius);
+}
+
+.Calendar_view_brand .Calendar-DateButton_weekend[class] {
+    color: var(--calendar-view-brand-cell-typo-color-weekend);
+}
+
+.Calendar_view_brand .Calendar-DateButton_outside[class] {
+    color: var(--calendar-view-brand-cell-typo-color-disabled);
+}
+
+.Calendar_view_brand .Calendar-DateButton_selected[class] {
+    color: var(--calendar-view-brand-cell-typo-color-selected-base);
+}
+
+.Calendar_view_brand .Calendar-DateButton_disabled[class][class] {
+    color: var(--calendar-view-brand-cell-typo-color-disabled);
+}
+
+.Calendar_view_brand .Calendar-DateButton:hover::before {
+    background-color: var(--calendar-view-brand-cell-fill-color-hovered);
+}
+
+.Calendar_view_brand .Calendar-DateButton:active::before {
+    background-color: var(--calendar-view-brand-cell-fill-color-pressed);
+}
+
+.Calendar_view_brand .Calendar-DateButton_rangeSelected[class]:hover::before {
+    background-color: var(--calendar-view-brand-cell-fill-color-range-selected-hovered);
+}
+
+.Calendar_view_brand .Calendar-DateButton_rangeSelected[class]:active::before {
+    background-color: var(--calendar-view-brand-cell-fill-color-range-selected-pressed);
+}
+
+.Calendar_view_brand .Calendar-DateButton_selected[class]::before {
+    background-color: var(--calendar-view-brand-cell-fill-color-selected-base);
+}
+
+.Calendar_view_brand .Calendar-DateButton_selected[class]:hover::before {
+    background-color: var(--calendar-view-brand-cell-fill-color-selected-hovered);
+}
+
+.Calendar_view_brand .Calendar-DateButton_selected[class]:active::before {
+    background-color: var(--calendar-view-brand-cell-fill-color-selected-pressed);
+}
+
+.Calendar_view_brand .Calendar-DateButton_selected[class].Calendar-DateButton_disabled::before {
+    background-color: var(--calendar-view-brand-cell-fill-color-selected-disabled);
+}
+
+.Calendar_view_brand .Calendar-DateButton_rangeSelected::after {
+    background-color: var(--calendar-view-brand-cell-fill-color-range-selected-base);
+}
+
+.Calendar_view_brand .Calendar-DateButton_rangePreview::after {
+    border-width: var(--calendar-view-brand-cell-border-width) 0;
+    border-style: dashed;
+    border-color: var(--calendar-view-brand-cell-border-color-hovered);
+}
+
+.Calendar_view_brand .Calendar-DateButton_selectionStart::after,
+.Calendar_view_brand .Calendar-DateButton_rangePreviewStart::after {
+    border-left-width: var(--calendar-view-brand-cell-border-width);
+    border-top-left-radius: var(--calendar-view-brand-cell-border-radius);
+    border-bottom-left-radius: var(--calendar-view-brand-cell-border-radius);
+}
+
+.Calendar_view_brand .Calendar-DateButton_selectionEnd::after,
+.Calendar_view_brand .Calendar-DateButton_rangePreviewEnd::after {
+    border-right-width: var(--calendar-view-brand-cell-border-width);
+    border-top-right-radius: var(--calendar-view-brand-cell-border-radius);
+    border-bottom-right-radius: var(--calendar-view-brand-cell-border-radius);
+}
+
+/* DateButton_today */
+.Calendar_view_brand .Calendar-DateButton_today::before {
+    border: 1px solid var(--calendar-view-brand-cell-border-color-today);
+}
+
+.Calendar_view_brand .Calendar-DateButton_today .Calendar-Date {
+    border-bottom: 1px solid var(--calendar-view-brand-cell-underline-color-today);
+}
+
+.Calendar_view_brand .Calendar-DateButton_today.Calendar-DateButton_selected .Calendar-Date,
+.Calendar_view_brand .Calendar-DateButton_today.Calendar-DateButton_disabled .Calendar-Date {
+    border-color: currentColor;
+}
+
+/* DateButton_focused */
+.utilityfocus .Calendar_view_brand .Calendar-DateButton_focused[class]::before {
+    box-shadow: 0 0 0 2px var(--calendar-view-brand-cell-border-color-focused);
+}
+
+.utilityfocus .Calendar_view_brand .Calendar-DateButton_focused.Calendar-DateButton_today::before {
+    border: none;
+}
+
+/* NavigationAction */
+.Calendar_view_brand .Calendar-NavigationAction {
+    color: var(--calendar-view-brand-nav-action-typo-color-base);
+
+    transition: color .1s ease-out;
+}
+
+.Calendar_view_brand .Calendar-NavigationAction:hover:not(.Calendar-NavigationAction_disabled) {
+    color: var(--calendar-view-brand-nav-action-typo-color-hovered);
+}
+
+.Calendar_view_brand .Calendar-NavigationAction:active:not(.Calendar-NavigationAction_disabled) > svg {
+    transition: none;
+    transform: scale(.96);
+}
+
+.Calendar_view_brand .Calendar-NavigationAction.Calendar-NavigationAction_disabled {
+    color: var(--calendar-view-brand-nav-action-typo-color-disabled);
+}
+
+/* NavigationTitleButton */
+.Calendar_view_brand .Calendar-NavigationTitleButton {
+    color: var(--calendar-view-brand-nav-title-button-typo-color-base);
+
+    transition: color .1s ease-out;
+}
+
+.Calendar_view_brand .Calendar-NavigationTitleButton:hover:not(.Calendar-NavigationTitleButton_disabled) {
+    color: var(--calendar-view-brand-nav-title-button-typo-color-hovered);
+}
+
+.utilityfocus .Calendar_view_brand .Calendar-NavigationAction:focus,
+.utilityfocus .Calendar_view_brand .Calendar-NavigationTitleButton:focus {
+    box-shadow: 0 0 0 2px var(--calendar-view-brand-cell-border-color-focused);
+}

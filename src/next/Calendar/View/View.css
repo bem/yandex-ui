@@ -1,0 +1,20 @@
+.Calendar-View {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.Calendar-Body {
+    z-index: 0;
+
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+
+    box-sizing: border-box;
+}
+
+.Calendar-View_type_day .Calendar-Grid,
+.Calendar-View_type_day .Calendar-Section {
+    flex-grow: 0;
+    align-items: flex-start;
+}
