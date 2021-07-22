@@ -31,6 +31,13 @@ export type MessageBoxProps = {
     onClose?: MouseEventHandler<HTMLButtonElement>;
 
     /**
+     * Флаг для включения/выключения элемента close.
+     *
+     * @default Boolean(onClose)
+     */
+    hasClose?: boolean;
+
+    /**
      * Кнопка или набор кнопок, которые будут размещены внизу компонента
      */
     actions?: ReactNode;
@@ -86,22 +93,25 @@ export const MessageBox: FC<MessageBoxProps> = ({
     innerRef,
     layout = 'plain',
     onClose,
+    hasClose = Boolean(onClose),
     opaque,
     tailRef,
     tailType = 'default',
-}) => (
-    <div className={cnMessageBox({ opaque, layout, hasClose: Boolean(onClose) }, [className])} ref={innerRef}>
-        <div className={cnMessageBox('Backdrop')}>
-            {hasTail && <Tail innerRef={tailRef} tailType={tailType} />}
-            {background && <div className={cnMessageBox('Background')}>{background}</div>}
+}) => {
+    return (
+        <div className={cnMessageBox({ opaque, layout, hasClose: onClose && hasClose }, [className])} ref={innerRef}>
+            <div className={cnMessageBox('Backdrop')}>
+                {hasTail && <Tail innerRef={tailRef} tailType={tailType} />}
+                {background && <div className={cnMessageBox('Background')}>{background}</div>}
+            </div>
+            <div className={cnMessageBox('Content')}>
+                {children}
+                {onClose && hasClose && <Close onClick={onClose} />}
+            </div>
+            {actions && <Buttons>{actions}</Buttons>}
+            {corner}
         </div>
-        <div className={cnMessageBox('Content')}>
-            {children}
-            {onClose && <Close onClick={onClose} />}
-        </div>
-        {actions && <Buttons>{actions}</Buttons>}
-        {corner}
-    </div>
-);
+    );
+};
 
 MessageBox.displayName = 'MessageBox';
