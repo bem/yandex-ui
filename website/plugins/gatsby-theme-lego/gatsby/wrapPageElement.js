@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Layout } from '../src/components/Layout';
+import { PageContextProvider } from '../src/components/PageContextProvider';
 
 export const wrapPageElement = (options) => {
     const { element, props } = options;
@@ -9,5 +10,9 @@ export const wrapPageElement = (options) => {
         return element;
     }
 
-    return <Layout {...props}>{element}</Layout>;
+    return (
+        <PageContextProvider context={props.pageContext}>
+            <Layout {...props}>{element}</Layout>
+        </PageContextProvider>
+    );
 };

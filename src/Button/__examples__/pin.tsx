@@ -12,7 +12,7 @@ const Space = () => <span style={{ width: 8 }} />;
 
 export const Pin = () => {
     return (
-        <>
+        <div>
             <Section>
                 <Button view="raised">Round</Button>
                 <Space />
@@ -72,6 +72,6 @@ export const Pin = () => {
                 <Space />
                 <Button pin="clear-circle">Clear-Circle</Button>
             </Section>
-        </>
+        </div>
     );
 };

@@ -12,6 +12,7 @@ import { InlineCode } from '../InlineCode';
 import { createCodeSandbox } from './utils';
 import { H4 } from '../Typography';
 import { components } from '../MDXLayoutProvider';
+import { usePageContext } from '../PageContextProvider';
 
 type ExampleProps = {
     component: ComponentType;
@@ -34,6 +35,10 @@ export const Example: FC<ExampleProps> = (props) => {
     const { children, component: ExampleComponent, source, height = 'auto', defaultBackground = 'gray' } = props;
     const [isVisibleSource, setVisibleSource] = useState(false);
     const [background, setBackground] = useState<'white' | 'gray'>(defaultBackground);
+    const { frontmatter } = usePageContext();
+    const componentId = frontmatter?.id;
+    // TODO: Чтобы не ломать все примеры, выравниваем только новые
+    const alignExampleByCenter = ['Button', 'Popup'].includes(componentId);
 
     const toggleSourceVisible = () => {
         setVisibleSource(!isVisibleSource);
@@ -50,11 +55,15 @@ export const Example: FC<ExampleProps> = (props) => {
     return (
         <Container>
             <Canvas style={{ height }} data-background={background}>
-                <Aligner>
-                    <LegoThemeProvider>
+                <LegoThemeProvider>
+                    {alignExampleByCenter ? (
+                        <Aligner>
+                            <ExampleComponent />
+                        </Aligner>
+                    ) : (
                         <ExampleComponent />
-                    </LegoThemeProvider>
-                </Aligner>
+                    )}
+                </LegoThemeProvider>
             </Canvas>
             {children && <DescriptionContainer>{children}</DescriptionContainer>}
             <Toolbar>
@@ -179,5 +188,6 @@ const DescriptionContainer = styled.section`
 
 const Aligner = styled.div`
     display: flex;
+    width: 100%;
     justify-content: center;
 `;

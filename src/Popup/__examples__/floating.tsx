@@ -58,7 +58,7 @@ export const Floating = () => {
 const styles = `
     .container-14g47cs {
         height: 400px;
-        width: 364px;
+        width: 100%;
         position: relative;
         display: flex;
         justify-content: center;

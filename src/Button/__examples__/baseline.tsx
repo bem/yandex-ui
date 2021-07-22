@@ -3,7 +3,7 @@ import { Button } from '@yandex-lego/components/Button/desktop/bundle';
 import { Text } from '@yandex-lego/components/Text/desktop/bundle';
 
 export const Baseline = () => (
-    <>
+    <div>
         <Text weight="medium" typography="body-long-m" style={{ display: 'inline-block', width: 275 }}>
             Подтвердить, что ответ достоверный?
         </Text>
@@ -14,5 +14,5 @@ export const Baseline = () => (
         <Button view="raised" size="s" pin="circle-circle" baseline>
             Нет
         </Button>
-    </>
+    </div>
 );

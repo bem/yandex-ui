@@ -23,7 +23,8 @@ const styles = `
         align-items: center;
         flex-direction: column;
         height: 400px;
-        overflow: scroll;
+        width: 100%;
+        overflow-y: scroll;
         padding: 0 24px;
     }
 

@@ -3,7 +3,7 @@ import { Button } from '@yandex-lego/components/Button/desktop/bundle';
 import { Icon } from '@yandex-lego/components/Icon/desktop/bundle';
 
 export const Width = () => (
-    <>
+    <div style={{ width: '100%' }}>
         <Button view="raised" width="max" size="s">
             <Icon glyph="type-arrow" direction="left" />
             <span style={{ padding: '0 4px' }}>Max Width</span>
@@ -31,5 +31,5 @@ export const Width = () => (
         >
             Auto Width
         </Button>
-    </>
+    </div>
 );
