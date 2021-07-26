@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    /* Basic Options */
+    "allowJs": true,
+
+    /* Strict Type-Checking Options */
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
+  }
+}

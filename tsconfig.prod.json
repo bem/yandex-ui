@@ -1,18 +1,9 @@
 {
-  "extends": "@yandex-lego/configs/configs/tsconfig.dist.json",
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "baseUrl": ".",
-    "paths": {
-      "@yandex-lego/components/*": ["./src/*"],
-      "@bem-react/*": ["node_modules/@bem-react/*"],
-      "react": ["node_modules/@types/react"]
-    },
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "stripInternal": true
+    /* Strict Type-Checking Options */
+    "skipLibCheck": true
   },
-  "include": ["src"],
   "exclude": [
     "src/internal/**",
     "src/**/*.test.ts",
@@ -20,8 +11,6 @@
     "src/**/*tests/**/*",
     "src/**/__tests__/**/*.ts",
     "src/**/__tests__/**/*.tsx",
-    "src/docs/**/*.ts",
-    "src/docs/**/*.tsx",
     "node_modules"
   ]
 }

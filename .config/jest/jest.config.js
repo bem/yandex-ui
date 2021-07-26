@@ -17,10 +17,7 @@ module.exports = {
     snapshotSerializers: ['enzyme-to-json/serializer'],
     globals: {
         'ts-jest': {
-            tsconfig: {
-                noUnusedLocals: false,
-                noUnusedParameters: false,
-            },
+            tsconfig: '<rootDir>/tsconfig.test.json',
         },
     },
     reporters: [

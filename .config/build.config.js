@@ -4,6 +4,7 @@ const { useCleanUpPlugin } = require('@bem-react/pack/lib/plugins/CleanUpPlugin'
 const { useCopyAssetsPlugin } = require('@bem-react/pack/lib/plugins/CopyAssetsPlugin');
 const { useCssPlugin } = require('@bem-react/pack/lib/plugins/CssPlugin');
 const { useTypeScriptPlugin } = require('@bem-react/pack/lib/plugins/TypeScriptPlugin');
+const { usePackageJsonPlugin } = require('@bem-react/pack/lib/plugins/PackageJsonPlugin');
 
 const CI = process.env.TRENDBOX_CI;
 
@@ -49,7 +50,7 @@ module.exports = {
                 ignore: ['**/*.tests/**', '**/internal/**', '**/__tests__/**'],
             },
             {
-                src: ['./package.json', './README.md'],
+                src: ['./README.md'],
             },
             {
                 src: './codeshifts/**/*',
@@ -61,6 +62,10 @@ module.exports = {
                 output: ['./dist'],
             },
         ]),
+
+        usePackageJsonPlugin({
+            scripts: {},
+        }),
 
         {
             // TODO(https://github.com/yarastqt/themekit/issues/81)
@@ -84,16 +89,6 @@ module.exports = {
 
                 const componentsJSONPath = path.join(context.output, 'components.json');
                 fs.writeFileSync(componentsJSONPath, JSON.stringify(componentsNames, null, 2));
-
-                /**
-                 * Во время публикациюю делается npm pack ./publishConfig.directory
-                 * Из-за чего внутри dist запускаются lifecycle npm скрипты: создается еще одна папка dist, etc.
-                 * В dist уже всё собрано, поэтому вычищаю scripts, чтобы внутри dist ничего не запускалось.
-                 */
-                const packageJsonPath = path.join(context.output, 'package.json');
-                const packageJson = require(packageJsonPath);
-                packageJson.scripts = {};
-                fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
 
                 done();
             },

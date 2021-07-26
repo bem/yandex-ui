@@ -1,17 +1,29 @@
 {
-  "extends": "@yandex-lego/configs/configs/tsconfig.dev.json",
   "compilerOptions": {
+    /* Basic Options */
+    "target": "ES5",
+    "module": "CommonJS",
+    "jsx": "react",
+    "declaration": true,
+    "outDir": "./lib",
+    "rootDir": "./src",
+    "stripInternal": true,
+    "noEmitHelpers": true,
+    "importHelpers": true,
+    "downlevelIteration": true,
+
+    /* Strict Type-Checking Options */
+    "strict": true,
+
+    /* Module Resolution Options */
+    "moduleResolution": "node",
     "resolveJsonModule": true,
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
       "@yandex-lego/components/*": ["./src/*"]
-    }
+    },
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src"]
 }
