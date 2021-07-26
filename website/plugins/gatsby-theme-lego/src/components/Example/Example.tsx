@@ -37,7 +37,7 @@ export const Example: FC<ExampleProps> = (props) => {
     const [background, setBackground] = useState<'white' | 'gray'>(defaultBackground);
     const { frontmatter } = usePageContext();
     const componentId = frontmatter?.id;
-    // TODO: Чтобы не ломать все примеры, выравниваем только новые
+    // TODO: Удалить (включая контекст), после того, как все примеры будут корректно выравнены.
     const alignExampleByCenter = ['Button', 'Popup'].includes(componentId);
 
     const toggleSourceVisible = () => {

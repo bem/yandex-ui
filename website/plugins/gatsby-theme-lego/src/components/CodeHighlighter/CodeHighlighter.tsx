@@ -42,11 +42,12 @@ export const CodeHighlighter: FC<CodeHighlighterType> = (props) => {
 
 const Container = styled.div`
     position: relative;
-    background-color: #282c34;
-    color: #fff;
 `;
 
 const Pre = styled.pre`
+    background-color: #282c34;
+    color: #fff;
+
     overflow-y: scroll;
     overflow-x: auto;
 
