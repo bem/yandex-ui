@@ -13,7 +13,9 @@
     "@emotion/styled": "11.3.0",
     "@mdx-js/mdx": "1.6.22",
     "@mdx-js/react": "1.6.22",
+    "@types/lunr": "2.3.3",
     "@types/react-helmet": "6.1.1",
+    "@types/slug": "5.0.2",
     "@yandex-lego/components": "3.10.8",
     "codesandbox": "2.2.1",
     "copy-to-clipboard": "3.3.1",
@@ -28,6 +30,8 @@
     "gatsby-plugin-remove-trailing-slashes": "3.2.0",
     "gatsby-source-filesystem": "3.2.0",
     "gray-matter": "4.0.2",
+    "lunr": "2.3.9",
+    "lunr-languages": "1.8.0",
     "postcss": "8.2.8",
     "postcss-mixins": "7.0.3",
     "prism-react-renderer": "1.2.0",
@@ -36,7 +40,11 @@
     "react-dom": "17.0.0",
     "react-helmet": "6.1.0",
     "react-markdown": "6.0.2",
-    "ts-docgen-loader": "1.0.0"
+    "remark": "13.0.0",
+    "remark-mdx": "1.6.22",
+    "slug": "5.1.0",
+    "ts-docgen-loader": "1.0.0",
+    "unist-util-visit": "2.0.3"
   },
   "owners": [
     "https://abc.yandex-team.ru/services/lego2"

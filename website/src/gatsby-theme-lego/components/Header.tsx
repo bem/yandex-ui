@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
-import { Link } from '@yandex-lego/components/Link';
-
-import { Flex } from '../../../plugins/gatsby-theme-lego/src/components/Flex';
+import { Link } from '@yandex-lego/components/Link/desktop/bundle';
+import { Flex, Spacer } from '../../../plugins/gatsby-theme-lego/src/components/Flex';
 import { Logo } from '../../components/Logo';
 import { HeaderNav, HeaderNavItem } from './HeaderNav';
+import { Search } from './Search';
 
 interface HeaderProps {
     currentSection: string;
@@ -35,6 +35,10 @@ export const Header: FC<HeaderProps> = (props) => {
                 <HeaderNavItem href="https://clubs.at.yandex-team.ru/lego/?tag=51607">Блог</HeaderNavItem>
                 <HeaderNavItem href={getRoadmapLink()}>Roadmap</HeaderNavItem>
             </HeaderNav>
+
+            <Spacer />
+
+            <Search />
         </Flex>
     );
 };

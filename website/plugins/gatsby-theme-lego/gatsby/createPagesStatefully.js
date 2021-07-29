@@ -20,6 +20,7 @@ async function createPagesStatefully({ actions }, options) {
                     frontmatter: page.frontmatter,
                     prefix: pathPrefix,
                     section: section.name,
+                    indexable: !page.frontmatter.excludeFromSearch,
                 },
             });
         }

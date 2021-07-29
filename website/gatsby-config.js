@@ -39,6 +39,12 @@ module.exports = {
             },
         },
         {
+            resolve: 'gatsby-lunr-search',
+            options: {
+                shouldExcludeFromSearch: (node) => node.path.endsWith('changelog'),
+            },
+        },
+        {
             resolve: 'gatsby-plugin-postcss',
             options: {
                 postCssPlugins: [
