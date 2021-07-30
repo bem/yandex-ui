@@ -364,18 +364,14 @@ describe.each<any>(platforms)('Select@%s', (platform, Select: ComponentType<Sele
 
         test('при открытии Select должна изменяться иконка Icon', () => {
             const wrapper = mount(<Select options={[{ value: '1', content: 'Тест' }]} />);
+            expect(wrapper.find(Icon).prop('direction')).toBe('bottom');
+
             wrapper
                 .find('.Select2-Button')
                 .first()
                 .simulate('click');
             wrapper.setProps({ opened: true });
             expect(wrapper.find(Icon).prop('direction')).toBe('top');
-            wrapper
-                .find('.Select2-Button')
-                .first()
-                .simulate('click');
-            wrapper.setProps({ opened: false });
-            expect(wrapper.find(Icon).prop('direction')).toBe('bottom');
         });
 
         test('renderControl рисует select и туда прорастают свойства', () => {

@@ -1,4 +1,4 @@
-import React, { ComponentClass, ComponentType, PureComponent } from 'react';
+import React, { ComponentType, useEffect, memo, FC, useState, useCallback } from 'react';
 
 export interface IWithTogglableProps {
     /**
@@ -15,20 +15,30 @@ export interface IWithTogglableProps {
 /**
  * ХОК позволяющий управлять состоянием открытия и закрытия.
  */
-export const withTogglable = <T extends IWithTogglableProps>(
-    WrappedComponent: ComponentType<T>,
-): ComponentClass<T & IWithTogglableProps> => {
-    return class WithTogglable extends PureComponent<T & IWithTogglableProps> {
-        state = {
-            opened: false,
-        };
+export const withTogglable = <T extends IWithTogglableProps>(WrappedComponent: ComponentType<T>) => {
+    const WithTogglable: FC<T> = memo((props) => {
+        const { opened, setOpened } = props;
+        const [localOpened, setLocalOpened] = useState(Boolean(opened));
 
-        render() {
-            return <WrappedComponent {...this.props} opened={this.state.opened} setOpened={this.setOpened} />;
-        }
+        useEffect(() => {
+            if (typeof opened === 'boolean' && localOpened !== opened) {
+                setLocalOpened(opened);
+            }
+        }, [localOpened, opened]);
 
-        setOpened = (opened: boolean) => {
-            this.setState({ opened });
-        };
-    };
+        const handleSetOpened = useCallback(
+            (nextOpened: boolean) => {
+                setLocalOpened(nextOpened);
+
+                if (setOpened) {
+                    setOpened(nextOpened);
+                }
+            },
+            [setOpened],
+        );
+
+        return <WrappedComponent {...props} opened={localOpened} setOpened={handleSetOpened} />;
+    });
+
+    return WithTogglable;
 };
