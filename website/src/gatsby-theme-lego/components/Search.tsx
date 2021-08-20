@@ -66,6 +66,11 @@ export const Search: FC = () => {
         setSearchQuery('');
     }, []);
 
+    const popupClosed = useCallback(() => {
+        setSearchResults([]);
+        setSearchQuery('');
+    }, []);
+
     return (
         <>
             <Textinput
@@ -87,6 +92,7 @@ export const Search: FC = () => {
                 direction="bottom-end"
                 nonvisual
                 view="default"
+                onClose={popupClosed}
             >
                 <Menu style={{ maxHeight: '60vh', maxWidth: '500px' }} view="default" size="m">
                     {searchResults.map((result, index) => {
