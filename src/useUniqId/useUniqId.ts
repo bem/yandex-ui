@@ -1,7 +1,5 @@
-import { useContext, useMemo } from 'react';
-
-import { canUseDOM } from '../lib/canUseDOM';
-import { SSRContext, initialContextValue } from '../ssr';
+import { useState } from 'react';
+import { useUniqId as useBaseUniqId } from 'web-platform-alpha/libs/uniq-id';
 
 /**
  * Реакт-хук для генерации уникального id.
@@ -14,18 +12,11 @@ import { SSRContext, initialContextValue } from '../ssr';
  * @example
  * const id = useUniqId()
  */
-export function useUniqId(prefix: string = 'xuniq'): string {
-    const context = useContext(SSRContext);
-    // NOTE: Не используем кэширование через useRef или useState,
-    // т.к. в таком случае происходит постоянный инкремент значения.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    const id = useMemo(() => `${prefix}-${context.id}-${++context.value}`, []);
-
-    console.assert(
-        canUseDOM() || context !== initialContextValue,
-        'При серверном рендеринге необходимо обернуть приложение в <SSRProvider>' +
-        ' для синхронизации id между сервером и клиентом.',
-    );
+export function useUniqId(prefix?: string): string {
+    const uniqId = useBaseUniqId();
+    // NOTE: Не используем напрямую хук из web-platform для обратной совместимости,
+    // так как там нет префиксов
+    const [id] = useState(() => (prefix ? prefix + uniqId.replace('xuniq', '') : uniqId));
 
     return id;
 }

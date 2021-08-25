@@ -1,1 +1,1 @@
-export * from './SSRProvider';
+export * from 'web-platform-alpha/libs/ssr';
