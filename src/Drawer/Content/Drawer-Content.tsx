@@ -91,26 +91,6 @@ export const DrawerContent: FC<IDrawerContentProps> = ({
             data.isScrolled = data.isScrolled || data.initialScrollPosition - contentRef.current.scrollTop < 0;
         }
 
-        // предотвращает инерционный проскролл родительских элементов, если это возможно
-        if (event.cancelable && event.type === 'touchmove') {
-            if (data.isTargetUnderContent) {
-                // элемент проскроллен до верхней границы
-                if (contentRef.current.scrollTop <= 0 && my > 0) {
-                    event.preventDefault();
-                }
-
-                // элемент проскроллен до нижней границы
-                if (
-                    contentRef.current.scrollHeight - contentRef.current.scrollTop <= contentRef.current.clientHeight &&
-                    my < 0
-                ) {
-                    event.preventDefault();
-                }
-            } else {
-                event.preventDefault();
-            }
-        }
-
         // ничего не делаем когда жест происходит одновременно с проскроллом
         // или если шторка в статичном состоянии
         // @see SERP-107544
