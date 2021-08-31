@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spin должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  class="Spin2 mix"
+/>
+`;

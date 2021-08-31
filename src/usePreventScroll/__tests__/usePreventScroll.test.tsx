@@ -1,6 +1,6 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 
+import { createClientRender } from '../../internal/testing';
 import { usePreventScroll, UsePreventScrollOptions } from '../usePreventScroll';
 
 function Example(props: UsePreventScrollOptions) {
@@ -10,6 +10,8 @@ function Example(props: UsePreventScrollOptions) {
 }
 
 describe('usePreventScroll', () => {
+    const render = createClientRender();
+
     test('должен корректно устанавливать значение `overflow` для `body` по-умолчанию', () => {
         expect(document.body).not.toHaveStyle('overflow: hidden');
 

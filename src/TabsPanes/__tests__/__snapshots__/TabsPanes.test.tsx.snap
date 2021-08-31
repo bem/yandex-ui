@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabsPanes должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  class="TabsPanes mix"
+  role="tabpanel"
+>
+  <div
+    class="TabsPanes-Pane"
+    role="tabpanel"
+  >
+    Pane 1 Поиск
+  </div>
+</div>
+`;
+
+exports[`TabsPanes должен показывать новый jsx контент при изменении activePane (snapshot) 1`] = `
+<div
+  class="TabsPanes"
+  role="tabpanel"
+>
+  <div
+    class="TabsPanes-Pane"
+    role="tabpanel"
+  >
+    <div>
+      Pane 3 Маркет
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TabsPanes должно быть видно содержимое только активной панельки (snapshot) 1`] = `
+<div
+  class="TabsPanes"
+  role="tabpanel"
+>
+  <div
+    class="TabsPanes-Pane"
+    role="tabpanel"
+  >
+    Pane 1 Поиск
+  </div>
+</div>
+`;

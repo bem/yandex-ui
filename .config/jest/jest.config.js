@@ -14,7 +14,7 @@ module.exports = {
     moduleNameMapper: {
         '\\.css$': '<rootDir>/.config/jest/__mocks__/noop.js',
     },
-    snapshotSerializers: ['enzyme-to-json/serializer'],
+    modulePathIgnorePatterns: ['<rootDir>/dist'],
     globals: {
         'ts-jest': {
             tsconfig: '<rootDir>/tsconfig.test.json',

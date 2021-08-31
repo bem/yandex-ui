@@ -1,5 +1,4 @@
-import { fireEvent } from '@testing-library/react';
-
+import { fireEvent } from '../../internal/testing';
 import { OverlayManager, OverlayOptions } from '..';
 
 describe('useOverlay', () => {
@@ -85,7 +84,7 @@ describe('useOverlay', () => {
             options.closeStrategy = 'pressup';
 
             fireEvent.mouseDown(document.body);
-            fireEvent.click(document.body);
+            fireEvent.baseClick(document.body);
 
             expect(options.onClose).toBeCalledTimes(1);
             expect(options.onClose).toBeCalledWith(expect.objectContaining({ type: 'click' }), 'click');
@@ -110,7 +109,7 @@ describe('useOverlay', () => {
             options.closeStrategy = 'pressup';
 
             fireEvent.mouseDown(current);
-            fireEvent.click(current);
+            fireEvent.baseClick(current);
 
             expect(options.onClose).toBeCalledTimes(0);
 
@@ -127,7 +126,7 @@ describe('useOverlay', () => {
             manager.addOverlay(options);
 
             fireEvent.mouseDown(current);
-            fireEvent.click(document.body);
+            fireEvent.baseClick(document.body);
 
             expect(options.onClose).toBeCalledTimes(0);
 
@@ -144,7 +143,7 @@ describe('useOverlay', () => {
 
             fireEvent.keyUp(document.body, { key: 'Esc' });
             fireEvent.mouseDown(document.body);
-            fireEvent.click(document.body);
+            fireEvent.baseClick(document.body);
 
             options.onClose = onClose;
 
@@ -153,7 +152,7 @@ describe('useOverlay', () => {
 
             onClose.mockReset();
             fireEvent.mouseDown(document.body);
-            fireEvent.click(document.body);
+            fireEvent.baseClick(document.body);
             expect(onClose).toBeCalledTimes(1);
         });
 

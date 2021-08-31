@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Text mix"
+/>
+`;

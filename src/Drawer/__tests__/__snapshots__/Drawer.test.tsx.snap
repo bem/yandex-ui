@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Drawer должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  class="Popup2 Popup2_visible Drawer Drawer_visible Drawer_direction_bottom"
+  style="height: 768px;"
+>
+  <div
+    class="Drawer-DragObserver"
+  >
+    <div
+      class="Drawer-Overlay"
+      style="opacity: 1;"
+    />
+    <div
+      class="Drawer-Curtain"
+      style="transform: translate3d(0,0%,0);"
+    >
+      <div
+        class="Drawer-Handle"
+        style="opacity: 1;"
+      />
+      <div
+        class="Drawer-Content"
+      >
+        <p>
+          Phasellus sollicitudin in pellentesque cras sagittis platea mat
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

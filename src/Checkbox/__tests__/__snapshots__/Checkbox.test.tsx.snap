@@ -1,0 +1,253 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox@desktop должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Checkbox mix"
+>
+  <span
+    class="Checkbox-Box"
+  >
+    <input
+      aria-labelledby="label-clientTemplateId"
+      autocomplete="off"
+      class="Checkbox-Control"
+      id="clientTemplateId"
+      type="checkbox"
+    />
+    <span
+      class="Checkbox-Tick"
+    >
+      <span
+        aria-hidden="true"
+        class="Icon Icon_hasGlyph Icon_glyph_type-tick"
+      >
+        <svg
+          height="10"
+          viewBox="0 0 14 10"
+          width="14"
+        >
+          <path
+            d="M1.49 4.885l1.644-1.644 4.385 4.385L5.874 9.27 1.49 4.885zm4.384 1.096L11.356.5 13 2.144 7.519 7.626 5.874 5.98v.001z"
+          />
+        </svg>
+      </span>
+    </span>
+  </span>
+</span>
+`;
+
+exports[`Checkbox@desktop должен проставить в label произвольный tsx (snapshot) 1`] = `
+<span
+  class="Checkbox"
+>
+  <span
+    class="Checkbox-Box"
+  >
+    <input
+      aria-labelledby="label-clientTemplateId"
+      autocomplete="off"
+      class="Checkbox-Control"
+      id="clientTemplateId"
+      type="checkbox"
+    />
+    <span
+      class="Checkbox-Tick"
+    >
+      <span
+        aria-hidden="true"
+        class="Icon Icon_hasGlyph Icon_glyph_type-tick"
+      >
+        <svg
+          height="10"
+          viewBox="0 0 14 10"
+          width="14"
+        >
+          <path
+            d="M1.49 4.885l1.644-1.644 4.385 4.385L5.874 9.27 1.49 4.885zm4.384 1.096L11.356.5 13 2.144 7.519 7.626 5.874 5.98v.001z"
+          />
+        </svg>
+      </span>
+    </span>
+  </span>
+  <label
+    aria-hidden="true"
+    class="Checkbox-Label"
+    for="clientTemplateId"
+    id="label-clientTemplateId"
+  >
+    <div
+      class="custom"
+    >
+      content
+    </div>
+  </label>
+</span>
+`;
+
+exports[`Checkbox@touch-pad должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Checkbox mix"
+>
+  <span
+    class="Checkbox-Box"
+  >
+    <input
+      aria-labelledby="label-clientTemplateId"
+      autocomplete="off"
+      class="Checkbox-Control"
+      id="clientTemplateId"
+      type="checkbox"
+    />
+    <span
+      class="Checkbox-Tick"
+    >
+      <span
+        aria-hidden="true"
+        class="Icon Icon_hasGlyph Icon_glyph_type-tick"
+      >
+        <svg
+          height="10"
+          viewBox="0 0 14 10"
+          width="14"
+        >
+          <path
+            d="M1.49 4.885l1.644-1.644 4.385 4.385L5.874 9.27 1.49 4.885zm4.384 1.096L11.356.5 13 2.144 7.519 7.626 5.874 5.98v.001z"
+          />
+        </svg>
+      </span>
+    </span>
+  </span>
+</span>
+`;
+
+exports[`Checkbox@touch-pad должен проставить в label произвольный tsx (snapshot) 1`] = `
+<span
+  class="Checkbox"
+>
+  <span
+    class="Checkbox-Box"
+  >
+    <input
+      aria-labelledby="label-clientTemplateId"
+      autocomplete="off"
+      class="Checkbox-Control"
+      id="clientTemplateId"
+      type="checkbox"
+    />
+    <span
+      class="Checkbox-Tick"
+    >
+      <span
+        aria-hidden="true"
+        class="Icon Icon_hasGlyph Icon_glyph_type-tick"
+      >
+        <svg
+          height="10"
+          viewBox="0 0 14 10"
+          width="14"
+        >
+          <path
+            d="M1.49 4.885l1.644-1.644 4.385 4.385L5.874 9.27 1.49 4.885zm4.384 1.096L11.356.5 13 2.144 7.519 7.626 5.874 5.98v.001z"
+          />
+        </svg>
+      </span>
+    </span>
+  </span>
+  <label
+    aria-hidden="true"
+    class="Checkbox-Label"
+    for="clientTemplateId"
+    id="label-clientTemplateId"
+  >
+    <div
+      class="custom"
+    >
+      content
+    </div>
+  </label>
+</span>
+`;
+
+exports[`Checkbox@touch-phone должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Checkbox mix"
+>
+  <span
+    class="Checkbox-Box"
+  >
+    <input
+      aria-labelledby="label-clientTemplateId"
+      autocomplete="off"
+      class="Checkbox-Control"
+      id="clientTemplateId"
+      type="checkbox"
+    />
+    <span
+      class="Checkbox-Tick"
+    >
+      <span
+        aria-hidden="true"
+        class="Icon Icon_hasGlyph Icon_glyph_type-tick"
+      >
+        <svg
+          height="10"
+          viewBox="0 0 14 10"
+          width="14"
+        >
+          <path
+            d="M1.49 4.885l1.644-1.644 4.385 4.385L5.874 9.27 1.49 4.885zm4.384 1.096L11.356.5 13 2.144 7.519 7.626 5.874 5.98v.001z"
+          />
+        </svg>
+      </span>
+    </span>
+  </span>
+</span>
+`;
+
+exports[`Checkbox@touch-phone должен проставить в label произвольный tsx (snapshot) 1`] = `
+<span
+  class="Checkbox"
+>
+  <span
+    class="Checkbox-Box"
+  >
+    <input
+      aria-labelledby="label-clientTemplateId"
+      autocomplete="off"
+      class="Checkbox-Control"
+      id="clientTemplateId"
+      type="checkbox"
+    />
+    <span
+      class="Checkbox-Tick"
+    >
+      <span
+        aria-hidden="true"
+        class="Icon Icon_hasGlyph Icon_glyph_type-tick"
+      >
+        <svg
+          height="10"
+          viewBox="0 0 14 10"
+          width="14"
+        >
+          <path
+            d="M1.49 4.885l1.644-1.644 4.385 4.385L5.874 9.27 1.49 4.885zm4.384 1.096L11.356.5 13 2.144 7.519 7.626 5.874 5.98v.001z"
+          />
+        </svg>
+      </span>
+    </span>
+  </span>
+  <label
+    aria-hidden="true"
+    class="Checkbox-Label"
+    for="clientTemplateId"
+    id="label-clientTemplateId"
+  >
+    <div
+      class="custom"
+    >
+      content
+    </div>
+  </label>
+</span>
+`;

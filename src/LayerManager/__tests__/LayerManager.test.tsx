@@ -1,8 +1,8 @@
 import React, { FC, useRef } from 'react';
-import { render, fireEvent } from '@testing-library/react';
 
-import { LayerManager } from '../LayerManager';
+import { createClientRender, fireEvent, act } from '../../internal/testing';
 import { OverlayManager } from '../../useOverlay';
+import { LayerManager } from '../LayerManager';
 
 const LayerUnitCase: FC<any> = ({ onClose1, onClose2, onClose3, visible1, visible2, visible3 }) => {
     const contentRef1 = useRef<HTMLDivElement>(null);
@@ -26,13 +26,14 @@ const LayerUnitCase: FC<any> = ({ onClose1, onClose2, onClose3, visible1, visibl
 };
 
 describe('LayerManager', () => {
+    const render = createClientRender();
     const manager = OverlayManager.getInstance();
 
     test('должен быть установлен корректный displayName', () => {
         expect(LayerManager.displayName).toBe('LayerManager');
     });
 
-    test('должен при нажатии на esc вызывать onClose', async () => {
+    test('должен при нажатии на esc вызывать onClose', () => {
         const onClose1 = jest.fn();
         const onClose2 = jest.fn();
 
@@ -73,7 +74,7 @@ describe('LayerManager', () => {
         expect(manager.count()).toBe(0);
     });
 
-    test('должен при нажатии на область вне essentialRefs вызывать onClose', async () => {
+    test('должен при нажатии на область вне essentialRefs вызывать onClose', () => {
         const onClose1 = jest.fn();
         const onClose2 = jest.fn();
 
@@ -93,7 +94,7 @@ describe('LayerManager', () => {
 
         // Клик в контент не должен вызывать onClose.
         fireEvent.mouseDown(getByText(/content-2/));
-        fireEvent.click(getByText(/content-2/));
+        fireEvent.baseClick(getByText(/content-2/));
         expect(onClose2).toHaveBeenCalledTimes(0);
         expect(onClose1).toHaveBeenCalledTimes(0);
 
@@ -102,7 +103,7 @@ describe('LayerManager', () => {
 
         // mousedown в контент и click вне контента не должен вызывать onClose.
         fireEvent.mouseDown(getByText(/content-2/));
-        fireEvent.click(getByText(/content-1/));
+        fireEvent.baseClick(getByText(/content-1/));
         expect(onClose2).toHaveBeenCalledTimes(0);
         expect(onClose1).toHaveBeenCalledTimes(0);
 
@@ -111,7 +112,7 @@ describe('LayerManager', () => {
 
         // Клик вне контента должен вызывать onClose.
         fireEvent.mouseDown(getByText(/content-1/));
-        fireEvent.click(getByText(/content-1/));
+        fireEvent.baseClick(getByText(/content-1/));
         expect(onClose2).toHaveBeenCalledTimes(1);
         expect(onClose1).toHaveBeenCalledTimes(0);
 
@@ -124,7 +125,7 @@ describe('LayerManager', () => {
 
         // Клик вне контента должен вызывать onClose.
         fireEvent.mouseDown(document.body);
-        fireEvent.click(document.body);
+        fireEvent.baseClick(document.body);
         expect(onClose2).toHaveBeenCalledTimes(0);
         expect(onClose1).toHaveBeenCalledTimes(1);
 
@@ -133,7 +134,7 @@ describe('LayerManager', () => {
         expect(manager.count()).toBe(0);
     });
 
-    test('должен обновлять onClose', async () => {
+    test('должен обновлять onClose', () => {
         const onClose1 = jest.fn();
         const onClose2 = jest.fn();
         const onClose3 = jest.fn();
@@ -157,7 +158,7 @@ describe('LayerManager', () => {
         rerender(<LayerUnitCase visible1 visible2 onClose1={onClose1} onClose2={onClose3} />);
 
         fireEvent.mouseDown(document.body);
-        fireEvent.click(document.body);
+        fireEvent.baseClick(document.body);
         expect(onClose3).toHaveBeenCalledTimes(1);
         expect(onClose2).toHaveBeenCalledTimes(0);
         expect(onClose1).toHaveBeenCalledTimes(0);
@@ -171,13 +172,13 @@ describe('LayerManager', () => {
         expect(manager.count()).toBe(1);
 
         fireEvent.mouseDown(document.body);
-        fireEvent.click(document.body);
+        fireEvent.baseClick(document.body);
         expect(onClose3).toHaveBeenCalledTimes(0);
         expect(onClose2).toHaveBeenCalledTimes(0);
         expect(onClose1).toHaveBeenCalledTimes(1);
     });
 
-    test('должен корректно добавлять/удалять слои', async () => {
+    test('должен корректно добавлять/удалять слои', () => {
         const onClose = jest.fn();
 
         // Рендерим все слои невидимыми.
@@ -200,7 +201,10 @@ describe('LayerManager', () => {
         expect(manager.count()).toBe(1);
         expect(firstOverlayOptions).not.toBe(secondOverlatOptions);
 
-        unmount();
+        act(() => {
+            unmount();
+        });
+
         expect(manager.count()).toBe(0);
     });
 });

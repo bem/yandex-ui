@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  class="Badge mix"
+>
+  <div />
+  <div
+    class="Badge-Dot Badge-Dot_withChildren Badge-Dot_withContent"
+  >
+    1
+  </div>
+</div>
+`;

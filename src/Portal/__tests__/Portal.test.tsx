@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef } from 'react';
 
-import { Portal } from '../Portal';
 import { screen, queryByTestId, createClientRender, createServerRender, createContainer } from '../../internal/testing';
+import { Portal } from '../Portal';
 
 describe('Portal', () => {
     const render = createClientRender();

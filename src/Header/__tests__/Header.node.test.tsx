@@ -1,16 +1,17 @@
 /**
  * @jest-environment node
  */
-
 import React from 'react';
-import { renderToString } from 'react-dom/server';
 
+import { createServerRender } from '../../internal/testing';
 import { Header } from '../Header';
 
 describe('Header (ssr)', () => {
+    const render = createServerRender();
+
     test('should render correctly', () => {
-        const fn = () =>
-            renderToString(<Header />);
+        const fn = () => render(<Header />);
+
         expect(fn).not.toThrowError();
     });
 });

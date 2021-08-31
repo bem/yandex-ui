@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  aria-hidden="true"
+  class="Icon Icon_hasGlyph Icon_glyph_type-arrow mix"
+>
+  <svg
+    focusable="false"
+    height="8"
+    width="13"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M11.3 1L6.5 5.7 1.7 1l-.7.7L6.5 7 12 1.7l-.7-.7z"
+    />
+  </svg>
+</span>
+`;

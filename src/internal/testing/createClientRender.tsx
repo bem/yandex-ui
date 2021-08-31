@@ -9,7 +9,7 @@ type Render<T> = RenderResult & {
 
 function clientRender<T>(element: ReactElement<T>, options: RenderOptions = {}) {
     const { container, hydrate } = options;
-    const render = testingLibraryRender(element, { container, hydrate }) as Render<T>;
+    const render = testingLibraryRender(element, { container, hydrate });
 
     function setProps(props: any) {
         render.rerender(cloneElement(element, props));
@@ -17,7 +17,7 @@ function clientRender<T>(element: ReactElement<T>, options: RenderOptions = {}) 
 
     Object.assign(render, { setProps });
 
-    return render;
+    return render as Render<T>;
 }
 
 export function createClientRender() {

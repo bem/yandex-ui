@@ -1,0 +1,298 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MessageBox@desktop должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  class="MessageBox MessageBox_layout_plain mix"
+>
+  <div
+    class="MessageBox-Backdrop"
+  />
+  <div
+    class="MessageBox-Content"
+  />
+</div>
+`;
+
+exports[`MessageBox@desktop должен рендерить Background элемент (snapshot) 1`] = `
+<div
+  class="MessageBox MessageBox_layout_plain"
+>
+  <div
+    class="MessageBox-Backdrop"
+  >
+    <div
+      class="MessageBox-Background"
+    >
+      <div>
+        back
+      </div>
+    </div>
+  </div>
+  <div
+    class="MessageBox-Content"
+  />
+</div>
+`;
+
+exports[`MessageBox@desktop должен рендерить Close элемент (snapshot) 1`] = `
+<div
+  class="MessageBox MessageBox_layout_plain MessageBox_hasClose"
+>
+  <div
+    class="MessageBox-Backdrop"
+  />
+  <div
+    class="MessageBox-Content"
+  >
+    <button
+      aria-label="Закрыть"
+      class="MessageBox-Close"
+      type="button"
+    >
+      <svg
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M8 0a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8zM4.995 3.934L8 6.94l3.005-3.005 1.06 1.061L9.06 8l3.006 3.005-1.061 1.06L8 9.062l-3.005 3.005-1.06-1.061L6.938 8 3.934 4.995l1.06-1.06z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`MessageBox@desktop должен рендерить Corner элемент (snapshot) 1`] = `
+<div
+  class="MessageBox MessageBox_layout_plain"
+>
+  <div
+    class="MessageBox-Backdrop"
+  />
+  <div
+    class="MessageBox-Content"
+  />
+  <span
+    class="MessageBox-Corner"
+    style="width: 42px; height: 42px; left: -14px; bottom: -14px;"
+  >
+    <img />
+  </span>
+</div>
+`;
+
+exports[`MessageBox@desktop должен рендерить actions элемент (snapshot) 1`] = `
+<div
+  class="MessageBox MessageBox_layout_plain"
+>
+  <div
+    class="MessageBox-Backdrop"
+  />
+  <div
+    class="MessageBox-Content"
+  />
+  <div
+    class="MessageBox-Buttons"
+  >
+    <button />
+  </div>
+</div>
+`;
+
+exports[`MessageBox@touch-pad должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  class="MessageBox MessageBox_layout_plain mix"
+>
+  <div
+    class="MessageBox-Backdrop"
+  />
+  <div
+    class="MessageBox-Content"
+  />
+</div>
+`;
+
+exports[`MessageBox@touch-pad должен рендерить Background элемент (snapshot) 1`] = `
+<div
+  class="MessageBox MessageBox_layout_plain"
+>
+  <div
+    class="MessageBox-Backdrop"
+  >
+    <div
+      class="MessageBox-Background"
+    >
+      <div>
+        back
+      </div>
+    </div>
+  </div>
+  <div
+    class="MessageBox-Content"
+  />
+</div>
+`;
+
+exports[`MessageBox@touch-pad должен рендерить Close элемент (snapshot) 1`] = `
+<div
+  class="MessageBox MessageBox_layout_plain MessageBox_hasClose"
+>
+  <div
+    class="MessageBox-Backdrop"
+  />
+  <div
+    class="MessageBox-Content"
+  >
+    <button
+      aria-label="Закрыть"
+      class="MessageBox-Close"
+      type="button"
+    >
+      <svg
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M8 0a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8zM4.995 3.934L8 6.94l3.005-3.005 1.06 1.061L9.06 8l3.006 3.005-1.061 1.06L8 9.062l-3.005 3.005-1.06-1.061L6.938 8 3.934 4.995l1.06-1.06z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`MessageBox@touch-pad должен рендерить Corner элемент (snapshot) 1`] = `
+<div
+  class="MessageBox MessageBox_layout_plain"
+>
+  <div
+    class="MessageBox-Backdrop"
+  />
+  <div
+    class="MessageBox-Content"
+  />
+  <span
+    class="MessageBox-Corner"
+    style="width: 42px; height: 42px; left: -14px; bottom: -14px;"
+  >
+    <img />
+  </span>
+</div>
+`;
+
+exports[`MessageBox@touch-pad должен рендерить actions элемент (snapshot) 1`] = `
+<div
+  class="MessageBox MessageBox_layout_plain"
+>
+  <div
+    class="MessageBox-Backdrop"
+  />
+  <div
+    class="MessageBox-Content"
+  />
+  <div
+    class="MessageBox-Buttons"
+  >
+    <button />
+  </div>
+</div>
+`;
+
+exports[`MessageBox@touch-phone должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  class="MessageBox MessageBox_layout_plain mix"
+>
+  <div
+    class="MessageBox-Backdrop"
+  />
+  <div
+    class="MessageBox-Content"
+  />
+</div>
+`;
+
+exports[`MessageBox@touch-phone должен рендерить Background элемент (snapshot) 1`] = `
+<div
+  class="MessageBox MessageBox_layout_plain"
+>
+  <div
+    class="MessageBox-Backdrop"
+  >
+    <div
+      class="MessageBox-Background"
+    >
+      <div>
+        back
+      </div>
+    </div>
+  </div>
+  <div
+    class="MessageBox-Content"
+  />
+</div>
+`;
+
+exports[`MessageBox@touch-phone должен рендерить Close элемент (snapshot) 1`] = `
+<div
+  class="MessageBox MessageBox_layout_plain MessageBox_hasClose"
+>
+  <div
+    class="MessageBox-Backdrop"
+  />
+  <div
+    class="MessageBox-Content"
+  >
+    <button
+      aria-label="Закрыть"
+      class="MessageBox-Close"
+      type="button"
+    >
+      <svg
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M8 0a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8zM4.995 3.934L8 6.94l3.005-3.005 1.06 1.061L9.06 8l3.006 3.005-1.061 1.06L8 9.062l-3.005 3.005-1.06-1.061L6.938 8 3.934 4.995l1.06-1.06z"
+          fill="currentColor"
+        />
+      </svg>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`MessageBox@touch-phone должен рендерить Corner элемент (snapshot) 1`] = `
+<div
+  class="MessageBox MessageBox_layout_plain"
+>
+  <div
+    class="MessageBox-Backdrop"
+  />
+  <div
+    class="MessageBox-Content"
+  />
+  <span
+    class="MessageBox-Corner"
+    style="width: 42px; height: 42px; left: -14px; bottom: -14px;"
+  >
+    <img />
+  </span>
+</div>
+`;
+
+exports[`MessageBox@touch-phone должен рендерить actions элемент (snapshot) 1`] = `
+<div
+  class="MessageBox MessageBox_layout_plain"
+>
+  <div
+    class="MessageBox-Backdrop"
+  />
+  <div
+    class="MessageBox-Content"
+  />
+  <div
+    class="MessageBox-Buttons"
+  >
+    <button />
+  </div>
+</div>
+`;

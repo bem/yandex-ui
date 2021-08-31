@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioButton@desktop должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="RadioButton mix"
+  role="radiogroup"
+>
+  <div
+    class="RadioButton-Plate"
+    hidden=""
+  />
+  <label
+    class="RadioButton-Radio"
+  >
+    <input
+      autocomplete="off"
+      class="RadioButton-Control"
+      name="rb"
+      type="radio"
+      value="a"
+    />
+    <div
+      class="RadioButton-Content"
+    >
+      Option A
+    </div>
+  </label>
+  <label
+    class="RadioButton-Radio RadioButton-Radio_checked"
+  >
+    <input
+      autocomplete="off"
+      checked=""
+      class="RadioButton-Control"
+      name="rb"
+      type="radio"
+      value="b"
+    />
+    <div
+      class="RadioButton-Content"
+    >
+      Option B
+    </div>
+  </label>
+</span>
+`;
+
+exports[`RadioButton@touch-pad должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="RadioButton mix"
+  role="radiogroup"
+>
+  <div
+    class="RadioButton-Plate"
+    hidden=""
+  />
+  <label
+    class="RadioButton-Radio"
+  >
+    <input
+      autocomplete="off"
+      class="RadioButton-Control"
+      name="rb"
+      type="radio"
+      value="a"
+    />
+    <div
+      class="RadioButton-Content"
+    >
+      Option A
+    </div>
+  </label>
+  <label
+    class="RadioButton-Radio RadioButton-Radio_checked"
+  >
+    <input
+      autocomplete="off"
+      checked=""
+      class="RadioButton-Control"
+      name="rb"
+      type="radio"
+      value="b"
+    />
+    <div
+      class="RadioButton-Content"
+    >
+      Option B
+    </div>
+  </label>
+</span>
+`;
+
+exports[`RadioButton@touch-phone должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="RadioButton mix"
+  role="radiogroup"
+>
+  <div
+    class="RadioButton-Plate"
+    hidden=""
+  />
+  <label
+    class="RadioButton-Radio"
+  >
+    <input
+      autocomplete="off"
+      class="RadioButton-Control"
+      name="rb"
+      type="radio"
+      value="a"
+    />
+    <div
+      class="RadioButton-Content"
+    >
+      Option A
+    </div>
+  </label>
+  <label
+    class="RadioButton-Radio RadioButton-Radio_checked"
+  >
+    <input
+      autocomplete="off"
+      checked=""
+      class="RadioButton-Control"
+      name="rb"
+      type="radio"
+      value="b"
+    />
+    <div
+      class="RadioButton-Content"
+    >
+      Option B
+    </div>
+  </label>
+</span>
+`;

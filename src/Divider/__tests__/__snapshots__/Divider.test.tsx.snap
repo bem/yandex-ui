@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Divider должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  class="Divider mix"
+>
+  <span
+    class="Divider-Line"
+    style="height: 1px;"
+  />
+</div>
+`;

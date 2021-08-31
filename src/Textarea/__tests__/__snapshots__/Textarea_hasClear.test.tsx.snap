@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Textarea_hasClear@desktop должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Textarea Textarea_hasClear"
+>
+  <span
+    aria-hidden="true"
+    class="Icon Icon_type_cross Textarea-Clear"
+  />
+  <span
+    class="Textarea-Wrap"
+  >
+    <textarea
+      aria-invalid="false"
+      class="Textarea-Control"
+    />
+    <span
+      class="Textarea-Box"
+    />
+  </span>
+</span>
+`;
+
+exports[`Textarea_hasClear@touch-pad должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Textarea Textarea_hasClear"
+>
+  <span
+    aria-hidden="true"
+    class="Icon Icon_type_cross Textarea-Clear"
+  />
+  <span
+    class="Textarea-Wrap"
+  >
+    <textarea
+      aria-invalid="false"
+      class="Textarea-Control"
+    />
+    <span
+      class="Textarea-Box"
+    />
+  </span>
+</span>
+`;
+
+exports[`Textarea_hasClear@touch-phone должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Textarea Textarea_hasClear"
+>
+  <span
+    aria-hidden="true"
+    class="Icon Icon_type_cross Textarea-Clear"
+  />
+  <span
+    class="Textarea-Wrap"
+  >
+    <textarea
+      aria-invalid="false"
+      class="Textarea-Control"
+    />
+    <span
+      class="Textarea-Box"
+    />
+  </span>
+</span>
+`;

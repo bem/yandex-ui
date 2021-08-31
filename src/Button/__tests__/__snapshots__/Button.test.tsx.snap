@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button@desktop должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<button
+  autocomplete="off"
+  class="Button2 mix"
+  id="clientTemplateId"
+  type="button"
+>
+  <i
+    class="Button2-Icon iconLeft"
+  />
+  <i
+    class="Button2-Icon iconRight"
+  />
+</button>
+`;
+
+exports[`Button@touch-pad должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<button
+  autocomplete="off"
+  class="Button2 mix"
+  id="clientTemplateId"
+  type="button"
+>
+  <i
+    class="Button2-Icon iconLeft"
+  />
+  <i
+    class="Button2-Icon iconRight"
+  />
+</button>
+`;
+
+exports[`Button@touch-phone должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<button
+  autocomplete="off"
+  class="Button2 mix"
+  id="clientTemplateId"
+  type="button"
+>
+  <i
+    class="Button2-Icon iconLeft"
+  />
+  <i
+    class="Button2-Icon iconRight"
+  />
+</button>
+`;

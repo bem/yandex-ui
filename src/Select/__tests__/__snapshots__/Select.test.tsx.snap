@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select@desktop должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Select2 mix"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    aria-multiselectable="false"
+    aria-pressed="false"
+    autocomplete="off"
+    class="Button2 Button2_width_max Select2-Button"
+    role="listbox"
+    type="button"
+  >
+    <span
+      aria-hidden="true"
+      class="Icon Icon_direction_bottom Icon_type_arrow Button2-Icon Button2-Icon_side_right"
+    />
+    <span
+      class="Button2-Text"
+    >
+      —
+    </span>
+  </button>
+</span>
+`;
+
+exports[`Select@touch-pad должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Select2 mix"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    aria-multiselectable="false"
+    aria-pressed="false"
+    autocomplete="off"
+    class="Button2 Button2_width_max Select2-Button"
+    role="listbox"
+    type="button"
+  >
+    <span
+      aria-hidden="true"
+      class="Icon Icon_direction_bottom Icon_type_arrow Button2-Icon Button2-Icon_side_right"
+    />
+    <span
+      class="Button2-Text"
+    >
+      —
+    </span>
+  </button>
+  <select
+    class="Select2-Control"
+    tabindex="-1"
+  >
+    <option
+      value="1"
+    >
+      Тест
+    </option>
+  </select>
+</span>
+`;
+
+exports[`Select@touch-phone должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Select2 mix"
+>
+  <button
+    aria-expanded="false"
+    aria-haspopup="true"
+    aria-multiselectable="false"
+    aria-pressed="false"
+    autocomplete="off"
+    class="Button2 Button2_width_max Select2-Button"
+    role="listbox"
+    type="button"
+  >
+    <span
+      aria-hidden="true"
+      class="Icon Icon_direction_bottom Icon_type_arrow Button2-Icon Button2-Icon_side_right"
+    />
+    <span
+      class="Button2-Text"
+    >
+      —
+    </span>
+  </button>
+  <select
+    class="Select2-Control"
+    tabindex="-1"
+  >
+    <option
+      value="1"
+    >
+      Тест
+    </option>
+  </select>
+</span>
+`;

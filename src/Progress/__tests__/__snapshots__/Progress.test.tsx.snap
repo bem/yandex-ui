@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Progress должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  class="Progress mix"
+>
+  <div
+    class="Progress-Inner"
+    style="width: 0px;"
+  />
+</div>
+`;

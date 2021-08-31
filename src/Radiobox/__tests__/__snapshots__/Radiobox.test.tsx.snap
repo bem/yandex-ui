@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radiobox@desktop должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Radiobox mix"
+  role="radiogroup"
+>
+  <label
+    class="Radiobox-Radio Radiobox-Radio_checked"
+  >
+    <span
+      class="Radiobox-Box"
+    >
+      <input
+        aria-checked="true"
+        aria-labelledby="label-0"
+        autocomplete="off"
+        checked=""
+        class="Radiobox-Control"
+        name="radio"
+        type="radio"
+        value="a"
+      />
+    </span>
+    <span
+      aria-hidden="true"
+      class="Radiobox-Text"
+      id="label-0"
+    >
+      Option A
+    </span>
+  </label>
+  <label
+    class="Radiobox-Radio"
+  >
+    <span
+      class="Radiobox-Box"
+    >
+      <input
+        aria-checked="false"
+        aria-labelledby="label-0"
+        autocomplete="off"
+        class="Radiobox-Control"
+        name="radio"
+        type="radio"
+        value="b"
+      />
+    </span>
+    <span
+      aria-hidden="true"
+      class="Radiobox-Text"
+      id="label-0"
+    >
+      Option B
+    </span>
+  </label>
+</span>
+`;
+
+exports[`Radiobox@touch-pad должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Radiobox mix"
+  role="radiogroup"
+>
+  <label
+    class="Radiobox-Radio Radiobox-Radio_checked"
+  >
+    <span
+      class="Radiobox-Box"
+    >
+      <input
+        aria-checked="true"
+        aria-labelledby="label-0"
+        autocomplete="off"
+        checked=""
+        class="Radiobox-Control"
+        name="radio"
+        type="radio"
+        value="a"
+      />
+    </span>
+    <span
+      aria-hidden="true"
+      class="Radiobox-Text"
+      id="label-0"
+    >
+      Option A
+    </span>
+  </label>
+  <label
+    class="Radiobox-Radio"
+  >
+    <span
+      class="Radiobox-Box"
+    >
+      <input
+        aria-checked="false"
+        aria-labelledby="label-0"
+        autocomplete="off"
+        class="Radiobox-Control"
+        name="radio"
+        type="radio"
+        value="b"
+      />
+    </span>
+    <span
+      aria-hidden="true"
+      class="Radiobox-Text"
+      id="label-0"
+    >
+      Option B
+    </span>
+  </label>
+</span>
+`;
+
+exports[`Radiobox@touch-phone должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Radiobox mix"
+  role="radiogroup"
+>
+  <label
+    class="Radiobox-Radio Radiobox-Radio_checked"
+  >
+    <span
+      class="Radiobox-Box"
+    >
+      <input
+        aria-checked="true"
+        aria-labelledby="label-0"
+        autocomplete="off"
+        checked=""
+        class="Radiobox-Control"
+        name="radio"
+        type="radio"
+        value="a"
+      />
+    </span>
+    <span
+      aria-hidden="true"
+      class="Radiobox-Text"
+      id="label-0"
+    >
+      Option A
+    </span>
+  </label>
+  <label
+    class="Radiobox-Radio"
+  >
+    <span
+      class="Radiobox-Box"
+    >
+      <input
+        aria-checked="false"
+        aria-labelledby="label-0"
+        autocomplete="off"
+        class="Radiobox-Control"
+        name="radio"
+        type="radio"
+        value="b"
+      />
+    </span>
+    <span
+      aria-hidden="true"
+      class="Radiobox-Text"
+      id="label-0"
+    >
+      Option B
+    </span>
+  </label>
+</span>
+`;

@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tumbler@desktop должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Tumbler unit-mixin"
+  id="static-id"
+>
+  <label
+    aria-hidden="true"
+    class="Tumbler-Label"
+    id="before-label-static-id"
+  >
+    labelBefore
+  </label>
+  <button
+    aria-labelledby="after-label-static-id"
+    aria-pressed="false"
+    class="Tumbler-Button"
+    tabindex="1"
+    type="button"
+  />
+  <input
+    autocomplete="off"
+    class="Tumbler-Control"
+    hidden=""
+    id="control-static-id"
+    name="switch"
+    type="checkbox"
+    value="false"
+  />
+  <label
+    aria-hidden="true"
+    class="Tumbler-Label"
+    for="control-static-id"
+    id="after-label-static-id"
+  >
+    labelAfter
+  </label>
+</span>
+`;
+
+exports[`Tumbler@touch-pad должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Tumbler unit-mixin"
+  id="static-id"
+>
+  <label
+    aria-hidden="true"
+    class="Tumbler-Label"
+    id="before-label-static-id"
+  >
+    labelBefore
+  </label>
+  <button
+    aria-labelledby="after-label-static-id"
+    aria-pressed="false"
+    class="Tumbler-Button"
+    tabindex="1"
+    type="button"
+  />
+  <input
+    autocomplete="off"
+    class="Tumbler-Control"
+    hidden=""
+    id="control-static-id"
+    name="switch"
+    type="checkbox"
+    value="false"
+  />
+  <label
+    aria-hidden="true"
+    class="Tumbler-Label"
+    for="control-static-id"
+    id="after-label-static-id"
+  >
+    labelAfter
+  </label>
+</span>
+`;
+
+exports[`Tumbler@touch-phone должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Tumbler unit-mixin"
+  id="static-id"
+>
+  <label
+    aria-hidden="true"
+    class="Tumbler-Label"
+    id="before-label-static-id"
+  >
+    labelBefore
+  </label>
+  <button
+    aria-labelledby="after-label-static-id"
+    aria-pressed="false"
+    class="Tumbler-Button"
+    tabindex="1"
+    type="button"
+  />
+  <input
+    autocomplete="off"
+    class="Tumbler-Control"
+    hidden=""
+    id="control-static-id"
+    name="switch"
+    type="checkbox"
+    value="false"
+  />
+  <label
+    aria-hidden="true"
+    class="Tumbler-Label"
+    for="control-static-id"
+    id="after-label-static-id"
+  >
+    labelAfter
+  </label>
+</span>
+`;

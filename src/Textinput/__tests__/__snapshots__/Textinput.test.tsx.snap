@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Textinput@desktop должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Textinput mix"
+>
+  <input
+    aria-invalid="false"
+    autocomplete="off"
+    class="Textinput-Control"
+    value=""
+  />
+  <span
+    class="Textinput-Box"
+  />
+</span>
+`;
+
+exports[`Textinput@touch-pad должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Textinput mix"
+>
+  <input
+    aria-invalid="false"
+    autocomplete="off"
+    class="Textinput-Control"
+    value=""
+  />
+  <span
+    class="Textinput-Box"
+  />
+</span>
+`;
+
+exports[`Textinput@touch-phone должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<span
+  class="Textinput mix"
+>
+  <input
+    aria-invalid="false"
+    autocomplete="off"
+    class="Textinput-Control"
+    value=""
+  />
+  <span
+    class="Textinput-Box"
+  />
+</span>
+`;

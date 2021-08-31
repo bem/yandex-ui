@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ListTile должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  class="ListTile mix"
+>
+  <div
+    class="ListTile-Wrapper"
+  >
+    Text
+  </div>
+</div>
+`;

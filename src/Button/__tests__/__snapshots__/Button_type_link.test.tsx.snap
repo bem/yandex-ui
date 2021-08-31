@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button_type_link@desktop должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<a
+  class="Button2 Button2_type_link"
+/>
+`;
+
+exports[`Button_type_link@touch-pad должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<a
+  class="Button2 Button2_type_link"
+/>
+`;
+
+exports[`Button_type_link@touch-phone должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<a
+  class="Button2 Button2_type_link"
+/>
+`;

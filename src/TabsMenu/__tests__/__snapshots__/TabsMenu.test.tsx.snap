@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabsMenu@desktop должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<ul
+  aria-orientation="vertical"
+  class="TabsMenu mix"
+  role="tablist"
+>
+  <li
+    aria-selected="true"
+    class="TabsMenu-Tab TabsMenu-Tab_active TabsMenu-Tab_first"
+    role="tab"
+    tabindex="0"
+  >
+    Поиск
+  </li>
+  <li
+    aria-selected="false"
+    class="TabsMenu-Tab"
+    role="tab"
+    tabindex="-1"
+  >
+    <div>
+      Картинки
+    </div>
+  </li>
+  <li
+    aria-selected="false"
+    class="TabsMenu-Tab TabsMenu-Tab_disabled"
+    role="tab"
+  >
+    Видео
+  </li>
+  <li
+    aria-selected="false"
+    class="TabsMenu-Tab"
+    role="tab"
+    tabindex="-1"
+  >
+    Карты
+  </li>
+</ul>
+`;
+
+exports[`TabsMenu@touch-pad должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<ul
+  aria-orientation="vertical"
+  class="TabsMenu mix"
+  role="tablist"
+>
+  <li
+    aria-selected="true"
+    class="TabsMenu-Tab TabsMenu-Tab_active TabsMenu-Tab_first"
+    role="tab"
+    tabindex="0"
+  >
+    Поиск
+  </li>
+  <li
+    aria-selected="false"
+    class="TabsMenu-Tab"
+    role="tab"
+    tabindex="-1"
+  >
+    <div>
+      Картинки
+    </div>
+  </li>
+  <li
+    aria-selected="false"
+    class="TabsMenu-Tab TabsMenu-Tab_disabled"
+    role="tab"
+  >
+    Видео
+  </li>
+  <li
+    aria-selected="false"
+    class="TabsMenu-Tab"
+    role="tab"
+    tabindex="-1"
+  >
+    Карты
+  </li>
+</ul>
+`;
+
+exports[`TabsMenu@touch-phone должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<ul
+  aria-orientation="vertical"
+  class="TabsMenu mix"
+  role="tablist"
+>
+  <li
+    aria-selected="true"
+    class="TabsMenu-Tab TabsMenu-Tab_active TabsMenu-Tab_first"
+    role="tab"
+    tabindex="0"
+  >
+    Поиск
+  </li>
+  <li
+    aria-selected="false"
+    class="TabsMenu-Tab"
+    role="tab"
+    tabindex="-1"
+  >
+    <div>
+      Картинки
+    </div>
+  </li>
+  <li
+    aria-selected="false"
+    class="TabsMenu-Tab TabsMenu-Tab_disabled"
+    role="tab"
+  >
+    Видео
+  </li>
+  <li
+    aria-selected="false"
+    class="TabsMenu-Tab"
+    role="tab"
+    tabindex="-1"
+  >
+    Карты
+  </li>
+</ul>
+`;

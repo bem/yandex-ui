@@ -1,5 +1,4 @@
-import { getByTestId } from '@testing-library/react';
-
+import { getByTestId } from '../../../internal/testing';
 import { getTabbables } from '../tabbable';
 import { createGuard, isFocusFree, isGuard, focusFirstIn, getNextTabbableIndex } from '../utils';
 import { basicFixture } from './fixtures';

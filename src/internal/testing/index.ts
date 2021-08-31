@@ -5,7 +5,11 @@ import { fireEvent as fireEventBase } from './createClientRender';
 export * from './createClientRender';
 export * from './createServerRender';
 
-export const fireEvent = { ...fireEventBase, ...userEvent };
+export const fireEvent = Object.assign(fireEventBase.bind(null), {
+    ...fireEventBase,
+    baseClick: fireEventBase.click,
+    ...userEvent,
+});
 
 export function createContainer(html: string): HTMLDivElement {
     const container = document.createElement('div');

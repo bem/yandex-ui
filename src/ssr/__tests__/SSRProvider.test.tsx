@@ -1,27 +1,29 @@
 import React from 'react';
-import { render } from '@testing-library/react';
 
-import { SSRProvider } from '../index';
+import { createClientRender, screen } from '../../internal/testing';
 import { useUniqId } from '../../useUniqId';
+import { SSRProvider } from '../index';
 
 const UnitCase = () => <div data-testid="test" id={useUniqId()} />;
 
 describe('SSRProvider', () => {
-    it('should generate stable ids', function() {
-        const { getAllByTestId } = render(
+    const render = createClientRender();
+
+    it('should generate stable ids', () => {
+        render(
             <SSRProvider>
                 <UnitCase />
                 <UnitCase />
             </SSRProvider>,
         );
-        const nodes = getAllByTestId('test');
+        const nodes = screen.getAllByTestId('test');
 
         expect(nodes[0].id).toBe('xuniq-0-1');
         expect(nodes[1].id).toBe('xuniq-0-2');
     });
 
-    it('should generate stable ids with nested SSRProvider', function() {
-        const { getAllByTestId } = render(
+    it('should generate stable ids with nested SSRProvider', () => {
+        render(
             <SSRProvider>
                 <SSRProvider>
                     <UnitCase />
@@ -31,7 +33,7 @@ describe('SSRProvider', () => {
                 </SSRProvider>
             </SSRProvider>,
         );
-        const nodes = getAllByTestId('test');
+        const nodes = screen.getAllByTestId('test');
 
         expect(nodes[0].id).toBe('xuniq-1-1');
         expect(nodes[1].id).toBe('xuniq-2-1');

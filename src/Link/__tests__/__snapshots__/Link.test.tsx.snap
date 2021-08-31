@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link@desktop должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<a
+  class="Link mix"
+  href="www.test.ru"
+>
+  Content
+</a>
+`;
+
+exports[`Link@desktop должен рендерить псевдо ссылку 1`] = `
+<a
+  class="Link Link_pseudo"
+  href="www.test.ru"
+>
+  Content
+</a>
+`;
+
+exports[`Link@touch-pad должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<a
+  class="Link mix"
+  href="www.test.ru"
+>
+  Content
+</a>
+`;
+
+exports[`Link@touch-pad должен рендерить псевдо ссылку 1`] = `
+<a
+  class="Link Link_pseudo"
+  href="www.test.ru"
+>
+  Content
+</a>
+`;
+
+exports[`Link@touch-phone должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<a
+  class="Link mix"
+  href="www.test.ru"
+>
+  Content
+</a>
+`;
+
+exports[`Link@touch-phone должен рендерить псевдо ссылку 1`] = `
+<a
+  class="Link Link_pseudo"
+  href="www.test.ru"
+>
+  Content
+</a>
+`;

@@ -1,13 +1,13 @@
 import React, { createRef } from 'react';
-import { render, screen, cleanup } from '@testing-library/react';
 
+import { createClientRender, screen, cleanup } from '../../internal/testing';
 import { Header } from '../Header';
 
 describe('Header', () => {
+    const render = createClientRender();
+
     test('should render correctly', () => {
-        const { container } = render(
-            <Header />,
-        );
+        const { container } = render(<Header />);
         expect(container).toMatchSnapshot();
     });
 
