@@ -8,6 +8,7 @@ import React, {
     RefObject,
     Ref,
 } from 'react';
+import { unstable_batchedUpdates } from 'react-dom';
 import { withRegistry, ComponentRegistryConsumer } from '@bem-react/di';
 
 import { Defaultize } from '../typings/utility-types';
@@ -328,15 +329,21 @@ const SelectPresenter = class extends PureComponent<SelectProps> {
             event.target = this.controlRef.current;
             event.target.value = value;
         }
-        if (this.props.onChange !== undefined) {
-            this.props.onChange(event as ChangeEvent<HTMLSelectElement>);
-        }
 
-        if (this.props.setOpened !== undefined) {
-            if (!Array.isArray(this.props.value)) {
-                this.props.setOpened(false);
+        // батчим onChange и setOpened, чтобы избежать двойного ререндера
+        // и исправить баг скачка попапа при выборе с клавиатуры
+        // @see https://st.yandex-team.ru/ISL-9707
+        unstable_batchedUpdates(() => {
+            if (this.props.onChange !== undefined) {
+                this.props.onChange(event as ChangeEvent<HTMLSelectElement>);
             }
-        }
+
+            if (this.props.setOpened !== undefined) {
+                if (!Array.isArray(this.props.value)) {
+                    this.props.setOpened(false);
+                }
+            }
+        });
 
         if (this.preventClosable) {
             this.preventClosable = false;
