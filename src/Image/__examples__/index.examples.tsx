@@ -4,7 +4,7 @@ export * from './width-height';
 export * from './playground';
 
 export default {
-    title: 'Content|Image/desktop',
+    title: 'Content/Image/desktop',
     parameters: {
         docs: {
             readme: require('../readme.md'),

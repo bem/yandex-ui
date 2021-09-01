@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import { withKnobs, select, boolean, object } from '@storybook/addon-knobs';
+import { select, boolean, object } from '@storybook/addon-knobs';
 
 import { cnTheme } from '../../Theme';
 import { presets, presetsKeys } from '../../Theme/presets';
 import { Select } from '../touch-phone/bundle';
-import { EXAMPLE_TOUCH_PHONE_TOKEN, parameters } from './examples-config';
 
 export default {
-    title: EXAMPLE_TOUCH_PHONE_TOKEN,
-    decorators: [withKnobs],
-    parameters,
+    title: 'Controls/Select/touch-phone',
+    parameters: {
+        docs: {
+            readme: require('../readme.md'),
+        },
+    },
 };
 
 const rawOptions = [
@@ -45,8 +47,4 @@ export const Playground = () => {
             />
         </div>
     );
-};
-
-Playground.story = {
-    name: 'playground',
 };

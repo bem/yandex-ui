@@ -11,7 +11,7 @@ export * from './playground.examples';
 export * from './showcase.examples';
 
 export default {
-    title: 'Controls|ButtonGroup/desktop',
+    title: 'Controls/ButtonGroup/desktop',
     parameters: {
         docs: {
             readme: require('../readme.md'),

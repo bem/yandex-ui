@@ -9,7 +9,7 @@ export * from './showcase';
 export * from './stepped';
 
 export default {
-    title: 'Controls|Slider/desktop',
+    title: 'Controls/Slider/desktop',
     parameters: {
         docs: {
             readme: require('../readme.md'),

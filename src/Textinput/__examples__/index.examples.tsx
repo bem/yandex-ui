@@ -11,7 +11,7 @@ export * from './view';
 export * from './miniapps';
 
 export default {
-    title: 'Controls|Textinput/desktop',
+    title: 'Controls/Textinput/desktop',
     parameters: {
         docs: {
             readme: require('../readme.md'),

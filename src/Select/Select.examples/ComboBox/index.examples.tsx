@@ -1,13 +1,7 @@
 import React from 'react';
 import { ComboBox, IItem } from './index';
-import { EXAMPLE_DESKTOP_TOKEN, parameters } from '../examples-config';
 import { Text } from '../../../Text/desktop/bundle';
 import { Link } from '../../../Link/desktop/bundle';
-
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    parameters,
-};
 
 const items: IItem[] = [
     {
@@ -65,7 +59,8 @@ export const ComboBoxExample = () => {
     return (
         <>
             <Text as="p" typography="headline-m">
-                А вы знали, что из компонентов <Text color="brand">Лего</Text> можно собрать <Text color="success">ComboBox</Text>?
+                А вы знали, что из компонентов <Text color="brand">Лего</Text> можно собрать{' '}
+                <Text color="success">ComboBox</Text>?
             </Text>
             <ComboBox
                 style={{ width: 300 }}
@@ -77,14 +72,13 @@ export const ComboBoxExample = () => {
                 options={options}
             />
             <Text as="p" typography="body-long-m">
-                <Link view="default" href="https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/Select/Select.examples/ComboBox">
+                <Link
+                    view="default"
+                    href="https://github.yandex-team.ru/search-interfaces/frontend/tree/master/packages/lego-components/src/Select/Select.examples/ComboBox"
+                >
                     Ссылка на исходники
                 </Link>
             </Text>
         </>
     );
-};
-
-ComboBoxExample.story = {
-    name: 'ComboBox',
 };

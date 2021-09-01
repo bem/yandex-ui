@@ -5,6 +5,6 @@ export * from './range-calendar';
 export * from './multiple-calendar';
 
 export default {
-    title: 'Hermione|Calendar@next',
+    title: 'Hermione/Calendar@next',
     excludeStories: IS_PRODUCTION ? /Hermione/ : null,
 };

@@ -6,7 +6,7 @@ export * from './withStyles';
 export * from './withText';
 
 export default {
-    title: 'Content|Divider/desktop',
+    title: 'Content/Divider/desktop',
     parameters: {
         docs: {
             readme: require('../readme.md'),

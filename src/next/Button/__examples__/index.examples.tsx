@@ -11,7 +11,7 @@ export * from './width';
 export * from './perf';
 
 export default {
-    title: 'Next|Button',
+    title: 'Next/Button',
     parameters: {
         docs: {
             readme: require('../readme.md'),

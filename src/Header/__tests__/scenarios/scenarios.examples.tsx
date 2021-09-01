@@ -6,6 +6,6 @@ export * from './search';
 export * from './tabs';
 
 export default {
-    title: 'Hermione|Header',
+    title: 'Hermione/Header',
     excludeStories: IS_PRODUCTION ? /Hermione/ : null,
 };

@@ -4,7 +4,7 @@ export * from './position';
 export * from './playground';
 
 export default {
-    title: 'Progress|Spin/desktop',
+    title: 'Progress/Spin/desktop',
     parameters: {
         docs: {
             readme: require('../readme.md'),

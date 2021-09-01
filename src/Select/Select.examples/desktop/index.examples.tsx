@@ -1,8 +1,6 @@
-import { withKnobs } from '@storybook/addon-knobs';
 import { IS_PRODUCTION } from '@yandex-lego/components/lib/env';
 
-import { EXAMPLE_DESKTOP_TOKEN, parameters } from '../examples-config';
-
+export * from '../ComboBox/index.examples';
 export * from './icon.examples';
 export * from './size.examples';
 export * from './theme.examples';
@@ -16,8 +14,11 @@ export * from './long.examples';
 export * from '../../Select.tests/scenarios/long';
 
 export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: [withKnobs],
-    parameters,
+    title: 'Controls/Select/desktop',
+    parameters: {
+        docs: {
+            readme: require('../../readme.md'),
+        },
+    },
     includeStories: !IS_PRODUCTION ? /^(?!.+Hermione).+/ : null,
 };

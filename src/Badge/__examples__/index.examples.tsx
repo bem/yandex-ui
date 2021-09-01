@@ -4,7 +4,7 @@ export * from './withBadgeContent';
 export * from './playground';
 
 export default {
-    title: 'Content|Badge/desktop',
+    title: 'Content/Badge/desktop',
     parameters: {
         docs: {
             readme: require('../readme.md'),

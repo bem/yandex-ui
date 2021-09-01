@@ -10,7 +10,7 @@ export * from './link-color';
 export * from './common';
 
 export default {
-    title: 'Content|Text/desktop',
+    title: 'Content/Text/desktop',
     parameters: {
         docs: {
             readme: require('../readme.md'),

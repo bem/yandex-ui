@@ -82,7 +82,3 @@ export const Playground = () => {
         </div>
     );
 };
-
-Playground.story = {
-    name: 'playground',
-};

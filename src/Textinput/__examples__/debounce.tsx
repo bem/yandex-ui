@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { action } from '@storybook/addon-actions';
 import { Textinput } from '@yandex-lego/components/Textinput/desktop/bundle';
 import { Spacer } from '@yandex-lego/components/Spacer';
 import { Spin } from '@yandex-lego/components/Spin';
 
-export const Debounce = () => {
+export const Debounce = (props: any) => {
+    const { onChange, onInput } = props;
     const [value, setValue] = useState('');
     const [typing, setTyping] = useState(false);
+
     return (
         <Textinput
             debounceTimeout={500}
@@ -15,24 +16,12 @@ export const Debounce = () => {
             value={value}
             style={{ maxWidth: 300 }}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                try {
-                    action('onChange')(event.target.value);
-                } catch (error) {
-                    if (!error.message.startsWith('Accessing non-existent addons channel')) {
-                        throw error;
-                    }
-                }
+                onChange?.(event.target.value);
                 setTyping(false);
                 setValue(event.target.value);
             }}
             onInput={(event: React.ChangeEvent<HTMLInputElement>) => {
-                try {
-                    action('onInput')(event.target.value);
-                } catch (error) {
-                    if (!error.message.startsWith('Accessing non-existent addons channel')) {
-                        throw error;
-                    }
-                }
+                onInput?.(event.target.value);
                 setTyping(true);
             }}
             iconRight={
@@ -44,4 +33,9 @@ export const Debounce = () => {
             }
         />
     );
+};
+
+Debounce.argTypes = {
+    onChange: { action: 'change' },
+    onInput: { action: 'change' },
 };

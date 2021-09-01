@@ -9,7 +9,7 @@ export * from './theme';
 export * from './view';
 
 export default {
-    title: 'Surface|Popup/desktop',
+    title: 'Surface/Popup/desktop',
     parameters: {
         docs: {
             readme: require('../readme.md'),

@@ -1,16 +1,8 @@
 import React, { useState } from 'react';
-import { withKnobs, select, boolean, object } from '@storybook/addon-knobs';
+import { select, boolean, object } from '@storybook/addon-knobs';
 import { cnTheme } from '@yandex-lego/components/Theme';
 import { presets, presetsKeys } from '@yandex-lego/components/Theme/presets';
 import { Select } from '@yandex-lego/components/Select/desktop/bundle';
-
-import { EXAMPLE_DESKTOP_TOKEN, parameters } from '../examples-config';
-
-export default {
-    title: EXAMPLE_DESKTOP_TOKEN,
-    decorators: [withKnobs],
-    parameters,
-};
 
 const rawOptions = [
     { value: 1, content: 1 },
@@ -47,8 +39,4 @@ export const Playground = () => {
             />
         </div>
     );
-};
-
-Playground.story = {
-    name: 'playground',
 };

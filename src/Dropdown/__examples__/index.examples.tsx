@@ -6,7 +6,7 @@ export * from './arrow';
 export * from './playground';
 
 export default {
-    title: 'Surface|Dropdown/desktop',
+    title: 'Surface/Dropdown/desktop',
     parameters: {
         docs: {
             readme: require('../readme.md'),

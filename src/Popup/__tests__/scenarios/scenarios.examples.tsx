@@ -7,6 +7,6 @@ export * from './scale';
 export * from './boundary';
 
 export default {
-    title: 'Hermione|Popup',
+    title: 'Hermione/Popup',
     excludeStories: IS_PRODUCTION ? /Hermione/ : null,
 };

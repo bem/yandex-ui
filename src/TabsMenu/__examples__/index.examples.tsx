@@ -7,7 +7,7 @@ export * from './adaptiveWithAddAndDelete';
 export * from './adaptive';
 
 export default {
-    title: 'Navigation|TabsMenu/desktop',
+    title: 'Navigation/TabsMenu/desktop',
     parameters: {
         docs: {
             readme: require('../readme.md'),

@@ -8,7 +8,7 @@ export * from './view';
 export * from './playground';
 
 export default {
-    title: 'Controls|Textarea/desktop',
+    title: 'Controls/Textarea/desktop',
     parameters: {
         docs: {
             readme: require('../readme.md'),

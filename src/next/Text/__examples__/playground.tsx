@@ -7,11 +7,15 @@ import { typographyValues } from './assets';
 export const Playground = () => {
     const weight = select<TextWeightValue>('Weight', ['light', 'regular', 'medium', 'bold'], 'light');
     const align = select<TextAlignValue>('Align', ['start', 'center', 'end', 'justify'], 'start');
-    const overflow = radios<TextOverflowValue>('Overflow', {
-        Ellipsis: 'ellipsis',
-        Fade: 'fade',
-        FadeHorizontal: 'fade-horizontal',
-    });
+    const overflow = radios<TextOverflowValue | undefined>(
+        'Overflow',
+        {
+            Ellipsis: 'ellipsis',
+            Fade: 'fade',
+            FadeHorizontal: 'fade-horizontal',
+        },
+        undefined,
+    );
     const maxLines = number('Max lines', 1, {
         range: true,
         min: 1,

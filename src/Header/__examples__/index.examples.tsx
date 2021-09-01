@@ -18,7 +18,7 @@ export * from './zenvideo';
 export * from './serpheader';
 
 export default {
-    title: 'Layout|Header/desktop',
+    title: 'Layout/Header/desktop',
     parameters: {
         docs: {
             readme: require('../readme.md'),

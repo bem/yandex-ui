@@ -11,7 +11,7 @@ export * from './width';
 export * from './perf';
 
 export default {
-    title: 'Controls|Button/desktop',
+    title: 'Controls/Button/desktop',
     parameters: {
         docs: {
             readme: require('../readme.md'),

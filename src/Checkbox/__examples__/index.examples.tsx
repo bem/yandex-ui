@@ -6,7 +6,7 @@ export * from './lines';
 export * from './playground';
 
 export default {
-    title: 'Controls|Checkbox/desktop',
+    title: 'Controls/Checkbox/desktop',
     parameters: {
         docs: {
             readme: require('../readme.md'),

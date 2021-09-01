@@ -9,7 +9,7 @@ export * from './withPopup';
 export * from './playground';
 
 export default {
-    title: 'Surface|MessageBox/desktop',
+    title: 'Surface/MessageBox/desktop',
     parameters: {
         docs: {
             readme: require('../readme.md'),

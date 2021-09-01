@@ -38,7 +38,3 @@ export const LoadErrorStub = () => {
         </div>
     );
 };
-
-LoadErrorStub.story = {
-    name: 'load error stub',
-};

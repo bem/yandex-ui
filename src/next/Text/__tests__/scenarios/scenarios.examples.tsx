@@ -5,6 +5,6 @@ export * from './color-text';
 export * from './typography-text';
 
 export default {
-    title: 'Hermione|Text@next',
+    title: 'Hermione/Text@next',
     excludeStories: IS_PRODUCTION ? /Hermione/ : null,
 };

@@ -1,8 +1,9 @@
-export * from './playground';
-export * from './overriden';
+export * from './desktop';
+export * from './touch-pad';
+export * from './touch-phone';
 
 export default {
-    title: 'Next/Calendar',
+    title: 'Utility/Showcase',
     parameters: {
         docs: {
             readme: require('../readme.md'),

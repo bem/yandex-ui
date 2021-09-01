@@ -7,7 +7,7 @@ export * from './type';
 export * from './custom';
 
 export default {
-    title: 'Content|Icon/desktop',
+    title: 'Content/Icon/desktop',
     parameters: {
         docs: {
             readme: require('../readme.md'),

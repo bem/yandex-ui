@@ -57,7 +57,3 @@ export const Playground = () => {
         />
     );
 };
-
-Playground.story = {
-    name: 'playground',
-};

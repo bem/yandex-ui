@@ -5,7 +5,7 @@ export * from './view';
 export * from './disabled';
 
 export default {
-    title: 'Navigation|Link/desktop',
+    title: 'Navigation/Link/desktop',
     parameters: {
         docs: {
             readme: require('../readme.md'),

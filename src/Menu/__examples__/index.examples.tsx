@@ -8,7 +8,7 @@ export * from './context-menu';
 export * from './custom-check';
 
 export default {
-    title: 'Controls|Menu/desktop',
+    title: 'Controls/Menu/desktop',
     parameters: {
         docs: {
             readme: require('../readme.md'),
