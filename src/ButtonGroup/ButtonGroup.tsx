@@ -130,12 +130,12 @@ export const ButtonGroup: FC<ButtonGroupProps> = (props: ButtonGroupProps) => {
         >
             {!divider
                 ? clonedChildren
-                : clonedChildren.map((element, index) => (
-                    <Fragment key={index}>
-                        {index > 0 && divider}
-                        {element}
-                    </Fragment>
-                ))}
+                : clonedChildren?.map((element, index) => (
+                      <Fragment key={index}>
+                          {index > 0 && divider}
+                          {element}
+                      </Fragment>
+                  ))}
         </AsComponent>
     );
 };

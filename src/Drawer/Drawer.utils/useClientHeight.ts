@@ -1,5 +1,7 @@
-import { useCallback, useLayoutEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
+
 import { canUseDOM } from '../../lib/canUseDOM';
+import { useIsomorphicLayoutEffect as useLayoutEffect } from '../../useIsomorphicLayoutEffect';
 
 /**
  * Вычисляет высоту вьюпорта

@@ -18,5 +18,5 @@ export type BaseIconProps = IconProps & {
  *
  */
 export const BaseIcon: FC<BaseIconProps> = ({ className, cn }) => (
-    <span className={cn(null, [cnHeaderIcon], [className])} />
+    <span className={cn(null, [cnHeaderIcon, className])} />
 );

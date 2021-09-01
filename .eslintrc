@@ -28,6 +28,12 @@
     "react/jsx-no-bind": 0,
 
     // TypeScript
-    "@typescript-eslint/no-explicit-any": 0
+    "@typescript-eslint/no-explicit-any": 0,
+
+    // prettier conflicts
+    "indent": "off",
+    "@typescript-eslint/indent": "off",
+    "react/jsx-indent": "off",
+    "react/jsx-indent-props": "off"
   }
 }

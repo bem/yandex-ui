@@ -31,7 +31,7 @@ describe.each(platforms)('Link@%s (ssr)', (_platform, Link) => {
             </Link>,
         );
 
-        expect(html).toBe('<a href="www.test.ru" class="Link mix" data-reactroot="">Content</a>');
+        expect(html).toBe('<a href="www.test.ru" class="Link mix">Content</a>');
     });
 
     test('должен рендерить псевдо ссылку', () => {
@@ -41,7 +41,7 @@ describe.each(platforms)('Link@%s (ssr)', (_platform, Link) => {
             </Link>,
         );
 
-        expect(html).toBe('<a href="www.test.ru" class="Link Link_pseudo" data-reactroot="">Content</a>');
+        expect(html).toBe('<a href="www.test.ru" class="Link Link_pseudo">Content</a>');
     });
 
     test('должен добавлять в ссылку с target="_blank" атрибут rel="noopener"', () => {
@@ -51,8 +51,6 @@ describe.each(platforms)('Link@%s (ssr)', (_platform, Link) => {
             </Link>,
         );
 
-        expect(html).toBe(
-            '<a href="www.test.ru" target="_blank" rel="nofollow noopener" class="Link" data-reactroot="">Content</a>',
-        );
+        expect(html).toBe('<a href="www.test.ru" target="_blank" rel="nofollow noopener" class="Link">Content</a>');
     });
 });

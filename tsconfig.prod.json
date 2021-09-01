@@ -1,7 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    /* Strict Type-Checking Options */
+    "declaration": true,
     "skipLibCheck": true
   },
   "exclude": [
