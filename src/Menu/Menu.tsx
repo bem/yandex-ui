@@ -332,11 +332,11 @@ export class Menu extends PureComponent<IMenuProps> {
     };
 
     private subscribeToEvents() {
-        document.addEventListener('keydown', this.onKeyDown);
+        document.addEventListener('keydown', this.onKeyDown, true);
     }
 
     private unsubscribeFromEvents() {
-        document.removeEventListener('keydown', this.onKeyDown);
+        document.removeEventListener('keydown', this.onKeyDown, true);
     }
 
     private setHoveredOnMouseEnter = (_event: MouseEvent<HTMLElement>, index: number) => {

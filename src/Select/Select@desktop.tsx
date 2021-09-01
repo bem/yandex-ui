@@ -116,6 +116,7 @@ const SelectPresenter = class extends PureComponent<SelectProps> {
             addonAfter,
             maxHeight,
             opened,
+            setOpened,
             options,
             popupRef,
             size,
@@ -147,6 +148,7 @@ const SelectPresenter = class extends PureComponent<SelectProps> {
                                 value={value}
                                 view={view}
                                 opened={opened}
+                                setOpened={setOpened}
                                 addonAfter={
                                     <>
                                         {renderControl && (
@@ -298,7 +300,9 @@ const SelectPresenter = class extends PureComponent<SelectProps> {
         }
 
         if (isKeyCode(event.keyCode, [Keys.SPACE])) {
-            if (this.props.setOpened !== undefined) {
+            // NOTE: проверяем, что до этого не был вызван `preventDefault`
+            // @see https://st.yandex-team.ru/ISL-9350
+            if (this.props.setOpened !== undefined && !event.defaultPrevented) {
                 event.preventDefault();
 
                 if (!this.props.opened) {
