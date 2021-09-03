@@ -110,4 +110,16 @@ describe.each(platforms)('Textinput@%s', (_platform, Textinput) => {
         expect(screen.getByTestId('control')).toBeInTheDocument();
         expect(screen.getByTestId('control')).toHaveAttribute('name', 'textinputName');
     });
+
+    test('should show next hint on animated hiding of previous hint', () => {
+        const { container, setProps } = render(<Textinput hint="error" />);
+
+        setProps({ hint: '' });
+
+        expect(container.querySelector('.Textinput-Hint')).toHaveClass('Textinput-Hint_leave');
+
+        setProps({ hint: 'error' });
+
+        expect(container.querySelector('.Textinput-Hint')).not.toHaveClass('Textinput-Hint_leave');
+    });
 });

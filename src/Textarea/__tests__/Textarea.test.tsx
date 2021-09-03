@@ -104,4 +104,16 @@ describe.each(platforms)('Textarea@%s', (_platform, Textarea) => {
         expect(screen.getByTestId('control')).toBeInTheDocument();
         expect(screen.getByTestId('control')).toHaveAttribute('name', 'textareaName');
     });
+
+    test('should show next hint on animated hiding of previous hint', () => {
+        const { container, setProps } = render(<Textarea hint="error" />);
+
+        setProps({ hint: '' });
+
+        expect(container.querySelector('.Textarea-Hint')).toHaveClass('Textarea-Hint_leave');
+
+        setProps({ hint: 'error' });
+
+        expect(container.querySelector('.Textarea-Hint')).not.toHaveClass('Textarea-Hint_leave');
+    });
 });

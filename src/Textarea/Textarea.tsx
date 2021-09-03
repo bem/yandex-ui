@@ -1,9 +1,9 @@
-import React, { FC, Ref, ReactNode, useState, useCallback, useRef, MouseEventHandler } from 'react';
+import React, { FC, Ref, ReactNode, MouseEventHandler } from 'react';
 import { useComponentRegistry } from '@bem-react/di';
 import { cn } from '@bem-react/classname';
 
 import { RenderOverride, useRenderOverride } from '../lib/render-override';
-import { useUpdateEffect } from '../useUpdateEffect';
+import { useTextFieldHint } from '../useTextFieldHint';
 import { IWithControlProps, withControl } from '../withControl/withControl';
 import { IWithControlProps as IWithControlPropsDesktop } from '../withControl/withControl@desktop';
 import { ITextareaControlProps } from './Control/Textarea-Control';
@@ -151,25 +151,7 @@ const TextareaBase: FC<ITextareaProps> = ({
     const { Wrap, Control: ControlOriginal, Box, Hint } = useComponentRegistry<ITextareaRegistry>(cnTextarea());
     const Control = useRenderOverride(ControlOriginal, renderControl);
 
-    const [hint, setHint] = useState(htmlHint);
-    const [hintLeave, setHintLeave] = useState(false);
-    const prevHint = useRef(htmlHint);
-
-    useUpdateEffect(() => {
-        if (htmlHint) {
-            setHint(htmlHint);
-        } else if (prevHint.current) {
-            setHintLeave(true);
-        }
-        prevHint.current = htmlHint;
-    }, [htmlHint]);
-
-    const onAnimationEnd = useCallback(() => {
-        if (!htmlHint) {
-            setHint('');
-            setHintLeave(false);
-        }
-    }, [htmlHint]);
+    const { hint, hintProps } = useTextFieldHint({ hint: htmlHint });
 
     return (
         <span
@@ -185,11 +167,7 @@ const TextareaBase: FC<ITextareaProps> = ({
                 <Box />
             </Wrap>
             {addonAfter}
-            {hint && (
-                <Hint leave={hintLeave} onAnimationEnd={onAnimationEnd}>
-                    {hint}
-                </Hint>
-            )}
+            {hint && <Hint {...hintProps}>{hint}</Hint>}
         </span>
     );
 };

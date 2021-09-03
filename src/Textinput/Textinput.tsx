@@ -1,20 +1,10 @@
-import React, {
-    FC,
-    ReactElement,
-    ReactNode,
-    Ref,
-    CSSProperties,
-    useState,
-    useCallback,
-    useRef,
-    MouseEventHandler,
-} from 'react';
+import React, { FC, ReactElement, ReactNode, Ref, CSSProperties, MouseEventHandler } from 'react';
 import { useComponentRegistry } from '@bem-react/di';
 import { cn } from '@bem-react/classname';
 
 import { RenderOverride, useRenderOverride } from '../lib/render-override';
 import { useUniqId } from '../useUniqId';
-import { useUpdateEffect } from '../useUpdateEffect';
+import { useTextFieldHint } from '../useTextFieldHint';
 import { IWithControlProps, withControl } from '../withControl/withControl';
 import { IIconProps } from '../Icon/Icon';
 import { ITextinputControlProps } from './Control/Textinput-Control';
@@ -140,26 +130,8 @@ const TextinputPresenter: FC<ITextinputProps> = ({
     const { Control: ControlOriginal, Box, Icon, Hint } = useComponentRegistry<ITextinputRegistry>(cnTextinput());
     const Control = useRenderOverride(ControlOriginal, renderControl);
 
-    const [hint, setHint] = useState(htmlHint);
-    const [hintLeave, setHintLeave] = useState(false);
-    const prevHint = useRef(htmlHint);
     const hintId = useUniqId('hint');
-
-    useUpdateEffect(() => {
-        if (htmlHint) {
-            setHint(htmlHint);
-        } else if (prevHint.current) {
-            setHintLeave(true);
-        }
-        prevHint.current = htmlHint;
-    }, [htmlHint]);
-
-    const onAnimationEnd = useCallback(() => {
-        if (!htmlHint) {
-            setHint('');
-            setHintLeave(false);
-        }
-    }, [htmlHint]);
+    const { hint, hintProps } = useTextFieldHint({ hint: htmlHint });
 
     return (
         <span
@@ -191,7 +163,7 @@ const TextinputPresenter: FC<ITextinputProps> = ({
             <Box />
             {addonAfter}
             {hint && (
-                <Hint leave={hintLeave} onAnimationEnd={onAnimationEnd} id={hintId}>
+                <Hint {...hintProps} id={hintId}>
                     {hint}
                 </Hint>
             )}
