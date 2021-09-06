@@ -1,6 +1,6 @@
 /* stylelint-disable selector-max-universal */
 .ButtonGroup_gap_xl.ButtonGroup_vertical > * + * {
-    margin-top: var(--button-group-gap-size-xl);
+    margin-top: var(--button-group-gap-xl);
 }
 
 .ButtonGroup_gap_xl:not(.ButtonGroup_vertical) > * + * {
