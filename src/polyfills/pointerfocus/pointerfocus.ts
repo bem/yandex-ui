@@ -92,7 +92,9 @@ if (canUseDOM()) {
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', setupPointerFocus);
     } else {
-        setupPointerFocus();
+        // https://github.com/jquery/jquery/blob/main/src/core/ready.js#L68
+        // Handle it asynchronously to allow scripts the opportunity to delay ready
+        window.setTimeout(setupPointerFocus);
     }
 }
 
