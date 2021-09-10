@@ -11,6 +11,7 @@
  *    В пользу visible, т.к. мы используем тень для отображения фокуса.
  * 9. Такой сброс стилей нужен для всех тем.
  * 10. Сбрасываем браузерные стили для кнопок, в особенности для link.
+ * 11. В IOS 15 для button[type=submit] выставляется bold
  */
 .Button2 {
     position: relative;
@@ -23,7 +24,9 @@
     padding: 0; /* 1 */
 
     font-family: var(--button-font-family);
+    font-weight: inherit; /* 11 */
     -moz-user-focus: ignore; /* 5 */
+
     user-select: none; /* 2 */
     text-align: center; /* 10 */
     white-space: nowrap; /* 4 */
