@@ -7,11 +7,13 @@ description: Библиотека общих React-компонентов.
 
 # @yandex-lego/components &middot; ![package version](https://badger.yandex-team.ru/npm/@yandex-lego/components/version.svg)
 
-Библиотека общих React-компонентов. Примеры и документацию см. в [Storybook](https://lego-docs.s3.mds.yandex.net/story/dev/index.html?path=/story/lego-components-button-desktop--default).
+Библиотека общих React-компонентов.
 
-Если у вас возникли проблемы или вопросы, напишите нам в [Slack](https://lego-team.slack.com) (канал `support`) или создайте тикет в [Startrek](https://st.yandex-team.ru/ISL) (очередь `ISL`).
+Если у вас возникли проблемы или вопросы, напишите нам в [SupportBoard](https://supportboard.yandex-team.ru/LEGOSUPPORT/add-question).
 
 ## Установка
+
+Вы можете установить пакет `@yandex-lego/components` с помощью `npm`, как показано ниже:
 
 ```bash
 #⠀пакет с компонентами
@@ -66,10 +68,13 @@ npm i -P @bem-react/core @bem-react/di @bem-react/classname
 
   ```ts
   import React from 'react'
-  import { compose } from '@bem-react/core'
-  import { Button as ButtonDesktop, withSizeM, withViewDefault } from '@yandex-lego/components/Button/desktop'
+  import { compose, composeU } from '@bem-react/core'
+  import { Button as ButtonDesktop, withSizeM, withViewDefault, withViewAction } from '@yandex-lego/components/Button/desktop'
 
-  const Button = compose(withSizeM, withViewDefault)(ButtonDesktop)
+  const Button = compose(
+    withSizeM,
+    composeU(withViewDefault, withViewAction)
+  )(ButtonDesktop)
 
   export const App = () => (
     <Button view="default" size="m">

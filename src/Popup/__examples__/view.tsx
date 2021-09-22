@@ -7,8 +7,16 @@ export const View = () => {
         <>
             <style>{styles}</style>
             <div className="container-103p3y2">
-                <Example />
-                <Example nonvisual />
+                <Example>
+                    <b>Popup view="default"</b>
+                    <br />
+                    используется по умолчанию, подходит, если у вас нет потребности сделать свои стили
+                </Example>
+                <Example nonvisual>
+                    <b>Popup Nonvisual</b>
+                    <br />
+                    используется, когда вам нужно задать свои стили, например, для выпадающего списка
+                </Example>
             </div>
         </>
     );
@@ -38,7 +46,7 @@ const styles = `
 `;
 
 const Example: FC<any> = (props) => {
-    const { nonvisual } = props;
+    const { nonvisual, children } = props;
     const targetRef = useRef(null);
     const [isVisible, setVisible] = useState(true);
 
@@ -68,11 +76,7 @@ const Example: FC<any> = (props) => {
                 visible={isVisible}
                 scope="inplace"
             >
-                <div className="content-103p3y2">
-                    <b>Popup view="default"</b>
-                    <br />
-                    используется по умолчанию, подходит, если у вас нет потребности сделать свои стили
-                </div>
+                <div className="content-103p3y2">{children}</div>
             </Popup>
         </>
     );

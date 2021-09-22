@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { Link } from '@yandex-lego/components/Link/desktop/bundle';
 
 import { Flex, Spacer } from '../../../plugins/gatsby-theme-lego/src/components/Flex';
-import { SlackIcon, MailIcon } from '../../icons';
+import { SupportBoardIcon, MailIcon } from '../../icons';
 
 export const Footer: FC = () => (
     <Flex alignItems="center" as={Container}>
@@ -11,13 +11,14 @@ export const Footer: FC = () => (
         <Spacer />
         <Flex gap="24px">
             <Flex gap="4px">
-                <SlackIcon />
-                <span>
-                    <Link theme="normal" target="_blank" href="https://lego-team.slack.com">
-                        Slack
-                    </Link>{' '}
-                    канал Support
-                </span>
+                <SupportBoardIcon />
+                <Link
+                    theme="normal"
+                    target="_blank"
+                    href="https://supportboard.yandex-team.ru/LEGOSUPPORT/add-question"
+                >
+                    SupportBoard
+                </Link>
             </Flex>
             <Flex gap="4px">
                 <MailIcon />
