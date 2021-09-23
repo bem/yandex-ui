@@ -1,5 +1,12 @@
+/*
+1 - Фикс для отображения в webkit, подробности в задаче — ISL-5672.
+Если установить отрицательный z-index только при открытом тултипе, то появляется баг ISL-10179.
+TODO: можно избавиться от отрицательного z-index, если расположить Backdrop выше контента в DOM.
+*/
 .Tooltip-Backdrop {
     position: absolute;
+    /* 1 */
+    z-index: -1;
     top: 0;
     right: 0;
     bottom: 0;
@@ -13,9 +20,4 @@
     height: 100%;
 
     content: '';
-}
-
-.Tooltip_visible .Tooltip-Backdrop {
-    /* Фикс для отображения в webkit, подробности в задаче — ISL-5672. */
-    z-index: -1;
 }
