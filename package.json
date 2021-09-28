@@ -1,6 +1,6 @@
 {
   "name": "@yandex/ui",
-  "version": "3.21.6",
+  "version": "3.21.7",
   "description": "Yandex UI components",
   "keywords": [
     "ui",
@@ -62,6 +62,7 @@
     "@types/react": "17.0.19",
     "@types/react-dom": "17.0.9",
     "@yandex/themekit": "1.6.0",
+    "canvas": "2.8.0",
     "copy-to-clipboard": "3.3.1",
     "core-js": "^3.1.4",
     "fast-glob": "3.2.2",

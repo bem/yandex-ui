@@ -153,6 +153,12 @@ export const Image: React.FC<IImageProps> = (props) => {
         return () => clearTimeout(timer);
     }, [isLoaded, isRendered, setNeedAnimation]);
 
+    useEffect(() => {
+        if (!isLoaded && imageRef.current && imageRef.current.complete) {
+            setLoaded(true);
+        }
+    }, [isLoaded]);
+
     const handleLoad = useCallback(() => {
         setLoaded(true);
     }, []);
