@@ -77,6 +77,9 @@ class PointerFocus {
 
     private setIsPointerOnTabFocus = () => {
         window.removeEventListener('focus', this.setIsPointerOnTabFocus, true);
+        // В некоторых случаях body пустой
+        // возможно в некоторых случаях срабатывает оптимизация браузера
+        if (!window.document.body) return;
 
         if (window.document.body.classList.contains('pointerfocus')) {
             this.isPointer = true;
