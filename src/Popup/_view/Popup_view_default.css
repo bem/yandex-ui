@@ -8,7 +8,7 @@
     color: var(--popup-view-default-typo-color);
     border-radius: var(--popup-borderRadius);
     background-color: var(--popup-view-default-fill-color);
-    box-shadow: 0 1.5ex 2ex -1ex rgba(0, 0, 0, .3);
+    box-shadow: 0 11px 14px -7px rgba(0, 0, 0, .3);
 
     animation-duration: .1s;
     animation-timing-function: ease-out;
