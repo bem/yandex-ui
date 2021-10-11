@@ -69,12 +69,21 @@ function getPages(rootPath, shouldCreatePage) {
 function getSidebar(sidebarPath, pages) {
     const sidebarData = require(path.resolve(sidebarPath));
 
+    const resolveItem = (label) => {
+        return typeof label === 'string' ? { label } : label;
+    };
+
     const resolveSidebarData = (sidebar) => {
         for (const index in sidebar) {
-            const item = sidebar[index];
+            const item = resolveItem(sidebar[index]);
+            sidebar[index] = item;
 
-            if (typeof item === 'string') {
-                const page = findPageById(pages, item);
+            if (item.__skip) {
+                continue;
+            }
+
+            if (!Array.isArray(item.items)) {
+                const page = findPageById(pages, item.label);
 
                 if (page) {
                     let pagePath = page.frontmatter.path || page.routePath;
@@ -86,23 +95,26 @@ function getSidebar(sidebarPath, pages) {
                     }
 
                     sidebar[index] = {
+                        ...item,
                         id: page.frontmatter.id,
                         path: pagePath,
                         label: page.frontmatter.sidebarLabel || page.frontmatter.id,
                     };
                 } else {
                     sidebar[index] = {
-                        id: item,
-                        path: '#',
-                        label: item,
+                        ...item,
+                        id: item.label,
+                        path: item.path || '#',
                         disabled: true,
                     };
                 }
-            } else if (!item.__skip) {
-                const items = resolveSidebarData(item.items, pages)
-                    // Use sort only for nested items.
-                    .sort((a, b) => a.label.localeCompare(b.label));
-                item.items = items;
+            } else {
+                sidebar[index] = {
+                    ...item,
+                    items: resolveSidebarData(item.items, pages)
+                        // Use sort only for nested items.
+                        .sort((a, b) => a.label.localeCompare(b.label)),
+                };
             }
         }
 

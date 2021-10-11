@@ -16,7 +16,7 @@
     "@types/lunr": "2.3.3",
     "@types/react-helmet": "6.1.1",
     "@types/slug": "5.0.2",
-    "@yandex-lego/components": "3.10.8",
+    "@yandex-lego/components": "3.21.9",
     "codesandbox": "2.2.1",
     "copy-to-clipboard": "3.3.1",
     "fast-glob": "3.2.2",
@@ -44,6 +44,7 @@
     "remark-mdx": "1.6.22",
     "slug": "5.1.0",
     "ts-docgen-loader": "1.0.0",
+    "ts-docgen-next": "1.1.0",
     "unist-util-visit": "2.0.3"
   },
   "owners": [

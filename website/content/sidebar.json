@@ -24,7 +24,6 @@
       "Header",
       "Icon",
       "Image",
-      "LayerManager",
       "Popup",
       "Portal",
       "Progress",
@@ -45,20 +44,22 @@
       "Tooltip",
       {
         "label": "Calendar",
-        "badge": "unstable",
-        "path": "https://st.yandex-team.ru/ISL-8580",
-        "__skip": true
-      },
-      {
-        "label": "SvgIcon",
-        "badge": "develop",
-        "path": "https://st.yandex-team.ru/ISL-8531",
-        "__skip": true
+        "badge": "unstable"
       },
       {
         "label": "DatePicker",
         "badge": "develop",
         "path": "https://st.yandex-team.ru/ISL-9886",
+        "__skip": true
+      },
+      {
+        "label": "LayerManager",
+        "badge": "deprecated"
+      },
+      {
+        "label": "SvgIcon",
+        "badge": "develop",
+        "path": "https://st.yandex-team.ru/ISL-8531",
         "__skip": true
       },
       {

@@ -1,1 +1,63 @@
-### Soon
+import { Types as calendarTypes } from '@yandex-lego/components/next/Calendar/__examples__/types.tsx'
+import typesCalendarSource from '!!raw-loader!@yandex-lego/components/next/Calendar/__examples__/types.tsx'
+import { View as calendarView } from '@yandex-lego/components/next/Calendar/__examples__/view.tsx'
+import viewCalendarSource from '!!raw-loader!@yandex-lego/components/next/Calendar/__examples__/view.tsx'
+import { Size as calendarSize } from '@yandex-lego/components/next/Calendar/__examples__/size.tsx'
+import sizeCalendarSource from '!!raw-loader!@yandex-lego/components/next/Calendar/__examples__/size.tsx'
+import { MinMax as calendarMinMax } from '@yandex-lego/components/next/Calendar/__examples__/min-max.tsx'
+import minMaxCalendarSource from '!!raw-loader!@yandex-lego/components/next/Calendar/__examples__/min-max.tsx'
+import { ViewsCount as calendarViewsCount } from '@yandex-lego/components/next/Calendar/__examples__/views-count.tsx'
+import viewsCountCalendarSource from '!!raw-loader!@yandex-lego/components/next/Calendar/__examples__/views-count.tsx'
+
+> ⚠️ Данный компонент в целом является стабильным, но помечен как `нестабильный` и в дальнейшем может незначительно поменяться `API`.
+> Если вы нашли баг или считаете, что какие-то места можно улучшить, то обязательно напишите [нам](https://supportboard.yandex-team.ru/LEGOSUPPORT/add-question).
+
+
+### Типы календарей
+
+<Example component={calendarTypes} source={typesCalendarSource}>
+  <Title>Types</Title>
+  <Description>
+    Для использование конкретного типа календаря, импортируйте нужный компонент: `&lt;Calendar /&gt;`, `&lt;MultipleCalendar /&gt;` или `&lt;RangeCalendar /&gt;`
+  </Description>
+</Example>
+
+### Виды
+
+<Example component={calendarView} source={viewCalendarSource}>
+  <Title>View</Title>
+  <Description>
+    Чтобы изменить вид календаря, установите свойство `view` в одно из следующих значений: `"default"`, `"brand"`
+  </Description>
+</Example>
+
+### Размеры
+
+Для управления размером календаря, используйте модификатор `size`.
+
+<Example component={calendarSize} source={sizeCalendarSource}>
+  <Title>Size</Title>
+  <Description>
+    Чтобы изменить размер календаря, установите свойство `size` в одно из следующих значений: `"s"`, `"m"` или `"l"`
+  </Description>
+</Example>
+
+### Минимальная и максимальная дата
+
+<Example component={calendarMinMax} source={minMaxCalendarSource}>
+  <Title>Min и Max</Title>
+  <Description>
+    Чтобы задать минимальную или максимальную дату, укажите свойства `min` или `max`
+  </Description>
+</Example>
+
+### Количество календарей
+
+В зависимости от ситуации, может появится необходимость отобразить больше одного календаря, например, для `RangeCalendar`.
+
+<Example component={calendarViewsCount} source={viewsCountCalendarSource}>
+  <Title>ViewsCount</Title>
+  <Description>
+    Чтобы изменить количество отображаемых календарей, укажите свойство `viewsCount`
+  </Description>
+</Example>

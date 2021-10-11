@@ -22,7 +22,7 @@ export const SidebarSection: FC<SidebarSectionProps> = (props) => {
             {items.map((item) => (
                 <HybridLink key={item.label} active={isActive(item.id)} href={item.path} disabled={item.disabled}>
                     {item.label}
-                    {item.badge && <Badge data-status={item.badge}>{badgeText[item.badge]}</Badge>}
+                    {item.badge && <Badge data-status={item.badge}>{badgeText[item.badge] || item.badge}</Badge>}
                 </HybridLink>
             ))}
         </Container>
@@ -67,9 +67,15 @@ const Badge = styled.span`
         color: #ff8800;
         background-color: #fff4d0;
     }
+
+    &[data-status='deprecated'] {
+        color: #f20008;
+        background-color: #ffe2db;
+    }
 `;
 
 const badgeText: Record<string, string> = {
     develop: 'В разработке',
     unstable: 'Нестабильный',
+    deprecated: 'Deprecated',
 };

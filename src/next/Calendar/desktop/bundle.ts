@@ -1,3 +1,4 @@
+import { ComponentProps } from 'react';
 import { compose, composeU } from '@bem-react/core';
 
 import {
@@ -17,9 +18,15 @@ const enhancer = compose(composeU(withViewBrand, withViewDefault), composeU(with
 
 export const Calendar = enhancer(UnstyledCalendar);
 
+export type CalendarProps = ComponentProps<typeof Calendar>;
+
 export const MultipleCalendar = enhancer(UnstyledMultipleCalendar);
 
+export type MultipleCalendarProps = ComponentProps<typeof MultipleCalendar>;
+
 export const RangeCalendar = enhancer(UnstyledRangeCalendar);
+
+export type RangeCalendarProps = ComponentProps<typeof RangeCalendar>;
 
 if (process.env.NODE_ENV !== 'production') {
     Calendar.displayName = 'Bundle(CalendarDesktop)';
