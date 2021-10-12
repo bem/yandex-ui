@@ -67,4 +67,29 @@ describe('Button', () => {
         render(<Button progress data-testid="button" />);
         expect(screen.getByTestId('button')).toHaveAttribute('aria-busy', 'true');
     });
+
+    test('should render with <Text/> when children={0}', () => {
+        render(<Button children={0} />);
+
+        expect(screen.getByRole('button')).toHaveTextContent('0');
+    });
+
+    test('should render without <Text/> when children={true}', () => {
+        render(<Button children />);
+
+        expect(screen.getByRole('button')).toBeEmptyDOMElement();
+    });
+
+    test('should render icons without side classes when children={true}', () => {
+        render(
+            <Button
+                children
+                iconLeft={(className) => <i data-testid="icon-left" className={className} />}
+                iconRight={(className) => <i data-testid="icon-right" className={className} />}
+            />,
+        );
+
+        expect(screen.getByTestId('icon-left')).not.toHaveClass('Button2-Icon_side_left');
+        expect(screen.getByTestId('icon-left')).not.toHaveClass('Button2-Icon_side_right');
+    });
 });

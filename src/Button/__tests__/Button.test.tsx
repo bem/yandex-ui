@@ -245,4 +245,29 @@ describe.each(platforms)('Button@%s', (_platform, Button) => {
 
         expect(onBlurFn).toHaveBeenCalledTimes(1);
     });
+
+    test('должен вернуть шаблон компонента c <Text/> при children={0}', () => {
+        render(<Button children={0} />);
+
+        expect(screen.getByRole('button')).toHaveTextContent('0');
+    });
+
+    test('должен вернуть шаблон компонента без <Text/> при children={true}', () => {
+        render(<Button children />);
+
+        expect(screen.getByRole('button')).toBeEmptyDOMElement();
+    });
+
+    test('должен вернуть шаблон компонента с иконками без класса стороны при children={true}', () => {
+        render(
+            <Button
+                children
+                iconLeft={(className) => <i data-testid="icon-left" className={className} />}
+                iconRight={(className) => <i data-testid="icon-right" className={className} />}
+            />,
+        );
+
+        expect(screen.getByTestId('icon-left')).not.toHaveClass('Button2-Icon_side_left');
+        expect(screen.getByTestId('icon-left')).not.toHaveClass('Button2-Icon_side_right');
+    });
 });

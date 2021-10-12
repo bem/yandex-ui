@@ -144,6 +144,7 @@ export const Button: FC<IButtonProps> = (props) => {
     const ref = useForkRef(buttonRef, innerRef);
 
     const iconLeftOrIcon = iconLeft || icon;
+    const showChildren = (Boolean(children) && children !== true) || children === 0;
 
     // TODO: Удалить, после того, как в compose будет поддержан forwardRef,
     // тогда всегда можно будет использовать ref.
@@ -159,9 +160,9 @@ export const Button: FC<IButtonProps> = (props) => {
             aria-busy={progress || undefined}
         >
             {addonBefore}
-            {iconLeftOrIcon && <Icon provider={iconLeftOrIcon} side={children && iconLeft ? 'left' : undefined} />}
-            {iconRight && <Icon provider={iconRight} side={children ? 'right' : undefined} />}
-            {typeof children === 'string' ? <Text>{children}</Text> : children}
+            {iconLeftOrIcon && <Icon provider={iconLeftOrIcon} side={showChildren && iconLeft ? 'left' : undefined} />}
+            {iconRight && <Icon provider={iconRight} side={showChildren ? 'right' : undefined} />}
+            {showChildren && <Text>{children}</Text>}
             {addonAfter}
         </ElementType>
     );

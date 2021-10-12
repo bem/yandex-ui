@@ -254,6 +254,7 @@ export const Button = class extends PureComponent<ButtonProps, IButtonState> {
         const refKey = typeof AsComponent === 'string' ? 'ref' : 'innerRef';
         (props as any)[refKey] = mergeAllRefs(this.internalInnerRef, innerRef, controlRef);
         const iconLeftOrIcon = iconLeft || icon;
+        const showChildren = (Boolean(children) && children !== true) || children === 0;
 
         return (
             <Component
@@ -277,9 +278,11 @@ export const Button = class extends PureComponent<ButtonProps, IButtonState> {
                 aria-busy={progress}
             >
                 {addonBefore}
-                {iconLeftOrIcon && <Icon provider={iconLeftOrIcon} side={children && iconLeft ? 'left' : undefined} />}
-                {iconRight && <Icon provider={iconRight} side={children ? 'right' : undefined} />}
-                {children && <Text>{children}</Text>}
+                {iconLeftOrIcon && (
+                    <Icon provider={iconLeftOrIcon} side={showChildren && iconLeft ? 'left' : undefined} />
+                )}
+                {iconRight && <Icon provider={iconRight} side={showChildren ? 'right' : undefined} />}
+                {showChildren && <Text>{children}</Text>}
                 {addonAfter}
             </Component>
         );
@@ -358,5 +361,5 @@ export const Button = class extends PureComponent<ButtonProps, IButtonState> {
         if (this.props.onBlur !== undefined) {
             this.props.onBlur(event);
         }
-    }
+    };
 } as ComponentClass<IButtonProps>;
