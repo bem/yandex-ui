@@ -1,0 +1,9 @@
+.DateTimeField-EditableSegment {
+    padding: 0 2px;
+
+    user-select: none;
+    caret-color: transparent;
+
+    border: none;
+    background: none;
+}

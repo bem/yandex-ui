@@ -1,0 +1,65 @@
+.DateTimeField_view_default .DateTimeField-Box {
+    border-width: var(--datetimefield-view-default-border-width-base);
+    border-style: solid;
+    border-color: var(--datetimefield-view-default-border-color-base);
+    border-radius: var(--datetimefield-view-default-border-radius);
+    background-color: var(--datetimefield-view-default-fill-color-base);
+
+    transition: background-color 0.15s linear;
+}
+
+.DateTimeField_view_default:hover .DateTimeField-Box {
+    border-color: var(--datetimefield-view-default-border-color-hovered);
+    background-color: var(--datetimefield-view-default-fill-color-hovered);
+}
+
+.DateTimeField_view_default.DateTimeField_focused .DateTimeField-Box {
+    border-color: var(--datetimefield-view-default-border-color-focused);
+}
+
+.DateTimeField_view_default.DateTimeField_disabled .DateTimeField-Box {
+    border-color: var(--datetimefield-view-default-border-color-disabled);
+    background-color: var(--datetimefield-view-default-fill-color-disabled);
+}
+
+/* literal segment */
+.DateTimeField_view_default .DateTimeField-LiteralSegment {
+    color: var(--datetimefield-view-default-segment-typo-color-base);
+}
+
+.DateTimeField_view_default.DateTimeField_disabled .DateTimeField-LiteralSegment {
+    color: var(--datetimefield-view-default-segment-typo-color-disabled);
+}
+
+/* editable segment */
+.DateTimeField_view_default .DateTimeField-EditableSegment {
+    color: var(--datetimefield-view-default-segment-typo-color-base);
+    border-radius: 2px;
+    outline: none;
+}
+
+.DateTimeField_view_default .DateTimeField-EditableSegment_placeholder,
+.DateTimeField_view_default .DateTimeField-EditableSegment_placeholder ~ .DateTimeField-LiteralSegment {
+    color: var(--datetimefield-view-default-placeholder-typo-color-base);
+}
+
+.DateTimeField_view_default .DateTimeField-EditableSegment:focus {
+    background-color: var(--datetimefield-view-default-segment-fill-color-focused);
+}
+
+.DateTimeField_view_default .DateTimeField-EditableSegment.DateTimeField-EditableSegment_invalid {
+    color: var(--datetimefield-view-default-segment-typo-color-invalid);
+}
+
+.DateTimeField_view_default .DateTimeField-EditableSegment_disabled[class] {
+    color: var(--datetimefield-view-default-segment-typo-color-disabled);
+}
+
+/* range dash */
+.DateTimeField_view_default .DateTimeField-RangeDash {
+    color: var(--datetimefield-view-default-segment-typo-color-base);
+}
+
+.DateTimeField_view_default.DateTimeField_disabled .DateTimeField-RangeDash {
+    color: var(--datetimefield-view-default-segment-typo-color-disabled);
+}

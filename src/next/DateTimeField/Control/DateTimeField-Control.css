@@ -1,0 +1,7 @@
+.DateTimeField-Control {
+    display: flex;
+    align-items: center;
+
+    box-sizing: border-box;
+    width: 100%;
+}

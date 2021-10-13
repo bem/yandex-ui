@@ -1,0 +1,9 @@
+.DateTimeField-RangeDash {
+    display: block;
+}
+
+.DateTimeField-RangeDash::before {
+    display: block;
+
+    content: '—';
+}

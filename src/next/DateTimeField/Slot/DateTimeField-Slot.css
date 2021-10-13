@@ -1,0 +1,9 @@
+.DateTimeField-Slot {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.DateTimeField-Slot_name_control {
+    flex: 1 0 auto;
+}

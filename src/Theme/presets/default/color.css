@@ -360,4 +360,17 @@
     --calendar-view-brand-nav-action-typo-color-disabled: rgba(255, 255, 255, 0.4);
     --calendar-view-brand-nav-title-button-typo-color-base: #fff;
     --calendar-view-brand-nav-title-button-typo-color-hovered: rgba(255, 255, 255, 0.65);
+    --datetimefield-view-default-fill-color-base: var(--color-control-bg-blank);
+    --datetimefield-view-default-fill-color-disabled: var(--color-control-bg-blank-disable);
+    --datetimefield-view-default-fill-color-hovered: var(--color-control-bg-blank-hover);
+    --datetimefield-view-default-border-color-base: var(--color-control-bg-border-blank);
+    --datetimefield-view-default-border-color-disabled: var(--color-control-bg-border-blank-disable);
+    --datetimefield-view-default-border-color-focused: var(--color-control-bg-border-focus);
+    --datetimefield-view-default-border-color-hovered: var(--color-control-bg-border-blank-hover);
+    --datetimefield-view-default-segment-fill-color-focused: #b4d5fe;
+    --datetimefield-view-default-segment-typo-color-base: var(--color-control-typo-primary);
+    --datetimefield-view-default-segment-typo-color-disabled: var(--color-control-typo-disable);
+    --datetimefield-view-default-segment-typo-color-invalid: var(--color-control-typo-error);
+    --datetimefield-view-default-placeholder-typo-color-base: var(--color-control-typo-ghost);
+    --datetimefield-view-default-placeholder-typo-color-disabled: var(--color-control-typo-disable);
 }

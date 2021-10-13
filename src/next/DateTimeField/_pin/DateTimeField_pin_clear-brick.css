@@ -1,0 +1,5 @@
+/* Усиливаем селектор для сохранения специфичности при раскрытии css-переменных. */
+.DateTimeField.DateTimeField_pin_clear-brick[class][class] .DateTimeField-Box {
+    border-left-width: 0;
+    border-radius: 0;
+}

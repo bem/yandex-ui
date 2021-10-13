@@ -542,4 +542,17 @@
     --calendar-view-brand-aside-border-radius: 8px;
     --calendar-view-brand-cell-border-width: 1px;
     --calendar-view-brand-cell-border-radius: 100px;
+    --datetimefield-font-family: var(--typography-font-family);
+    --datetimefield-size-s-font-size: var(--typography-controls-size-s-font-size);
+    --datetimefield-size-s-line-height: 18px;
+    --datetimefield-size-s-height: 32px;
+    --datetimefield-size-s-space-horizontal: 8px;
+    --datetimefield-size-s-slots-gap: 4px;
+    --datetimefield-size-m-font-size: var(--typography-controls-size-m-font-size);
+    --datetimefield-size-m-line-height: 20px;
+    --datetimefield-size-m-height: 36px;
+    --datetimefield-size-m-space-horizontal: 10px;
+    --datetimefield-size-m-slots-gap: 6px;
+    --datetimefield-view-default-border-width-base: 2px;
+    --datetimefield-view-default-border-radius: 4px;
 }

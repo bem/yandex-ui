@@ -1,0 +1,25 @@
+.DateTimeField.DateTimeField_size_s {
+    font-size: var(--datetimefield-size-s-font-size);
+    line-height: var(--datetimefield-size-s-line-height);
+}
+
+.DateTimeField.DateTimeField_size_s .DateTimeField-Wrapper {
+    padding: 0 var(--datetimefield-size-s-space-horizontal);
+}
+
+.DateTimeField.DateTimeField_size_s .DateTimeField-Slot + .DateTimeField-Slot {
+    margin-left: var(--datetimefield-size-s-slots-gap);
+}
+
+[dir='rtl'] .DateTimeField.DateTimeField_size_s.DateTimeField-Slot + .DateTimeField-Slot {
+    margin-right: var(--datetimefield-size-s-slots-gap);
+    margin-left: 0;
+}
+
+.DateTimeField.DateTimeField_size_s .DateTimeField-Control {
+    height: var(--datetimefield-size-s-height);
+}
+
+.DateTimeField.DateTimeField_size_s .DateTimeField-RangeDash {
+    margin: 0 var(--datetimefield-size-s-slots-gap);
+}

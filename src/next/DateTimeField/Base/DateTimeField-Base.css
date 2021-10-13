@@ -1,0 +1,37 @@
+/*
+1. Not inherit height from parent flex container
+*/
+.DateTimeField {
+    position: relative;
+
+    display: inline-flex;
+
+    /* 1 */
+    height: min-content;
+
+    font-family: var(--datetimefield-font-family);
+    font-size: 100%;
+
+    outline: none;
+}
+
+.DateTimeField-Box {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    box-sizing: border-box;
+}
+
+.DateTimeField-Wrapper {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-wrap: nowrap;
+
+    width: 100%;
+}

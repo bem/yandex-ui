@@ -1,0 +1,73 @@
+datetimefield:
+  fontFamily:
+    value: "{typography.font.family.value}"
+
+  sizeS:
+    fontSize:
+      value: "{typography.controls.size.s.fontSize.value}"
+    lineHeight:
+      value: 18px
+    height:
+      value: 32px
+    spaceHorizontal:
+      value: 8px
+    slotsGap:
+      value: 4px
+
+  sizeM:
+    fontSize:
+      value: "{typography.controls.size.m.fontSize.value}"
+    lineHeight:
+      value: 20px
+    height:
+      value: 36px
+    spaceHorizontal:
+      value: 10px
+    slotsGap:
+      value: 6px
+
+  viewDefault:
+    fillColor:
+      base:
+        value: "{color.control.type.blank.fillColor.base.value}"
+      disabled:
+        value: "{color.control.type.blank.fillColor.disable.value}"
+      hovered:
+        value: "{color.control.type.blank.fillColor.hover.value}"
+
+    borderWidth:
+      base:
+        value: 2px
+  
+    borderRadius:
+      value: 4px
+
+    borderColor:
+      base:
+        value: "{color.control.type.blank.borderColor.base.value}"
+      disabled:
+        value: "{color.control.type.blank.borderColor.disable.value}"
+      focused:
+        value: "{color.control.borderColor.focus.value}"
+      hovered:
+        value: "{color.control.type.blank.borderColor.hover.value}"
+
+    segment:
+      fillColor:
+        focused:
+          value: "#b4d5fe"
+
+      typoColor:
+        base:
+          value: "{color.control.typo.primary.value}"
+        disabled:
+          value: "{color.control.typo.disable.value}"
+        invalid:
+          value: "{color.control.typo.error.value}"
+
+    placeholder:
+      typoColor:
+        base:
+          value: "{color.control.typo.ghost.value}"
+        disabled:
+          value: "{color.control.typo.disable.value}"
