@@ -43,6 +43,11 @@ export interface IDrawerProps extends PropsWithChildren<PartialPopupProps> {
     onClose?: () => void;
 
     /**
+     * Функция, которая будет вызвана при завершении анимации закрытия шторки.
+     */
+    onCloseEnd?: () => void;
+
+    /**
      * Компонент шапки шторки.
      */
     titleComponent?: ReactNode;

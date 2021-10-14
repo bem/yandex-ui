@@ -1,4 +1,4 @@
-import React, { Dispatch, FC, SetStateAction, useMemo, useRef } from 'react';
+import React, { Dispatch, FC, SetStateAction, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { IDrawerProps } from '../Drawer';
 import { noop, useDrag } from '../Drawer.utils';
@@ -40,6 +40,7 @@ export const DrawerContent: FC<IDrawerContentProps> = ({
     dragDisabled,
     visible,
     onClose = noop,
+    onCloseEnd = noop,
     springValue,
     direction = 'bottom',
     maxSize,
@@ -49,6 +50,7 @@ export const DrawerContent: FC<IDrawerContentProps> = ({
     setProgress,
 }) => {
     const contentRef = useRef<HTMLDivElement>(null);
+    const [closing, setClosing] = useState(false);
 
     const axis = direction === 'bottom' ? 'y' : 'x';
     const inverted = direction === 'left' ? -1 : 1;
@@ -63,6 +65,18 @@ export const DrawerContent: FC<IDrawerContentProps> = ({
         () => ({ transform: springTransform, ...(maxSize && { [axis === 'x' ? 'maxWidth' : 'maxHeight']: maxSize }) }),
         [springTransform, maxSize, axis],
     );
+
+    useEffect(() => {
+        if (closing && springValue === 0) {
+            onCloseEnd();
+            setClosing(false);
+        }
+    }, [closing, springValue, onCloseEnd]);
+
+    const _onClose = useCallback(() => {
+        setClosing(true);
+        onClose();
+    }, [onClose]);
 
     /**
      * Обработчик drag событий с корневого DOM элемента шторки
@@ -104,9 +118,9 @@ export const DrawerContent: FC<IDrawerContentProps> = ({
             setSpringDisabled(false);
 
             if (Math.abs(velocity) >= 0.1) {
-                return velocity > 0 ? onClose() : setProgress(1);
+                return velocity > 0 ? _onClose() : setProgress(1);
             } else if (movement / drawerSize >= 0.3) {
-                return onClose();
+                return _onClose();
             }
 
             return setProgress(1);
@@ -118,7 +132,7 @@ export const DrawerContent: FC<IDrawerContentProps> = ({
             const progress = Math.max(0, 1 - movement / drawerSize);
 
             if (progress === 0) {
-                return onClose();
+                return _onClose();
             }
 
             return setProgress(progress);
@@ -127,7 +141,7 @@ export const DrawerContent: FC<IDrawerContentProps> = ({
 
     return (
         <div className={cnDrawerDragObserver} {...dragProps}>
-            <div className={cnDrawerOverlay} style={{ opacity: springOpacity }} onClick={() => onClose()} />
+            <div className={cnDrawerOverlay} style={{ opacity: springOpacity }} onClick={() => _onClose()} />
             <div className={cnDrawerCurtain} style={curtainStyle}>
                 <div className={cnDrawerHandle} style={{ opacity: springOpacity }} />
                 {titleComponent && <div className={cnDrawerTitle}>{titleComponent}</div>}
