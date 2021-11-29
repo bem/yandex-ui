@@ -32,5 +32,9 @@ module.exports = {
             },
         ],
     ],
+    testEnvironment: 'jsdom',
     testEnvironmentOptions: { resources: 'usable' },
+    haste: {
+        forceNodeFilesystemAPI: true,
+    },
 };

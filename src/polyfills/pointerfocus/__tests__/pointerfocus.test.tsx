@@ -1,6 +1,16 @@
-import { dispose } from '../pointerfocus';
-
 describe('pointerfocus', () => {
+    let pointerfocus: { dispose: () => void };
+
+    beforeAll(() => {
+        jest.useFakeTimers();
+        pointerfocus = require('../pointerfocus');
+        jest.runAllTimers();
+    });
+
+    afterAll(() => {
+        jest.useRealTimers();
+    });
+
     test('should set utilityfocus className for body after init', () => {
         expect(window.document.body.classList.contains('utilityfocus')).toBe(true);
     });
@@ -24,7 +34,7 @@ describe('pointerfocus', () => {
     });
 
     test('should remove className after dispose', () => {
-        dispose();
+        pointerfocus.dispose();
         expect(window.document.body.classList.contains('pointerfocus')).toBe(false);
         expect(window.document.body.classList.contains('utilityfocus')).toBe(false);
     });
