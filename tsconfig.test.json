@@ -3,6 +3,7 @@
   "compilerOptions": {
     /* Basic Options */
     "allowJs": true,
+    "target": "ES6",
 
     /* Strict Type-Checking Options */
     "noUnusedLocals": false,

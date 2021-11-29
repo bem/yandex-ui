@@ -4,6 +4,7 @@ import { fireEvent as fireEventBase } from './createClientRender';
 
 export * from './createClientRender';
 export * from './createServerRender';
+export * from './events';
 
 export const fireEvent = Object.assign(fireEventBase.bind(null), {
     ...fireEventBase,

@@ -41,6 +41,11 @@ export interface DateTimeRangeFieldProps extends Omit<UseDateTimeFieldStateProps
      */
     onChange?: (value: RangeValue<Date | null>) => void;
 
+    /**
+     * Устанавливает фокус в первый сегмент даты
+     */
+    autoFocus?: boolean;
+
     'data-testid'?: string;
 }
 
@@ -52,10 +57,11 @@ export const DateTimeRangeField: FC<DateTimeRangeFieldProps> = (props) => {
         value = { start: null, end: null },
         onChange,
         'data-testid': testId,
+        autoFocus,
         ...otherProps
     } = props;
     const { disabled } = otherProps;
-    const ref = useRef<HTMLSpanElement>(null);
+    const focusScopeRef = useRef<HTMLSpanElement>(null);
     const [focusWithin, setFocusWithin] = useState(false);
     const { focusWithinProps } = useFocusWithin({
         disabled,
@@ -96,15 +102,13 @@ export const DateTimeRangeField: FC<DateTimeRangeFieldProps> = (props) => {
             data-testid={testId}
         >
             {addonBefore && <DateTimeFieldSlot name="before">{addonBefore}</DateTimeFieldSlot>}
-
-            <DateTimeFieldSlot ref={ref} name="control">
-                <FocusManagerScope value={ref}>
+            <DateTimeFieldSlot ref={focusScopeRef} name="control">
+                <FocusManagerScope scopeRef={focusScopeRef} autoFocus={autoFocus}>
                     <DateTimeFieldControl state={startState} />
                     <DateTimeFieldRangeDash />
                     <DateTimeFieldControl state={endState} />
                 </FocusManagerScope>
             </DateTimeFieldSlot>
-
             {addonAfter && <DateTimeFieldSlot name="after">{addonAfter}</DateTimeFieldSlot>}
         </DateTimeFieldBase>
     );

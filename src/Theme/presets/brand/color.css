@@ -366,7 +366,7 @@
     --datetimefield-view-default-border-color-disabled: var(--color-control-bg-border-blank-disable);
     --datetimefield-view-default-border-color-focused: var(--color-control-bg-border-focus);
     --datetimefield-view-default-border-color-hovered: var(--color-control-bg-border-blank-hover);
-    --datetimefield-view-default-segment-fill-color-focused: #b4d5fe;
+    --datetimefield-view-default-segment-fill-color-focused: #d9d9d9;
     --datetimefield-view-default-segment-typo-color-base: var(--color-control-typo-primary);
     --datetimefield-view-default-segment-typo-color-disabled: var(--color-control-typo-disable);
     --datetimefield-view-default-segment-typo-color-invalid: var(--color-control-typo-error);

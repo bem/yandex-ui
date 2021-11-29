@@ -1,8 +1,7 @@
 import React, { FC, ReactNode, useCallback } from 'react';
 import { useDateFormatter, CalendarNavigationAction, CalendarState } from 'web-platform-alpha';
+import { ArrowLongBack, ArrowLongForward } from '@yandex/ui-icons';
 
-import { ArrowBack } from '../../../Icon/__unstable/ArrowBack';
-import { ArrowForward } from '../../../Icon/__unstable/ArrowForward';
 import { cnCalendar } from '../Calendar.const';
 import { RangeValue } from '../types';
 
@@ -68,7 +67,7 @@ export const Navigation: FC<NavigationProps> = (props) => {
                 onClick={handleNavigateToPrevView}
                 disabled={prevDisabled}
             >
-                <ArrowBack />
+                <ArrowLongBack />
             </button>
 
             <div className={cnCalendar('NavigationTitle')}>
@@ -88,7 +87,7 @@ export const Navigation: FC<NavigationProps> = (props) => {
                 onClick={handleNavigateToNextView}
                 disabled={nextDisabled}
             >
-                <ArrowForward />
+                <ArrowLongForward />
             </button>
         </div>
     );

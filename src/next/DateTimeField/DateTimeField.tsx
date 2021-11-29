@@ -28,19 +28,21 @@ export interface DateTimeFieldProps extends UseDateTimeFieldProps, UseDateTimeFi
      */
     addonBefore?: ReactNode;
 
+    /**
+     * Устанавливает фокус в первый сегмент даты
+     */
+    autoFocus?: boolean;
+
     'data-testid'?: string;
 }
 
 export const DateTimeField: FC<DateTimeFieldProps> = (props) => {
-    const { addonBefore, addonAfter, className, 'data-testid': testId, ...otherProps } = props;
+    const { addonBefore, addonAfter, className, 'data-testid': testId, autoFocus, ...otherProps } = props;
     const { disabled } = otherProps;
-    const ref = useRef<HTMLSpanElement>(null);
+    const focusScopeRef = useRef<HTMLSpanElement>(null);
     const state = useDateTimeFieldState(otherProps);
     const [focusWithin, setFocusWithin] = useState(false);
-    const { focusWithinProps } = useFocusWithin({
-        disabled,
-        onFocusWithinChange: setFocusWithin,
-    });
+    const { focusWithinProps } = useFocusWithin({ disabled, onFocusWithinChange: setFocusWithin });
 
     return (
         <DateTimeFieldBase
@@ -49,13 +51,11 @@ export const DateTimeField: FC<DateTimeFieldProps> = (props) => {
             data-testid={testId}
         >
             {addonBefore && <DateTimeFieldSlot name="before">{addonBefore}</DateTimeFieldSlot>}
-
-            <DateTimeFieldSlot ref={ref} name="control">
-                <FocusManagerScope value={ref}>
+            <DateTimeFieldSlot ref={focusScopeRef} name="control">
+                <FocusManagerScope scopeRef={focusScopeRef} autoFocus={autoFocus}>
                     <DateTimeFieldControl state={state} {...otherProps} />
                 </FocusManagerScope>
             </DateTimeFieldSlot>
-
             {addonAfter && <DateTimeFieldSlot name="after">{addonAfter}</DateTimeFieldSlot>}
         </DateTimeFieldBase>
     );

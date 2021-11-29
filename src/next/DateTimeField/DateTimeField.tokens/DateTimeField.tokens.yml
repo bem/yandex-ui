@@ -38,7 +38,7 @@ datetimefield:
     borderWidth:
       base:
         value: 2px
-  
+
     borderRadius:
       value: 4px
 
@@ -55,7 +55,7 @@ datetimefield:
     segment:
       fillColor:
         focused:
-          value: "#b4d5fe"
+          value: "#d9d9d9"
 
       typoColor:
         base:

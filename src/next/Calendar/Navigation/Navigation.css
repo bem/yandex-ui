@@ -37,3 +37,7 @@
 .Calendar-NavigationTitleButton_disabled {
     cursor: default;
 }
+
+[dir='rtl'] .Calendar-NavigationAction {
+    transform: scaleX(-1);
+}
