@@ -14,7 +14,6 @@ exports[`Drawer должен вернуть полный шаблон компо
     />
     <div
       class="Drawer-Curtain"
-      style="transform: translate3d(0,0%,0);"
     >
       <div
         class="Drawer-Handle"

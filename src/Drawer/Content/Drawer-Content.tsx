@@ -29,6 +29,22 @@ interface IDrawerContentProps extends IDrawerProps {
     setSpringDisabled: Dispatch<SetStateAction<boolean>>;
 }
 
+interface IGetSpringTransformParams {
+    axis: 'x' | 'y';
+    springValue: number;
+    inverted: 1 | -1;
+}
+
+function getSpringTransform({ axis, springValue, inverted }: IGetSpringTransformParams): string | null {
+    if (springValue === 1) {
+        return null;
+    }
+
+    return axis === 'x'
+        ? `translate3d(${(1 - springValue) * 100 * inverted}%,0,0)`
+        : `translate3d(0,${(1 - springValue) * 100 * inverted}%,0)`;
+}
+
 /**
  * Компонент содержимого шторки.
  *
@@ -56,13 +72,13 @@ export const DrawerContent: FC<IDrawerContentProps> = ({
     const inverted = direction === 'left' ? -1 : 1;
 
     const springOpacity = Math.max(springValue, 0);
-    const springTransform =
-        axis === 'x'
-            ? `translate3d(${(1 - springValue) * 100 * inverted}%,0,0)`
-            : `translate3d(0,${(1 - springValue) * 100 * inverted}%,0)`;
+    const springTransform = getSpringTransform({ axis, springValue, inverted });
 
     const curtainStyle = useMemo(
-        () => ({ transform: springTransform, ...(maxSize && { [axis === 'x' ? 'maxWidth' : 'maxHeight']: maxSize }) }),
+        () => ({
+            ...(springTransform ? { transform: springTransform } : {}),
+            ...(maxSize && { [axis === 'x' ? 'maxWidth' : 'maxHeight']: maxSize }),
+        }),
         [springTransform, maxSize, axis],
     );
 
