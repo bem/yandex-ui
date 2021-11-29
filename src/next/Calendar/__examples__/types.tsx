@@ -26,13 +26,21 @@ export const Types = () => {
 const Single = (props: CalendarBaseProps) => {
     const [value, setValue] = useState<Date>(new Date(2021, 8, 3));
 
-    return <Calendar view="default" size="s" value={value} onChange={setValue} {...props} />;
+    return <Calendar view="default" size="s" value={value} onChange={(event) => setValue(event.value)} {...props} />;
 };
 
 const Multiple = (props: CalendarBaseProps) => {
     const [value, setValue] = useState<Date[]>([new Date(2021, 8, 3), new Date(2021, 8, 4)]);
 
-    return <MultipleCalendar view="default" size="s" value={value} onChange={setValue} {...props} />;
+    return (
+        <MultipleCalendar
+            view="default"
+            size="s"
+            value={value}
+            onChange={(event) => setValue(event.value)}
+            {...props}
+        />
+    );
 };
 
 const Range = (props: CalendarBaseProps) => {
@@ -41,7 +49,9 @@ const Range = (props: CalendarBaseProps) => {
         end: new Date(2021, 8, 20),
     });
 
-    return <RangeCalendar view="default" size="s" value={value} onChange={setValue} {...props} />;
+    return (
+        <RangeCalendar view="default" size="s" value={value} onChange={(event) => setValue(event.value)} {...props} />
+    );
 };
 
 const components = {

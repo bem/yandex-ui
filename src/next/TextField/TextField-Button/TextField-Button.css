@@ -1,0 +1,29 @@
+.TextField-Button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 24px;
+    height: 24px;
+    padding: 0;
+
+    cursor: pointer;
+
+    opacity: 0.3;
+    color: inherit;
+    border: 0;
+    outline: 0;
+    background: 0;
+}
+
+.TextField-Button[data-hovered='true'] {
+    opacity: .75;
+}
+
+.TextField-Button[data-pressed='true'] {
+    opacity: 1;
+}
+
+.TextField-Button[data-disabled='true'] {
+    cursor: not-allowed;
+}

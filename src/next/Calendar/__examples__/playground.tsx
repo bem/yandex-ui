@@ -41,19 +41,19 @@ const getKnobProps = () => ({
 const Single = (props: CalendarBaseProps) => {
     const [value, setValue] = useState<Date>();
 
-    return <Calendar value={value} onChange={setValue} {...props} />;
+    return <Calendar value={value} onChange={(event) => setValue(event.value)} {...props} />;
 };
 
 const Multiple = (props: CalendarBaseProps) => {
     const [value, setValue] = useState<Date[]>();
 
-    return <MultipleCalendar value={value} onChange={setValue} {...props} />;
+    return <MultipleCalendar value={value} onChange={(event) => setValue(event.value)} {...props} />;
 };
 
 const Range = (props: CalendarBaseProps) => {
     const [value, setValue] = useState<RangeValue<Date>>();
 
-    return <RangeCalendar value={value} onChange={setValue} {...props} />;
+    return <RangeCalendar value={value} onChange={(event) => setValue(event.value)} {...props} />;
 };
 
 const components = {

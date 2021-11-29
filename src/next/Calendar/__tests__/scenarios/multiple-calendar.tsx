@@ -36,7 +36,7 @@ export const MultipleCalendarHermioneCase = () => {
                         defaultCalendarView={defaultCalendarView}
                         minCalendarView={minCalendarView}
                         value={value}
-                        onChange={setValue}
+                        onChange={(event) => setValue(event.value)}
                         disabled={disabled}
                         showOutsideDays={showOutsideDays}
                         showWeekNumbers={showWeekNumbers}

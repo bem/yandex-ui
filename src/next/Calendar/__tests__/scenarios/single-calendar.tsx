@@ -34,7 +34,7 @@ export const SingleCalendarHermioneCase = () => {
                         defaultFocusedDate={new Date(2020, 2, 10)}
                         defaultCalendarView={defaultCalendarView}
                         value={value}
-                        onChange={setValue}
+                        onChange={(event) => setValue(event.value)}
                         disabled={disabled}
                         showOutsideDays={showOutsideDays}
                         showWeekNumbers={showWeekNumbers}

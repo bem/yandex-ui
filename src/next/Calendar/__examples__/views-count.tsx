@@ -19,7 +19,7 @@ export const ViewsCount = () => {
                             size="s"
                             viewsCount={viewsCount}
                             value={value}
-                            onChange={setValue}
+                            onChange={(event) => setValue(event.value)}
                         />
                     </div>
                 </div>

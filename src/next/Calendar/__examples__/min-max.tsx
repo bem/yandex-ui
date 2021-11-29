@@ -16,7 +16,14 @@ export const MinMax = () => {
             <style>{styles}</style>
             <div className="grid-a1g3dg">
                 <Box min={min} max={max} setMin={setMin} setMax={setMax} />
-                <Calendar view="default" size="s" min={minDate} max={maxDate} value={value} onChange={setValue} />
+                <Calendar
+                    view="default"
+                    size="s"
+                    min={minDate}
+                    max={maxDate}
+                    value={value}
+                    onChange={(event) => setValue(event.value)}
+                />
             </div>
         </>
     );

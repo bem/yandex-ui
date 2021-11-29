@@ -11,7 +11,7 @@ export const View = () => {
             <style>{styles}</style>
             <div>
                 <Box value={view} setValue={setView} />
-                <Calendar view={view} size="s" value={value} onChange={setValue} />
+                <Calendar view={view} size="s" value={value} onChange={(event) => setValue(event.value)} />
             </div>
         </>
     );

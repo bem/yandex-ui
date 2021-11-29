@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import { ValueProps, useSingleCalendarState } from 'web-platform-alpha';
+import { DateInputValueProps, useSingleCalendarState } from 'web-platform-alpha';
 
 import { BaseCalendar } from './BaseCalendar';
 import { CalendarBaseProps } from './types';
 
-export type CalendarProps = CalendarBaseProps & ValueProps<Date>;
+export type CalendarProps = CalendarBaseProps & DateInputValueProps<Date>;
 
 export const Calendar: FC<CalendarProps> = (props) => {
     const state = useSingleCalendarState(props);

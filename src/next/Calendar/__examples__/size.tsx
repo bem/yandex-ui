@@ -11,7 +11,7 @@ export const Size = () => {
             <style>{styles}</style>
             <div>
                 <Box size={size} setSize={setSize} />
-                <Calendar view="default" size={size} value={value} onChange={setValue} />
+                <Calendar view="default" size={size} value={value} onChange={(event) => setValue(event.value)} />
             </div>
         </>
     );

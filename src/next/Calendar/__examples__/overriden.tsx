@@ -46,7 +46,7 @@ export const Overriden = () => {
             <style>{styles}</style>
             <Calendar
                 value={value}
-                onChange={setValue}
+                onChange={(event) => setValue(event.value)}
                 size="l"
                 view="default"
                 renderCell={(props, Cell) => (

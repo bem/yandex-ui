@@ -1,11 +1,12 @@
 import React, { FC, ReactNode, useCallback, useRef, useState } from 'react';
 import { FocusManagerScope } from 'web-platform-alpha/libs/focus';
 import {
-    DateTimeChangeEvent,
-    RangeValue,
+    DateInputChangeEvent,
+    MaybeDateValue,
+    DateRangeValue,
     useDateTimeFieldState,
-    useFocusWithin,
     UseDateTimeFieldStateProps,
+    useFocusWithin,
 } from 'web-platform-alpha';
 
 import { cnDateTimeField } from './DateTimeField.const';
@@ -34,12 +35,12 @@ export interface DateTimeRangeFieldProps extends Omit<UseDateTimeFieldStateProps
     /**
      * Значение контрола
      */
-    value?: RangeValue<Date | null>;
+    value?: DateRangeValue;
 
     /**
      * Обработчик изменения значения
      */
-    onChange?: (value: RangeValue<Date | null>) => void;
+    onChange?: (event: DateInputChangeEvent<DateRangeValue>) => void;
 
     /**
      * Устанавливает фокус в первый сегмент даты
@@ -69,15 +70,15 @@ export const DateTimeRangeField: FC<DateTimeRangeFieldProps> = (props) => {
     });
 
     const onStartChange = useCallback(
-        (event: DateTimeChangeEvent) => {
-            onChange?.({ start: event.value, end: value.end });
+        (event: DateInputChangeEvent<MaybeDateValue>) => {
+            onChange?.({ value: { start: event.value, end: value.end } });
         },
         [onChange, value.end],
     );
 
     const onEndChange = useCallback(
-        (event: DateTimeChangeEvent) => {
-            onChange?.({ start: value.start, end: event.value });
+        (event: DateInputChangeEvent<MaybeDateValue>) => {
+            onChange?.({ value: { start: value.start, end: event.value } });
         },
         [onChange, value.start],
     );
