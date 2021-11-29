@@ -145,7 +145,6 @@ export function createDatePicker(options: CreateDatePickerOptions | CreateDateRa
                     keepMounted={false}
                     view="default"
                     target="anchor"
-                    scope="inplace"
                     anchor={anchorRef}
                     visible={state.isOpen}
                     onClose={handleOnClose}

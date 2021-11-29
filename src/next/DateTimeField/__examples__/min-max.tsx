@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { MaybeDateValue, DatePicker } from '@yandex-lego/components/next/DatePicker';
-import { DateTimeField } from '@yandex-lego/components/next/DateTimeField/desktop/bundle';
+import { MaybeDateValue } from 'web-platform-alpha';
 import { Text } from '@yandex-lego/components/Text/desktop/bundle';
+import { DateTimeField } from '@yandex-lego/components/next/DateTimeField/desktop/bundle';
 
 export const MinMax = () => {
     const [value, setValue] = useState<MaybeDateValue>(new Date(2021, 9, 10));
@@ -11,9 +11,9 @@ export const MinMax = () => {
     return (
         <>
             <style>{styles}</style>
-            <div className="grid-wu9cx2ado">
+            <div className="grid-a1g3dg">
                 <Box min={min} max={max} setMin={setMin} setMax={setMax} />
-                <DatePicker
+                <DateTimeField
                     view="default"
                     size="s"
                     min={min ?? undefined}
@@ -30,7 +30,7 @@ const Box = (props: any) => {
     const { min, setMin, max, setMax } = props;
 
     return (
-        <div className="box-mhwafoc2j">
+        <div className="box-dk23xd">
             <div style={{ width: '180px' }}>
                 <div style={{ marginBottom: 12 }}>
                     <Text color="ghost" typography="caption-xl" weight="bold" style={{ marginBottom: 8 }}>
@@ -53,14 +53,14 @@ const Box = (props: any) => {
 };
 
 const styles = `
-    .grid-wu9cx2ado {
+    .grid-a1g3dg {
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
         justify-content: center;
     }
 
-    .box-mhwafoc2j {
+    .box-dk23xd {
         display: flex;
         flex-direction: column;
         align-items: center;

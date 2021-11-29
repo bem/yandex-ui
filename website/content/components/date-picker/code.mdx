@@ -1,0 +1,58 @@
+import { DatePickerProps, DateRangePickerProps } from '!!ts-docgen-next/loader!./props.tsx';
+
+### API
+
+#### DatePicker
+
+<PropsTable props={DatePickerProps} />
+
+<br /><br />
+
+#### DateRangePicker
+
+<PropsTable props={DateRangePickerProps} />
+
+<br /><br />
+
+#### createDatePicker
+
+Фабрика для создания компонента выбора даты, которая возвращает React-компонент. Пример использования:
+
+```tsx
+import { useDatePickerState } from 'web-platform-alpha';
+import { createDatePicker } from '@yandex-lego/components/next/DatePicker';
+import { DateTimeField } from '@yandex-lego/components/next/DateTimeField/desktop/bundle';
+import { Calendar } from '@yandex-lego/components/next/Calendar/desktop/bundle';
+
+export const DatePicker = createDatePicker({
+    /**
+     * Название React-компонента
+     */
+    displayName: 'DatePicker',
+    /**
+     * Свойства по умолчанию
+     */
+    defaultProps: {
+        size: 'm',
+        view: 'default',
+    },
+    hooks: {
+        /**
+         * Хук состояния компонета. 
+         * Может принимать `useDatePickerState` или `useDateRangePickerState`
+         * в зависимости от того, нужен ли выбор периода даты
+         */
+        useDatePickerState: useDatePickerState,
+    },
+    slots: {
+        /**
+         * Компонент календаря
+         */
+        Calendar: Calendar,
+        /**
+         * Компонент поля
+         */
+        DateField: DateTimeField,
+    },
+});
+```

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDatePickerState, useDateFormatter } from 'web-platform-alpha';
 import { MaybeDateValue, createDatePicker } from '@yandex-lego/components/next/DatePicker';
+import { Text } from '@yandex-lego/components/Text/desktop/bundle';
 import { Calendar } from '@yandex-lego/components/next/Calendar/desktop/bundle';
 
 function isValidDate(date: unknown): date is Date {
@@ -16,16 +17,16 @@ const DatePicker = createDatePicker({
             return <Calendar {...props} size="s" view="brand" />;
         },
         DateField: (props) => {
-            const { value, onChange, addonAfter } = props;
-            const dateFormatter = useDateFormatter({});
+            const { value, addonAfter } = props;
+            const dateFormatter = useDateFormatter({ day: 'numeric', month: 'long', year: 'numeric' });
             const formattedValue = isValidDate(value) ? dateFormatter.format(value) : undefined;
 
             return (
-                <div style={{ display: 'flex' }}>
-                    <input
-                        value={formattedValue}
-                        onChange={(event) => onChange?.({ value: new Date(event.target.value) })}
-                    />
+                <div style={{ display: 'flex', alignItems: 'center' }} tabIndex={0}>
+                    <Text weight="medium" typography="body-long-m">
+                        {formattedValue}
+                    </Text>
+                    &nbsp;
                     {addonAfter}
                 </div>
             );
@@ -39,7 +40,7 @@ export const CustomComponents = () => {
     return (
         <>
             <style>{styles}</style>
-            <div className="container-rc1jby">
+            <div className="container-fszf0fgy2">
                 <DatePicker value={value} onChange={(event) => setValue(event.value)} />
             </div>
         </>
@@ -47,10 +48,9 @@ export const CustomComponents = () => {
 };
 
 const styles = `
-    .container-rc1jby {
+    .container-fszf0fgy2 {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 50vh;
     }
 `;

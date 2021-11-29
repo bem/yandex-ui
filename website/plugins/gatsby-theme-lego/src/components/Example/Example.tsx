@@ -38,7 +38,7 @@ export const Example: FC<ExampleProps> = (props) => {
     const { frontmatter } = usePageContext();
     const componentId = frontmatter?.id;
     // TODO: Удалить (включая контекст), после того, как все примеры будут корректно выравнены.
-    const alignExampleByCenter = ['Button', 'Popup', 'Calendar'].includes(componentId);
+    const alignExampleByCenter = ['Button', 'Popup', 'Calendar', 'DateTimeField', 'DatePicker'].includes(componentId);
 
     const toggleSourceVisible = () => {
         setVisibleSource(!isVisibleSource);

@@ -1,0 +1,95 @@
+import { Types as dateTimeFieldTypes } from '@yandex-lego/components/next/DateTimeField/__examples__/types.tsx'
+import typesDateTimeFieldSource from '!!raw-loader!@yandex-lego/components/next/DateTimeField/__examples__/types.tsx'
+import { View as dateTimeFieldView } from '@yandex-lego/components/next/DateTimeField/__examples__/view.tsx'
+import viewDateTimeFieldSource from '!!raw-loader!@yandex-lego/components/next/DateTimeField/__examples__/view.tsx'
+import { Size as dateTimeFieldSize } from '@yandex-lego/components/next/DateTimeField/__examples__/size.tsx'
+import sizeDateTimeFieldSource from '!!raw-loader!@yandex-lego/components/next/DateTimeField/__examples__/size.tsx'
+import { MinMax as dateTimeFieldMinMax } from '@yandex-lego/components/next/DateTimeField/__examples__/min-max.tsx'
+import minMaxDateTimeFieldSource from '!!raw-loader!@yandex-lego/components/next/DateTimeField/__examples__/min-max.tsx'
+import { Pin as dateTimeFieldPin } from '@yandex-lego/components/next/DateTimeField/__examples__/pin.tsx'
+import pinDateTimeFieldSource from '!!raw-loader!@yandex-lego/components/next/DateTimeField/__examples__/pin.tsx'
+import { Addons as dateTimeFieldAddons } from '@yandex-lego/components/next/DateTimeField/__examples__/addons.tsx'
+import addonsDateTimeFieldSource from '!!raw-loader!@yandex-lego/components/next/DateTimeField/__examples__/addons.tsx'
+import { FormatOptions as dateTimeFieldFormatOptions } from '@yandex-lego/components/next/DateTimeField/__examples__/format-options.tsx'
+import formatOptionsDateTimeFieldSource from '!!raw-loader!@yandex-lego/components/next/DateTimeField/__examples__/format-options.tsx'
+
+> ⚠️ Данный компонент помечен как `нестабильный`, так как находится в стадии публичного тестирования и может незначительно изменить свой `API`.
+> Если вы нашли баг или считаете, что какие-то места можно улучшить, то обязательно напишите [нам](https://supportboard.yandex-team.ru/LEGOSUPPORT/add-question).
+
+### Типы
+
+<Example component={dateTimeFieldTypes} source={typesDateTimeFieldSource}>
+  <Title>Types</Title>
+  <Description>
+    Для использование конкретного типа поля, импортируйте нужный компонент: `&lt;DateTimeField /&gt;` или `&lt;DateTimeRangeField /&gt;`
+  </Description>
+</Example>
+
+### Виды
+
+Для управления видом календаря, используйте модификатор `view`.
+
+<Example component={dateTimeFieldView} source={viewDateTimeFieldSource}>
+  <Title>View</Title>
+  <Description>
+    Чтобы изменить вид поля, установите свойство `view` в значение `"default"`
+  </Description>
+</Example>
+
+### Размеры
+
+Для управления размером поля, используйте модификатор `size`.
+
+<Example component={dateTimeFieldSize} source={sizeDateTimeFieldSource}>
+  <Title>Size</Title>
+  <Description>
+    Чтобы изменить размер календаря, установите свойство `size` в одно из следующих значений: `"s"` или `"m"`
+  </Description>
+</Example>
+
+### Минимальная и максимальная дата
+
+<Example component={dateTimeFieldMinMax} source={minMaxDateTimeFieldSource}>
+  <Title>Min и Max</Title>
+  <Description>
+    Чтобы задать минимальную или максимальную дату, укажите свойства `min` или `max`
+  </Description>
+</Example>
+
+### Границы
+
+<Example component={dateTimeFieldPin} source={pinDateTimeFieldSource}>
+  <Title>Pin</Title>
+  <Description>
+    Чтобы изменить границы поля, установите свойство `pin` в одно из следующих значений: `"brick-brick"`, `"brick-clear"`, `"brick-round"`, `"clear-brick"`, `"clear-clear"`, `"clear-round"`, `"round-brick"` или `"round-clear"`.
+  </Description>
+</Example>
+
+### Контент
+
+Компонент `DateTimeField` может включать в себя разный контент
+
+<Example component={dateTimeFieldAddons} source={addonsDateTimeFieldSource}>
+  <Title>Контент</Title>
+  <Description>
+    Если вы хотите добавить свой контент, сделайте это с помощью свойства `addonAfter` или `addonBefore`
+  </Description>
+</Example>
+
+### Формат ввода
+
+<Example component={dateTimeFieldFormatOptions} source={formatOptionsDateTimeFieldSource}>
+  <Title>Контент</Title>
+  <Description>
+    Чтобы указать формат ввода, установить свойство `formatOptions` с необходимыми [параметрами](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat#parameters)
+  </Description>
+</Example>
+
+> ⚠️ Так как в обработчик `onChange` почти всегда передаётся значение в виде объекта `Date`, то при использовании, например, формата для ввода часов и минут, рекомендуется явно извлечь нужные значения:
+> ```ts
+> onChange={(event) => {
+>  const { value } = event;
+>
+>  setTime(value ? { h: value.getHours(), m: value.getMinutes() } : null)
+> }}
+> ```

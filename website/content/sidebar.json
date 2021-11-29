@@ -48,9 +48,11 @@
       },
       {
         "label": "DatePicker",
-        "badge": "develop",
-        "path": "https://st.yandex-team.ru/ISL-9886",
-        "__skip": true
+        "badge": "unstable"
+      },
+      {
+        "label": "DateTimeField",
+        "badge": "unstable"
       },
       {
         "label": "LayerManager",

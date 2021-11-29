@@ -1,56 +1,65 @@
-import React, { FC } from 'react';
-import { Text } from '@yandex-lego/components/next/Text/desktop/bundle';
-import {
-    DateTimeField as BaseDateTimeField,
-    DateTimeRangeField as BaseDateTimeRangeField,
-} from '@yandex-lego/components/next/DateTimeField/desktop/bundle';
-
-const PinTitle = Text.bind(null);
-PinTitle.defaultProps = { typography: 'body-short-m', weight: 'medium' };
-
-const DateTimeField = BaseDateTimeField.bind(null);
-DateTimeField.defaultProps = { view: 'default', size: 'm' };
-
-const DateTimeRangeField = BaseDateTimeRangeField.bind(null);
-DateTimeRangeField.defaultProps = { view: 'default', size: 'm' };
-
-const pins = [
-    undefined,
-    'brick-brick',
-    'brick-clear',
-    'brick-round',
-    'clear-brick',
-    'clear-clear',
-    'clear-round',
-    'round-brick',
-    'round-clear',
-] as const;
-
-const Grid: FC = ({ children }) => (
-    <div
-        style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: '16px 8px',
-            margin: '0 auto',
-            alignItems: 'center',
-            justifyContent: 'center',
-        }}
-    >
-        {children}
-    </div>
-);
+import React, { forwardRef, useState } from 'react';
+import { MaybeDateValue } from 'web-platform-alpha';
+import { Select } from '@yandex-lego/components/Select/desktop/bundle';
+import { DateTimeField, DateTimeFieldProps } from '@yandex-lego/components/next/DateTimeField/desktop/bundle';
 
 export const Pin = () => {
+    const [pin, setPin] = useState<DateTimeFieldProps['pin']>('brick-brick');
+    const [value, setValue] = useState<MaybeDateValue>();
+
     return (
-        <Grid>
-            {pins.map((pin, index) => (
-                <React.Fragment key={index}>
-                    <PinTitle>{pin ?? 'default'}</PinTitle>
-                    <DateTimeField pin={pin} />
-                    <DateTimeRangeField pin={pin} />
-                </React.Fragment>
-            ))}
-        </Grid>
+        <>
+            <style>{styles}</style>
+            <div className="container-nqo42me">
+                <Box pin={pin} setPin={setPin} />
+                <DateTimeField
+                    view="default"
+                    size="m"
+                    pin={pin}
+                    value={value}
+                    onChange={(event) => setValue(event.value)}
+                />
+            </div>
+        </>
     );
 };
+
+const Box = forwardRef<HTMLDivElement, any>((props, ref) => {
+    const { pin, setPin } = props;
+
+    return (
+        <div className="box-vg4hjd" ref={ref}>
+            <Select
+                size="s"
+                view="default"
+                value={pin}
+                style={{ width: 150 }}
+                options={[
+                    { value: 'brick-brick', content: 'brick-brick' },
+                    { value: 'brick-clear', content: 'brick-clear' },
+                    { value: 'brick-round', content: 'brick-round' },
+                    { value: 'clear-brick', content: 'clear-brick' },
+                    { value: 'clear-clear', content: 'clear-clear' },
+                    { value: 'clear-round', content: 'clear-round' },
+                    { value: 'round-brick', content: 'round-brick' },
+                    { value: 'round-clear', content: 'round-clear' },
+                ]}
+                onChange={(event) => setPin(event.target.value)}
+            />
+        </div>
+    );
+});
+
+const styles = `
+    .container-nqo42me {
+        text-align: center;
+    }
+
+    .box-vg4hjd {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+        padding: 24px;
+    }
+`;

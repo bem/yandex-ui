@@ -1,0 +1,73 @@
+import { Type as DatePickerTypes } from '@yandex-lego/components/next/DatePicker/__examples__/type.tsx'
+import typeDatePickerSource from '!!raw-loader!@yandex-lego/components/next/DatePicker/__examples__/type.tsx'
+import { View as DatePickerView } from '@yandex-lego/components/next/DatePicker/__examples__/view.tsx'
+import viewDatePickerSource from '!!raw-loader!@yandex-lego/components/next/DatePicker/__examples__/view.tsx'
+import { Size as DatePickerSize } from '@yandex-lego/components/next/DatePicker/__examples__/size.tsx'
+import sizeDatePickerSource from '!!raw-loader!@yandex-lego/components/next/DatePicker/__examples__/size.tsx'
+import { MinMax as DatePickerMinMax } from '@yandex-lego/components/next/DatePicker/__examples__/min-max.tsx'
+import minMaxDatePickerSource from '!!raw-loader!@yandex-lego/components/next/DatePicker/__examples__/min-max.tsx'
+import { CustomComponents as DatePickerCustomComponents } from '@yandex-lego/components/next/DatePicker/__examples__/custom-components.tsx'
+import customComponentsDatePickerSource from '!!raw-loader!@yandex-lego/components/next/DatePicker/__examples__/custom-components.tsx'
+import { Locale as DatePickerLocale } from '@yandex-lego/components/next/DatePicker/__examples__/locale.tsx'
+import localeDatePickerSource from '!!raw-loader!@yandex-lego/components/next/DatePicker/__examples__/locale.tsx'
+
+> ⚠️ Данный компонент помечен как `нестабильный`, так как находится в стадии публичного тестирования и может незначительно изменить свой `API`.
+> Если вы нашли баг или считаете, что какие-то места можно улучшить, то обязательно напишите [нам](https://supportboard.yandex-team.ru/LEGOSUPPORT/add-question).
+
+### Типы
+
+<Example component={DatePickerTypes} source={typeDatePickerSource}>
+  <Title>Types</Title>
+  <Description>
+    Для использование конкретного типа, импортируйте нужный компонент: `&lt;DatePicker /&gt;` или `&lt;DateRangePicker /&gt;`
+  </Description>
+</Example>
+
+### Виды
+
+Для управления видом, используйте модификатор `view`.
+
+<Example component={DatePickerView} source={viewDatePickerSource}>
+  <Title>View</Title>
+  <Description>
+    Чтобы изменить вид, установите свойство `view` в значение: `"default"`
+  </Description>
+</Example>
+
+### Размеры
+
+Для управления размером, используйте модификатор `size`.
+
+<Example component={DatePickerSize} source={sizeDatePickerSource}>
+  <Title>Size</Title>
+  <Description>
+    Чтобы изменить размер, установите свойство `size` в одно из следующих значений: `"s"` или `"m"`
+  </Description>
+</Example>
+
+### Минимальная и максимальная дата
+
+<Example component={DatePickerMinMax} source={minMaxDatePickerSource}>
+  <Title>Min и Max</Title>
+  <Description>
+    Чтобы задать минимальную или максимальную дату, укажите свойства `min` или `max`
+  </Description>
+</Example>
+
+### Кастомизация
+
+<Example component={DatePickerCustomComponents} source={customComponentsDatePickerSource}>
+  <Title>Custom Components</Title>
+  <Description>
+    Чтобы создать `DatePicker` с кастомными компонентами, используйте функцию [createDatePicker](/components/date-picker/code#createdatepicker).
+  </Description>
+</Example>
+
+### Локализация
+
+<Example component={DatePickerLocale} source={localeDatePickerSource}>
+  <Title>Локализация</Title>
+  <Description>
+    Чтобы задать локаль, импортируйте компонент `Provider` и укажите необходимое значение для свойства `locale`
+  </Description>
+</Example>

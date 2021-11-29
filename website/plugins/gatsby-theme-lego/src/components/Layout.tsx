@@ -50,7 +50,7 @@ const Container = styled.div`
     display: grid;
     overflow: hidden;
     grid-template-areas: 'header header' 'main main';
-    grid-template-columns: 272px 1fr;
+    grid-template-columns: 300px 1fr;
     grid-template-rows: max-content 1fr;
 
     height: 100vh;
