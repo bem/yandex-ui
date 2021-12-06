@@ -115,6 +115,28 @@ module.exports = {
 
 </details>
 
+<br />
+
+## Next.js 
+
+Для использования библиотеки внутри Next.js приложения воспользуйтесь плагином <a href="https://github.com/bem/next-global-css" target="_blank">next-global-css</a>.
+
+```bash
+npm i -PE next-global-css
+```
+
+```js
+const { withGlobalCss } = require('next-global-css')
+
+const withConfig = withGlobalCss()
+
+module.exports = withConfig({
+  /* Next.js config options here */
+})
+```
+
+> Плагин работает с версией Next.js >= 10.
+
 
 ## Поддерживаемые платформы
 
