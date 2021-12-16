@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { RangeCalendar, RangeValue } from '@yandex-lego/components/next/Calendar/desktop/bundle';
+import { RangeCalendar, DateRangeValue } from '@yandex-lego/components/next/Calendar/desktop/bundle';
 import { useParams } from '@yandex-lego/components/internal/utils/parseQueryString';
 import { LocaleProvider } from 'web-platform-alpha/libs/i18n';
 
@@ -24,7 +24,7 @@ export const RangeCalendarHermioneCase = () => {
         defaultCalendarView,
         minCalendarView,
     } = useParams();
-    const [value, setValue] = useState<RangeValue<Date>>();
+    const [value, setValue] = useState<DateRangeValue>();
 
     return (
         <>

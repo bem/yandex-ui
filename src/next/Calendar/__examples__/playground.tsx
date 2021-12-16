@@ -5,7 +5,7 @@ import {
     MultipleCalendar,
     RangeCalendar,
     CalendarBaseProps,
-    RangeValue,
+    DateRangeValue,
 } from '@yandex-lego/components/next/Calendar/desktop/bundle';
 
 function dateKnob(name: string, value?: Date, groupId?: string): Date {
@@ -51,7 +51,7 @@ const Multiple = (props: CalendarBaseProps) => {
 };
 
 const Range = (props: CalendarBaseProps) => {
-    const [value, setValue] = useState<RangeValue<Date>>();
+    const [value, setValue] = useState<DateRangeValue>();
 
     return <RangeCalendar value={value} onChange={(event) => setValue(event.value)} {...props} />;
 };

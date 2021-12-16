@@ -1,11 +1,11 @@
 import React, { forwardRef, useState } from 'react';
 import { Textinput } from '@yandex-lego/components/Textinput/desktop/bundle';
 import { Text } from '@yandex-lego/components/Text/desktop/bundle';
-import { RangeCalendar, RangeValue } from '@yandex-lego/components/next/Calendar/desktop/bundle';
+import { DateRangeValue, RangeCalendar } from '@yandex-lego/components/next/Calendar/desktop/bundle';
 
 export const ViewsCount = () => {
     const [viewsCount, setViewsCount] = useState<number>(2);
-    const [value, setValue] = useState<RangeValue<Date>>();
+    const [value, setValue] = useState<DateRangeValue>();
 
     return (
         <>

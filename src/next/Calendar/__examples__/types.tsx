@@ -5,7 +5,7 @@ import {
     MultipleCalendar,
     RangeCalendar,
     CalendarBaseProps,
-    RangeValue,
+    DateRangeValue,
 } from '@yandex-lego/components/next/Calendar/desktop/bundle';
 
 export const Types = () => {
@@ -44,7 +44,7 @@ const Multiple = (props: CalendarBaseProps) => {
 };
 
 const Range = (props: CalendarBaseProps) => {
-    const [value, setValue] = useState<RangeValue<Date>>({
+    const [value, setValue] = useState<DateRangeValue>({
         start: new Date(2021, 8, 1),
         end: new Date(2021, 8, 20),
     });

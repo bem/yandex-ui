@@ -2,7 +2,6 @@ import React, { FC, ReactNode, useCallback, useRef, useState } from 'react';
 import { FocusManagerScope } from 'web-platform-alpha/libs/focus';
 import {
     DateInputChangeEvent,
-    MaybeDateValue,
     DateRangeValue,
     useDateTimeFieldState,
     UseDateTimeFieldStateProps,
@@ -70,14 +69,14 @@ export const DateTimeRangeField: FC<DateTimeRangeFieldProps> = (props) => {
     });
 
     const onStartChange = useCallback(
-        (event: DateInputChangeEvent<MaybeDateValue>) => {
+        (event: DateInputChangeEvent<Date | null>) => {
             onChange?.({ value: { start: event.value, end: value.end } });
         },
         [onChange, value.end],
     );
 
     const onEndChange = useCallback(
-        (event: DateInputChangeEvent<MaybeDateValue>) => {
+        (event: DateInputChangeEvent<Date | null>) => {
             onChange?.({ value: { start: value.start, end: event.value } });
         },
         [onChange, value.start],

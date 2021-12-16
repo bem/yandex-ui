@@ -6,10 +6,10 @@ import {
     DOMProps,
     SharedDatePickerProps,
     UseDatePickerStateResult,
-    UseDateRangePickerStateResult,
     useDatePicker,
     useFocusTrap,
     useLocale,
+    DateRangeValue,
 } from 'web-platform-alpha';
 import { Calendar as CalendarIcon } from '@yandex/ui-icons';
 
@@ -20,11 +20,14 @@ import type { CalendarProps, RangeCalendarProps } from '../Calendar/desktop/bund
 import { POPOVER_DIRECTIONS, RTL_POPOVER_DIRECTIONS, cnDatePicker } from './constants';
 import './DatePicker.css';
 
-interface CreateDatePickerOptions {
+interface BaseCreateDatePickerOptions {
     displayName?: string;
     defaultProps?: any;
+}
+
+interface CreateDatePickerOptions extends BaseCreateDatePickerOptions {
     hooks: {
-        useDatePickerState: (props: BaseDatePickerProps) => UseDatePickerStateResult;
+        useDatePickerState: (props: BaseDatePickerProps) => UseDatePickerStateResult<Date | null>;
     };
     slots: {
         DateField: ComponentType<DateTimeFieldProps>;
@@ -32,11 +35,9 @@ interface CreateDatePickerOptions {
     };
 }
 
-interface CreateDateRangePickerOptions {
-    displayName?: string;
-    defaultProps?: any;
+interface CreateDateRangePickerOptions extends BaseCreateDatePickerOptions {
     hooks: {
-        useDatePickerState: (props: BaseDateRangePickerProps) => UseDateRangePickerStateResult;
+        useDatePickerState: (props: BaseDateRangePickerProps) => UseDatePickerStateResult<DateRangeValue>;
     };
     slots: {
         DateField: ComponentType<DateTimeRangeFieldProps>;
@@ -66,7 +67,7 @@ export function createDatePicker(
 ): FC<SharedPickerProps & BaseDateRangePickerProps>;
 
 export function createDatePicker(options: CreateDatePickerOptions | CreateDateRangePickerOptions) {
-    const { displayName, defaultProps, hooks, slots } = options;
+    const { displayName, defaultProps, hooks, slots } = options as CreateDateRangePickerOptions;
     const { useDatePickerState } = hooks;
     const { DateField, Calendar } = slots;
 
@@ -93,7 +94,10 @@ export function createDatePicker(options: CreateDatePickerOptions | CreateDateRa
         const triggerRef = useRef<HTMLButtonElement>(null);
 
         const state = useDatePickerState(props);
-        const { groupProps, triggerProps } = useDatePicker(props, state);
+        const { groupProps, triggerProps } = useDatePicker(
+            props,
+            state as UseDatePickerStateResult<Date | DateRangeValue | null>,
+        );
 
         const { isRTL } = useLocale();
 
@@ -123,10 +127,8 @@ export function createDatePicker(options: CreateDatePickerOptions | CreateDateRa
                     autoFocus={autoFocus}
                     view={view}
                     size={size}
-                    // @ts-expect-error (Can't infer correctly type with union case)
-                    value={state.value as unknown}
-                    // @ts-expect-error (Can't infer correctly type with union case)
-                    onChange={state.setValue as unknown}
+                    value={state.value}
+                    onChange={state.setValue}
                     placeholder={placeholder}
                     min={min}
                     max={max}
@@ -159,13 +161,9 @@ export function createDatePicker(options: CreateDatePickerOptions | CreateDateRa
                         showDaysOfWeek={showDaysOfWeek}
                         showQuarters={showQuarters}
                         showWeekNumbers={showWeekNumbers}
-                        // @ts-expect-error
                         onChange={state.setValue}
-                        // @ts-expect-error
                         value={state.value}
-                        // @ts-expect-error
                         min={min}
-                        // @ts-expect-error
                         max={max}
                     />
                 </Popup>

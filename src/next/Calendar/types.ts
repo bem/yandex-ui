@@ -3,7 +3,7 @@ import { BaseCalendarProps } from 'web-platform-alpha';
 import { RenderOverride } from '../../lib/render-override';
 import { DateButtonProps } from './DateButton';
 
-export type { RangeValue } from 'web-platform-alpha';
+export type { RangeValue, DateRangeValue } from 'web-platform-alpha';
 
 export interface CalendarBaseProps extends BaseCalendarProps {
     showOutsideDays?: boolean;
