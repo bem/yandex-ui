@@ -47,24 +47,24 @@ export const Nested = () => {
                         Отрыть вложенную шторку
                     </button>
                 </div>
-            </Drawer>
-            <Drawer
-                visible={nestedVisible}
-                onClose={() => setNestedVisible(false)}
-                scope={scopeRef}
-                view="default"
-                nested
-            >
-                <div className="DrawerInnerContent">
-                    <p>
-                        Phasellus sollicitudin in pellentesque cras sagittis platea mattis himenaeos, dui ligula congue
-                        ad nisi tempor laoreet lacus, etiam gravida taciti mauris adipiscing id erat. Mollis scelerisque
-                        vivamus sit dictum ultrices eros, suscipit varius cursus litora lectus montes, et posuere diam
-                        mauris conubia. Inceptos metus vel ac hendrerit lacinia arcu taciti potenti, vulputate class
-                        mollis maecenas orci nibh.
-                    </p>
-                    <button onClick={() => setNestedVisible(false)}>Закрыть вложенную шторку</button>
-                </div>
+                <Drawer
+                    visible={nestedVisible}
+                    onClose={() => setNestedVisible(false)}
+                    scope={scopeRef}
+                    view="default"
+                    nested
+                >
+                    <div className="DrawerInnerContent">
+                        <p>
+                            Phasellus sollicitudin in pellentesque cras sagittis platea mattis himenaeos, dui ligula
+                            congue ad nisi tempor laoreet lacus, etiam gravida taciti mauris adipiscing id erat. Mollis
+                            scelerisque vivamus sit dictum ultrices eros, suscipit varius cursus litora lectus montes,
+                            et posuere diam mauris conubia. Inceptos metus vel ac hendrerit lacinia arcu taciti potenti,
+                            vulputate class mollis maecenas orci nibh.
+                        </p>
+                        <button onClick={() => setNestedVisible(false)}>Закрыть вложенную шторку</button>
+                    </div>
+                </Drawer>
             </Drawer>
         </div>
     );

@@ -85,69 +85,73 @@ export const useDrag = <T>(onStateChange: StateChangeCallback<T>) => {
     const gestureStateRef = useRef<GestureState<T>>();
     const onStateChangeRef = useRef<StateChangeCallback<T>>();
 
-    const handler = useCallback(
-        (event: React.TouchEvent) => {
-            const onStateChange = onStateChangeRef.current || noop;
-            let state = gestureStateRef.current;
-            let touch = Array.from(event.changedTouches).find((item) => item.identifier === touchIdentifierRef.current);
+    const handler = useCallback((event: React.TouchEvent) => {
+        // NOTE: Так как в реакте события всплывают по virtual dom, а не по реальному,
+        // проверяем, что событие произошло в конкретном узле DOM, чтобы не закрыть сразу все шторки,
+        // если они вложены друг в друга
+        if (!event.currentTarget.contains(event.target as HTMLElement)) {
+            return;
+        }
 
-            if (!state && event.type === 'touchstart' && event.changedTouches.length === 1) {
-                touch = event.changedTouches[0];
+        const onStateChange = onStateChangeRef.current || noop;
+        let state = gestureStateRef.current;
+        let touch = Array.from(event.changedTouches).find((item) => item.identifier === touchIdentifierRef.current);
 
-                touchIdentifierRef.current = touch.identifier;
+        if (!state && event.type === 'touchstart' && event.changedTouches.length === 1) {
+            touch = event.changedTouches[0];
 
-                gestureStateRef.current = state = {
-                    first: true,
-                    last: false,
-                    startTime: event.timeStamp,
-                    initialPosition: { x: touch.clientX, y: touch.clientY },
-                    data: {},
-                } as GestureState<T>;
+            touchIdentifierRef.current = touch.identifier;
+
+            gestureStateRef.current = state = {
+                first: true,
+                last: false,
+                startTime: event.timeStamp,
+                initialPosition: { x: touch.clientX, y: touch.clientY },
+                data: {},
+            } as GestureState<T>;
+        }
+
+        if (state && touch) {
+            // всегда обновляем ссылку на объект исходного события
+            state.event = event;
+
+            // сохраняет координаты предыдущего вызова функции
+            if (event.type === 'touchmove') {
+                state.first = false;
+                state.previousPosition = state.currentPosition;
             }
 
-            if (state && touch) {
-                // всегда обновляем ссылку на объект исходного события
-                state.event = event;
-
-                // сохраняет координаты предыдущего вызова функции
-                if (event.type === 'touchmove') {
-                    state.first = false;
-                    state.previousPosition = state.currentPosition;
-                }
-
-                if (event.type === 'touchstart' || event.type === 'touchmove') {
-                    state.currentPosition = {
-                        x: touch.clientX,
-                        y: touch.clientY,
-                    };
-                    state.movement = {
-                        x: state.currentPosition.x - state.initialPosition.x,
-                        y: state.currentPosition.y - state.initialPosition.y,
-                    };
-                    state.delta = {
-                        x: state.currentPosition.x - (state.previousPosition || state.initialPosition).x,
-                        y: state.currentPosition.y - (state.previousPosition || state.initialPosition).y,
-                    };
-                    state.velocity = {
-                        x: state.delta.x / (event.timeStamp - state.startTime - state.elapsedTime) || 0,
-                        y: state.delta.y / (event.timeStamp - state.startTime - state.elapsedTime) || 0,
-                    };
-                    state.elapsedTime = event.timeStamp - state.startTime;
-                }
-
-                // жест завершен пользователем или был прекращен системой
-                if (event.type === 'touchend' || event.type === 'touchcancel') {
-                    state.first = false;
-                    state.last = true;
-                    gestureStateRef.current = undefined;
-                    touchIdentifierRef.current = undefined;
-                }
-
-                onStateChange(state);
+            if (event.type === 'touchstart' || event.type === 'touchmove') {
+                state.currentPosition = {
+                    x: touch.clientX,
+                    y: touch.clientY,
+                };
+                state.movement = {
+                    x: state.currentPosition.x - state.initialPosition.x,
+                    y: state.currentPosition.y - state.initialPosition.y,
+                };
+                state.delta = {
+                    x: state.currentPosition.x - (state.previousPosition || state.initialPosition).x,
+                    y: state.currentPosition.y - (state.previousPosition || state.initialPosition).y,
+                };
+                state.velocity = {
+                    x: state.delta.x / (event.timeStamp - state.startTime - state.elapsedTime) || 0,
+                    y: state.delta.y / (event.timeStamp - state.startTime - state.elapsedTime) || 0,
+                };
+                state.elapsedTime = event.timeStamp - state.startTime;
             }
-        },
-        [onStateChangeRef],
-    );
+
+            // жест завершен пользователем или был прекращен системой
+            if (event.type === 'touchend' || event.type === 'touchcancel') {
+                state.first = false;
+                state.last = true;
+                gestureStateRef.current = undefined;
+                touchIdentifierRef.current = undefined;
+            }
+
+            onStateChange(state);
+        }
+    }, []);
 
     // обновляем колбэк при каждом рендере, так нам не нужно будет использовать useCallback
     onStateChangeRef.current = onStateChange;
