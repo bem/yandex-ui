@@ -113,7 +113,7 @@ export const Drawer: FC<IDrawerProps> = (props) => {
     const clientHeight = useClientHeight();
     const popupStyle = useMemo(() => ({ height: clientHeight && clientHeight + 'px' }), [clientHeight]);
 
-    usePreventScroll({ enabled: springVisible });
+    usePreventScroll({ enabled: visible });
 
     useEffect(() => {
         setSpringDisabled(false);
