@@ -37,6 +37,7 @@ export const SingleHermioneCase = () => {
                     size={size}
                     formatOptions={formatOptions}
                     data-testid="datetimefield"
+                    placeholder={new Date(2021, 0, 1)}
                 />
             </div>
         </Provider>
