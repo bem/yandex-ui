@@ -11,4 +11,5 @@
 @mixin Button_raised
 /* $viewName                 */    raised,
 /* $shadowColor              */    rgba(0, 0, 0, .05),
-/* $shadowColorPressed       */    rgba(0, 0, 0, .1);
+/* $shadowColorPressed       */    rgba(0, 0, 0, .1),
+/* $borderRadius             */    var(--button-borderRadius);

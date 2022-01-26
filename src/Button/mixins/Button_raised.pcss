@@ -5,10 +5,16 @@
     /* Sets the shadow color of a Button */
     $shadowColor,
     /* Sets the additional shadow color of a Button in the pressed state */
-    $shadowColorPressed {
+    $shadowColorPressed,
+    /* Sets the border radius of Button */
+    $borderRadius {
     .Button2_view_$(viewName)::before,
     .Button2_view_$(viewName).Button2_raised::before {
         box-shadow: 0 0 0 1px $shadowColor, 0 1px 0 1px $shadowColor, 0 4px 6px 0 $shadowColor;
+    }
+
+    .Button2_view_$(viewName) {
+        border-radius: $borderRadius;
     }
 
     .Button2_view_$(viewName).Button2_pressed,
