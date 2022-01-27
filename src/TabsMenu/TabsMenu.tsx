@@ -134,24 +134,19 @@ export const TabsMenu: FC<ITabsMenuProps> = ({
             className={cnTabsMenu(null, [className])}
             ref={innerRef}
             role="tablist"
+            onKeyDown={onKeyDown}
         >
             {tabs.map(({ id, disabled, ...tabProps }, index) => (
                 <TabsMenuTab
                     {...tabProps}
+                    id={id}
                     innerRef={tabsRefs[index]}
                     first={index === 0}
                     disabled={disabled}
-                    onClick={disabled || (!onChange && !tabProps.onClick) ? undefined : (event) => {
-                        if (tabProps.onClick !== undefined) {
-                            tabProps.onClick(event);
-                        }
-                        if (onChange !== undefined) {
-                            onChange(id as string);
-                        }
-                    }}
+                    onClick={tabProps.onClick}
+                    onInternalClick={onChange}
                     active={id === activeTab}
                     key={id}
-                    onKeyDown={onKeyDown}
                 />
             ))}
             {addonAfter}

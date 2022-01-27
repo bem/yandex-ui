@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useReducer } from 'react';
 
 import { ITabsMenuTabProps } from '../Tab/TabsMenu-Tab';
 import { calculateItemWidth } from './calculateItemWidth';
@@ -9,68 +9,69 @@ interface IUseAdaptiveTabsProps {
     tabsRefs: Array<React.RefObject<HTMLLIElement>>;
     wrapperRef: React.RefObject<HTMLUListElement>;
     moreRef: React.RefObject<HTMLLIElement>;
+    activeTab?: string;
 }
 
-export const useAdaptiveTabs = ({ tabs, tabsRefs, wrapperRef, moreRef }: IUseAdaptiveTabsProps) => {
-    const [visibleTabs, setVisibleTabs] = useState<ITabsMenuTabProps[]>(tabs || []);
-    const [hiddenTabs, setHiddenTabs] = useState<ITabsMenuTabProps[]>([]);
-    const [tabWidths, setTabWidths] = useState<Array<number>>([]);
-    const [wrapperWidth, setWrapperWidth] = useState<number>(0);
-    const [tabMoreWidth, setTabMoreWidth] = useState<number>(0);
+export const useAdaptiveTabs = (props: IUseAdaptiveTabsProps) => {
+    const { tabs, tabsRefs, wrapperRef, moreRef } = props;
+    const [, forceRender] = useReducer((s) => s + 1, 0);
+    const visibleCountRef = useRef(-1);
+    const previousTabs = useRef<ITabsMenuTabProps[]>(tabs);
+    const tabsWidth = useRef<number[]>([]);
+
+    // Обнулять состояни нужно именно здесь, чтобы отрендерить все табы и получить их ширины
+    // в useIsomorphicLayoutEffect
+    if (tabs !== previousTabs.current) {
+        visibleCountRef.current = -1;
+        previousTabs.current = tabs;
+    }
 
     useIsomorphicLayoutEffect(() => {
-        setVisibleTabs(tabs);
-        setHiddenTabs([]);
-    }, [tabs]);
+        // При первом рендере и при изменении количества табов производим подсчёт ширин
+        tabsWidth.current = tabsRefs.map((tab) => calculateItemWidth(tab, true));
+    }, [tabsRefs]);
+
+    const updateVisibleCount = useCallback(() => {
+        const wrapperWidth = calculateItemWidth(wrapperRef);
+        const totalWidth = tabsWidth.current.reduce((acc, tab) => acc + tab, 0);
+        let nextVisibleCount = tabsWidth.current.length;
+
+        if (totalWidth > wrapperWidth) {
+            nextVisibleCount = 0;
+            let sum = calculateItemWidth(moreRef, true);
+
+            while (sum + tabsWidth.current[nextVisibleCount] <= wrapperWidth) {
+                sum += tabsWidth.current[nextVisibleCount];
+                nextVisibleCount++;
+            }
+        }
+
+        if (visibleCountRef.current !== nextVisibleCount) {
+            visibleCountRef.current = nextVisibleCount;
+            forceRender();
+        }
+    }, []);
 
     useIsomorphicLayoutEffect(() => {
-        if (wrapperWidth >= tabs.reduce((acc, _tab, index) => acc + tabWidths[index], 0)) {
-            setVisibleTabs(tabs);
-            setHiddenTabs([]);
-            return;
-        }
-
-        let index = 0;
-        let sum = tabMoreWidth;
-
-        while (sum + tabWidths[index] <= wrapperWidth) {
-            sum += tabWidths[index];
-            index++;
-        }
-
-        setVisibleTabs(tabs.slice(0, index));
-        setHiddenTabs(tabs.slice(index));
-    }, [wrapperWidth, tabMoreWidth, tabWidths, tabs]);
-
-    useIsomorphicLayoutEffect(() => {
-        setTabMoreWidth(calculateItemWidth(moreRef, true) || tabMoreWidth || 0);
-        const newWidths = tabsRefs.map((tab, index) => {
-            return calculateItemWidth(tab, true) || tabWidths[index] || 0;
-        });
-
-        if (
-            newWidths.reduce((acc, tabWidth) => acc + tabWidth, 0) !==
-            tabWidths.reduce((acc, tabWidth) => acc + tabWidth, 0)
-        ) {
-            setTabWidths(newWidths);
-        }
+        // На каждый рендер проверяем не поменялось ли количество видимых табов
+        updateVisibleCount();
     });
 
-    const onWindowResize = useCallback(() => {
-        setWrapperWidth(calculateItemWidth(wrapperRef));
-    }, [wrapperRef]);
-
-    useIsomorphicLayoutEffect(() => {
-        onWindowResize();
-    }, [onWindowResize]);
-
     useEffect(() => {
-        window.addEventListener('resize', onWindowResize);
+        window.addEventListener('resize', updateVisibleCount);
 
         return () => {
-            window.removeEventListener('resize', onWindowResize);
+            window.removeEventListener('resize', updateVisibleCount);
         };
-    }, [onWindowResize]);
+    }, [updateVisibleCount]);
 
-    return [visibleTabs, hiddenTabs];
+    const visibleCount = visibleCountRef.current;
+
+    return useMemo(() => {
+        if (visibleCount === -1) {
+            return [tabs, tabs];
+        }
+
+        return [tabs.slice(0, visibleCount), tabs.slice(visibleCount)];
+    }, [tabs, visibleCount]);
 };

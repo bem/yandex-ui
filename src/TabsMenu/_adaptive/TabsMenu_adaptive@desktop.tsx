@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useCallback, useRef, useMemo } from 'react';
 import { withBemMod } from '@bem-react/core';
 
 import { Select } from '../../Select/desktop/bundle';
@@ -49,7 +49,7 @@ export const withAdaptive = withBemMod<
     } = props;
     const innerRef = props.innerRef !== undefined ? props.innerRef : useRef<HTMLUListElement>(null);
     // eslint-disable-next-line react-hooks/rules-of-hooks
-    const tabsRefs = React.useMemo(() => tabs.map(() => React.createRef<HTMLLIElement>()), [tabs]);
+    const tabsRefs = useMemo(() => tabs.map(() => React.createRef<HTMLLIElement>()), [tabs]);
     const moreRef = useRef<HTMLLIElement>(null);
 
     // Видимость табов
@@ -58,9 +58,13 @@ export const withAdaptive = withBemMod<
         wrapperRef: innerRef,
         tabsRefs,
         moreRef,
+        activeTab,
     });
 
     const shouldRenderMoreTabs = Boolean(hiddenTabs.length);
+    const onSelectChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
+        onChange && onChange(e.target.value);
+    }, [onChange]);
 
     return (
         <TabsMenu
@@ -73,6 +77,7 @@ export const withAdaptive = withBemMod<
             addonAfter={
                 shouldRenderMoreTabs && (
                     <TabsMenuTab
+                        id="more"
                         className={cnTabsMenu('Tab', { more: true, hiddenIcon: hideMoreIcon })}
                         innerRef={moreRef}
                         active={hiddenTabs.some((tab) => tab.id === activeTab)}
@@ -82,11 +87,7 @@ export const withAdaptive = withBemMod<
                                 size={size}
                                 theme={theme}
                                 value={hiddenTabs.some((tab) => tab.id === activeTab) ? activeTab : undefined}
-                                onChange={(event) => {
-                                    if (onChange !== undefined) {
-                                        onChange(event.target.value);
-                                    }
-                                }}
+                                onChange={onSelectChange}
                                 options={hiddenTabs.map((tab) => ({
                                     value: tab.id || '',
                                     content: tab.content,

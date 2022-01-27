@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import React, { MouseEventHandler, RefObject, ReactNode, KeyboardEventHandler, FC } from 'react';
+import React, { useCallback, RefObject, ReactNode, KeyboardEventHandler, FC, MouseEventHandler } from 'react';
 
 import { cnTabsMenu } from '../TabsMenu';
 import './TabsMenu-Tab.css';
@@ -8,7 +8,7 @@ export interface ITabsMenuTabProps {
     /**
      * Идентификатор пункта меню
      */
-    id?: string;
+    id: string;
 
     /**
      * Активный пункт меню
@@ -63,34 +63,53 @@ export interface ITabsMenuTabProps {
     onKeyDown?: KeyboardEventHandler<HTMLElement>;
 }
 
-export const TabsMenuTab: FC<ITabsMenuTabProps> = ({
-    innerRef,
-    active,
-    className,
-    content,
-    disabled,
-    first,
-    ...props
-}) => (
-    <li
-        {...props}
-        aria-selected={active}
-        ref={innerRef}
-        className={cnTabsMenu(
-            'Tab',
-            {
-                active,
-                disabled,
-                first,
-            },
-            [className],
-        )}
-        role="tab"
-        // На активном пункте устанавливаем tabIndex 0, чтобы иметь возможность
-        // сфокусироваться с клавиатуры именно в него, у остальных пунктов устанавливаем -1,
-        // чтобы они не участвовали в навигации.
-        tabIndex={disabled ? undefined : active ? 0 : -1}
-    >
-        {content}
-    </li>
-);
+interface ITabsMenuTabInternalProps extends ITabsMenuTabProps {
+    onInternalClick?: (id: string) => void;
+}
+
+const Tab: FC<ITabsMenuTabInternalProps> = (props) => {
+    const {
+        id,
+        innerRef,
+        active,
+        className,
+        content,
+        disabled,
+        first,
+        onClick,
+        onInternalClick,
+        ...otherProps
+    } = props;
+
+    const handleClick = useCallback((e: React.MouseEvent<HTMLLIElement>) => {
+        onClick && onClick(e);
+        onInternalClick && onInternalClick(id);
+    }, [id, onClick]);
+
+    return (
+        <li
+            {...otherProps}
+            aria-selected={active}
+            ref={innerRef}
+            className={cnTabsMenu(
+                'Tab',
+                {
+                    active,
+                    disabled,
+                    first,
+                },
+                [className],
+            )}
+            role="tab"
+            // На активном пункте устанавливаем tabIndex 0, чтобы иметь возможность
+            // сфокусироваться с клавиатуры именно в него, у остальных пунктов устанавливаем -1,
+            // чтобы они не участвовали в навигации.
+            tabIndex={disabled ? undefined : active ? 0 : -1}
+            onClick={disabled ? undefined : handleClick}
+        >
+            {content}
+        </li>
+    );
+};
+
+export const TabsMenuTab = React.memo(Tab);
