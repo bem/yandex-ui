@@ -40,6 +40,12 @@ interface FocusTrapProps {
 
 export interface IModalProps extends PortalExtendableProps, FocusTrapProps {
     /**
+     * id элемента, который описывает это модальное окно. NVDA проговорит этот элемент, когда окно откроется.
+     * Несколько id можно указать через пробел.
+     */
+    ariaLabelledBy?: string;
+
+    /**
      * Выравнивание контента по вертикали
      *
      * @default 'middle'
@@ -109,6 +115,7 @@ export const Modal: FC<IModalProps> = ({
     autoFocus = true,
     restoreFocus = true,
     restoreFocusRef,
+    ariaLabelledBy,
     ...props
 }) => {
     const contentRef = useRef<HTMLDivElement>(null);
@@ -140,7 +147,7 @@ export const Modal: FC<IModalProps> = ({
                 <div className={cnModal('Wrapper')}>
                     <div className={cnModal('Table')}>
                         <div className={cnModal('Cell', { align })}>
-                            <div ref={contentRef} className={cnModal('Content')} tabIndex={-1} role="dialog" aria-modal>
+                            <div ref={contentRef} className={cnModal('Content')} tabIndex={-1} role="dialog" aria-labelledby={ariaLabelledBy} aria-modal>
                                 {children}
                             </div>
                         </div>

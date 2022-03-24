@@ -11,11 +11,11 @@ export const Playground = () => {
             <Button view="default" size="m" onClick={() => setVisible(true)}>
                 Открыть
             </Button>
-            <Modal theme="normal" scope={scopeRef} visible={visible} onClose={() => setVisible(false)}>
+            <Modal theme="normal" scope={scopeRef} visible={visible} onClose={() => setVisible(false)} ariaLabelledBy="dialog-header">
                 <div style={{ padding: 16, fontFamily: 'var(--control-font-family)', width: 400 }}>
-                    <div style={{ marginBottom: 16 }}>
+                    <h1 style={{ marginBottom: 16, font: 'inherit' }}>
                         Общедоступная многоязычная универсальная интернет-энциклопедия со свободным контентом.
-                    </div>
+                    </h1>
                     <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
                         <Button view="clear" size="m" onClick={() => setVisible(false)}>
                             Отменить
