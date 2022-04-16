@@ -1,4 +1,4 @@
-import React, { PureComponent, createRef, MouseEventHandler, MouseEvent } from 'react';
+import React, { PureComponent, createRef, MouseEventHandler, MouseEvent, ReactElement } from 'react';
 import { withBemMod } from '@bem-react/core';
 import { ComponentRegistryConsumer } from '@bem-react/di';
 
@@ -31,6 +31,11 @@ export interface ITextinputHasClearProps {
      * @internal
      */
     view?: string;
+
+    /**
+     * Тип крестика
+     */
+    clearIcon?: ReactElement;
 }
 
 /**
@@ -70,6 +75,7 @@ export const withHasClear = withBemMod<ITextinputHasClearProps, ITextinputProps>
                                                 size={this.props.size}
                                                 theme={this.props.theme}
                                                 view={this.props.view}
+                                                icon={this.props.clearIcon}
                                                 visible={Boolean(this.props.value)}
                                             />
                                             {addonBefore}

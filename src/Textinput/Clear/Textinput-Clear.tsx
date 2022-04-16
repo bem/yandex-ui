@@ -1,4 +1,4 @@
-import React, { FC, MouseEventHandler } from 'react';
+import React, { FC, MouseEventHandler, ReactElement } from 'react';
 import { useComponentRegistry } from '@bem-react/di';
 import { compose, composeU } from '@bem-react/core';
 
@@ -11,10 +11,7 @@ import { ITextinputRegistry } from '../Textinput.registry';
 import { cnTextinput } from '../Textinput';
 import './Textinput-Clear.css';
 
-const Icon = compose(
-    withGlyphXSign,
-    composeU(withTypeCross, withTypeCrossWebsearch),
-)(IconPresenter);
+const Icon = compose(withGlyphXSign, composeU(withTypeCross, withTypeCrossWebsearch))(IconPresenter);
 
 const getIconType = (theme?: string, view?: string): any => {
     if (view === 'default') {
@@ -50,6 +47,11 @@ export interface ITextinputClearProps {
     view?: string;
 
     /**
+     * Тип крестика
+     */
+    icon?: ReactElement;
+
+    /**
      * Дополнительный класс
      */
     className?: string;
@@ -65,14 +67,14 @@ export interface ITextinputClearProps {
     onMouseDown?: MouseEventHandler<HTMLSpanElement>;
 }
 
-export const TextinputClear: FC<ITextinputClearProps> = ({ visible, className, theme, view, ...props }) => {
+export const TextinputClear: FC<ITextinputClearProps> = ({ visible, className, theme, view, icon, ...props }) => {
     const { Icon: IconWrapper } = useComponentRegistry<ITextinputRegistry>(cnTextinput());
-    return (
-        <IconWrapper
-            {...props}
-            component={
-                <Icon {...getIconType(theme, view)} className={cnTextinput('Clear', { visible }, [className])} />
-            }
-        />
+    const iconProps = { className: cnTextinput('Clear', { visible }, [className]) };
+    const IconComonent = icon ? (
+        React.cloneElement(icon, iconProps)
+    ) : (
+        <Icon {...getIconType(theme, view)} {...iconProps} />
     );
+
+    return <IconWrapper {...props} component={IconComonent} />;
 };
