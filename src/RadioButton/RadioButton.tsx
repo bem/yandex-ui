@@ -91,7 +91,7 @@ export const RadioButton: FC<IRadioButtonProps> = ({
 
     return (
         <span
-            className={cnRadioButton(null, [className])}
+            className={cnRadioButton({ disabled: rootDisabled }, [className])}
             style={style}
             ref={innerRef}
             role="radiogroup"
