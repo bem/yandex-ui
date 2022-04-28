@@ -1,0 +1,12 @@
+userPic:
+  size:
+    m:
+      size:
+        value: 42px
+      sizePlus:
+        value: 52px
+    s:
+      size:
+        value: 24px
+      sizePlus:
+        value: 30px

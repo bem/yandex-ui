@@ -1,0 +1,40 @@
+.UserPic-Camera {
+    position: absolute;
+    z-index: 1;
+    top: 0%;
+
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+}
+
+.UserPic-Link {
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+
+    width: 100%;
+    height: 100%;
+
+    outline: none;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.UserPic-Camera::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: calc(var(--user-pic-size-m-size) / 2);
+    height: calc(var(--user-pic-size-m-size) / 2);
+
+    content: '';
+    pointer-events: none;
+
+    background-image: url('../user-pic.assets/camera.svg');
+
+    transform: translate(-50%, -50%);
+}

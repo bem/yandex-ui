@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserPic должен вернуть полный шаблон компонента (snapshot) 1`] = `
+<div
+  class="UserPic UserPic_hasCamera mix"
+>
+  <img
+    class="UserPic-Image"
+    src="https://avatars.mds.yandex.net/get-yapic/0/0-0/islands-middle"
+    srcset="https://avatars.mds.yandex.net/get-yapic/0/0-0/islands-middle 1x, https://avatars.mds.yandex.net/get-yapic/0/0-0/islands-retina-middle 2x"
+  />
+  <div
+    class="UserPic-Camera"
+  >
+    <a
+      class="Link UserPic-Link"
+      href="https://passport.yandex.ru/profile/public?origin=userpic&retpath=http%3A%2F%2Flocalhost%2F"
+    />
+  </div>
+</div>
+`;
+
+exports[`UserPic должен вернуть полный шаблон компонента с ссылкой в новом окне (snapshot) 1`] = `
+<div
+  class="UserPic UserPic_hasCamera mix"
+>
+  <img
+    class="UserPic-Image"
+    src="https://avatars.mds.yandex.net/get-yapic/0/0-0/islands-middle"
+    srcset="https://avatars.mds.yandex.net/get-yapic/0/0-0/islands-middle 1x, https://avatars.mds.yandex.net/get-yapic/0/0-0/islands-retina-middle 2x"
+  />
+  <div
+    class="UserPic-Camera"
+  >
+    <a
+      class="Link UserPic-Link"
+      href="https://passport.yandex.ru/profile/public?origin=userpic&retpath=http%3A%2F%2Flocalhost%2F"
+      target="_blank"
+    />
+  </div>
+</div>
+`;

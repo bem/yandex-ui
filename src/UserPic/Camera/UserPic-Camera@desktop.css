@@ -1,0 +1,21 @@
+.UserPic-Link {
+    height: 50%;
+
+    transition: height .3s ease-out;
+}
+
+.UserPic-Camera::after {
+    transition: transform .3s ease-out;
+    transform: translate(-50%, -10%) scale(.66);
+    will-change: transform;
+}
+
+.UserPic:hover .UserPic-Camera::after {
+    top: 50%;
+
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.UserPic:hover .UserPic-Link {
+    height: 100%;
+}

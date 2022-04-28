@@ -1,0 +1,17 @@
+.UserPic {
+    display: inline-block;
+
+    width: 28px;
+    height: 28px;
+}
+
+.UserPic-Image {
+    width: 28px;
+    height: 28px;
+}
+
+.UserPic_hasPlus::after {
+    width: 44px;
+    height: 44px;
+    margin: -22px 0 0 -22px;
+}

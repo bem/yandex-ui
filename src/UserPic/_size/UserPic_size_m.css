@@ -1,0 +1,15 @@
+.UserPic_size_m {
+    width: var(--user-pic-size-m-size);
+    height: var(--user-pic-size-m-size);
+}
+
+.UserPic_size_m.UserPic_hasPlus::after {
+    width: var(--user-pic-size-m-size-plus);
+    height: var(--user-pic-size-m-size-plus);
+    margin: calc(var(--user-pic-size-m-size-plus) / -2) 0 0 calc(var(--user-pic-size-m-size-plus) / -2);
+}
+
+.UserPic_size_m .UserPic-Camera::after {
+    width: calc(var(--user-pic-size-m-size) / 2);
+    height: calc(var(--user-pic-size-m-size) / 2);
+}
