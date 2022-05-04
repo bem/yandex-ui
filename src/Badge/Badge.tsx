@@ -1,4 +1,4 @@
-import React, { FC, RefObject, CSSProperties } from 'react';
+import React, { FC, RefObject, CSSProperties, ReactNode } from 'react';
 import { cn } from '@bem-react/classname';
 
 import './Badge.css';
@@ -22,7 +22,7 @@ export interface BadgeProps {
     /**
      * Содержимое, отображаемое внутри значка
      */
-    content?: string | number;
+    content?: string | number | ReactNode;
 
     /**
      * Цвет заливки блока
