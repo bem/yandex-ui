@@ -57,6 +57,7 @@ export const withHasClear = withBemMod<ITextinputHasClearProps, ITextinputProps>
                     onClearClick: _onClearClick,
                     hasClear: _hasClear,
                     controlRef,
+                    clearIcon,
                     ...props
                 } = this.props;
 
