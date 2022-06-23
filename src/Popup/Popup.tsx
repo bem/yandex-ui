@@ -1,4 +1,14 @@
-import React, { RefObject, ReactNode, FC, CSSProperties, ReactElement, Ref, useRef, MouseEventHandler } from 'react';
+import React, {
+    RefObject,
+    ReactNode,
+    FC,
+    CSSProperties,
+    ReactElement,
+    Ref,
+    useRef,
+    MouseEventHandler,
+    HTMLAttributes
+} from 'react';
 import { useComponentRegistry } from '@bem-react/di';
 import { cn } from '@bem-react/classname';
 
@@ -10,7 +20,7 @@ import { VirtualElement } from '../usePopper';
 import { IPopupRegistry } from './Popup.registry';
 import './Popup.css';
 
-export interface IPopupProps extends PortalExtendableProps {
+export interface IPopupProps extends PortalExtendableProps, HTMLAttributes<HTMLDivElement> {
     /**
      * Дополнительный контент после содержимого попапа
      */

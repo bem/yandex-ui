@@ -185,10 +185,7 @@ export const withDropdown = <T extends IPopupProps>(Popup: ComponentType<T>) =>
 
             const child = Children.only(children);
 
-            const popupProps: IPopupProps & {
-                onMouseEnter?: (event: MouseEvent) => void;
-                onMouseLeave?: (event: MouseEvent) => void;
-            } = {
+            const popupProps: IPopupProps = {
                 ...passThroughProps,
                 children: content,
                 target: 'anchor',
