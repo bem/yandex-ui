@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, MouseEventHandler, Ref, RefObject } from 'react';
+import React, { FC, ReactNode, MouseEventHandler, Ref, RefObject, HTMLAttributes } from 'react';
 import { cn } from '@bem-react/classname';
 
 import { MessageBoxClose as Close } from './Close/MessageBox-Close';
@@ -9,7 +9,7 @@ import './MessageBox.css';
 export { MessageBoxCorner as Corner, MessageBoxCornerProps } from './Corner/MessageBox-Corner';
 export { MessageBoxTextWrap as Wrapper, MessageBoxTextWrapProps } from './TextWrap/MessageBox-TextWrap';
 
-export type MessageBoxProps = {
+export interface MessageBoxProps extends HTMLAttributes<HTMLDivElement> {
     /**
      * Дополнительный className
      */
@@ -75,7 +75,7 @@ export type MessageBoxProps = {
      * @default 'default'
      */
     tailType?: 'default' | 'rounded';
-};
+}
 
 export const cnMessageBox = cn('MessageBox');
 
@@ -97,9 +97,14 @@ export const MessageBox: FC<MessageBoxProps> = ({
     opaque,
     tailRef,
     tailType = 'default',
+    ...props
 }) => {
     return (
-        <div className={cnMessageBox({ opaque, layout, hasClose: onClose && hasClose }, [className])} ref={innerRef}>
+        <div
+            className={cnMessageBox({ opaque, layout, hasClose: onClose && hasClose }, [className])}
+            ref={innerRef}
+            {...props}
+        >
             <div className={cnMessageBox('Backdrop')}>
                 {hasTail && <Tail innerRef={tailRef} tailType={tailType} />}
                 {background && <div className={cnMessageBox('Background')}>{background}</div>}

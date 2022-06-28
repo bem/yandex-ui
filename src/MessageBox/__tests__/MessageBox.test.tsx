@@ -1,6 +1,6 @@
 import React, { createRef } from 'react';
 
-import { createClientRender } from '../../internal/testing';
+import { createClientRender, screen, fireEvent } from '../../internal/testing';
 import { MessageBox as MessageBoxCommon, Corner } from '../MessageBox';
 import { MessageBox as MessageBoxDesktop } from '../desktop/bundle';
 import { MessageBox as MessageBoxTouchPad } from '../touch-pad/bundle';
@@ -70,5 +70,16 @@ describe.each(platforms)('MessageBox@%s', (_platform, MessageBox) => {
         const { container } = render(<MessageBox actions={<button />} />);
 
         expect(container.firstChild).toMatchSnapshot();
+    });
+
+    test('должен прокинуть все атрибуты (title, role, onMouseEnter)', () => {
+        const onMouseEnter = jest.fn();
+
+        render(<MessageBox role="alert" title="extra" onMouseEnter={onMouseEnter} data-testid="message-box" />);
+
+        fireEvent.mouseEnter(screen.getByTestId('message-box'));
+        expect(onMouseEnter).toHaveBeenCalledTimes(1);
+        expect(screen.getByTestId('message-box')).toHaveAttribute('title', 'extra');
+        expect(screen.getByTestId('message-box')).toHaveAttribute('role', 'alert');
     });
 });
