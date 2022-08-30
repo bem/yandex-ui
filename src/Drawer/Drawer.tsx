@@ -79,6 +79,11 @@ export interface IDrawerProps extends PropsWithChildren<PartialPopupProps> {
      * Параметры анимации шторки.
      */
     animation?: IDrawerAnimationParams;
+
+    /**
+     * Блокировка скролла до полного закрытия шторки
+     */
+    preventScrollOnClose?: boolean;
 }
 
 const defaultAnimation: IDrawerAnimationParams = {
@@ -95,7 +100,7 @@ const defaultAnimation: IDrawerAnimationParams = {
 export const Drawer: FC<IDrawerProps> = (props) => {
     const { Popup } = useComponentRegistry<IDrawerRegistry>(cnDrawer());
 
-    const { className, visible, nested, direction = 'bottom', innerRef, animation = defaultAnimation } = props;
+    const { className, visible, nested, direction = 'bottom', innerRef, preventScrollOnClose, animation = defaultAnimation } = props;
 
     // прогресс открытия шторки от 0 до 1
     const [progress, setProgress] = useState(0);
@@ -113,7 +118,7 @@ export const Drawer: FC<IDrawerProps> = (props) => {
     const clientHeight = useClientHeight();
     const popupStyle = useMemo(() => ({ height: clientHeight && clientHeight + 'px' }), [clientHeight]);
 
-    usePreventScroll({ enabled: visible });
+    usePreventScroll({ enabled: preventScrollOnClose ? springVisible : visible });
 
     useEffect(() => {
         setSpringDisabled(false);
