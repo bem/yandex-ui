@@ -4,6 +4,7 @@ export * from './nested.examples';
 export * from './small.examples';
 export * from './fixed.examples';
 export * from './playground.examples';
+export * from './onOpenEnd.examples';
 
 export default {
     title: 'Surface/Drawer/touch-phone',

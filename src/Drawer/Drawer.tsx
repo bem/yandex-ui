@@ -5,7 +5,7 @@ import { IPopupProps } from '../Popup/Popup';
 import { usePreventScroll } from '../usePreventScroll';
 
 import { IDrawerRegistry } from './Drawer.registry';
-import { useSpring, useClientHeight } from './Drawer.utils';
+import { useSpring, useClientHeight, noop } from './Drawer.utils';
 import { DrawerContent } from './Content/Drawer-Content';
 import { cnDrawer } from './Drawer.const';
 import './Drawer.css';
@@ -46,6 +46,11 @@ export interface IDrawerProps extends PropsWithChildren<PartialPopupProps> {
      * Функция, которая будет вызвана при завершении анимации закрытия шторки.
      */
     onCloseEnd?: () => void;
+
+    /**
+     * Функция, которая будет вызвана при завершении анимации открытия шторки.
+     */
+    onOpenEnd?: () => void;
 
     /**
      * Компонент шапки шторки.
@@ -100,7 +105,7 @@ const defaultAnimation: IDrawerAnimationParams = {
 export const Drawer: FC<IDrawerProps> = (props) => {
     const { Popup } = useComponentRegistry<IDrawerRegistry>(cnDrawer());
 
-    const { className, visible, nested, direction = 'bottom', innerRef, preventScrollOnClose, animation = defaultAnimation } = props;
+    const { onOpenEnd = noop, className, visible, nested, direction = 'bottom', innerRef, preventScrollOnClose, animation = defaultAnimation } = props;
 
     // прогресс открытия шторки от 0 до 1
     const [progress, setProgress] = useState(0);
@@ -112,6 +117,13 @@ export const Drawer: FC<IDrawerProps> = (props) => {
     const springImmediate = (animation.dragImmediate && springDisabled) || animation.disabled;
     const springValue = useSpring(progress, animation.tension, animation.friction, springImmediate);
     const springVisible = springValue > 0;
+
+    // Эмитит событие при открытии шторки
+    useEffect(() => {
+        if (springValue !== 1) return;
+
+        onOpenEnd();
+    }, [springValue]);
 
     // решает баг в iOS: в альбомной ориентации fixed элементы с
     // height: 100% показываются некорректно если виден navigation bar
