@@ -1,5 +1,6 @@
 export * from './boundary';
 export * from './contextmenu';
+export * from './disable-overlay';
 export * from './direction';
 export * from './floating';
 export * from './playground';

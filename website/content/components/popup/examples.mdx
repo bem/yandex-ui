@@ -14,6 +14,8 @@ import { ContextMenu as PopupContextMenu } from '@yandex-lego/components/Popup/_
 import popupContextMenuSources from '!!raw-loader!@yandex-lego/components/Popup/__examples__/contextmenu.tsx'
 import { Theme as PopupTheme } from '@yandex-lego/components/Popup/__examples__/theme.tsx'
 import popupThemeSources from '!!raw-loader!@yandex-lego/components/Popup/__examples__/theme.tsx'
+import { DisableOverlay as PopupDisableOverlay } from '@yandex-lego/components/Popup/__examples__/disable-overlay.tsx'
+import popupDisableOverlaySources from '!!raw-loader!@yandex-lego/components/Popup/__examples__/disable-overlay.tsx'
 
 ### Виды
 
@@ -106,5 +108,16 @@ const Example = () => {
   <Title>Theme</Title>
   <Description>
     Чтобы задать тему попапа, установите свойство `theme` в одно из следующих значений: `"normal"`, `"clear"`
+  </Description>
+</Example>
+
+### Отключение оверлея
+
+Пример ниже демонстрирует использование компонента `Popup` без использования оверлея
+
+<Example component={PopupDisableOverlay} source={popupDisableOverlaySources}>
+  <Title>Disable Overlay</Title>
+  <Description>
+    Чтобы отключить оверлей используется проп `disableOverlay`
   </Description>
 </Example>

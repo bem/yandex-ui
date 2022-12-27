@@ -14,7 +14,7 @@ export const cnTooltip = cn('Tooltip');
 
 type PartialPopupProps = Pick<
     IPopupProps,
-    'keepMounted' | 'className' | 'hasTail' | 'innerRef' | 'zIndex' | 'visible' | 'scope' | 'onClose' | 'onClick'
+    'keepMounted' | 'className' | 'hasTail' | 'innerRef' | 'zIndex' | 'visible' | 'scope' | 'onClose' | 'onClick' | 'disableOverlay'
 >;
 
 type PartialPopupTargetAnchorProps = Pick<
@@ -58,6 +58,7 @@ export const Tooltip: FC<TooltipProps> = (props) => {
         keepMounted,
         mainOffset,
         modifiers,
+        disableOverlay,
         onClick,
         onClose,
         scope,
@@ -77,6 +78,7 @@ export const Tooltip: FC<TooltipProps> = (props) => {
             boundary={boundary}
             className={cnTooltip({ visible, state }, [className])}
             direction={direction}
+            disableOverlay={disableOverlay}
             hasTail={hasTail}
             innerRef={innerRef}
             keepMounted={keepMounted}

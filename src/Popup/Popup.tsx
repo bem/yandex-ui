@@ -104,6 +104,11 @@ export interface IPopupProps extends PortalExtendableProps, HTMLAttributes<HTMLD
      * Обработчик, вызываемый при срабатывании события click
      */
     onClick?: MouseEventHandler<HTMLDivElement>;
+
+    /**
+     * Отключает использование оверлея
+     */
+    disableOverlay?: boolean;
 }
 
 export const cnPopup = cn('Popup2');
@@ -127,6 +132,7 @@ export const Popup: FC<IPopupProps> = ({
     tailSize,
     visible,
     zIndex,
+    disableOverlay,
     unstable_onRenderTail,
     onClose,
     unstable_essentialRefs = [],
@@ -144,7 +150,11 @@ export const Popup: FC<IPopupProps> = ({
     const containerRef = useRef(null);
     const { Tail } = useComponentRegistry<IPopupRegistry>(cnPopup());
 
-    useOverlay({ visible, onClose, essentialRefs: [containerRef, ...unstable_essentialRefs] });
+    useOverlay({
+        onClose,
+        visible: !disableOverlay && visible,
+        essentialRefs: [containerRef, ...unstable_essentialRefs],
+    });
 
     return (
         <Portal scope={scope} visible={visible} keepMounted={keepMounted}>
