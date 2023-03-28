@@ -32,6 +32,10 @@
     will-change: transform;
 }
 
+.Drawer-Curtain:focus {
+    outline: none;
+}
+
 .Drawer-Content {
     position: relative;
 

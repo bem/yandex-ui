@@ -89,6 +89,14 @@ export interface IDrawerProps extends PropsWithChildren<PartialPopupProps> {
      * Блокировка скролла до полного закрытия шторки
      */
     preventScrollOnClose?: boolean;
+
+    /**
+     * Выставить фокус на первый интерактивный элемент
+     * в пределах шторки
+     *
+     * @default false
+     */
+    autoFocus?: boolean;
 }
 
 const defaultAnimation: IDrawerAnimationParams = {
@@ -105,7 +113,16 @@ const defaultAnimation: IDrawerAnimationParams = {
 export const Drawer: FC<IDrawerProps> = (props) => {
     const { Popup } = useComponentRegistry<IDrawerRegistry>(cnDrawer());
 
-    const { onOpenEnd = noop, className, visible, nested, direction = 'bottom', innerRef, preventScrollOnClose, animation = defaultAnimation } = props;
+    const {
+        onOpenEnd = noop,
+        className,
+        visible,
+        nested,
+        direction = 'bottom',
+        innerRef,
+        preventScrollOnClose,
+        animation = defaultAnimation,
+    } = props;
 
     // прогресс открытия шторки от 0 до 1
     const [progress, setProgress] = useState(0);

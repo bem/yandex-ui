@@ -45,6 +45,25 @@ function getSpringTransform({ axis, springValue, inverted }: IGetSpringTransform
         : `translate3d(0,${(1 - springValue) * 100 * inverted}%,0)`;
 }
 
+function getFirstInteractiveElementInScope(scopeRef: HTMLDivElement) {
+    const interactiveElements = Array.from(scopeRef.querySelectorAll('a[href], button, input, select, textarea'));
+
+    for (let element of interactiveElements) {
+        const computedStyle = window.getComputedStyle(element);
+        const isHidden = element.getAttribute('aria-hidden') === 'true' || computedStyle?.display === 'none';
+        const hasAriaHiddenParent = element.closest('[aria-hidden="true"]') !== null;
+        const hasDisplayHiddenParent = element.closest('[style*="display: none"]') !== null;
+        const hasHiddenParent = hasAriaHiddenParent || hasDisplayHiddenParent;
+        const hasText = element?.textContent?.trim() !== '';
+
+        if (!isHidden && !hasHiddenParent && (hasText || element?.tagName === 'BUTTON')) {
+            return element as HTMLElement;
+        }
+    }
+
+    return;
+}
+
 /**
  * Компонент содержимого шторки.
  *
@@ -64,6 +83,7 @@ export const DrawerContent: FC<IDrawerContentProps> = ({
     children,
     setSpringDisabled,
     setProgress,
+    autoFocus = false,
 }) => {
     const contentRef = useRef<HTMLDivElement>(null);
     const [closing, setClosing] = useState(false);
@@ -73,6 +93,27 @@ export const DrawerContent: FC<IDrawerContentProps> = ({
 
     const springOpacity = Math.max(springValue, 0);
     const springTransform = getSpringTransform({ axis, springValue, inverted });
+
+    const curtainRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (visible && autoFocus && springValue === 1) {
+            const element = curtainRef?.current && getFirstInteractiveElementInScope(curtainRef.current);
+
+            if (element) {
+                element.focus();
+
+                /**
+                 * Если drawer открывается дольше 600 мс, то при открытии шторки
+                 * элемент на котором сейчас находится фокус имеет обводку (outline).
+                 */
+                document.body.classList.remove('utilityfocus');
+                document.body.classList.add('pointerfocus');
+            } else {
+                curtainRef.current?.focus();
+            }
+        }
+    }, [visible, springValue]);
 
     const curtainStyle = useMemo(
         () => ({
@@ -158,7 +199,14 @@ export const DrawerContent: FC<IDrawerContentProps> = ({
     return (
         <div className={cnDrawerDragObserver} {...dragProps}>
             <div className={cnDrawerOverlay} style={{ opacity: springOpacity }} onClick={() => _onClose()} />
-            <div className={cnDrawerCurtain} style={curtainStyle}>
+            <div
+                className={cnDrawerCurtain}
+                style={curtainStyle}
+                ref={curtainRef}
+                tabIndex={-1}
+                role="dialog"
+                aria-modal={springValue === 1}
+            >
                 <div className={cnDrawerHandle} style={{ opacity: springOpacity }} />
                 {titleComponent && <div className={cnDrawerTitle}>{titleComponent}</div>}
                 <div className={cnDrawerContent} ref={contentRef}>

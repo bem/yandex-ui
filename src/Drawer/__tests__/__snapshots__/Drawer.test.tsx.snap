@@ -13,7 +13,10 @@ exports[`Drawer должен вернуть полный шаблон компо
       style="opacity: 1;"
     />
     <div
+      aria-modal="true"
       class="Drawer-Curtain"
+      role="dialog"
+      tabindex="-1"
     >
       <div
         class="Drawer-Handle"
