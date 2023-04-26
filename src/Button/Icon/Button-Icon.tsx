@@ -2,7 +2,7 @@ import { ReactElement, FC } from 'react';
 import { IClassNameProps } from '@bem-react/core';
 
 import { IIconProps } from '../../Icon/Icon';
-import { cnButton } from '../Button';
+import { cnButton } from '../ButtonCn';
 import './Button-Icon.css';
 
 export type IconProvider = (className: string) => ReactElement<IIconProps>;

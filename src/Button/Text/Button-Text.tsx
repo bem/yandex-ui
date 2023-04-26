@@ -1,7 +1,7 @@
 import React, { ReactNode, FC } from 'react';
 import { IClassNameProps } from '@bem-react/core';
 
-import { cnButton } from '../Button';
+import { cnButton } from '../ButtonCn';
 import './Button-Text.css';
 
 export interface IButtonTextProps extends IClassNameProps {

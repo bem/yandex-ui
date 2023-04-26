@@ -15,13 +15,13 @@ import React, {
     Ref,
     FocusEventHandler,
 } from 'react';
-import { cn } from '@bem-react/classname';
 
 import { Defaultize } from '../typings/utility-types';
 import { mergeAllRefs } from '../lib/mergeRefs';
 import { Keys, KeyboardKeys, isKeyCode } from '../lib/keyboard';
 import { IconProvider, ButtonIcon as Icon } from './Icon/Button-Icon';
 import { ButtonText as Text } from './Text/Button-Text';
+import { cnButton } from './ButtonCn';
 import './Button.css';
 
 export type ContainerElement = HTMLButtonElement | HTMLAnchorElement;
@@ -180,7 +180,7 @@ export interface IButtonState {
     pressed?: boolean;
 }
 
-export const cnButton = cn('Button2');
+export { cnButton };
 
 const defaultProps = {
     autoComplete: 'off',
