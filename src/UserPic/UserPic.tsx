@@ -50,6 +50,13 @@ export interface IUserPicProps extends IClassNameProps {
      * Дополнительный класс
      */
     className?: string;
+
+    /**
+     * Атрибут alt у img
+     *
+     * @default ''
+     */
+    alt?: string;
 }
 
 export const cnUserPic = cn('UserPic');
@@ -72,6 +79,7 @@ export const UserPic: FC<IUserPicProps> = ({
     addonAfter,
     // @ts-ignore
     size,
+    alt = '',
     ...props
 }) => {
     useEffect(() => {
@@ -86,7 +94,7 @@ export const UserPic: FC<IUserPicProps> = ({
 
     return (
         <div className={cnUserPic({ hasPlus: plus }, [className])} ref={innerRef}>
-            <img {...props} src={lodpiUrl} className={cnUserPic('Image')} srcSet={srcSet} />
+            <img {...props} src={lodpiUrl} className={cnUserPic('Image')} srcSet={srcSet} alt={alt} />
             {addonAfter}
         </div>
     );
