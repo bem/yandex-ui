@@ -35,7 +35,8 @@ export const View: FC<ViewProps> = (props) => {
     } = props;
     const { activeView } = state;
     const { gridProps } = useCalendar(props, state);
-    const firstDayOfWeek = useFirstDayOfWeek();
+    const localeFirstDayOfWeek = useFirstDayOfWeek();
+    const firstDayOfWeek = props.firstDayOfWeek !== undefined ? props.firstDayOfWeek : localeFirstDayOfWeek;
     const asideData = useMemo(() => getAsideData(activeView, data, firstDayOfWeek), [activeView, data, firstDayOfWeek]);
     const showAside = (activeView === 'day' && showWeekNumbers) || (activeView === 'month' && showQuarters);
 
