@@ -95,8 +95,14 @@ export interface IDrawerProps extends PropsWithChildren<PartialPopupProps> {
      * в пределах шторки
      *
      * @default false
+     * @deprecated в следующей мажорной версии будет true по умолчанию
      */
     autoFocus?: boolean;
+
+    /**
+     * Атрибут aria-hidden на корневом элементе
+     */
+    ariaHidden?: boolean
 }
 
 const defaultAnimation: IDrawerAnimationParams = {
@@ -122,6 +128,7 @@ export const Drawer: FC<IDrawerProps> = (props) => {
         innerRef,
         preventScrollOnClose,
         animation = defaultAnimation,
+        ariaHidden,
     } = props;
 
     // прогресс открытия шторки от 0 до 1
@@ -163,6 +170,7 @@ export const Drawer: FC<IDrawerProps> = (props) => {
             keepMounted={props.keepMounted}
             zIndex={props.zIndex}
             scope={props.scope}
+            aria-hidden={ariaHidden}
         >
             <DrawerContent
                 {...props}
