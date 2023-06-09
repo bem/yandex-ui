@@ -86,6 +86,11 @@ export interface IDrawerProps extends PropsWithChildren<PartialPopupProps> {
     animation?: IDrawerAnimationParams;
 
     /**
+     * Отключает блокировку прокрутки страницы
+     */
+    preventScrollDisabled?: boolean;
+
+    /**
      * Блокировка скролла до полного закрытия шторки
      */
     preventScrollOnClose?: boolean;
@@ -126,6 +131,7 @@ export const Drawer: FC<IDrawerProps> = (props) => {
         nested,
         direction = 'bottom',
         innerRef,
+        preventScrollDisabled,
         preventScrollOnClose,
         animation = defaultAnimation,
         ariaHidden,
@@ -154,7 +160,15 @@ export const Drawer: FC<IDrawerProps> = (props) => {
     const clientHeight = useClientHeight();
     const popupStyle = useMemo(() => ({ height: clientHeight && clientHeight + 'px' }), [clientHeight]);
 
-    usePreventScroll({ enabled: preventScrollOnClose ? springVisible : visible });
+    const enabledPreventScroll = React.useMemo(() => {
+        if (preventScrollDisabled) {
+            return false;
+        }
+
+        return preventScrollOnClose ? springVisible : visible;
+    }, [preventScrollDisabled, preventScrollOnClose, springVisible, visible]);
+
+    usePreventScroll({ enabled: enabledPreventScroll });
 
     useEffect(() => {
         setSpringDisabled(false);
