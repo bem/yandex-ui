@@ -73,7 +73,7 @@ describe('withControl', () => {
 
     test('должен установить hovered при наведении', () => {
         render(<ComponentWithControl />);
-        expect(screen.getByTestId('element')).not.toHaveAttribute('data-hovered');
+        expect(screen.getByTestId('element')).not.toHaveAttribute('data-hovered', 'true');
         fireEvent.mouseEnter(screen.getByTestId('element'));
         expect(screen.getByTestId('element')).toHaveAttribute('data-hovered', 'true');
     });

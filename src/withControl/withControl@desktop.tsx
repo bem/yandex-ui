@@ -21,17 +21,9 @@ export function withControl<T extends IWithControlProps>(WrappedComponent: Compo
             hovered: this.props.hovered,
         };
 
-        // TODO: https://st.yandex-team.ru/ISL-5863
-        // eslint-disable-next-line camelcase
-        UNSAFE_componentWillReceiveProps(nextProps: T) {
-            this.setState({
-                hovered: nextProps.disabled ? false : this.state.hovered || nextProps.hovered,
-            });
-        }
-
         render() {
-            const { hovered } = this.state;
             const { disabled } = this.props;
+            const hovered = disabled ? false : Boolean(this.state.hovered || this.props.hovered);
             // Оборачиваемый компонент явно может не реализовывать интерфейс для передаваемых свойств,
             // но все компоненты обязаны поддержать передачу всех свойств на DOM узел, поэтому тут мы
             // приводим тип оборачиваемого компонента к нужному виду.
