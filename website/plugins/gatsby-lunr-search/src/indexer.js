@@ -9,7 +9,7 @@ function patchLunr(lunr) {
 function createIndex(documents) {
     patchLunr(lunr);
 
-    return lunr(function () {
+    return lunr(function() {
         this.use(lunr.multiLanguage('en', 'ru'));
 
         this.ref('id');

@@ -1,4 +1,7 @@
 {
+  "extends": "./node_modules/@yandex-int/lint/eslintrc.js",
+  "root": true,
+  "ignorePatterns": ["build", "**/vendor/**", "website/**"],
   "parserOptions": {
     "sourceType": "module"
   },

@@ -1,0 +1,21 @@
+[
+    {
+        "sectionId": "frontend-packages-lego-components",
+        "config": {
+            "customLinks": {
+                "@title": "@yandex-lego/components",
+                "@iconUrl": "https://lego-docs.s3.mds.yandex.net/_/storybook.svg",
+                "pipeLinks": [
+                    {
+                        "label": "Storybook",
+                        "url": "https://lego-docs.s3.mds.yandex.net/story/@yandex-lego/components/pull-{{review_request.id}}/index.html"
+                    },
+                    {
+                        "label": "Gatsby",
+                        "url": "https://lego.yandex-team.ru/lego-components/pull-{{review_request.id}}/components/button/examples/"
+                    }
+                ]
+            }
+        }
+    }
+]

@@ -1,6 +1,7 @@
 {
-  "extends": "../../.stylelintrc",
+  "extends": "./node_modules/@yandex-int/lint/stylelintrc.js",
   "rules": {
+    "number-leading-zero": null,
     "max-line-length": null,
     "max-empty-lines": 2,
     "font-weight-notation": "numeric",
