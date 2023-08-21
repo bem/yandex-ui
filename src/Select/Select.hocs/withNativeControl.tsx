@@ -29,12 +29,14 @@ export const withNativeControl = (Select: FC<ISelectProps>) => ({
     options,
     value,
     onClick,
+    disabled,
     ...props
 }: ISelectProps) => (
     <Select
         {...props}
         value={value}
         options={options}
+        disabled={disabled}
         addonAfter={
             <>
                 <select
@@ -45,6 +47,7 @@ export const withNativeControl = (Select: FC<ISelectProps>) => ({
                     onChange={onChange}
                     tabIndex={-1}
                     value={value}
+                    disabled={disabled}
                 >
                     {options.map(toGroupOptions)}
                 </select>
