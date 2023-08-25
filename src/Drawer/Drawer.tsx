@@ -108,6 +108,11 @@ export interface IDrawerProps extends PropsWithChildren<PartialPopupProps> {
      * Атрибут aria-hidden на корневом элементе
      */
     ariaHidden?: boolean
+
+     /**
+     * Отключает spring
+     */
+    initSpringDisabled?: boolean;
 }
 
 const defaultAnimation: IDrawerAnimationParams = {
@@ -135,10 +140,11 @@ export const Drawer: FC<IDrawerProps> = (props) => {
         preventScrollOnClose,
         animation = defaultAnimation,
         ariaHidden,
+        initSpringDisabled = false,
     } = props;
 
     // прогресс открытия шторки от 0 до 1
-    const [progress, setProgress] = useState(0);
+    const [progress, setProgress] = useState(initSpringDisabled ? 1 : 0);
 
     // признак того, что анимация временно отключена (напр. на время drag жеста)
     const [springDisabled, setSpringDisabled] = useState(false);
@@ -153,6 +159,7 @@ export const Drawer: FC<IDrawerProps> = (props) => {
         if (springValue !== 1) return;
 
         onOpenEnd();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [springValue]);
 
     // решает баг в iOS: в альбомной ориентации fixed элементы с
