@@ -357,6 +357,43 @@ ci:
                   ci_badge_module: LOG
           needs:
             - install
+    publish-package:
+      jobs:
+        version:
+          task: common/nodejs/npm/version
+          stage: publish
+          input:
+            config:
+              new_version: ${flow-vars.level}
+        publish:
+          task: common/nodejs/npm/publish
+          input:
+            config:
+              npm:
+                token: sec-01gcywcxy0t31gbygs8pwkrpcc#ROBOT_FRONTEND_NPM_AUTH_TOKEN
+          needs:
+            - version
+  releases:
+    publish-package:
+      title: Publish @yandex-lego/components
+      flow: publish-package
+      flow-vars-ui:
+        schema:
+          type: object
+          required:
+            - level
+          properties:
+            level:
+              title: Increment level
+              type: string
+              enum:
+                - patch
+                - minor
+                - major
+              default: patch
+      stages:
+        - id: publish
+          title: Publish
 arcanum:
   auto_merge:
     enabled: true
