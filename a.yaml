@@ -396,7 +396,7 @@ ci:
           title: Publish
 arcanum:
   auto_merge:
-    enabled: true
+    enabled: false
     requirements:
       - system: CI
         type: "frontend/packages/lego-components: build"
