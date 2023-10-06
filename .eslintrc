@@ -37,6 +37,7 @@
     "indent": "off",
     "@typescript-eslint/indent": "off",
     "react/jsx-indent": "off",
-    "react/jsx-indent-props": "off"
+    "react/jsx-indent-props": "off",
+    "camelcase": [1, { "properties": "never" }],
   }
 }
