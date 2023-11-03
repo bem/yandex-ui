@@ -113,6 +113,8 @@ export const DrawerContent: FC<IDrawerContentProps> = ({
                 curtainRef.current?.focus();
             }
         }
+        // TODO ISL-10952: разобраться почему не все необходимые переменные указаны в deps и убрать игнор
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [visible, springValue]);
 
     const curtainStyle = useMemo(

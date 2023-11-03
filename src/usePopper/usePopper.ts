@@ -87,6 +87,8 @@ export function usePopper(props: PopupHookProps): PopupHookResult {
         children,
         boundary,
     } = props;
+    // TODO ISL-10952: разобраться почему не все необходимые переменные указаны в deps и убрать игнор
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     const placements = Array.isArray(placement) ? placement : ([placement] as Direction[]);
 
     const popperRef = useRef<Instance | null>(null);

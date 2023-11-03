@@ -197,6 +197,8 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>((props, ref) => {
                 </div>
             </div>
         ),
+        // TODO ISL-10952: разобраться почему не все необходимые переменные указаны в deps и убрать игнор
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         [disabled, reverse, vertical, showTickValues, className, ref, filled, rangePosition, showTicks, ticks, testId],
     );
 
@@ -204,6 +206,8 @@ export const Slider = forwardRef<HTMLDivElement, SliderProps>((props, ref) => {
         ({ props: { style, draggable, ref, ...props }, isDragged, value }: RenderThumbParams) => (
             <Thumb {...props} innerRef={ref} disabled={disabled} pressed={isDragged} value={value} testId={testId} />
         ),
+        // TODO ISL-10952: разобраться почему не все необходимые переменные указаны в deps и убрать игнор
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         [disabled, testId],
     );
 

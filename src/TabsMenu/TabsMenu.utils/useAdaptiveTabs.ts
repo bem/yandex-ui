@@ -50,6 +50,8 @@ export const useAdaptiveTabs = (props: IUseAdaptiveTabsProps) => {
             visibleCountRef.current = nextVisibleCount;
             forceRender();
         }
+        // TODO ISL-10952: разобраться почему не все необходимые переменные указаны в deps и убрать игнор
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useIsomorphicLayoutEffect(() => {

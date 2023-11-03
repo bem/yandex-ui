@@ -163,6 +163,8 @@ export const Tumbler: FC<TumblerProps> = ({
         if (autoFocus && buttonRef.current !== null) {
             buttonRef.current.focus();
         }
+        // TODO ISL-10952: разобраться почему не все необходимые переменные указаны в deps и убрать игнор
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const labelledById = useMemo(() => {

@@ -24,6 +24,7 @@
 
     font-family: var(--button-font-family);
     -moz-user-focus: ignore; /* 5 */
+
     user-select: none; /* 2 */
     text-align: center; /* 10 */
     white-space: nowrap; /* 4 */

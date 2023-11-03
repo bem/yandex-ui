@@ -39,6 +39,8 @@ export const UserPicCamera: FC<IUserPicCameraProps> = ({
 }) => {
     const [retpath, setRetpath] = useState('');
 
+    // TODO ISL-10952: разобраться почему не все необходимые переменные указаны в deps и убрать игнор
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         // Устанавливаем retpath после того, как компонент был смонтирован в DOM,
         // используем useEffect а не canUseDOM для того, чтобы не было проблем разной верстки при SSR.

@@ -84,6 +84,8 @@ export const UserPic: FC<IUserPicProps> = ({
 }) => {
     useEffect(() => {
         console.assert(size !== undefined, 'Модификатор size скоро станет обязательным, добавьте пожалуйста размер');
+        // TODO ISL-10952: разобраться почему не все необходимые переменные указаны в deps и убрать игнор
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     if (!lodpiUrl) {
