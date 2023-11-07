@@ -58,10 +58,22 @@ export interface IRadioButtonControlProps {
 export const RadioButtonControl: FC<IRadioButtonControlProps> = ({
     className,
     controlRef,
-    ...props
+    value,
+    name,
+    id,
+    checked,
+    disabled,
+    onClick,
+    onChange,
 }) => (
     <input
-        {...props}
+        name={name}
+        id={id}
+        checked={checked}
+        disabled={disabled}
+        value={value}
+        onClick={onClick}
+        onChange={onChange}
         type="radio"
         autoComplete="off"
         className={cnRadioButton('Control', null, [className])}
