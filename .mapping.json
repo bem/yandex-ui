@@ -11,6 +11,7 @@
   ".editorconfig":"frontend/packages/lego-components/.editorconfig",
   ".eslintrc":"frontend/packages/lego-components/.eslintrc",
   ".gitignore":"frontend/packages/lego-components/.gitignore",
+  ".nvmrc":"frontend/packages/lego-components/.nvmrc",
   ".prettierrc":"frontend/packages/lego-components/.prettierrc",
   ".storybook/decorators/reset-style.js":"frontend/packages/lego-components/.storybook/decorators/reset-style.js",
   ".storybook/decorators/theme-provider.js":"frontend/packages/lego-components/.storybook/decorators/theme-provider.js",
