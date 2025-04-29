@@ -29,7 +29,7 @@
   "peerDependencies": {
     "@bem-react/classname": "^1.5.6",
     "@bem-react/core": ">= 3.0.0",
-    "@bem-react/di": "^2.0.3 || ^3.0.0",
+    "@bem-react/di": "^2.0.3 || ^3.0.0 || ^5.0.0",
     "react": "^16.8.4 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.4 || ^17.0.0 || ^18.0.0"
   },
